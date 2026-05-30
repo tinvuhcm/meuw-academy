@@ -1,0 +1,233 @@
+/* ============================================
+   MEUW ACADEMY — base.css
+   Reset, Design Tokens, Typography, and Layout
+   ============================================ */
+
+/* --- RESET & BOX MODEL --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent text selection on UI elements */
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: var(--lh-normal);
+}
+
+/* Allow text selection only in input fields and transcript */
+input, textarea, .selectable-text {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button, input, textarea {
+  font-family: inherit;
+  border: none;
+  background: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* --- DESIGN TOKENS --- */
+:root {
+  /* Primary Brand Colors */
+  --meuw-purple:    #7C3AED;
+  --meuw-purple-lt: #EDE9FE;
+  --meuw-pink:      #EC4899;
+  --meuw-pink-lt:   #FCE7F3;
+
+  /* Module Colors */
+  --math-color:     #F59E0B;   /* Amber — Toán */
+  --math-color-lt:  #FEF3C7;
+  --eng-color:      #3B82F6;   /* Blue — English */
+  --eng-color-lt:   #DBEAFE;
+  --sci-color:      #10B981;   /* Emerald — Khoa học */
+  --sci-color-lt:   #D1FAE5;
+  --read-color:     #8B5CF6;   /* Violet — Đọc */
+  --read-color-lt:  #EDE9FE;
+  --draw-color:     #EF4444;   /* Red — Vẽ */
+  --draw-color-lt:  #FEE2E2;
+  --quiz-color:     #F97316;   /* Orange — Quiz */
+  --quiz-color-lt:  #FFEDD5;
+
+  /* Semantic Colors */
+  --correct:        #22C55E;
+  --correct-bg:     #DCFCE7;
+  --correct-dk:     #15803D;
+  
+  --wrong:          #EF4444;
+  --wrong-bg:       #FEE2E2;
+  --wrong-dk:       #B91C1C;
+  
+  --warning:        #F59E0B;
+  --warning-bg:     #FEF3C7;
+
+  /* Neutrals (Light theme only) */
+  --bg:             #F8F7FF;   /* Soft purple tint for background */
+  --bg-2:           #F3F4F6;
+  --surface:        #FFFFFF;
+  --border:         #E5E7EB;
+  --border-hover:   #D1D5DB;
+  --text:           #1F2937;
+  --text-muted:     #6B7280;
+  --text-soft:      #9CA3AF;
+
+  /* Typography */
+  --font-display:   'Fredoka One', cursive;
+  --font-body:      'Nunito', sans-serif;
+
+  /* Fluid Typography scale (mobile-first baseline) */
+  --text-xs:        0.75rem;   /* 12px */
+  --text-sm:        0.875rem;  /* 14px */
+  --text-base:      1rem;      /* 16px */
+  --text-lg:        1.125rem;  /* 18px */
+  --text-xl:        1.25rem;   /* 20px */
+  --text-2xl:       1.5rem;    /* 24px */
+  --text-3xl:       1.875rem;  /* 30px */
+  --text-4xl:       2.25rem;   /* 36px */
+  --text-hero:      2.5rem;    /* 40px */
+
+  --fw-normal:      400;
+  --fw-semi:        600;
+  --fw-bold:        700;
+  --fw-black:       800;
+
+  --lh-tight:       1.2;
+  --lh-normal:      1.5;
+  --lh-relaxed:     1.75;
+
+  /* Spacing */
+  --space-1:        0.25rem;   /* 4px */
+  --space-2:        0.5rem;    /* 8px */
+  --space-3:        0.75rem;   /* 12px */
+  --space-4:        1rem;      /* 16px */
+  --space-5:        1.5rem;    /* 24px */
+  --space-6:        2rem;      /* 32px */
+  --space-8:        3rem;      /* 48px */
+  --space-10:       4rem;      /* 64px */
+
+  /* Border Radius */
+  --radius-sm:      0.25rem;   /* 4px */
+  --radius-md:      0.5rem;    /* 8px */
+  --radius-lg:      1rem;      /* 16px */
+  --radius-xl:      1.5rem;    /* 24px */
+  --radius-full:    9999px;
+
+  /* Shadows */
+  --shadow-sm:      0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md:      0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg:      0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-brand:   0 8px 20px rgba(124, 58, 237, 0.2);
+  --shadow-inner:   inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+  /* Gradients */
+  --gradient-brand: linear-gradient(135deg, var(--meuw-purple), var(--meuw-pink));
+  --gradient-hero:  linear-gradient(135deg, #F8F7FF 0%, #EDE9FE 100%);
+  --gradient-eng:   linear-gradient(135deg, #60A5FA, #3B82F6);
+  --gradient-gold:  linear-gradient(135deg, #FCD34D, #F59E0B);
+
+  /* Transitions */
+  --ease-bounce:    cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out:       cubic-bezier(0.2, 0.8, 0.2, 1);
+  --transition-fast: 0.15s var(--ease-out);
+  --transition-bounce: 0.3s var(--ease-bounce);
+}
+
+/* --- TYPOGRAPHY UTILS --- */
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--font-display);
+  font-weight: normal; /* Fredoka is heavy enough by default */
+  line-height: var(--lh-tight);
+  color: var(--text);
+}
+
+.text-gradient {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* --- LAYOUT UTILS --- */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-container {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4);
+}
+
+.page-container-sm {
+  max-width: 800px;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hide {
+  display: none !important;
+}
+
+/* --- APP LOADER --- */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  font-family: var(--font-display);
+  color: var(--meuw-purple);
+  font-size: var(--text-xl);
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--meuw-purple-lt);
+  border-top-color: var(--meuw-purple);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: var(--space-4);
+}

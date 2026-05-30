@@ -1,0 +1,141 @@
+/* ============================================
+   MEUW ACADEMY — animations.css
+   Global Keyframes and Transitions
+   ============================================ */
+
+/* --- GENERAL UTILITY ANIMATIONS --- */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+@keyframes pop-in {
+  0% { opacity: 0; transform: scale(0.8); }
+  70% { transform: scale(1.05); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- FEEDBACK ANIMATIONS --- */
+@keyframes xp-flash {
+  0% { transform: scale(0.5) translateY(0); opacity: 1; }
+  50% { transform: scale(1.2) translateY(-20px); opacity: 1; }
+  100% { transform: scale(1) translateY(-40px); opacity: 0; }
+}
+
+.xp-flash-particle {
+  position: absolute;
+  color: var(--warning);
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  pointer-events: none;
+  animation: xp-flash 1s var(--ease-out) forwards;
+  z-index: 100;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+@keyframes correct-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+@keyframes glow-pulse {
+  0% { filter: drop-shadow(0 0 5px rgba(236, 72, 153, 0.5)); }
+  50% { filter: drop-shadow(0 0 15px rgba(236, 72, 153, 0.8)); }
+  100% { filter: drop-shadow(0 0 5px rgba(236, 72, 153, 0.5)); }
+}
+
+/* --- PAGE TRANSITIONS --- */
+.page-enter {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.page-exit {
+  animation: fade-out 0.2s ease-in forwards;
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* --- BUTTON & CARD INTERACTIONS --- */
+.btn-pop {
+  transition: transform var(--transition-bounce), box-shadow var(--transition-fast);
+}
+
+.btn-pop:hover {
+  transform: scale(1.05);
+}
+
+.btn-pop:active {
+  transform: scale(0.95);
+}
+
+.card-hover {
+  transition: transform var(--transition-bounce), box-shadow var(--transition-fast);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* --- TOAST & MODAL ANIMATIONS --- */
+@keyframes toast-slide-in {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes toast-slide-out {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes modal-backdrop-in {
+  from { background-color: rgba(0, 0, 0, 0); backdrop-filter: blur(0); }
+  to { background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(4px); }
+}
+
+/* Speech bubble popping in */
+@keyframes bubble-in {
+  0% { transform: scale(0) translateY(10px); opacity: 0; }
+  70% { transform: scale(1.1) translateY(0); }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}

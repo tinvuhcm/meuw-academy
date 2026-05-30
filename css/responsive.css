@@ -1,0 +1,507 @@
+/* ============================================
+   MEUW ACADEMY — responsive.css
+   Breakpoints: Mobile, Tablet (iPad), Desktop (Laptop)
+   ============================================ */
+
+/* ============================================
+   BREAKPOINT OVERVIEW:
+   Mobile:  ≤ 480px
+   Tablet:  481px – 1024px  (iPad target)
+   Desktop: ≥ 1025px        (Laptop target)
+   ============================================ */
+
+/* ============================================
+   DESKTOP BASELINE (≥ 1025px)
+   Everything defined in other CSS is desktop-first
+   ============================================ */
+@media (min-width: 1025px) {
+  .lesson-layout {
+    grid-template-columns: 240px 1fr;
+  }
+
+  .drawing-layout {
+    grid-template-columns: 200px 1fr;
+  }
+
+  .session-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dashboard-hero {
+    padding: var(--space-8) var(--space-10);
+  }
+}
+
+/* ============================================
+   TABLET (481px – 1024px)
+   ============================================ */
+@media (min-width: 481px) and (max-width: 1024px) {
+
+  /* --- Layout --- */
+  .lesson-layout {
+    grid-template-columns: 1fr;
+    padding: var(--space-4);
+    gap: var(--space-4);
+  }
+
+  .lesson-sidebar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-4);
+    position: static;
+  }
+
+  .lesson-mascot-area {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-3);
+    position: static;
+    width: 100%;
+  }
+
+  .lesson-mascot-area .mascot-xl .mascot-svg {
+    width: 80px;
+    height: 93px;
+  }
+
+  .lesson-mascot-area .speech-bubble {
+    flex: 1;
+  }
+
+  /* --- Session --- */
+  .session-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+
+  /* --- Dashboard Hero --- */
+  .dashboard-hero {
+    padding: var(--space-6);
+    gap: var(--space-4);
+  }
+
+  .hero-greeting {
+    font-size: var(--text-2xl);
+  }
+
+  /* --- Options: 2×2 on tablet --- */
+  .mc-options {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* --- Drawing: stacked on tablet --- */
+  .drawing-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .drawing-steps-panel {
+    max-height: 160px;
+    overflow: hidden;
+  }
+
+  .drawing-step-list {
+    flex-direction: row;
+    max-height: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: var(--space-2);
+  }
+
+  .drawing-step-item {
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+    text-align: center;
+  }
+
+  /* Canvas sizing */
+  .drawing-canvas {
+    max-width: 100%;
+  }
+
+  /* --- Touch: larger targets --- */
+  .btn-option {
+    min-height: 60px;
+    font-size: var(--text-base);
+  }
+
+  .btn-cta {
+    min-height: 56px;
+    font-size: var(--text-lg);
+    padding: 14px var(--space-6);
+  }
+
+  /* No hover-only transforms on touch */
+  .module-card:hover {
+    transform: none;
+  }
+
+  .btn-option:hover {
+    transform: none;
+  }
+
+  /* --- Profile grid --- */
+  .profile-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* --- Badge grid --- */
+  .badge-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* --- Gallery --- */
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* --- Bottom strips stacked --- */
+  .bottom-strips {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+
+  /* Drag & drop: larger items on touch */
+  .drag-item {
+    min-height: 56px;
+    font-size: var(--text-base);
+    padding: var(--space-4);
+  }
+
+  .drop-zone {
+    min-height: 56px;
+  }
+
+  /* Speech record button larger for touch */
+  .speech-record-btn {
+    width: 96px;
+    height: 96px;
+    font-size: 2.5rem;
+  }
+}
+
+/* ============================================
+   MOBILE (≤ 480px)
+   ============================================ */
+@media (max-width: 480px) {
+
+  /* --- Global --- */
+  .page-container {
+    padding-top: 56px; /* smaller header on mobile */
+  }
+
+  .container,
+  .container-sm {
+    padding: 0 var(--space-3);
+  }
+
+  /* --- Header --- */
+  .app-header {
+    height: 56px;
+  }
+
+  .logo-text {
+    font-size: var(--text-lg);
+  }
+
+  .streak-badge {
+    font-size: var(--text-base);
+    padding: 4px 10px;
+  }
+
+  /* --- Dashboard --- */
+  .dashboard-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-5);
+    gap: var(--space-4);
+  }
+
+  .hero-mascot-area {
+    align-self: center;
+  }
+
+  .session-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .bottom-strips {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  /* --- Lesson --- */
+  .lesson-layout {
+    padding: var(--space-3);
+    gap: var(--space-3);
+    grid-template-columns: 1fr;
+  }
+
+  .lesson-sidebar {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .lesson-mascot-area .mascot-xl .mascot-svg {
+    width: 56px;
+    height: 65px;
+  }
+
+  .lesson-card {
+    padding: var(--space-5);
+    border-radius: var(--radius-xl);
+  }
+
+  /* --- Options: 1 column on small mobile --- */
+  .mc-options {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .btn-option {
+    font-size: var(--text-base);
+    padding: var(--space-3) var(--space-4);
+    min-height: 56px;
+  }
+
+  .question-text {
+    font-size: var(--text-lg);
+  }
+
+  /* --- CTA --- */
+  .btn-cta {
+    width: 100%;
+    font-size: var(--text-lg);
+    padding: 14px var(--space-4);
+  }
+
+  /* --- Drawing: simplified --- */
+  .drawing-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .drawing-steps-panel {
+    display: none; /* Hidden on mobile, step text shown inline */
+  }
+
+  .drawing-toolbar {
+    justify-content: center;
+    gap: var(--space-1);
+  }
+
+  .tool-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .color-swatch {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Canvas full width on mobile */
+  .drawing-canvas {
+    max-width: 100%;
+  }
+
+  /* --- Drag match: stacked --- */
+  .drag-match-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .drag-column-label {
+    font-size: var(--text-xs);
+  }
+
+  /* --- Profile --- */
+  .profile-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* --- Gallery --- */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+
+  /* --- Badges --- */
+  .badge-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* --- Parent tabs --- */
+  .tabs {
+    gap: 0;
+  }
+
+  .tab-btn {
+    font-size: var(--text-xs);
+    padding: var(--space-2) var(--space-2);
+  }
+
+  /* --- Modals --- */
+  .modal-card {
+    padding: var(--space-5);
+    max-width: 100%;
+    margin: 0 var(--space-4);
+  }
+
+  .pin-keypad {
+    max-width: 220px;
+  }
+
+  .pin-key {
+    height: 52px;
+  }
+
+  /* --- Completion screen --- */
+  .completion-title {
+    font-size: var(--text-3xl);
+  }
+
+  /* --- Mini quiz result --- */
+  .quiz-score-big {
+    font-size: 4rem;
+  }
+
+  /* --- Hero text --- */
+  .hero-greeting {
+    font-size: var(--text-2xl);
+  }
+
+  .hero-day-info {
+    font-size: var(--text-sm);
+  }
+
+  /* --- Toast --- */
+  .toast-container {
+    bottom: var(--space-3);
+    left: var(--space-3);
+    right: var(--space-3);
+    transform: none;
+    align-items: stretch;
+  }
+
+  .toast {
+    border-radius: var(--radius-xl);
+  }
+
+  /* --- Speech --- */
+  .speech-record-btn {
+    width: 72px;
+    height: 72px;
+    font-size: 1.75rem;
+  }
+
+  /* --- Vocab cards --- */
+  .vocab-word {
+    font-size: var(--text-2xl);
+  }
+
+  .vocab-emoji {
+    font-size: 2.5rem;
+  }
+}
+
+/* ============================================
+   LANDSCAPE TABLET (iPad landscape specific)
+   ============================================ */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+  .lesson-layout {
+    grid-template-columns: 200px 1fr;
+  }
+
+  .lesson-sidebar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .lesson-mascot-area {
+    flex-direction: column;
+    width: auto;
+  }
+
+  .session-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .drawing-layout {
+    grid-template-columns: 180px 1fr;
+  }
+}
+
+/* ============================================
+   PRINT STYLES (for diploma)
+   ============================================ */
+@media print {
+  .app-header,
+  .confetti-canvas,
+  .xp-flash-container,
+  .toast-container,
+  .btn-back,
+  .btn-cta:not(.print-show),
+  .modal-overlay {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    font-size: 12pt;
+  }
+
+  .diploma-card {
+    border: 3px solid #7C3AED;
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    page-break-inside: avoid;
+  }
+
+  .diploma-title {
+    font-size: 28pt;
+    color: #7C3AED;
+  }
+
+  .diploma-name {
+    font-size: 24pt;
+    color: #1F2937;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
+
+/* ============================================
+   HIGH-DPI / RETINA (for sharp SVGs)
+   ============================================ */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* SVGs scale perfectly, no extra handling needed */
+  /* Just ensure no pixel-perfect dependencies */
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  /* Keep a minimal pulse for recording state */
+  .speech-record-btn.recording {
+    animation: none;
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.4);
+  }
+}

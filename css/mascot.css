@@ -1,0 +1,221 @@
+/* ============================================
+   MEUW ACADEMY — mascot.css
+   Mascot specific animations and states
+   ============================================ */
+
+/* --- MASCOT CONTAINER --- */
+.mascot-container {
+  position: relative;
+  display: inline-block;
+  user-select: none;
+}
+
+/* Ensure SVG scales properly */
+.mascot-svg {
+  display: block;
+  width: 120px;
+  height: 140px;
+  transform-origin: center bottom;
+  will-change: transform;
+}
+
+/* Sizing variants */
+.mascot-sm .mascot-svg { width: 60px; height: 70px; }
+.mascot-md .mascot-svg { width: 90px; height: 105px; }
+.mascot-lg .mascot-svg { width: 120px; height: 140px; }
+.mascot-xl .mascot-svg { width: 180px; height: 210px; }
+
+/* --- SVG INNER PARTS (to be animated via states) --- */
+.mascot-svg #body { transform-origin: center bottom; transition: transform 0.3s ease; }
+.mascot-svg #head { transform-origin: center center; transition: transform 0.3s ease; }
+.mascot-svg #tail { transform-origin: 25px 75px; }
+.mascot-svg .eye { transform-origin: center center; }
+
+/* Accessory visibility defaults */
+.mascot-svg .acc-glasses,
+.mascot-svg .acc-book,
+.mascot-svg .acc-beret,
+.mascot-svg .acc-pencil,
+.mascot-svg .acc-zzz,
+.mascot-svg .acc-dots {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* --- STATE 1: IDLE --- */
+@keyframes tail-sway {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(15deg); }
+}
+
+@keyframes blink {
+  0%, 95%, 100% { transform: scaleY(1); }
+  97% { transform: scaleY(0.1); }
+}
+
+.mascot-idle #tail { animation: tail-sway 2.5s ease-in-out infinite; }
+.mascot-idle .eye { animation: blink 4s infinite; }
+
+/* --- STATE 2: HAPPY --- */
+@keyframes mascot-jump {
+  0%, 100% { transform: translateY(0) scaleY(1); }
+  30% { transform: translateY(-20px) scaleY(1.05); }
+  80% { transform: translateY(0) scaleY(0.95); }
+}
+
+.mascot-happy #body { animation: mascot-jump 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.mascot-happy #tail { transform: rotate(20deg); }
+.mascot-happy .mouth-path { d: path("M -10 12 Q 0 25 10 12"); } /* Bigger smile */
+
+/* --- STATE 3: EXCITED (Spin & Scale) --- */
+@keyframes mascot-celebrate {
+  0% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(-10deg) scale(1.1); }
+  75% { transform: rotate(10deg) scale(1.1); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+.mascot-excited #body { animation: mascot-celebrate 0.6s ease-in-out 2; }
+.mascot-excited .eye { d: path("M -15 -8 Q -13 -12 -10 -8 M 10 -8 Q 13 -12 15 -8"); fill: none; stroke: #1F2937; stroke-width: 2; } /* ^_^ eyes */
+
+/* --- STATE 4: CELEBRATING (Win/Badge) --- */
+@keyframes mascot-bounce-spin {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(180deg); }
+  100% { transform: translateY(0) rotate(360deg); }
+}
+
+.mascot-celebrating #body { animation: mascot-bounce-spin 0.8s ease-in-out; }
+.mascot-celebrating .eye { d: path("M -15 -8 Q -13 -12 -10 -8 M 10 -8 Q 13 -12 15 -8"); fill: none; stroke: #1F2937; stroke-width: 2; }
+.mascot-celebrating .mouth-path { d: path("M -12 10 Q 0 28 12 10"); fill: #EF4444; } /* Open mouth */
+
+/* --- STATE 5: ENCOURAGING (Wrong answer) --- */
+@keyframes head-shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px) rotate(-5deg); }
+  40%, 80% { transform: translateX(6px) rotate(5deg); }
+}
+
+.mascot-encouraging #head { animation: head-shake 0.6s ease-in-out; }
+.mascot-encouraging .mouth-path { d: path("M -6 16 Q 0 14 6 16"); } /* Neutral/slight concern */
+.mascot-encouraging #tail { transform: rotate(-10deg); }
+
+/* --- STATE 6: THINKING (Loading) --- */
+@keyframes float-thinking {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes dots-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.mascot-thinking #body { animation: float-thinking 2s ease-in-out infinite; }
+.mascot-thinking .acc-dots { opacity: 1; }
+.mascot-thinking .acc-dots circle:nth-child(1) { animation: dots-pulse 1.5s infinite 0s; }
+.mascot-thinking .acc-dots circle:nth-child(2) { animation: dots-pulse 1.5s infinite 0.3s; }
+.mascot-thinking .acc-dots circle:nth-child(3) { animation: dots-pulse 1.5s infinite 0.6s; }
+.mascot-thinking .eye { transform: translateY(-2px) scale(0.9); } /* Looking up */
+
+/* --- STATE 7: READING --- */
+.mascot-reading .acc-glasses { opacity: 1; }
+.mascot-reading .acc-book { opacity: 1; }
+.mascot-reading #head { transform: translateY(5px) rotate(5deg); } /* Looking down at book */
+.mascot-reading .eye { transform: translateY(2px); }
+
+/* --- STATE 8: DRAWING --- */
+@keyframes draw-action {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg) translateX(-2px); }
+  75% { transform: rotate(5deg) translateX(2px); }
+}
+
+.mascot-drawing .acc-beret { opacity: 1; }
+.mascot-drawing .acc-pencil { opacity: 1; animation: draw-action 0.5s infinite; }
+.mascot-drawing #head { transform: rotate(-5deg); }
+
+/* --- STATE 9: SLEEPING --- */
+@keyframes zzz-float {
+  0% { transform: translate(0, 0) scale(0.8); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translate(20px, -40px) scale(1.2); opacity: 0; }
+}
+
+.mascot-sleeping .acc-zzz { opacity: 1; }
+.mascot-sleeping .acc-zzz path:nth-child(1) { animation: zzz-float 2s infinite 0s; }
+.mascot-sleeping .acc-zzz path:nth-child(2) { animation: zzz-float 2s infinite 0.6s; }
+.mascot-sleeping .acc-zzz path:nth-child(3) { animation: zzz-float 2s infinite 1.2s; }
+.mascot-sleeping .eye { d: path("M -16 -4 L -8 -4 M 8 -4 L 16 -4"); stroke: #1F2937; stroke-width: 2; } /* Closed eyes */
+.mascot-sleeping #head { transform: translateY(8px); } /* Drooped head */
+.mascot-sleeping #body { animation: float-thinking 3s infinite; } /* Slow breathing */
+
+
+/* --- SPEECH BUBBLE --- */
+.speech-bubble {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border: 3px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--text);
+  white-space: nowrap;
+  box-shadow: var(--shadow-md);
+  z-index: 10;
+  display: none; /* Controlled by JS */
+  transform-origin: bottom center;
+}
+
+/* Bubble tail */
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px 10px 0;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+  z-index: 2;
+}
+
+.speech-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 12px 12px 0;
+  border-style: solid;
+  border-color: var(--border) transparent transparent transparent;
+  z-index: 1;
+}
+
+.bubble-in {
+  display: block !important;
+  animation: bubble-in 0.4s var(--ease-bounce) forwards;
+}
+
+/* Position adjustments for different sizes */
+.mascot-xl .speech-bubble { bottom: calc(100% + 20px); font-size: var(--text-xl); }
+.mascot-sm .speech-bubble { font-size: var(--text-sm); padding: var(--space-2) var(--space-3); }
+
+/* --- REACTION PARTICLES --- */
+.reaction-particle {
+  position: absolute;
+  pointer-events: none;
+  font-size: 1.5rem;
+  z-index: 20;
+  animation: particle-fly 1.2s ease-out forwards;
+}
+
+@keyframes particle-fly {
+  0% { transform: translate(0, 0) scale(0.5); opacity: 1; }
+  50% { transform: translate(var(--tx, 20px), var(--ty, -30px)) scale(1.2); opacity: 1; }
+  100% { transform: translate(calc(var(--tx, 20px) * 1.5), calc(var(--ty, -30px) * 1.5)) scale(1); opacity: 0; }
+}

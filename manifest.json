@@ -1,0 +1,17 @@
+{
+  "name": "Meuw Academy",
+  "short_name": "Meuw",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#F8F7FF",
+  "theme_color": "#7C3AED",
+  "description": "Ứng dụng học hè cho bé Meuw",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "assets/icons/icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512"
+    }
+  ]
+}

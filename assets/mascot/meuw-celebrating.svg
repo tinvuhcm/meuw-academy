@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" class="mascot-svg mascot-sm" id="meuw-celebrating">
+  <!-- Common Meuw base -->
+  <g id="tail" transform="translate(20, 90)">
+    <path d="M 0 0 Q -15 -10 -10 -30 Q -5 -15 0 0" fill="#FCA5A5"/>
+  </g>
+  <g id="body" transform="translate(50, 70)">
+    <path d="M -30 0 C -30 -30 30 -30 30 0 C 30 30 -30 30 -30 0" fill="#FFFFFF" stroke="#1F2937" stroke-width="3"/>
+  </g>
+  <g id="head" transform="translate(50, 40)">
+    <path d="M -35 0 C -35 -40 35 -40 35 0 C 35 30 -35 30 -35 0" fill="#FFFFFF" stroke="#1F2937" stroke-width="3"/>
+    <!-- Ears -->
+    <path d="M -25 -25 L -35 -45 L -10 -35" fill="#FFFFFF" stroke="#1F2937" stroke-width="3"/>
+    <path d="M 25 -25 L 35 -45 L 10 -35" fill="#FFFFFF" stroke="#1F2937" stroke-width="3"/>
+    <path d="M -27 -28 L -32 -40 L -15 -33" fill="#FCA5A5"/>
+    <path d="M 27 -28 L 32 -40 L 15 -33" fill="#FCA5A5"/>
+    <path class="eye" d="M -15 -5 Q -10 -15 -5 -5 M 5 -5 Q 10 -15 15 -5" fill="none" stroke="#1F2937" stroke-width="3" stroke-linecap="round"/><path class="mouth-path" d="M -8 10 Q 0 25 8 10 Z" fill="#EF4444" stroke="#1F2937" stroke-width="2"/>
+  </g>
+</svg>
