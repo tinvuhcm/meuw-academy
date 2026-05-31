@@ -60,8 +60,9 @@ export function renderDrawingCanvas(q, onComplete) {
   const toolbar = el('div', { class: 'drawing-toolbar' });
   
   const colors = [
-    '#000000', '#FFFFFF', '#EF4444', '#F97316', '#FCD34D', '#22C55E', 
-    '#06B6D4', '#3B82F6', '#6366F1', '#8B5CF6', '#EC4899', '#9CA3AF'
+    '#000000', '#333333', '#FFFFFF', '#EF4444', '#F97316', '#FCD34D', '#22C55E', 
+    '#10B981', '#06B6D4', '#3B82F6', '#6366F1', '#8B5CF6', '#EC4899', '#F43F5E', 
+    '#8B4513', '#A0522D', '#D2B48C', '#9CA3AF'
   ];
   let currentColor = '#000000';
   let currentTool = 'pen'; // 'pen' or 'eraser'
@@ -125,7 +126,7 @@ export function renderDrawingCanvas(q, onComplete) {
 
   // Canvas Wrapper
   const canvasWrap = el('div', { class: 'drawing-canvas-wrapper w-full' });
-  const canvas = el('canvas', { class: 'drawing-canvas w-full', width: '600', height: '450' });
+  const canvas = el('canvas', { class: 'drawing-canvas w-full', width: '1024', height: '768', style: 'min-height: 450px;' });
   const ctx = canvas.getContext('2d', { willReadFrequently: true });
   
   // Fill white background
