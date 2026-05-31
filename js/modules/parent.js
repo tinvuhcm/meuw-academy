@@ -170,7 +170,7 @@ function renderStatsTab(container) {
   const timeStr = timeSecs > 3600 ? `${Math.floor(timeSecs/3600)} giờ` : `${Math.floor(timeSecs/60)} phút`;
   
   const overviews = [
-    { label: 'Tổng XP', value: profile.xpTotal, emoji: '🌟' },
+    { label: 'Tổng ⭐', value: profile.xpTotal, emoji: '🌟' },
     { label: 'Thời gian học', value: timeStr, emoji: '⏱️' },
     { label: 'Chuỗi cao nhất', value: `${stats.longestStreakEver || 0} ngày`, emoji: '🔥' },
     { label: 'Tỉ lệ đúng', value: `${State.getAccuracyRate()}%`, emoji: '🎯' }
@@ -248,7 +248,7 @@ function renderHistoryTab(container) {
           <div class="text-xs text-text-muted">${timeStr}</div>
         </div>
         <div class="text-right">
-          <div class="font-bold text-meuw-purple">+${c.xp} XP</div>
+          <div class="font-bold text-meuw-purple">+${c.xp} ⭐</div>
           <div class="text-xs text-correct-dk">${c.score}/${c.total} câu đúng</div>
         </div>
       `;
@@ -418,7 +418,7 @@ function renderDataTab(container) {
   // Danger Zone
   const resetBtn = el('button', { class: 'btn btn-outline text-wrong border-wrong' }, '⚠️ Xóa trắng hồ sơ hiện tại');
   resetBtn.addEventListener('click', () => {
-    if (confirm('NGUY HIỂM: Hành động này sẽ xóa toàn bộ XP, huy hiệu, lịch sử và tranh vẽ của hồ sơ hiện tại. Bạn có CHẮC CHẮN không?')) {
+    if (confirm('NGUY HIỂM: Hành động này sẽ xóa toàn bộ ⭐, huy hiệu, lịch sử và tranh vẽ của hồ sơ hiện tại. Bạn có CHẮC CHẮN không?')) {
       State.resetProfile();
       alert('Đã xóa dữ liệu.');
       window.location.reload();

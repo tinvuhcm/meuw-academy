@@ -32,7 +32,7 @@ export function renderProfile() {
     avatar.textContent = p.name.charAt(0).toUpperCase();
 
     const name = el('h3', { class: 'font-bold text-lg text-text' }, p.name);
-    const level = el('div', { class: 'text-sm text-text-muted mt-1' }, `Cấp ${Math.floor(p.xpTotal / 500) + 1} • ${p.xpTotal} XP`);
+    const level = el('div', { class: 'text-sm text-text-muted mt-1' }, `Cấp ${Math.floor(p.xpTotal / 500) + 1} • ${p.xpTotal} ⭐`);
 
     card.appendChild(avatar);
     card.appendChild(name);

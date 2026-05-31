@@ -9,8 +9,46 @@
   <link rel="manifest" href="/manifest.json">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   
+  <!-- Tailwind CSS (for layout utilities) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'meuw-purple': '#7C3AED',
+            'meuw-purple-lt': '#EDE9FE',
+            'meuw-pink': '#EC4899',
+            'meuw-pink-lt': '#FCE7F3',
+            'math-color': '#F59E0B',
+            'eng-color': '#3B82F6',
+            'sci-color': '#10B981',
+            'read-color': '#8B5CF6',
+            'draw-color': '#EF4444',
+            'quiz-color': '#F97316',
+            'correct': '#22C55E',
+            'correct-dk': '#15803D',
+            'wrong': '#EF4444',
+            'wrong-dk': '#B91C1C',
+            'warning': '#F59E0B',
+            'bg': '#F8F7FF',
+            'bg-2': '#F3F4F6',
+            'border': '#E5E7EB',
+            'text': '#1F2937',
+            'text-muted': '#6B7280',
+            'text-soft': '#9CA3AF'
+          },
+          fontFamily: {
+            display: ['Nunito', 'sans-serif'],
+            body: ['Nunito', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
   <!-- CSS Base & Utilities -->
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/animations.css">

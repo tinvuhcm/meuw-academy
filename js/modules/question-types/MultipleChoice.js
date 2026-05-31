@@ -53,7 +53,7 @@ export function renderMultipleChoice(q, onComplete) {
         State.recordAnswer(true);
 
         // Flash XP
-        const xpSpan = el('span', { class: 'xp-flash-particle' }, `+${q.xp || 10} XP`);
+        const xpSpan = el('span', { class: 'xp-flash-particle' }, `+${q.xp || 10} ⭐`);
         const rect = btn.getBoundingClientRect();
         xpSpan.style.left = `${rect.left + rect.width/2}px`;
         xpSpan.style.top = `${rect.top}px`;

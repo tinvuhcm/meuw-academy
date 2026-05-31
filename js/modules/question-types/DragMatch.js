@@ -148,7 +148,7 @@ export function renderDragMatch(q, onComplete) {
       State.recordAnswer(true);
 
       // Flash XP
-      const xpSpan = el('span', { class: 'xp-flash-particle' }, `+2 XP`);
+      const xpSpan = el('span', { class: 'xp-flash-particle' }, `+2 ⭐`);
       const rect = dropEl.getBoundingClientRect();
       xpSpan.style.left = `${rect.left + rect.width/2}px`;
       xpSpan.style.top = `${rect.top}px`;

@@ -69,7 +69,7 @@ export function renderDashboard() {
   
   const levelDisplay = el('div', { class: 'mt-4 flex flex-col gap-2' });
   const levelHeader = el('div', { class: 'flex-between text-sm font-bold' });
-  levelHeader.innerHTML = `<span class="text-meuw-purple">${levelData.emoji} Cấp ${levelData.level}: ${levelData.title}</span><span class="text-text-muted">${xpTotal} XP</span>`;
+  levelHeader.innerHTML = `<span class="text-meuw-purple">${levelData.emoji} Cấp ${levelData.level}: ${levelData.title}</span><span class="text-text-muted">${xpTotal} ⭐</span>`;
   
   const progressBg = el('div', { class: 'progress-bar-bg' });
   const pct = Math.min(100, (xpTotal / levelData.next) * 100);

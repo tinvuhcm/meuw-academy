@@ -158,7 +158,7 @@ export function renderLesson(params) {
     const compBox = el('div', { class: 'flex flex-col items-center justify-center flex-1 text-center py-10' });
     
     const title = el('h2', { class: 'completion-title font-display text-4xl text-meuw-purple mb-4' }, 'Hoàn thành!');
-    const xpText = el('div', { class: 'text-2xl font-bold text-warning mb-8 flex items-center gap-2' }, `+${xpEarnedTotal} XP <span class="text-3xl">🌟</span>`);
+    const xpText = el('div', { class: 'text-2xl font-bold text-warning mb-8 flex items-center gap-2' }, `+${xpEarnedTotal} ⭐ <span class="text-3xl">🌟</span>`);
     
     // Check if badges were earned
     const newBadges = State.checkAndAwardBadges();
@@ -205,7 +205,7 @@ export function renderLesson(params) {
     const compBox = el('div', { class: 'text-center py-10' });
     compBox.innerHTML = `
       <h2 class="font-display text-3xl text-meuw-purple mb-4">Bài này em đã hoàn thành rồi!</h2>
-      <p class="mb-8">Em có muốn học lại không? (Học lại không nhận thêm XP đâu nhé)</p>
+      <p class="mb-8">Em có muốn học lại không? (Học lại không nhận thêm ⭐ đâu nhé)</p>
     `;
     const btnRow = el('div', { class: 'flex justify-center gap-4' });
     

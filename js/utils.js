@@ -129,7 +129,7 @@ export function formatNumber(n) {
  * Format XP: 1234 → "1.234 XP"
  */
 export function formatXP(xp) {
-  return `${formatNumber(xp)} XP`;
+  return `${formatNumber(xp)} ⭐`;
 }
 
 /**

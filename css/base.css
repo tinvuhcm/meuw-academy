@@ -97,7 +97,7 @@ button {
   --text-soft:      #9CA3AF;
 
   /* Typography */
-  --font-display:   'Fredoka One', cursive;
+  --font-display:   'Nunito', sans-serif;
   --font-body:      'Nunito', sans-serif;
 
   /* Fluid Typography scale (mobile-first baseline) */
@@ -160,7 +160,7 @@ button {
 /* --- TYPOGRAPHY UTILS --- */
 h1, h2, h3, h4, h5, h6, .font-display {
   font-family: var(--font-display);
-  font-weight: normal; /* Fredoka is heavy enough by default */
+  font-weight: 900;
   line-height: var(--lh-tight);
   color: var(--text);
 }

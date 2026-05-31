@@ -79,7 +79,7 @@ export function renderSession(params) {
     
     const right = el('div', { class: 'flex flex-col items-end gap-1 text-sm font-bold' });
     right.innerHTML = statusIcon;
-    right.appendChild(el('span', { class: 'text-warning' }, `~${m.xp || 50} XP`));
+    right.appendChild(el('span', { class: 'text-warning' }, `~${m.xp || 50} ⭐`));
 
     card.appendChild(left);
     card.appendChild(right);
