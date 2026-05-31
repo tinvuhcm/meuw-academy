@@ -26,17 +26,18 @@ function getWeightedSubject() {
 }
 
 const MATH_TOPICS = [
-    { name: 'Phép cộng hàng ngàn', op: '+' },
-    { name: 'Phép trừ hàng ngàn', op: '-' },
-    { name: 'Bảng nhân 2-9', op: '*' },
-    { name: 'Phép chia cơ bản', op: '/' },
-    { name: 'Phân số cơ bản', op: 'frac' },
-    { name: 'Hình học (Chu vi, Diện tích)', op: 'geo' }
+    { name: 'Toán lớp 4: Phép cộng hàng ngàn', op: '+' },
+    { name: 'Toán lớp 4: Phép trừ hàng ngàn', op: '-' },
+    { name: 'Toán lớp 4: Bảng nhân 2-9', op: '*' },
+    { name: 'Toán lớp 4: Phép chia cơ bản', op: '/' },
+    { name: 'Toán lớp 4: Phân số cơ bản', op: 'frac' },
+    { name: 'Toán lớp 4: Hình học (Chu vi, Diện tích)', op: 'geo' }
 ];
 
 const ENG_TOPICS = [
-    'Động vật hoang dã', 'Cơ thể người', 'Trái cây & Rau củ', 
-    'Nghề nghiệp', 'Màu sắc & Hình khối', 'Gia đình', 'Phương tiện giao thông'
+    'Family & Friends 3: Ôn tập', 'Family & Friends 4: Từ vựng mới', 
+    'Chương trình tiếng Anh TPHCM: Chủ đề Gia đình', 'Chương trình tiếng Anh TPHCM: Chủ đề Trường học',
+    'Chương trình tiếng Anh TPHCM: Chủ đề Sở thích', 'Giao tiếp hàng ngày', 'Ngữ pháp cơ bản lớp 4'
 ];
 
 const VIE_TOPICS = [
@@ -50,8 +51,10 @@ const SCI_TOPICS = [
 ];
 
 const DRAW_TOPICS = [
-    'Nét cơ bản', 'Gương mặt Chibi', 'Con vật đơn giản', 
-    'Nhân vật Conan', 'Trái cây phổ biến', 'Dáng người đứng/ngồi'
+    'Tập những nét cơ bản', 'Nhân vật Conan', 'Nhân vật Poca Poca', 
+    'Một số nhân vật cartoon phổ biến', 'Chi tiết cơ thể người: mặt, đầu',
+    'Chi tiết cơ thể người: tay chân, tóc', 'Chi tiết cơ thể người: áo, váy', 
+    'Dáng người đứng/ngồi', 'Con vật đơn giản', 'Chibi', 'Trái cây phổ biến'
 ];
 
 const IT_TOPICS = [
