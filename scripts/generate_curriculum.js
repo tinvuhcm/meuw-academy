@@ -33,9 +33,8 @@ function getWeightedSubject() {
     const r = Math.random() * 100;
     if (r < 25) return 'math';
     if (r < 50) return 'sci';
-    if (r < 70) return 'eng';
-    if (r < 85) return 'vie';
-    if (r < 95) return 'draw';
+    if (r < 75) return 'eng';
+    if (r < 95) return 'vie';
     return 'it';
 }
 

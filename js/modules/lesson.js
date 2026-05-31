@@ -166,9 +166,8 @@ export function renderLesson(params) {
     const compBox = el('div', { class: 'flex flex-col items-center justify-center flex-1 text-center py-10' });
     
     const title = el('h2', { class: 'completion-title font-display text-4xl text-méo-purple mb-4' }, 'Hoàn thành!');
-    const xpText = el('div', { class: 'text-2xl font-bold text-warning mb-8 flex items-center gap-2' }, 
-      isAlreadyCompleted ? `Ôn tập hoàn tất! 🌟` : `+${xpEarnedTotal} ⭐ <span class="text-3xl">🌟</span>`
-    );
+    const xpText = el('div', { class: 'text-2xl font-bold text-warning mb-8 flex items-center gap-2 justify-center' });
+    xpText.innerHTML = isAlreadyCompleted ? `Ôn tập hoàn tất! 🌟` : `+${xpEarnedTotal} ⭐ <span class="text-3xl">🌟</span>`;
     
     // Check if badges were earned
     const newBadges = State.checkAndAwardBadges();
