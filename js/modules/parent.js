@@ -328,6 +328,19 @@ function renderSettingsTab(container) {
 
   wrap.appendChild(pinArea);
 
+  // 4. DEV Tool
+  const devArea = el('div', { class: 'mt-8 p-4 bg-yellow-100 border-2 border-yellow-400 rounded-xl' });
+  devArea.innerHTML = '<h3 class="font-bold text-lg mb-2 text-yellow-800">🛠️ Công cụ Phát triển (Dev Mode)</h3><p class="text-sm mb-4 text-yellow-700">Dùng để test: Xóa sạch 100% dữ liệu App (LocalStorage).</p>';
+  const hardResetBtn = el('button', { class: 'btn bg-red-500 hover:bg-red-600 text-white border-none text-sm px-4 py-2 rounded-lg font-bold' }, 'Xóa Toàn Bộ Dữ Liệu App (Hard Reset)');
+  hardResetBtn.addEventListener('click', () => {
+    if (confirm('BẠN CÓ CHẮC KHÔNG? Toàn bộ LocalStorage sẽ bị xóa sạch, app sẽ quay về trạng thái như mới cài đặt.')) {
+      localStorage.clear();
+      window.location.reload();
+    }
+  });
+  devArea.appendChild(hardResetBtn);
+  wrap.appendChild(devArea);
+
   container.appendChild(wrap);
 }
 

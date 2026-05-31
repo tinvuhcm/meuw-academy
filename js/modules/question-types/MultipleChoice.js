@@ -7,6 +7,7 @@ import { el, animateClass, sleep, shuffle } from '../../utils.js';
 import { triggerMascot } from '../../mascot.js';
 import { Audio } from '../../audio.js';
 import State from '../../state.js';
+import { createScratchpad } from '../../scratchpad.js';
 
 /**
  * Render Multiple Choice Question
@@ -21,6 +22,13 @@ export function renderMultipleChoice(q, onComplete) {
   const title = el('h2', { class: 'question-title text-gradient font-display text-2xl' }, q.question);
   container.appendChild(title);
 
+  // 1.5 Passage
+  if (q.passage) {
+    const passageBox = el('div', { class: 'passage-box mb-4 p-4 bg-surface border-2 border-border rounded-xl text-text leading-relaxed text-sm max-h-[200px] overflow-y-auto italic' });
+    passageBox.innerHTML = q.passage;
+    container.appendChild(passageBox);
+  }
+
   // 2. Illustration (SVG string or key)
   if (q.illustration) {
     const illusWrapper = el('div', { class: 'mc-illustration' });
@@ -33,6 +41,12 @@ export function renderMultipleChoice(q, onComplete) {
   const shuffledOptions = q.shuffle !== false ? shuffle(q.options) : [...q.options];
   const optionBtns = [];
   let isAnswered = false;
+
+  // 4. Scratchpad (if Math)
+  if (q.isMath) {
+    const scratchpad = createScratchpad();
+    container.appendChild(scratchpad);
+  }
 
   shuffledOptions.forEach((optText) => {
     const isCorrect = optText === q.answer;

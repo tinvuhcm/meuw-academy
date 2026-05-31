@@ -104,6 +104,7 @@ function generateMathQuestions(topic, count) {
             const ft = randomPick(fracTypes);
             questions.push({
                 type: 'multiple-choice',
+                isMath: true,
                 question: ft.q,
                 options: shuffle([...ft.opts]),
                 answer: ft.ans,
@@ -114,6 +115,7 @@ function generateMathQuestions(topic, count) {
             const c = randomInt(3, 15);
             questions.push({
                 type: 'multiple-choice',
+                isMath: true,
                 question: `Tính chu vi hình vuông có cạnh là ${c}cm?`,
                 illustration: `<div class="w-32 h-32 bg-yellow-200 border-4 border-yellow-500 mx-auto flex items-center justify-center font-bold">${c}cm</div>`,
                 options: shuffle([`${c*4}cm`, `${c*4 + randomInt(1,5)}cm`, `${c*2}cm`, `${c*c}cm`]),
@@ -126,6 +128,7 @@ function generateMathQuestions(topic, count) {
         if (type === 'fill-blank') {
             questions.push({
                 type: 'fill-blank',
+                isMath: true,
                 question: qText,
                 text: `${eq} = [   ]`,
                 answer: ans.toString(),
@@ -134,6 +137,7 @@ function generateMathQuestions(topic, count) {
         } else {
             questions.push({
                 type: 'multiple-choice',
+                isMath: true,
                 question: qText,
                 options: shuffle([
                     ans.toString(),
@@ -168,14 +172,17 @@ function generateEngQuestionsFallback(dict, count) {
         const word = randomPick(dict);
         
         if (type === 'drag-match') {
-            const word2 = randomPick(dict.filter(w => w.en !== word.en)) || dict[0];
+            const numPairs = Math.min(dict.length, 6);
+            const selectedWords = shuffle([...dict]).slice(0, numPairs);
+            const pairs = selectedWords.map((w, index) => ({
+                id: `pair-${i}-${index}`,
+                left: w.en,
+                right: w.vi
+            }));
             questions.push({
                 type: 'drag-match',
                 question: 'Kéo từ tiếng Anh tương ứng với nghĩa tiếng Việt:',
-                pairs: [
-                    { left: word.en, right: word.vi },
-                    { left: word2.en, right: word2.vi }
-                ]
+                pairs: pairs
             });
         } else if (type === 'fill-blank-en' && word.en.length > 3) {
             // Remove one random letter
@@ -229,6 +236,7 @@ function generateDataDictQuestions(dictBank, topic, count) {
         questions.push({
             type: 'multiple-choice',
             question: qData.q,
+            passage: qData.passage || null,
             options: shuffle([...qData.options]),
             answer: qData.ans,
             explanation: qData.explanation || `Tuyệt vời! Đáp án đúng là ${qData.ans}.`
@@ -237,37 +245,48 @@ function generateDataDictQuestions(dictBank, topic, count) {
     return questions;
 }
 
-function generateModule(dayIndex, session, moduleIdx) {
+function generateModule(dayIndex, session, moduleIdx, usedTopics) {
     let subject = getWeightedSubject();
     let topicName = '';
     let topicObj = null;
     let questions = [];
 
-    // Number of questions = 10, except drawing which is 1
     const numQ = subject === 'draw' ? 1 : QUESTIONS_PER_MODULE;
 
     if (subject === 'math') {
-        topicObj = randomPick(MATH_TOPICS);
+        const available = MATH_TOPICS.filter(t => !usedTopics.math.includes(t.name));
+        topicObj = randomPick(available) || randomPick(MATH_TOPICS);
         topicName = topicObj.name;
+        usedTopics.math.push(topicName);
         questions = generateMathQuestions(topicObj, numQ);
     } else if (subject === 'eng') {
-        topicName = randomPick(ENG_TOPICS) || 'Trái cây & Rau củ';
+        const available = ENG_TOPICS.filter(t => !usedTopics.eng.includes(t));
+        topicName = randomPick(available) || randomPick(ENG_TOPICS);
+        usedTopics.eng.push(topicName);
         topicObj = topicName;
         questions = generateEngQuestions(topicName, numQ);
     } else if (subject === 'vie') {
-        topicName = randomPick(VIE_TOPICS) || 'Từ trái nghĩa';
+        const available = VIE_TOPICS.filter(t => !usedTopics.vie.includes(t));
+        topicName = randomPick(available) || randomPick(VIE_TOPICS);
+        usedTopics.vie.push(topicName);
         topicObj = topicName;
         questions = generateDataDictQuestions(VIE_DICT, topicName, numQ);
     } else if (subject === 'sci') {
-        topicName = randomPick(SCI_TOPICS) || 'Hệ Mặt Trời';
+        const available = SCI_TOPICS.filter(t => !usedTopics.sci.includes(t));
+        topicName = randomPick(available) || randomPick(SCI_TOPICS);
+        usedTopics.sci.push(topicName);
         topicObj = topicName;
         questions = generateDataDictQuestions(SCI_DICT, topicName, numQ);
     } else if (subject === 'it') {
-        topicName = randomPick(IT_TOPICS) || 'Máy tính là gì?';
+        const available = IT_TOPICS.filter(t => !usedTopics.it.includes(t));
+        topicName = randomPick(available) || randomPick(IT_TOPICS);
+        usedTopics.it.push(topicName);
         topicObj = topicName;
         questions = generateDataDictQuestions(IT_DICT, topicName, numQ);
     } else if (subject === 'draw') {
-        topicName = randomPick(DRAW_TOPICS);
+        const available = DRAW_TOPICS.filter(t => !usedTopics.draw.includes(t));
+        topicName = randomPick(available) || randomPick(DRAW_TOPICS);
+        usedTopics.draw.push(topicName);
         topicObj = topicName;
         questions = [{
             type: 'drawing-canvas',
@@ -297,11 +316,14 @@ function generateDay(dayIndex) {
         modules: []
     };
 
+    let usedTopicsAM = { math: [], eng: [], vie: [], sci: [], it: [], draw: [] };
+    let usedTopicsPM = { math: [], eng: [], vie: [], sci: [], it: [], draw: [] };
+
     for (let i = 1; i <= MODULES_AM; i++) {
-        day.modules.push(generateModule(dayIndex, 'am', i));
+        day.modules.push(generateModule(dayIndex, 'am', i, usedTopicsAM));
     }
     for (let i = 1; i <= MODULES_PM; i++) {
-        day.modules.push(generateModule(dayIndex, 'pm', i));
+        day.modules.push(generateModule(dayIndex, 'pm', i, usedTopicsPM));
     }
 
     return day;

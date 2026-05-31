@@ -16,12 +16,21 @@ function generateMathQuestion() {
     const a = randomInt(10, 99) * multiplier;
     const b = randomInt(10, 99) * multiplier;
     const isAdd = Math.random() > 0.5;
-    const ans = isAdd ? a + b : Math.abs(a - b);
-    const eq = `${a} ${isAdd ? '+' : '-'} ${isAdd ? b : Math.min(a, b)}`;
+    let eq, ans;
+    if (isAdd) {
+        ans = a + b;
+        eq = `${a} + ${b}`;
+    } else {
+        let max = Math.max(a, b);
+        let min = Math.min(a, b);
+        ans = max - min;
+        eq = `${max} - ${min}`;
+    }
 
     if (type === 'fill-blank') {
         return {
             type: 'fill-blank',
+            isMath: true,
             question: `Điền kết quả đúng vào ô trống:`,
             text: `${eq} = [   ]`,
             illustration: `<div class="text-center text-4xl my-4">🧮 ${eq}</div>`,
@@ -29,18 +38,24 @@ function generateMathQuestion() {
             explanation: `Đáp án đúng là ${ans}.`
         };
     } else if (type === 'drag-match') {
+        const fakeOpt1 = ans + 10;
+        const fakeOpt2 = ans > 5 ? ans - 5 : ans + 5;
+        const fakeOpt3 = ans + 20;
         return {
             type: 'drag-match',
             question: 'Kéo kết quả vào đúng phép tính:',
             pairs: [
-                { left: eq, right: ans.toString() },
-                { left: `${a + 10} + 10`, right: (a + 20).toString() }
+                { id: `m1-${Date.now()}`, left: eq, right: ans.toString() },
+                { id: `m2-${Date.now()}`, left: `${fakeOpt1} + 0`, right: fakeOpt1.toString() },
+                { id: `m3-${Date.now()}`, left: `${fakeOpt2} + 0`, right: fakeOpt2.toString() },
+                { id: `m4-${Date.now()}`, left: `${fakeOpt3} + 0`, right: fakeOpt3.toString() }
             ]
         };
     }
 
     return {
         type: 'multiple-choice',
+        isMath: true,
         question: `Hãy tính: ${eq}`,
         illustration: `<div class="text-center text-4xl my-4">🧮 ${eq}</div>`,
         options: [
@@ -55,7 +70,7 @@ function generateMathQuestion() {
 }
 
 function generateEngQuestion() {
-    const types = ['multiple-choice', 'speech-practice', 'drag-match'];
+    const types = ['multiple-choice', 'drag-match'];
     const type = randomPick(types);
     
     const words = [
@@ -68,22 +83,18 @@ function generateEngQuestion() {
     ];
     const word = randomPick(words);
     
-    if (type === 'speech-practice') {
-        return {
-            type: 'speech-practice',
-            question: 'Hãy đọc to từ vựng sau:',
-            targetText: word.en,
-            hint: `Nghĩa là: ${word.vi}`
-        };
-    } else if (type === 'drag-match') {
-        const w2 = randomPick(words.filter(w => w !== word));
+    if (type === 'drag-match') {
+        const numPairs = 4;
+        const selectedWords = [...words].sort(() => 0.5 - Math.random()).slice(0, numPairs);
+        const pairs = selectedWords.map((w, i) => ({
+            id: `prac-${Date.now()}-${i}`,
+            left: w.en,
+            right: w.vi
+        }));
         return {
             type: 'drag-match',
             question: 'Kéo từ tiếng Anh tương ứng với nghĩa tiếng Việt:',
-            pairs: [
-                { left: word.en, right: word.vi },
-                { left: w2.en, right: w2.vi }
-            ]
+            pairs: pairs
         };
     }
 

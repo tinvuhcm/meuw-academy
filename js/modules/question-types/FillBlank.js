@@ -7,6 +7,7 @@ import { el, animateClass, sleep } from '../../utils.js';
 import { triggerMascot } from '../../mascot.js';
 import { Audio } from '../../audio.js';
 import State from '../../state.js';
+import { createScratchpad } from '../../scratchpad.js';
 
 export function renderFillBlank(q, onComplete) {
   const container = el('div', { class: 'question-wrapper fb-wrapper' });
@@ -60,6 +61,11 @@ export function renderFillBlank(q, onComplete) {
   });
 
   container.appendChild(fieldsArea);
+
+  if (q.isMath) {
+    const scratchpad = createScratchpad();
+    container.appendChild(scratchpad);
+  }
 
   // 4. Actions
   const actionArea = el('div', { class: 'flex-between mt-6' });

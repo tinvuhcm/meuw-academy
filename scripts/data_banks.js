@@ -30,10 +30,30 @@ const VIE_DICT = {
         {q: 'Từ nào sau đây là chỉ hoạt động?', ans: 'Chạy', options: ['Chạy', 'Bàn', 'Đẹp', 'Xanh']}
     ],
     'Đọc hiểu: Chuyện cổ tích': [
-        {q: 'Trong truyện Tấm Cám, Tấm dùng con vật gì để nuôi trong giếng?', ans: 'Cá Bống', options: ['Cá Chép', 'Cá Bống', 'Cá Trê', 'Cá Quả']},
-        {q: 'Ai là người đã giúp đỡ Thạch Sanh đánh bại chằn tinh?', ans: 'Tự mình đánh bại', options: ['Lý Thông', 'Công chúa', 'Tự mình đánh bại', 'Nhà vua']},
-        {q: 'Cây khế trong truyện cổ tích "Ăn khế trả vàng" được chim gì đến ăn?', ans: 'Chim Phượng Hoàng', options: ['Chim Đại Bàng', 'Chim Phượng Hoàng', 'Chim Sẻ', 'Chim Bồ Câu']},
-        {q: 'Nhân vật Thánh Gióng cưỡi con vật gì ra trận?', ans: 'Ngựa sắt', options: ['Voi', 'Trâu', 'Ngựa sắt', 'Rồng']}
+        {
+            passage: 'Tấm Cám là câu chuyện cổ tích về một cô gái hiền lành tên Tấm. Tấm bị mẹ con cám bắt nạt, phải làm lụng vất vả. Một hôm, Tấm bắt được một con cá Bống nhỏ và lén đem thả xuống giếng để nuôi. Ngày ngày, Tấm đều dành một phần cơm của mình mang ra giếng gọi Bống lên ăn.',
+            q: 'Trong truyện Tấm Cám, Tấm dùng con vật gì để nuôi trong giếng?', 
+            ans: 'Cá Bống', 
+            options: ['Cá Chép', 'Cá Bống', 'Cá Trê', 'Cá Quả']
+        },
+        {
+            passage: 'Thạch Sanh là một chàng trai mồ côi, có sức khỏe phi thường và một cây búa thần. Trong làng có một con chằn tinh hung dữ chuyên bắt người ăn thịt. Lý Thông lừa Thạch Sanh đi nộp mạng thay mình. Nhưng với lòng dũng cảm, Thạch Sanh đã tự mình cầm búa đánh bại chằn tinh, cứu giúp dân làng.',
+            q: 'Ai là người đã giúp đỡ Thạch Sanh đánh bại chằn tinh?', 
+            ans: 'Tự mình đánh bại', 
+            options: ['Lý Thông', 'Công chúa', 'Tự mình đánh bại', 'Nhà vua']
+        },
+        {
+            passage: 'Có hai anh em nhà nọ, người anh tham lam lấy hết tài sản, chỉ chia cho người em một cây khế nhỏ. Người em chăm chỉ chăm sóc cây khế. Khi khế chín, một con chim Phượng Hoàng khổng lồ bay đến ăn khế. Chim hứa sẽ trả vàng cho người em bằng câu nói: "Ăn một quả, trả cục vàng, may túi ba gang, mang đi mà đựng".',
+            q: 'Cây khế trong truyện cổ tích "Ăn khế trả vàng" được chim gì đến ăn?', 
+            ans: 'Chim Phượng Hoàng', 
+            options: ['Chim Đại Bàng', 'Chim Phượng Hoàng', 'Chim Sẻ', 'Chim Bồ Câu']
+        },
+        {
+            passage: 'Vào đời Hùng Vương thứ 6, có một cậu bé tên Gióng, lên ba tuổi mà không biết nói biết cười. Khi giặc Ân sang xâm lược, Gióng bỗng vươn vai lớn nhanh như thổi, trở thành tráng sĩ. Gióng mặc áo giáp sắt, đội nón sắt, cầm roi sắt, và cưỡi trên một con ngựa sắt phun ra lửa để đi đánh giặc.',
+            q: 'Nhân vật Thánh Gióng cưỡi con vật gì ra trận?', 
+            ans: 'Ngựa sắt', 
+            options: ['Voi', 'Trâu', 'Ngựa sắt', 'Rồng']
+        }
     ],
     'Cấu tạo câu': [
         {q: 'Chủ ngữ trong câu: "Con mèo đang ngủ trên ghế" là gì?', ans: 'Con mèo', options: ['Con mèo', 'đang ngủ', 'trên ghế', 'mèo đang ngủ']},
