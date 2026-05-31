@@ -4,7 +4,7 @@
 
 ## 🌟 Demo
 
-**Live:** https://méo-academy.vercel.app
+**Live:** https://mew-academy.vercel.app
 
 ## 📸 Screenshots
 

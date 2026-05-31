@@ -47,21 +47,14 @@ export function renderSession(params) {
     // Determine status
     let statusClass = '';
     let statusIcon = '';
-    let canClick = true;
-
     if (isCompleted) {
       statusClass = 'bg-surface border-border opacity-70';
-      statusIcon = '<span class="text-correct">✓ Xong</span>';
-    } else if (!foundFirstIncomplete) {
-      // Current active module
-      statusClass = 'bg-surface border-méo-purple shadow-md transform scale-102';
-      statusIcon = '<span class="text-méo-purple animate-pulse">▶ Đang học</span>';
-      foundFirstIncomplete = true;
+      statusIcon = '<span class="text-correct font-bold">✓ Xong</span>';
     } else {
-      // Locked / queued
-      statusClass = 'bg-bg-2 border-border opacity-50';
-      statusIcon = '<span class="text-text-muted">🔒 Chờ</span>';
-      canClick = false; // enforce sequential play
+      // Unlocked, ready to learn
+      statusClass = 'bg-surface border-méo-purple shadow-sm hover:shadow-md transition-all hover:-translate-y-1';
+      statusIcon = '<span class="text-méo-purple font-bold">▶ Học ngay</span>';
+      foundFirstIncomplete = true;
     }
 
     const card = el('div', { class: `card flex items-center justify-between p-4 cursor-pointer transition-all ${statusClass}` });
@@ -85,11 +78,12 @@ export function renderSession(params) {
     card.appendChild(right);
 
     card.addEventListener('click', () => {
-      if (!canClick && !isCompleted) {
-        Audio.wrong();
-        return; // wait for turn
+      if (isCompleted) {
+        // Can optionally allow replay, but for now we just play sound
+        Audio.click();
+      } else {
+        Audio.click();
       }
-      Audio.click();
       Router.navigate(`/lesson/${dayId}/${m.id}`);
     });
 

@@ -16,8 +16,8 @@ export function renderDashboard() {
   const header = el('header', { class: 'app-header' });
   
   const headerLeft = el('div', { class: 'header-left' });
-  const logo = el('div', { class: 'logo-link cursor-pointer' });
-  logo.innerHTML = `<img src="assets/icons/icon.svg" alt="Méo Logo" width="32" height="32" /><span class="logo-text">Méo</span>`;
+  const logo = el('div', { class: 'logo-link cursor-pointer flex items-center gap-2' });
+  logo.innerHTML = `<img src="assets/images/mascot_avatar.png" alt="Méo Logo" class="w-10 h-10 object-cover rounded-full border-2 border-méo-purple shadow-sm" /><span class="logo-text font-display font-bold text-xl text-méo-purple">Méo</span>`;
   logo.addEventListener('click', () => Router.navigate('/'));
   
   headerLeft.appendChild(logo);
@@ -67,9 +67,9 @@ export function renderDashboard() {
   // we'll append it before container in the main app layout. Here we just return it.
   
   // 2. Hero Section (Mascot + Greeting)
-  const hero = el('section', { class: 'dashboard-hero flex flex-col md:flex-row items-center gap-6 bg-gradient-hero rounded-3xl p-6 md:p-10 shadow-sm mb-8' });
+  const hero = el('section', { class: 'dashboard-hero flex flex-col md:flex-row items-center gap-6 bg-gradient-hero rounded-3xl p-6 md:p-10 shadow-sm mb-8 relative overflow-hidden' });
   
-  const mascotArea = el('div', { class: 'hero-mascot-area mascot-xl relative shrink-0' });
+  const mascotArea = el('div', { class: 'hero-mascot-area w-48 h-48 md:w-64 md:h-64 relative shrink-0 z-10' });
   mascotArea.innerHTML = `
     <div class="mascot-container" data-mascot>
       <!-- SVG will be injected by Mascot.register() -->
@@ -77,8 +77,8 @@ export function renderDashboard() {
     <div class="speech-bubble" data-speech-bubble></div>
   `;
   
-  const greetingArea = el('div', { class: 'hero-greeting-area flex-1 text-center md:text-left' });
-  const greetingText = el('h1', { class: 'hero-greeting font-display text-4xl text-text mb-2' }, getGreetingLine());
+  const greetingArea = el('div', { class: 'hero-greeting-area flex-1 text-center md:text-left z-10' });
+  const greetingText = el('h1', { class: 'hero-greeting font-display text-3xl md:text-4xl text-text mb-2' }, getGreetingLine());
   const dayText = el('p', { class: 'hero-day-info text-text-muted text-lg font-bold' }, `${formatToday()} • Ngày thứ ${State.getCurrentDay()}`);
   
   // XP Progress
@@ -270,7 +270,6 @@ function createSessionCard(title, emoji, modules, sessionId) {
   }, isAllDone ? 'Hoàn thành!' : (completedCount === 0 ? 'Bắt đầu' : 'Tiếp tục'));
 
   btn.addEventListener('click', () => {
-    if (isAllDone) return; // Do nothing if done, or maybe view summary
     Router.navigate(`/session/${State.getCurrentDay()}/${sessionId}`);
   });
 

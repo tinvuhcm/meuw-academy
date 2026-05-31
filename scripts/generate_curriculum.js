@@ -2,8 +2,9 @@ const fs = require('fs');
 const path = require('path');
 
 const NUM_DAYS = 90;
-const MODULES_AM = 24;
-const MODULES_PM = 18;
+const MODULES_AM = 12; // 120 mins
+const MODULES_PM = 9;  // 90 mins
+const QUESTIONS_PER_MODULE = 10;
 
 function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -13,44 +14,105 @@ function randomPick(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
 
-function generateMathQuestion(day) {
+// WEIGHTED PICKER
+function getWeightedSubject() {
+    const r = Math.random() * 100;
+    if (r < 30) return 'math';
+    if (r < 55) return 'eng';
+    if (r < 70) return 'vie';
+    if (r < 90) return 'sci';
+    if (r < 95) return 'draw';
+    return 'it';
+}
+
+const MATH_TOPICS = [
+    { name: 'Phép cộng hàng ngàn', op: '+' },
+    { name: 'Phép trừ hàng ngàn', op: '-' },
+    { name: 'Bảng nhân 2-9', op: '*' },
+    { name: 'Phép chia cơ bản', op: '/' },
+    { name: 'Phân số cơ bản', op: 'frac' },
+    { name: 'Hình học (Chu vi, Diện tích)', op: 'geo' }
+];
+
+const ENG_TOPICS = [
+    'Động vật hoang dã', 'Cơ thể người', 'Trái cây & Rau củ', 
+    'Nghề nghiệp', 'Màu sắc & Hình khối', 'Gia đình', 'Phương tiện giao thông'
+];
+
+const VIE_TOPICS = [
+    'Đọc hiểu: Chuyện cổ tích', 'Chính tả: Phân biệt ch/tr', 'Từ trái nghĩa, đồng nghĩa', 
+    'Cấu tạo câu: Chủ ngữ - Vị ngữ', 'Luyện từ và câu'
+];
+
+const SCI_TOPICS = [
+    'Vương Quốc Động Vật', 'Trái Đất & Thiên Nhiên', 'Khoa Học & Phát Minh',
+    'Cơ thể người', 'Hệ Mặt Trời', 'Bảo vệ Môi trường', 'Thế giới Thực vật'
+];
+
+const DRAW_TOPICS = [
+    'Nét cơ bản', 'Gương mặt Chibi', 'Con vật đơn giản', 
+    'Nhân vật Conan', 'Trái cây phổ biến', 'Dáng người đứng/ngồi'
+];
+
+const IT_TOPICS = [
+    'Máy tính là gì?', 'Sử dụng chuột và bàn phím', 'An toàn trên mạng', 
+    'Tìm kiếm thông tin'
+];
+
+function generateMathQuestion(topic) {
     const types = ['multiple-choice', 'fill-blank', 'drag-match'];
     const type = randomPick(types);
-    const a = randomInt(10, 99) * (day % 10 + 1);
-    const b = randomInt(10, 99) * (day % 10 + 1);
-    const isAdd = Math.random() > 0.5;
-    const ans = isAdd ? a + b : Math.abs(a - b);
-    const eq = `${a} ${isAdd ? '+' : '-'} ${isAdd ? b : Math.min(a,b)}`;
+    
+    let a, b, eq, ans;
+    if (topic.op === '+') {
+        a = randomInt(1000, 9000); b = randomInt(100, 9000);
+        ans = a + b; eq = `${a} + ${b}`;
+    } else if (topic.op === '-') {
+        a = randomInt(1000, 9000); b = randomInt(100, a);
+        ans = a - b; eq = `${a} - ${b}`;
+    } else if (topic.op === '*') {
+        a = randomInt(2, 9); b = randomInt(10, 99);
+        ans = a * b; eq = `${a} × ${b}`;
+    } else if (topic.op === '/') {
+        b = randomInt(2, 9); ans = randomInt(10, 99);
+        a = b * ans; eq = `${a} : ${b}`;
+    } else if (topic.op === 'frac') {
+        return {
+            type: 'multiple-choice',
+            question: 'Phân số nào lớn hơn?',
+            illustration: `<div class="text-4xl text-center">1/2 hay 1/4?</div>`,
+            options: ['1/2', '1/4', 'Bằng nhau', 'Không thể so sánh'],
+            answer: '1/2',
+            explanation: '1/2 là một nửa, lớn hơn 1/4 là một phần tư.'
+        };
+    } else {
+        return {
+            type: 'multiple-choice',
+            question: 'Tính chu vi hình vuông cạnh 5cm?',
+            illustration: `<div class="w-32 h-32 bg-yellow-200 border-4 border-yellow-500 mx-auto flex items-center justify-center font-bold">5cm</div>`,
+            options: ['20cm', '25cm', '10cm', '15cm'],
+            answer: '20cm',
+            explanation: 'Chu vi = cạnh x 4 = 5 x 4 = 20.'
+        };
+    }
 
     if (type === 'fill-blank') {
         return {
             type: 'fill-blank',
-            question: `Điền kết quả đúng vào ô trống:`,
+            question: `Tính: ${eq} = ?`,
             text: `${eq} = [   ]`,
-            illustration: `<div class="text-center text-4xl my-4">🧮 ${eq}</div>`,
             answer: ans.toString(),
             explanation: `Đáp án đúng là ${ans}.`
         };
-    } else if (type === 'drag-match') {
-        return {
-            type: 'drag-match',
-            question: 'Kéo kết quả vào đúng phép tính:',
-            pairs: [
-                { left: eq, right: ans.toString() },
-                { left: `${a+10} + 10`, right: (a+20).toString() }
-            ]
-        };
     }
 
-    // Default multiple-choice
     return {
         type: 'multiple-choice',
-        question: `Hãy tính: ${eq}`,
-        illustration: `<div class="text-center text-4xl my-4">🧮 ${eq}</div>`,
+        question: `Kết quả của ${eq} là bao nhiêu?`,
         options: [
             ans.toString(),
-            (ans + 10).toString(),
-            (ans - 10).toString(),
+            (ans + randomInt(1, 10)).toString(),
+            (ans - randomInt(1, 10)).toString(),
             (ans + 100).toString()
         ].sort(() => 0.5 - Math.random()),
         answer: ans.toString(),
@@ -58,103 +120,111 @@ function generateMathQuestion(day) {
     };
 }
 
-function generateEngQuestion() {
-    const types = ['multiple-choice', 'speech-practice', 'drag-match'];
-    const type = randomPick(types);
+function generateEngQuestion(topic) {
+    const type = randomPick(['multiple-choice', 'speech-practice']);
     
-    const words = [
-        { en: 'Elephant', vi: 'Con voi' },
-        { en: 'Lion', vi: 'Sư tử' },
-        { en: 'Tiger', vi: 'Con hổ' },
-        { en: 'Monkey', vi: 'Con khỉ' },
-        { en: 'Giraffe', vi: 'Hươu cao cổ' },
-        { en: 'Zebra', vi: 'Ngựa vằn' }
-    ];
-    const word = randomPick(words);
-    
+    // Simplistic mock data
     if (type === 'speech-practice') {
         return {
             type: 'speech-practice',
-            question: 'Hãy đọc to từ vựng sau:',
-            targetText: word.en,
-            hint: `Nghĩa là: ${word.vi}`
-        };
-    } else if (type === 'drag-match') {
-        const w2 = randomPick(words.filter(w => w !== word));
-        return {
-            type: 'drag-match',
-            question: 'Kéo từ tiếng Anh tương ứng với nghĩa tiếng Việt:',
-            pairs: [
-                { left: word.en, right: word.vi },
-                { left: w2.en, right: w2.vi }
-            ]
+            question: `Đọc to từ vựng chủ đề: ${topic}`,
+            targetText: 'Hello',
+            hint: `Thử đọc rõ chữ nhé!`
         };
     }
 
     return {
         type: 'multiple-choice',
-        question: `Từ "${word.en}" có nghĩa tiếng Việt là gì?`,
-        illustration: `<div class="text-center text-4xl my-4">📖 ${word.en}</div>`,
-        options: [
-            word.vi,
-            words[(words.indexOf(word) + 1) % words.length].vi,
-            words[(words.indexOf(word) + 2) % words.length].vi,
-            words[(words.indexOf(word) + 3) % words.length].vi
-        ].sort(() => 0.5 - Math.random()),
-        answer: word.vi,
-        explanation: `"${word.en}" nghĩa là ${word.vi}.`
+        question: `Từ nào thuộc chủ đề ${topic}?`,
+        options: ['Apple', 'Run', 'Blue', 'Cat'].sort(() => 0.5 - Math.random()),
+        answer: 'Apple',
+        explanation: 'Apple là từ đúng.'
     };
 }
 
-function generateCreativeQuestion() {
+function generateGenericQuestion(subject, topic) {
+    return {
+        type: 'multiple-choice',
+        question: `Câu hỏi ôn tập: ${topic}`,
+        options: ['Đáp án A', 'Đáp án đúng', 'Đáp án C', 'Đáp án D'].sort(() => 0.5 - Math.random()),
+        answer: 'Đáp án đúng',
+        explanation: `Tuyệt vời!`
+    };
+}
+
+function generateCreativeQuestion(topic) {
     return {
         type: 'drawing-canvas',
-        question: 'Hãy vẽ một bức tranh thật đẹp để giải lao nhé!',
-        hint: 'Vẽ một con vật mà em thích nhất.'
+        question: `Bé hãy tập vẽ: ${topic}`,
+        hint: `Cố gắng vẽ theo mẫu hoặc tự sáng tạo nhé.`
     };
 }
 
-function generateQuestion(subject, day) {
-    if (Math.random() < 0.05) return generateCreativeQuestion(); // 5% chance of drawing canvas
-    if (subject === 'math') return generateMathQuestion(day);
-    if (subject === 'eng') return generateEngQuestion();
-    return generateMathQuestion(day); 
+function generateQuestion(subject, topic) {
+    if (subject === 'math') return generateMathQuestion(topic);
+    if (subject === 'eng') return generateEngQuestion(topic);
+    if (subject === 'draw') return generateCreativeQuestion(topic);
+    return generateGenericQuestion(subject, topic);
+}
+
+function generateModule(dayIndex, session, moduleIdx) {
+    const subject = getWeightedSubject();
+    let topicName = '';
+    let topicObj = null;
+
+    if (subject === 'math') {
+        topicObj = randomPick(MATH_TOPICS);
+        topicName = topicObj.name;
+    } else if (subject === 'eng') {
+        topicName = randomPick(ENG_TOPICS);
+        topicObj = topicName;
+    } else if (subject === 'vie') {
+        topicName = randomPick(VIE_TOPICS);
+        topicObj = topicName;
+    } else if (subject === 'sci') {
+        topicName = randomPick(SCI_TOPICS);
+        topicObj = topicName;
+    } else if (subject === 'draw') {
+        topicName = randomPick(DRAW_TOPICS);
+        topicObj = topicName;
+    } else {
+        topicName = randomPick(IT_TOPICS);
+        topicObj = topicName;
+    }
+
+    const subTitles = {
+        'math': 'Toán', 'eng': 'Tiếng Anh', 'vie': 'Tiếng Việt',
+        'sci': 'Khoa Học', 'draw': 'Mỹ Thuật', 'it': 'Tin Học'
+    };
+
+    const qList = [];
+    // Number of questions = 10, except drawing which is 1
+    const numQ = subject === 'draw' ? 1 : QUESTIONS_PER_MODULE;
+    for (let i = 0; i < numQ; i++) {
+        qList.push(generateQuestion(subject, topicObj));
+    }
+
+    return {
+        id: `d${dayIndex}-${session}-${moduleIdx}`,
+        session: session,
+        subject: subject,
+        title: `${subTitles[subject]}: ${topicName}`,
+        xp: subject === 'draw' ? 100 : 50,
+        questions: qList
+    };
 }
 
 function generateDay(dayIndex) {
     const day = {
-        title: `Ngày ${dayIndex}: Khám phá tri thức mới`,
+        title: `Ngày ${dayIndex}: Khám phá tri thức`,
         modules: []
     };
 
     for (let i = 1; i <= MODULES_AM; i++) {
-        const subject = i % 2 === 0 ? 'math' : 'eng';
-        day.modules.push({
-            id: `d${dayIndex}-am-${i}`,
-            session: 'am',
-            subject: subject,
-            title: `Bài học ${subject === 'math' ? 'Toán' : 'Tiếng Anh'} sáng ${i}`,
-            xp: 50,
-            questions: [
-                generateQuestion(subject, dayIndex),
-                generateQuestion(subject, dayIndex)
-            ]
-        });
+        day.modules.push(generateModule(dayIndex, 'am', i));
     }
-
     for (let i = 1; i <= MODULES_PM; i++) {
-        const subject = i % 2 === 0 ? 'math' : 'eng';
-        day.modules.push({
-            id: `d${dayIndex}-pm-${i}`,
-            session: 'pm',
-            subject: subject,
-            title: `Bài học ${subject === 'math' ? 'Toán' : 'Tiếng Anh'} chiều ${i}`,
-            xp: 50,
-            questions: [
-                generateQuestion(subject, dayIndex),
-                generateQuestion(subject, dayIndex)
-            ]
-        });
+        day.modules.push(generateModule(dayIndex, 'pm', i));
     }
 
     return day;

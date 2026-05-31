@@ -21,8 +21,8 @@ export function renderPractice() {
   // Random Practice Banner
   const randomBanner = el('div', { class: 'bg-méo-purple-lt p-6 rounded-2xl flex flex-col md:flex-row items-center gap-6 shadow-sm border border-méo-purple' });
   randomBanner.innerHTML = `
-    <div class="mascot-md shrink-0">
-      <img src="assets/images/meo_thinking_sticker_1780213451318.png" class="w-full h-full object-contain" />
+    <div class="w-48 h-48 md:w-64 md:h-64 shrink-0 mx-auto md:mx-0">
+      <img src="assets/images/meo_thinking_sticker_1780213451318.png" class="w-full h-full object-contain drop-shadow-md" />
     </div>
     <div class="flex-1 text-center md:text-left">
       <h2 class="font-display text-2xl text-méo-purple mb-2">Luyện Tập Vô Hạn 🌟</h2>
