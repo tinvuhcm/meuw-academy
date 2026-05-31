@@ -546,6 +546,15 @@ function resetProfile() {
   commit();
 }
 
+function resetLearningProgress() {
+  const profile = getActiveProfile();
+  profile.currentDay = 1;
+  profile.currentWeek = 1;
+  profile.completedModules = {};
+  profile.dayUnlockedOn = {};
+  commit();
+}
+
 // ============================================
 // ANSWER TRACKING (for accuracy stats)
 // ============================================
@@ -627,6 +636,7 @@ export const State = {
   exportJSON,
   importJSON,
   resetProfile,
+  resetLearningProgress,
 
   // Raw access (use sparingly)
   getState,
