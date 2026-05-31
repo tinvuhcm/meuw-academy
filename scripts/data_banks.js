@@ -63,7 +63,12 @@ const SCI_DICT = {
     'Cơ thể người': [
         {q: 'Cơ quan nào bơm máu đi khắp cơ thể?', ans: 'Trái tim', options: ['Phổi', 'Não', 'Dạ dày', 'Trái tim']},
         {q: 'Con người hít khí gì để sống?', ans: 'Oxy', options: ['Carbon Dioxide', 'Oxy', 'Nito', 'Hydro']},
-        {q: 'Bộ phận nào giúp cơ thể giữ thăng bằng?', ans: 'Tai', options: ['Mắt', 'Tai', 'Chân', 'Mũi']}
+        {
+            q: 'Bộ phận nào giúp cơ thể giữ thăng bằng?', 
+            ans: 'Tai', 
+            options: ['Mắt', 'Tai', 'Chân', 'Mũi'],
+            explanation: 'Tai giúp chúng ta giữ thăng bằng nhờ một "máy cảm biến" đặc biệt nằm sâu bên trong tai, gọi là <b>hệ thống tiền đình</b>.<br/><br/>Bé hãy tưởng tượng bên trong tai có một mê cung nhỏ chứa đầy nước và những sợi lông siêu nhỏ:<br/>- <b>Khi bé chuyển động:</b> Lúc bé chạy nhảy, cúi đầu hoặc quay người, dòng nước bên trong tai sẽ sóng sánh và chuyển động theo.<br/>- <b>Sợi lông lay động:</b> Dòng nước chảy làm các sợi lông nhỏ xíu bị nghiêng ngả giống như rặng rong biển dưới đáy biển khi có sóng.<br/>- <b>Báo tin cho não:</b> Các sợi lông này ngay lập tức gửi "tin nhắn" lên bộ não để thông báo sự thay đổi.<br/>- <b>Não giữ thăng bằng:</b> Nhận được tin, não sẽ điều khiển tay chân và các cơ bắp điều chỉnh tư thế ngay lập tức để bé không bị ngã.<br/><br/><i>Một ví dụ vui: Khi bé chơi trò xoay tròn rồi dừng lại, bé sẽ thấy chóng mặt vì dù bé đã đứng yên, dòng nước bên trong tai vẫn đang tiếp tục sóng sánh theo quán tính, làm não bị "hiểu lầm" là bé vẫn đang xoay đấy!</i>'
+        }
     ]
 };
 

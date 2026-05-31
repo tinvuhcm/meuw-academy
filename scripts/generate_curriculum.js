@@ -84,8 +84,15 @@ function generateMathQuestions(topic, count) {
         } else if (topic.op === 'quick') {
             a = randomInt(1, 9) * 10; b = randomInt(1, 9) * 10;
             const isAdd = Math.random() > 0.5;
-            ans = isAdd ? a + b : Math.abs(a - b);
-            eq = `${a} ${isAdd ? '+' : '-'} ${isAdd ? b : Math.min(a,b)}`;
+            if (isAdd) {
+                ans = a + b;
+                eq = `${a} + ${b}`;
+            } else {
+                let max = Math.max(a, b);
+                let min = Math.min(a, b);
+                ans = max - min;
+                eq = `${max} - ${min}`;
+            }
             qText = `Tính nhẩm: ${eq}`;
         } else if (topic.op === 'frac') {
             const fracTypes = [
@@ -224,7 +231,7 @@ function generateDataDictQuestions(dictBank, topic, count) {
             question: qData.q,
             options: shuffle([...qData.options]),
             answer: qData.ans,
-            explanation: `Tuyệt vời! Đáp án đúng là ${qData.ans}.`
+            explanation: qData.explanation || `Tuyệt vời! Đáp án đúng là ${qData.ans}.`
         });
     }
     return questions;

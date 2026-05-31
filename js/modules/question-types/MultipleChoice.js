@@ -60,8 +60,24 @@ export function renderMultipleChoice(q, onComplete) {
         document.body.appendChild(xpSpan);
         setTimeout(() => xpSpan.remove(), 1000);
 
-        await sleep(1500);
-        onComplete(true, q.xp || 10);
+        // Show Explanation if it's a rich one (length > 60)
+        if (q.explanation && q.explanation.length > 60) {
+          const expBox = el('div', { class: 'explanation-box mt-4 p-4 bg-méo-purple-lt border-2 border-méo-purple rounded-xl text-text leading-relaxed text-sm max-h-[300px] overflow-y-auto' });
+          expBox.innerHTML = `<div class="font-bold text-méo-purple mb-2">💡 Méo bật mí:</div> ${q.explanation}`;
+          container.appendChild(expBox);
+
+          const nextBtnContainer = el('div', { class: 'mt-6 flex justify-center' });
+          const nextBtn = el('button', { class: 'btn btn-cta' }, 'Tiếp tục nha');
+          nextBtn.addEventListener('click', () => {
+            Audio.click();
+            onComplete(true, q.xp || 10);
+          });
+          nextBtnContainer.appendChild(nextBtn);
+          container.appendChild(nextBtnContainer);
+        } else {
+          await sleep(1500);
+          onComplete(true, q.xp || 10);
+        }
       } else {
         // Wrong Answer
         btn.classList.add('wrong');
@@ -75,8 +91,8 @@ export function renderMultipleChoice(q, onComplete) {
 
         // Show Explanation
         if (q.explanation) {
-          const expBox = el('div', { class: 'explanation-box mt-4 p-4 bg-wrong-bg border-2 border-wrong rounded-xl' });
-          expBox.innerHTML = `<strong>💡 Méo giải thích:</strong> ${q.explanation}`;
+          const expBox = el('div', { class: 'explanation-box mt-4 p-4 bg-méo-purple-lt border-2 border-méo-purple rounded-xl text-text leading-relaxed text-sm max-h-[300px] overflow-y-auto' });
+          expBox.innerHTML = `<div class="font-bold text-méo-purple mb-2">💡 Méo bật mí:</div> ${q.explanation}`;
           container.appendChild(expBox);
         }
 
