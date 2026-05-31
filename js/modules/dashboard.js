@@ -196,23 +196,43 @@ export function renderDashboard() {
   extraStrip.appendChild(shopBtn);
   extraStrip.appendChild(custBtn);
   
-  // Practice Strip
-  const practiceStrip = el('div', { class: 'w-full mb-8 relative overflow-hidden bg-méo-purple-lt rounded-2xl p-4 md:p-6 border border-méo-purple shadow-sm flex items-center justify-between' });
+  // Practice & Coloring Strip
+  const bottomGrid = el('div', { class: 'grid gap-4 md:grid-cols-2 w-full mb-8' });
+
+  const practiceStrip = el('div', { class: 'relative overflow-hidden bg-méo-purple-lt rounded-2xl p-4 md:p-6 border border-méo-purple shadow-sm flex items-center justify-between' });
   practiceStrip.innerHTML = `
     <div class="flex-1">
       <h3 class="font-display text-2xl text-méo-purple mb-2">Phòng Ôn Tập</h3>
-      <p class="text-text mb-4">Luyện tập lại kiến thức đã học hoặc thử thách bản thân với chế độ Vô Hạn!</p>
-      <button class="btn btn-primary font-bold text-lg px-8 shadow-md" id="db-practice-btn">Vào Luyện Tập</button>
+      <p class="text-text mb-4 text-sm">Luyện lại kiến thức hoặc thi Vô Hạn!</p>
+      <button class="btn btn-primary font-bold px-6 shadow-md" id="db-practice-btn">Vào Luyện Tập</button>
     </div>
-    <div class="w-32 h-32 hidden md:block shrink-0">
+    <div class="w-24 h-24 hidden lg:block shrink-0">
       <img src="assets/images/meo_thinking_sticker_1780213451318.png" class="w-full h-full object-contain" />
     </div>
   `;
+
+  const coloringStrip = el('div', { class: 'relative overflow-hidden bg-pink-50 rounded-2xl p-4 md:p-6 border border-pink-400 shadow-sm flex items-center justify-between' });
+  coloringStrip.innerHTML = `
+    <div class="flex-1">
+      <h3 class="font-display text-2xl text-pink-500 mb-2">Xưởng Tô Màu</h3>
+      <p class="text-text mb-4 text-sm">Tranh tô màu siêu đẹp để chơi và in ấn!</p>
+      <button class="btn bg-pink-500 hover:bg-pink-600 text-white font-bold px-6 shadow-md border-none" id="db-coloring-btn">Vào Tô Màu</button>
+    </div>
+    <div class="w-24 h-24 hidden lg:block shrink-0">
+      <div class="text-6xl flex-center w-full h-full">🎨</div>
+    </div>
+  `;
   
-  // Bind event after append
+  bottomGrid.appendChild(practiceStrip);
+  bottomGrid.appendChild(coloringStrip);
+
+  // Bind events
   setTimeout(() => {
-    const btn = practiceStrip.querySelector('#db-practice-btn');
-    if (btn) btn.addEventListener('click', () => Router.navigate('/practice'));
+    const pBtn = practiceStrip.querySelector('#db-practice-btn');
+    if (pBtn) pBtn.addEventListener('click', () => Router.navigate('/practice'));
+    
+    const cBtn = coloringStrip.querySelector('#db-coloring-btn');
+    if (cBtn) cBtn.addEventListener('click', () => Router.navigate('/coloring'));
     
     // Set mascot state to relaxed
     Mascot.setState('relaxed');
@@ -222,7 +242,7 @@ export function renderDashboard() {
   stripsSection.appendChild(badgeStrip);
   container.appendChild(stripsSection);
   container.appendChild(extraStrip);
-  container.appendChild(practiceStrip);
+  container.appendChild(bottomGrid);
 
   // Return a wrapper that includes header and content
   const wrapper = document.createDocumentFragment();

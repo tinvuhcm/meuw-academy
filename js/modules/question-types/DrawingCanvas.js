@@ -1,199 +1,183 @@
-/**
- * MEUW ACADEMY — DrawingCanvas.js
- * Question Type: Drawing Canvas (with steps & gallery save)
- */
-
 import { el, sleep, canvasToJPEG } from '../../utils.js';
 import { triggerMascot } from '../../mascot.js';
 import { Audio } from '../../audio.js';
 import State from '../../state.js';
 
 export function renderDrawingCanvas(q, onComplete) {
-  const container = el('div', { class: 'question-wrapper drawing-wrapper' });
+  const container = el('div', { class: 'question-wrapper drawing-wrapper w-full' });
 
   // 1. Title
-  const title = el('h2', { class: 'question-title text-gradient font-display text-2xl' }, q.question);
+  const title = el('h2', { class: 'question-title text-gradient font-display text-2xl mb-4' }, q.question);
   container.appendChild(title);
 
-  // Layout Container
-  const layout = el('div', { class: 'drawing-layout mt-2' });
+  // Layout Container - Studio Mode
+  const layout = el('div', { class: 'drawing-layout studio-mode relative w-full h-[65vh] min-h-[500px] border-4 border-méo-purple rounded-2xl overflow-hidden shadow-xl bg-white select-none touch-none' });
 
-  // 2. Steps Panel (Left side on desktop, hidden/inline on mobile)
-  let currentStep = 0;
-  const stepsData = q.steps || [];
-  
-  const stepsPanel = el('div', { class: 'drawing-steps-panel' });
-  const stepsList = el('div', { class: 'drawing-step-list' });
-  
-  if (stepsData.length > 0) {
-    const stepsHeader = el('div', { class: 'drawing-steps-header' }, 'Hướng dẫn từng bước');
-    stepsPanel.appendChild(stepsHeader);
-    
-    stepsData.forEach((step, idx) => {
-      const item = el('div', { class: `drawing-step-item ${idx === 0 ? 'active' : ''}` });
-      
-      const thumb = el('div', { class: 'drawing-step-thumb bg-white' });
-      if (step.svg) thumb.innerHTML = step.svg; // mini preview
-      
-      const info = el('div', { class: 'drawing-step-info' });
-      info.appendChild(el('div', { class: 'drawing-step-num' }, `Bước ${idx + 1}`));
-      info.appendChild(el('div', { class: 'drawing-step-text' }, step.instruction));
-      
-      item.appendChild(thumb);
-      item.appendChild(info);
-      
-      item.addEventListener('click', () => {
-        Audio.click();
-        setStep(idx);
-      });
-      
-      stepsList.appendChild(item);
-    });
-    stepsPanel.appendChild(stepsList);
-    layout.appendChild(stepsPanel);
-  }
-
-  // 3. Canvas Area
-  const canvasArea = el('div', { class: 'drawing-canvas-area' });
-  
-  // Toolbar
-  const toolbar = el('div', { class: 'drawing-toolbar' });
-  
-  const colors = [
-    '#000000', '#333333', '#FFFFFF', '#EF4444', '#F97316', '#FCD34D', '#22C55E', 
-    '#10B981', '#06B6D4', '#3B82F6', '#6366F1', '#8B5CF6', '#EC4899', '#F43F5E', 
-    '#8B4513', '#A0522D', '#D2B48C', '#9CA3AF'
-  ];
-  let currentColor = '#000000';
-  let currentTool = 'pen'; // 'pen' or 'eraser'
-  let currentSize = 5;
-
-  // Tool buttons
-  const toolGroup = el('div', { class: 'flex gap-2' });
-  const penBtn = el('button', { class: 'tool-btn active', title: 'Bút vẽ' }, '✏️');
-  const eraserBtn = el('button', { class: 'tool-btn', title: 'Cục tẩy' }, '🧼');
-  
-  penBtn.addEventListener('click', () => { setTool('pen'); });
-  eraserBtn.addEventListener('click', () => { setTool('eraser'); });
-  
-  toolGroup.appendChild(penBtn);
-  toolGroup.appendChild(eraserBtn);
-  toolbar.appendChild(toolGroup);
-  toolbar.appendChild(el('div', { class: 'tool-divider' }));
-
-  // Color Palette
-  const palette = el('div', { class: 'color-palette' });
-  const colorBtns = [];
-  colors.forEach(c => {
-    const btn = el('div', { class: 'color-swatch', style: `background-color: ${c}` });
-    if (c === currentColor) btn.classList.add('active');
-    btn.addEventListener('click', () => {
-      Audio.click();
-      setTool('pen'); // Auto switch to pen if color selected
-      currentColor = c;
-      colorBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    });
-    colorBtns.push(btn);
-    palette.appendChild(btn);
-  });
-  toolbar.appendChild(palette);
-  toolbar.appendChild(el('div', { class: 'tool-divider' }));
-
-  // Brush Sizes
-  const sizeGroup = el('div', { class: 'brush-size-control' });
-  const sizes = [
-    { class: 'sm', val: 2 },
-    { class: 'md', val: 5 },
-    { class: 'lg', val: 12 }
-  ];
-  const sizeBtns = [];
-  
-  sizes.forEach(s => {
-    const btn = el('div', { class: `brush-size-btn brush-size-${s.class} ${s.val === 5 ? 'active' : ''}` });
-    btn.appendChild(el('div', { class: `brush-dot brush-dot-${s.class}` }));
-    btn.addEventListener('click', () => {
-      Audio.click();
-      currentSize = s.val;
-      sizeBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    });
-    sizeBtns.push(btn);
-    sizeGroup.appendChild(btn);
-  });
-  toolbar.appendChild(sizeGroup);
-  toolbar.appendChild(el('div', { class: 'tool-divider' }));
-
-  // Canvas Wrapper
-  const canvasWrap = el('div', { class: 'drawing-canvas-wrapper w-full' });
-  const canvas = el('canvas', { class: 'drawing-canvas w-full', width: '1024', height: '768', style: 'min-height: 450px;' });
+  // 2. Canvas
+  const canvasWrap = el('div', { class: 'absolute inset-0 w-full h-full' });
+  const canvas = el('canvas', { class: 'drawing-canvas w-full h-full cursor-crosshair' });
   const ctx = canvas.getContext('2d', { willReadFrequently: true });
+  
+  // Must set actual width/height
+  canvas.width = 1240;
+  canvas.height = 877; // Roughly A4 ratio landscape
   
   // Fill white background
   ctx.fillStyle = '#FFFFFF';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  // Reference overlay
-  const refOverlay = el('div', { class: 'drawing-reference-overlay flex-center' });
   canvasWrap.appendChild(canvas);
-  canvasWrap.appendChild(refOverlay);
+  layout.appendChild(canvasWrap);
+
+  // If coloring mode, load background image
+  if (q.coloringBg) {
+    const img = new Image();
+    img.crossOrigin = "Anonymous";
+    img.onload = () => {
+      // Draw centered/scaled to fit
+      const scale = Math.min(canvas.width / img.width, canvas.height / img.height);
+      const w = img.width * scale;
+      const h = img.height * scale;
+      const x = (canvas.width - w) / 2;
+      const y = (canvas.height - h) / 2;
+      ctx.drawImage(img, x, y, w, h);
+      saveState(); // Save initial state with bg
+    };
+    img.src = q.coloringBg;
+  }
+
+  // 3. Floating Toolbars
   
-  // Canvas Actions
-  const canvasActions = el('div', { class: 'flex-between mt-2' });
+  let currentColor = '#000000';
+  let currentTool = 'pen'; // 'pen', 'eraser', 'fill'
+  let currentSize = 5;
+
+  const topBar = el('div', { class: 'absolute top-0 left-0 right-0 h-14 bg-white/90 backdrop-blur-md border-b-2 border-border flex-between px-4 z-10' });
   
-  const toggleRefBtn = el('button', { class: 'btn btn-outline text-sm py-1 px-3', style: { display: stepsData.length ? 'block' : 'none' } }, '👁️ Hiện ảnh mẫu');
-  let refVisible = false;
-  toggleRefBtn.addEventListener('click', () => {
-    Audio.click();
-    refVisible = !refVisible;
-    if (refVisible) {
-      refOverlay.classList.add('visible');
-      toggleRefBtn.innerHTML = '🙈 Ẩn ảnh mẫu';
-    } else {
-      refOverlay.classList.remove('visible');
-      toggleRefBtn.innerHTML = '👁️ Hiện ảnh mẫu';
-    }
+  const rightTopActions = el('div', { class: 'flex gap-2' });
+  const undoBtn = el('button', { class: 'btn btn-icon bg-gray-100 text-lg p-2 rounded-full hover:bg-gray-200' }, '↩️');
+  const clearBtn = el('button', { class: 'btn btn-icon bg-red-100 text-red-500 text-lg p-2 rounded-full hover:bg-red-200' }, '🗑️');
+  
+  rightTopActions.appendChild(undoBtn);
+  rightTopActions.appendChild(clearBtn);
+  
+  const centerTopActions = el('div', { class: 'font-display text-méo-purple' }, q.coloringBg ? 'Méo Studio: Bé Tô Màu' : 'Méo Studio: Bé Tập Vẽ');
+
+  topBar.appendChild(centerTopActions);
+  topBar.appendChild(rightTopActions);
+  
+  layout.appendChild(topBar);
+
+  // Left Toolbar (Tools & Sizes)
+  const leftBar = el('div', { class: 'absolute top-1/2 left-4 -translate-y-1/2 bg-white/90 backdrop-blur-md border-2 border-border p-2 rounded-2xl flex flex-col gap-4 shadow-lg z-10' });
+  
+  const toolsGroup = el('div', { class: 'flex flex-col gap-2' });
+  const penBtn = createToolBtn('✏️', 'Bút chì (Bấm đúp để chọn bút)');
+  const eraserBtn = createToolBtn('🧼', 'Cục tẩy');
+  const fillBtn = createToolBtn('🪣', 'Thùng sơn (Tô màu vùng)');
+  
+  penBtn.classList.add('ring-4', 'ring-méo-purple', 'bg-méo-purple-lt');
+  
+  function createToolBtn(icon, title) {
+    const b = el('button', { class: 'w-12 h-12 text-2xl rounded-xl flex-center transition-all bg-gray-100 hover:bg-gray-200', title });
+    b.innerHTML = icon;
+    return b;
+  }
+
+  penBtn.addEventListener('click', () => setTool('pen', penBtn));
+  eraserBtn.addEventListener('click', () => setTool('eraser', eraserBtn));
+  fillBtn.addEventListener('click', () => setTool('fill', fillBtn));
+
+  toolsGroup.appendChild(penBtn);
+  toolsGroup.appendChild(eraserBtn);
+  toolsGroup.appendChild(fillBtn);
+
+  const divider = el('div', { class: 'w-full h-1 bg-border rounded-full' });
+
+  const sizesGroup = el('div', { class: 'flex flex-col items-center gap-3' });
+  const sizes = [ { val: 2, s: 'w-2 h-2' }, { val: 8, s: 'w-4 h-4' }, { val: 20, s: 'w-6 h-6' } ];
+  const sizeBtns = [];
+  sizes.forEach(sz => {
+    const b = el('button', { class: `w-10 h-10 flex-center rounded-full hover:bg-gray-100 ${sz.val === 8 ? 'bg-gray-200' : ''}` });
+    b.innerHTML = `<div class="${sz.s} bg-gray-800 rounded-full"></div>`;
+    b.addEventListener('click', () => {
+      Audio.click();
+      currentSize = sz.val;
+      sizeBtns.forEach(btn => btn.classList.remove('bg-gray-200'));
+      b.classList.add('bg-gray-200');
+    });
+    sizeBtns.push(b);
+    sizesGroup.appendChild(b);
   });
 
-  const undoBtn = el('button', { class: 'btn btn-outline text-sm py-1 px-3' }, '↩️ Hoàn tác');
-  const clearBtn = el('button', { class: 'btn btn-outline text-sm py-1 px-3 text-wrong border-wrong' }, '🗑️ Xóa hết');
+  leftBar.appendChild(toolsGroup);
+  leftBar.appendChild(divider);
+  leftBar.appendChild(sizesGroup);
 
-  const rightActions = el('div', { class: 'flex gap-2' });
-  rightActions.appendChild(undoBtn);
-  rightActions.appendChild(clearBtn);
-  
-  canvasActions.appendChild(toggleRefBtn);
-  canvasActions.appendChild(rightActions);
+  layout.appendChild(leftBar);
 
-  canvasArea.appendChild(toolbar);
-  canvasArea.appendChild(canvasWrap);
-  canvasArea.appendChild(canvasActions);
+  // Right Toolbar (Palette)
+  const rightBar = el('div', { class: 'absolute top-1/2 right-4 -translate-y-1/2 bg-white/90 backdrop-blur-md border-2 border-border p-3 rounded-3xl flex flex-col gap-2 shadow-lg z-10' });
   
-  // Action buttons (Submit)
-  const submitBtn = el('button', { class: 'btn btn-cta w-full mt-6' }, 'Lưu & Hoàn thành');
-  canvasArea.appendChild(submitBtn);
+  const colors = [
+    '#000000', '#EF4444', '#F97316', '#FCD34D', '#22C55E', 
+    '#10B981', '#06B6D4', '#3B82F6', '#8B5CF6', '#EC4899', 
+    '#8B4513', '#FFFFFF'
+  ];
   
-  layout.appendChild(canvasArea);
+  const colorBtns = [];
+  colors.forEach(c => {
+    const btn = el('button', { class: 'w-10 h-10 rounded-full border-2 border-gray-200 shadow-sm transition-transform hover:scale-110', style: `background-color: ${c}` });
+    if (c === '#000000') btn.classList.add('ring-4', 'ring-offset-2', 'ring-méo-purple');
+    btn.addEventListener('click', () => {
+      Audio.click();
+      currentColor = c;
+      colorBtns.forEach(b => b.classList.remove('ring-4', 'ring-offset-2', 'ring-méo-purple'));
+      btn.classList.add('ring-4', 'ring-offset-2', 'ring-méo-purple');
+      // If currently eraser, switch back to pen
+      if (currentTool === 'eraser') setTool('pen', penBtn);
+    });
+    colorBtns.push(btn);
+    rightBar.appendChild(btn);
+  });
+
+  layout.appendChild(rightBar);
   container.appendChild(layout);
 
-  // 4. Drawing Logic
+  // Submit Buttons
+  const bottomActions = el('div', { class: 'flex gap-4 mt-6' });
+  
+  // If it's a coloring page practice, they can download
+  if (q.coloringBg) {
+    const downloadBtn = el('button', { class: 'btn btn-outline flex-1' }, '⬇️ Lưu máy (JPG)');
+    downloadBtn.addEventListener('click', () => {
+      Audio.click();
+      const a = document.createElement('a');
+      a.download = `Méo_Tô_Màu_${Date.now()}.jpg`;
+      a.href = canvasToJPEG(canvas, 0.9);
+      a.click();
+    });
+    bottomActions.appendChild(downloadBtn);
+  }
+
+  const submitBtn = el('button', { class: 'btn btn-cta flex-1' }, 'Lưu & Hoàn thành');
+  bottomActions.appendChild(submitBtn);
+  container.appendChild(bottomActions);
+
+  // 4. Drawing & Logic
   let isDrawing = false;
   let lastX = 0;
   let lastY = 0;
   
-  // Undo stack
   const history = [];
   function saveState() {
     if (history.length > 20) history.shift();
     history.push(canvas.toDataURL());
   }
-  
-  // Initial save
-  saveState();
+  setTimeout(saveState, 100);
 
   function getCoords(e) {
     const rect = canvas.getBoundingClientRect();
-    // Use natural canvas size vs display size ratio
     const scaleX = canvas.width / rect.width;
     const scaleY = canvas.height / rect.height;
 
@@ -209,10 +193,81 @@ export function renderDrawingCanvas(q, onComplete) {
     };
   }
 
+  // Flood Fill algorithm
+  function floodFill(startX, startY, fillColorHex) {
+    startX = Math.floor(startX);
+    startY = Math.floor(startY);
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const data = imageData.data;
+    
+    const w = canvas.width;
+    const h = canvas.height;
+    
+    const idx = (startY * w + startX) * 4;
+    const tR = data[idx], tG = data[idx+1], tB = data[idx+2], tA = data[idx+3];
+    
+    const fillR = parseInt(fillColorHex.substr(1,2), 16);
+    const fillG = parseInt(fillColorHex.substr(3,2), 16);
+    const fillB = parseInt(fillColorHex.substr(5,2), 16);
+    
+    if (tR === fillR && tG === fillG && tB === fillB) return;
+    
+    const matchColor = (pos) => {
+      const r = data[pos], g = data[pos+1], b = data[pos+2], a = data[pos+3];
+      // simple tolerance for anti-aliasing around black lines
+      return Math.abs(r - tR) < 30 && Math.abs(g - tG) < 30 && Math.abs(b - tB) < 30 && a > 200;
+    };
+    
+    const colorPixel = (pos) => {
+      data[pos] = fillR; data[pos+1] = fillG; data[pos+2] = fillB; data[pos+3] = 255;
+    };
+    
+    const stack = [[startX, startY]];
+    
+    while (stack.length) {
+      const [cx, cy] = stack.pop();
+      let p = (cy * w + cx) * 4;
+      let y1 = cy;
+      
+      while (y1 >= 0 && matchColor(p)) {
+        y1--; p -= w * 4;
+      }
+      p += w * 4; y1++;
+      
+      let reachL = false;
+      let reachR = false;
+      
+      while (y1 < h && matchColor(p)) {
+        colorPixel(p);
+        if (cx > 0) {
+          if (matchColor(p - 4)) {
+            if (!reachL) { stack.push([cx - 1, y1]); reachL = true; }
+          } else if (reachL) reachL = false;
+        }
+        if (cx < w - 1) {
+          if (matchColor(p + 4)) {
+            if (!reachR) { stack.push([cx + 1, y1]); reachR = true; }
+          } else if (reachR) reachR = false;
+        }
+        y1++; p += w * 4;
+      }
+    }
+    ctx.putImageData(imageData, 0, 0);
+  }
+
   function startPosition(e) {
+    if (e.target.closest('button')) return; // ignore UI clicks
     e.preventDefault();
-    isDrawing = true;
     const coords = getCoords(e);
+    
+    if (currentTool === 'fill') {
+      Audio.click(); // plop sound
+      floodFill(coords.x, coords.y, currentColor);
+      saveState();
+      return;
+    }
+
+    isDrawing = true;
     lastX = coords.x;
     lastY = coords.y;
     draw(e);
@@ -226,7 +281,7 @@ export function renderDrawingCanvas(q, onComplete) {
   }
 
   function draw(e) {
-    if (!isDrawing) return;
+    if (!isDrawing || currentTool === 'fill') return;
     e.preventDefault();
     const coords = getCoords(e);
 
@@ -249,49 +304,25 @@ export function renderDrawingCanvas(q, onComplete) {
     lastY = coords.y;
   }
 
-  canvas.addEventListener('mousedown', startPosition);
-  canvas.addEventListener('mouseup', endPosition);
-  canvas.addEventListener('mousemove', draw);
-  canvas.addEventListener('mouseout', endPosition);
+  canvasWrap.addEventListener('mousedown', startPosition);
+  window.addEventListener('mouseup', endPosition);
+  canvasWrap.addEventListener('mousemove', draw);
+  
+  canvasWrap.addEventListener('touchstart', startPosition, { passive: false });
+  window.addEventListener('touchend', endPosition);
+  canvasWrap.addEventListener('touchmove', draw, { passive: false });
 
-  // Touch
-  canvas.addEventListener('touchstart', startPosition, { passive: false });
-  canvas.addEventListener('touchend', endPosition);
-  canvas.addEventListener('touchcancel', endPosition);
-  canvas.addEventListener('touchmove', draw, { passive: false });
-
-  // 5. Controls Logic
-  function setTool(tool) {
+  function setTool(tool, btnEl) {
     Audio.click();
     currentTool = tool;
-    penBtn.classList.toggle('active', tool === 'pen');
-    eraserBtn.classList.toggle('active', tool === 'eraser');
-    canvasWrap.style.cursor = tool === 'eraser' ? 'cell' : 'crosshair';
-  }
-
-  function setStep(idx) {
-    if (idx < 0 || idx >= stepsData.length) return;
-    currentStep = idx;
+    penBtn.classList.remove('ring-4', 'ring-méo-purple', 'bg-méo-purple-lt');
+    eraserBtn.classList.remove('ring-4', 'ring-méo-purple', 'bg-méo-purple-lt');
+    fillBtn.classList.remove('ring-4', 'ring-méo-purple', 'bg-méo-purple-lt');
+    btnEl.classList.add('ring-4', 'ring-méo-purple', 'bg-méo-purple-lt');
     
-    // Update UI list
-    const items = stepsList.querySelectorAll('.drawing-step-item');
-    items.forEach((item, i) => {
-      item.classList.toggle('active', i === idx);
-    });
-
-    // Update overlay
-    if (stepsData[idx].svg) {
-      refOverlay.innerHTML = stepsData[idx].svg;
-      refOverlay.querySelector('svg').style.width = '100%';
-      refOverlay.querySelector('svg').style.height = '100%';
-    } else {
-      refOverlay.innerHTML = '';
-    }
-    
-    // Auto-scroll list if needed
-    if (items[idx]) {
-      items[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
+    if (tool === 'eraser') canvas.style.cursor = 'cell';
+    else if (tool === 'fill') canvas.style.cursor = 'pointer';
+    else canvas.style.cursor = 'crosshair';
   }
 
   undoBtn.addEventListener('click', () => {
@@ -313,35 +344,44 @@ export function renderDrawingCanvas(q, onComplete) {
       Audio.click();
       ctx.fillStyle = '#FFFFFF';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      saveState();
+      
+      // redraw bg if exists
+      if (q.coloringBg) {
+        const img = new Image();
+        img.crossOrigin = "Anonymous";
+        img.onload = () => {
+          const scale = Math.min(canvas.width / img.width, canvas.height / img.height);
+          const w = img.width * scale;
+          const h = img.height * scale;
+          const x = (canvas.width - w) / 2;
+          const y = (canvas.height - h) / 2;
+          ctx.drawImage(img, x, y, w, h);
+          saveState();
+        };
+        img.src = q.coloringBg;
+      } else {
+        saveState();
+      }
     }
   });
 
-  // Init first step
-  if (stepsData.length > 0) {
-    setStep(0);
-    triggerMascot('module:drawing');
-  }
+  triggerMascot('module:drawing');
 
-  // 6. Submit
   submitBtn.addEventListener('click', async () => {
     Audio.click();
     submitBtn.disabled = true;
     
-    // Get image data
-    const imgData = canvasToJPEG(canvas, 0.7);
-    
-    // Save to gallery
+    const imgData = canvasToJPEG(canvas, 0.8);
     State.saveDrawing({
       src: imgData,
-      title: q.drawingTitle || 'Tác phẩm của Méo'
+      title: q.drawingTitle || (q.coloringBg ? 'Tranh Tô Màu' : 'Tác phẩm của Méo')
     });
 
     Audio.correct();
     triggerMascot('answer:correct', { customLines: ['Tranh em vẽ đẹp quá! Đã lưu vào bộ sưu tập nhé! 🎨'] });
     
     await sleep(2000);
-    onComplete(true, q.xp || 20); // Drawing gives good XP
+    onComplete(true, q.xp || 20);
   });
 
   return container;

@@ -20,6 +20,7 @@ import { renderShop } from './modules/shop.js';
 import { renderChallenges } from './modules/challenges.js';
 import { renderCustomizer } from './modules/mascot-customizer.js';
 import { renderPractice } from './modules/practice.js';
+import { renderColoringLibrary } from './modules/coloring.js';
 
 // Toast System
 let toastTimeout;
@@ -94,6 +95,10 @@ Router.on('/customizer', () => {
 
 Router.on('/practice', () => {
   mount(renderPractice());
+});
+
+Router.on('/coloring', () => {
+  mount(renderColoringLibrary());
 });
 
 // Route Guards (Global)
