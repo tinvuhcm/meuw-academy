@@ -328,27 +328,7 @@ function renderSettingsTab(container) {
 
   wrap.appendChild(pinArea);
 
-  // 4. DEV Tool
-  const devArea = el('div', { class: 'mt-8 p-4 bg-yellow-100 border-2 border-yellow-400 rounded-xl' });
-  devArea.innerHTML = '<h3 class="font-bold text-lg mb-2 text-yellow-800">🛠️ Công cụ Phát triển (Dev Mode)</h3><p class="text-sm mb-4 text-yellow-700">Dùng để test: Khôi phục duy nhất các bài học của ngày hôm nay về 0.</p>';
-  const hardResetBtn = el('button', { class: 'btn bg-red-500 hover:bg-red-600 text-white border-none text-sm px-4 py-2 rounded-lg font-bold' }, 'Học lại Ngày Hôm Nay');
-  hardResetBtn.addEventListener('click', async () => {
-    if (confirm('BẠN CÓ CHẮC KHÔNG? Toàn bộ bài học của Ngày hôm nay sẽ bị đánh dấu là chưa hoàn thành. (XP và Huy hiệu vẫn được giữ nguyên)')) {
-      const { getCurriculumDay } = await import('../data/curriculum-loader.js');
-      const profile = State.getActiveProfile();
-      const dayData = getCurriculumDay(profile.currentDay);
-      if (dayData && dayData.modules) {
-        const moduleIds = dayData.modules.map(m => m.id);
-        State.resetCurrentDayProgress(moduleIds);
-        alert(`Đã khôi phục ${moduleIds.length} bài học của Ngày ${profile.currentDay}.`);
-        window.location.reload();
-      } else {
-        alert('Không tìm thấy dữ liệu bài học ngày hôm nay!');
-      }
-    }
-  });
-  devArea.appendChild(hardResetBtn);
-  wrap.appendChild(devArea);
+  // Removed dev area from here since it's moved to Data tab
 
   container.appendChild(wrap);
 }
@@ -493,16 +473,27 @@ function renderDataTab(container) {
 
   wrap.appendChild(el('hr', { class: 'my-6 border-wrong opacity-30' }));
 
-  // Danger Zone
-  const resetBtn = el('button', { class: 'btn btn-outline text-wrong border-wrong' }, '⚠️ Xóa trắng hồ sơ hiện tại');
-  resetBtn.addEventListener('click', () => {
-    if (confirm('NGUY HIỂM: Hành động này sẽ xóa toàn bộ ⭐, huy hiệu, lịch sử và tranh vẽ của hồ sơ hiện tại. Bạn có CHẮC CHẮN không?')) {
-      State.resetProfile();
-      alert('Đã xóa dữ liệu.');
-      window.location.reload();
+  // Danger Zone - Replaced with Dev Tool (Reset Current Day)
+  const devArea = el('div', { class: 'mt-8 p-4 bg-yellow-100 border-2 border-yellow-400 rounded-xl' });
+  devArea.innerHTML = '<h3 class="font-bold text-lg mb-2 text-yellow-800">🛠️ Công cụ Phát triển (Dev Mode)</h3><p class="text-sm mb-4 text-yellow-700">Khôi phục bài học của ngày hôm nay về 0 (Học lại từ đầu).</p>';
+  const hardResetBtn = el('button', { class: 'btn bg-red-500 hover:bg-red-600 text-white border-none text-sm px-4 py-2 rounded-lg font-bold w-full' }, 'Học lại Ngày Hôm Nay');
+  hardResetBtn.addEventListener('click', async () => {
+    if (confirm('BẠN CÓ CHẮC KHÔNG? Toàn bộ bài học của Ngày hôm nay sẽ bị đánh dấu là chưa hoàn thành. (XP và Huy hiệu vẫn được giữ nguyên)')) {
+      const { getCurriculumDay } = await import('../data/curriculum-loader.js');
+      const profile = State.getActiveProfile();
+      const dayData = getCurriculumDay(profile.currentDay);
+      if (dayData && dayData.modules) {
+        const moduleIds = dayData.modules.map(m => m.id);
+        State.resetCurrentDayProgress(moduleIds);
+        alert(`Đã khôi phục ${moduleIds.length} bài học của Ngày ${profile.currentDay}.`);
+        window.location.reload();
+      } else {
+        alert('Không tìm thấy dữ liệu bài học ngày hôm nay!');
+      }
     }
   });
-  wrap.appendChild(resetBtn);
+  devArea.appendChild(hardResetBtn);
+  wrap.appendChild(devArea);
 
   container.appendChild(wrap);
 }
