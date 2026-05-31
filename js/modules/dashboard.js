@@ -16,29 +16,49 @@ export function renderDashboard() {
   const header = el('header', { class: 'app-header' });
   
   const headerLeft = el('div', { class: 'header-left' });
-  const logo = el('div', { class: 'logo-link' });
-  logo.innerHTML = `<img src="assets/icons/icon.svg" alt="Meuw Logo" width="32" height="32" /><span class="logo-text">Meuw</span>`;
+  const logo = el('div', { class: 'logo-link cursor-pointer' });
+  logo.innerHTML = `<img src="assets/icons/icon.svg" alt="Méo Logo" width="32" height="32" /><span class="logo-text">Méo</span>`;
   logo.addEventListener('click', () => Router.navigate('/'));
   
-  const profileBtn = el('button', { class: 'header-btn font-bold text-sm', title: 'Hồ sơ' }, State.getActiveProfile().name.charAt(0).toUpperCase());
-  profileBtn.style.backgroundColor = State.getActiveProfile().avatarColor;
-  profileBtn.style.color = '#FFF';
-  profileBtn.addEventListener('click', () => Router.navigate('/profile'));
-  
   headerLeft.appendChild(logo);
-  headerLeft.appendChild(profileBtn);
 
-  const headerRight = el('div', { class: 'header-right' });
+  const headerRight = el('div', { class: 'header-right flex items-center gap-4' });
   
   const streakBox = el('div', { class: 'streak-badge cursor-pointer', title: 'Chuỗi ngày học' });
   streakBox.innerHTML = `<span class="fire">🔥</span><span>${State.getStreak()}</span>`;
-  streakBox.addEventListener('click', () => Router.navigate('/parent'));
+  streakBox.addEventListener('click', () => Router.navigate('/challenges'));
   
-  const parentBtn = el('button', { class: 'header-btn', title: 'Khu vực Phụ huynh' }, '⚙️');
-  parentBtn.addEventListener('click', () => Router.navigate('/parent'));
+  const settingsWrapper = el('div', { class: 'relative' });
+  const settingsBtn = el('button', { class: 'header-btn text-2xl bg-white border border-border shadow-sm rounded-full w-10 h-10 flex-center', title: 'Cài đặt' }, '⚙️');
+  const dropdown = el('div', { class: 'absolute right-0 top-12 bg-white border border-border rounded-xl shadow-lg w-48 hidden flex-col overflow-hidden z-50' });
+  
+  const profileLink = el('button', { class: 'w-full text-left px-4 py-3 font-bold hover:bg-bg-2 border-b border-border text-méo-purple flex items-center gap-2' });
+  profileLink.innerHTML = `<span class="text-xl">🧑</span> Hồ sơ của Méo`;
+  profileLink.addEventListener('click', () => { dropdown.classList.add('hidden'); Router.navigate('/profile'); });
+  
+  const parentLink = el('button', { class: 'w-full text-left px-4 py-3 font-bold hover:bg-bg-2 text-warning flex items-center gap-2' });
+  parentLink.innerHTML = `<span class="text-xl">👨‍👩‍👦</span> Phụ huynh`;
+  parentLink.addEventListener('click', () => { dropdown.classList.add('hidden'); Router.navigate('/parent'); });
+  
+  dropdown.appendChild(profileLink);
+  dropdown.appendChild(parentLink);
+  
+  settingsBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    dropdown.classList.toggle('hidden');
+    dropdown.classList.toggle('flex');
+  });
+  
+  document.addEventListener('click', () => {
+    dropdown.classList.add('hidden');
+    dropdown.classList.remove('flex');
+  });
+
+  settingsWrapper.appendChild(settingsBtn);
+  settingsWrapper.appendChild(dropdown);
   
   headerRight.appendChild(streakBox);
-  headerRight.appendChild(parentBtn);
+  headerRight.appendChild(settingsWrapper);
   
   header.appendChild(headerLeft);
   header.appendChild(headerRight);
@@ -69,7 +89,7 @@ export function renderDashboard() {
   
   const levelDisplay = el('div', { class: 'mt-4 flex flex-col gap-2' });
   const levelHeader = el('div', { class: 'flex-between text-sm font-bold' });
-  levelHeader.innerHTML = `<span class="text-meuw-purple">${levelData.emoji} Cấp ${levelData.level}: ${levelData.title}</span><span class="text-text-muted">${xpTotal} ⭐</span>`;
+  levelHeader.innerHTML = `<span class="text-méo-purple">${levelData.emoji} Cấp ${levelData.level}: ${levelData.title}</span><span class="text-text-muted">${xpTotal} ⭐</span>`;
   
   const progressBg = el('div', { class: 'progress-bar-bg' });
   const pct = Math.min(100, (xpTotal / levelData.next) * 100);
@@ -157,9 +177,52 @@ export function renderDashboard() {
   }
   badgeStrip.appendChild(badgeThumbList);
 
+  // Shop & Challenges
+  const extraStrip = el('div', { class: 'grid gap-4 md:grid-cols-3 w-full mb-8' });
+  
+  const shopBtn = el('button', { class: 'btn btn-primary bg-gradient-brand text-white font-bold p-4 flex flex-col items-center justify-center gap-2' });
+  shopBtn.innerHTML = `<img src="assets/images/meo_happy_sticker_1780213430564.png" class="h-12 object-contain" />🛒 Cửa hàng`;
+  shopBtn.addEventListener('click', () => Router.navigate('/shop'));
+  
+  const chalBtn = el('button', { class: 'btn btn-primary bg-correct text-white font-bold p-4 flex flex-col items-center justify-center gap-2' });
+  chalBtn.innerHTML = `<img src="assets/images/meo_celebrating_sticker_1780213464815.png" class="h-12 object-contain" />🎯 Thử thách`;
+  chalBtn.addEventListener('click', () => Router.navigate('/challenges'));
+  
+  const custBtn = el('button', { class: 'btn btn-outline text-méo-purple border-méo-purple font-bold p-4 flex flex-col items-center justify-center gap-2 bg-white' });
+  custBtn.innerHTML = `<img src="assets/images/mascot_avatar.png" class="h-12 object-contain" />🎩 Trang trí Méo`;
+  custBtn.addEventListener('click', () => Router.navigate('/customizer'));
+
+  extraStrip.appendChild(chalBtn);
+  extraStrip.appendChild(shopBtn);
+  extraStrip.appendChild(custBtn);
+  
+  // Practice Strip
+  const practiceStrip = el('div', { class: 'w-full mb-8 relative overflow-hidden bg-méo-purple-lt rounded-2xl p-4 md:p-6 border border-méo-purple shadow-sm flex items-center justify-between' });
+  practiceStrip.innerHTML = `
+    <div class="flex-1">
+      <h3 class="font-display text-2xl text-méo-purple mb-2">Phòng Ôn Tập</h3>
+      <p class="text-text mb-4">Luyện tập lại kiến thức đã học hoặc thử thách bản thân với chế độ Vô Hạn!</p>
+      <button class="btn btn-primary font-bold text-lg px-8 shadow-md" id="db-practice-btn">Vào Luyện Tập</button>
+    </div>
+    <div class="w-32 h-32 hidden md:block shrink-0">
+      <img src="assets/images/meo_thinking_sticker_1780213451318.png" class="w-full h-full object-contain" />
+    </div>
+  `;
+  
+  // Bind event after append
+  setTimeout(() => {
+    const btn = practiceStrip.querySelector('#db-practice-btn');
+    if (btn) btn.addEventListener('click', () => Router.navigate('/practice'));
+    
+    // Set mascot state to relaxed
+    Mascot.setState('relaxed');
+  }, 0);
+
   stripsSection.appendChild(galleryStrip);
   stripsSection.appendChild(badgeStrip);
   container.appendChild(stripsSection);
+  container.appendChild(extraStrip);
+  container.appendChild(practiceStrip);
 
   // Return a wrapper that includes header and content
   const wrapper = document.createDocumentFragment();

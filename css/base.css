@@ -55,10 +55,10 @@ button {
 /* --- DESIGN TOKENS --- */
 :root {
   /* Primary Brand Colors */
-  --meuw-purple:    #7C3AED;
-  --meuw-purple-lt: #EDE9FE;
-  --meuw-pink:      #EC4899;
-  --meuw-pink-lt:   #FCE7F3;
+  --meo-purple:    #7C3AED;
+  --meo-purple-lt: #EDE9FE;
+  --meo-pink:      #EC4899;
+  --meo-pink-lt:   #FCE7F3;
 
   /* Module Colors */
   --math-color:     #F59E0B;   /* Amber — Toán */
@@ -145,7 +145,7 @@ button {
   --shadow-inner:   inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
 
   /* Gradients */
-  --gradient-brand: linear-gradient(135deg, var(--meuw-purple), var(--meuw-pink));
+  --gradient-brand: linear-gradient(135deg, var(--meo-purple), var(--meo-pink));
   --gradient-hero:  linear-gradient(135deg, #F8F7FF 0%, #EDE9FE 100%);
   --gradient-eng:   linear-gradient(135deg, #60A5FA, #3B82F6);
   --gradient-gold:  linear-gradient(135deg, #FCD34D, #F59E0B);
@@ -218,15 +218,15 @@ h1, h2, h3, h4, h5, h6, .font-display {
   justify-content: center;
   z-index: 9999;
   font-family: var(--font-display);
-  color: var(--meuw-purple);
+  color: var(--meo-purple);
   font-size: var(--text-xl);
 }
 
 .spinner {
   width: 50px;
   height: 50px;
-  border: 5px solid var(--meuw-purple-lt);
-  border-top-color: var(--meuw-purple);
+  border: 5px solid var(--meo-purple-lt);
+  border-top-color: var(--meo-purple);
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin-bottom: var(--space-4);

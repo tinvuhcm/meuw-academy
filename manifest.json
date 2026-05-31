@@ -1,17 +1,17 @@
 {
-  "name": "Meuw Academy",
-  "short_name": "Meuw",
+  "name": "Méo Academy",
+  "short_name": "Méo",
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#F8F7FF",
   "theme_color": "#7C3AED",
-  "description": "Ứng dụng học hè cho bé Meuw",
+  "description": "Ứng dụng học hè cho bé Méo",
   "orientation": "any",
   "icons": [
     {
-      "src": "assets/icons/icon.svg",
-      "type": "image/svg+xml",
-      "sizes": "192x192 512x512"
+      "src": "assets/images/mascot_avatar.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ]
 }

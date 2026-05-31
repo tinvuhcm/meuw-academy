@@ -13,7 +13,7 @@ export function renderGallery() {
 
   // 1. Header
   const header = el('div', { class: 'flex-between mb-8' });
-  const title = el('h1', { class: 'font-display text-3xl text-meuw-purple' }, 'Phòng tranh của Meuw 🎨');
+  const title = el('h1', { class: 'font-display text-3xl text-méo-purple' }, 'Phòng tranh của Méo 🎨');
   
   const backBtn = el('button', { class: 'btn btn-outline text-sm' }, '← Quay lại');
   backBtn.addEventListener('click', () => { Audio.click(); Router.back(); });
@@ -94,7 +94,7 @@ function showLightbox(item) {
     Audio.click();
     const a = document.createElement('a');
     a.href = item.src;
-    a.download = `Meuw_Ngay${item.day}_${item.title.replace(/\s+/g, '_')}.jpg`;
+    a.download = `Méo_Ngay${item.day}_${item.title.replace(/\s+/g, '_')}.jpg`;
     a.click();
   });
 

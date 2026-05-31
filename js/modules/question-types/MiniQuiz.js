@@ -131,7 +131,7 @@ export function renderMiniQuiz(qData, onComplete) {
     // Review Wrong Answers
     if (reviewData.length > 0) {
       const reviewBox = el('div', { class: 'quiz-review mt-6' });
-      reviewBox.appendChild(el('h3', { class: 'text-xl font-bold mb-4 text-meuw-purple' }, 'Cùng xem lại nhé:'));
+      reviewBox.appendChild(el('h3', { class: 'text-xl font-bold mb-4 text-méo-purple' }, 'Cùng xem lại nhé:'));
       
       reviewData.forEach(rq => {
         const item = el('div', { class: 'quiz-review-item' });

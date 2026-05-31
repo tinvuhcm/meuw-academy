@@ -1,6 +1,6 @@
 # MEUW ACADEMY — Product Specification v1.0
 
-> Ứng dụng học hè cho bé Meuw (Vũ Hoàng Khả Minh, còn gọi là Minh Meuw), 9 tuổi, chuẩn bị lên lớp 4  
+> Ứng dụng học hè cho bé Méo (Vũ Hoàng Khả Minh, còn gọi là Minh Méo), 9 tuổi, chuẩn bị lên lớp 4  
 > Tech lead: Claude Code | Product owner: DS. Mèo
 > Thời gian học: 2h sáng + 1.5h chiều, 5–6 ngày/tuần, 3 tháng hè (có thể mở rộng
 
@@ -10,15 +10,15 @@
 
 ### Tham khảo: Duolingo + Prodigy Math + Khan Academy Kids
 
-|Nguyên tắc|Duolingo làm gì|Meuw Academy áp dụng|
+|Nguyên tắc|Duolingo làm gì|Méo Academy áp dụng|
 |-|-|-|
 |**Play first**|Cho chơi ngay, không cần tài khoản|Mở app → vào bài học luôn, không màn hình chào dài|
 |**Chunked learning**|Bài 5–10 câu, hoàn thành < 5 phút|Mỗi module ≤ 15 phút, không kéo dài|
-|**Animated mascot**|Duo owl phản ứng theo kết quả|Meuw (con mèo chibi) phản ứng: vui/buồn/ngạc nhiên/vỗ tay|
-|**Failure is safe**|Sai → animation nhẹ nhàng, không đỏ chói|Sai → Meuw "Ủa? Thử lại nhé!" không đáng sợ|
+|**Animated mascot**|Duo owl phản ứng theo kết quả|Méo (con mèo chibi) phản ứng: vui/buồn/ngạc nhiên/vỗ tay|
+|**Failure is safe**|Sai → animation nhẹ nhàng, không đỏ chói|Sai → Méo "Ủa? Thử lại nhé!" không đáng sợ|
 |**Micro-reward**|Confetti, sound, XP flash|Confetti, particle effect, nhạc nhẹ khi đúng|
 |**Visual learning**|Hình ảnh trong mỗi câu hỏi|**Bắt buộc**: mỗi bài học có ≥ 1 SVG minh họa hoặc animation|
-|**Streak psychology**|Streak = lý do quay lại ngày mai|Streak + "Meuw đang chờ em!" notification vibe|
+|**Streak psychology**|Streak = lý do quay lại ngày mai|Streak + "Méo đang chờ em!" notification vibe|
 |**Không phải sách giáo khoa**|Tình huống thực tế, hài hước|Toán qua câu chuyện, Anh văn qua hội thoại, không thuộc lòng|
 
 ### Nguyên tắc UX cốt lõi
@@ -36,7 +36,7 @@
 ### Stack
 
 ```
-meuw-academy/
+méo-academy/
 ├── index.html              # Shell, nav, routing
 ├── css/
 │   ├── base.css            # Reset, variables, typography
@@ -45,7 +45,7 @@ meuw-academy/
 │   └── responsive.css      # Tablet + mobile
 ├── js/
 │   ├── app.js              # Router, state management, localStorage
-│   ├── mascot.js           # Meuw animation controller
+│   ├── mascot.js           # Méo animation controller
 │   ├── audio.js            # Sound effects (Web Audio API)
 │   ├── speech.js           # Speech recognition wrapper
 │   ├── drawing.js          # Canvas drawing tool
@@ -63,13 +63,13 @@ meuw-academy/
 │   ├── curriculum-m3.js    # Tháng 3: Khoa học \\\& Phát minh (ngày 57–84)
 │   └── curriculum-bonus.js # Ngày review cuối tháng (3, 6, 9)
 └── assets/
-    ├── mascot/             # SVG Meuw các trạng thái
+    ├── mascot/             # SVG Méo các trạng thái
     ├── icons/              # Module icons SVG
     ├── illustrations/      # SVG minh họa cho bài học
     └── sounds/             # .mp3 files (correct, wrong, complete, streak)
 ```
 
-### State Management (localStorage key: `meuwAcademy\\\_v2`)
+### State Management (localStorage key: `meoAcademy\\\_v2`)
 
 ```json
 {
@@ -95,10 +95,10 @@ meuw-academy/
 ```css
 :root {
   /\\\* Primary \\\*/
-  --meow-purple:    #7C3AED;
-  --meow-purple-lt: #EDE9FE;
-  --meow-pink:      #EC4899;
-  --meow-pink-lt:   #FCE7F3;
+  --meo-purple:    #7C3AED;
+  --meo-purple-lt: #EDE9FE;
+  --meo-pink:      #EC4899;
+  --meo-pink-lt:   #FCE7F3;
 
   /\\\* Module colors \\\*/
   --math-color:     #F59E0B;   /\\\* Amber — Toán \\\*/
@@ -138,13 +138,13 @@ meuw-academy/
 --text-label: 0.85rem;
 ```
 
-### Mascot: Meuw 🐱
+### Mascot: Méo 🐱
 
-**Meuw là trái tim của app — xuất hiện ở mọi interaction quan trọng**
+**Méo là trái tim của app — xuất hiện ở mọi interaction quan trọng**
 
 Thiết kế: con mèo chibi đơn giản vẽ bằng SVG, 4 màu chính, style rounded/cute
 
-Meuw có **8 trạng thái**:
+Méo có **8 trạng thái**:
 
 |State|Trigger|Animation|
 |-|-|-|
@@ -158,7 +158,7 @@ Meuw có **8 trạng thái**:
 |`sleeping`|Streak break reminder|Ngủ gật, zzzz|
 |`celebrating`|Huy hiệu mới|Fireworks, confetti|
 
-File: `assets/mascot/meow-\\\[state].svg` — mỗi file tự animate bằng CSS `@keyframes`
+File: `assets/mascot/méo-\\\[state].svg` — mỗi file tự animate bằng CSS `@keyframes`
 
 ### Layout Dashboard
 
@@ -167,7 +167,7 @@ File: `assets/mascot/meow-\\\[state].svg` — mỗi file tự animate bằng CSS
 │  MEUW ACADEMY 🐱         \\\[🔥 3]  \\\[⚙ Phụ huynh]     │
 ├──────────────────────────────────────────────────────┤
 │                                                      │
-│  \\\[Meuw: idle animation]  Chào Meuw! 🌟                │
+│  \\\[Méo: idle animation]  Chào Méo! 🌟                │
 │                         Ngày 5 — Tuần 2              │
 │                         XP: ████████░░ 320/400       │
 │                                                      │
@@ -205,9 +205,9 @@ Layout:
 Behavior:
   - Click → highlight selected
   - Submit → 
-    correct: button turns green + checkmark + sound "ding" + Meuw jumps + XP flash
+    correct: button turns green + checkmark + sound "ding" + Méo jumps + XP flash
     wrong: button turns red + shake animation + correct answer highlights green 
-           + Meuw shakes head + explanation box slides down
+           + Méo shakes head + explanation box slides down
   - Next button appears after answer
 ```
 
@@ -279,7 +279,7 @@ Props: { prompt, sampleAnswer, minWords, language: 'vi'|'en' }
 
 Layout:
   Prompt text (lớn, rõ)
-  \\\[Meuw: thinking state]
+  \\\[Méo: thinking state]
   \\\[🎤 Bắt đầu nói] button — pulse animation khi recording
   \\\[Transcript box] — text xuất hiện realtime khi nói
   \\\[✍️ Hoặc gõ vào đây] — textarea fallback
@@ -321,7 +321,7 @@ Layout:
   SVG outline của hình (animal, plant, shape...)
   Click vào vùng → tô màu theo palette đang chọn
   Palette: 12 màu cơ bản + undo
-  Khi tô đúng màu theo số → glow effect + Meuw claps
+  Khi tô đúng màu theo số → glow effect + Méo claps
   \\\[Lưu Gallery] khi hoàn thành
 
 Implementation: SVG path fills, click detection bằng `data-region` attribute
@@ -335,15 +335,15 @@ Props: { questions\\\[4-6], timeLimit: null }  // không có timer (stress-free)
 
 Layout:
   Question counter: "1 / 4"
-  \\\[Meuw: idle]
+  \\\[Méo: idle]
   Question + illustration
   Multiple choice options
   Progress bar (số câu đã làm)
 
 End screen:
-  Score: 4/4 → Meuw: celebrating + confetti
-  Score: 3/4 → Meuw: happy + "Gần hoàn hảo!"
-  Score: ≤ 2/4 → Meuw: encouraging + "Cố lên! Ôn lại nhé"
+  Score: 4/4 → Méo: celebrating + confetti
+  Score: 3/4 → Méo: happy + "Gần hoàn hảo!"
+  Score: ≤ 2/4 → Méo: encouraging + "Cố lên! Ôn lại nhé"
   Xem lại đáp án sai + giải thích
 ```
 
@@ -573,7 +573,7 @@ Câu hỏi 1 (MC — phân tích):
 
 Câu hỏi 2 (Speech — VN):
   "Nếu con người săn hết sư tử, điều gì xảy ra với ngựa vằn và cỏ?"
-  Meuw: \\\[reading state] gợi ý "Nghĩ theo chuỗi thức ăn nhé!"
+  Méo: \\\[reading state] gợi ý "Nghĩ theo chuỗi thức ăn nhé!"
 ```
 
 **Module M1-READ** | Đọc hiểu — Chú voi Ellie | 50 XP
@@ -638,7 +638,7 @@ Câu hỏi 2 (Interactive geometry):
 
 ```
 Layout:
-  \\\[Meuw: excited state]
+  \\\[Méo: excited state]
   Prompt 1: "What is your favourite animal and why?"
   \\\[Microphone button — animated pulse khi recording]
   \\\[Transcript box — realtime text]
@@ -658,9 +658,9 @@ Layout:
   - 1 câu Tổng hợp
 
 End screen:
-  4/4: Meuw celebrating + "Meuw hoàn hảo! 🌟" + confetti
-  3/4: Meuw happy + "Tuyệt vời! Gần hoàn hảo rồi"
-  ≤2/4: Meuw encouraging + "Ngày mai ôn lại nhé!" + link xem lại câu sai
+  4/4: Méo celebrating + "Méo hoàn hảo! 🌟" + confetti
+  3/4: Méo happy + "Tuyệt vời! Gần hoàn hảo rồi"
+  ≤2/4: Méo encouraging + "Ngày mai ôn lại nhé!" + link xem lại câu sai
 ```
 
 \---
@@ -794,7 +794,7 @@ Practice: sentence builder — drag words to form comparison sentences
 *Buổi sáng: Ôn tập tuần bằng quiz game — Prodigy-style*
 
 ```
-Format: Meuw đang trên hành trình xuyên thảo nguyên
+Format: Méo đang trên hành trình xuyên thảo nguyên
   Gặp "quái vật" (animal puzzle) → trả lời đúng → tiếp tục hành trình
   Map progress: 5 điểm dừng, mỗi điểm 1 câu hỏi từ tuần này
   Boss battle: câu hỏi khó nhất của tuần (multi-step)
@@ -838,7 +838,7 @@ Weekly Festival:
   - Quiz tổng hợp 10 câu (tất cả chủ đề tuần 1)
   - Mini game: "Sắp xếp chuỗi thức ăn" — drag \\\& drop
   - Portfolio review: xem lại Gallery, chọn tranh đẹp nhất
-  - Badge ceremony: Meuw trao huy hiệu "Tuần 1: Nhà Thám Hiểm Châu Phi" 🌍
+  - Badge ceremony: Méo trao huy hiệu "Tuần 1: Nhà Thám Hiểm Châu Phi" 🌍
 ```
 
 \---
@@ -886,7 +886,7 @@ Weekly Festival:
 #### TUẦN 4: Review Tháng 1 + Dự án lớn (Ngày 22–28)
 
 * Ngày 22–24: Ôn tập hệ thống tất cả kiến thức tháng 1
-* Ngày 25–27: **Dự án "Sách ảnh động vật của Meuw"**
+* Ngày 25–27: **Dự án "Sách ảnh động vật của Méo"**
 
   * Chọn 5 con vật yêu thích từ tháng 1
   * Vẽ chân dung từng con (Drawing canvas)
@@ -1265,17 +1265,17 @@ Bài học:
 **Ngày 78–80: Ôn tập tổng hợp 3 tháng**
 
 ```
-Game format: "Meuw's Science Olympics"
+Game format: "Méo's Science Olympics"
   3 vòng thi:
   - Vòng 1: Vương quốc Động vật (tuần 1–4)
   - Vòng 2: Trái Đất (tuần 5–8)  
   - Vòng 3: Khoa học (tuần 9–11)
   
   Mỗi vòng: 8 câu hỏi, 60 giây/câu (không bắt buộc — tùy chọn timer)
-  Mascot Meuw: Đội cổ vũ + phản ứng realtime
+  Mascot Méo: Đội cổ vũ + phản ứng realtime
 ```
 
-**Ngày 81–83: Dự án tốt nghiệp — "Cuốn sách khoa học của Meuw"**
+**Ngày 81–83: Dự án tốt nghiệp — "Cuốn sách khoa học của Méo"**
 
 ```
 Nội dung tự chọn từ 3 chủ đề yêu thích nhất của 3 tháng
@@ -1293,11 +1293,11 @@ App render: "flip book" có thể lật trang, share PDF
 
 ```
 Màn hình đặc biệt:
-  \\\[Full-screen animation: Meuw đội mũ tốt nghiệp, confetti toàn màn hình]
+  \\\[Full-screen animation: Méo đội mũ tốt nghiệp, confetti toàn màn hình]
   
   Diplôme (có thể in ra):
-    "Chứng nhận Meuw đã hoàn thành
-     Chương trình Hè Meuw Academy 2025
+    "Chứng nhận Méo đã hoàn thành
+     Chương trình Hè Méo Academy 2025
      84 ngày · 672 modules · \\\[Tổng XP] điểm"
   
   Huy hiệu cuối: 👑 "Nhà Bác Học Mùa Hè"
@@ -1381,7 +1381,7 @@ Tuần/Tháng:
 ```javascript
 // Nhắc nghỉ sau mỗi 45 phút học liên tục
 // Toast notification nhẹ nhàng, không block UI
-// Meuw: sleeping state với message "Nghỉ ngơi 10 phút nhé! ☕"
+// Méo: sleeping state với message "Nghỉ ngơi 10 phút nhé! ☕"
 // "Snooze 5 phút" button
 // Timer tự reset sau khi break
 ```
@@ -1399,7 +1399,7 @@ Tuần/Tháng:
 - Modules hoàn thành / tổng
 - XP kiếm được
 - Môn nào mạnh/yếu hôm nay (based on score)
-- Meuw đang ở trạng thái nào (mood indicator vui)
+- Méo đang ở trạng thái nào (mood indicator vui)
 ```
 
 **Tab 2: Tiến trình tổng quan**
@@ -1479,7 +1479,7 @@ TOTAL:              \\\~395KB (load nhanh, no server needed)
 ### Priority build order:
 
 1. **Core shell** (index.html + base CSS + router + state)
-2. **Mascot system** (SVG Meuw + animation controller)
+2. **Mascot system** (SVG Méo + animation controller)
 3. **Question types** (8 types, progressive implementation)
 4. **Dashboard** (hero + session cards + stats)
 5. **Drawing canvas** (với reference overlay)

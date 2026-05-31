@@ -7,6 +7,7 @@ import { el, animateClass, sleep, getSubjectConfig } from '../utils.js';
 import State from '../state.js';
 import Router from '../router.js';
 import { getModuleData } from '../data/curriculum-loader.js';
+import { generatePracticeModule } from '../data/practice-generator.js';
 import { Mascot, triggerMascot } from '../mascot.js';
 import { Audio } from '../audio.js';
 import Confetti from '../confetti.js';
@@ -22,10 +23,11 @@ import { renderColorFill } from './question-types/ColorFill.js';
 import { renderMiniQuiz } from './question-types/MiniQuiz.js';
 
 export function renderLesson(params) {
-  const dayId = parseInt(params.dayId, 10);
+  const isRandomPractice = params.dayId === 'practice' && params.moduleId === 'random';
+  const dayId = isRandomPractice ? 'practice' : parseInt(params.dayId, 10);
   const moduleId = params.moduleId;
   
-  const moduleData = getModuleData(dayId, moduleId);
+  const moduleData = isRandomPractice ? generatePracticeModule() : getModuleData(dayId, moduleId);
   const container = el('div', { class: 'page-container lesson-container' });
 
   if (!moduleData) {
@@ -94,7 +96,7 @@ export function renderLesson(params) {
     dots.forEach((d, i) => {
       d.className = 'w-4 h-4 rounded-full transition-colors duration-300 ';
       if (i < index) d.className += 'bg-correct';
-      else if (i === index) d.className += 'bg-meuw-purple animate-pulse';
+      else if (i === index) d.className += 'bg-méo-purple animate-pulse';
       else d.className += 'bg-border';
     });
 
@@ -106,8 +108,10 @@ export function renderLesson(params) {
     const q = moduleData.questions[index];
     let qEl = null;
 
+    const isAlreadyCompleted = State.isModuleComplete(moduleData.id);
     const handleComplete = (isCorrect, xp) => {
-      if (isCorrect && xp) {
+      // Only award XP if the module wasn't previously completed
+      if (isCorrect && xp && !isAlreadyCompleted) {
         xpEarnedTotal += xp;
         State.addXP(xp); // Add immediately
       }
@@ -145,27 +149,33 @@ export function renderLesson(params) {
     Confetti.burst();
     triggerMascot('module:complete');
 
-    // Mark complete
-    const timeSpentMs = Date.now() - startTime;
-    State.markModuleComplete(moduleData.id, {
-      score: numQuestions, // simplify for now
-      total: numQuestions,
-      timeMs: timeSpentMs,
-      xp: xpEarnedTotal
-    });
+    const isAlreadyCompleted = State.isModuleComplete(moduleData.id);
+    
+    if (!isAlreadyCompleted) {
+      // Mark complete only if it's the first time
+      const timeSpentMs = Date.now() - startTime;
+      State.markModuleComplete(moduleData.id, {
+        score: numQuestions, // simplify for now
+        total: numQuestions,
+        timeMs: timeSpentMs,
+        xp: xpEarnedTotal
+      });
+    }
 
     card.innerHTML = '';
     const compBox = el('div', { class: 'flex flex-col items-center justify-center flex-1 text-center py-10' });
     
-    const title = el('h2', { class: 'completion-title font-display text-4xl text-meuw-purple mb-4' }, 'Hoàn thành!');
-    const xpText = el('div', { class: 'text-2xl font-bold text-warning mb-8 flex items-center gap-2' }, `+${xpEarnedTotal} ⭐ <span class="text-3xl">🌟</span>`);
+    const title = el('h2', { class: 'completion-title font-display text-4xl text-méo-purple mb-4' }, 'Hoàn thành!');
+    const xpText = el('div', { class: 'text-2xl font-bold text-warning mb-8 flex items-center gap-2' }, 
+      isAlreadyCompleted ? `Ôn tập hoàn tất! 🌟` : `+${xpEarnedTotal} ⭐ <span class="text-3xl">🌟</span>`
+    );
     
     // Check if badges were earned
     const newBadges = State.checkAndAwardBadges();
     if (newBadges.length > 0) {
       Audio.badge();
-      const badgeArea = el('div', { class: 'bg-meuw-purple-lt p-6 rounded-2xl mb-8 w-full max-w-md' });
-      badgeArea.innerHTML = `<h3 class="font-bold text-meuw-purple mb-4">Huy hiệu mới!</h3>`;
+      const badgeArea = el('div', { class: 'bg-méo-purple-lt p-6 rounded-2xl mb-8 w-full max-w-md' });
+      badgeArea.innerHTML = `<h3 class="font-bold text-méo-purple mb-4">Huy hiệu mới!</h3>`;
       const grid = el('div', { class: 'flex justify-center gap-4' });
       newBadges.forEach(b => {
         grid.innerHTML += `
@@ -186,7 +196,11 @@ export function renderLesson(params) {
     const nextBtn = el('button', { class: 'btn btn-cta' }, 'Tiếp tục');
     nextBtn.addEventListener('click', () => {
       Audio.click();
-      Router.navigate(`/session/${dayId}/${moduleData.session}`);
+      if (isRandomPractice) {
+        Router.navigate('/practice');
+      } else {
+        Router.navigate(`/session/${dayId}/${moduleData.session}`);
+      }
     });
 
     btnRow.appendChild(backBtn);
@@ -199,12 +213,12 @@ export function renderLesson(params) {
     card.appendChild(compBox);
   }
 
-  // Check if already completed
-  if (State.isModuleComplete(moduleData.id)) {
+  // Check if already completed (Skip this check for random practice, because random practice is never considered "already completed" before it starts)
+  if (!isRandomPractice && State.isModuleComplete(moduleData.id)) {
     // Just a prompt
     const compBox = el('div', { class: 'text-center py-10' });
     compBox.innerHTML = `
-      <h2 class="font-display text-3xl text-meuw-purple mb-4">Bài này em đã hoàn thành rồi!</h2>
+      <h2 class="font-display text-3xl text-méo-purple mb-4">Bài này em đã hoàn thành rồi!</h2>
       <p class="mb-8">Em có muốn học lại không? (Học lại không nhận thêm ⭐ đâu nhé)</p>
     `;
     const btnRow = el('div', { class: 'flex justify-center gap-4' });

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <rect width="100" height="100" rx="20" fill="#7C3AED" />
   <circle cx="50" cy="55" r="30" fill="#FFFFFF" />
-  <!-- Meuw face -->
+  <!-- Méo face -->
   <path d="M 35 30 L 25 15 L 45 25" fill="#FFFFFF" />
   <path d="M 65 30 L 75 15 L 55 25" fill="#FFFFFF" />
   <path d="M 37 27 L 30 18 L 43 25" fill="#FCA5A5" />

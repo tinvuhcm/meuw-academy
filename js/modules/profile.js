@@ -11,7 +11,7 @@ import { Audio } from '../audio.js';
 export function renderProfile() {
   const container = el('div', { class: 'page-container flex flex-col items-center justify-center min-h-[80vh]' });
 
-  const title = el('h1', { class: 'font-display text-4xl text-meuw-purple mb-8 text-center' }, 'Ai đang học vậy ta?');
+  const title = el('h1', { class: 'font-display text-4xl text-méo-purple mb-8 text-center' }, 'Ai đang học vậy ta?');
   container.appendChild(title);
 
   const profiles = State.listProfiles();
@@ -23,7 +23,7 @@ export function renderProfile() {
   profiles.forEach(p => {
     const card = el('div', { class: 'card card-hover flex flex-col items-center p-6 cursor-pointer text-center' });
     if (p.id === activeId) {
-      card.classList.add('border-meuw-purple', 'bg-meuw-purple-lt');
+      card.classList.add('border-méo-purple', 'bg-méo-purple-lt');
       card.style.borderWidth = '3px';
     }
 
@@ -94,7 +94,7 @@ function showCreateModal(parent) {
   // Name Input
   const nameGroup = el('div', { class: 'input-group' });
   nameGroup.innerHTML = '<label class="input-label">Tên người học</label>';
-  const nameInput = el('input', { class: 'input-field', type: 'text', placeholder: 'Ví dụ: Meuw' });
+  const nameInput = el('input', { class: 'input-field', type: 'text', placeholder: 'Ví dụ: Méo' });
   nameGroup.appendChild(nameInput);
   modal.appendChild(nameGroup);
 

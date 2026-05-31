@@ -17,7 +17,7 @@ Deploy:      GitHub Pages + Vercel (static, no server)
 
 ### File Structure (Complete)
 ```
-meuw-academy/
+méo-academy/
 ├── index.html                     # Shell, SPA routing anchor
 ├── manifest.json                  # PWA manifest
 ├── sw.js                         # Service Worker (offline)
@@ -59,15 +59,15 @@ meuw-academy/
 │   └── curriculum-bonus.js      # Review days, special events
 └── assets/
     ├── mascot/
-    │   ├── meow-idle.svg
-    │   ├── meow-happy.svg
-    │   ├── meow-excited.svg
-    │   ├── meow-encouraging.svg
-    │   ├── meow-thinking.svg
-    │   ├── meow-reading.svg
-    │   ├── meow-drawing.svg
-    │   ├── meow-sleeping.svg
-    │   └── meow-celebrating.svg
+    │   ├── méo-idle.svg
+    │   ├── méo-happy.svg
+    │   ├── méo-excited.svg
+    │   ├── méo-encouraging.svg
+    │   ├── méo-thinking.svg
+    │   ├── méo-reading.svg
+    │   ├── méo-drawing.svg
+    │   ├── méo-sleeping.svg
+    │   └── méo-celebrating.svg
     ├── icons/
     │   ├── math.svg, english.svg, science.svg
     │   ├── reading.svg, drawing.svg, quiz.svg
@@ -82,14 +82,14 @@ meuw-academy/
 
 ### localStorage Schema
 ```javascript
-// Key: `meuwAcademy_v2`
+// Key: `meoAcademy_v2`
 {
   "version": 2,
   "activeProfile": "profile_001",
   "profiles": {
     "profile_001": {
       "id": "profile_001",
-      "name": "Meuw",
+      "name": "Méo",
       "avatarColor": "#EC4899",
       "createdAt": "2025-06-01",
       "currentDay": 1,
@@ -232,7 +232,7 @@ const Router = {
   
   mascotLines: {
     intro: "Hôm nay mình học về số khổng lồ! 🐘",
-    correct: ["Xuất sắc! 🌟", "Đỉnh quá! 🔥", "Meuw cũng không nghĩ ra đâu! 😸"],
+    correct: ["Xuất sắc! 🌟", "Đỉnh quá! 🔥", "Méo cũng không nghĩ ra đâu! 😸"],
     wrong: ["Ủa? Thử lại nhé! 💪", "Sắp đúng rồi! 🤏", "Đọc lại đề một lần nữa nhé!"],
     complete: "Tuyệt vời! Module hoàn thành! 🎉",
   }
@@ -383,7 +383,7 @@ const Router = {
     // Array of 4-6 questions from types 1-3
   ],
   endScreenMessages: {
-    perfect: "Meuw hoàn hảo! 🌟 Em là thiên tài!",
+    perfect: "Méo hoàn hảo! 🌟 Em là thiên tài!",
     good: "Tuyệt vời! Gần hoàn hảo rồi! 🔥",
     ok: "Cố lên! Ôn lại nhé, ngày mai sẽ tốt hơn! 💪"
   }
@@ -453,7 +453,7 @@ class MascotController {
 ```
 
 ### Speech Bubbles
-Meuw's dialogue lines (per module in curriculum data):
+Méo's dialogue lines (per module in curriculum data):
 - `intro`: greeting at lesson start
 - `correct[]`: random pick on correct answer (≥3 variations)
 - `wrong[]`: random pick on wrong answer (≥3 variations, never repeat consecutive)
@@ -534,7 +534,7 @@ class ConfettiSystem {
   
   burst(options = {}) {
     // options: { count, colors, origin, duration }
-    // Default: 80 particles, meow palette colors, center-top, 3s
+    // Default: 80 particles, méo palette colors, center-top, 3s
   }
   
   streamFrom(x, y, durationMs) {
@@ -564,7 +564,7 @@ const MEOW_CONFETTI = ['#7C3AED','#EC4899','#F59E0B','#10B981','#3B82F6','#EF444
 - Modules completed vs total
 - XP earned
 - Per-subject performance bars
-- Meuw mood indicator (based on session quality)
+- Méo mood indicator (based on session quality)
 
 **Tab 2: Lịch sử**
 - Monthly calendar (green = full day, yellow = partial, empty = skipped)
@@ -618,7 +618,7 @@ async function loadDayData(dayNum) {
 // - Curriculum data: Cache on first access
 // - Gallery images: LocalStorage (separate)
 
-const CACHE_VERSION = 'meuw-v1';
+const CACHE_VERSION = 'méo-v1';
 const APP_SHELL = ['/', '/index.html', '/css/', '/js/', '/assets/'];
 ```
 
@@ -628,12 +628,12 @@ const APP_SHELL = ['/', '/index.html', '/css/', '/js/', '/assets/'];
 
 ### GitHub Setup
 ```bash
-# Repo: meuw-academy (public)
+# Repo: méo-academy (public)
 # Structure: all files at root (no build step needed)
 git init
-git remote add origin https://github.com/{user}/meuw-academy.git
+git remote add origin https://github.com/{user}/méo-academy.git
 git add .
-git commit -m "feat: initial Meuw Academy app"
+git commit -m "feat: initial Méo Academy app"
 git push -u origin main
 ```
 

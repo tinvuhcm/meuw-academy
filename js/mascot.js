@@ -1,10 +1,11 @@
 /**
  * MEUW ACADEMY — mascot.js
- * Meuw mascot animation controller
+ * Méo mascot animation controller
  * Listens for 'mascot' CustomEvent and manages state/speech bubbles
  */
 
 import { randomPick, createNonRepeatPicker } from './utils.js';
+import State from './state.js';
 
 // ============================================
 // MASCOT STATE MACHINE
@@ -12,20 +13,25 @@ import { randomPick, createNonRepeatPicker } from './utils.js';
 
 const VALID_STATES = [
   'idle', 'happy', 'excited', 'encouraging',
-  'thinking', 'reading', 'drawing', 'sleeping', 'celebrating'
+  'thinking', 'reading', 'drawing', 'sleeping', 'celebrating',
+  'sad', 'disappointed', 'confused', 'relaxed', 'angry'
 ];
 
 const EVENT_MAP = {
   'answer:correct':   { state: 'happy',       duration: 1500 },
   'answer:wrong':     { state: 'encouraging', duration: 1500 },
+  'answer:wrong_max': { state: 'sad',         duration: 2000 },
   'module:complete':  { state: 'celebrating', duration: 3000 },
   'module:start':     { state: 'thinking',    duration: 800  },
   'module:drawing':   { state: 'drawing',     duration: null },
   'module:reading':   { state: 'reading',     duration: null },
-  'streak:break':     { state: 'sleeping',    duration: null },
+  'streak:break':     { state: 'disappointed',duration: null },
   'badge:earned':     { state: 'celebrating', duration: 3000 },
-  'level:up':         { state: 'celebrating', duration: 4000 },
-  'quiz:perfect':     { state: 'excited',     duration: 3000 },
+  'level:up':         { state: 'excited',     duration: 4000 },
+  'quiz:perfect':     { state: 'happy',       duration: 3000 },
+  'hint:used':        { state: 'confused',    duration: 1500 },
+  'idle:long':        { state: 'relaxed',     duration: null },
+  'skip:lesson':      { state: 'angry',       duration: 2000 }
 };
 
 // Default dialogue for each event (module data can override)
@@ -34,7 +40,7 @@ const DEFAULT_DIALOGUES = {
     '🌟 Xuất sắc!',
     '🔥 Đỉnh quá!',
     '💪 Tuyệt vời!',
-    '🎉 Meuw cũng không nghĩ ra đâu!',
+    '🎉 Méo cũng không nghĩ ra đâu!',
     '✨ Hoàn hảo!',
     '🚀 Siêu giỏi!',
   ],
@@ -46,15 +52,15 @@ const DEFAULT_DIALOGUES = {
   ],
   'module:complete': [
     '🎉 Tuyệt vời! Module hoàn thành!',
-    '🌟 Em giỏi quá! Meuw tự hào lắm!',
+    '🌟 Em giỏi quá! Méo tự hào lắm!',
     '🚀 Xong rồi! Tiếp tục nào!',
   ],
   'badge:earned': [
-    '🏆 Huy hiệu mới! Meuw vỗ tay cho em!',
+    '🏆 Huy hiệu mới! Méo vỗ tay cho em!',
     '🌟 Ghê quá! Em xứng đáng lắm!',
   ],
   'level:up': [
-    '🎊 LÊN CẤP RỒI! Meuw xoay tròn đây!',
+    '🎊 LÊN CẤP RỒI! Méo xoay tròn đây!',
     '👑 Em ngày càng giỏi hơn! Cấp mới!',
   ],
 };
@@ -112,8 +118,47 @@ class MascotController {
     clearTimeout(this._stateTimer);
     this.currentState = state;
 
-    // Apply class to all registered mascot elements
+    // Apply image to all registered mascot elements
     this.elements.forEach(el => {
+      el.innerHTML = ''; // Clear SVG
+      el.style.position = 'relative';
+      
+      const img = document.createElement('img');
+      img.style.width = '100%';
+      img.style.height = '100%';
+      img.style.objectFit = 'contain';
+      
+      let src = 'assets/images/mascot_avatar.png';
+      if (state === 'idle') src = 'assets/images/mascot_avatar.png';
+      else if (['happy', 'excited'].includes(state)) src = 'assets/images/meo_happy_sticker_1780213430564.png';
+      else if (['encouraging', 'thinking', 'reading', 'drawing'].includes(state)) src = 'assets/images/meo_thinking_sticker_1780213451318.png';
+      else if (['celebrating'].includes(state)) src = 'assets/images/meo_celebrating_sticker_1780213464815.png';
+      else if (state === 'sad') src = 'assets/images/meo_sad_sticker_1780214484499.png';
+      else if (state === 'disappointed' || state === 'sleeping') src = 'assets/images/meo_disappointed_sticker_1780214499727.png';
+      else if (state === 'confused') src = 'assets/images/meo_confused_sticker_1780214514803.png';
+      else if (state === 'relaxed') src = 'assets/images/meo_relaxed_sticker_1780214530211.png';
+      else if (state === 'angry') src = 'assets/images/meo_angry_sticker_1780214546071.png';
+      
+      img.src = src;
+      el.appendChild(img);
+      
+      const profile = State.getActiveProfile();
+      if (profile && profile.equippedAccessories) {
+        const itemsMeta = {
+          'acc_sunglasses': { src: 'assets/mascot/accessories/accessory_sunglasses_1780213487126.png', styles: 'position:absolute; width:60%; top:35%; left:20%; z-index:20;' },
+          'acc_crown': { src: 'assets/mascot/accessories/accessory_crown_1780213501375.png', styles: 'position:absolute; width:45%; top:-5%; left:27%; z-index:20;' },
+          'acc_wand': { src: 'assets/mascot/accessories/accessory_wand_1780213517410.png', styles: 'position:absolute; width:40%; top:45%; left:65%; z-index:20;' }
+        };
+        profile.equippedAccessories.forEach(id => {
+          if (itemsMeta[id]) {
+            const accImg = document.createElement('img');
+            accImg.src = itemsMeta[id].src;
+            accImg.style.cssText = itemsMeta[id].styles;
+            el.appendChild(accImg);
+          }
+        });
+      }
+
       // Remove all state classes
       VALID_STATES.forEach(s => el.classList.remove(`mascot-${s}`));
       el.classList.add(`mascot-${state}`);

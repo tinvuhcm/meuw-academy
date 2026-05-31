@@ -43,7 +43,7 @@ export function renderBadges() {
 
   // 1. Header
   const header = el('div', { class: 'flex-between mb-8' });
-  const title = el('h1', { class: 'font-display text-3xl text-meuw-purple' }, 'Bộ sưu tập Huy hiệu 🏆');
+  const title = el('h1', { class: 'font-display text-3xl text-méo-purple' }, 'Bộ sưu tập Huy hiệu 🏆');
   
   const backBtn = el('button', { class: 'btn btn-outline text-sm' }, '← Quay lại');
   backBtn.addEventListener('click', () => { Audio.click(); Router.back(); });
@@ -62,7 +62,7 @@ export function renderBadges() {
       <h2 class="font-display text-2xl">Đã thu thập</h2>
       <p class="text-text-muted font-bold">Hãy cố gắng mở khóa tất cả nhé!</p>
     </div>
-    <div class="text-4xl font-display text-meuw-purple">
+    <div class="text-4xl font-display text-méo-purple">
       ${earnedList.length} <span class="text-xl text-text-muted">/ ${ALL_BADGES.length}</span>
     </div>
   `;
@@ -110,7 +110,7 @@ function showBadgeDetail(b) {
     <div class="w-32 h-32 rounded-full mx-auto bg-warning-bg border-4 border-warning flex-center text-6xl shadow-brand mb-6 animate-pulse">
       ${b.emoji}
     </div>
-    <h2 class="font-display text-3xl text-meuw-purple mb-2">${b.name}</h2>
+    <h2 class="font-display text-3xl text-méo-purple mb-2">${b.name}</h2>
     <p class="text-lg text-text-muted font-bold">${b.desc}</p>
   `;
 

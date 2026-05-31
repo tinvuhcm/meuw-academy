@@ -16,6 +16,10 @@ import { renderProfile } from './modules/profile.js';
 import { renderParent } from './modules/parent.js';
 import { renderGallery } from './modules/gallery.js';
 import { renderBadges } from './modules/badges.js';
+import { renderShop } from './modules/shop.js';
+import { renderChallenges } from './modules/challenges.js';
+import { renderCustomizer } from './modules/mascot-customizer.js';
+import { renderPractice } from './modules/practice.js';
 
 // Toast System
 let toastTimeout;
@@ -74,6 +78,22 @@ Router.on('/gallery', () => {
 
 Router.on('/badges', () => {
   mount(renderBadges());
+});
+
+Router.on('/shop', () => {
+  mount(renderShop());
+});
+
+Router.on('/challenges', () => {
+  mount(renderChallenges());
+});
+
+Router.on('/customizer', () => {
+  mount(renderCustomizer());
+});
+
+Router.on('/practice', () => {
+  mount(renderPractice());
 });
 
 // Route Guards (Global)

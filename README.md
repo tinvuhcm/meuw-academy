@@ -1,10 +1,10 @@
-# Meuw Academy
+# Méo Academy
 
-> 🐱 Ứng dụng học hè cho bé Méo (Meuw) (Vũ Hoàng Khả Minh / Vũ Minh Méo) — học vui, học sâu, học cùng Meuw!
+> 🐱 Ứng dụng học hè cho bé Méo (Vũ Hoàng Khả Minh / Vũ Minh Méo) — học vui, học sâu, học cùng Méo!
 
 ## 🌟 Demo
 
-**Live:** https://meuw-academy.vercel.app
+**Live:** https://méo-academy.vercel.app
 
 ## 📸 Screenshots
 
@@ -14,7 +14,7 @@
 
 - **90 ngày học** đầy đủ — 3 tháng hè không nhàm chán
 - **8 loại bài tập** interactive: trắc nghiệm, điền chỗ trống, kéo thả, SVG tương tác, luyện nói, vẽ, tô màu, mini quiz
-- **Mascot Meuw** — con mèo chibi với 9 trạng thái animation, phản ứng theo từng tương tác
+- **Mascot Méo** — con mèo chibi với 9 trạng thái animation, phản ứng theo từng tương tác
 - **Gamification:** XP, streak, 28 huy hiệu, 5 cấp độ
 - **Gallery:** lưu tranh vẽ của bé vào bộ sưu tập riêng
 - **Parent Dashboard:** theo dõi tiến trình, cài đặt, báo cáo
@@ -37,8 +37,8 @@ Không cần build! Mở trực tiếp:
 
 ```bash
 # Clone
-git clone https://github.com/vuminhtin/meuw-academy.git
-cd meuw-academy
+git clone https://github.com/vuminhtin/méo-academy.git
+cd méo-academy
 
 # Mở bằng live server (VSCode Live Server extension)
 # Hoặc dùng Python:
@@ -52,7 +52,7 @@ python -m http.server 3000
 ## 🏗️ Kiến trúc
 
 ```
-meuw-academy/
+méo-academy/
 ├── index.html              # SPA shell
 ├── css/                    # Design system, animations, components
 ├── js/                     # Core: state, router, mascot, audio...
@@ -73,10 +73,10 @@ meuw-academy/
 
 ## 🎮 Gameplay
 
-1. **Mở app** → Dashboard với Meuw chờ
+1. **Mở app** → Dashboard với Méo chờ
 2. **Chọn module** sáng/chiều
 3. **Hoàn thành** bài học + câu hỏi interactive
-4. **Meuw phản ứng** theo mỗi câu trả lời
+4. **Méo phản ứng** theo mỗi câu trả lời
 5. **Thu thập XP** → tăng cấp → nhận huy hiệu
 6. **Vẽ tranh** → lưu vào Gallery
 7. **Streak** mỗi ngày → badge tuần/tháng
@@ -99,9 +99,9 @@ Truy cập Parent Dashboard bằng PIN (mặc định: 1234):
 | iPhone (Safari) | ⚠️ Giới hạn | Không có Speech API |
 | Firefox | ⚠️ Giới hạn | Không có Speech API |
 
-## 🐱 Về Meuw
+## 🐱 Về Méo
 
-Meuw là linh vật của app — con mèo chibi màu vàng-hồng với 9 trạng thái cảm xúc. Meuw sẽ:
+Méo là linh vật của app — con mèo chibi màu vàng-hồng với 9 trạng thái cảm xúc. Méo sẽ:
 - Nhảy lên vui mừng khi em trả lời đúng 🎉
 - Lắc đầu nhẹ nhàng khi sai và nói "Thử lại nhé!" 💪
 - Ngủ gật khi em quên học 😴
@@ -109,4 +109,4 @@ Meuw là linh vật của app — con mèo chibi màu vàng-hồng với 9 trạ
 
 ---
 
-*Made with 💜 for Meuw, by DS. Mèo + AI*
+*Made with 💜 for Méo, by DS. Mèo + AI*

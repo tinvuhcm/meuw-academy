@@ -66,7 +66,7 @@
 
 #### NGÀY 5 — "Ngày tự do sáng tạo" 🎨
 *Buổi sáng:*
-- **M5-GAME** (80 XP): Adventure game — Meuw trên thảo nguyên, gặp 5 "quái vật" (animal puzzle), boss battle
+- **M5-GAME** (80 XP): Adventure game — Méo trên thảo nguyên, gặp 5 "quái vật" (animal puzzle), boss battle
 *Buổi chiều:*
 - **A5-CREATE** (60 XP): Dự án "Vẽ con vật tưởng tượng" — kết hợp 3 con vật + viết mô tả
 - **A5-ENGS** (40 XP): Speaking — "My imaginary animal is called..."
@@ -87,7 +87,7 @@
 *Chỉ buổi sáng (nhẹ nhàng):*
 - **W1-FEST** (100 XP): Weekly Festival — Quiz 10 câu tổng hợp
 - **W1-GAME** (60 XP): Mini game "Sắp xếp chuỗi thức ăn" — drag & drop
-- **W1-PORT** (40 XP): Portfolio review — Meuw chọn tranh đẹp nhất từ Gallery
+- **W1-PORT** (40 XP): Portfolio review — Méo chọn tranh đẹp nhất từ Gallery
 - **W1-BADGE**: Badge ceremony 🏆 "Tuần 1: Nhà Thám Hiểm Châu Phi"
 
 ---
@@ -259,7 +259,7 @@
 - **R24-READ** (60 XP): Đọc bài mới có tổng hợp kiến thức tháng 1
 - **R24-MEGA-QUIZ** (100 XP): Quiz 15 câu — tất cả môn tháng 1
 
-#### NGÀY 25–27 — Dự án "Sách Ảnh Động Vật của Meuw" 📖
+#### NGÀY 25–27 — Dự án "Sách Ảnh Động Vật của Méo" 📖
 *Mỗi ngày 1 phần:*
 - **Ngày 25** (100 XP): Chọn 5 con vật yêu thích, vẽ chân dung từng con
 - **Ngày 26** (100 XP): Viết mô tả 5 câu TV + 2 câu EN cho mỗi con
@@ -709,7 +709,7 @@
 
 ### TUẦN 12: Grand Finale (Ngày 78–84)
 
-#### NGÀY 78–80 — "Meuw's Science Olympics" 🏅
+#### NGÀY 78–80 — "Méo's Science Olympics" 🏅
 ```
 Game format: 3 vòng thi
 - Vòng 1 (Ngày 78, 120 XP): Vương Quốc Động Vật — 8 câu hỏi hay nhất tháng 1
@@ -717,13 +717,13 @@ Game format: 3 vòng thi
 - Vòng 3 (Ngày 80, 120 XP): Khoa Học & Phát Minh — 8 câu hỏi hay nhất tháng 3
 
 Mỗi vòng:
-- Meuw làm MC cổ vũ
+- Méo làm MC cổ vũ
 - Timer tùy chọn (không bắt buộc)
 - Sau mỗi câu: giải thích vui + mascot reaction
 - Kết thúc vòng: medal ceremony
 ```
 
-#### NGÀY 81–83 — "Cuốn sách khoa học của Meuw" 📚
+#### NGÀY 81–83 — "Cuốn sách khoa học của Méo" 📚
 ```
 Dự án tốt nghiệp — tự chọn từ 3 chủ đề yêu thích nhất
 
@@ -747,12 +747,12 @@ XP: 150 XP mỗi ngày
 XP: 200 XP đặc biệt
 
 Màn hình đặc biệt:
-- Full-screen animation: Meuw đội mũ tốt nghiệp, confetti toàn màn hình 30 giây
+- Full-screen animation: Méo đội mũ tốt nghiệp, confetti toàn màn hình 30 giây
 - Bản nhạc tốt nghiệp (Web Audio API)
 - Diplôme có thể in:
   "Chứng nhận MEUW VŨ HOÀNG KHẢ MINH
    đã hoàn thành xuất sắc
-   Chương trình Hè Meuw Academy 2025
+   Chương trình Hè Méo Academy 2025
    84 ngày · 672 modules · [Tổng XP] điểm"
 
 Huy hiệu cuối: 👑 "Nhà Bác Học Mùa Hè"

@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" class="mascot-svg mascot-sm" id="meuw-reading">
-  <!-- Common Meuw base -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" class="mascot-svg mascot-sm" id="méo-celebrating">
+  <!-- Common Méo base -->
   <g id="tail" transform="translate(20, 90)">
     <path d="M 0 0 Q -15 -10 -10 -30 Q -5 -15 0 0" fill="#FCA5A5"/>
   </g>
@@ -13,6 +13,6 @@
     <path d="M 25 -25 L 35 -45 L 10 -35" fill="#FFFFFF" stroke="#1F2937" stroke-width="3"/>
     <path d="M -27 -28 L -32 -40 L -15 -33" fill="#FCA5A5"/>
     <path d="M 27 -28 L 32 -40 L 15 -33" fill="#FCA5A5"/>
-    <path class="eye" d="M -15 -5 C -15 -15 -5 -15 -5 -5 C -5 5 -15 5 -15 -5 M 5 -5 C 5 -15 15 -15 15 -5 C 15 5 5 5 5 -5" fill="#1F2937"/><path class="mouth-path" d="M -5 10 Q 0 15 5 10" fill="none" stroke="#1F2937" stroke-width="2" stroke-linecap="round"/><g class="acc-glasses"><rect x="-20" y="-10" width="15" height="10" rx="2" fill="none" stroke="#7C3AED" stroke-width="2"/><rect x="5" y="-10" width="15" height="10" rx="2" fill="none" stroke="#7C3AED" stroke-width="2"/><line x1="-5" y1="-5" x2="5" y2="-5" stroke="#7C3AED" stroke-width="2"/></g>
+    <path class="eye" d="M -15 -5 Q -10 -15 -5 -5 M 5 -5 Q 10 -15 15 -5" fill="none" stroke="#1F2937" stroke-width="3" stroke-linecap="round"/><path class="mouth-path" d="M -8 10 Q 0 25 8 10 Z" fill="#EF4444" stroke="#1F2937" stroke-width="2"/>
   </g>
 </svg>

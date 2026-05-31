@@ -333,7 +333,7 @@ export function renderDrawingCanvas(q, onComplete) {
     // Save to gallery
     State.saveDrawing({
       src: imgData,
-      title: q.drawingTitle || 'Tác phẩm của Meuw'
+      title: q.drawingTitle || 'Tác phẩm của Méo'
     });
 
     Audio.correct();

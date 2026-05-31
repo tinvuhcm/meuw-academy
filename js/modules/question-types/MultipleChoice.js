@@ -76,7 +76,7 @@ export function renderMultipleChoice(q, onComplete) {
         // Show Explanation
         if (q.explanation) {
           const expBox = el('div', { class: 'explanation-box mt-4 p-4 bg-wrong-bg border-2 border-wrong rounded-xl' });
-          expBox.innerHTML = `<strong>💡 Meuw giải thích:</strong> ${q.explanation}`;
+          expBox.innerHTML = `<strong>💡 Méo giải thích:</strong> ${q.explanation}`;
           container.appendChild(expBox);
         }
 

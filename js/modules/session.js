@@ -54,8 +54,8 @@ export function renderSession(params) {
       statusIcon = '<span class="text-correct">✓ Xong</span>';
     } else if (!foundFirstIncomplete) {
       // Current active module
-      statusClass = 'bg-surface border-meuw-purple shadow-md transform scale-102';
-      statusIcon = '<span class="text-meuw-purple animate-pulse">▶ Đang học</span>';
+      statusClass = 'bg-surface border-méo-purple shadow-md transform scale-102';
+      statusIcon = '<span class="text-méo-purple animate-pulse">▶ Đang học</span>';
       foundFirstIncomplete = true;
     } else {
       // Locked / queued

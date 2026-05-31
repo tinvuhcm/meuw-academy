@@ -1,14 +1,14 @@
 # MEUW ACADEMY — BUILD PLAN & EXECUTION ORDER
 
 ## GOAL
-Build Meuw Academy as a complete, deployable web app that passes the `/goal` instruction: fully functional, all 84 days of content, beautiful UI, deploy to GitHub + Vercel.
+Build Méo Academy as a complete, deployable web app that passes the `/goal` instruction: fully functional, all 84 days of content, beautiful UI, deploy to GitHub + Vercel.
 
 ---
 
 ## PHASE 0: SETUP (Day 0)
 
 ### 0.1 Project initialization
-- [ ] Init git repo: `meuw-academy`
+- [ ] Init git repo: `méo-academy`
 - [ ] Create `.gitignore`
 - [ ] Create `README.md` with setup instructions
 - [ ] Create `vercel.json` for SPA routing
@@ -60,15 +60,15 @@ Build Meuw Academy as a complete, deployable web app that passes the `/goal` ins
 
 ### 2.1 Mascot SVGs (`assets/mascot/`)
 Create 9 SVG files (each ~2KB):
-- [ ] `meow-idle.svg` — tail sway + blink animation
-- [ ] `meow-happy.svg` — jump animation
-- [ ] `meow-excited.svg` — spin + scale
-- [ ] `meow-encouraging.svg` — head shake
-- [ ] `meow-thinking.svg` — float + thinking dots
-- [ ] `meow-reading.svg` — glasses + book accessory
-- [ ] `meow-drawing.svg` — beret + pencil accessory
-- [ ] `meow-sleeping.svg` — ZZZ animation
-- [ ] `meow-celebrating.svg` — confetti burst
+- [ ] `méo-idle.svg` — tail sway + blink animation
+- [ ] `méo-happy.svg` — jump animation
+- [ ] `méo-excited.svg` — spin + scale
+- [ ] `méo-encouraging.svg` — head shake
+- [ ] `méo-thinking.svg` — float + thinking dots
+- [ ] `méo-reading.svg` — glasses + book accessory
+- [ ] `méo-drawing.svg` — beret + pencil accessory
+- [ ] `méo-sleeping.svg` — ZZZ animation
+- [ ] `méo-celebrating.svg` — confetti burst
 
 ### 2.2 Mascot Controller (`js/mascot.js`)
 - [ ] State machine (9 states)
@@ -166,7 +166,7 @@ Build each question type as standalone JS module. Each must:
 - [ ] Click region detection by `data-region` attribute
 - [ ] Fill SVG paths with selected palette color
 - [ ] Suggested color validation (glow effect if matching)
-- [ ] Meuw claps when region matches suggested color
+- [ ] Méo claps when region matches suggested color
 - [ ] Free coloring mode (no validation)
 - [ ] 12-color palette (configurable per exercise)
 - [ ] Undo last fill
@@ -206,7 +206,7 @@ Build each question type as standalone JS module. Each must:
 
 ### 4.3 Lesson Orchestrator (`modules/lesson.js`)
 - [ ] Load day+module data from curriculum
-- [ ] Intro screen: mascot + lesson title + first illustration + Meuw's greeting
+- [ ] Intro screen: mascot + lesson title + first illustration + Méo's greeting
 - [ ] Question sequence renderer (delegates to question type modules)
 - [ ] XP tracking per question
 - [ ] Progress dots/counter
@@ -289,7 +289,7 @@ Create inline SVG for each major lesson:
 
 ### 6.2 XP Level System
 - [ ] Level thresholds: 5 levels from CONSTITUTION.md
-- [ ] Level-up celebration (confetti burst + Meuw excited)
+- [ ] Level-up celebration (confetti burst + Méo excited)
 - [ ] Level indicator in dashboard
 
 ### 6.3 Streak System
@@ -300,7 +300,7 @@ Create inline SVG for each major lesson:
 
 ### 6.4 Adventure Mode (Day 5 weekly)
 - [ ] Map view with 5 stops
-- [ ] Meuw walking animation between stops
+- [ ] Méo walking animation between stops
 - [ ] Boss battle (multi-step question)
 - [ ] Victory screen: weekly badge
 
@@ -332,14 +332,14 @@ Create inline SVG for each major lesson:
 - [ ] Error boundaries (friendly error messages)
 - [ ] Empty states (no gallery items, no badges yet)
 - [ ] Print stylesheet for diploma
-- [ ] Favicon using Meuw icon
+- [ ] Favicon using Méo icon
 
 ---
 
 ## PHASE 8: DEPLOY (Day 22–23)
 
 ### 8.1 GitHub
-- [ ] Create public repo: `meuw-academy`
+- [ ] Create public repo: `méo-academy`
 - [ ] Push all code
 - [ ] Create GitHub Actions workflow (optional: check HTML validity)
 - [ ] Set up GitHub Pages (optional backup)
@@ -348,7 +348,7 @@ Create inline SVG for each major lesson:
 ### 8.2 Vercel
 - [ ] Connect GitHub repo to Vercel
 - [ ] Configure `vercel.json` (SPA routing rewrites)
-- [ ] Set production domain: `meuw-academy.vercel.app`
+- [ ] Set production domain: `méo-academy.vercel.app`
 - [ ] Test full app on production URL
 
 ### 8.3 Cross-device Testing
@@ -398,7 +398,7 @@ When the `/goal` command runs, it should:
 2. **Build order:** Strictly follow Phase 0–8 above
 3. **Quality gate per phase:** Don't proceed to next phase without completing current
 4. **Content:** When generating curriculum data, follow the spirit of MEUW_ACADEMY_SPEC.md — creative, contextual, never boring
-5. **SVG art:** Meuw mascot and illustrations should be hand-crafted SVG, cute chibi style, expressive
+5. **SVG art:** Méo mascot and illustrations should be hand-crafted SVG, cute chibi style, expressive
 6. **No shortcuts:** Don't use placeholder data — all 84 days need real content
 7. **Test after each major feature:** Run mental walkthrough before moving on
 8. **Commit granularly:** feat: → feature complete, content: → curriculum data, fix: → bugfix

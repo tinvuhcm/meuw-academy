@@ -3,11 +3,11 @@
  * LocalStorage state management with multi-profile support
  */
 
-const STORAGE_KEY = 'meuwAcademy_v2';
+const STORAGE_KEY = 'meoAcademy_v2';
 const CURRENT_VERSION = 2;
 
 // === Default state template for a new profile ===
-function createDefaultProfile(id, name = 'Meuw', avatarColor = '#EC4899') {
+function createDefaultProfile(id, name = 'Méo', avatarColor = '#EC4899') {
   return {
     id,
     name,
@@ -321,12 +321,20 @@ function setCurrentDay(day) {
 
 function advanceDay() {
   const profile = getActiveProfile();
-  const today = profile.currentDay;
-  // Check if all modules for today are completed
-  // (Advance logic handled in lesson module)
-  profile.currentDay = Math.min(84, (profile.currentDay || 1) + 1);
+  const todayDate = new Date().toISOString().split('T')[0];
+  
+  if (!profile.dayUnlockedOn) profile.dayUnlockedOn = {};
+  
+  // If they already unlocked a day today, do not advance. They must practice instead.
+  if (profile.dayUnlockedOn[profile.currentDay] === todayDate) {
+    return false; // Time-gated
+  }
+  
+  profile.currentDay = Math.min(90, (profile.currentDay || 1) + 1);
   profile.currentWeek = Math.ceil(profile.currentDay / 7);
+  profile.dayUnlockedOn[profile.currentDay] = todayDate;
   commit();
+  return true;
 }
 
 // ============================================

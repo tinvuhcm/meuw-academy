@@ -40,7 +40,7 @@ export function renderSpeechPractice(q, onComplete) {
   const recordArea = el('div', { class: 'speech-practice-container mt-6' });
   const recordBtn = el('button', { class: 'speech-record-btn', title: 'Nhấn để nói' }, '🎤');
   
-  const statusText = el('div', { class: 'text-sm font-bold text-meuw-purple mt-2 h-6' }, 
+  const statusText = el('div', { class: 'text-sm font-bold text-méo-purple mt-2 h-6' }, 
     hasSpeechApi ? 'Nhấn mic để bắt đầu' : 'Trình duyệt không hỗ trợ thu âm'
   );
 
@@ -112,7 +112,7 @@ export function renderSpeechPractice(q, onComplete) {
       recordBtn.classList.add('recording');
       statusText.textContent = 'Đang nghe... (Nhấn lần nữa để dừng)';
       statusText.classList.add('text-wrong');
-      triggerMascot('answer:wrong', { customLines: ['Meuw đang lắng nghe đây...'] }, null); // Just a thinking state
+      triggerMascot('answer:wrong', { customLines: ['Méo đang lắng nghe đây...'] }, null); // Just a thinking state
     };
 
     recognition.onresult = (event) => {

@@ -12,10 +12,10 @@
 ```css
 :root {
   /* === Brand === */
-  --meow-purple:    #7C3AED;   /* Primary — confident, creative */
-  --meow-purple-lt: #EDE9FE;   /* Purple tint backgrounds */
-  --meow-pink:      #EC4899;   /* Accent — energetic, fun */
-  --meow-pink-lt:   #FCE7F3;   /* Pink tint backgrounds */
+  --meo-purple:    #7C3AED;   /* Primary — confident, creative */
+  --meo-purple-lt: #EDE9FE;   /* Purple tint backgrounds */
+  --meo-pink:      #EC4899;   /* Accent — energetic, fun */
+  --meo-pink-lt:   #FCE7F3;   /* Pink tint backgrounds */
   
   /* === Module Colors === */
   --math-color:     #F59E0B;   /* Amber — sharp, precise */
@@ -183,15 +183,15 @@ Body (Nunito):
 }
 
 .btn-option:hover {
-  border-color: var(--meow-purple);
-  background: var(--meow-purple-lt);
+  border-color: var(--meo-purple);
+  background: var(--meo-purple-lt);
   transform: translateY(-2px);
   box-shadow: var(--shadow-hover);
 }
 
 .btn-option.selected {
-  border-color: var(--meow-purple);
-  background: var(--meow-purple-lt);
+  border-color: var(--meo-purple);
+  background: var(--meo-purple-lt);
 }
 
 .btn-option.correct {
@@ -288,13 +288,13 @@ Body (Nunito):
   top: 0;
   bottom: 0;
   width: 4px;
-  background: var(--module-color, var(--meow-purple));
+  background: var(--module-color, var(--meo-purple));
 }
 
 .module-card:hover {
   transform: translateX(4px);
   box-shadow: var(--shadow-hover);
-  border-color: var(--module-color, var(--meow-purple));
+  border-color: var(--module-color, var(--meo-purple));
 }
 
 .module-card.completed {
@@ -426,7 +426,7 @@ Body (Nunito):
 }
 
 .dot.done { background: var(--correct); transform: scale(1.1); }
-.dot.current { background: var(--meow-purple); transform: scale(1.3); animation: dot-pulse 1s ease infinite; }
+.dot.current { background: var(--meo-purple); transform: scale(1.3); animation: dot-pulse 1s ease infinite; }
 .dot.wrong-done { background: var(--wrong); }
 ```
 
@@ -437,7 +437,7 @@ Body (Nunito):
 .speech-bubble {
   position: relative;
   background: var(--surface);
-  border: 2px solid var(--meow-purple-lt);
+  border: 2px solid var(--meo-purple-lt);
   border-radius: var(--radius-xl);
   padding: var(--space-md) var(--space-lg);
   max-width: 280px;
@@ -455,7 +455,7 @@ Body (Nunito):
   bottom: -12px;
   left: 24px;
   border: 8px solid transparent;
-  border-top-color: var(--meow-purple-lt);
+  border-top-color: var(--meo-purple-lt);
 }
 
 .speech-bubble::after {
@@ -479,7 +479,7 @@ Body (Nunito):
 │ [Logo] MEUW ACADEMY     [🔥 streak] [⚙]    │
 ├─────────────────────────────────────────────┤
 │ HERO SECTION                                │
-│ [Meuw idle animated]  "Chào Meuw! 🌟"        │
+│ [Méo idle animated]  "Chào Méo! 🌟"        │
 │                      Ngày 5 | Tuần 2        │
 │                      [████████░░] 320/400 XP│
 │                      Level: 🔭 Nhà Khám Phá │
@@ -506,7 +506,7 @@ Body (Nunito):
 ├────────────────────────┬────────────────────┤
 │                        │                    │
 │    MASCOT AREA         │   QUESTION CARD    │
-│    [Meuw animated]      │                    │
+│    [Méo animated]      │                    │
 │    [Speech bubble]     │   [Illustration]   │
 │                        │                    │
 │                        │   Question text    │
@@ -527,7 +527,7 @@ Body (Nunito):
 ┌────────────────────────────┐
 │ [←] Module Title    [1/4]  │
 ├────────────────────────────┤
-│ [Meuw small] [Speech bubble]│
+│ [Méo small] [Speech bubble]│
 ├────────────────────────────┤
 │   QUESTION CARD            │
 │   [Illustration 160px]     │
@@ -689,7 +689,7 @@ Body (Nunito):
 ### Celebration Screen (Module Complete)
 ```
 Background: animated gradient pulse (purple → pink → purple)
-Center: Meuw celebrating + confetti particles
+Center: Méo celebrating + confetti particles
 Text: Module title + XP earned (animated counter)
 Badges: if earned, zoom in sequence
 Button: "Tiếp tục →" appears after 2 seconds
@@ -707,7 +707,7 @@ Animation: float up + fade out (1s)
 ```
 No modal. Instead:
 - Inline: red border + shake on wrong field
-- Toast: Meuw says something funny ("Ủa? Thử lại nhé! 🤔")
+- Toast: Méo says something funny ("Ủa? Thử lại nhé! 🤔")
 - Never: scary red modal, "WRONG!", game over screens
 ```
 

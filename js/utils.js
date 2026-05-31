@@ -318,9 +318,9 @@ const SUBJECT_CONFIG = {
   'read':   { label: 'Đọc hiểu', icon: '📖', color: 'var(--read-color)',  colorLt: 'var(--read-color-lt)',  emoji: '📖' },
   'draw':   { label: 'Vẽ',        icon: '🎨', color: 'var(--draw-color)',  colorLt: 'var(--draw-color-lt)',  emoji: '🎨' },
   'quiz':   { label: 'Quiz',      icon: '⚡', color: 'var(--quiz-color)',  colorLt: 'var(--quiz-color-lt)',  emoji: '⚡' },
-  'game':   { label: 'Game',      icon: '🎮', color: 'var(--meuw-purple)', colorLt: 'var(--meuw-purple-lt)', emoji: '🎮' },
-  'create': { label: 'Sáng tạo', icon: '✨', color: 'var(--meuw-pink)',   colorLt: 'var(--meuw-pink-lt)',   emoji: '✨' },
-  'fest':   { label: 'Lễ hội',   icon: '🎉', color: 'var(--meuw-purple)', colorLt: 'var(--meuw-purple-lt)', emoji: '🎉' },
+  'game':   { label: 'Game',      icon: '🎮', color: 'var(--meo-purple)', colorLt: 'var(--meo-purple-lt)', emoji: '🎮' },
+  'create': { label: 'Sáng tạo', icon: '✨', color: 'var(--meo-pink)',   colorLt: 'var(--meo-pink-lt)',   emoji: '✨' },
+  'fest':   { label: 'Lễ hội',   icon: '🎉', color: 'var(--meo-purple)', colorLt: 'var(--meo-purple-lt)', emoji: '🎉' },
 };
 
 /**
@@ -419,8 +419,8 @@ export function scoreMessage(correct, total) {
 // Cycles through varied greetings so it doesn't get boring
 // ============================================
 const GREETINGS = [
-  'Chào Meuw', 'Chào em', 'Chào Meuw', 'Chào Minh Meuw',
-  'Meuw ơi!',  'Ê Meuw!',  'Chào cô bé',
+  'Chào Méo', 'Chào em', 'Chào Méo', 'Chào Minh Méo',
+  'Méo ơi!',  'Ê Méo!',  'Chào cô bé',
 ];
 let _greetingIndex = -1;
 
@@ -436,7 +436,7 @@ export function getGreeting() {
 }
 
 /**
- * Full greeting line with emoji: "Chào Meuw! 🌟"
+ * Full greeting line with emoji: "Chào Méo! 🌟"
  */
 export function getGreetingLine() {
   const emojis = ['🌟', '✨', '🐱', '🎉', '💫', '🚀'];

@@ -1,0 +1,39 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gearGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+    <linearGradient id="parentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#EF4444" />
+    </linearGradient>
+    <linearGradient id="playerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Gear -->
+  <path d="M100 10 
+           A90 90 0 0 1 190 100 
+           A90 90 0 0 1 100 190 
+           A90 90 0 0 1 10 100 
+           A90 90 0 0 1 100 10 Z" 
+        fill="url(#gearGrad)" stroke="#1F2937" stroke-width="8" stroke-dasharray="20 15" stroke-linecap="round"/>
+        
+  <!-- Inner White Circle -->
+  <circle cx="100" cy="100" r="75" fill="#FFFFFF" stroke="#1F2937" stroke-width="6"/>
+
+  <!-- Split Background for Areas -->
+  <path d="M 100 25 A 75 75 0 0 1 175 100 L 100 100 Z" fill="url(#playerGrad)" opacity="0.2"/>
+  <path d="M 175 100 A 75 75 0 0 1 100 175 L 100 100 Z" fill="url(#parentGrad)" opacity="0.2"/>
+
+  <!-- The Letter M -->
+  <path d="M 60 140 L 60 70 L 100 110 L 140 70 L 140 140" 
+        fill="none" stroke="#7C3AED" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+        
+  <!-- Labels -->
+  <text x="135" y="70" font-family="'Fredoka One', cursive, sans-serif" font-size="16" font-weight="bold" fill="#10B981" text-anchor="middle">Méo</text>
+  <text x="135" y="145" font-family="'Fredoka One', cursive, sans-serif" font-size="14" font-weight="bold" fill="#EF4444" text-anchor="middle">Phụ huynh</text>
+</svg>

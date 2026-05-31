@@ -42,7 +42,7 @@ export function renderParent() {
 
   const updateDots = () => {
     dots.forEach((dot, idx) => {
-      dot.className = `w-4 h-4 rounded-full border-2 transition-colors ${idx < currentPin.length ? 'bg-meuw-purple border-meuw-purple' : 'bg-transparent border-border'}`;
+      dot.className = `w-4 h-4 rounded-full border-2 transition-colors ${idx < currentPin.length ? 'bg-méo-purple border-méo-purple' : 'bg-transparent border-border'}`;
     });
   };
 
@@ -111,7 +111,7 @@ export function renderParent() {
 function renderDashboardContent(container) {
   // 1. Header
   const header = el('div', { class: 'flex-between mb-8 pb-4 border-b-2 border-border' });
-  const title = el('h1', { class: 'font-display text-3xl text-meuw-purple' }, '⚙️ Quản lý Phụ huynh');
+  const title = el('h1', { class: 'font-display text-3xl text-méo-purple' }, '⚙️ Quản lý Phụ huynh');
   const closeBtn = el('button', { class: 'btn btn-outline text-sm' }, 'Đóng');
   closeBtn.addEventListener('click', () => { Audio.click(); Router.navigate('/'); });
   header.appendChild(title);
@@ -180,7 +180,7 @@ function renderStatsTab(container) {
     const card = el('div', { class: 'card p-4 flex flex-col items-center text-center' });
     card.innerHTML = `
       <div class="text-3xl mb-2">${item.emoji}</div>
-      <div class="text-xl font-bold text-meuw-purple">${item.value}</div>
+      <div class="text-xl font-bold text-méo-purple">${item.value}</div>
       <div class="text-xs text-text-muted font-bold uppercase mt-1">${item.label}</div>
     `;
     grid.appendChild(card);
@@ -248,7 +248,7 @@ function renderHistoryTab(container) {
           <div class="text-xs text-text-muted">${timeStr}</div>
         </div>
         <div class="text-right">
-          <div class="font-bold text-meuw-purple">+${c.xp} ⭐</div>
+          <div class="font-bold text-méo-purple">+${c.xp} ⭐</div>
           <div class="text-xs text-correct-dk">${c.score}/${c.total} câu đúng</div>
         </div>
       `;
@@ -372,7 +372,7 @@ function renderDataTab(container) {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `MeuwAcademy_Backup_${formatDateVI(new Date()).replace(/ /g, '_')}.json`;
+    a.download = `MéoAcademy_Backup_${formatDateVI(new Date()).replace(/ /g, '_')}.json`;
     a.click();
     URL.revokeObjectURL(url);
   });
