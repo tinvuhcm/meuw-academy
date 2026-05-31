@@ -1,6 +1,6 @@
 # Meuw Academy
 
-> 🐱 Ứng dụng học hè cho bé Meuw (Meuw) (Vũ Hoàng Khả Minh) — học vui, học sâu, học cùng Meuw!
+> 🐱 Ứng dụng học hè cho bé Méo (Meuw) (Vũ Hoàng Khả Minh / Vũ Minh Méo) — học vui, học sâu, học cùng Meuw!
 
 ## 🌟 Demo
 
@@ -12,7 +12,7 @@
 
 ## ✨ Tính năng
 
-- **84 ngày học** đầy đủ — 3 tháng hè không nhàm chán
+- **90 ngày học** đầy đủ — 3 tháng hè không nhàm chán
 - **8 loại bài tập** interactive: trắc nghiệm, điền chỗ trống, kéo thả, SVG tương tác, luyện nói, vẽ, tô màu, mini quiz
 - **Mascot Meuw** — con mèo chibi với 9 trạng thái animation, phản ứng theo từng tương tác
 - **Gamification:** XP, streak, 28 huy hiệu, 5 cấp độ
