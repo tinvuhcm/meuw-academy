@@ -5,16 +5,16 @@ import Router from '../router.js';
 import { renderDrawingCanvas } from './question-types/DrawingCanvas.js';
 
 const COLORING_PAGES = [
-  {
-    id: 'space',
-    title: 'Phi Hành Gia Méo',
-    src: 'assets/images/coloring/space.png'
-  },
-  {
-    id: 'animal',
-    title: 'Sư Tử Con Tronge Rừng',
-    src: 'assets/images/coloring/animal.png'
-  }
+  { id: 'dinosaur', title: 'Khủng Long Nhỏ', src: 'assets/images/coloring/dinosaur.png' },
+  { id: 'astronaut', title: 'Phi Hành Gia Méo', src: 'assets/images/coloring/astronaut.png' },
+  { id: 'castle', title: 'Lâu Đài Cổ Tích', src: 'assets/images/coloring/castle.png' },
+  { id: 'car', title: 'Siêu Xe Tốc Độ', src: 'assets/images/coloring/car.png' },
+  { id: 'unicorn', title: 'Kỳ Lân Mộng Mơ', src: 'assets/images/coloring/unicorn.png' },
+  { id: 'submarine', title: 'Tàu Ngầm Đại Dương', src: 'assets/images/coloring/submarine.png' },
+  { id: 'robot', title: 'Robot Thân Thiện', src: 'assets/images/coloring/robot.png' },
+  { id: 'mermaid', title: 'Nàng Tiên Cá', src: 'assets/images/coloring/mermaid.png' },
+  { id: 'farm', title: 'Nông Trại Vui Vẻ', src: 'assets/images/coloring/farm.png' },
+  { id: 'train', title: 'Tàu Hỏa Tu Tu', src: 'assets/images/coloring/train.png' }
 ];
 
 export function renderColoringLibrary() {

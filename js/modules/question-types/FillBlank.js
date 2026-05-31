@@ -28,8 +28,10 @@ export function renderFillBlank(q, onComplete) {
   const inputs = [];
   let attempts = 0;
   let isAnswered = false;
+  
+  const blanks = q.blanks || [{ answer: q.answer || '', type: 'text' }];
 
-  q.blanks.forEach((blank, idx) => {
+  blanks.forEach((blank, idx) => {
     const row = el('div', { class: 'fill-blank-field-row' });
     
     if (blank.label) {

@@ -147,7 +147,15 @@ class MascotController {
         const itemsMeta = {
           'acc_sunglasses': { src: 'assets/mascot/accessories/accessory_sunglasses_1780213487126.png', styles: 'position:absolute; width:60%; top:35%; left:20%; z-index:20;' },
           'acc_crown': { src: 'assets/mascot/accessories/accessory_crown_1780213501375.png', styles: 'position:absolute; width:45%; top:-5%; left:27%; z-index:20;' },
-          'acc_wand': { src: 'assets/mascot/accessories/accessory_wand_1780213517410.png', styles: 'position:absolute; width:40%; top:45%; left:65%; z-index:20;' }
+          'acc_wand': { src: 'assets/mascot/accessories/accessory_wand_1780213517410.png', styles: 'position:absolute; width:40%; top:45%; left:65%; z-index:20;' },
+          'acc_lollipop': { src: 'assets/images/store/lollipop.png', styles: 'position:absolute; width:35%; top:50%; left:5%; z-index:20;' },
+          'acc_milktea': { src: 'assets/images/store/milktea.png', styles: 'position:absolute; width:35%; top:55%; left:70%; z-index:20;' },
+          'acc_tophat': { src: 'assets/images/store/tophat.png', styles: 'position:absolute; width:50%; top:-10%; left:25%; z-index:20;' },
+          'acc_cape': { src: 'assets/images/store/cape.png', styles: 'position:absolute; width:80%; top:45%; left:5%; z-index:10;' },
+          'acc_headphones': { src: 'assets/images/store/headphones.png', styles: 'position:absolute; width:70%; top:20%; left:15%; z-index:30;' },
+          'acc_batman': { src: 'assets/images/store/batman.png', styles: 'position:absolute; width:60%; top:15%; left:20%; z-index:20;' },
+          'acc_spiderman': { src: 'assets/images/store/spiderman.png', styles: 'position:absolute; width:90%; top:45%; left:5%; z-index:30; opacity: 0.8;' },
+          'acc_console': { src: 'assets/images/store/console.png', styles: 'position:absolute; width:45%; top:65%; left:30%; z-index:30;' }
         };
         profile.equippedAccessories.forEach(id => {
           if (itemsMeta[id]) {

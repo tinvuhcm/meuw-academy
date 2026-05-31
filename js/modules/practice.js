@@ -18,20 +18,30 @@ export function renderPractice() {
   
   const content = el('div', { class: 'flex flex-col gap-8' });
   
-  // Random Practice Banner
-  const randomBanner = el('div', { class: 'bg-méo-purple-lt p-6 rounded-2xl flex flex-col md:flex-row items-center gap-6 shadow-sm border border-méo-purple' });
-  randomBanner.innerHTML = `
-    <div class="w-48 h-48 md:w-64 md:h-64 shrink-0 mx-auto md:mx-0">
-      <img src="assets/images/meo_thinking_sticker_1780213451318.png" class="w-full h-full object-contain drop-shadow-md" />
-    </div>
-    <div class="flex-1 text-center md:text-left">
-      <h2 class="font-display text-2xl text-méo-purple mb-2">Luyện Tập Vô Hạn 🌟</h2>
-      <p class="text-text mb-4">Méo sẽ tạo ra các bài tập ngẫu nhiên để em ôn luyện kiến thức. Làm đúng sẽ được nhận thêm 25 ⭐ đó nha!</p>
-      <button class="btn btn-primary px-8 py-3 text-lg w-full md:w-auto shadow-md hover:-translate-y-1 transition-transform" id="btn-random-practice">Bắt đầu luyện tập</button>
-    </div>
-  `;
+  const categories = [
+    { id: 'all', title: 'Kiến thức chung', icon: '🌟', color: 'bg-méo-purple-lt border-méo-purple', text: 'text-méo-purple' },
+    { id: 'math', title: 'Toán học', icon: '🧮', color: 'bg-blue-100 border-blue-400', text: 'text-blue-600' },
+    { id: 'vie', title: 'Tiếng Việt', icon: '📝', color: 'bg-orange-100 border-orange-400', text: 'text-orange-600' },
+    { id: 'eng', title: 'Tiếng Anh', icon: '🔤', color: 'bg-green-100 border-green-400', text: 'text-green-600' },
+    { id: 'sci', title: 'Khoa học', icon: '🔬', color: 'bg-teal-100 border-teal-400', text: 'text-teal-600' },
+    { id: 'other', title: 'Khác', icon: '🎨', color: 'bg-pink-100 border-pink-400', text: 'text-pink-600' }
+  ];
+
+  const catGrid = el('div', { class: 'grid grid-cols-2 md:grid-cols-3 gap-4 mb-6' });
   
-  content.appendChild(randomBanner);
+  categories.forEach(cat => {
+    const card = el('button', { class: `p-4 rounded-2xl flex flex-col items-center justify-center gap-2 shadow-sm border ${cat.color} hover:-translate-y-1 transition-transform` });
+    card.innerHTML = `
+      <div class="text-4xl">${cat.icon}</div>
+      <div class="font-display text-lg ${cat.text}">${cat.title}</div>
+    `;
+    card.addEventListener('click', () => {
+      Router.navigate(`/lesson/practice/${cat.id}`);
+    });
+    catGrid.appendChild(card);
+  });
+
+  content.appendChild(catGrid);
   
   // Show list of completed days
   const profile = State.getActiveProfile();
@@ -87,11 +97,7 @@ export function renderPractice() {
   container.appendChild(header);
   container.appendChild(content);
   
-  // Bind events
-  setTimeout(() => {
-    const btn = container.querySelector('#btn-random-practice');
-    if (btn) btn.addEventListener('click', () => Router.navigate('/lesson/practice/random'));
-  }, 0);
+  // (removed old btn-random-practice listener)
   
   return container;
 }

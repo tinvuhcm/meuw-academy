@@ -11,11 +11,15 @@ export function renderDrawingCanvas(q, onComplete) {
   container.appendChild(title);
 
   // Layout Container - Studio Mode
-  const layout = el('div', { class: 'drawing-layout studio-mode relative w-full h-[65vh] min-h-[500px] border-4 border-méo-purple rounded-2xl overflow-hidden shadow-xl bg-white select-none touch-none' });
+  const layout = el('div', { class: 'drawing-layout studio-mode relative w-full h-[65vh] min-h-[500px] border-4 border-méo-purple rounded-2xl overflow-hidden shadow-xl bg-gray-200 select-none' });
+
+  // Scrollable container for pan
+  const scrollWrap = el('div', { class: 'absolute inset-0 w-full h-full overflow-auto custom-scrollbar', style: 'touch-action: pan-x pan-y;' });
 
   // 2. Canvas
-  const canvasWrap = el('div', { class: 'absolute inset-0 w-full h-full' });
-  const canvas = el('canvas', { class: 'drawing-canvas w-full h-full cursor-crosshair' });
+  let zoomLevel = 1;
+  const canvasWrap = el('div', { class: 'relative', style: 'width: 1240px; height: 877px; margin: 0 auto; transform-origin: top left;' });
+  const canvas = el('canvas', { class: 'drawing-canvas w-full h-full cursor-crosshair block', style: 'transform-origin: top left; transition: transform 0.1s;' });
   const ctx = canvas.getContext('2d', { willReadFrequently: true });
   
   // Must set actual width/height
@@ -27,7 +31,8 @@ export function renderDrawingCanvas(q, onComplete) {
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   canvasWrap.appendChild(canvas);
-  layout.appendChild(canvasWrap);
+  scrollWrap.appendChild(canvasWrap);
+  layout.appendChild(scrollWrap);
 
   // If coloring mode, load background image
   if (q.coloringBg) {
@@ -55,11 +60,24 @@ export function renderDrawingCanvas(q, onComplete) {
   const topBar = el('div', { class: 'absolute top-0 left-0 right-0 h-14 bg-white/90 backdrop-blur-md border-b-2 border-border flex-between px-4 z-10' });
   
   const rightTopActions = el('div', { class: 'flex gap-2' });
-  const undoBtn = el('button', { class: 'btn btn-icon bg-gray-100 text-lg p-2 rounded-full hover:bg-gray-200' }, '↩️');
+  const zoomOutBtn = el('button', { class: 'btn btn-icon bg-blue-100 text-lg p-2 rounded-full hover:bg-blue-200' }, '➖');
+  const zoomInBtn = el('button', { class: 'btn btn-icon bg-blue-100 text-lg p-2 rounded-full hover:bg-blue-200' }, '➕');
+  const undoBtn = el('button', { class: 'btn btn-icon bg-gray-100 text-lg p-2 rounded-full hover:bg-gray-200', style: 'margin-left: 10px;' }, '↩️');
   const clearBtn = el('button', { class: 'btn btn-icon bg-red-100 text-red-500 text-lg p-2 rounded-full hover:bg-red-200' }, '🗑️');
   
+  rightTopActions.appendChild(zoomOutBtn);
+  rightTopActions.appendChild(zoomInBtn);
   rightTopActions.appendChild(undoBtn);
   rightTopActions.appendChild(clearBtn);
+
+  // Zoom logic
+  function updateZoom() {
+    canvas.style.transform = `scale(${zoomLevel})`;
+    canvasWrap.style.width = `${1240 * zoomLevel}px`;
+    canvasWrap.style.height = `${877 * zoomLevel}px`;
+  }
+  zoomInBtn.addEventListener('click', () => { zoomLevel = Math.min(3, zoomLevel + 0.2); updateZoom(); });
+  zoomOutBtn.addEventListener('click', () => { zoomLevel = Math.max(0.2, zoomLevel - 0.2); updateZoom(); });
   
   const centerTopActions = el('div', { class: 'font-display text-méo-purple' }, q.coloringBg ? 'Méo Studio: Bé Tô Màu' : 'Méo Studio: Bé Tập Vẽ');
 
@@ -75,6 +93,7 @@ export function renderDrawingCanvas(q, onComplete) {
   const penBtn = createToolBtn('✏️', 'Bút chì (Bấm đúp để chọn bút)');
   const eraserBtn = createToolBtn('🧼', 'Cục tẩy');
   const fillBtn = createToolBtn('🪣', 'Thùng sơn (Tô màu vùng)');
+  const panBtn = createToolBtn('🖐️', 'Bàn tay (Di chuyển tranh)');
   
   penBtn.classList.add('ring-4', 'ring-méo-purple', 'bg-méo-purple-lt');
   
@@ -87,7 +106,9 @@ export function renderDrawingCanvas(q, onComplete) {
   penBtn.addEventListener('click', () => setTool('pen', penBtn));
   eraserBtn.addEventListener('click', () => setTool('eraser', eraserBtn));
   fillBtn.addEventListener('click', () => setTool('fill', fillBtn));
+  panBtn.addEventListener('click', () => setTool('pan', panBtn));
 
+  toolsGroup.appendChild(panBtn);
   toolsGroup.appendChild(penBtn);
   toolsGroup.appendChild(eraserBtn);
   toolsGroup.appendChild(fillBtn);
@@ -178,6 +199,8 @@ export function renderDrawingCanvas(q, onComplete) {
 
   function getCoords(e) {
     const rect = canvas.getBoundingClientRect();
+    // getBoundingClientRect already accounts for transform: scale(), 
+    // so we just divide the rect width to get scale relative to original.
     const scaleX = canvas.width / rect.width;
     const scaleY = canvas.height / rect.height;
 
@@ -257,6 +280,8 @@ export function renderDrawingCanvas(q, onComplete) {
 
   function startPosition(e) {
     if (e.target.closest('button')) return; // ignore UI clicks
+    if (currentTool === 'pan') return; // Allow native pan/scroll
+    if (e.touches && e.touches.length > 1) return; // Allow native 2-finger zoom/pan
     e.preventDefault();
     const coords = getCoords(e);
     
@@ -318,10 +343,12 @@ export function renderDrawingCanvas(q, onComplete) {
     penBtn.classList.remove('ring-4', 'ring-méo-purple', 'bg-méo-purple-lt');
     eraserBtn.classList.remove('ring-4', 'ring-méo-purple', 'bg-méo-purple-lt');
     fillBtn.classList.remove('ring-4', 'ring-méo-purple', 'bg-méo-purple-lt');
+    panBtn.classList.remove('ring-4', 'ring-méo-purple', 'bg-méo-purple-lt');
     btnEl.classList.add('ring-4', 'ring-méo-purple', 'bg-méo-purple-lt');
     
     if (tool === 'eraser') canvas.style.cursor = 'cell';
     else if (tool === 'fill') canvas.style.cursor = 'pointer';
+    else if (tool === 'pan') canvas.style.cursor = 'grab';
     else canvas.style.cursor = 'crosshair';
   }
 

@@ -1,143 +1,56 @@
 /**
  * MEUW ACADEMY — practice-generator.js
- * Generates endless practice questions on the fly
+ * Generates endless practice questions on the fly by picking from the main curriculum
  */
 
-import { randomPick } from '../utils.js';
+import { randomPick, shuffle } from '../utils.js';
+import { ALL_DATA } from './curriculum-loader.js';
 
-function randomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function generateMathQuestion() {
-    const types = ['multiple-choice', 'fill-blank', 'drag-match'];
-    const type = randomPick(types);
-    const multiplier = randomInt(1, 10);
-    const a = randomInt(10, 99) * multiplier;
-    const b = randomInt(10, 99) * multiplier;
-    const isAdd = Math.random() > 0.5;
-    let eq, ans;
-    if (isAdd) {
-        ans = a + b;
-        eq = `${a} + ${b}`;
-    } else {
-        let max = Math.max(a, b);
-        let min = Math.min(a, b);
-        ans = max - min;
-        eq = `${max} - ${min}`;
-    }
-
-    if (type === 'fill-blank') {
-        return {
-            type: 'fill-blank',
-            isMath: true,
-            question: `Điền kết quả đúng vào ô trống:`,
-            text: `${eq} = [   ]`,
-            illustration: `<div class="text-center text-4xl my-4">🧮 ${eq}</div>`,
-            answer: ans.toString(),
-            explanation: `Đáp án đúng là ${ans}.`
-        };
-    } else if (type === 'drag-match') {
-        const fakeOpt1 = ans + 10;
-        const fakeOpt2 = ans > 5 ? ans - 5 : ans + 5;
-        const fakeOpt3 = ans + 20;
-        return {
-            type: 'drag-match',
-            question: 'Kéo kết quả vào đúng phép tính:',
-            pairs: [
-                { id: `m1-${Date.now()}`, left: eq, right: ans.toString() },
-                { id: `m2-${Date.now()}`, left: `${fakeOpt1} + 0`, right: fakeOpt1.toString() },
-                { id: `m3-${Date.now()}`, left: `${fakeOpt2} + 0`, right: fakeOpt2.toString() },
-                { id: `m4-${Date.now()}`, left: `${fakeOpt3} + 0`, right: fakeOpt3.toString() }
-            ]
-        };
-    }
-
-    return {
-        type: 'multiple-choice',
-        isMath: true,
-        question: `Hãy tính: ${eq}`,
-        illustration: `<div class="text-center text-4xl my-4">🧮 ${eq}</div>`,
-        options: [
-            ans.toString(),
-            (ans + 10).toString(),
-            (ans - 10).toString(),
-            (ans + 100).toString()
-        ].sort(() => 0.5 - Math.random()),
-        answer: ans.toString(),
-        explanation: `Đáp án đúng là ${ans}.`
-    };
-}
-
-function generateEngQuestion() {
-    const types = ['multiple-choice', 'drag-match'];
-    const type = randomPick(types);
+export function generatePracticeModule(numQuestions = 20, category = 'all') {
+    let allModules = [];
     
-    const words = [
-        { en: 'Elephant', vi: 'Con voi' }, { en: 'Lion', vi: 'Sư tử' },
-        { en: 'Tiger', vi: 'Con hổ' }, { en: 'Monkey', vi: 'Con khỉ' },
-        { en: 'Giraffe', vi: 'Hươu cao cổ' }, { en: 'Zebra', vi: 'Ngựa vằn' },
-        { en: 'Apple', vi: 'Quả táo' }, { en: 'Banana', vi: 'Quả chuối' },
-        { en: 'Orange', vi: 'Quả cam' }, { en: 'Grapes', vi: 'Quả nho' },
-        { en: 'Car', vi: 'Ô tô' }, { en: 'Bicycle', vi: 'Xe đạp' }
-    ];
-    const word = randomPick(words);
-    
-    if (type === 'drag-match') {
-        const numPairs = 4;
-        const selectedWords = [...words].sort(() => 0.5 - Math.random()).slice(0, numPairs);
-        const pairs = selectedWords.map((w, i) => ({
-            id: `prac-${Date.now()}-${i}`,
-            left: w.en,
-            right: w.vi
-        }));
-        return {
-            type: 'drag-match',
-            question: 'Kéo từ tiếng Anh tương ứng với nghĩa tiếng Việt:',
-            pairs: pairs
-        };
-    }
+    // Flatten all modules from all days
+    Object.values(ALL_DATA).forEach(day => {
+        allModules.push(...day.modules);
+    });
 
-    return {
-        type: 'multiple-choice',
-        question: `Từ "${word.en}" có nghĩa tiếng Việt là gì?`,
-        illustration: `<div class="text-center text-4xl my-4">📖 ${word.en}</div>`,
-        options: [
-            word.vi,
-            words[(words.indexOf(word) + 1) % words.length].vi,
-            words[(words.indexOf(word) + 2) % words.length].vi,
-            words[(words.indexOf(word) + 3) % words.length].vi
-        ].sort(() => 0.5 - Math.random()),
-        answer: word.vi,
-        explanation: `"${word.en}" nghĩa là ${word.vi}.`
-    };
-}
-
-export function generatePracticeModule(numQuestions = 10) {
-    const questions = [];
-    for (let i = 0; i < numQuestions; i++) {
-        if (Math.random() > 0.5) {
-            questions.push(generateMathQuestion());
+    // Filter by category
+    if (category !== 'all') {
+        if (category === 'other') {
+            allModules = allModules.filter(m => m.subject === 'draw' || m.subject === 'it');
         } else {
-            questions.push(generateEngQuestion());
+            allModules = allModules.filter(m => m.subject === category);
         }
     }
-    
-    // Add one drawing/creative question at the end sometimes
-    if (Math.random() < 0.3) {
-        questions.push({
-            type: 'drawing-canvas',
-            question: 'Hãy vẽ một bức tranh thật đẹp nhé!',
-            hint: 'Vẽ bất cứ thứ gì em thích.'
-        });
+
+    if (allModules.length === 0) {
+        // Fallback if none found
+        allModules = Object.values(ALL_DATA)[0].modules; 
     }
 
+    let allQuestions = [];
+    allModules.forEach(m => {
+        if (m.questions && Array.isArray(m.questions)) {
+            allQuestions.push(...m.questions);
+        }
+    });
+
+    // Pick numQuestions randomly
+    const selected = shuffle([...allQuestions]).slice(0, numQuestions);
+
+    let title = 'Kiến Thức Chung';
+    if (category === 'math') title = 'Luyện Tập Toán';
+    if (category === 'vie') title = 'Luyện Tập Tiếng Việt';
+    if (category === 'eng') title = 'Luyện Tập Tiếng Anh';
+    if (category === 'sci') title = 'Luyện Tập Khoa Học';
+    if (category === 'other') title = 'Luyện Tập Kỹ Năng';
+
     return {
-        id: `practice-${Date.now()}`,
-        subject: 'mixed',
-        title: 'Luyện Tập Ngẫu Nhiên',
+        id: `practice-${category}-${Date.now()}`,
+        subject: category === 'all' ? 'mixed' : category,
+        title: title,
         session: 'practice',
         xp: 25, // Lower XP for practice
-        questions: questions
+        questions: selected
     };
 }

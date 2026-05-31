@@ -330,13 +330,21 @@ function renderSettingsTab(container) {
 
   // 4. DEV Tool
   const devArea = el('div', { class: 'mt-8 p-4 bg-yellow-100 border-2 border-yellow-400 rounded-xl' });
-  devArea.innerHTML = '<h3 class="font-bold text-lg mb-2 text-yellow-800">🛠️ Công cụ Phát triển (Dev Mode)</h3><p class="text-sm mb-4 text-yellow-700">Dùng để test: Reset tiến độ học về Ngày 1 (Giữ nguyên Điểm XP, Huy hiệu).</p>';
-  const hardResetBtn = el('button', { class: 'btn bg-red-500 hover:bg-red-600 text-white border-none text-sm px-4 py-2 rounded-lg font-bold' }, 'Xóa tiến trình học (Reset về Ngày 1)');
-  hardResetBtn.addEventListener('click', () => {
-    if (confirm('BẠN CÓ CHẮC KHÔNG? Tiến độ học sẽ quay về Ngày 1. (XP và Huy hiệu vẫn được giữ nguyên)')) {
-      State.resetLearningProgress();
-      alert('Đã reset tiến trình học.');
-      window.location.reload();
+  devArea.innerHTML = '<h3 class="font-bold text-lg mb-2 text-yellow-800">🛠️ Công cụ Phát triển (Dev Mode)</h3><p class="text-sm mb-4 text-yellow-700">Dùng để test: Khôi phục duy nhất các bài học của ngày hôm nay về 0.</p>';
+  const hardResetBtn = el('button', { class: 'btn bg-red-500 hover:bg-red-600 text-white border-none text-sm px-4 py-2 rounded-lg font-bold' }, 'Học lại Ngày Hôm Nay');
+  hardResetBtn.addEventListener('click', async () => {
+    if (confirm('BẠN CÓ CHẮC KHÔNG? Toàn bộ bài học của Ngày hôm nay sẽ bị đánh dấu là chưa hoàn thành. (XP và Huy hiệu vẫn được giữ nguyên)')) {
+      const { getCurriculumDay } = await import('../data/curriculum-loader.js');
+      const profile = State.getActiveProfile();
+      const dayData = getCurriculumDay(profile.currentDay);
+      if (dayData && dayData.modules) {
+        const moduleIds = dayData.modules.map(m => m.id);
+        State.resetCurrentDayProgress(moduleIds);
+        alert(`Đã khôi phục ${moduleIds.length} bài học của Ngày ${profile.currentDay}.`);
+        window.location.reload();
+      } else {
+        alert('Không tìm thấy dữ liệu bài học ngày hôm nay!');
+      }
     }
   });
   devArea.appendChild(hardResetBtn);
@@ -394,38 +402,94 @@ function renderDataTab(container) {
 
   wrap.appendChild(el('hr', { class: 'my-6 border-border' }));
 
-  // Import
-  const importLabel = el('h4', { class: 'font-bold mb-2' }, 'Khôi phục dữ liệu (Nhập từ file)');
-  const fileInput = el('input', { type: 'file', accept: '.json', class: 'block w-full text-sm mb-4' });
-  const importBtn = el('button', { class: 'btn btn-secondary w-full md:w-auto', disabled: true }, '🔄 Khôi phục');
-  const importMsg = el('div', { class: 'text-sm mt-2 font-bold h-5' });
-
-  fileInput.addEventListener('change', () => {
-    importBtn.disabled = !fileInput.files.length;
+  // Sync Code (Base64)
+  const syncCodeLabel = el('h4', { class: 'font-bold mb-2' }, 'Đồng bộ nhanh bằng Mã (Sync Code)');
+  const syncCodeDesc = el('p', { class: 'text-sm text-text-muted mb-4' }, 'Dùng mã này để copy-paste dán sang điện thoại/máy tính bảng nhanh chóng mà không cần tải file.');
+  
+  const syncTextarea = el('textarea', { class: 'input-field w-full h-24 mb-2 font-mono text-xs', placeholder: 'Dán mã đồng bộ vào đây...' });
+  const syncRow = el('div', { class: 'flex gap-2 mb-4' });
+  
+  const genCodeBtn = el('button', { class: 'btn btn-secondary flex-1' }, 'Tạo Mã Đồng Bộ');
+  genCodeBtn.addEventListener('click', () => {
+    Audio.click();
+    const json = State.exportJSON();
+    syncTextarea.value = btoa(encodeURIComponent(json));
+    syncTextarea.select();
+  });
+  
+  const applyCodeBtn = el('button', { class: 'btn btn-primary flex-1' }, 'Áp dụng Mã');
+  applyCodeBtn.addEventListener('click', () => {
+    Audio.click();
+    try {
+      const code = syncTextarea.value.trim();
+      if (!code) throw new Error('Vui lòng dán mã!');
+      const json = decodeURIComponent(atob(code));
+      State.importJSON(json);
+      alert('Khôi phục thành công! Đang tải lại...');
+      window.location.reload();
+    } catch(e) {
+      alert('Mã không hợp lệ hoặc bị lỗi!');
+    }
   });
 
-  importBtn.addEventListener('click', () => {
-    if (!fileInput.files.length) return;
-    const file = fileInput.files[0];
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      try {
-        State.importJSON(e.target.result);
-        importMsg.textContent = 'Khôi phục thành công! Đang tải lại...';
-        importMsg.className = 'text-sm mt-2 font-bold h-5 text-correct-dk';
-        setTimeout(() => window.location.reload(), 1500);
-      } catch (err) {
-        importMsg.textContent = err.message;
-        importMsg.className = 'text-sm mt-2 font-bold h-5 text-wrong';
-      }
-    };
-    reader.readAsText(file);
+  syncRow.appendChild(genCodeBtn);
+  syncRow.appendChild(applyCodeBtn);
+
+  wrap.appendChild(syncCodeLabel);
+  wrap.appendChild(syncCodeDesc);
+  wrap.appendChild(syncTextarea);
+  wrap.appendChild(syncRow);
+
+  // Cloud Sync (Firebase)
+  const cloudCodeLabel = el('h4', { class: 'font-bold mb-2' }, 'Đồng bộ qua Đám Mây (Firebase)');
+  const cloudCodeDesc = el('p', { class: 'text-sm text-text-muted mb-4' }, 'Tự động lưu và tải dữ liệu từ máy chủ. (Cần cấu hình API trong file firebase-config.js)');
+  
+  const cloudRow = el('div', { class: 'flex gap-2 mb-4' });
+  const pushBtn = el('button', { class: 'btn btn-secondary flex-1' }, '⬆️ Đẩy lên Đám Mây');
+  const pullBtn = el('button', { class: 'btn btn-primary flex-1' }, '⬇️ Tải về máy');
+  const cloudStatus = el('div', { class: 'text-sm font-bold h-5 text-center mb-4' });
+
+  pushBtn.addEventListener('click', async () => {
+    Audio.click();
+    cloudStatus.textContent = 'Đang tải lên...';
+    cloudStatus.className = 'text-sm font-bold h-5 text-center mb-4 text-méo-purple';
+    try {
+      const { cloudSyncPush } = await import('./cloud-sync.js');
+      const profile = State.getActiveProfile();
+      await cloudSyncPush(profile.id || 'default_user', State.exportJSON());
+      cloudStatus.textContent = '✅ Đã đồng bộ lên đám mây thành công!';
+      cloudStatus.className = 'text-sm font-bold h-5 text-center mb-4 text-correct-dk';
+    } catch (err) {
+      cloudStatus.textContent = '❌ Lỗi: ' + err.message;
+      cloudStatus.className = 'text-sm font-bold h-5 text-center mb-4 text-wrong';
+    }
   });
 
-  wrap.appendChild(importLabel);
-  wrap.appendChild(fileInput);
-  wrap.appendChild(importBtn);
-  wrap.appendChild(importMsg);
+  pullBtn.addEventListener('click', async () => {
+    Audio.click();
+    cloudStatus.textContent = 'Đang tải về...';
+    cloudStatus.className = 'text-sm font-bold h-5 text-center mb-4 text-méo-purple';
+    try {
+      const { cloudSyncPull } = await import('./cloud-sync.js');
+      const profile = State.getActiveProfile();
+      const jsonStr = await cloudSyncPull(profile.id || 'default_user');
+      State.importJSON(jsonStr);
+      cloudStatus.textContent = '✅ Đã tải về thành công! Đang tải lại...';
+      cloudStatus.className = 'text-sm font-bold h-5 text-center mb-4 text-correct-dk';
+      setTimeout(() => window.location.reload(), 1500);
+    } catch (err) {
+      cloudStatus.textContent = '❌ Lỗi: ' + err.message;
+      cloudStatus.className = 'text-sm font-bold h-5 text-center mb-4 text-wrong';
+    }
+  });
+
+  cloudRow.appendChild(pushBtn);
+  cloudRow.appendChild(pullBtn);
+  
+  wrap.appendChild(cloudCodeLabel);
+  wrap.appendChild(cloudCodeDesc);
+  wrap.appendChild(cloudRow);
+  wrap.appendChild(cloudStatus);
 
   wrap.appendChild(el('hr', { class: 'my-6 border-wrong opacity-30' }));
 

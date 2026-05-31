@@ -555,6 +555,18 @@ function resetLearningProgress() {
   commit();
 }
 
+function resetCurrentDayProgress(moduleIds) {
+  const profile = getActiveProfile();
+  if (!moduleIds || !Array.isArray(moduleIds)) return;
+  
+  for (let id of moduleIds) {
+    if (profile.completedModules[id]) {
+      delete profile.completedModules[id];
+    }
+  }
+  commit();
+}
+
 // ============================================
 // ANSWER TRACKING (for accuracy stats)
 // ============================================
@@ -637,6 +649,7 @@ export const State = {
   importJSON,
   resetProfile,
   resetLearningProgress,
+  resetCurrentDayProgress,
 
   // Raw access (use sparingly)
   getState,

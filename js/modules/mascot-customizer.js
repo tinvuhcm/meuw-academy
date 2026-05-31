@@ -28,7 +28,15 @@ export function renderCustomizer() {
   const itemsMeta = {
     'acc_sunglasses': { src: 'assets/mascot/accessories/accessory_sunglasses_1780213487126.png', class: 'absolute z-20 w-32 top-[80px] left-[65px]' },
     'acc_crown': { src: 'assets/mascot/accessories/accessory_crown_1780213501375.png', class: 'absolute z-20 w-24 top-[10px] left-[85px]' },
-    'acc_wand': { src: 'assets/mascot/accessories/accessory_wand_1780213517410.png', class: 'absolute z-20 w-24 top-[100px] left-[160px]' }
+    'acc_wand': { src: 'assets/mascot/accessories/accessory_wand_1780213517410.png', class: 'absolute z-20 w-24 top-[100px] left-[160px]' },
+    'acc_lollipop': { src: 'assets/images/store/lollipop.png', class: 'absolute z-20 w-20 top-[120px] left-[20px]' },
+    'acc_milktea': { src: 'assets/images/store/milktea.png', class: 'absolute z-20 w-20 top-[130px] left-[170px]' },
+    'acc_tophat': { src: 'assets/images/store/tophat.png', class: 'absolute z-20 w-28 top-[0px] left-[70px]' },
+    'acc_cape': { src: 'assets/images/store/cape.png', class: 'absolute z-10 w-48 top-[100px] left-[10px]' },
+    'acc_headphones': { src: 'assets/images/store/headphones.png', class: 'absolute z-30 w-40 top-[50px] left-[45px]' },
+    'acc_batman': { src: 'assets/images/store/batman.png', class: 'absolute z-20 w-32 top-[40px] left-[65px]' },
+    'acc_spiderman': { src: 'assets/images/store/spiderman.png', class: 'absolute z-30 w-full top-[100px] left-0 opacity-80' },
+    'acc_console': { src: 'assets/images/store/console.png', class: 'absolute z-30 w-24 top-[150px] left-[80px]' }
   };
   
   profile.equippedAccessories.forEach(id => {

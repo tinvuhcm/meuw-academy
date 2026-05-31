@@ -3,9 +3,12 @@ const path = require('path');
 const { EN_DICT, VIE_DICT, SCI_DICT, IT_DICT } = require('./data_banks');
 
 const NUM_DAYS = 90;
-const MODULES_AM = 12; // 120 mins
-const MODULES_PM = 9;  // 90 mins
-const QUESTIONS_PER_MODULE = 10;
+const MODULES_AM = 14; // 14 modules
+const MODULES_PM = 10;  // 10 modules
+const QUESTIONS_PER_MODULE = 20; // 20 questions
+
+// Global tracker across all days
+const GLOBAL_USED_TOPICS = { math: [], eng: [], vie: [], sci: [], it: [], draw: [] };
 
 function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -28,10 +31,10 @@ function shuffle(array) {
 
 function getWeightedSubject() {
     const r = Math.random() * 100;
-    if (r < 30) return 'math';
-    if (r < 55) return 'eng';
-    if (r < 70) return 'vie';
-    if (r < 90) return 'sci';
+    if (r < 25) return 'math';
+    if (r < 50) return 'sci';
+    if (r < 70) return 'eng';
+    if (r < 85) return 'vie';
     if (r < 95) return 'draw';
     return 'it';
 }
@@ -131,7 +134,8 @@ function generateMathQuestions(topic, count) {
                 isMath: true,
                 question: qText,
                 text: `${eq} = [   ]`,
-                answer: ans.toString(),
+                blanks: [{ answer: ans.toString(), type: 'number' }],
+                illustration: `<div class="text-center text-4xl my-4">🧮 ${eq}</div>`,
                 explanation: `Đáp án đúng là ${ans}.`
             });
         } else {
@@ -154,12 +158,31 @@ function generateMathQuestions(topic, count) {
 }
 
 function generateEngQuestions(topic, count) {
-    const dict = EN_DICT[topic];
+    let dict = EN_DICT[topic];
     if (!dict || dict.length < 2) {
-        // fallback
-        const fb = EN_DICT['Trái cây & Rau củ'];
-        return generateEngQuestionsFallback(fb, count);
+        dict = EN_DICT['Trái cây & Rau củ'];
     }
+    
+    // Expand dict if count > dict.length
+    if (dict.length < count) {
+        let allKeys = shuffle(Object.keys(EN_DICT).filter(k => k !== topic));
+        let extendedDict = [...dict];
+        for (let key of allKeys) {
+            if (extendedDict.length >= count) break;
+            extendedDict = extendedDict.concat(EN_DICT[key]);
+        }
+        // Unique words only
+        const unique = [];
+        const seen = new Set();
+        for (let w of extendedDict) {
+            if (!seen.has(w.en)) {
+                seen.add(w.en);
+                unique.push(w);
+            }
+        }
+        dict = unique;
+    }
+    
     return generateEngQuestionsFallback(dict, count);
 }
 
@@ -173,6 +196,8 @@ function generateEngQuestionsFallback(dict, count) {
         
         if (type === 'drag-match') {
             const numPairs = Math.min(dict.length, 6);
+            // Must remove the pairs from the pool so they don't repeat individually later?
+            // Actually, for drag-match, it uses multiple words at once. We'll pick 4-6 random words.
             const selectedWords = shuffle([...dict]).slice(0, numPairs);
             const pairs = selectedWords.map((w, index) => ({
                 id: `pair-${i}-${index}`,
@@ -184,6 +209,8 @@ function generateEngQuestionsFallback(dict, count) {
                 question: 'Kéo từ tiếng Anh tương ứng với nghĩa tiếng Việt:',
                 pairs: pairs
             });
+            // Skip consuming `word` individually here
+            continue;
         } else if (type === 'fill-blank-en' && word.en.length > 3) {
             // Remove one random letter
             const idx = randomInt(1, word.en.length - 2);
@@ -223,11 +250,22 @@ function generateDataDictQuestions(dictBank, topic, count) {
         pool = dictBank[randomPick(allKeys)];
     }
     
+    // Expand pool if count > pool.length
+    if (pool.length < count) {
+        let allKeys = shuffle(Object.keys(dictBank).filter(k => k !== topic));
+        let extendedPool = [...pool];
+        for (let key of allKeys) {
+            if (extendedPool.length >= count) break;
+            extendedPool = extendedPool.concat(dictBank[key]);
+        }
+        pool = extendedPool;
+    }
+
     // Create a shuffled pool
     let shuffledPool = shuffle([...pool]);
     
     for (let i = 0; i < count; i++) {
-        // Re-shuffle if we run out of questions in the pool
+        // Re-shuffle if we run out of questions in the pool (should not happen now, but fallback)
         if (i >= shuffledPool.length) {
             shuffledPool = shuffledPool.concat(shuffle([...pool]));
         }
@@ -316,14 +354,11 @@ function generateDay(dayIndex) {
         modules: []
     };
 
-    let usedTopicsAM = { math: [], eng: [], vie: [], sci: [], it: [], draw: [] };
-    let usedTopicsPM = { math: [], eng: [], vie: [], sci: [], it: [], draw: [] };
-
     for (let i = 1; i <= MODULES_AM; i++) {
-        day.modules.push(generateModule(dayIndex, 'am', i, usedTopicsAM));
+        day.modules.push(generateModule(dayIndex, 'am', i, GLOBAL_USED_TOPICS));
     }
     for (let i = 1; i <= MODULES_PM; i++) {
-        day.modules.push(generateModule(dayIndex, 'pm', i, usedTopicsPM));
+        day.modules.push(generateModule(dayIndex, 'pm', i, GLOBAL_USED_TOPICS));
     }
 
     return day;

@@ -23,11 +23,11 @@ import { renderColorFill } from './question-types/ColorFill.js';
 import { renderMiniQuiz } from './question-types/MiniQuiz.js';
 
 export function renderLesson(params) {
-  const isRandomPractice = params.dayId === 'practice' && params.moduleId === 'random';
+  const isRandomPractice = params.dayId === 'practice';
   const dayId = isRandomPractice ? 'practice' : parseInt(params.dayId, 10);
   const moduleId = params.moduleId;
   
-  const moduleData = isRandomPractice ? generatePracticeModule() : getModuleData(dayId, moduleId);
+  const moduleData = isRandomPractice ? generatePracticeModule(20, moduleId) : getModuleData(dayId, moduleId);
   const container = el('div', { class: 'page-container lesson-container' });
 
   if (!moduleData) {

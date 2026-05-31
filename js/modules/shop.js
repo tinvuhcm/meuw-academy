@@ -31,7 +31,15 @@ export function renderShop() {
   const items = [
     { id: 'acc_sunglasses', name: 'Kính râm cực ngầu', price: 3000, img: 'assets/mascot/accessories/accessory_sunglasses_1780213487126.png' },
     { id: 'acc_wand', name: 'Đũa phép thuật', price: 6000, img: 'assets/mascot/accessories/accessory_wand_1780213517410.png' },
-    { id: 'acc_crown', name: 'Vương miện Vàng', price: 10000, img: 'assets/mascot/accessories/accessory_crown_1780213501375.png' }
+    { id: 'acc_crown', name: 'Vương miện Vàng', price: 10000, img: 'assets/mascot/accessories/accessory_crown_1780213501375.png' },
+    { id: 'acc_lollipop', name: 'Kẹo mút', price: 1500, img: 'assets/images/store/lollipop.png' },
+    { id: 'acc_milktea', name: 'Ly trà sữa', price: 2500, img: 'assets/images/store/milktea.png' },
+    { id: 'acc_tophat', name: 'Mũ chóp cao', price: 4000, img: 'assets/images/store/tophat.png' },
+    { id: 'acc_cape', name: 'Áo choàng Đỏ', price: 5000, img: 'assets/images/store/cape.png' },
+    { id: 'acc_headphones', name: 'Tai nghe Gaming', price: 7000, img: 'assets/images/store/headphones.png' },
+    { id: 'acc_batman', name: 'Mặt nạ Batman', price: 12000, img: 'assets/images/store/batman.png' },
+    { id: 'acc_spiderman', name: 'Bộ đồ Spiderman', price: 15000, img: 'assets/images/store/spiderman.png' },
+    { id: 'acc_console', name: 'Máy game cầm tay', price: 20000, img: 'assets/images/store/console.png' }
   ];
   
   const profile = State.getActiveProfile();
