@@ -54,6 +54,22 @@ function buildEnglishUnit({ topicKey, title, introTitle, introPoints, example, w
   };
 }
 
+function buildSentenceTopic({ topicKey, title, introTitle, introPoints, example, questionPool }) {
+  return {
+    topicKey,
+    subject: 'eng',
+    title,
+    lessonBlocks: [{
+      type: 'micro',
+      teacherName: TEACHER,
+      title: introTitle,
+      points: introPoints,
+      example,
+    }],
+    questionPool,
+  };
+}
+
 export const MORE_ENGLISH_TOPICS = [
   buildEnglishUnit({
     topicKey: 'eng:ff4-jobs',
@@ -141,6 +157,57 @@ export const MORE_ENGLISH_TOPICS = [
     words: [
       { en: 'big', vi: 'to' }, { en: 'small', vi: 'nhỏ' }, { en: 'fast', vi: 'nhanh' }, { en: 'slow', vi: 'chậm' },
       { en: 'strong', vi: 'khỏe' }, { en: 'weak', vi: 'yếu' }, { en: 'clean', vi: 'sạch' }, { en: 'dirty', vi: 'bẩn' },
+    ],
+  }),
+  buildSentenceTopic({
+    topicKey: 'eng:ff4-be-have',
+    title: 'Tiếng Anh: Family & Friends 4 - be / have got',
+    introTitle: 'Hai mẫu câu rất quan trọng là be và have got',
+    introPoints: ['I am / He is dùng để nói về người, trạng thái.', 'Have got dùng để nói có cái gì hoặc có bộ phận gì.'],
+    example: 'She is kind. He has got a blue backpack.',
+    questionPool: [
+      { type: 'multiple-choice', question: 'Chọn câu đúng: ____ my best friend.', options: ['She is', 'She are', 'She am', 'She have'], answer: 'She is', explanation: 'Với chủ ngữ she, động từ be đúng là is.' },
+      { type: 'multiple-choice', question: 'Chọn câu đúng: I ____ a new ruler.', options: ['have got', 'has got', 'is got', 'am got'], answer: 'have got', explanation: 'Với chủ ngữ I, ta dùng have got.' },
+      { type: 'multiple-choice', question: 'Câu nào đúng?', options: ['He has got two cats.', 'He have got two cats.', 'He is got two cats.', 'He got has two cats.'], answer: 'He has got two cats.', explanation: 'Với he, have got đổi thành has got.' },
+      { type: 'multiple-choice', question: 'Điền từ đúng: They ____ happy today.', options: ['are', 'is', 'am', 'has'], answer: 'are', explanation: 'Với they, động từ be đúng là are.' },
+      { type: 'multiple-choice', question: 'Câu "Lan có mái tóc dài" viết đúng là:', options: ['Lan has got long hair.', 'Lan have got long hair.', 'Lan is got long hair.', 'Lan am long hair.'], answer: 'Lan has got long hair.', explanation: 'Với Lan/she, ta dùng has got.' },
+      { type: 'multiple-choice', question: 'Câu hỏi đúng là:', options: ['Have you got a bike?', 'Has you got a bike?', 'Are you got a bike?', 'Do you is a bike?'], answer: 'Have you got a bike?', explanation: 'Với you, câu hỏi have got bắt đầu bằng Have.' },
+      { type: 'multiple-choice', question: 'Chọn câu phủ định đúng:', options: ['She is not tired.', 'She not is tired.', 'She are not tired.', 'She has not tired.'], answer: 'She is not tired.', explanation: 'Phủ định của is là is not.' },
+      { type: 'multiple-choice', question: 'Chọn câu đúng:', options: ['We have got a small garden.', 'We has got a small garden.', 'We is a small garden.', 'We are got a small garden.'], answer: 'We have got a small garden.', explanation: 'Với we, dùng have got.' },
+    ],
+  }),
+  buildSentenceTopic({
+    topicKey: 'eng:ff4-present-simple',
+    title: 'Tiếng Anh: Family & Friends 4 - Present simple',
+    introTitle: 'Thì hiện tại đơn dùng cho thói quen hằng ngày',
+    introPoints: ['I/You/We/They dùng động từ nguyên mẫu.', 'He/She dùng động từ thêm s hoặc es trong câu khẳng định.'],
+    example: 'I walk to school. My brother walks to school.',
+    questionPool: [
+      { type: 'multiple-choice', question: 'Chọn câu đúng:', options: ['He plays football after school.', 'He play football after school.', 'He playing football after school.', 'He is play football after school.'], answer: 'He plays football after school.', explanation: 'Với he, động từ ở hiện tại đơn thêm s: plays.' },
+      { type: 'multiple-choice', question: 'Điền từ đúng: They ____ breakfast at 6:30.', options: ['eat', 'eats', 'is eating', 'ate'], answer: 'eat', explanation: 'Với they, dùng động từ nguyên mẫu eat.' },
+      { type: 'multiple-choice', question: 'Câu hỏi đúng là:', options: ['Does she like music?', 'Do she like music?', 'Is she like music?', 'Does she likes music?'], answer: 'Does she like music?', explanation: 'Câu hỏi với she ở hiện tại đơn dùng Does + động từ nguyên mẫu.' },
+      { type: 'multiple-choice', question: 'Chọn câu phủ định đúng:', options: ['I do not watch TV in the morning.', 'I does not watch TV in the morning.', 'I not watch TV in the morning.', 'I am not watch TV in the morning.'], answer: 'I do not watch TV in the morning.', explanation: 'Với I, phủ định hiện tại đơn là do not + động từ nguyên mẫu.' },
+      { type: 'multiple-choice', question: 'Câu "Mẹ em nấu bữa tối mỗi ngày" viết đúng là:', options: ['My mother cooks dinner every day.', 'My mother cook dinner every day.', 'My mother is cook dinner every day.', 'My mother cooking dinner every day.'], answer: 'My mother cooks dinner every day.', explanation: 'Với My mother/she, động từ thêm s: cooks.' },
+      { type: 'multiple-choice', question: 'Điền từ đúng: ____ your friends walk to school?', options: ['Do', 'Does', 'Is', 'Has'], answer: 'Do', explanation: 'Với your friends/they, câu hỏi hiện tại đơn dùng Do.' },
+      { type: 'multiple-choice', question: 'Chọn câu đúng:', options: ['Nam brushes his teeth before bed.', 'Nam brush his teeth before bed.', 'Nam brushing his teeth before bed.', 'Nam do brush his teeth before bed.'], answer: 'Nam brushes his teeth before bed.', explanation: 'Brush với he/she/Nam thêm es thành brushes.' },
+      { type: 'multiple-choice', question: 'Câu nào đúng về thói quen?', options: ['We go to the park on Sundays.', 'We goes to the park on Sundays.', 'We is going to the park on Sundays.', 'We going to the park on Sundays.'], answer: 'We go to the park on Sundays.', explanation: 'Với we, dùng động từ nguyên mẫu go.' },
+    ],
+  }),
+  buildSentenceTopic({
+    topicKey: 'eng:ff4-reading-short',
+    title: 'Tiếng Anh: Family & Friends 4 - Short reading',
+    introTitle: 'Đọc hiểu ngắn giúp nối từ vựng với câu thật',
+    introPoints: ['Đọc câu hỏi trước để biết cần tìm thông tin gì.', 'Để ý tên người, thời gian và hoạt động chính.'],
+    example: 'Tom gets up at six. He goes to school by bus.',
+    questionPool: [
+      { type: 'multiple-choice', passage: 'Mai gets up at six o’clock. She has breakfast with her family and goes to school by bike.', question: 'How does Mai go to school?', options: ['By bike', 'By bus', 'On foot', 'By train'], answer: 'By bike', explanation: 'The passage says Mai goes to school by bike.' },
+      { type: 'multiple-choice', passage: 'Ben likes animals. On Sundays he visits the zoo with his dad and takes photos of monkeys and elephants.', question: 'Where does Ben go on Sundays?', options: ['The zoo', 'The museum', 'The beach', 'The library'], answer: 'The zoo', explanation: 'The passage says he visits the zoo on Sundays.' },
+      { type: 'multiple-choice', passage: 'Lucy is hungry after school. She drinks milk and eats bread before doing her homework.', question: 'What does Lucy drink?', options: ['Milk', 'Juice', 'Water', 'Tea'], answer: 'Milk', explanation: 'The passage says Lucy drinks milk.' },
+      { type: 'multiple-choice', passage: 'My classroom is big and bright. There are twenty desks, a board, and two windows.', question: 'How many windows are there?', options: ['Two', 'Three', 'Twenty', 'One'], answer: 'Two', explanation: 'The passage says there are two windows.' },
+      { type: 'multiple-choice', passage: 'It is rainy today, so Sam wears boots and takes an umbrella to school.', question: 'Why does Sam take an umbrella?', options: ['Because it is rainy', 'Because it is sunny', 'Because it is windy', 'Because it is hot'], answer: 'Because it is rainy', explanation: 'The first sentence says it is rainy today.' },
+      { type: 'multiple-choice', passage: 'Emma has got a pet rabbit. It is white and small. It likes carrots.', question: 'What color is the rabbit?', options: ['White', 'Black', 'Brown', 'Grey'], answer: 'White', explanation: 'The passage says the rabbit is white and small.' },
+      { type: 'multiple-choice', passage: 'Dad is a firefighter. He works at the fire station and helps people when there is a fire.', question: 'What is Dad’s job?', options: ['A firefighter', 'A doctor', 'A teacher', 'A cook'], answer: 'A firefighter', explanation: 'The passage says Dad is a firefighter.' },
+      { type: 'multiple-choice', passage: 'On Saturday, my family goes to the market. We buy vegetables, fish, and fruit for the week.', question: 'What do they buy?', options: ['Vegetables, fish, and fruit', 'Books and pencils', 'Shoes and hats', 'Toys and games'], answer: 'Vegetables, fish, and fruit', explanation: 'The last sentence lists what they buy.' },
     ],
   }),
 ];

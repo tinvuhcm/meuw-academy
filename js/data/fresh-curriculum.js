@@ -32,6 +32,13 @@ const MATH_TOPICS = [
   { topicKey: 'math:division-basic', title: 'Toán: Phép chia cơ bản', op: '/' },
   { topicKey: 'math:fractions-basic', title: 'Toán: Phân số cơ bản', op: 'frac' },
   { topicKey: 'math:geometry-perimeter-area', title: 'Toán: Hình học (Chu vi, Diện tích)', op: 'geo' },
+  { topicKey: 'math:place-value', title: 'Toán: Giá trị chữ số và hàng lớp', op: 'place-value' },
+  { topicKey: 'math:rounding', title: 'Toán: Làm tròn số', op: 'rounding' },
+  { topicKey: 'math:expression-order', title: 'Toán: Biểu thức số', op: 'expression' },
+  { topicKey: 'math:average-basic', title: 'Toán: Trung bình cộng', op: 'average' },
+  { topicKey: 'math:measurement', title: 'Toán: Đơn vị đo và đổi đơn vị', op: 'measurement' },
+  { topicKey: 'math:data-chart', title: 'Toán: Bảng số liệu và biểu đồ', op: 'data-chart' },
+  { topicKey: 'math:word-problem', title: 'Toán: Bài toán có lời văn', op: 'word-problem' },
   { topicKey: 'math:mental-math', title: 'Toán: Tính nhẩm nhanh', op: 'quick' },
   { topicKey: 'math:even-odd', title: 'Toán: Số chẵn và số lẻ', op: 'parity' },
   { topicKey: 'math:compare-numbers', title: 'Toán: So sánh số', op: 'compare' },
@@ -378,6 +385,184 @@ function generateMathQuestions(topic, count, seedInput) {
           options: seededShuffle([`${side * side} cm²`, `${side * 4} cm`, `${side * 2} cm²`, `${side * side + side} cm²`], `${seedInput}|${i}|geo-a`),
           answer: `${side * side} cm²`,
           explanation: `Diện tích hình vuông = cạnh × cạnh = ${side} × ${side} = ${side * side} cm².`,
+        };
+      }
+    } else if (topic.op === 'place-value') {
+      const digits = Array.from({ length: 6 }, () => randInt(rng, 0, 9));
+      if (digits[0] === 0) digits[0] = randInt(rng, 1, 9);
+      const number = Number(digits.join(''));
+      const positions = [
+        { label: 'hàng trăm nghìn', factor: 100000 },
+        { label: 'hàng chục nghìn', factor: 10000 },
+        { label: 'hàng nghìn', factor: 1000 },
+        { label: 'hàng trăm', factor: 100 },
+        { label: 'hàng chục', factor: 10 },
+        { label: 'hàng đơn vị', factor: 1 },
+      ];
+      const picked = positions[randInt(rng, 0, positions.length - 1)];
+      const digit = Math.floor(number / picked.factor) % 10;
+      question = {
+        type: 'multiple-choice',
+        isMath: true,
+        question: `Trong số ${number.toLocaleString('vi-VN')}, chữ số ở ${picked.label} là chữ số nào?`,
+        options: seededShuffle([`${digit}`, `${(digit + 1) % 10}`, `${(digit + 3) % 10}`, `${(digit + 7) % 10}`], `${seedInput}|${i}|place-value`),
+        answer: `${digit}`,
+        explanation: `Tách số theo từng hàng. Ở ${picked.label} của số ${number.toLocaleString('vi-VN')} là chữ số ${digit}.`,
+      };
+    } else if (topic.op === 'rounding') {
+      const number = randInt(rng, 1000, 999999);
+      const mode = seededShuffle(['10', '100', '1000'], `${seedInput}|${i}|rounding-mode`)[0];
+      let rounded = number;
+      if (mode === '10') rounded = Math.round(number / 10) * 10;
+      if (mode === '100') rounded = Math.round(number / 100) * 100;
+      if (mode === '1000') rounded = Math.round(number / 1000) * 1000;
+      question = {
+        type: 'multiple-choice',
+        isMath: true,
+        question: `Làm tròn số ${number.toLocaleString('vi-VN')} đến hàng ${mode === '10' ? 'chục' : mode === '100' ? 'trăm' : 'nghìn'}.`,
+        options: seededShuffle([
+          `${rounded.toLocaleString('vi-VN')}`,
+          `${(rounded + Number(mode)).toLocaleString('vi-VN')}`,
+          `${Math.max(rounded - Number(mode), 0).toLocaleString('vi-VN')}`,
+          `${(rounded + Number(mode) * 2).toLocaleString('vi-VN')}`,
+        ], `${seedInput}|${i}|rounding`),
+        answer: `${rounded.toLocaleString('vi-VN')}`,
+        explanation: `Nhìn chữ số ngay bên phải hàng cần làm tròn rồi làm tròn được ${rounded.toLocaleString('vi-VN')}.`,
+      };
+    } else if (topic.op === 'expression') {
+      const a = randInt(rng, 12, 99);
+      const b = randInt(rng, 2, 9);
+      const c = randInt(rng, 2, 9);
+      const mode = rng() > 0.5 ? 'mul-first' : 'paren';
+      if (mode === 'mul-first') {
+        const ans = a + b * c;
+        question = {
+          type: 'multiple-choice',
+          isMath: true,
+          question: `Tính giá trị biểu thức: ${a} + ${b} × ${c}`,
+          options: seededShuffle([`${ans}`, `${(a + b) * c}`, `${a * b + c}`, `${ans + b}`], `${seedInput}|${i}|expr1`),
+          answer: `${ans}`,
+          explanation: `Thực hiện phép nhân trước: ${b} × ${c} = ${b * c}, rồi cộng ${a} để được ${ans}.`,
+        };
+      } else {
+        const ans = (a + b) * c;
+        question = {
+          type: 'multiple-choice',
+          isMath: true,
+          question: `Tính giá trị biểu thức: (${a} + ${b}) × ${c}`,
+          options: seededShuffle([`${ans}`, `${a + b * c}`, `${a * c + b}`, `${ans - c}`], `${seedInput}|${i}|expr2`),
+          answer: `${ans}`,
+          explanation: `Tính trong ngoặc trước: ${a} + ${b} = ${a + b}, sau đó nhân với ${c} được ${ans}.`,
+        };
+      }
+    } else if (topic.op === 'average') {
+      const a = randInt(rng, 10, 60);
+      const b = randInt(rng, 10, 60);
+      const c = randInt(rng, 10, 60);
+      const sum = a + b + c;
+      const answer = Math.floor(sum / 3);
+      question = {
+        type: 'multiple-choice',
+        isMath: true,
+        question: `Ba bạn có lần lượt ${a}, ${b}, ${c} nhãn vở. Trung bình mỗi bạn có bao nhiêu nhãn vở?`,
+        options: seededShuffle([`${answer}`, `${Math.floor(sum / 2)}`, `${answer + 3}`, `${answer - 2}`], `${seedInput}|${i}|avg`),
+        answer: `${answer}`,
+        explanation: `Cộng lại được ${sum}, rồi chia cho 3: ${sum} : 3 = ${answer}.`,
+      };
+    } else if (topic.op === 'measurement') {
+      const cases = [
+        () => {
+          const meters = randInt(rng, 2, 25);
+          return {
+            question: `${meters} m bằng bao nhiêu xăng-ti-mét?`,
+            answer: `${meters * 100} cm`,
+            options: [`${meters * 100} cm`, `${meters * 10} cm`, `${meters * 1000} cm`, `${meters} cm`],
+            explanation: `1 m = 100 cm nên ${meters} m = ${meters * 100} cm.`,
+          };
+        },
+        () => {
+          const hours = randInt(rng, 1, 8);
+          return {
+            question: `${hours} giờ bằng bao nhiêu phút?`,
+            answer: `${hours * 60} phút`,
+            options: [`${hours * 60} phút`, `${hours * 100} phút`, `${hours * 30} phút`, `${hours * 360} phút`],
+            explanation: `1 giờ = 60 phút nên ${hours} giờ = ${hours * 60} phút.`,
+          };
+        },
+        () => {
+          const kg = randInt(rng, 2, 18);
+          return {
+            question: `${kg} kg bằng bao nhiêu gam?`,
+            answer: `${kg * 1000} g`,
+            options: [`${kg * 1000} g`, `${kg * 100} g`, `${kg * 10} g`, `${kg} g`],
+            explanation: `1 kg = 1000 g nên ${kg} kg = ${kg * 1000} g.`,
+          };
+        },
+      ];
+      const sample = cases[i % cases.length]();
+      question = {
+        type: 'multiple-choice',
+        isMath: true,
+        question: sample.question,
+        options: seededShuffle(sample.options, `${seedInput}|${i}|measurement`),
+        answer: sample.answer,
+        explanation: sample.explanation,
+      };
+    } else if (topic.op === 'data-chart') {
+      const labels = ['Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm'];
+      const values = labels.map(() => randInt(rng, 2, 10));
+      const biggestIndex = values.indexOf(Math.max(...values));
+      const askBiggest = rng() > 0.5;
+      question = {
+        type: 'multiple-choice',
+        isMath: true,
+        question: `${labels.map((label, idx) => `${label}: ${values[idx]} quyển`).join(' | ')}. ${askBiggest ? 'Ngày nào đọc nhiều sách nhất?' : 'Tổng số sách đã đọc là bao nhiêu?'}`,
+        options: askBiggest
+          ? seededShuffle(labels, `${seedInput}|${i}|chart-day`)
+          : seededShuffle([`${values.reduce((a, b) => a + b, 0)}`, `${values[0] + values[1]}`, `${Math.max(...values)}`, `${values.reduce((a, b) => a + b, 0) + 2}`], `${seedInput}|${i}|chart-total`),
+        answer: askBiggest ? labels[biggestIndex] : `${values.reduce((a, b) => a + b, 0)}`,
+        explanation: askBiggest
+          ? `So sánh các số liệu thì ${labels[biggestIndex]} có ${values[biggestIndex]} quyển là nhiều nhất.`
+          : `Cộng các số liệu: ${values.join(' + ')} = ${values.reduce((a, b) => a + b, 0)}.`,
+      };
+    } else if (topic.op === 'word-problem') {
+      const mode = ['buy', 'share', 'perimeter'][i % 3];
+      if (mode === 'buy') {
+        const a = randInt(rng, 15, 60);
+        const b = randInt(rng, 15, 60);
+        const c = randInt(rng, 10, 40);
+        const answer = a + b - c;
+        question = {
+          type: 'multiple-choice',
+          isMath: true,
+          question: `Thư viện có ${a} truyện tranh. Cô giáo mang thêm ${b} quyển rồi cho lớp mượn ${c} quyển. Thư viện còn lại bao nhiêu quyển?`,
+          options: seededShuffle([`${answer}`, `${a + b + c}`, `${a - b + c}`, `${a + c - b}`], `${seedInput}|${i}|word1`),
+          answer: `${answer}`,
+          explanation: `Số truyện còn lại là ${a} + ${b} - ${c} = ${answer}.`,
+        };
+      } else if (mode === 'share') {
+        const groups = randInt(rng, 3, 8);
+        const each = randInt(rng, 4, 12);
+        const total = groups * each;
+        question = {
+          type: 'multiple-choice',
+          isMath: true,
+          question: `Có ${total} cái bánh chia đều cho ${groups} bạn. Mỗi bạn được mấy cái bánh?`,
+          options: seededShuffle([`${each}`, `${groups}`, `${each + 2}`, `${total - groups}`], `${seedInput}|${i}|word2`),
+          answer: `${each}`,
+          explanation: `Chia đều ${total} cho ${groups} bạn: ${total} : ${groups} = ${each}.`,
+        };
+      } else {
+        const length = randInt(rng, 5, 18);
+        const width = randInt(rng, 3, 12);
+        const answer = (length + width) * 2;
+        question = {
+          type: 'multiple-choice',
+          isMath: true,
+          question: `Một khu vườn hình chữ nhật dài ${length} m, rộng ${width} m. Chu vi khu vườn là bao nhiêu mét?`,
+          options: seededShuffle([`${answer} m`, `${length * width} m²`, `${length + width} m`, `${answer + 2} m`], `${seedInput}|${i}|word3`),
+          answer: `${answer} m`,
+          explanation: `Chu vi hình chữ nhật = (dài + rộng) × 2 = (${length} + ${width}) × 2 = ${answer} m.`,
         };
       }
     } else if (topic.op === 'parity') {
