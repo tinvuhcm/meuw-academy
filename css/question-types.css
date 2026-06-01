@@ -13,6 +13,87 @@
   animation: slide-up 0.3s var(--ease-out);
 }
 
+.lesson-theory-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-height: 420px;
+  justify-content: center;
+  animation: slide-up 0.3s var(--ease-out);
+}
+
+.lesson-teacher-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-xl);
+}
+
+.teacher-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid var(--warning);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.teacher-name {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--text);
+}
+
+.teacher-role {
+  font-size: var(--text-sm);
+  font-weight: var(--fw-bold);
+  color: var(--text-muted);
+}
+
+.lesson-theory-content {
+  background: white;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+}
+
+.lesson-theory-point {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  font-size: var(--text-lg);
+  line-height: var(--lh-relaxed);
+  color: var(--text);
+  margin-bottom: var(--space-3);
+}
+
+.lesson-point-dot {
+  width: 12px;
+  height: 12px;
+  margin-top: 10px;
+  border-radius: 50%;
+  background: var(--meo-purple);
+  flex-shrink: 0;
+}
+
+.lesson-theory-example {
+  margin-top: var(--space-4);
+  padding: var(--space-4);
+  background: var(--warning-bg);
+  border: 2px solid var(--warning);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-base);
+  font-weight: var(--fw-bold);
+  color: var(--text);
+}
+
 /* ============================================
    TYPE 1: MULTIPLE CHOICE
    ============================================ */

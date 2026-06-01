@@ -17,34 +17,27 @@ export function renderCustomizer() {
   
   // Mascot Preview Area
   const preview = el('div', { class: 'relative w-64 h-64 bg-meo-purple-lt rounded-full flex-center mb-8 shadow-inner border-4 border-meo-purple' });
-  
-  const baseImg = el('img', { src: 'assets/images/mascot_avatar.png', class: 'w-48 h-48 object-contain absolute z-10' });
-  preview.appendChild(baseImg);
+  const canvas = el('canvas', { width: 256, height: 256, class: 'w-56 h-56 object-contain' });
+  preview.appendChild(canvas);
   
   const profile = State.getActiveProfile();
   if (!profile.equippedAccessories) profile.equippedAccessories = [];
   
-  // Equip items visual rendering
   const itemsMeta = {
-    'acc_sunglasses': { src: 'assets/mascot/accessories/accessory_sunglasses_1780213487126.png', class: 'absolute z-20 w-32 top-[80px] left-[65px]' },
-    'acc_crown': { src: 'assets/mascot/accessories/accessory_crown_1780213501375.png', class: 'absolute z-20 w-24 top-[10px] left-[85px]' },
-    'acc_wand': { src: 'assets/mascot/accessories/accessory_wand_1780213517410.png', class: 'absolute z-20 w-24 top-[100px] left-[160px]' },
-    'acc_lollipop': { src: 'assets/images/store/lollipop.png', class: 'absolute z-20 w-20 top-[120px] left-[20px]' },
-    'acc_milktea': { src: 'assets/images/store/milktea.png', class: 'absolute z-20 w-20 top-[130px] left-[170px]' },
-    'acc_tophat': { src: 'assets/images/store/tophat.png', class: 'absolute z-20 w-28 top-[0px] left-[70px]' },
-    'acc_cape': { src: 'assets/images/store/cape.png', class: 'absolute z-10 w-48 top-[100px] left-[10px]' },
-    'acc_headphones': { src: 'assets/images/store/headphones.png', class: 'absolute z-30 w-40 top-[50px] left-[45px]' },
-    'acc_batman': { src: 'assets/images/store/batman.png', class: 'absolute z-20 w-32 top-[40px] left-[65px]' },
-    'acc_spiderman': { src: 'assets/images/store/spiderman.png', class: 'absolute z-30 w-full top-[100px] left-0 opacity-80' },
-    'acc_console': { src: 'assets/images/store/console.png', class: 'absolute z-30 w-24 top-[150px] left-[80px]' }
+    'acc_sunglasses': { src: 'assets/mascot/accessories/accessory_sunglasses_1780213487126.png', render: 'base' },
+    'acc_crown': { src: 'assets/mascot/accessories/accessory_crown_1780213501375.png', render: 'base' },
+    'acc_wand': { src: 'assets/mascot/accessories/accessory_wand_1780213517410.png', render: 'overlay', box: [138, 82, 92, 92] },
+    'acc_lollipop': { src: 'assets/images/store/lollipop.png', render: 'overlay', box: [18, 116, 72, 72] },
+    'acc_milktea': { src: 'assets/images/store/milktea.png', render: 'overlay', box: [172, 126, 58, 58] },
+    'acc_tophat': { src: 'assets/images/store/tophat.png', render: 'overlay', box: [78, 6, 100, 100] },
+    'acc_cape': { src: 'assets/images/store/cape.png', render: 'base' },
+    'acc_headphones': { src: 'assets/images/store/headphones.png', render: 'base' },
+    'acc_batman': { src: 'assets/images/store/batman.png', render: 'base' },
+    'acc_spiderman': { src: 'assets/images/store/spiderman.png', render: 'overlay', box: [0, 112, 256, 90], opacity: 0.8 },
+    'acc_console': { src: 'assets/images/store/console.png', render: 'overlay', box: [92, 154, 76, 76] }
   };
-  
-  profile.equippedAccessories.forEach(id => {
-    if (itemsMeta[id]) {
-      const img = el('img', { src: itemsMeta[id].src, class: itemsMeta[id].class });
-      preview.appendChild(img);
-    }
-  });
+
+  renderMascotCanvas(canvas, profile.equippedAccessories, itemsMeta);
   
   // Controls
   const controls = el('div', { class: 'grid gap-4 md:grid-cols-3 w-full max-w-2xl' });
@@ -78,4 +71,34 @@ export function renderCustomizer() {
   container.appendChild(preview);
   container.appendChild(controls);
   return container;
+}
+
+function loadImage(src) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.onerror = reject;
+    img.src = src;
+  });
+}
+
+async function renderMascotCanvas(canvas, equippedIds, itemsMeta) {
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  const baseVariantId = [...equippedIds].reverse().find(id => itemsMeta[id]?.render === 'base');
+  const baseSrc = baseVariantId ? itemsMeta[baseVariantId].src : 'assets/images/mascot_avatar.png';
+  const base = await loadImage(baseSrc);
+  ctx.drawImage(base, 16, 16, 224, 224);
+
+  for (const id of equippedIds) {
+    const meta = itemsMeta[id];
+    if (!meta || meta.render !== 'overlay') continue;
+    const [x, y, w, h] = meta.box;
+    const img = await loadImage(meta.src);
+    ctx.save();
+    ctx.globalAlpha = meta.opacity || 1;
+    ctx.drawImage(img, x, y, w, h);
+    ctx.restore();
+  }
 }

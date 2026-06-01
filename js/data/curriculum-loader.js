@@ -9,6 +9,7 @@
 import { M1_DATA } from './curriculum-m1.js';
 import { M2_DATA } from './curriculum-m2.js';
 import { M3_DATA } from './curriculum-m3.js';
+import { enrichLessonBlocks } from './lesson-blocks.js';
 
 export const ALL_DATA = { ...M1_DATA, ...M2_DATA, ...M3_DATA };
 
@@ -17,7 +18,9 @@ export const ALL_DATA = { ...M1_DATA, ...M2_DATA, ...M3_DATA };
  * @param {number} day 
  */
 export function getCurriculumDay(day) {
-  return ALL_DATA[`day${day}`] || null;
+  const dayKey = `day${day}`;
+  const dayData = ALL_DATA[dayKey] || null;
+  return enrichLessonBlocks(dayKey, dayData);
 }
 
 /**

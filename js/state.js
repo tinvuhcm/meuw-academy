@@ -6,6 +6,10 @@
 const STORAGE_KEY = 'meoAcademy_v2';
 const CURRENT_VERSION = 2;
 
+function createDeviceId() {
+  return `device_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
+}
+
 // === Default state template for a new profile ===
 function createDefaultProfile(id, name = 'Méo', avatarColor = '#EC4899') {
   return {
@@ -57,6 +61,12 @@ function createRootState() {
     },
     pinLockUntil: null,   // timestamp if PIN locked out
     pinAttempts: 0,
+    syncMeta: {
+      deviceId: createDeviceId(),
+      localUpdatedAt: new Date().toISOString(),
+      account: null,
+      lastSyncedAt: null,
+    },
   };
 }
 
@@ -100,6 +110,18 @@ function migrateState(state) {
   }
   // Ensure all required fields exist
   if (!state.profiles) state.profiles = {};
+  if (!state.syncMeta) {
+    state.syncMeta = {
+      deviceId: createDeviceId(),
+      localUpdatedAt: new Date().toISOString(),
+      account: null,
+      lastSyncedAt: null,
+    };
+  }
+  if (!state.syncMeta.deviceId) state.syncMeta.deviceId = createDeviceId();
+  if (!state.syncMeta.localUpdatedAt) state.syncMeta.localUpdatedAt = new Date().toISOString();
+  if (state.syncMeta.account === undefined) state.syncMeta.account = null;
+  if (state.syncMeta.lastSyncedAt === undefined) state.syncMeta.lastSyncedAt = null;
   if (!state.activeProfile || !state.profiles[state.activeProfile]) {
     const id = Object.keys(state.profiles)[0] || `profile_${Date.now()}`;
     if (!state.profiles[id]) {
@@ -136,6 +158,12 @@ function getProfile(profileId) {
 }
 
 function commit() {
+  _state.syncMeta = _state.syncMeta || {};
+  _state.syncMeta.localUpdatedAt = new Date().toISOString();
+  saveState(_state);
+}
+
+function commitSyncMetadata() {
   saveState(_state);
 }
 
@@ -537,6 +565,31 @@ function importJSON(jsonString) {
   }
 }
 
+function getSyncMeta() {
+  return _state.syncMeta || {};
+}
+
+function getLocalUpdatedAt() {
+  return getSyncMeta().localUpdatedAt || null;
+}
+
+function setAccountSession(session = {}) {
+  const { userId, email } = session || {};
+  _state.syncMeta = _state.syncMeta || {};
+  _state.syncMeta.account = userId ? {
+    userId,
+    email: email || '',
+    linkedAt: new Date().toISOString(),
+  } : null;
+  commitSyncMetadata();
+}
+
+function markSynced() {
+  _state.syncMeta = _state.syncMeta || {};
+  _state.syncMeta.lastSyncedAt = new Date().toISOString();
+  commitSyncMetadata();
+}
+
 function resetProfile() {
   const profile = getActiveProfile();
   const id = profile.id;
@@ -647,6 +700,10 @@ export const State = {
   // Import/Export
   exportJSON,
   importJSON,
+  getSyncMeta,
+  getLocalUpdatedAt,
+  setAccountSession,
+  markSynced,
   resetProfile,
   resetLearningProgress,
   resetCurrentDayProgress,

@@ -362,11 +362,17 @@ function renderDataTab(container) {
 
   wrap.innerHTML = `
     <h3 class="font-display text-xl mb-4">Quản lý Dữ liệu</h3>
-    <p class="text-sm text-text-muted mb-6">Tất cả dữ liệu học tập được lưu cục bộ trên trình duyệt này. Nếu em muốn chuyển sang máy khác, hãy xuất dữ liệu và nhập vào máy kia.</p>
+    <p class="text-sm text-text-muted mb-6">Dữ liệu vẫn lưu trên máy để học offline. Khi đăng nhập tài khoản, phụ huynh có thể chủ động đẩy dữ liệu lên cloud hoặc tải dữ liệu cloud về máy này.</p>
   `;
 
-  // Export
-  const exportBtn = el('button', { class: 'btn btn-primary w-full md:w-auto mb-4' }, '💾 Tải tệp sao lưu (.json)');
+  const backupArea = el('div', { class: 'p-4 border-2 border-border rounded-xl bg-bg mb-6' });
+  backupArea.innerHTML = `
+    <h4 class="font-bold mb-2">Sao lưu thủ công</h4>
+    <p class="text-sm text-text-muted mb-4">Dùng file JSON làm phương án khôi phục an toàn trước khi đổi máy hoặc đồng bộ tài khoản.</p>
+  `;
+
+  const backupActions = el('div', { class: 'grid gap-3 md:grid-cols-2' });
+  const exportBtn = el('button', { class: 'btn btn-primary w-full' }, '💾 Tải tệp sao lưu (.json)');
   exportBtn.addEventListener('click', () => {
     Audio.click();
     const json = State.exportJSON();
@@ -378,117 +384,222 @@ function renderDataTab(container) {
     a.click();
     URL.revokeObjectURL(url);
   });
-  wrap.appendChild(exportBtn);
 
-  wrap.appendChild(el('hr', { class: 'my-6 border-border' }));
-
-  // Sync Code (Base64)
-  const syncCodeLabel = el('h4', { class: 'font-bold mb-2' }, 'Đồng bộ nhanh bằng Mã (Sync Code)');
-  const syncCodeDesc = el('p', { class: 'text-sm text-text-muted mb-4' }, 'Dùng mã này để copy-paste dán sang điện thoại/máy tính bảng nhanh chóng mà không cần tải file.');
-  
-  const syncTextarea = el('textarea', { class: 'input-field w-full h-24 mb-2 font-mono text-xs', placeholder: 'Dán mã đồng bộ vào đây...' });
-  const syncRow = el('div', { class: 'flex gap-2 mb-4' });
-  
-  const genCodeBtn = el('button', { class: 'btn btn-secondary flex-1' }, 'Tạo Mã Đồng Bộ');
-  genCodeBtn.addEventListener('click', () => {
+  const fileInput = el('input', { type: 'file', accept: 'application/json,.json', class: 'hidden' });
+  const restoreBtn = el('button', { class: 'btn btn-secondary w-full' }, '📥 Khôi phục từ tệp (.json)');
+  restoreBtn.addEventListener('click', () => {
     Audio.click();
-    const json = State.exportJSON();
-    syncTextarea.value = btoa(encodeURIComponent(json));
-    syncTextarea.select();
+    fileInput.click();
   });
-  
-  const applyCodeBtn = el('button', { class: 'btn btn-primary flex-1' }, 'Áp dụng Mã');
-  applyCodeBtn.addEventListener('click', () => {
+  fileInput.addEventListener('change', async () => {
     Audio.click();
     try {
-      const code = syncTextarea.value.trim();
-      if (!code) throw new Error('Vui lòng dán mã!');
-      const json = decodeURIComponent(atob(code));
+      const file = fileInput.files?.[0];
+      if (!file) return;
+      const json = await file.text();
+      JSON.parse(json);
+      const ok = confirm('Khôi phục file này sẽ ghi đè dữ liệu học tập trên máy hiện tại. Bạn có chắc muốn tiếp tục?');
+      if (!ok) return;
       State.importJSON(json);
-      alert('Khôi phục thành công! Đang tải lại...');
+      alert('Khôi phục thành công. App sẽ tải lại để áp dụng dữ liệu mới.');
       window.location.reload();
-    } catch(e) {
-      alert('Mã không hợp lệ hoặc bị lỗi!');
+    } catch (e) {
+      alert(`Không thể khôi phục file: ${e.message}`);
+    } finally {
+      fileInput.value = '';
     }
   });
 
-  syncRow.appendChild(genCodeBtn);
-  syncRow.appendChild(applyCodeBtn);
+  backupActions.appendChild(exportBtn);
+  backupActions.appendChild(restoreBtn);
+  backupArea.appendChild(backupActions);
+  backupArea.appendChild(fileInput);
+  wrap.appendChild(backupArea);
 
-  wrap.appendChild(syncCodeLabel);
-  wrap.appendChild(syncCodeDesc);
-  wrap.appendChild(syncTextarea);
-  wrap.appendChild(syncRow);
+  const accountArea = el('div', { class: 'p-4 border-2 border-méo-purple rounded-xl bg-méo-purple-lt mb-6' });
+  accountArea.innerHTML = `
+    <h4 class="font-bold mb-2 text-méo-purple">Tài khoản học tập</h4>
+    <p class="text-sm text-text mb-4">Một email tương ứng một bé. Khi dữ liệu local và cloud khác nhau, app sẽ hỏi trước khi ghi đè.</p>
+  `;
 
-  // Cloud Sync (Firebase)
-  const cloudCodeLabel = el('h4', { class: 'font-bold mb-2' }, 'Đồng bộ qua Đám Mây (Firebase)');
-  const cloudCodeDesc = el('p', { class: 'text-sm text-text-muted mb-4' }, 'Tự động lưu và tải dữ liệu từ máy chủ. Ghi nhớ Mã Đám Mây bên dưới để tải về trên thiết bị khác.');
-  
-  const cloudIdGroup = el('div', { class: 'mb-4 flex flex-col gap-1' });
-  const cloudIdLabel = el('label', { class: 'text-xs font-bold text-text-muted uppercase' }, 'Mã Đám Mây (Cloud ID):');
-  const cloudIdInput = el('input', { type: 'text', class: 'input-field w-full font-mono text-sm text-center font-bold text-méo-purple', value: State.getActiveProfile().id });
-  cloudIdGroup.appendChild(cloudIdLabel);
-  cloudIdGroup.appendChild(cloudIdInput);
+  const accountStatus = el('div', { class: 'text-sm font-bold mb-4 text-text-muted' }, 'Đang kiểm tra tài khoản...');
+  const emailInput = el('input', { type: 'email', class: 'input-field w-full mb-2', placeholder: 'Email phụ huynh' });
+  const passwordInput = el('input', { type: 'password', class: 'input-field w-full mb-3', placeholder: 'Mật khẩu', autocomplete: 'current-password' });
+  const authRow = el('div', { class: 'grid gap-3 md:grid-cols-2 mb-3' });
+  const signInBtn = el('button', { class: 'btn btn-primary w-full' }, 'Đăng nhập');
+  const signUpBtn = el('button', { class: 'btn btn-secondary w-full' }, 'Tạo tài khoản');
+  const syncRow = el('div', { class: 'grid gap-3 md:grid-cols-3' });
+  const uploadBtn = el('button', { class: 'btn btn-secondary w-full' }, 'Đẩy máy này lên cloud');
+  const downloadBtn = el('button', { class: 'btn btn-primary w-full' }, 'Dùng dữ liệu cloud');
+  const signOutBtn = el('button', { class: 'btn btn-outline w-full' }, 'Đăng xuất');
 
-  const cloudRow = el('div', { class: 'flex gap-2 mb-4' });
-  const pushBtn = el('button', { class: 'btn btn-secondary flex-1' }, '⬆️ Đẩy lên Đám Mây');
-  const pullBtn = el('button', { class: 'btn btn-primary flex-1' }, '⬇️ Tải về máy');
-  const cloudStatus = el('div', { class: 'text-sm font-bold h-5 text-center mb-4' });
+  function setAccountStatus(message, type = 'info') {
+    const color = type === 'error' ? 'text-wrong' : type === 'success' ? 'text-correct-dk' : 'text-text-muted';
+    accountStatus.className = `text-sm font-bold mb-4 ${color}`;
+    accountStatus.textContent = message;
+  }
 
-  pushBtn.addEventListener('click', async () => {
-    Audio.click();
-    const syncId = cloudIdInput.value.trim();
-    if (!syncId) {
-      cloudStatus.textContent = '❌ Lỗi: Vui lòng nhập Mã Đám Mây';
-      cloudStatus.className = 'text-sm font-bold h-5 text-center mb-4 text-wrong';
+  function setAccountControls(isSignedIn) {
+    emailInput.disabled = isSignedIn;
+    passwordInput.disabled = isSignedIn;
+    signInBtn.disabled = isSignedIn;
+    signUpBtn.disabled = isSignedIn;
+    uploadBtn.disabled = !isSignedIn;
+    downloadBtn.disabled = !isSignedIn;
+    signOutBtn.disabled = !isSignedIn;
+  }
+
+  async function handleSignedIn(session, syncModule) {
+    State.setAccountSession({ userId: session.user.id, email: session.user.email });
+    setAccountStatus(`Đã đăng nhập: ${session.user.email}`, 'success');
+    setAccountControls(true);
+
+    const cloud = await syncModule.fetchCloudState();
+    if (!cloud?.state) {
+      const shouldUpload = confirm('Tài khoản này chưa có dữ liệu cloud. Bạn có muốn đẩy dữ liệu trên máy này lên tài khoản không?');
+      if (shouldUpload) {
+        await syncModule.saveCloudState(State.getState());
+        State.markSynced();
+        setAccountStatus('Đã tạo dữ liệu cloud từ máy này.', 'success');
+      }
       return;
     }
-    cloudStatus.textContent = 'Đang tải lên...';
-    cloudStatus.className = 'text-sm font-bold h-5 text-center mb-4 text-méo-purple';
-    try {
-      const { cloudSyncPush } = await import('./cloud-sync.js');
-      await cloudSyncPush(syncId, State.exportJSON());
-      cloudStatus.textContent = '✅ Đã đồng bộ lên đám mây thành công!';
-      cloudStatus.className = 'text-sm font-bold h-5 text-center mb-4 text-correct-dk';
-    } catch (err) {
-      cloudStatus.textContent = '❌ Lỗi: ' + err.message;
-      cloudStatus.className = 'text-sm font-bold h-5 text-center mb-4 text-wrong';
-    }
-  });
 
-  pullBtn.addEventListener('click', async () => {
+    const localTime = new Date(State.getLocalUpdatedAt() || 0).getTime();
+    const cloudTime = new Date(cloud.updated_at || 0).getTime();
+    if (Math.abs(localTime - cloudTime) > 1000) {
+      const useCloud = confirm('Phát hiện dữ liệu trên máy này và cloud khác nhau.\n\nOK: dùng dữ liệu cloud và ghi đè máy này.\nCancel: giữ dữ liệu máy này, chưa ghi đè gì.');
+      if (useCloud) {
+        State.importJSON(JSON.stringify(cloud.state));
+        State.setAccountSession({ userId: session.user.id, email: session.user.email });
+        State.markSynced();
+        alert('Đã tải dữ liệu cloud. App sẽ tải lại.');
+        window.location.reload();
+      } else {
+        setAccountStatus('Đang giữ dữ liệu trên máy này. Bạn có thể bấm "Đẩy máy này lên cloud" khi muốn.', 'info');
+      }
+    }
+  }
+
+  async function loadAccountModule() {
+    const syncModule = await import('./account-sync.js');
+    if (!syncModule.isAccountSyncConfigured()) {
+      setAccountStatus('Supabase chưa cấu hình. Sau khi nhập URL/anon key, đăng nhập email sẽ hoạt động.', 'error');
+      setAccountControls(false);
+      signInBtn.disabled = true;
+      signUpBtn.disabled = true;
+      return null;
+    }
+    return syncModule;
+  }
+
+  signInBtn.addEventListener('click', async () => {
     Audio.click();
-    const syncId = cloudIdInput.value.trim();
-    if (!syncId) {
-      cloudStatus.textContent = '❌ Lỗi: Vui lòng nhập Mã Đám Mây';
-      cloudStatus.className = 'text-sm font-bold h-5 text-center mb-4 text-wrong';
-      return;
-    }
-    cloudStatus.textContent = 'Đang tải về...';
-    cloudStatus.className = 'text-sm font-bold h-5 text-center mb-4 text-méo-purple';
     try {
-      const { cloudSyncPull } = await import('./cloud-sync.js');
-      const jsonStr = await cloudSyncPull(syncId);
-      State.importJSON(jsonStr);
-      cloudStatus.textContent = '✅ Đã tải về thành công! Đang tải lại...';
-      cloudStatus.className = 'text-sm font-bold h-5 text-center mb-4 text-correct-dk';
-      setTimeout(() => window.location.reload(), 1500);
-    } catch (err) {
-      cloudStatus.textContent = '❌ Lỗi: ' + err.message;
-      cloudStatus.className = 'text-sm font-bold h-5 text-center mb-4 text-wrong';
+      const syncModule = await loadAccountModule();
+      if (!syncModule) return;
+      setAccountStatus('Đang đăng nhập...');
+      const data = await syncModule.signInWithEmail(emailInput.value.trim(), passwordInput.value);
+      await handleSignedIn(data.session, syncModule);
+    } catch (e) {
+      setAccountStatus(e.message, 'error');
     }
   });
 
-  cloudRow.appendChild(pushBtn);
-  cloudRow.appendChild(pullBtn);
-  
-  wrap.appendChild(cloudCodeLabel);
-  wrap.appendChild(cloudCodeDesc);
-  wrap.appendChild(cloudIdGroup);
-  wrap.appendChild(cloudRow);
-  wrap.appendChild(cloudStatus);
+  signUpBtn.addEventListener('click', async () => {
+    Audio.click();
+    try {
+      const syncModule = await loadAccountModule();
+      if (!syncModule) return;
+      setAccountStatus('Đang tạo tài khoản...');
+      const data = await syncModule.signUpWithEmail(emailInput.value.trim(), passwordInput.value);
+      if (data.session) {
+        await handleSignedIn(data.session, syncModule);
+      } else {
+        setAccountStatus('Đã tạo tài khoản. Hãy kiểm tra email nếu Supabase yêu cầu xác nhận.', 'success');
+      }
+    } catch (e) {
+      setAccountStatus(e.message, 'error');
+    }
+  });
 
-  wrap.appendChild(el('hr', { class: 'my-6 border-wrong opacity-30' }));
+  uploadBtn.addEventListener('click', async () => {
+    Audio.click();
+    if (!confirm('Thao tác này sẽ ghi đè dữ liệu cloud bằng dữ liệu trên máy hiện tại. Tiếp tục?')) return;
+    try {
+      const syncModule = await loadAccountModule();
+      if (!syncModule) return;
+      setAccountStatus('Đang đẩy dữ liệu lên cloud...');
+      await syncModule.saveCloudState(State.getState());
+      State.markSynced();
+      setAccountStatus('Đã đẩy dữ liệu máy này lên cloud.', 'success');
+    } catch (e) {
+      setAccountStatus(e.message, 'error');
+    }
+  });
+
+  downloadBtn.addEventListener('click', async () => {
+    Audio.click();
+    if (!confirm('Thao tác này sẽ ghi đè dữ liệu trên máy hiện tại bằng dữ liệu cloud. Tiếp tục?')) return;
+    try {
+      const syncModule = await loadAccountModule();
+      if (!syncModule) return;
+      setAccountStatus('Đang tải dữ liệu cloud...');
+      const cloud = await syncModule.fetchCloudState();
+      if (!cloud?.state) throw new Error('Tài khoản này chưa có dữ liệu cloud.');
+      const session = await syncModule.getCurrentSession();
+      State.importJSON(JSON.stringify(cloud.state));
+      State.setAccountSession({ userId: session.user.id, email: session.user.email });
+      State.markSynced();
+      alert('Đã tải dữ liệu cloud. App sẽ tải lại.');
+      window.location.reload();
+    } catch (e) {
+      setAccountStatus(e.message, 'error');
+    }
+  });
+
+  signOutBtn.addEventListener('click', async () => {
+    Audio.click();
+    try {
+      const syncModule = await loadAccountModule();
+      if (!syncModule) return;
+      await syncModule.signOutAccount();
+      State.setAccountSession(null);
+      setAccountStatus('Đã đăng xuất. Dữ liệu local vẫn giữ trên máy này.');
+      setAccountControls(false);
+      emailInput.disabled = false;
+      passwordInput.disabled = false;
+    } catch (e) {
+      setAccountStatus(e.message, 'error');
+    }
+  });
+
+  authRow.appendChild(signInBtn);
+  authRow.appendChild(signUpBtn);
+  syncRow.appendChild(uploadBtn);
+  syncRow.appendChild(downloadBtn);
+  syncRow.appendChild(signOutBtn);
+
+  accountArea.appendChild(accountStatus);
+  accountArea.appendChild(emailInput);
+  accountArea.appendChild(passwordInput);
+  accountArea.appendChild(authRow);
+  accountArea.appendChild(syncRow);
+  wrap.appendChild(accountArea);
+
+  setAccountControls(false);
+  loadAccountModule().then(async (syncModule) => {
+    if (!syncModule) return;
+    const session = await syncModule.getCurrentSession();
+    if (session?.user) {
+      emailInput.value = session.user.email || '';
+      State.setAccountSession({ userId: session.user.id, email: session.user.email });
+      setAccountStatus(`Đã đăng nhập: ${session.user.email}`, 'success');
+      setAccountControls(true);
+    } else {
+      setAccountStatus('Chưa đăng nhập.');
+    }
+  }).catch((e) => setAccountStatus(e.message, 'error'));
 
   // Danger Zone - Replaced with Dev Tool (Reset Current Day)
   const devArea = el('div', { class: 'mt-8 p-4 bg-yellow-100 border-2 border-yellow-400 rounded-xl' });

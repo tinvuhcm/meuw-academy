@@ -61,13 +61,19 @@ export function renderLesson(params) {
   sidebar.appendChild(mascotArea);
   
   // Progress Dots
+  const lessonBlocks = Array.isArray(moduleData.lessonBlocks) ? moduleData.lessonBlocks : [];
+  const flowItems = [
+    ...lessonBlocks.map(block => ({ kind: 'lesson', block })),
+    ...moduleData.questions.map(question => ({ kind: 'question', question })),
+  ];
   const numQuestions = moduleData.questions.length;
+  const numSteps = flowItems.length;
   const progressBox = el('div', { class: 'card mt-4' });
   progressBox.innerHTML = '<div class="text-sm font-bold text-text-muted mb-2 text-center">Tiến trình</div>';
   const dotsContainer = el('div', { class: 'flex flex-wrap justify-center gap-2' });
   
   const dots = [];
-  for (let i = 0; i < numQuestions; i++) {
+  for (let i = 0; i < numSteps; i++) {
     const dot = el('div', { class: 'w-4 h-4 rounded-full bg-border transition-colors duration-300' });
     dots.push(dot);
     dotsContainer.appendChild(dot);
@@ -100,12 +106,23 @@ export function renderLesson(params) {
       else d.className += 'bg-border';
     });
 
-    if (index >= numQuestions) {
+    if (index >= numSteps) {
       showCompletion();
       return;
     }
 
-    const q = moduleData.questions[index];
+    const item = flowItems[index];
+    if (item.kind === 'lesson') {
+      triggerMascot('lesson:start', { customLines: ['Nghe bài học ngắn trước nhé!'] });
+      card.appendChild(renderLessonBlock(item.block, () => {
+        Audio.click();
+        currentIndex++;
+        loadQuestion(currentIndex);
+      }));
+      return;
+    }
+
+    const q = item.question;
     let qEl = null;
 
     const isAlreadyCompleted = State.isModuleComplete(moduleData.id);
@@ -239,4 +256,41 @@ export function renderLesson(params) {
   }
 
   return container;
+}
+
+function renderLessonBlock(block, onNext) {
+  const wrapper = el('div', { class: 'lesson-theory-block' });
+  const teacher = el('div', { class: 'lesson-teacher-card' });
+  teacher.innerHTML = `
+    <div class="teacher-avatar" aria-hidden="true">🐶</div>
+    <div>
+      <div class="teacher-name">${block.teacherName || 'Thầy Gâu lùn'}</div>
+      <div class="teacher-role">${block.type === 'mini' ? 'Bài học nhanh' : 'Gợi ý trước khi làm'}</div>
+    </div>
+  `;
+
+  const content = el('div', { class: 'lesson-theory-content' });
+  content.appendChild(el('h2', { class: 'font-display text-2xl text-méo-purple mb-3' }, block.title || 'Bài học ngắn'));
+
+  (block.points || []).forEach(point => {
+    const row = el('div', { class: 'lesson-theory-point' });
+    row.innerHTML = `<span class="lesson-point-dot"></span><span>${point}</span>`;
+    content.appendChild(row);
+  });
+
+  if (block.example) {
+    const example = el('div', { class: 'lesson-theory-example' });
+    example.innerHTML = block.example;
+    content.appendChild(example);
+  }
+
+  const nextRow = el('div', { class: 'flex justify-center mt-6' });
+  const nextBtn = el('button', { class: 'btn btn-cta' }, block.cta || 'Làm thử nào');
+  nextBtn.addEventListener('click', onNext);
+  nextRow.appendChild(nextBtn);
+
+  wrapper.appendChild(teacher);
+  wrapper.appendChild(content);
+  wrapper.appendChild(nextRow);
+  return wrapper;
 }
