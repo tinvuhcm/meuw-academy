@@ -1,5 +1,6 @@
 import State from '../state.js';
 import { normalizeText } from '../utils.js';
+import { CURATED_ENGLISH_TOPICS } from './english-topics.js';
 import {
   SUPPLEMENTAL_IT_TOPICS,
   SUPPLEMENTAL_SCIENCE_TOPICS,
@@ -41,6 +42,12 @@ function stripHtml(html = '') {
   return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
+function trimLabel(text, max = 48) {
+  const clean = stripHtml(text || '').replace(/\s+/g, ' ').trim();
+  if (!clean) return '';
+  return clean.length > max ? `${clean.slice(0, max - 1)}…` : clean;
+}
+
 function stableHash(input) {
   let hash = 2166136261;
   const text = String(input || '');
@@ -74,10 +81,13 @@ function moduleKey(subject, title) {
 }
 
 function questionSignature(question) {
+  const blankAnswers = Array.isArray(question?.blanks)
+    ? question.blanks.map(blank => blank?.answer || '').join('|')
+    : '';
   return normalizeText([
     question.type || '',
     question.question || '',
-    question.answer || question.ans || '',
+    question.answer || question.ans || blankAnswers,
   ].join('|'));
 }
 
@@ -117,7 +127,38 @@ function buildScienceQuestionPool(topic) {
     };
   });
 
-  return [...base, ...variants];
+  const clueVariants = topic.facts.map((fact, index) => ({
+    type: 'multiple-choice',
+    question: `Câu nào giải thích đúng cho nhận định sau: "${fact.statement}"?`,
+    options: seededShuffle([
+      stripHtml(fact.explanation),
+      ...seededShuffle(
+        topic.facts
+          .filter((_, otherIndex) => otherIndex !== index)
+          .map(other => stripHtml(other.explanation)),
+        `${topic.topicKey}|clue|${index}`,
+      ).slice(0, 3),
+    ], `${topic.topicKey}|clue-options|${index}`),
+    answer: stripHtml(fact.explanation),
+    explanation: `Bài học cần nhớ: ${fact.statement} ${stripHtml(fact.explanation)}`,
+  }));
+
+  const keywordVariants = topic.facts.map((fact, index) => {
+    const answer = fact.ans;
+    const distractors = seededShuffle(
+      topic.facts.filter((_, otherIndex) => otherIndex !== index).map(other => other.ans),
+      `${topic.topicKey}|keyword|${index}`,
+    ).slice(0, 3);
+    return {
+      type: 'multiple-choice',
+      question: `Điền đáp án đúng để hoàn thành kiến thức: ${fact.statement.replace(answer, '_____')}`,
+      options: seededShuffle([answer, ...distractors], `${topic.topicKey}|keyword-options|${index}`),
+      answer,
+      explanation: fact.explanation,
+    };
+  });
+
+  return [...base, ...variants, ...clueVariants, ...keywordVariants];
 }
 
 function buildSourceCatalog(allData) {
@@ -216,9 +257,11 @@ function mergeSupplemental(catalog, topic) {
 function buildCatalog(allData) {
   if (CATALOG_CACHE) return CATALOG_CACHE;
   const catalog = buildSourceCatalog(allData);
+  catalog.eng = [];
   SUPPLEMENTAL_SCIENCE_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
   SUPPLEMENTAL_VIETNAMESE_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
   SUPPLEMENTAL_IT_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
+  CURATED_ENGLISH_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
   CATALOG_CACHE = catalog;
   return CATALOG_CACHE;
 }
@@ -423,20 +466,29 @@ function generateMathQuestions(topic, count, seedInput) {
 function chooseTopicEntry({ subject, dayNumber, moduleIndex, session, moduleId, catalog, daySeen, sessionSeen, ledger, forcedTopicKey }) {
   const candidates = catalog[subject] || [];
   if (!candidates.length) return null;
+  const minQuestions = TARGET_QUESTION_COUNT[subject] || 1;
+  const globalSeen = new Set(ledger.questionSignatures || []);
 
   if (forcedTopicKey) {
     const forced = candidates.find(item => item.topicKey === forcedTopicKey);
     if (forced) return forced;
   }
 
-  const recentGlobal = new Set((ledger.topicKeys || []).slice(-120));
+  const recentGlobal = new Set((ledger.topicKeys || []).slice(-500));
   const order = seededShuffle(candidates, `${dayNumber}|${session}|${moduleIndex}|${moduleId}|${subject}`);
+  const remainingQuestions = item => {
+    if (item.generator) return 999999;
+    const pool = item.questionPool || [];
+    return pool.reduce((count, question) => count + (globalSeen.has(questionSignature(question)) ? 0 : 1), 0);
+  };
 
   const passes = [
-    item => !daySeen.has(item.topicKey) && !sessionSeen.has(item.topicKey) && !recentGlobal.has(item.topicKey),
-    item => !daySeen.has(item.topicKey) && !sessionSeen.has(item.topicKey),
-    item => !daySeen.has(item.topicKey),
-    () => true,
+    item => remainingQuestions(item) >= minQuestions && !daySeen.has(item.topicKey) && !sessionSeen.has(item.topicKey) && !recentGlobal.has(item.topicKey),
+    item => remainingQuestions(item) > 0 && !daySeen.has(item.topicKey) && !sessionSeen.has(item.topicKey) && !recentGlobal.has(item.topicKey),
+    item => remainingQuestions(item) > 0 && !daySeen.has(item.topicKey) && !sessionSeen.has(item.topicKey),
+    item => remainingQuestions(item) > 0 && !daySeen.has(item.topicKey),
+    item => remainingQuestions(item) > 0,
+    item => item.generator,
   ];
 
   for (const pass of passes) {
@@ -446,51 +498,185 @@ function chooseTopicEntry({ subject, dayNumber, moduleIndex, session, moduleId, 
   return order[0];
 }
 
+function subjectFallbackOrder(primarySubject) {
+  const map = {
+    vie: ['vie', 'math', 'eng', 'sci', 'it'],
+    it: ['it', 'eng', 'math', 'sci', 'vie'],
+    sci: ['sci', 'math', 'eng', 'vie', 'it'],
+    eng: ['eng', 'math', 'sci', 'vie', 'it'],
+    math: ['math', 'eng', 'sci', 'vie', 'it'],
+    draw: ['draw', 'math', 'eng', 'sci', 'vie', 'it'],
+  };
+  return map[primarySubject] || [primarySubject, 'math', 'eng', 'sci', 'vie', 'it'];
+}
+
+function getEmergencyMathEntry(catalog, seed) {
+  const emergencyKeys = [
+    'math:add-thousands',
+    'math:sub-thousands',
+    'math:times-table',
+    'math:division-basic',
+    'math:compare-numbers',
+    'math:money',
+    'math:clock',
+    'math:missing-number',
+  ];
+  const available = catalog.math.filter(entry => emergencyKeys.includes(entry.topicKey) && entry.generator);
+  if (!available.length) return catalog.math.find(entry => entry.generator) || null;
+  return available[seed % available.length];
+}
+
+function generateEmergencyMathQuestions(seedInput, targetCount, questionSeenDay, explanationSeenDay, ledger) {
+  const globalQuestionSeen = new Set(ledger.questionSignatures || []);
+  const globalExplanationSeen = new Set(ledger.explanationSignatures || []);
+  const rng = createRng(`${seedInput}|emergency-math`);
+  const collected = [];
+
+  for (let attempt = 0; attempt < 500 && collected.length < targetCount; attempt++) {
+    const mode = ['+', '-', '*', '/', 'compare'][attempt % 5];
+    let question = null;
+    if (mode === '+') {
+      const a = randInt(rng, 200, 9999);
+      const b = randInt(rng, 10, 9999);
+      const answer = a + b;
+      question = {
+        type: 'multiple-choice',
+        isMath: true,
+        question: `Tính nhanh: ${a} + ${b}`,
+        options: seededShuffle([`${answer}`, `${answer + 10}`, `${answer - 10}`, `${answer + 100}`], `${seedInput}|${attempt}|plus`),
+        answer: `${answer}`,
+        explanation: `Cộng theo từng hàng: ${a} + ${b} = ${answer}.`,
+      };
+    } else if (mode === '-') {
+      const a = randInt(rng, 500, 9999);
+      const b = randInt(rng, 10, a - 1);
+      const answer = a - b;
+      question = {
+        type: 'fill-blank',
+        isMath: true,
+        question: `Điền kết quả đúng: ${a} - ${b}`,
+        text: `${a} - ${b} = [   ]`,
+        blanks: [{ answer: `${answer}`, type: 'number' }],
+        explanation: `Trừ từng hàng cẩn thận để được ${answer}.`,
+      };
+    } else if (mode === '*') {
+      const a = randInt(rng, 2, 12);
+      const b = randInt(rng, 2, 12);
+      const answer = a * b;
+      question = {
+        type: 'multiple-choice',
+        isMath: true,
+        question: `Phép nhân nào đúng với ${a} nhóm, mỗi nhóm ${b}?`,
+        options: seededShuffle([`${a} × ${b} = ${answer}`, `${a} × ${b} = ${answer + a}`, `${a} × ${b} = ${answer - b}`, `${a} × ${b} = ${answer + 1}`], `${seedInput}|${attempt}|times`),
+        answer: `${a} × ${b} = ${answer}`,
+        explanation: `${a} nhóm mỗi nhóm ${b} thì tổng là ${a} × ${b} = ${answer}.`,
+      };
+    } else if (mode === '/') {
+      const divisor = randInt(rng, 2, 9);
+      const answer = randInt(rng, 2, 25);
+      const dividend = divisor * answer;
+      question = {
+        type: 'multiple-choice',
+        isMath: true,
+        question: `${dividend} : ${divisor} bằng bao nhiêu?`,
+        options: seededShuffle([`${answer}`, `${answer + 2}`, `${Math.max(answer - 2, 1)}`, `${answer + 5}`], `${seedInput}|${attempt}|div`),
+        answer: `${answer}`,
+        explanation: `Vì ${divisor} × ${answer} = ${dividend}, nên ${dividend} : ${divisor} = ${answer}.`,
+      };
+    } else {
+      const a = randInt(rng, 100, 9999);
+      const b = randInt(rng, 100, 9999);
+      const answer = a > b ? '>' : a < b ? '<' : '=';
+      question = {
+        type: 'multiple-choice',
+        isMath: true,
+        question: `Chọn dấu đúng giữa ${a} và ${b}`,
+        options: seededShuffle(['>', '<', '='], `${seedInput}|${attempt}|compare`),
+        answer,
+        explanation: `${a} ${answer} ${b}. Hãy so sánh từ hàng lớn nhất trước.`,
+      };
+    }
+
+    const normalizedQuestion = questionSignature(question);
+    const normalizedExplanation = explanationSignature(question);
+    if (!normalizedQuestion) continue;
+    if (globalQuestionSeen.has(normalizedQuestion) || questionSeenDay.has(normalizedQuestion)) continue;
+    if (normalizedExplanation && (globalExplanationSeen.has(normalizedExplanation) || explanationSeenDay.has(normalizedExplanation))) continue;
+
+    collected.push(question);
+    questionSeenDay.add(normalizedQuestion);
+    if (normalizedExplanation) explanationSeenDay.add(normalizedExplanation);
+  }
+
+  return collected;
+}
+
 function buildQuestionsForEntry(entry, skeleton, seedInput, questionSeenDay, explanationSeenDay, ledger) {
   const targetCount = entry.defaultCount || TARGET_QUESTION_COUNT[entry.subject] || Math.max((skeleton.questions || []).length, 1);
-  const globalQuestionSeen = new Set((ledger.questionSignatures || []).slice(-600));
-  const globalExplanationSeen = new Set((ledger.explanationSignatures || []).slice(-600));
-
-  let pool = [];
-  if (entry.generator) {
-    pool = entry.generator(entry, targetCount * 2, seedInput);
-  } else {
-    pool = seededShuffle(entry.questionPool || [], `${seedInput}|pool`);
-  }
+  const globalQuestionSeen = new Set(ledger.questionSignatures || []);
+  const globalExplanationSeen = new Set(ledger.explanationSignatures || []);
 
   const selected = [];
   const localQuestionSeen = new Set();
-  const localExplanationSeen = new Set();
-  const tiers = [
-    q => !questionSeenDay.has(questionSignature(q)) && !explanationSeenDay.has(explanationSignature(q)) && !globalQuestionSeen.has(questionSignature(q)) && !globalExplanationSeen.has(explanationSignature(q)),
-    q => !questionSeenDay.has(questionSignature(q)) && !explanationSeenDay.has(explanationSignature(q)),
-    q => !localQuestionSeen.has(questionSignature(q)),
-    () => true,
-  ];
-
-  for (const allow of tiers) {
+  const processPool = pool => {
     for (const candidate of pool) {
+      if (selected.length >= targetCount) break;
       const normalizedQuestion = questionSignature(candidate);
       if (!normalizedQuestion) continue;
-      if (selected.length >= targetCount) break;
-      if (!allow(candidate)) continue;
-      if (localQuestionSeen.has(normalizedQuestion)) continue;
+      if (globalQuestionSeen.has(normalizedQuestion) || questionSeenDay.has(normalizedQuestion) || localQuestionSeen.has(normalizedQuestion)) continue;
+
+      const normalizedExplanation = explanationSignature(candidate);
+      if (normalizedExplanation && (globalExplanationSeen.has(normalizedExplanation) || explanationSeenDay.has(normalizedExplanation))) continue;
 
       const copy = ensureAnswerField(candidate);
       selected.push(copy);
       localQuestionSeen.add(normalizedQuestion);
       questionSeenDay.add(normalizedQuestion);
-
-      const normalizedExplanation = explanationSignature(copy);
-      if (normalizedExplanation) {
-        localExplanationSeen.add(normalizedExplanation);
-        explanationSeenDay.add(normalizedExplanation);
-      }
+      if (normalizedExplanation) explanationSeenDay.add(normalizedExplanation);
     }
-    if (selected.length >= targetCount) break;
+  };
+
+  if (entry.generator) {
+    for (let attempt = 0; attempt < 12 && selected.length < targetCount; attempt++) {
+      const pool = entry.generator(entry, targetCount * 8, `${seedInput}|${attempt}`);
+      processPool(pool);
+    }
+  } else {
+    const pool = seededShuffle(entry.questionPool || [], `${seedInput}|pool`);
+    processPool(pool);
   }
 
   return selected;
+}
+
+function deriveModuleTitle(entry, questions) {
+  const baseTitle = entry.title;
+  const firstQuestion = questions[0];
+  if (!firstQuestion) return baseTitle;
+
+  const answerText = trimLabel(firstQuestion.answer || firstQuestion.ans || (firstQuestion.blanks?.[0]?.answer ?? ''), 24);
+  const questionText = trimLabel(firstQuestion.question, 34);
+  const genericLead = /^(cau nao noi dung|cau nao giai thich dung|dien dap an dung|chon dau dung|so \d+ la so gi\?|chữ cái nào còn thiếu|tu tieng anh nao dung|tu ".+" co nghia la gi\?)/i;
+
+  if (entry.subject === 'math') {
+    return questionText ? `${baseTitle} · ${questionText}` : `${baseTitle} · ${answerText}`;
+  }
+
+  if (entry.subject === 'eng') {
+    return answerText ? `${baseTitle} · ${answerText}` : `${baseTitle} · ${questionText}`;
+  }
+
+  if (entry.subject === 'sci') {
+    const suffix = genericLead.test(normalizeText(questionText)) ? answerText || questionText : questionText;
+    return `${baseTitle} · ${suffix}`;
+  }
+
+  if (entry.subject === 'vie' || entry.subject === 'it') {
+    const suffix = genericLead.test(normalizeText(questionText)) ? answerText || questionText : questionText;
+    return `${baseTitle} · ${suffix}`;
+  }
+
+  return baseTitle;
 }
 
 export function materializeDayCurriculum(dayNumber, dayData, allData) {
@@ -506,39 +692,71 @@ export function materializeDayCurriculum(dayNumber, dayData, allData) {
   const modules = dayData.modules.map((module, index) => {
     const completed = State.getModuleData(module.id);
     const forcedTopicKey = completed?.curriculumTopicKey || null;
-    const entry = chooseTopicEntry({
-      subject: module.subject,
-      dayNumber,
-      moduleIndex: index,
-      session: module.session,
-      moduleId: module.id,
-      catalog,
-      daySeen: topicSeenDay,
-      sessionSeen: topicSeenBySession[module.session] || new Set(),
-      ledger,
-      forcedTopicKey,
-    });
+    const subjectOrder = forcedTopicKey ? [module.subject] : subjectFallbackOrder(module.subject);
+    let chosenEntry = null;
+    let questions = [];
 
-    if (!entry) return module;
+    for (const subject of subjectOrder) {
+      const candidate = chooseTopicEntry({
+        subject,
+        dayNumber,
+        moduleIndex: index,
+        session: module.session,
+        moduleId: module.id,
+        catalog,
+        daySeen: topicSeenDay,
+        sessionSeen: topicSeenBySession[module.session] || new Set(),
+        ledger,
+        forcedTopicKey: subject === module.subject ? forcedTopicKey : null,
+      });
+      if (!candidate) continue;
 
-    topicSeenDay.add(entry.topicKey);
-    (topicSeenBySession[module.session] || topicSeenBySession.am).add(entry.topicKey);
+      const candidateQuestions = buildQuestionsForEntry(
+        candidate,
+        module,
+        `${dayNumber}|${module.session}|${index}|${candidate.topicKey}`,
+        questionSeenDay,
+        explanationSeenDay,
+        ledger,
+      );
 
-    const questions = buildQuestionsForEntry(
-      entry,
-      module,
-      `${dayNumber}|${module.session}|${index}|${entry.topicKey}`,
-      questionSeenDay,
-      explanationSeenDay,
-      ledger,
-    );
+      if (candidateQuestions.length >= 4 || subject === subjectOrder[subjectOrder.length - 1]) {
+        chosenEntry = candidate;
+        questions = candidateQuestions;
+        break;
+      }
+    }
+
+    if (!chosenEntry) return module;
+
+    if (questions.length < 4) {
+      const emergencyQuestions = generateEmergencyMathQuestions(
+        `${dayNumber}|${module.session}|${index}|${module.id}`,
+        8,
+        questionSeenDay,
+        explanationSeenDay,
+        ledger,
+      );
+      if (emergencyQuestions.length >= 4) {
+        chosenEntry = {
+          subject: 'math',
+          title: 'Toán: Ôn luyện không trùng lặp',
+          topicKey: `math:emergency:${dayNumber}:${index}`,
+          lessonBlocks: [],
+        };
+        questions = emergencyQuestions;
+      }
+    }
+
+    topicSeenDay.add(chosenEntry.topicKey);
+    (topicSeenBySession[module.session] || topicSeenBySession.am).add(chosenEntry.topicKey);
 
     return {
       ...module,
-      subject: entry.subject,
-      title: entry.title,
-      topicKey: entry.topicKey,
-      lessonBlocks: clone(entry.lessonBlocks || module.lessonBlocks || []),
+      subject: chosenEntry.subject,
+      title: deriveModuleTitle(chosenEntry, questions),
+      topicKey: chosenEntry.topicKey,
+      lessonBlocks: clone(chosenEntry.lessonBlocks || module.lessonBlocks || []),
       questions,
     };
   });

@@ -1,3 +1,5 @@
+import { ADDITIONAL_SCIENCE_TOPICS } from './additional-science-topics.js';
+
 export const SUPPLEMENTAL_SCIENCE_TOPICS = [
   {
     topicKey: 'sci:solar-system',
@@ -289,6 +291,7 @@ export const SUPPLEMENTAL_SCIENCE_TOPICS = [
       { type: 'multiple-choice', question: 'Đi bộ hoặc đi xe đạp cho quãng ngắn có lợi gì?', options: ['Giảm dùng nhiên liệu và tốt cho sức khỏe', 'Làm đường ngắn lại', 'Làm trời tối hơn', 'Không có lợi gì'], answer: 'Giảm dùng nhiên liệu và tốt cho sức khỏe', explanation: 'Đi bộ hoặc đạp xe vừa giúp vận động, vừa giảm việc tiêu thụ nhiên liệu.' },
     ],
   },
+  ...ADDITIONAL_SCIENCE_TOPICS,
 ];
 
 export const SUPPLEMENTAL_VIETNAMESE_TOPICS = [

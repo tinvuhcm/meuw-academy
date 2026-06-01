@@ -3,6 +3,8 @@
  * LocalStorage state management with multi-profile support
  */
 
+import { normalizeText } from './utils.js';
+
 const STORAGE_KEY = 'meoAcademy_v2';
 const CURRENT_VERSION = 2;
 
@@ -178,6 +180,17 @@ function commit() {
 
 function commitSyncMetadata() {
   saveState(_state);
+}
+
+function buildQuestionLedgerSignature(question) {
+  const blankAnswers = Array.isArray(question?.blanks)
+    ? question.blanks.map(blank => blank?.answer || '').join('|')
+    : '';
+  return normalizeText([
+    question?.type || '',
+    question?.question || '',
+    question?.answer || question?.ans || blankAnswers,
+  ].join('|'));
 }
 
 // ============================================
@@ -370,7 +383,7 @@ function recordKnowledgeExposure(moduleData, context = {}) {
     arr.splice(0, arr.length, ...filtered);
   };
 
-  pushUnique(ledger.topicKeys, moduleData.topicKey || moduleData.title || moduleData.id, 300);
+  pushUnique(ledger.topicKeys, moduleData.topicKey || moduleData.title || moduleData.id, 3000);
 
   if (context.dayId || context.session) {
     const recent = {
@@ -380,30 +393,26 @@ function recordKnowledgeExposure(moduleData, context = {}) {
       topicKey: moduleData.topicKey || moduleData.title || moduleData.id,
       recordedAt: new Date().toISOString(),
     };
-    ledger.recentSessions = [...ledger.recentSessions.filter(item => item.moduleId !== moduleData.id), recent].slice(-200);
+    ledger.recentSessions = [...ledger.recentSessions.filter(item => item.moduleId !== moduleData.id), recent].slice(-3000);
   }
 
   (moduleData.lessonBlocks || []).forEach(block => {
-    const signature = [
+    const signature = normalizeText([
       block.teacherName || '',
       block.title || '',
       ...(block.points || []),
       block.example || '',
-    ].join('|').trim().toLowerCase();
-    pushUnique(ledger.lessonSignatures, signature, 600);
+    ].join('|'));
+    pushUnique(ledger.lessonSignatures, signature, 12000);
   });
 
   (moduleData.questions || []).forEach(q => {
-    const questionSignature = [
-      q.question || '',
-      q.answer || q.ans || '',
-      q.type || '',
-    ].join('|').trim().toLowerCase();
-    pushUnique(ledger.questionSignatures, questionSignature, 4000);
+    const questionSignature = buildQuestionLedgerSignature(q);
+    pushUnique(ledger.questionSignatures, questionSignature, 50000);
 
-    const explanationSignature = (q.explanation || '').trim().toLowerCase();
+    const explanationSignature = normalizeText(q.explanation || '');
     if (explanationSignature) {
-      pushUnique(ledger.explanationSignatures, explanationSignature, 4000);
+      pushUnique(ledger.explanationSignatures, explanationSignature, 50000);
     }
   });
 
