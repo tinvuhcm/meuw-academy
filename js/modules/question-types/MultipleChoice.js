@@ -77,7 +77,7 @@ export function renderMultipleChoice(q, onComplete) {
         // Show Explanation if it's a rich one (length > 60)
         if (q.explanation && q.explanation.length > 60) {
           const expBox = el('div', { class: 'explanation-box mt-4 p-4 bg-méo-purple-lt border-2 border-méo-purple rounded-xl text-text leading-relaxed text-sm max-h-[300px] overflow-y-auto' });
-          expBox.innerHTML = `<div class="font-bold text-méo-purple mb-2">💡 Méo bật mí:</div> ${q.explanation}`;
+          expBox.innerHTML = `<div class="font-bold text-méo-purple mb-2">💡 Thầy Gâu lùn bật mí:</div> ${q.explanation}`;
           container.appendChild(expBox);
 
           const nextBtnContainer = el('div', { class: 'mt-6 flex justify-center' });
@@ -106,7 +106,7 @@ export function renderMultipleChoice(q, onComplete) {
         // Show Explanation
         if (q.explanation) {
           const expBox = el('div', { class: 'explanation-box mt-4 p-4 bg-méo-purple-lt border-2 border-méo-purple rounded-xl text-text leading-relaxed text-sm max-h-[300px] overflow-y-auto' });
-          expBox.innerHTML = `<div class="font-bold text-méo-purple mb-2">💡 Méo bật mí:</div> ${q.explanation}`;
+          expBox.innerHTML = `<div class="font-bold text-méo-purple mb-2">💡 Thầy Gâu lùn bật mí:</div> ${q.explanation}`;
           container.appendChild(expBox);
         }
 

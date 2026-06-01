@@ -55,7 +55,7 @@ export function renderLesson(params) {
   // Mascot area
   const mascotArea = el('div', { class: 'lesson-mascot-area mascot-xl relative mt-4' });
   mascotArea.innerHTML = `
-    <div class="mascot-container" data-mascot></div>
+    <div class="mascot-container" data-mascot data-mascot-character="gau"></div>
     <div class="speech-bubble" data-speech-bubble></div>
   `;
   sidebar.appendChild(mascotArea);
@@ -171,11 +171,17 @@ export function renderLesson(params) {
     if (!isAlreadyCompleted) {
       // Mark complete only if it's the first time
       const timeSpentMs = Date.now() - startTime;
+      State.recordKnowledgeExposure(moduleData, {
+        dayId,
+        session: moduleData.session,
+      });
       State.markModuleComplete(moduleData.id, {
         score: numQuestions, // simplify for now
         total: numQuestions,
         timeMs: timeSpentMs,
-        xp: xpEarnedTotal
+        xp: xpEarnedTotal,
+        curriculumTopicKey: moduleData.topicKey || null,
+        curriculumTitle: moduleData.title,
       });
     }
 
@@ -262,7 +268,7 @@ function renderLessonBlock(block, onNext) {
   const wrapper = el('div', { class: 'lesson-theory-block' });
   const teacher = el('div', { class: 'lesson-teacher-card' });
   teacher.innerHTML = `
-    <div class="teacher-avatar" aria-hidden="true">🐶</div>
+    <div class="teacher-avatar" aria-hidden="true"><img src="assets/images/gau-lun-teacher-avatar.png" alt="" class="w-full h-full object-contain" /></div>
     <div>
       <div class="teacher-name">${block.teacherName || 'Thầy Gâu lùn'}</div>
       <div class="teacher-role">${block.type === 'mini' ? 'Bài học nhanh' : 'Gợi ý trước khi làm'}</div>

@@ -69,6 +69,19 @@ const LESSON_LIBRARY = [
     },
   },
   {
+    match: module => module.subject === 'math',
+    block: {
+      type: 'micro',
+      teacherName: COMMON_TEACHER,
+      title: 'Toán cần quan sát mẫu trước khi tính',
+      points: [
+        'Nhìn xem đề đang hỏi cộng, trừ, so sánh hay tìm quy luật.',
+        'Làm từng bước ngắn sẽ ít nhầm hơn làm vội.',
+      ],
+      example: 'Nếu dãy số tăng đều, hãy tìm xem mỗi lần tăng thêm bao nhiêu.',
+    },
+  },
+  {
     match: module => module.subject === 'eng',
     block: {
       type: 'micro',
@@ -134,6 +147,19 @@ const LESSON_LIBRARY = [
     },
   },
   {
+    match: module => module.subject === 'vie',
+    block: {
+      type: 'micro',
+      teacherName: COMMON_TEACHER,
+      title: 'Tiếng Việt cần hiểu nghĩa rồi mới chọn đáp án',
+      points: [
+        'Đọc chậm câu hỏi để biết mình đang tìm nghĩa, từ loại hay dấu câu.',
+        'Nếu phân vân, hãy đặt đáp án vào câu để kiểm tra xem có hợp lý không.',
+      ],
+      example: 'Đặt đáp án vào câu thường giúp mình nhận ra đáp án nào nghe tự nhiên nhất.',
+    },
+  },
+  {
     match: module => module.subject === 'it',
     block: {
       type: 'micro',
@@ -162,7 +188,7 @@ const LESSON_LIBRARY = [
 ];
 
 export function enrichLessonBlocks(dayKey, dayData) {
-  if (dayKey !== 'day1' || !dayData?.modules) return dayData;
+  if (!dayData?.modules) return dayData;
 
   return {
     ...dayData,

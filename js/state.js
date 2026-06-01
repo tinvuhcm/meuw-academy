@@ -25,6 +25,13 @@ function createDefaultProfile(id, name = 'Méo', avatarColor = '#EC4899') {
     lastPlayDate: null,
     streakShieldsRemaining: 3,
     completedModules: {},
+    knowledgeLedger: {
+      topicKeys: [],
+      questionSignatures: [],
+      explanationSignatures: [],
+      lessonSignatures: [],
+      recentSessions: [],
+    },
     earnedBadges: [],
     gallery: [],
     settings: {
@@ -137,6 +144,12 @@ function migrateState(state) {
     if (!p.gallery)  p.gallery  = [];
     if (!p.earnedBadges) p.earnedBadges = [];
     if (!p.completedModules) p.completedModules = {};
+    if (!p.knowledgeLedger) p.knowledgeLedger = createDefaultProfile(id).knowledgeLedger;
+    if (!Array.isArray(p.knowledgeLedger.topicKeys)) p.knowledgeLedger.topicKeys = [];
+    if (!Array.isArray(p.knowledgeLedger.questionSignatures)) p.knowledgeLedger.questionSignatures = [];
+    if (!Array.isArray(p.knowledgeLedger.explanationSignatures)) p.knowledgeLedger.explanationSignatures = [];
+    if (!Array.isArray(p.knowledgeLedger.lessonSignatures)) p.knowledgeLedger.lessonSignatures = [];
+    if (!Array.isArray(p.knowledgeLedger.recentSessions)) p.knowledgeLedger.recentSessions = [];
     if (p.streakShieldsRemaining === undefined) p.streakShieldsRemaining = 3;
   }
   return state;
@@ -297,9 +310,12 @@ function useStreakShield() {
 // ============================================
 // MODULE TRACKING
 // ============================================
-function markModuleComplete(moduleId, { score, total, timeMs, xp } = {}) {
+function markModuleComplete(moduleId, { score, total, timeMs, xp, ...extra } = {}) {
   const profile = getActiveProfile();
+  const previous = profile.completedModules[moduleId] || {};
   profile.completedModules[moduleId] = {
+    ...previous,
+    ...extra,
     score: score ?? total,
     total: total ?? 1,
     timeMs: timeMs ?? 0,
@@ -336,6 +352,62 @@ function isModuleComplete(moduleId) {
 
 function getModuleData(moduleId) {
   return getActiveProfile().completedModules[moduleId] || null;
+}
+
+function getKnowledgeLedger() {
+  return getActiveProfile().knowledgeLedger || createDefaultProfile('temp').knowledgeLedger;
+}
+
+function recordKnowledgeExposure(moduleData, context = {}) {
+  if (!moduleData) return;
+  const profile = getActiveProfile();
+  const ledger = profile.knowledgeLedger || (profile.knowledgeLedger = createDefaultProfile(profile.id, profile.name, profile.avatarColor).knowledgeLedger);
+  const pushUnique = (arr, value, maxSize) => {
+    if (!value) return;
+    const filtered = arr.filter(item => item !== value);
+    filtered.push(value);
+    if (filtered.length > maxSize) filtered.splice(0, filtered.length - maxSize);
+    arr.splice(0, arr.length, ...filtered);
+  };
+
+  pushUnique(ledger.topicKeys, moduleData.topicKey || moduleData.title || moduleData.id, 300);
+
+  if (context.dayId || context.session) {
+    const recent = {
+      dayId: context.dayId ?? null,
+      session: context.session ?? null,
+      moduleId: moduleData.id,
+      topicKey: moduleData.topicKey || moduleData.title || moduleData.id,
+      recordedAt: new Date().toISOString(),
+    };
+    ledger.recentSessions = [...ledger.recentSessions.filter(item => item.moduleId !== moduleData.id), recent].slice(-200);
+  }
+
+  (moduleData.lessonBlocks || []).forEach(block => {
+    const signature = [
+      block.teacherName || '',
+      block.title || '',
+      ...(block.points || []),
+      block.example || '',
+    ].join('|').trim().toLowerCase();
+    pushUnique(ledger.lessonSignatures, signature, 600);
+  });
+
+  (moduleData.questions || []).forEach(q => {
+    const questionSignature = [
+      q.question || '',
+      q.answer || q.ans || '',
+      q.type || '',
+    ].join('|').trim().toLowerCase();
+    pushUnique(ledger.questionSignatures, questionSignature, 4000);
+
+    const explanationSignature = (q.explanation || '').trim().toLowerCase();
+    if (explanationSignature) {
+      pushUnique(ledger.explanationSignatures, explanationSignature, 4000);
+    }
+  });
+
+  commit();
 }
 
 function getCurrentDay() {
@@ -696,6 +768,8 @@ export const State = {
   // Stats
   recordAnswer,
   getAccuracyRate,
+  getKnowledgeLedger,
+  recordKnowledgeExposure,
 
   // Import/Export
   exportJSON,

@@ -433,6 +433,35 @@ function renderDataTab(container) {
   const downloadBtn = el('button', { class: 'btn btn-primary w-full' }, 'Dùng dữ liệu cloud');
   const signOutBtn = el('button', { class: 'btn btn-outline w-full' }, 'Đăng xuất');
 
+  function formatAuthError(error, mode = 'generic') {
+    const raw = error?.message || 'Có lỗi xảy ra khi kết nối tài khoản.';
+    const lower = raw.toLowerCase();
+
+    if (lower.includes('email rate limit exceeded')) {
+      return mode === 'signup'
+        ? 'Supabase đang chặn gửi thêm email xác nhận vì vượt giới hạn. Nếu đang test, vào Supabase Authentication > Email và tắt Confirm email, hoặc đợi quota email reset rồi tạo lại.'
+        : 'Supabase đang chặn gửi email xác nhận thêm vì vượt giới hạn. Hãy xác nhận email cũ nếu đã nhận được, hoặc chờ quota reset.';
+    }
+
+    if (lower.includes('email not confirmed')) {
+      return 'Email này đã được tạo nhưng chưa xác nhận. Hãy mở email để bấm link xác nhận, hoặc tắt Confirm email trong Supabase Authentication > Email nếu muốn test nhanh.';
+    }
+
+    if (lower.includes('invalid login credentials')) {
+      return 'Email hoặc mật khẩu chưa đúng.';
+    }
+
+    if (lower.includes('user already registered')) {
+      return 'Email này đã có tài khoản. Hãy dùng nút Đăng nhập.';
+    }
+
+    if (lower.includes('password should be at least')) {
+      return 'Mật khẩu còn quá ngắn. Hãy dùng mật khẩu dài hơn theo yêu cầu của Supabase.';
+    }
+
+    return raw;
+  }
+
   function setAccountStatus(message, type = 'info') {
     const color = type === 'error' ? 'text-wrong' : type === 'success' ? 'text-correct-dk' : 'text-text-muted';
     accountStatus.className = `text-sm font-bold mb-4 ${color}`;
@@ -502,7 +531,7 @@ function renderDataTab(container) {
       const data = await syncModule.signInWithEmail(emailInput.value.trim(), passwordInput.value);
       await handleSignedIn(data.session, syncModule);
     } catch (e) {
-      setAccountStatus(e.message, 'error');
+      setAccountStatus(formatAuthError(e, 'signin'), 'error');
     }
   });
 
@@ -515,13 +544,13 @@ function renderDataTab(container) {
       const data = await syncModule.signUpWithEmail(emailInput.value.trim(), passwordInput.value);
       if (data.session) {
         await handleSignedIn(data.session, syncModule);
-      } else {
-        setAccountStatus('Đã tạo tài khoản. Hãy kiểm tra email nếu Supabase yêu cầu xác nhận.', 'success');
+        } else {
+          setAccountStatus('Đã tạo tài khoản. Hãy kiểm tra email nếu Supabase yêu cầu xác nhận.', 'success');
+        }
+      } catch (e) {
+        setAccountStatus(formatAuthError(e, 'signup'), 'error');
       }
-    } catch (e) {
-      setAccountStatus(e.message, 'error');
-    }
-  });
+    });
 
   uploadBtn.addEventListener('click', async () => {
     Audio.click();
@@ -588,7 +617,7 @@ function renderDataTab(container) {
   wrap.appendChild(accountArea);
 
   setAccountControls(false);
-  loadAccountModule().then(async (syncModule) => {
+    loadAccountModule().then(async (syncModule) => {
     if (!syncModule) return;
     const session = await syncModule.getCurrentSession();
     if (session?.user) {
@@ -596,10 +625,10 @@ function renderDataTab(container) {
       State.setAccountSession({ userId: session.user.id, email: session.user.email });
       setAccountStatus(`Đã đăng nhập: ${session.user.email}`, 'success');
       setAccountControls(true);
-    } else {
-      setAccountStatus('Chưa đăng nhập.');
-    }
-  }).catch((e) => setAccountStatus(e.message, 'error'));
+      } else {
+        setAccountStatus('Chưa đăng nhập.');
+      }
+  }).catch((e) => setAccountStatus(formatAuthError(e), 'error'));
 
   // Danger Zone - Replaced with Dev Tool (Reset Current Day)
   const devArea = el('div', { class: 'mt-8 p-4 bg-yellow-100 border-2 border-yellow-400 rounded-xl' });

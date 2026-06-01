@@ -6,6 +6,13 @@
 
 import { randomPick, createNonRepeatPicker } from './utils.js';
 import State from './state.js';
+import {
+  comboKeyFromEquipped,
+  CUSTOMIZER_ITEMS_META,
+  GAU_STATE_ASSETS,
+  MASCOT_COMBO_ASSETS,
+  MEO_STATE_ASSETS,
+} from './data/mascot-assets.js';
 
 // ============================================
 // MASCOT STATE MACHINE
@@ -128,42 +135,24 @@ class MascotController {
       img.style.height = '100%';
       img.style.objectFit = 'contain';
       
-      let src = 'assets/images/mascot_avatar.png';
-      if (state === 'idle') src = 'assets/images/mascot_avatar.png';
-      else if (['happy', 'excited'].includes(state)) src = 'assets/images/meo_happy_sticker_1780213430564.png';
-      else if (['encouraging', 'thinking', 'reading', 'drawing'].includes(state)) src = 'assets/images/meo_thinking_sticker_1780213451318.png';
-      else if (['celebrating'].includes(state)) src = 'assets/images/meo_celebrating_sticker_1780213464815.png';
-      else if (state === 'sad') src = 'assets/images/meo_sad_sticker_1780214484499.png';
-      else if (state === 'disappointed' || state === 'sleeping') src = 'assets/images/meo_disappointed_sticker_1780214499727.png';
-      else if (state === 'confused') src = 'assets/images/meo_confused_sticker_1780214514803.png';
-      else if (state === 'relaxed') src = 'assets/images/meo_relaxed_sticker_1780214530211.png';
-      else if (state === 'angry') src = 'assets/images/meo_angry_sticker_1780214546071.png';
+      const character = el.dataset.mascotCharacter === 'gau' ? 'gau' : 'meo';
+      const stateAssets = character === 'gau' ? GAU_STATE_ASSETS : MEO_STATE_ASSETS;
+      const profile = State.getActiveProfile();
+      const comboSrc = character === 'meo' ? MASCOT_COMBO_ASSETS[comboKeyFromEquipped(profile?.equippedAccessories || [])] : null;
+      let src = comboSrc || stateAssets[state] || stateAssets.idle || 'assets/images/mascot_avatar.png';
       
       img.src = src;
       el.appendChild(img);
       
-      const profile = State.getActiveProfile();
-      if (profile && profile.equippedAccessories) {
-        const itemsMeta = {
-          'acc_sunglasses': { src: 'assets/mascot/accessories/accessory_sunglasses_1780213487126.png', styles: 'position:absolute; width:60%; top:35%; left:20%; z-index:20;' },
-          'acc_crown': { src: 'assets/mascot/accessories/accessory_crown_1780213501375.png', styles: 'position:absolute; width:45%; top:-5%; left:27%; z-index:20;' },
-          'acc_wand': { src: 'assets/mascot/accessories/accessory_wand_1780213517410.png', styles: 'position:absolute; width:40%; top:45%; left:65%; z-index:20;' },
-          'acc_lollipop': { src: 'assets/images/store/lollipop.png', styles: 'position:absolute; width:35%; top:50%; left:5%; z-index:20;' },
-          'acc_milktea': { src: 'assets/images/store/milktea.png', styles: 'position:absolute; width:35%; top:55%; left:70%; z-index:20;' },
-          'acc_tophat': { src: 'assets/images/store/tophat.png', styles: 'position:absolute; width:50%; top:-10%; left:25%; z-index:20;' },
-          'acc_cape': { src: 'assets/images/store/cape.png', styles: 'position:absolute; width:80%; top:45%; left:5%; z-index:10;' },
-          'acc_headphones': { src: 'assets/images/store/headphones.png', styles: 'position:absolute; width:70%; top:20%; left:15%; z-index:30;' },
-          'acc_batman': { src: 'assets/images/store/batman.png', styles: 'position:absolute; width:60%; top:15%; left:20%; z-index:20;' },
-          'acc_spiderman': { src: 'assets/images/store/spiderman.png', styles: 'position:absolute; width:90%; top:45%; left:5%; z-index:30; opacity: 0.8;' },
-          'acc_console': { src: 'assets/images/store/console.png', styles: 'position:absolute; width:45%; top:65%; left:30%; z-index:30;' }
-        };
+      if (character === 'meo' && profile?.equippedAccessories?.length && !comboSrc) {
         profile.equippedAccessories.forEach(id => {
-          if (itemsMeta[id]) {
-            const accImg = document.createElement('img');
-            accImg.src = itemsMeta[id].src;
-            accImg.style.cssText = itemsMeta[id].styles;
-            el.appendChild(accImg);
-          }
+          const meta = CUSTOMIZER_ITEMS_META[id];
+          if (!meta || meta.render !== 'overlay') return;
+          const accImg = document.createElement('img');
+          accImg.src = meta.src;
+          const [x, y, w, h] = meta.box;
+          accImg.style.cssText = `position:absolute; left:${(x / 256) * 100}%; top:${(y / 256) * 100}%; width:${(w / 256) * 100}%; height:${(h / 256) * 100}%; z-index:20; opacity:${meta.opacity || 1}; object-fit:contain; transform:translate(-0%, -0%);`;
+          el.appendChild(accImg);
         });
       }
 
