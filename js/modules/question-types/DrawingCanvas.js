@@ -187,6 +187,11 @@ export function renderDrawingCanvas(q, onComplete) {
 
   // 4. Drawing & Logic
   let isDrawing = false;
+  let isPanning = false;
+  let startPanX = 0;
+  let startPanY = 0;
+  let startScrollLeft = 0;
+  let startScrollTop = 0;
   let lastX = 0;
   let lastY = 0;
   
@@ -280,7 +285,19 @@ export function renderDrawingCanvas(q, onComplete) {
 
   function startPosition(e) {
     if (e.target.closest('button')) return; // ignore UI clicks
-    if (currentTool === 'pan') return; // Allow native pan/scroll
+    
+    if (currentTool === 'pan') {
+      isPanning = true;
+      const clientX = e.touches && e.touches.length > 0 ? e.touches[0].clientX : e.clientX;
+      const clientY = e.touches && e.touches.length > 0 ? e.touches[0].clientY : e.clientY;
+      startPanX = clientX;
+      startPanY = clientY;
+      startScrollLeft = scrollWrap.scrollLeft;
+      startScrollTop = scrollWrap.scrollTop;
+      if (canvas) canvas.style.cursor = 'grabbing';
+      return;
+    }
+
     if (e.touches && e.touches.length > 1) return; // Allow native 2-finger zoom/pan
     e.preventDefault();
     const coords = getCoords(e);
@@ -299,6 +316,11 @@ export function renderDrawingCanvas(q, onComplete) {
   }
 
   function endPosition() {
+    if (isPanning) {
+      isPanning = false;
+      if (canvas && currentTool === 'pan') canvas.style.cursor = 'grab';
+      return;
+    }
     if (!isDrawing) return;
     isDrawing = false;
     ctx.beginPath();
@@ -306,6 +328,16 @@ export function renderDrawingCanvas(q, onComplete) {
   }
 
   function draw(e) {
+    if (isPanning) {
+      e.preventDefault();
+      const clientX = e.touches && e.touches.length > 0 ? e.touches[0].clientX : e.clientX;
+      const clientY = e.touches && e.touches.length > 0 ? e.touches[0].clientY : e.clientY;
+      const dx = clientX - startPanX;
+      const dy = clientY - startPanY;
+      scrollWrap.scrollLeft = startScrollLeft - dx;
+      scrollWrap.scrollTop = startScrollTop - dy;
+      return;
+    }
     if (!isDrawing || currentTool === 'fill') return;
     e.preventDefault();
     const coords = getCoords(e);
