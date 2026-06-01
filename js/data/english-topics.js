@@ -1,3 +1,4 @@
+import { MORE_ENGLISH_TOPICS } from './more-english-topics.js';
 const TEACHER = 'Thầy Gâu lùn';
 
 function buildEnglishUnit({ topicKey, title, introTitle, introPoints, example, words }) {
@@ -247,4 +248,5 @@ export const CURATED_ENGLISH_TOPICS = [
       { en: 'rainbow', vi: 'cầu vồng' }, { en: 'cave', vi: 'hang động' },
     ],
   }),
+  ...MORE_ENGLISH_TOPICS,
 ];

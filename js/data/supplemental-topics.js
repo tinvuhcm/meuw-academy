@@ -1,4 +1,7 @@
 import { ADDITIONAL_SCIENCE_TOPICS } from './additional-science-topics.js';
+import { ADDITIONAL_VIETNAMESE_TOPICS } from './additional-vietnamese-topics.js';
+import { MORE_SCIENCE_TOPICS } from './more-science-topics.js';
+import { MORE_VIETNAMESE_TOPICS } from './more-vietnamese-topics.js';
 
 export const SUPPLEMENTAL_SCIENCE_TOPICS = [
   {
@@ -292,6 +295,7 @@ export const SUPPLEMENTAL_SCIENCE_TOPICS = [
     ],
   },
   ...ADDITIONAL_SCIENCE_TOPICS,
+  ...MORE_SCIENCE_TOPICS,
 ];
 
 export const SUPPLEMENTAL_VIETNAMESE_TOPICS = [
@@ -498,6 +502,8 @@ export const SUPPLEMENTAL_VIETNAMESE_TOPICS = [
       { type: 'multiple-choice', question: 'Từ nào chỉ một hoạt động ở trường?', options: ['Học bài', 'Đẹp', 'Màu xanh', 'Chiếc cặp'], answer: 'Học bài', explanation: 'Học bài là một hoạt động quen thuộc ở trường và ở nhà.' },
     ],
   },
+  ...ADDITIONAL_VIETNAMESE_TOPICS,
+  ...MORE_VIETNAMESE_TOPICS,
 ];
 
 export const SUPPLEMENTAL_IT_TOPICS = [

@@ -8,11 +8,20 @@ import {
 } from './supplemental-topics.js';
 
 const TARGET_QUESTION_COUNT = {
-  math: 16,
-  eng: 14,
-  vie: 10,
-  sci: 12,
-  it: 8,
+  math: 12,
+  eng: 8,
+  vie: 8,
+  sci: 8,
+  it: 6,
+  draw: 1,
+};
+
+const SUBJECT_DAILY_CAPS = {
+  math: 3,
+  eng: 2,
+  vie: 2,
+  sci: 2,
+  it: 1,
   draw: 1,
 };
 
@@ -510,20 +519,30 @@ function subjectFallbackOrder(primarySubject) {
   return map[primarySubject] || [primarySubject, 'math', 'eng', 'sci', 'vie', 'it'];
 }
 
-function getEmergencyMathEntry(catalog, seed) {
-  const emergencyKeys = [
-    'math:add-thousands',
-    'math:sub-thousands',
-    'math:times-table',
-    'math:division-basic',
-    'math:compare-numbers',
-    'math:money',
-    'math:clock',
-    'math:missing-number',
-  ];
-  const available = catalog.math.filter(entry => emergencyKeys.includes(entry.topicKey) && entry.generator);
-  if (!available.length) return catalog.math.find(entry => entry.generator) || null;
-  return available[seed % available.length];
+function getSubjectUsageScore(usage, subject) {
+  return usage?.[subject] || 0;
+}
+
+function prioritizeSubjectOrder(primarySubject, subjectUsage) {
+  const base = [...new Set(subjectFallbackOrder(primarySubject))];
+  const preferred = primarySubject === 'it'
+    ? ['math', 'vie', 'eng', 'sci', 'it', 'draw']
+    : base;
+
+  const underCap = [];
+  const atCap = [];
+
+  preferred.forEach(subject => {
+    if (!base.includes(subject) && subject !== primarySubject) return;
+    const cap = SUBJECT_DAILY_CAPS[subject] ?? Number.POSITIVE_INFINITY;
+    if (getSubjectUsageScore(subjectUsage, subject) < cap) {
+      underCap.push(subject);
+    } else {
+      atCap.push(subject);
+    }
+  });
+
+  return [...underCap, ...atCap];
 }
 
 function generateEmergencyMathQuestions(seedInput, targetCount, questionSeenDay, explanationSeenDay, ledger) {
@@ -688,11 +707,12 @@ export function materializeDayCurriculum(dayNumber, dayData, allData) {
   const explanationSeenDay = new Set();
   const topicSeenDay = new Set();
   const topicSeenBySession = { am: new Set(), pm: new Set() };
+  const subjectUsage = { math: 0, eng: 0, vie: 0, sci: 0, it: 0, draw: 0 };
 
   const modules = dayData.modules.map((module, index) => {
     const completed = State.getModuleData(module.id);
     const forcedTopicKey = completed?.curriculumTopicKey || null;
-    const subjectOrder = forcedTopicKey ? [module.subject] : subjectFallbackOrder(module.subject);
+    const subjectOrder = forcedTopicKey ? [module.subject] : prioritizeSubjectOrder(module.subject, subjectUsage);
     let chosenEntry = null;
     let questions = [];
 
@@ -750,6 +770,7 @@ export function materializeDayCurriculum(dayNumber, dayData, allData) {
 
     topicSeenDay.add(chosenEntry.topicKey);
     (topicSeenBySession[module.session] || topicSeenBySession.am).add(chosenEntry.topicKey);
+    subjectUsage[chosenEntry.subject] = (subjectUsage[chosenEntry.subject] || 0) + 1;
 
     return {
       ...module,
