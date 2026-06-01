@@ -422,8 +422,14 @@ function renderDataTab(container) {
 
   // Cloud Sync (Firebase)
   const cloudCodeLabel = el('h4', { class: 'font-bold mb-2' }, 'Đồng bộ qua Đám Mây (Firebase)');
-  const cloudCodeDesc = el('p', { class: 'text-sm text-text-muted mb-4' }, 'Tự động lưu và tải dữ liệu từ máy chủ. (Cần cấu hình API trong file firebase-config.js)');
+  const cloudCodeDesc = el('p', { class: 'text-sm text-text-muted mb-4' }, 'Tự động lưu và tải dữ liệu từ máy chủ. Ghi nhớ Mã Đám Mây bên dưới để tải về trên thiết bị khác.');
   
+  const cloudIdGroup = el('div', { class: 'mb-4 flex flex-col gap-1' });
+  const cloudIdLabel = el('label', { class: 'text-xs font-bold text-text-muted uppercase' }, 'Mã Đám Mây (Cloud ID):');
+  const cloudIdInput = el('input', { type: 'text', class: 'input-field w-full font-mono text-sm text-center font-bold text-méo-purple', value: State.getActiveProfile().id });
+  cloudIdGroup.appendChild(cloudIdLabel);
+  cloudIdGroup.appendChild(cloudIdInput);
+
   const cloudRow = el('div', { class: 'flex gap-2 mb-4' });
   const pushBtn = el('button', { class: 'btn btn-secondary flex-1' }, '⬆️ Đẩy lên Đám Mây');
   const pullBtn = el('button', { class: 'btn btn-primary flex-1' }, '⬇️ Tải về máy');
@@ -431,12 +437,17 @@ function renderDataTab(container) {
 
   pushBtn.addEventListener('click', async () => {
     Audio.click();
+    const syncId = cloudIdInput.value.trim();
+    if (!syncId) {
+      cloudStatus.textContent = '❌ Lỗi: Vui lòng nhập Mã Đám Mây';
+      cloudStatus.className = 'text-sm font-bold h-5 text-center mb-4 text-wrong';
+      return;
+    }
     cloudStatus.textContent = 'Đang tải lên...';
     cloudStatus.className = 'text-sm font-bold h-5 text-center mb-4 text-méo-purple';
     try {
       const { cloudSyncPush } = await import('./cloud-sync.js');
-      const profile = State.getActiveProfile();
-      await cloudSyncPush(profile.id || 'default_user', State.exportJSON());
+      await cloudSyncPush(syncId, State.exportJSON());
       cloudStatus.textContent = '✅ Đã đồng bộ lên đám mây thành công!';
       cloudStatus.className = 'text-sm font-bold h-5 text-center mb-4 text-correct-dk';
     } catch (err) {
@@ -447,12 +458,17 @@ function renderDataTab(container) {
 
   pullBtn.addEventListener('click', async () => {
     Audio.click();
+    const syncId = cloudIdInput.value.trim();
+    if (!syncId) {
+      cloudStatus.textContent = '❌ Lỗi: Vui lòng nhập Mã Đám Mây';
+      cloudStatus.className = 'text-sm font-bold h-5 text-center mb-4 text-wrong';
+      return;
+    }
     cloudStatus.textContent = 'Đang tải về...';
     cloudStatus.className = 'text-sm font-bold h-5 text-center mb-4 text-méo-purple';
     try {
       const { cloudSyncPull } = await import('./cloud-sync.js');
-      const profile = State.getActiveProfile();
-      const jsonStr = await cloudSyncPull(profile.id || 'default_user');
+      const jsonStr = await cloudSyncPull(syncId);
       State.importJSON(jsonStr);
       cloudStatus.textContent = '✅ Đã tải về thành công! Đang tải lại...';
       cloudStatus.className = 'text-sm font-bold h-5 text-center mb-4 text-correct-dk';
@@ -468,6 +484,7 @@ function renderDataTab(container) {
   
   wrap.appendChild(cloudCodeLabel);
   wrap.appendChild(cloudCodeDesc);
+  wrap.appendChild(cloudIdGroup);
   wrap.appendChild(cloudRow);
   wrap.appendChild(cloudStatus);
 
