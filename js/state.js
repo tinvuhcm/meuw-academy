@@ -4,16 +4,16 @@
  */
 
 import { localDateString, normalizeText } from './utils.js';
-import { getScheduledModulesForProfileDay, getStudyDateForDay, getStudyPlanForDate } from './schedule-calendar.js';
+import { getProgramDayLimit, getScheduledModulesForProfileDay, getStudyDateForDay, getStudyPlanForDate } from './schedule-calendar.js';
 import { M1_DATA } from './data/curriculum-m1.js';
 import { M2_DATA } from './data/curriculum-m2.js';
 import { M3_DATA } from './data/curriculum-m3.js';
 
 const STORAGE_KEY = 'meoAcademy_v2';
 const CURRENT_VERSION = 2;
-const MAX_LEARNING_DAYS = 90;
 const DAILY_PASS_THRESHOLD = 0.8;
 const ALL_CURRICULUM_DATA = { ...M1_DATA, ...M2_DATA, ...M3_DATA };
+const BASE_DAY_COUNT = Object.keys(ALL_CURRICULUM_DATA).length;
 
 function createDeviceId() {
   return `device_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
@@ -43,13 +43,22 @@ function diffCalendarDays(startDate, endDate) {
 }
 
 function clampDay(day) {
-  return Math.max(1, Math.min(MAX_LEARNING_DAYS, day));
+  return Math.max(1, Math.min(getMaxLearningDays(), day));
 }
 
 function getCurriculumModulesForDay(dayNumber) {
   const profile = getActiveProfile();
-  const rawModules = ALL_CURRICULUM_DATA[`day${dayNumber}`]?.modules || [];
+  const templateDay = ((dayNumber - 1) % BASE_DAY_COUNT) + 1;
+  const rawModules = (ALL_CURRICULUM_DATA[`day${templateDay}`]?.modules || []).map((module, index) => ({
+    ...module,
+    id: `d${dayNumber}-${module.session}-${index + 1}`,
+  }));
   return getScheduledModulesForProfileDay(profile, dayNumber, rawModules).allModules;
+}
+
+function getMaxLearningDays(profile = getActiveProfile()) {
+  ensureScheduleMetadata(profile);
+  return getProgramDayLimit(profile.learningStartDate || localDateString(new Date()));
 }
 
 function inferLearningStartDate(profile) {
@@ -588,7 +597,7 @@ function getDayProgress(dayNumber) {
 
 function getSequentialPassedDays() {
   let day = 1;
-  while (day <= MAX_LEARNING_DAYS) {
+  while (day <= getMaxLearningDays()) {
     const progress = getDayProgress(day);
     if (!progress.totalModules || !progress.isPassed) {
       break;
@@ -940,6 +949,7 @@ export const State = {
   isModuleComplete,
   getModuleData,
   getCurrentDay,
+  getMaxLearningDays,
   getStudyDateForDayNumber,
   getStudyPlanForDayNumber,
   getScheduledModulesForDayNumber,

@@ -4,6 +4,7 @@ import path from 'node:path';
 import {
   LONG_RANGE_STUDY_POLICY,
   OFFICIAL_GRADE4_KNOWLEDGE_MAP,
+  YEARLY_STUDY_PHASES,
 } from '../js/data/official-knowledge-map.js';
 
 const repoRoot = process.cwd();
@@ -61,6 +62,7 @@ async function main() {
     generated_at: new Date().toISOString(),
     policy: {
       ...LONG_RANGE_STUDY_POLICY,
+      phases: YEARLY_STUDY_PHASES,
       note: 'Knowledge map combines official Hoc10/SGK lineage with merged concept coverage from Chân Trời Sáng Tạo, Kết Nối Tri Thức, Family & Friends 4 and vetted science extensions.',
     },
     subjects,

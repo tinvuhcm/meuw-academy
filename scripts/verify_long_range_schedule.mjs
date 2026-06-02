@@ -11,6 +11,12 @@ globalThis.localStorage = {
   },
 };
 
+function getArgValue(flag, fallback = null) {
+  const index = process.argv.indexOf(flag);
+  if (index === -1 || index === process.argv.length - 1) return fallback;
+  return process.argv[index + 1];
+}
+
 function normalizeText(str) {
   if (!str) return '';
   return String(str).trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
@@ -36,6 +42,7 @@ function explanationSignature(question) {
 }
 
 const { getCurriculumDay } = await import('../js/data/curriculum-loader.js');
+const { getProgramDayLimit, PROGRAM_START_DATE } = await import('../js/schedule-calendar.js');
 const State = (await import('../js/state.js')).default;
 
 const seenQuestions = new Set();
@@ -45,7 +52,13 @@ let duplicateQuestions = 0;
 let duplicateTopics = 0;
 let underTargetDays = 0;
 
-for (let day = 1; day <= 90; day++) {
+const totalProgramDays = getProgramDayLimit(PROGRAM_START_DATE);
+const requestedDays = Number(getArgValue('--days', totalProgramDays));
+const daysToCheck = Number.isFinite(requestedDays) && requestedDays > 0
+  ? Math.min(totalProgramDays, Math.floor(requestedDays))
+  : totalProgramDays;
+
+for (let day = 1; day <= daysToCheck; day++) {
   const dayData = getCurriculumDay(day);
   const modules = dayData?.modules || [];
   const estimatedMinutes = modules.reduce((sum, module) => sum + (module.estimatedMinutes || 0), 0);
@@ -90,7 +103,8 @@ const totals = daySummaries.reduce((acc, day) => {
 }, { minutes: 0, modules: 0 });
 
 console.log(JSON.stringify({
-  days: daySummaries.length,
+  daysChecked: daySummaries.length,
+  totalProgramDays,
   duplicateQuestions,
   duplicateTopics,
   underTargetDays,

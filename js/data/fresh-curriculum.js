@@ -1,5 +1,6 @@
 import State from '../state.js';
 import { normalizeText } from '../utils.js';
+import { getAcademicPhase, getStudyDateForDay } from '../schedule-calendar.js';
 import { CURATED_ENGLISH_TOPICS } from './english-topics.js';
 import {
   ALL_SUBJECT_CODES,
@@ -234,6 +235,9 @@ function mergeSupplemental(catalog, topic) {
     if (topic.replacePool) {
       existing.questionPool = extraPool.map(ensureAnswerField);
     } else {
+      if (!Array.isArray(existing.questionPool)) {
+        existing.questionPool = [];
+      }
       const seen = new Set(existing.questionPool.map(questionSignature));
       extraPool.forEach(question => {
         const signature = questionSignature(question);
@@ -265,6 +269,11 @@ function mergeSupplemental(catalog, topic) {
 
 function conceptBenefit(subjectKey) {
   const map = {
+    math: 'giúp em tính chắc hơn và giải bài toán nhiều bước tốt hơn',
+    vie: 'giúp em đọc hiểu sâu hơn và viết rõ ý hơn',
+    eng: 'giúp em nghe, nói, đọc và dùng mẫu câu tự tin hơn',
+    it: 'giúp em dùng thiết bị số an toàn và có tổ chức hơn',
+    sci: 'giúp em hiểu thế giới tự nhiên quanh mình rõ hơn',
     histgeo: 'giúp em hiểu quê hương, bản đồ và con người Việt Nam',
     music: 'giúp em cảm nhịp, nghe tốt hơn và yêu âm nhạc',
     art: 'giúp em quan sát đẹp hơn và diễn đạt ý tưởng bằng hình ảnh',
@@ -278,6 +287,11 @@ function conceptBenefit(subjectKey) {
 
 function createConceptPrompt(subjectKey, concept) {
   const map = {
+    math: `Bài luyện nào gần nhất với kiến thức "${concept}"?`,
+    vie: `Khi học "${concept}", em thường luyện điều gì?`,
+    eng: `Hoạt động nào phù hợp để luyện "${concept}" trong English?`,
+    it: `Khi học "${concept}" trong Tin học, điều gì là quan trọng?`,
+    sci: `Tình huống nào giúp em hiểu rõ "${concept}" trong Khoa học?`,
     histgeo: `Ví dụ nào gần nhất với việc học "${concept}"?`,
     music: `Hoạt động nào phù hợp khi luyện "${concept}"?`,
     art: `Khi thực hành "${concept}", em nên chú ý điều gì?`,
@@ -291,6 +305,11 @@ function createConceptPrompt(subjectKey, concept) {
 
 function createConceptCorrectOption(subjectKey, concept) {
   const map = {
+    math: `Làm bài và quan sát quy tắc của ${concept}`,
+    vie: `Đọc, nói hoặc viết để hiểu ${concept}`,
+    eng: `Nghe, nói hoặc dùng mẫu câu gắn với ${concept}`,
+    it: `Thực hành trên thiết bị để hiểu ${concept}`,
+    sci: `Quan sát hiện tượng và giải thích ${concept}`,
     histgeo: `Quan sát, nhận biết và nói đúng về ${concept}`,
     music: `Nghe, vỗ tay hoặc hát để cảm nhận ${concept}`,
     art: `Quan sát rồi thể hiện ${concept} bằng hình và màu`,
@@ -305,7 +324,7 @@ function createConceptCorrectOption(subjectKey, concept) {
 function buildKnowledgeMapConceptTopics() {
   const topics = [];
 
-  OTHER_SUBJECT_CODES.forEach(subjectKey => {
+  ALL_SUBJECT_CODES.forEach(subjectKey => {
     const subject = OFFICIAL_GRADE4_KNOWLEDGE_MAP[subjectKey];
     if (!subject) return;
     const strandTitles = subject.strands.map(strand => strand.title);
@@ -318,7 +337,7 @@ function buildKnowledgeMapConceptTopics() {
           `${subjectKey}|${strand.key}|${concept}|wrong-strands`,
         ).slice(0, 3);
         const otherSubjectLabels = seededShuffle(
-          OTHER_SUBJECT_CODES
+          ALL_SUBJECT_CODES
             .filter(code => code !== subjectKey)
             .map(code => OFFICIAL_GRADE4_KNOWLEDGE_MAP[code]?.label)
             .filter(Boolean),
@@ -835,12 +854,34 @@ function subjectFallbackOrder(primarySubject) {
   return map[primarySubject] || [primarySubject, ...CORE_SUBJECT_CODES];
 }
 
-function getLongRangePlanSubject(dayNumber, session, moduleIndex) {
+function getPhaseCoreSubject(phase, session, moduleIndex) {
+  const patterns = {
+    'summer-foundation': {
+      am: ['math', 'vie', 'eng', 'sci', 'math', 'it', 'vie', 'eng', 'math', 'sci', 'eng', 'math', 'vie', 'sci'],
+      pm: ['math', 'eng', 'vie', 'sci', 'math', 'it', 'eng', 'vie', 'math', 'sci'],
+    },
+    'term-1': {
+      am: ['math', 'vie', 'eng', 'math', 'it', 'vie', 'eng', 'histgeo', 'math', 'vie', 'eng', 'ethics', 'math', 'it'],
+      pm: ['math', 'eng', 'vie', 'math', 'it', 'eng', 'vie', 'histgeo', 'math', 'ethics'],
+    },
+    'term-2': {
+      am: ['math', 'vie', 'eng', 'math', 'sci', 'vie', 'eng', 'tech', 'math', 'vie', 'eng', 'histgeo', 'math', 'it'],
+      pm: ['math', 'eng', 'vie', 'math', 'sci', 'eng', 'vie', 'tech', 'math', 'histgeo'],
+    },
+  };
+  const sessionPattern = patterns[phase]?.[session] || patterns['summer-foundation'][session] || [];
+  return sessionPattern[moduleIndex % sessionPattern.length] || null;
+}
+
+function getLongRangePlanSubject(dayNumber, session, moduleIndex, studyDate) {
+  const phase = getAcademicPhase(studyDate);
   const slotIndexes = LONG_RANGE_STUDY_POLICY.enrichmentSlotMap[session] || [];
   const slotPosition = slotIndexes.indexOf(moduleIndex);
-  if (slotPosition === -1) return null;
-  const enrichment = getDailyEnrichmentSubjects(dayNumber);
-  return enrichment[slotPosition % enrichment.length] || null;
+  if (slotPosition !== -1) {
+    const enrichment = getDailyEnrichmentSubjects(dayNumber);
+    return enrichment[slotPosition % enrichment.length] || null;
+  }
+  return getPhaseCoreSubject(phase, session, moduleIndex);
 }
 
 function getSubjectUsageScore(usage, subject) {
@@ -1027,6 +1068,8 @@ export function materializeDayCurriculum(dayNumber, dayData, allData) {
 
   const catalog = buildCatalog(allData);
   const ledger = State.getKnowledgeLedger();
+  const profile = State.getActiveProfile();
+  const studyDate = getStudyDateForDay(profile.learningStartDate || new Date().toISOString().slice(0, 10), dayNumber);
   const questionSeenDay = new Set();
   const explanationSeenDay = new Set();
   const topicSeenDay = new Set();
@@ -1039,7 +1082,7 @@ export function materializeDayCurriculum(dayNumber, dayData, allData) {
     const forcedTopicKey = completed?.curriculumTopicKey || null;
     const sessionIndex = sessionIndexCounter[module.session] || 0;
     sessionIndexCounter[module.session] = sessionIndex + 1;
-    const plannedSubject = forcedTopicKey ? null : getLongRangePlanSubject(dayNumber, module.session, sessionIndex);
+    const plannedSubject = forcedTopicKey ? null : getLongRangePlanSubject(dayNumber, module.session, sessionIndex, studyDate);
     const subjectOrder = forcedTopicKey
       ? [module.subject]
       : [...new Set([plannedSubject, ...prioritizeSubjectOrder(plannedSubject || module.subject, subjectUsage)].filter(Boolean))];

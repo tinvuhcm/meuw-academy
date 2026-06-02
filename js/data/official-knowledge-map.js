@@ -34,6 +34,27 @@ export const LONG_RANGE_STUDY_POLICY = {
   },
 };
 
+export const YEARLY_STUDY_PHASES = [
+  {
+    key: 'summer-foundation',
+    label: 'Hè tăng tốc nền tảng',
+    focus: ['math', 'vie', 'eng', 'sci', 'it'],
+    note: 'Trước khi vào năm học chính thức, ưu tiên nền tảng cốt lõi và khám phá khoa học.',
+  },
+  {
+    key: 'term-1',
+    label: 'Học kỳ 1 đồng hành cùng trường',
+    focus: ['math', 'vie', 'eng', 'it', 'histgeo', 'ethics'],
+    note: 'Trong năm học, ưu tiên bám mạch SGK và giữ nhịp đều vào ngày thường.',
+  },
+  {
+    key: 'term-2',
+    label: 'Học kỳ 2 củng cố và mở rộng',
+    focus: ['math', 'vie', 'eng', 'sci', 'histgeo', 'tech'],
+    note: 'Cuối năm tăng bài toán nhiều bước, đọc hiểu, ôn và mở rộng kỹ năng.',
+  },
+];
+
 export const OFFICIAL_GRADE4_KNOWLEDGE_MAP = {
   math: {
     label: 'Toán',

@@ -309,7 +309,7 @@ function createRoadmapSection(currentDay) {
 
   const strip = el('div', { class: 'roadmap-strip flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory' });
   const startDay = Math.max(1, currentDay - 2);
-  const endDay = Math.min(90, currentDay + 8);
+  const endDay = Math.min(State.getMaxLearningDays(), currentDay + 8);
 
   for (let day = startDay; day <= endDay; day++) {
     const dayData = getCurriculumDay(day);
