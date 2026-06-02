@@ -32,6 +32,10 @@
       }
     ],
     "app_policy": {
+      "active_book_series": "ket-noi-tri-thuc-voi-cuoc-song",
+      "active_book_series_id_hts": 3,
+      "series_policy_basis": "QD 3588/QD-BGDDT — KNTT la bo SGK thong nhat toan quoc tu nam hoc 2026-2027",
+      "excluded_series": ["chan-troi-sang-tao"],
       "use_for_school_subjects": [
         "toan",
         "tieng-viet",
@@ -41,7 +45,8 @@
       "use_for_science_extension": [
         "khoa-hoc"
       ],
-      "disallowed_school_source_policy": "Do not introduce new SGK aggregation sources without explicit user approval."
+      "disallowed_school_source_policy": "Do not introduce new SGK aggregation sources without explicit user approval.",
+      "disallowed_series_policy": "Do not use Chan Troi Sang Tao content in app curriculum or knowledge pool."
     }
   },
   "hoc10": {

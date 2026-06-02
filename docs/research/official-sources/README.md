@@ -7,6 +7,14 @@ This folder is the canonical school-source corpus for grade 4 knowledge work in 
 - `https://hanhtrangso.nxbgd.vn/`
 - `https://www.hoc10.vn/`
 
+## Book series policy
+
+**Active series: Kết nối tri thức với cuộc sống (KNTT) only.**
+
+Basis: Bộ GD&ĐT Quyết định số 3588/QĐ-BGDĐT — KNTT là bộ SGK thống nhất toàn quốc từ năm học 2026-2027.
+
+Do not use "Chân trời sáng tạo" (CTST) content in app curriculum or knowledge pool. Both series are cataloged in `notes/hts-lop4-book-indexes.json` for reference, but only KNTT data feeds into app runtime.
+
 ## Policy
 
 - For school-subject content, do not add other SGK aggregation sources unless the user explicitly approves them.

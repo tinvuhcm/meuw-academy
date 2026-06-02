@@ -3,7 +3,7 @@ export const OTHER_SUBJECT_CODES = ['histgeo', 'music', 'art', 'ethics', 'tech',
 export const ALL_SUBJECT_CODES = [...CORE_SUBJECT_CODES, ...OTHER_SUBJECT_CODES];
 
 export const LONG_RANGE_STUDY_POLICY = {
-  sourceSets: ['chan-troi-sang-tao', 'ket-noi-tri-thuc', 'family-and-friends-4', 'hoc10-official', 'science-extension'],
+  sourceSets: ['ket-noi-tri-thuc', 'family-and-friends-4', 'hoc10-official', 'science-extension'],
   targetMinutes: {
     am: 120,
     pm: 100,
@@ -58,8 +58,8 @@ export const YEARLY_STUDY_PHASES = [
 export const OFFICIAL_GRADE4_KNOWLEDGE_MAP = {
   math: {
     label: 'Toán',
-    sourceSets: ['chan-troi-sang-tao', 'ket-noi-tri-thuc', 'hoc10-official'],
-    books: ['Toán 4 tập 1', 'Toán 4 tập 2'],
+    sourceSets: ['ket-noi-tri-thuc', 'hoc10-official'],
+    books: ['Toán 4 - Tập một (KNTT)', 'Toán 4 - Tập hai (KNTT)'],
     strands: [
       { key: 'numbers-place-value', title: 'Số tự nhiên và giá trị chữ số', concepts: ['đọc viết số lớn', 'so sánh số', 'làm tròn số', 'cấu tạo số'] },
       { key: 'operations', title: 'Bốn phép tính và biểu thức', concepts: ['cộng trừ số lớn', 'nhân chia', 'thứ tự thực hiện phép tính', 'tính nhẩm chiến lược'] },
@@ -71,8 +71,8 @@ export const OFFICIAL_GRADE4_KNOWLEDGE_MAP = {
   },
   vie: {
     label: 'Tiếng Việt',
-    sourceSets: ['chan-troi-sang-tao', 'ket-noi-tri-thuc', 'hoc10-official'],
-    books: ['Tiếng Việt 4 tập 1', 'Tiếng Việt 4 tập 2'],
+    sourceSets: ['ket-noi-tri-thuc', 'hoc10-official'],
+    books: ['Tiếng Việt 4 - Tập một (KNTT)', 'Tiếng Việt 4 - Tập hai (KNTT)'],
     strands: [
       { key: 'reading', title: 'Đọc hiểu', concepts: ['chi tiết chính', 'nhân vật', 'trình tự sự việc', 'bài học rút ra', 'thông tin trong văn bản'] },
       { key: 'vocabulary', title: 'Mở rộng vốn từ', concepts: ['từ đồng nghĩa', 'từ trái nghĩa', 'từ theo chủ điểm', 'thành ngữ đơn giản'] },
@@ -83,7 +83,7 @@ export const OFFICIAL_GRADE4_KNOWLEDGE_MAP = {
   eng: {
     label: 'English',
     sourceSets: ['family-and-friends-4', 'hoc10-official'],
-    books: ['Tiếng Anh 4', 'Family & Friends 4'],
+    books: ['Family & Friends 4', 'Tiếng Anh 4 - Global Success (KNTT)'],
     strands: [
       { key: 'vocabulary', title: 'Vocabulary themes', concepts: ['jobs', 'places', 'food', 'daily routines', 'weather', 'school things', 'animals'] },
       { key: 'grammar', title: 'Grammar patterns', concepts: ['be', 'have got', 'present simple', 'can/can not', 'there is/there are', 'question forms'] },
@@ -92,8 +92,8 @@ export const OFFICIAL_GRADE4_KNOWLEDGE_MAP = {
   },
   it: {
     label: 'Tin học',
-    sourceSets: ['chan-troi-sang-tao', 'ket-noi-tri-thuc', 'hoc10-official'],
-    books: ['Tin học 4'],
+    sourceSets: ['ket-noi-tri-thuc', 'hoc10-official'],
+    books: ['Tin học 4 (KNTT)'],
     strands: [
       { key: 'digital-basics', title: 'Thiết bị số cơ bản', concepts: ['bộ phận máy tính', 'thiết bị vào ra', 'tư thế sử dụng', 'bảo quản'] },
       { key: 'files-folders', title: 'Tệp và thư mục', concepts: ['mở lưu tệp', 'thư mục chứa gì', 'sắp xếp tệp', 'tìm kiếm tệp'] },
@@ -114,8 +114,8 @@ export const OFFICIAL_GRADE4_KNOWLEDGE_MAP = {
   },
   histgeo: {
     label: 'Lịch sử và Địa lí',
-    sourceSets: ['chan-troi-sang-tao', 'ket-noi-tri-thuc', 'hoc10-official'],
-    books: ['Lịch sử và Địa lí 4'],
+    sourceSets: ['ket-noi-tri-thuc', 'hoc10-official'],
+    books: ['Lịch sử và Địa lí 4 (KNTT)'],
     strands: [
       { key: 'maps-directions', title: 'Bản đồ và phương hướng', concepts: ['kí hiệu bản đồ', 'phương hướng', 'vị trí trên bản đồ'] },
       { key: 'regions-vietnam', title: 'Các vùng của Việt Nam', concepts: ['đồng bằng', 'miền núi', 'biển đảo', 'thành phố lớn'] },
@@ -125,8 +125,8 @@ export const OFFICIAL_GRADE4_KNOWLEDGE_MAP = {
   },
   music: {
     label: 'Âm nhạc',
-    sourceSets: ['chan-troi-sang-tao', 'ket-noi-tri-thuc', 'hoc10-official'],
-    books: ['Âm nhạc 4'],
+    sourceSets: ['ket-noi-tri-thuc', 'hoc10-official'],
+    books: ['Âm nhạc 4 (KNTT)'],
     strands: [
       { key: 'rhythm', title: 'Nhịp điệu', concepts: ['phách', 'nhịp 2/4', 'tiết tấu ngắn', 'gõ đệm'] },
       { key: 'melody', title: 'Giai điệu', concepts: ['cao thấp', 'nhanh chậm', 'to nhỏ', 'đoạn nhạc vui buồn'] },
@@ -135,8 +135,8 @@ export const OFFICIAL_GRADE4_KNOWLEDGE_MAP = {
   },
   art: {
     label: 'Mĩ thuật',
-    sourceSets: ['chan-troi-sang-tao', 'ket-noi-tri-thuc', 'hoc10-official'],
-    books: ['Mĩ thuật 4'],
+    sourceSets: ['ket-noi-tri-thuc', 'hoc10-official'],
+    books: ['Mĩ thuật 4 (KNTT)'],
     strands: [
       { key: 'elements', title: 'Yếu tố tạo hình', concepts: ['đường nét', 'mảng hình', 'màu nóng lạnh', 'họa tiết'] },
       { key: 'practice', title: 'Thực hành sáng tạo', concepts: ['vẽ theo quan sát', 'xé dán', 'trang trí', 'làm sản phẩm thủ công'] },
@@ -145,8 +145,8 @@ export const OFFICIAL_GRADE4_KNOWLEDGE_MAP = {
   },
   ethics: {
     label: 'Đạo đức',
-    sourceSets: ['chan-troi-sang-tao', 'ket-noi-tri-thuc', 'hoc10-official'],
-    books: ['Đạo đức 4'],
+    sourceSets: ['ket-noi-tri-thuc', 'hoc10-official'],
+    books: ['Đạo đức 4 (KNTT)'],
     strands: [
       { key: 'self-management', title: 'Tự quản bản thân', concepts: ['trung thực', 'giữ lời hứa', 'biết xin lỗi', 'chăm chỉ'] },
       { key: 'relationships', title: 'Quan hệ với người khác', concepts: ['lễ phép', 'hợp tác', 'tôn trọng khác biệt', 'biết cảm ơn'] },
