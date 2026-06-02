@@ -305,19 +305,19 @@ function createSessionCard(title, emoji, modules, sessionId, dayNumber) {
 function createRoadmapSection(currentDay) {
   const section = el('section', { class: 'mb-8' });
   section.appendChild(el('h2', { class: 'font-display text-2xl mb-2' }, 'Lộ trình học tập'));
-  section.appendChild(el('p', { class: 'text-sm text-text-muted mb-4' }, 'Xem nhanh các ngày đã học, ngày hôm nay và những ngày sắp tới.'));
+  section.appendChild(el('p', { class: 'text-sm text-text-muted mb-4' }, 'Timeline gọn để xem nhanh hôm nay đang ở đâu và sắp tới học gì.'));
 
-  const grid = el('div', { class: 'grid gap-4 md:grid-cols-2 xl:grid-cols-3' });
-  const startDay = Math.max(1, currentDay - 1);
-  const endDay = Math.min(90, currentDay + 4);
+  const strip = el('div', { class: 'roadmap-strip flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory' });
+  const startDay = Math.max(1, currentDay - 2);
+  const endDay = Math.min(90, currentDay + 8);
 
   for (let day = startDay; day <= endDay; day++) {
     const dayData = getCurriculumDay(day);
     if (!dayData) continue;
-    grid.appendChild(createRoadmapCard(day, dayData, currentDay));
+    strip.appendChild(createRoadmapCard(day, dayData, currentDay));
   }
 
-  section.appendChild(grid);
+  section.appendChild(strip);
   return section;
 }
 
@@ -333,40 +333,43 @@ function createRoadmapCard(dayNumber, dayData, currentDay) {
       ? (progress.isPassed ? 'text-correct-dk bg-correct-bg border-correct' : 'text-warning bg-warning-bg border-warning')
       : 'text-text-muted bg-bg-2 border-border';
 
-  const card = el('div', { class: 'card flex flex-col gap-4' });
-  const titleRow = el('div', { class: 'flex-between gap-3' });
+  const card = el('button', {
+    class: `card min-w-[130px] md:min-w-[150px] text-left flex flex-col gap-3 snap-start transition-all ${
+      isToday ? 'border-2 border-méo-purple shadow-md -translate-y-1' : 'hover:-translate-y-1'
+    }`,
+  });
+  const titleRow = el('div', { class: 'flex-between gap-3 items-start' });
   titleRow.innerHTML = `
     <div>
       <div class="font-display text-xl">Ngày ${dayNumber}</div>
-      <div class="text-sm text-text-muted">${dayData.title || 'Lộ trình trong ngày'}</div>
+      <div class="text-xs text-text-muted">${isToday ? 'Đang học hôm nay' : isPast ? 'Đã mở' : 'Sắp tới'}</div>
     </div>
     <span class="text-xs font-bold px-3 py-1 rounded-full border ${statusClass}">${statusLabel}</span>
   `;
   card.appendChild(titleRow);
 
-  const summary = el('div', { class: 'text-sm text-text-muted flex flex-col gap-1' });
-  summary.appendChild(el('div', {}, `${dayData.modules.length} bài • ${progress.completedModules}/${progress.totalModules} đã xong`));
-  summary.appendChild(el('div', {}, isFuture ? 'Có thể bấm để xem trước nội dung.' : `Tỉ lệ pass ngày: ${Math.round(progress.passRate * 100)}%`));
+  const progressBar = el('div', { class: 'w-full h-2 bg-bg-2 rounded-full overflow-hidden' });
+  progressBar.innerHTML = `<div class="h-full rounded-full ${isFuture ? 'bg-border' : progress.isPassed ? 'bg-correct' : 'bg-méo-purple'}" style="width:${Math.max(8, Math.round(progress.completedModules / Math.max(progress.totalModules, 1) * 100))}%"></div>`;
+  card.appendChild(progressBar);
+
+  const summary = el('div', { class: 'text-xs text-text-muted flex flex-col gap-1' });
+  summary.appendChild(el('div', {}, `${progress.completedModules}/${progress.totalModules} bài`));
+  summary.appendChild(el('div', {}, isFuture ? 'Bấm để xem trước' : dayData.title || 'Lộ trình trong ngày'));
   card.appendChild(summary);
 
-  const previewList = el('div', { class: 'flex flex-col gap-2 text-sm' });
-  dayData.modules.slice(0, 3).forEach(module => {
-    const conf = getSubjectConfig(module.subject);
-    previewList.appendChild(el('div', { class: 'flex items-center gap-2 text-text' }, `${conf.emoji} ${module.title}`));
+  const subjectRow = el('div', { class: 'flex flex-wrap gap-1' });
+  const subjectLabels = [...new Set(dayData.modules.slice(0, 4).map(module => getSubjectConfig(module.subject).emoji))];
+  subjectLabels.forEach(label => {
+    subjectRow.appendChild(el('span', { class: 'text-base' }, label));
   });
-  if (dayData.modules.length > 3) {
-    previewList.appendChild(el('div', { class: 'text-xs text-text-muted italic' }, `+${dayData.modules.length - 3} bài nữa`));
+  if (dayData.modules.length > 4) {
+    subjectRow.appendChild(el('span', { class: 'text-xs text-text-muted font-bold' }, `+${dayData.modules.length - 4}`));
   }
-  card.appendChild(previewList);
+  card.appendChild(subjectRow);
 
-  const actions = el('div', { class: 'grid grid-cols-2 gap-2 mt-auto' });
-  const amBtn = el('button', { class: 'btn btn-outline text-sm' }, 'Xem sáng');
-  amBtn.addEventListener('click', () => Router.navigate(`/session/${dayNumber}/am`));
-  const pmBtn = el('button', { class: `btn text-sm ${isFuture ? 'btn-outline' : 'btn-primary'}` }, 'Xem chiều');
-  pmBtn.addEventListener('click', () => Router.navigate(`/session/${dayNumber}/pm`));
-  actions.appendChild(amBtn);
-  actions.appendChild(pmBtn);
-  card.appendChild(actions);
+  card.addEventListener('click', () => {
+    Router.navigate(`/session/${dayNumber}/am`);
+  });
 
   return card;
 }
