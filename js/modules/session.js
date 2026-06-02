@@ -10,8 +10,12 @@ import { getCurriculumDay } from '../data/curriculum-loader.js';
 import { Audio } from '../audio.js';
 
 export function renderSession(params) {
+  State.syncDailyProgress();
   const { dayId, sessionId } = params; // e.g. { dayId: '1', sessionId: 'am' }
-  const dayData = getCurriculumDay(parseInt(dayId, 10));
+  const numericDayId = parseInt(dayId, 10);
+  const dayData = getCurriculumDay(numericDayId);
+  const currentDay = State.getCurrentDay();
+  const isFutureDay = numericDayId > currentDay;
   
   const container = el('div', { class: 'page-container session-container' });
 
@@ -35,6 +39,15 @@ export function renderSession(params) {
     return wrapper;
   }
 
+  if (isFutureDay) {
+    const notice = el('div', { class: 'card mt-6 max-w-2xl mx-auto border-2 border-warning bg-warning-bg text-warning-dk' });
+    notice.innerHTML = `
+      <h2 class="font-display text-2xl mb-2">Đây là ngày xem trước</h2>
+      <p class="font-bold">Ngày ${numericDayId} sẽ mở khi đến lịch và các ngày trước đã hoàn thành trên 80%.</p>
+    `;
+    container.appendChild(notice);
+  }
+
   const modules = dayData.modules.filter(m => m.session === sessionId);
   const listWrapper = el('div', { class: 'mt-6 max-w-2xl mx-auto flex flex-col gap-4' });
 
@@ -50,6 +63,9 @@ export function renderSession(params) {
     if (isCompleted) {
       statusClass = 'bg-surface border-border opacity-70';
       statusIcon = '<span class="text-correct font-bold">✓ Xong</span>';
+    } else if (isFutureDay) {
+      statusClass = 'bg-surface border-border opacity-80';
+      statusIcon = '<span class="text-text-muted font-bold">👀 Xem trước</span>';
     } else {
       // Unlocked, ready to learn
       statusClass = 'bg-surface border-méo-purple shadow-sm hover:shadow-md transition-all hover:-translate-y-1';
@@ -78,6 +94,11 @@ export function renderSession(params) {
     card.appendChild(right);
 
     card.addEventListener('click', () => {
+      if (isFutureDay) {
+        Audio.click();
+        window.toast?.('Ngày này đang ở chế độ xem trước. Hãy học xong các ngày trước nhé.', 'info');
+        return;
+      }
       if (isCompleted) {
         // Can optionally allow replay, but for now we just play sound
         Audio.click();
@@ -91,7 +112,7 @@ export function renderSession(params) {
   });
 
   // End screen if all completed
-  if (foundFirstIncomplete === false) {
+  if (!isFutureDay && foundFirstIncomplete === false) {
     const doneBox = el('div', { class: 'text-center mt-8 p-6 bg-correct-bg border-2 border-correct rounded-2xl' });
     doneBox.innerHTML = `
       <div class="text-4xl mb-4">🎉</div>

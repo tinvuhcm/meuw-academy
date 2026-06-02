@@ -1,0 +1,351 @@
+[
+  {
+    "subject": {
+      "id": 32,
+      "slug": "tieng-viet",
+      "title": "Tieng Viet"
+    },
+    "files": [
+      {
+        "worksheet_title": "Giới thiệu SGK Tiếng Việt 4 (bản word)",
+        "type_document": 4,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/tieng_viet_4_gioi_thieu_sach_1675157554.docx",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-viet\\worksheets\\04_Gioi_thieu_SGK_Tieng_Viet_4_ban_word.docx"
+      },
+      {
+        "worksheet_title": "Giới thiệu SGK Tiếng Việt 4 (bản PPT)",
+        "type_document": 5,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/tieng_viet_4_gioi_thieu_10_01_23_1675992052.pptx",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-viet\\worksheets\\03_Gioi_thieu_SGK_Tieng_Viet_4_ban_PPT.pptx"
+      },
+      {
+        "worksheet_title": "TL tập huấn SGK Tiếng Việt 4 (bản PDF)",
+        "type_document": 1,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/tai_lieu_tap_huan_sgk_tieng_viet_4_canh_dieu_22_5_23_1685700163.pdf",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-viet\\worksheets\\02_TL_tap_huan_SGK_Tieng_Viet_4_ban_PDF.pdf"
+      },
+      {
+        "worksheet_title": "TL tập huấn SGK Tiếng Việt 4 (bản PPT)",
+        "type_document": 5,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/tieng_viet_4_slide_tap_huan_1685702011.pptx",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-viet\\worksheets\\01_TL_tap_huan_SGK_Tieng_Viet_4_ban_PPT.pptx"
+      },
+      {
+        "worksheet_title": "Giới thiệu bộ SGK Cánh Diều lớp 4",
+        "type_document": 1,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/catalogue_4_ro140223_1676367114.pdf",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-viet\\worksheets\\00_Gioi_thieu_bo_SGK_Canh_Dieu_lop_4.pdf"
+      }
+    ]
+  },
+  {
+    "subject": {
+      "id": 33,
+      "slug": "toan",
+      "title": "Toan"
+    },
+    "files": [
+      {
+        "worksheet_title": "Giới thiệu SGK Toán 4 (bản word)",
+        "type_document": 4,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/toan_4_gioi_thieu_sach_1675157634.docx",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\worksheets\\04_Gioi_thieu_SGK_Toan_4_ban_word.docx"
+      },
+      {
+        "worksheet_title": "Giới thiệu SGK Toán 4 (bản PPT)",
+        "type_document": 5,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/gioi_thieu_toan_4_02032023_1677727124.pptx",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\worksheets\\03_Gioi_thieu_SGK_Toan_4_ban_PPT.pptx"
+      },
+      {
+        "worksheet_title": "TL tập huấn SGK Toán 4 (bản PDF)",
+        "type_document": 1,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/24_tl_tap_huan_gv_toan_4_1962023docx_1687169491.pdf",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\worksheets\\02_TL_tap_huan_SGK_Toan_4_ban_PDF.pdf"
+      },
+      {
+        "worksheet_title": "TL tập huấn SGK Toán 4 (bản PPT)",
+        "type_document": 5,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/toan_4_slide_tap_huan_1685702094.pptx",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\worksheets\\01_TL_tap_huan_SGK_Toan_4_ban_PPT.pptx"
+      }
+    ]
+  },
+  {
+    "subject": {
+      "id": 39,
+      "slug": "tieng-anh",
+      "title": "Tieng Anh"
+    },
+    "files": [
+      {
+        "worksheet_title": "Phân phối chương trình",
+        "type_document": 1,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/phan_phoi_chuong_trinh_g4_1694166280.pdf",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-anh\\worksheets\\20_Phan_phoi_chuong_trinh.pdf"
+      },
+      {
+        "worksheet_title": "Giáo án giảng dạy",
+        "type_document": 6,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/2_giao_an_giang_day_doc_1740734679.zip",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-anh\\worksheets\\19_Giao_an_giang_day.zip"
+      },
+      {
+        "worksheet_title": "Slides giáo án giảng dạy_U0",
+        "type_document": 6,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/01_unit_0_1728525661.zip",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-anh\\worksheets\\18_Slides_giao_an_giang_day_U0.zip"
+      },
+      {
+        "worksheet_title": "Slides giáo án giảng dạy_U1",
+        "type_document": 6,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/02_unit_1_1728526025_1728526467.zip",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-anh\\worksheets\\17_Slides_giao_an_giang_day_U1.zip"
+      },
+      {
+        "worksheet_title": "Slides giáo án giảng dạy_U2",
+        "type_document": 6,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/03_unit_2_1730775242.zip",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-anh\\worksheets\\16_Slides_giao_an_giang_day_U2.zip"
+      },
+      {
+        "worksheet_title": "Slides giáo án giảng dạy_U1,2 REVIEW",
+        "type_document": 6,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/04_units_1_2_review_1730865783.zip",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-anh\\worksheets\\15_Slides_giao_an_giang_day_U1_2_REVIEW.zip"
+      },
+      {
+        "worksheet_title": "Slides giáo án giảng dạy_U3",
+        "type_document": 6,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/05_unit_3_1730775583.zip",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-anh\\worksheets\\14_Slides_giao_an_giang_day_U3.zip"
+      },
+      {
+        "worksheet_title": "Slides giáo án giảng dạy_U4",
+        "type_document": 6,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/06_unit_4_1733108731.zip",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-anh\\worksheets\\13_Slides_giao_an_giang_day_U4.zip"
+      },
+      {
+        "worksheet_title": "Slides giáo án giảng dạy_RV14",
+        "type_document": 6,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/07_units_1_4_review_1733108821.zip",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-anh\\worksheets\\12_Slides_giao_an_giang_day_RV14.zip"
+      },
+      {
+        "worksheet_title": "Slides giáo án giảng dạy_U5",
+        "type_document": 6,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/08_unit_5_1738740502.zip",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-anh\\worksheets\\11_Slides_giao_an_giang_day_U5.zip"
+      },
+      {
+        "worksheet_title": "Flash cards",
+        "type_document": 1,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/flash_cards_g4_1694166064.pdf",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-anh\\worksheets\\10_Flash_cards.pdf"
+      },
+      {
+        "worksheet_title": "Slides giáo án giảng dạy_U6",
+        "type_document": 6,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/09_unit_6_1740734807.zip",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-anh\\worksheets\\09_Slides_giao_an_giang_day_U6.zip"
+      },
+      {
+        "worksheet_title": "Audio (SHS)",
+        "type_document": 6,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/1_audio_shs_1698052133.zip",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-anh\\worksheets\\09_Audio_SHS.zip"
+      },
+      {
+        "worksheet_title": "Slides giáo án giảng dạy_RV56",
+        "type_document": 6,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/10_units_5_6_review_1740734919.zip",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-anh\\worksheets\\08_Slides_giao_an_giang_day_RV56.zip"
+      },
+      {
+        "worksheet_title": "Audio (SBT)",
+        "type_document": 6,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/audio_sach_bai_tap_g4_1694166135.zip",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-anh\\worksheets\\08_Audio_SBT.zip"
+      },
+      {
+        "worksheet_title": "Audio (SGV)",
+        "type_document": 6,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/1_audio_shs_1698052133_1698291948.zip",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-anh\\worksheets\\07_Audio_SGV.zip"
+      },
+      {
+        "worksheet_title": "Giới thiệu SGK Tiếng Anh 4 (bản word)",
+        "type_document": 4,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/gioi_thieu_sach_ta4_explore_our_world_1_1675334794.docx",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-anh\\worksheets\\04_Gioi_thieu_SGK_Tieng_Anh_4_ban_word.docx"
+      },
+      {
+        "worksheet_title": "Graphic organizer",
+        "type_document": 1,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/graphic_organizer_g4_1694167029.pdf",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-anh\\worksheets\\04_Graphic_organizer.pdf"
+      },
+      {
+        "worksheet_title": "Giới thiệu SGK Tiếng Anh 4 (bản PPT)",
+        "type_document": 5,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/slides_gioi_thieu_sach_g4_1694165847.pptx",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-anh\\worksheets\\03_Gioi_thieu_SGK_Tieng_Anh_4_ban_PPT.pptx"
+      },
+      {
+        "worksheet_title": "Thư liên lạc gia đình và nhà trường",
+        "type_document": 1,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/thu_lien_lac_gia_dinh_va_nha_truong_g4_home_school_connection_letters_unit_5_1694167077.pdf",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-anh\\worksheets\\03_Thu_lien_lac_gia_inh_va_nha_truong.pdf"
+      },
+      {
+        "worksheet_title": "TL tập huấn SGK Tiếng Anh 4 (bản PDF)",
+        "type_document": 1,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/tai_lieu_huong_dan_su_dung_sach_g4_1694165972.pdf",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-anh\\worksheets\\02_TL_tap_huan_SGK_Tieng_Anh_4_ban_PDF.pdf"
+      }
+    ]
+  },
+  {
+    "subject": {
+      "id": 41,
+      "slug": "tin-hoc",
+      "title": "Tin hoc"
+    },
+    "files": [
+      {
+        "worksheet_title": "Giới thiệu SGK Tin học 4 (bản word)",
+        "type_document": 4,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/tin_hoc_4_gioi_thieu_sach_1675244825.docx",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tin-hoc\\worksheets\\04_Gioi_thieu_SGK_Tin_hoc_4_ban_word.docx"
+      },
+      {
+        "worksheet_title": "Giới thiệu SGK Tin học 4 (bản PPT)",
+        "type_document": 5,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/tin_hoc_4_gioi_thieu_sgk_lop_4_version_ngay_7_1_2023_1_1675907515.pptx",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tin-hoc\\worksheets\\03_Gioi_thieu_SGK_Tin_hoc_4_ban_PPT.pptx"
+      },
+      {
+        "worksheet_title": "TL tập huấn SGK Tin học 4 (bản PDF)",
+        "type_document": 1,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/tin_hoc_4_tai_lieu_tap_huandocx_1685701380.pdf",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tin-hoc\\worksheets\\02_TL_tap_huan_SGK_Tin_hoc_4_ban_PDF.pdf"
+      },
+      {
+        "worksheet_title": "TL tập huấn SGK Tin học 4 (bản PPT)",
+        "type_document": 5,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/tin_hoc_4_slide_tap_huan_1685702263.pptx",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tin-hoc\\worksheets\\01_TL_tap_huan_SGK_Tin_hoc_4_ban_PPT.pptx"
+      }
+    ]
+  },
+  {
+    "subject": {
+      "id": 77,
+      "slug": "khoa-hoc",
+      "title": "Khoa hoc"
+    },
+    "files": [
+      {
+        "worksheet_title": "Giới thiệu SGK Khoa học 4 (bản word)",
+        "type_document": 4,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/khoa_hoc_4_gioi_thieu_sach_1675157413.docx",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\khoa-hoc\\worksheets\\04_Gioi_thieu_SGK_Khoa_hoc_4_ban_word.docx"
+      },
+      {
+        "worksheet_title": "Giới thiệu SGK Khoa học 4 (bản PPT)",
+        "type_document": 5,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/khoa_hoc_4_gioi_thieu_sach_sua_16_1_1675907389.pptx",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\khoa-hoc\\worksheets\\03_Gioi_thieu_SGK_Khoa_hoc_4_ban_PPT.pptx"
+      },
+      {
+        "worksheet_title": "TL tập huấn SGK Khoa học 4 (bản PDF)",
+        "type_document": 1,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/khoa_hoc_4_t_31_5_23docx_1685701276.pdf",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\khoa-hoc\\worksheets\\02_TL_tap_huan_SGK_Khoa_hoc_4_ban_PDF.pdf"
+      },
+      {
+        "worksheet_title": "TL tập huấn SGK Khoa học 4 (bản PPT)",
+        "type_document": 5,
+        "url": "https://hoc10.monkeyuni.net/E_Learning/document/khoa_hoc_4_slide_tap_huan_1685702158.pptx",
+        "status": "skipped_existing",
+        "error": null,
+        "saved_as": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\khoa-hoc\\worksheets\\01_TL_tap_huan_SGK_Khoa_hoc_4_ban_PPT.pptx"
+      }
+    ]
+  }
+]

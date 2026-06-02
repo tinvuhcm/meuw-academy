@@ -10,6 +10,8 @@ import { Mascot } from '../mascot.js';
 import { getCurriculumDay } from '../data/curriculum-loader.js';
 
 export function renderDashboard() {
+  State.syncDailyProgress();
+  const currentDay = State.getCurrentDay();
   const container = el('div', { class: 'page-container dashboard-container' });
 
   // 1. App Header
@@ -79,7 +81,7 @@ export function renderDashboard() {
   
   const greetingArea = el('div', { class: 'hero-greeting-area flex-1 text-center md:text-left z-10' });
   const greetingText = el('h1', { class: 'hero-greeting font-display text-3xl md:text-4xl text-text mb-2' }, getGreetingLine());
-  const dayText = el('p', { class: 'hero-day-info text-text-muted text-lg font-bold' }, `${formatToday()} • Ngày thứ ${State.getCurrentDay()}`);
+  const dayText = el('p', { class: 'hero-day-info text-text-muted text-lg font-bold' }, `${formatToday()} • Ngày thứ ${currentDay}`);
   
   // XP Progress
   const levelData = State.getLevel();
@@ -107,7 +109,7 @@ export function renderDashboard() {
   container.appendChild(hero);
 
   // 3. Daily Modules Overview
-  const dayData = getCurriculumDay(State.getCurrentDay());
+  const dayData = getCurriculumDay(currentDay);
   const modulesSection = el('section', { class: 'mb-8' });
   modulesSection.appendChild(el('h2', { class: 'font-display text-2xl mb-4' }, 'Nhiệm vụ hôm nay'));
 
@@ -123,16 +125,19 @@ export function renderDashboard() {
     const sessionGrid = el('div', { class: 'session-grid grid gap-4 md:grid-cols-2' });
 
     // AM Card
-    const amCard = createSessionCard('Buổi Sáng', '☀️', amModules, 'am');
+    const amCard = createSessionCard('Buổi Sáng', '☀️', amModules, 'am', currentDay);
     sessionGrid.appendChild(amCard);
 
     // PM Card
-    const pmCard = createSessionCard('Buổi Chiều', '🌙', pmModules, 'pm');
+    const pmCard = createSessionCard('Buổi Chiều', '🌙', pmModules, 'pm', currentDay);
     sessionGrid.appendChild(pmCard);
 
     modulesSection.appendChild(sessionGrid);
   }
   container.appendChild(modulesSection);
+
+  const roadmapSection = createRoadmapSection(currentDay);
+  container.appendChild(roadmapSection);
 
   // 4. Badges & Gallery Strips
   const stripsSection = el('section', { class: 'bottom-strips grid gap-4 md:grid-cols-2 mb-8' });
@@ -251,7 +256,7 @@ export function renderDashboard() {
   return wrapper;
 }
 
-function createSessionCard(title, emoji, modules, sessionId) {
+function createSessionCard(title, emoji, modules, sessionId, dayNumber) {
   const card = el('div', { class: 'card card-hover flex flex-col justify-between' });
   
   const top = el('div');
@@ -290,9 +295,78 @@ function createSessionCard(title, emoji, modules, sessionId) {
   }, isAllDone ? 'Hoàn thành!' : (completedCount === 0 ? 'Bắt đầu' : 'Tiếp tục'));
 
   btn.addEventListener('click', () => {
-    Router.navigate(`/session/${State.getCurrentDay()}/${sessionId}`);
+    Router.navigate(`/session/${dayNumber}/${sessionId}`);
   });
 
   card.appendChild(btn);
+  return card;
+}
+
+function createRoadmapSection(currentDay) {
+  const section = el('section', { class: 'mb-8' });
+  section.appendChild(el('h2', { class: 'font-display text-2xl mb-2' }, 'Lộ trình học tập'));
+  section.appendChild(el('p', { class: 'text-sm text-text-muted mb-4' }, 'Xem nhanh các ngày đã học, ngày hôm nay và những ngày sắp tới.'));
+
+  const grid = el('div', { class: 'grid gap-4 md:grid-cols-2 xl:grid-cols-3' });
+  const startDay = Math.max(1, currentDay - 1);
+  const endDay = Math.min(90, currentDay + 4);
+
+  for (let day = startDay; day <= endDay; day++) {
+    const dayData = getCurriculumDay(day);
+    if (!dayData) continue;
+    grid.appendChild(createRoadmapCard(day, dayData, currentDay));
+  }
+
+  section.appendChild(grid);
+  return section;
+}
+
+function createRoadmapCard(dayNumber, dayData, currentDay) {
+  const progress = State.getDayProgress(dayNumber);
+  const isToday = dayNumber === currentDay;
+  const isPast = dayNumber < currentDay;
+  const isFuture = dayNumber > currentDay;
+  const statusLabel = isToday ? 'Hôm nay' : isPast ? (progress.isPassed ? 'Đã hoàn thành' : 'Cần ôn lại') : 'Sắp mở';
+  const statusClass = isToday
+    ? 'text-méo-purple bg-méo-purple-lt border-méo-purple'
+    : isPast
+      ? (progress.isPassed ? 'text-correct-dk bg-correct-bg border-correct' : 'text-warning bg-warning-bg border-warning')
+      : 'text-text-muted bg-bg-2 border-border';
+
+  const card = el('div', { class: 'card flex flex-col gap-4' });
+  const titleRow = el('div', { class: 'flex-between gap-3' });
+  titleRow.innerHTML = `
+    <div>
+      <div class="font-display text-xl">Ngày ${dayNumber}</div>
+      <div class="text-sm text-text-muted">${dayData.title || 'Lộ trình trong ngày'}</div>
+    </div>
+    <span class="text-xs font-bold px-3 py-1 rounded-full border ${statusClass}">${statusLabel}</span>
+  `;
+  card.appendChild(titleRow);
+
+  const summary = el('div', { class: 'text-sm text-text-muted flex flex-col gap-1' });
+  summary.appendChild(el('div', {}, `${dayData.modules.length} bài • ${progress.completedModules}/${progress.totalModules} đã xong`));
+  summary.appendChild(el('div', {}, isFuture ? 'Có thể bấm để xem trước nội dung.' : `Tỉ lệ pass ngày: ${Math.round(progress.passRate * 100)}%`));
+  card.appendChild(summary);
+
+  const previewList = el('div', { class: 'flex flex-col gap-2 text-sm' });
+  dayData.modules.slice(0, 3).forEach(module => {
+    const conf = getSubjectConfig(module.subject);
+    previewList.appendChild(el('div', { class: 'flex items-center gap-2 text-text' }, `${conf.emoji} ${module.title}`));
+  });
+  if (dayData.modules.length > 3) {
+    previewList.appendChild(el('div', { class: 'text-xs text-text-muted italic' }, `+${dayData.modules.length - 3} bài nữa`));
+  }
+  card.appendChild(previewList);
+
+  const actions = el('div', { class: 'grid grid-cols-2 gap-2 mt-auto' });
+  const amBtn = el('button', { class: 'btn btn-outline text-sm' }, 'Xem sáng');
+  amBtn.addEventListener('click', () => Router.navigate(`/session/${dayNumber}/am`));
+  const pmBtn = el('button', { class: `btn text-sm ${isFuture ? 'btn-outline' : 'btn-primary'}` }, 'Xem chiều');
+  pmBtn.addEventListener('click', () => Router.navigate(`/session/${dayNumber}/pm`));
+  actions.appendChild(amBtn);
+  actions.appendChild(pmBtn);
+  card.appendChild(actions);
+
   return card;
 }

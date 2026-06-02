@@ -1,1 +1,5 @@
 .vercel
+docs/research/official-sources/downloads/**
+!docs/research/official-sources/downloads/.gitkeep
+docs/research/official-sources/notes/raw/**
+!docs/research/official-sources/notes/raw/.gitkeep

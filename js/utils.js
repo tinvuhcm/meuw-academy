@@ -100,11 +100,19 @@ export function formatTime(date = new Date()) {
   return `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
 }
 
+export function localDateString(date = new Date()) {
+  const d = new Date(date);
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
 /**
  * Get today's date string "YYYY-MM-DD"
  */
 export function todayString() {
-  return new Date().toISOString().split('T')[0];
+  return localDateString(new Date());
 }
 
 /**

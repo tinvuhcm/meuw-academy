@@ -26,9 +26,26 @@ export function renderLesson(params) {
   const isRandomPractice = params.dayId === 'practice';
   const dayId = isRandomPractice ? 'practice' : parseInt(params.dayId, 10);
   const moduleId = params.moduleId;
+  if (!isRandomPractice) {
+    State.syncDailyProgress();
+  }
   
   const moduleData = isRandomPractice ? generatePracticeModule(20, moduleId) : getModuleData(dayId, moduleId);
   const container = el('div', { class: 'page-container lesson-container' });
+
+  if (!isRandomPractice && dayId > State.getCurrentDay()) {
+    const blocked = el('div', { class: 'card max-w-2xl mx-auto mt-10 text-center border-2 border-warning bg-warning-bg' });
+    blocked.innerHTML = `
+      <div class="text-5xl mb-4">🗓️</div>
+      <h2 class="font-display text-3xl text-warning-dk mb-3">Ngày này chưa mở để học</h2>
+      <p class="font-bold text-text">Con có thể xem trước ở lộ trình, nhưng chỉ bắt đầu học khi tới đúng ngày và các ngày trước đã pass trên 80%.</p>
+    `;
+    const backBtn = el('button', { class: 'btn btn-outline mt-6' }, 'Quay lại lộ trình');
+    backBtn.addEventListener('click', () => Router.navigate('/'));
+    blocked.appendChild(backBtn);
+    container.appendChild(blocked);
+    return container;
+  }
 
   if (!moduleData) {
     container.innerHTML = '<div class="text-center mt-10">Lỗi: Không tìm thấy bài học!</div>';

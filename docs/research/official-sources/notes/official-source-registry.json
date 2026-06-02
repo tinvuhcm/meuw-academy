@@ -1,0 +1,177 @@
+{
+  "updated_at": "2026-06-02T01:29:10.512Z",
+  "school_policy": {
+    "grade": "lop-4",
+    "official_school_sources": [
+      {
+        "id": "hanhtrangso-nxbgd",
+        "name": "Hanh Trang So - Nha xuat ban Giao duc",
+        "base_url": "https://hanhtrangso.nxbgd.vn/",
+        "role": "official_sgk_reference",
+        "status": "frontend-mapped-auth-blocked",
+        "notes": [
+          "Frontend config and API routes were captured from official site assets.",
+          "Public API extraction is currently blocked by 401 without the site bootstrap auth flow.",
+          "Keep as official source of truth for SGK lineage and book-set validation."
+        ]
+      },
+      {
+        "id": "hoc10",
+        "name": "Hoc10",
+        "base_url": "https://www.hoc10.vn/",
+        "api_base": "https://api.hoc10.vn/api",
+        "media_base": "https://hoc10.monkeyuni.net/",
+        "role": "official_downloadable_research_corpus",
+        "notes": [
+          "Public API exposes worksheet docs and slide metadata for lop 4.",
+          "Direct PDF, DOCX, PPTX and ZIP URLs are available in worksheet payloads.",
+          "Slide decks are exposed as PPTX URLs in list-slide payloads."
+        ]
+      }
+    ],
+    "app_policy": {
+      "use_for_school_subjects": [
+        "toan",
+        "tieng-viet",
+        "tieng-anh",
+        "tin-hoc"
+      ],
+      "use_for_science_extension": [
+        "khoa-hoc"
+      ],
+      "disallowed_school_source_policy": "Do not introduce new SGK aggregation sources without explicit user approval."
+    }
+  },
+  "hoc10": {
+    "worksheet_subjects": [
+      {
+        "subject": {
+          "id": 32,
+          "slug": "tieng-viet",
+          "title": "Tieng Viet"
+        },
+        "summary": {
+          "total": 16,
+          "byType": {
+            "1": 2,
+            "2": 11,
+            "4": 1,
+            "5": 2
+          },
+          "downloadableStudyDocs": 5
+        }
+      },
+      {
+        "subject": {
+          "id": 33,
+          "slug": "toan",
+          "title": "Toan"
+        },
+        "summary": {
+          "total": 13,
+          "byType": {
+            "1": 1,
+            "2": 9,
+            "4": 1,
+            "5": 2
+          },
+          "downloadableStudyDocs": 4
+        }
+      },
+      {
+        "subject": {
+          "id": 39,
+          "slug": "tieng-anh",
+          "title": "Tieng Anh"
+        },
+        "summary": {
+          "total": 38,
+          "byType": {
+            "1": 5,
+            "2": 17,
+            "4": 1,
+            "5": 1,
+            "6": 14
+          },
+          "downloadableStudyDocs": 21
+        }
+      },
+      {
+        "subject": {
+          "id": 41,
+          "slug": "tin-hoc",
+          "title": "Tin hoc"
+        },
+        "summary": {
+          "total": 11,
+          "byType": {
+            "1": 1,
+            "2": 7,
+            "4": 1,
+            "5": 2
+          },
+          "downloadableStudyDocs": 4
+        }
+      },
+      {
+        "subject": {
+          "id": 77,
+          "slug": "khoa-hoc",
+          "title": "Khoa hoc"
+        },
+        "summary": {
+          "total": 14,
+          "byType": {
+            "1": 1,
+            "2": 10,
+            "4": 1,
+            "5": 2
+          },
+          "downloadableStudyDocs": 4
+        }
+      }
+    ],
+    "slide_subjects": [
+      {
+        "subject": {
+          "id": 32,
+          "slug": "tieng-viet",
+          "title": "Tieng Viet"
+        },
+        "total": 182
+      },
+      {
+        "subject": {
+          "id": 33,
+          "slug": "toan",
+          "title": "Toan"
+        },
+        "total": 148
+      },
+      {
+        "subject": {
+          "id": 39,
+          "slug": "tieng-anh",
+          "title": "Tieng Anh"
+        },
+        "total": 0
+      },
+      {
+        "subject": {
+          "id": 41,
+          "slug": "tin-hoc",
+          "title": "Tin hoc"
+        },
+        "total": 29
+      },
+      {
+        "subject": {
+          "id": 77,
+          "slug": "khoa-hoc",
+          "title": "Khoa hoc"
+        },
+        "total": 49
+      }
+    ]
+  }
+}

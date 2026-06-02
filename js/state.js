@@ -3,22 +3,105 @@
  * LocalStorage state management with multi-profile support
  */
 
-import { normalizeText } from './utils.js';
+import { localDateString, normalizeText } from './utils.js';
+import { M1_DATA } from './data/curriculum-m1.js';
+import { M2_DATA } from './data/curriculum-m2.js';
+import { M3_DATA } from './data/curriculum-m3.js';
 
 const STORAGE_KEY = 'meoAcademy_v2';
 const CURRENT_VERSION = 2;
+const MAX_LEARNING_DAYS = 90;
+const DAILY_PASS_THRESHOLD = 0.8;
+const ALL_CURRICULUM_DATA = { ...M1_DATA, ...M2_DATA, ...M3_DATA };
 
 function createDeviceId() {
   return `device_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
 }
 
+function parseDateOnly(dateString) {
+  if (!dateString || typeof dateString !== 'string') return null;
+  const [year, month, day] = dateString.split('-').map(Number);
+  if (!year || !month || !day) return null;
+  return new Date(year, month - 1, day);
+}
+
+function stripTime(date) {
+  const d = new Date(date);
+  return new Date(d.getFullYear(), d.getMonth(), d.getDate());
+}
+
+function addDays(date, days) {
+  const d = stripTime(date);
+  d.setDate(d.getDate() + days);
+  return d;
+}
+
+function diffCalendarDays(startDate, endDate) {
+  const diffMs = stripTime(endDate).getTime() - stripTime(startDate).getTime();
+  return Math.floor(diffMs / 86400000);
+}
+
+function clampDay(day) {
+  return Math.max(1, Math.min(MAX_LEARNING_DAYS, day));
+}
+
+function getCurriculumModulesForDay(dayNumber) {
+  return ALL_CURRICULUM_DATA[`day${dayNumber}`]?.modules || [];
+}
+
+function inferLearningStartDate(profile) {
+  if (profile.learningStartDate) return profile.learningStartDate;
+  if (profile.dayUnlockedOn?.[1]) return profile.dayUnlockedOn[1];
+
+  const completedDates = Object.values(profile.completedModules || {})
+    .map(module => module?.completedAt)
+    .filter(Boolean)
+    .map(value => new Date(value))
+    .filter(date => !Number.isNaN(date.getTime()))
+    .sort((a, b) => a.getTime() - b.getTime());
+
+  if (completedDates.length) {
+    return localDateString(completedDates[0]);
+  }
+
+  if ((profile.currentDay || 1) > 1) {
+    return localDateString(addDays(new Date(), -((profile.currentDay || 1) - 1)));
+  }
+
+  return localDateString(new Date());
+}
+
+function ensureScheduleMetadata(profile) {
+  const fallbackDate = inferLearningStartDate(profile);
+  if (!profile.learningStartDate) profile.learningStartDate = fallbackDate;
+  if (!profile.dayUnlockedOn || typeof profile.dayUnlockedOn !== 'object') {
+    profile.dayUnlockedOn = {};
+  }
+  if (!profile.dayUnlockedOn[1]) {
+    profile.dayUnlockedOn[1] = profile.learningStartDate;
+  }
+}
+
+function isModulePassed(moduleCompletion) {
+  if (!moduleCompletion) return false;
+  const score = Number(moduleCompletion.score ?? moduleCompletion.total ?? 1);
+  const total = Number(moduleCompletion.total ?? 1);
+  if (!Number.isFinite(score) || !Number.isFinite(total) || total <= 0) {
+    return true;
+  }
+  return score / total >= DAILY_PASS_THRESHOLD;
+}
+
 // === Default state template for a new profile ===
 function createDefaultProfile(id, name = 'Méo', avatarColor = '#EC4899') {
+  const today = localDateString(new Date());
   return {
     id,
     name,
     avatarColor,
-    createdAt: new Date().toISOString().split('T')[0],
+    createdAt: today,
+    learningStartDate: today,
+    dayUnlockedOn: { 1: today },
     currentDay: 1,
     currentWeek: 1,
     xpToday: 0,
@@ -153,6 +236,7 @@ function migrateState(state) {
     if (!Array.isArray(p.knowledgeLedger.lessonSignatures)) p.knowledgeLedger.lessonSignatures = [];
     if (!Array.isArray(p.knowledgeLedger.recentSessions)) p.knowledgeLedger.recentSessions = [];
     if (p.streakShieldsRemaining === undefined) p.streakShieldsRemaining = 3;
+    ensureScheduleMetadata(p);
   }
   return state;
 }
@@ -271,12 +355,12 @@ function getLevel() {
 // ============================================
 function updateStreak() {
   const profile = getActiveProfile();
-  const today = new Date().toISOString().split('T')[0];
+  const today = localDateString(new Date());
   const last = profile.lastPlayDate;
 
   if (last === today) return profile.streak; // already updated today
 
-  const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
+  const yesterday = localDateString(addDays(new Date(), -1));
 
   if (last === yesterday) {
     // Consecutive day
@@ -420,30 +504,116 @@ function recordKnowledgeExposure(moduleData, context = {}) {
 }
 
 function getCurrentDay() {
+  syncDailyProgress();
   return getActiveProfile().currentDay || 1;
 }
 
 function setCurrentDay(day) {
-  getActiveProfile().currentDay = Math.max(1, Math.min(84, day));
+  const profile = getActiveProfile();
+  ensureScheduleMetadata(profile);
+  profile.currentDay = clampDay(day);
+  profile.currentWeek = Math.ceil(profile.currentDay / 7);
+  if (!profile.dayUnlockedOn[profile.currentDay]) {
+    const startDate = parseDateOnly(profile.learningStartDate) || stripTime(new Date());
+    profile.dayUnlockedOn[profile.currentDay] = localDateString(addDays(startDate, profile.currentDay - 1));
+  }
   commit();
 }
 
 function advanceDay() {
   const profile = getActiveProfile();
-  const todayDate = new Date().toISOString().split('T')[0];
-  
-  if (!profile.dayUnlockedOn) profile.dayUnlockedOn = {};
+  const todayDate = localDateString(new Date());
+  ensureScheduleMetadata(profile);
   
   // If they already unlocked a day today, do not advance. They must practice instead.
   if (profile.dayUnlockedOn[profile.currentDay] === todayDate) {
     return false; // Time-gated
   }
   
-  profile.currentDay = Math.min(90, (profile.currentDay || 1) + 1);
+  profile.currentDay = clampDay((profile.currentDay || 1) + 1);
   profile.currentWeek = Math.ceil(profile.currentDay / 7);
   profile.dayUnlockedOn[profile.currentDay] = todayDate;
   commit();
   return true;
+}
+
+function getDayProgress(dayNumber) {
+  const profile = getActiveProfile();
+  const modules = getCurriculumModulesForDay(dayNumber);
+  const totalModules = modules.length;
+  let completedModules = 0;
+  let passedModules = 0;
+
+  modules.forEach(module => {
+    const completion = profile.completedModules[module.id];
+    if (!completion) return;
+    completedModules += 1;
+    if (isModulePassed(completion)) {
+      passedModules += 1;
+    }
+  });
+
+  const completionRate = totalModules ? completedModules / totalModules : 0;
+  const passRate = totalModules ? passedModules / totalModules : 0;
+
+  return {
+    day: dayNumber,
+    totalModules,
+    completedModules,
+    passedModules,
+    completionRate,
+    passRate,
+    isPassed: totalModules > 0 && completionRate >= DAILY_PASS_THRESHOLD && passRate >= DAILY_PASS_THRESHOLD,
+  };
+}
+
+function getSequentialPassedDays() {
+  let day = 1;
+  while (day <= MAX_LEARNING_DAYS) {
+    const progress = getDayProgress(day);
+    if (!progress.totalModules || !progress.isPassed) {
+      break;
+    }
+    day += 1;
+  }
+  return day - 1;
+}
+
+function syncDailyProgress() {
+  const profile = getActiveProfile();
+  ensureScheduleMetadata(profile);
+
+  const startDate = parseDateOnly(profile.learningStartDate) || stripTime(new Date());
+  const today = stripTime(new Date());
+  const elapsedDays = Math.max(0, diffCalendarDays(startDate, today));
+  const calendarDay = clampDay(elapsedDays + 1);
+  const sequentialPassedDays = getSequentialPassedDays();
+  const targetDay = clampDay(Math.min(calendarDay, sequentialPassedDays + 1));
+
+  let changed = false;
+  if ((profile.currentDay || 1) !== targetDay) {
+    profile.currentDay = targetDay;
+    changed = true;
+  }
+
+  const targetWeek = Math.ceil(targetDay / 7);
+  if ((profile.currentWeek || 1) !== targetWeek) {
+    profile.currentWeek = targetWeek;
+    changed = true;
+  }
+
+  for (let day = 1; day <= Math.min(calendarDay, targetDay); day++) {
+    if (!profile.dayUnlockedOn[day]) {
+      profile.dayUnlockedOn[day] = localDateString(addDays(startDate, day - 1));
+      changed = true;
+    }
+  }
+
+  if (changed) {
+    commit();
+  }
+
+  return profile.currentDay;
 }
 
 // ============================================
@@ -682,10 +852,12 @@ function resetProfile() {
 
 function resetLearningProgress() {
   const profile = getActiveProfile();
+  const today = localDateString(new Date());
   profile.currentDay = 1;
   profile.currentWeek = 1;
+  profile.learningStartDate = today;
   profile.completedModules = {};
-  profile.dayUnlockedOn = {};
+  profile.dayUnlockedOn = { 1: today };
   commit();
 }
 
@@ -749,8 +921,11 @@ export const State = {
   isModuleComplete,
   getModuleData,
   getCurrentDay,
+  getDayProgress,
+  getSequentialPassedDays,
   setCurrentDay,
   advanceDay,
+  syncDailyProgress,
 
   // Gallery
   saveDrawing,

@@ -109,6 +109,7 @@ Router.beforeEach((path) => {
 
 // Initialization
 document.addEventListener('DOMContentLoaded', () => {
+  State.syncDailyProgress();
   // Init Audio on first click
   Audio.init();
 
