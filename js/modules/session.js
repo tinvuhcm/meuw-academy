@@ -7,6 +7,7 @@ import { el, formatModuleDisplayTitle, getSubjectConfig } from '../utils.js';
 import State from '../state.js';
 import Router from '../router.js';
 import { getCurriculumDay } from '../data/curriculum-loader.js';
+import { getScheduledModulesForProfileDay } from '../schedule-calendar.js';
 import { Audio } from '../audio.js';
 
 export function renderSession(params) {
@@ -15,7 +16,9 @@ export function renderSession(params) {
   const numericDayId = parseInt(dayId, 10);
   const dayData = getCurriculumDay(numericDayId);
   const studyPlan = State.getStudyPlanForDayNumber(numericDayId);
-  const scheduledModules = State.getScheduledModulesForDayNumber(numericDayId);
+  const scheduledModules = dayData
+    ? getScheduledModulesForProfileDay(State.getActiveProfile(), numericDayId, dayData.modules || []).allModules
+    : [];
   const currentDay = State.getCurrentDay();
   const isFutureDay = numericDayId > currentDay;
   

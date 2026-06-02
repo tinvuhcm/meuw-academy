@@ -114,6 +114,7 @@ function createDefaultProfile(id, name = 'Méo', avatarColor = '#EC4899') {
     createdAt: today,
     learningStartDate: today,
     dayUnlockedOn: { 1: today },
+    forceUnlockedThroughDay: 1,
     currentDay: 1,
     currentWeek: 1,
     xpToday: 0,
@@ -248,6 +249,9 @@ function migrateState(state) {
     if (!Array.isArray(p.knowledgeLedger.lessonSignatures)) p.knowledgeLedger.lessonSignatures = [];
     if (!Array.isArray(p.knowledgeLedger.recentSessions)) p.knowledgeLedger.recentSessions = [];
     if (p.streakShieldsRemaining === undefined) p.streakShieldsRemaining = 3;
+    if (!Number.isFinite(Number(p.forceUnlockedThroughDay))) {
+      p.forceUnlockedThroughDay = Math.max(1, Number(p.currentDay || 1));
+    }
     ensureScheduleMetadata(p);
   }
   return state;
@@ -540,6 +544,7 @@ function setCurrentDay(day) {
   const profile = getActiveProfile();
   ensureScheduleMetadata(profile);
   profile.currentDay = clampDay(day);
+  profile.forceUnlockedThroughDay = Math.max(Number(profile.forceUnlockedThroughDay || 1), profile.currentDay);
   profile.currentWeek = Math.ceil(profile.currentDay / 7);
   if (!profile.dayUnlockedOn[profile.currentDay]) {
     const startDate = parseDateOnly(profile.learningStartDate) || stripTime(new Date());
@@ -616,7 +621,9 @@ function syncDailyProgress() {
   const elapsedDays = Math.max(0, diffCalendarDays(startDate, today));
   const calendarDay = clampDay(elapsedDays + 1);
   const sequentialPassedDays = getSequentialPassedDays();
-  const targetDay = clampDay(Math.min(calendarDay, sequentialPassedDays + 1));
+  const autoTargetDay = clampDay(Math.min(calendarDay, sequentialPassedDays + 1));
+  const manualUnlockedDay = clampDay(Number(profile.forceUnlockedThroughDay || 1));
+  const targetDay = Math.max(autoTargetDay, manualUnlockedDay);
 
   let changed = false;
   if ((profile.currentDay || 1) !== targetDay) {
@@ -886,6 +893,7 @@ function resetLearningProgress() {
   profile.learningStartDate = today;
   profile.completedModules = {};
   profile.dayUnlockedOn = { 1: today };
+  profile.forceUnlockedThroughDay = 1;
   commit();
 }
 
@@ -898,6 +906,32 @@ function resetCurrentDayProgress(moduleIds) {
       delete profile.completedModules[id];
     }
   }
+  commit();
+}
+
+function unlockDay(day) {
+  const profile = getActiveProfile();
+  ensureScheduleMetadata(profile);
+  const targetDay = clampDay(Number(day || 1));
+  const startDate = parseDateOnly(profile.learningStartDate) || stripTime(new Date());
+
+  for (let unlockedDay = 1; unlockedDay <= targetDay; unlockedDay++) {
+    if (!profile.dayUnlockedOn[unlockedDay]) {
+      profile.dayUnlockedOn[unlockedDay] = localDateString(addDays(startDate, unlockedDay - 1));
+    }
+  }
+
+  profile.forceUnlockedThroughDay = Math.max(Number(profile.forceUnlockedThroughDay || 1), targetDay);
+  profile.currentDay = Math.max(Number(profile.currentDay || 1), targetDay);
+  profile.currentWeek = Math.ceil(profile.currentDay / 7);
+  commit();
+  return profile.currentDay;
+}
+
+function clearManualUnlock() {
+  const profile = getActiveProfile();
+  const floorDay = Math.max(1, Math.min(Number(profile.currentDay || 1), getSequentialPassedDays() + 1));
+  profile.forceUnlockedThroughDay = floorDay;
   commit();
 }
 
@@ -957,6 +991,8 @@ export const State = {
   getSequentialPassedDays,
   setCurrentDay,
   advanceDay,
+  unlockDay,
+  clearManualUnlock,
   syncDailyProgress,
 
   // Gallery

@@ -8,6 +8,7 @@ import State from '../state.js';
 import Router from '../router.js';
 import { Mascot } from '../mascot.js';
 import { getCurriculumDay } from '../data/curriculum-loader.js';
+import { getScheduledModulesForProfileDay } from '../schedule-calendar.js';
 
 export function renderDashboard() {
   State.syncDailyProgress();
@@ -111,7 +112,9 @@ export function renderDashboard() {
 
   // 3. Daily Modules Overview
   const dayData = getCurriculumDay(currentDay);
-  const scheduledModules = State.getScheduledModulesForDayNumber(currentDay);
+  const scheduledModules = dayData
+    ? getScheduledModulesForProfileDay(State.getActiveProfile(), currentDay, dayData.modules || []).allModules
+    : [];
   const modulesSection = el('section', { class: 'mb-8' });
   modulesSection.appendChild(el('h2', { class: 'font-display text-2xl mb-4' }, 'Nhiệm vụ hôm nay'));
 
@@ -360,7 +363,7 @@ function createRoadmapCard(dayNumber, dayData, currentDay) {
   card.appendChild(summary);
 
   const subjectRow = el('div', { class: 'flex flex-wrap gap-1' });
-  const scheduledModules = State.getScheduledModulesForDayNumber(dayNumber);
+  const scheduledModules = getScheduledModulesForProfileDay(State.getActiveProfile(), dayNumber, dayData.modules || []).allModules;
   const subjectLabels = [...new Set(scheduledModules.slice(0, 4).map(module => getSubjectConfig(module.subject).emoji))];
   subjectLabels.forEach(label => {
     subjectRow.appendChild(el('span', { class: 'text-base' }, label));

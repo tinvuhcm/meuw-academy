@@ -85,7 +85,7 @@ async function maybeHydrateFromCloud() {
     }
 
     if (localIsNewer) {
-      scheduleUpload();
+      window.toast?.('Máy này có dữ liệu local mới hơn cloud. App sẽ không tự ghi đè cloud ngay; phụ huynh có thể vào Dữ liệu để chủ động chọn đẩy lên.', 'info');
     }
   } catch (error) {
     console.warn('[AccountAutoSync] Hydration failed:', error);

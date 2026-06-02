@@ -654,6 +654,48 @@ function renderDataTab(container) {
       }
   }).catch((e) => setAccountStatus(formatAuthError(e), 'error'));
 
+  const unlockArea = el('div', { class: 'mt-8 p-4 bg-blue-50 border-2 border-blue-300 rounded-xl' });
+  unlockArea.innerHTML = `
+    <h3 class="font-bold text-lg mb-2 text-blue-800">Mở Ngày Học</h3>
+    <p class="text-sm mb-4 text-blue-700">Phụ huynh có thể mở thủ công một ngày học để bé không bị kẹt bởi tiến độ cũ hoặc dữ liệu sync chưa khớp.</p>
+  `;
+  const unlockRow = el('div', { class: 'grid gap-3 md:grid-cols-[1fr_auto_auto] items-center' });
+  const unlockInput = el('input', {
+    type: 'number',
+    min: '1',
+    max: String(State.getMaxLearningDays()),
+    class: 'input-field w-full',
+    value: String(Math.min(State.getCurrentDay() + 1, State.getMaxLearningDays())),
+    placeholder: 'Ví dụ: 3',
+  });
+  const unlockBtn = el('button', { class: 'btn btn-primary whitespace-nowrap' }, 'Mở ngày này');
+  const relockBtn = el('button', { class: 'btn btn-outline whitespace-nowrap' }, 'Trở lại tiến độ tự động');
+
+  unlockBtn.addEventListener('click', () => {
+    Audio.click();
+    const targetDay = Number(unlockInput.value);
+    if (!Number.isFinite(targetDay) || targetDay < 1) {
+      alert('Hãy nhập số ngày hợp lệ.');
+      return;
+    }
+    State.unlockDay(targetDay);
+    alert(`Đã mở đến Ngày ${targetDay}. Bé có thể vào học ngay ngày này.`);
+    window.location.reload();
+  });
+
+  relockBtn.addEventListener('click', () => {
+    Audio.click();
+    State.clearManualUnlock();
+    alert('Đã trả lịch học về cơ chế tiến độ tự động.');
+    window.location.reload();
+  });
+
+  unlockRow.appendChild(unlockInput);
+  unlockRow.appendChild(unlockBtn);
+  unlockRow.appendChild(relockBtn);
+  unlockArea.appendChild(unlockRow);
+  wrap.appendChild(unlockArea);
+
   // Danger Zone - Replaced with Dev Tool (Reset Current Day)
   const devArea = el('div', { class: 'mt-8 p-4 bg-yellow-100 border-2 border-yellow-400 rounded-xl' });
   devArea.innerHTML = '<h3 class="font-bold text-lg mb-2 text-yellow-800">🛠️ Công cụ Phát triển (Dev Mode)</h3><p class="text-sm mb-4 text-yellow-700">Khôi phục bài học của ngày hôm nay về 0 (Học lại từ đầu).</p>';
