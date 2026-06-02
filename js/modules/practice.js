@@ -1,4 +1,4 @@
-import { el, getSubjectConfig } from '../utils.js';
+import { el, formatModuleDisplayTitle, getSubjectConfig } from '../utils.js';
 import State from '../state.js';
 import Router from '../router.js';
 import { getCurriculumDay } from '../data/curriculum-loader.js';
@@ -74,7 +74,7 @@ export function renderPractice() {
           <div class="flex items-center gap-2 w-full">
             <span class="text-2xl">${conf.emoji}</span>
             <div class="flex-1 truncate">
-              <div class="font-bold text-sm truncate">${m.title}</div>
+              <div class="font-bold text-sm truncate">${formatModuleDisplayTitle(m)}</div>
               <div class="text-xs text-text-muted">${isCompleted ? 'Điểm: ' + (State.getModuleData(m.id)?.score || 0) : 'Chưa học'}</div>
             </div>
             ${isCompleted ? '<span class="text-correct font-bold">✓</span>' : ''}

@@ -12,11 +12,11 @@ const HOC10_MEDIA = "https://hoc10.monkeyuni.net/";
 const GRADE_ID = 7;
 
 const SUBJECTS = [
-  { id: 32, slug: "tieng-viet", title: "Tieng Viet" },
-  { id: 33, slug: "toan", title: "Toan" },
-  { id: 39, slug: "tieng-anh", title: "Tieng Anh" },
-  { id: 41, slug: "tin-hoc", title: "Tin hoc" },
-  { id: 77, slug: "khoa-hoc", title: "Khoa hoc" },
+  { id: 32, slug: "tieng-viet", title: "Tieng Viet", bookshelfSlug: "tieng-viet" },
+  { id: 33, slug: "toan", title: "Toan", bookshelfSlug: "toan" },
+  { id: 39, slug: "tieng-anh", title: "Tieng Anh", bookshelfSlug: "tieng-anh" },
+  { id: 41, slug: "tin-hoc", title: "Tin hoc", bookshelfSlug: "tin-hoc" },
+  { id: 77, slug: "khoa-hoc", title: "Khoa hoc", bookshelfSlug: "khoa-hoc" },
 ];
 
 const DOC_TYPES = new Map([
@@ -25,6 +25,12 @@ const DOC_TYPES = new Map([
   [5, "pptx"],
   [6, "zip"],
 ]);
+
+const BOOK_TYPES = [
+  { id: 1, slug: "sgk", title: "Sach giao khoa" },
+  { id: 3, slug: "sgv", title: "Sach giao vien" },
+  { id: 5, slug: "vbt", title: "Vo bai tap" },
+];
 
 function getArgValue(flag, fallback) {
   const idx = process.argv.indexOf(flag);
@@ -69,6 +75,20 @@ async function fetchJson(url) {
   return res.json();
 }
 
+async function fetchText(url) {
+  const res = await fetch(url, {
+    signal: AbortSignal.timeout(30000),
+    headers: {
+      Accept: "text/html,application/xhtml+xml",
+      "User-Agent": "meuw-academy-official-source-capture/1.0",
+    },
+  });
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status} for ${url}`);
+  }
+  return res.text();
+}
+
 function absolutizeHoc10Url(url) {
   if (!url) return url;
   if (/^https?:\/\//i.test(url)) return url;
@@ -95,6 +115,139 @@ async function fetchSlideIndex(subject) {
     url: absolutizeHoc10Url(row.url),
     thumb: absolutizeHoc10Url(row.thumb),
   }));
+}
+
+async function fetchBookIndex(bookType) {
+  const url = `${HOC10_API}/list-book?grade_id=${GRADE_ID}&book_type_id=${bookType.id}`;
+  const json = await fetchJson(url);
+  const rows = json?.data?.list_book || [];
+  return rows.map((row) => ({
+    ...row,
+    thumb: absolutizeHoc10Url(row.thumb),
+    readerUrl: row.link_html ? `https://www.hoc10.vn/doc-sach/${row.link_html}` : null,
+  }));
+}
+
+function decodeHtml(value = "") {
+  return String(value)
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">");
+}
+
+function stripTags(value = "") {
+  return decodeHtml(String(value).replace(/<[^>]+>/g, " "))
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function uniqueBy(items, keyFn) {
+  const seen = new Set();
+  const output = [];
+  for (const item of items) {
+    const key = keyFn(item);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    output.push(item);
+  }
+  return output;
+}
+
+async function fetchHoc10BookshelfHtml(subject) {
+  const url = `https://www.hoc10.vn/tu-sach/${subject.bookshelfSlug}/lop-4/`;
+  const html = await fetchText(url);
+  const rawPath = path.join(rawDir, `hoc10-bookshelf-${subject.slug}-lop4.html`);
+  await fs.writeFile(rawPath, html);
+  return { url, html, rawPath };
+}
+
+function parseHoc10Bookshelf(subject, html, sourceUrl) {
+  const sectionTitles = [
+    "Sách giáo khoa",
+    "Sách bài tập",
+    "Sách giáo viên",
+    "Tiết dạy minh họa",
+    "Bài giảng PowerPoint",
+    "Học liệu điện tử",
+    "Giới thiệu, tập huấn SGK",
+  ];
+  const positions = sectionTitles
+    .map((title) => ({ title, index: html.indexOf(`>${title}<`) }))
+    .filter((entry) => entry.index >= 0)
+    .sort((a, b) => a.index - b.index);
+
+  const sections = positions.map((entry, index) => {
+    const end = index + 1 < positions.length ? positions[index + 1].index : html.length;
+    const chunk = html.slice(entry.index, end);
+    const imgMatches = [...chunk.matchAll(/<img[^>]+src="([^"]+)"[^>]*alt="([^"]*)"/g)].map(match => ({
+      coverUrl: absolutizeHoc10Url(match[1]),
+      alt: stripTags(match[2]),
+    }));
+    const headingMatches = [...chunk.matchAll(/<h4[^>]*title="([^"]*)"[^>]*>(.*?)<\/h4>/g)].map(match => ({
+      title: stripTags(match[1] || match[2]),
+    }));
+    const actionLabels = [...chunk.matchAll(/>(Xem ngay|Đọc thử|Xem nhanh)<\/(?:div|span|a)>/g)].map(match => match[1]);
+    const cards = [];
+    const cardCount = Math.max(imgMatches.length, headingMatches.length, actionLabels.length);
+    for (let cardIndex = 0; cardIndex < cardCount; cardIndex++) {
+      const image = imgMatches[cardIndex] || {};
+      const heading = headingMatches[cardIndex] || {};
+      const actionLabel = actionLabels[cardIndex] || null;
+      if (!image.coverUrl && !heading.title && !actionLabel) continue;
+      cards.push({
+        title: heading.title || null,
+        coverUrl: image.coverUrl || null,
+        alt: image.alt || null,
+        actionLabel,
+      });
+    }
+
+    return {
+      title: entry.title,
+      cards: uniqueBy(cards, item => `${item.title || ""}|${item.coverUrl || ""}|${item.actionLabel || ""}`),
+    };
+  });
+
+  return {
+    subject,
+    sourceUrl,
+    sections,
+    rawHtmlLength: html.length,
+    summary: {
+      totalSections: sections.length,
+      totalCards: sections.reduce((sum, section) => sum + section.cards.length, 0),
+      sectionTitles: sections.map(section => section.title),
+    },
+  };
+}
+
+function summarizeBooks(rows) {
+  const summary = {
+    total: rows.length,
+    bySubjectId: {},
+    freeOrPreviewable: 0,
+  };
+  for (const row of rows) {
+    const key = String(row.subject_id);
+    summary.bySubjectId[key] = (summary.bySubjectId[key] || 0) + 1;
+    if (row.is_blocked === 0 || row.readerUrl) {
+      summary.freeOrPreviewable += 1;
+    }
+  }
+  return summary;
+}
+
+function groupBooksBySubject(bookRows) {
+  return SUBJECTS.map((subject) => {
+    const rows = bookRows.filter((row) => row.subject_id === subject.id);
+    return {
+      subject,
+      rows,
+      summary: summarizeBooks(rows),
+    };
+  });
 }
 
 function summarizeDocs(rows) {
@@ -162,7 +315,7 @@ async function downloadWorksheetDocs(subject, rows) {
   return manifest;
 }
 
-function buildRegistry(hoc10WorkSheets, hoc10Slides) {
+function buildRegistry(hoc10WorkSheets, hoc10Slides, hoc10Books, hoc10Bookshelves) {
   return {
     updated_at: new Date().toISOString(),
     school_policy: {
@@ -188,9 +341,11 @@ function buildRegistry(hoc10WorkSheets, hoc10Slides) {
           media_base: HOC10_MEDIA,
           role: "official_downloadable_research_corpus",
           notes: [
-            "Public API exposes worksheet docs and slide metadata for lop 4.",
+            "Public API exposes SGK, SGV, VBT, worksheet docs and slide metadata for lop 4.",
+            "The list-book endpoint is the primary SGK registry lane for Hoc10.",
             "Direct PDF, DOCX, PPTX and ZIP URLs are available in worksheet payloads.",
             "Slide decks are exposed as PPTX URLs in list-slide payloads.",
+            "Bookshelf HTML exposes SGK/SBT/SGV presence even when direct downloadable SGK files are not public in the worksheet API.",
           ],
         },
       ],
@@ -201,6 +356,10 @@ function buildRegistry(hoc10WorkSheets, hoc10Slides) {
       },
     },
     hoc10: {
+      book_collections: hoc10Books.map((entry) => ({
+        book_type: entry.bookType,
+        summary: entry.summary,
+      })),
       worksheet_subjects: hoc10WorkSheets.map((entry) => ({
         subject: entry.subject,
         summary: entry.summary,
@@ -208,6 +367,12 @@ function buildRegistry(hoc10WorkSheets, hoc10Slides) {
       slide_subjects: hoc10Slides.map((entry) => ({
         subject: entry.subject,
         total: entry.rows.length,
+      })),
+      bookshelf_subjects: hoc10Bookshelves.map((entry) => ({
+        subject: entry.subject,
+        summary: entry.summary,
+        status: entry.status,
+        error: entry.error,
       })),
     },
   };
@@ -220,7 +385,18 @@ async function main() {
 
   const hoc10WorkSheets = [];
   const hoc10Slides = [];
+  const hoc10Books = [];
+  const hoc10Bookshelves = [];
   const downloadManifest = [];
+
+  for (const bookType of BOOK_TYPES) {
+    const rows = await fetchBookIndex(bookType);
+    hoc10Books.push({
+      bookType,
+      rows: groupBooksBySubject(rows),
+      summary: summarizeBooks(rows),
+    });
+  }
 
   for (const subject of SUBJECTS) {
     const worksheetRows = await fetchWorksheetIndex(subject);
@@ -239,9 +415,32 @@ async function main() {
       const slideRows = await fetchSlideIndex(subject);
       hoc10Slides.push({ subject, rows: slideRows });
     }
+
+    try {
+      const bookshelfPage = await fetchHoc10BookshelfHtml(subject);
+      hoc10Bookshelves.push({
+        status: "captured",
+        error: null,
+        ...parseHoc10Bookshelf(subject, bookshelfPage.html, bookshelfPage.url),
+      });
+    } catch (error) {
+      hoc10Bookshelves.push({
+        subject,
+        sourceUrl: `https://www.hoc10.vn/tu-sach/${subject.bookshelfSlug}/lop-4/`,
+        status: "failed",
+        error: String(error.message || error),
+        sections: [],
+        rawHtmlLength: 0,
+        summary: {
+          totalSections: 0,
+          totalCards: 0,
+          sectionTitles: [],
+        },
+      });
+    }
   }
 
-  const registry = buildRegistry(hoc10WorkSheets, hoc10Slides);
+  const registry = buildRegistry(hoc10WorkSheets, hoc10Slides, hoc10Books, hoc10Bookshelves);
 
   await fs.writeFile(
     path.join(notesDir, "official-source-registry.json"),
@@ -270,6 +469,22 @@ async function main() {
       null,
       2
     )
+  );
+  await fs.writeFile(
+    path.join(notesDir, "hoc10-lop4-book-index.json"),
+    JSON.stringify(
+      hoc10Books.map((entry) => ({
+        book_type: entry.bookType,
+        summary: entry.summary,
+        subjects: entry.rows,
+      })),
+      null,
+      2
+    )
+  );
+  await fs.writeFile(
+    path.join(notesDir, "hoc10-lop4-bookshelf-index.json"),
+    JSON.stringify(hoc10Bookshelves, null, 2)
   );
   await fs.writeFile(
     path.join(notesDir, "hoc10-download-manifest.json"),

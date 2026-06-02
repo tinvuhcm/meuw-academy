@@ -11,7 +11,7 @@ export const SUPPLEMENTAL_SCIENCE_TOPICS = [
     replacePool: true,
     lessonBlocks: [{
       type: 'mini',
-      teacherName: 'Thầy Gâu lùn',
+      teacherName: 'Gâu tiên sinh',
       title: 'Hệ Mặt Trời có Mặt Trời ở giữa và các hành tinh quay quanh',
       points: [
         'Mặt Trời tỏa ánh sáng và nhiệt cho các hành tinh.',
@@ -36,7 +36,7 @@ export const SUPPLEMENTAL_SCIENCE_TOPICS = [
     replacePool: true,
     lessonBlocks: [{
       type: 'micro',
-      teacherName: 'Thầy Gâu lùn',
+      teacherName: 'Gâu tiên sinh',
       title: 'Động vật có nhiều cách thích nghi khác nhau',
       points: [
         'Mỗi loài vật có cơ thể phù hợp với nơi nó sống.',
@@ -60,7 +60,7 @@ export const SUPPLEMENTAL_SCIENCE_TOPICS = [
     replacePool: true,
     lessonBlocks: [{
       type: 'micro',
-      teacherName: 'Thầy Gâu lùn',
+      teacherName: 'Gâu tiên sinh',
       title: 'Cơ thể có nhiều bộ phận phối hợp với nhau',
       points: [
         'Mỗi cơ quan có một công việc riêng.',
@@ -84,7 +84,7 @@ export const SUPPLEMENTAL_SCIENCE_TOPICS = [
     replacePool: true,
     lessonBlocks: [{
       type: 'micro',
-      teacherName: 'Thầy Gâu lùn',
+      teacherName: 'Gâu tiên sinh',
       title: 'Phát minh thường bắt đầu từ một vấn đề cần giải quyết',
       points: [
         'Nhà phát minh quan sát cuộc sống rồi nghĩ ra cách làm tốt hơn.',
@@ -107,7 +107,7 @@ export const SUPPLEMENTAL_SCIENCE_TOPICS = [
     title: 'Khoa Học: Nước và Thời tiết',
     lessonBlocks: [{
       type: 'mini',
-      teacherName: 'Thầy Gâu lùn',
+      teacherName: 'Gâu tiên sinh',
       title: 'Nước thay đổi trạng thái và tạo ra thời tiết',
       points: [
         'Nước có thể ở dạng lỏng, đá hoặc hơi nước.',
@@ -131,7 +131,7 @@ export const SUPPLEMENTAL_SCIENCE_TOPICS = [
     title: 'Khoa Học: Cây xanh quanh em',
     lessonBlocks: [{
       type: 'mini',
-      teacherName: 'Thầy Gâu lùn',
+      teacherName: 'Gâu tiên sinh',
       title: 'Cây xanh cần nước, ánh sáng và không khí để lớn lên',
       points: [
         'Rễ hút nước, thân nâng đỡ, lá tạo thức ăn cho cây.',
@@ -154,7 +154,7 @@ export const SUPPLEMENTAL_SCIENCE_TOPICS = [
     title: 'Khoa Học: Âm thanh và Ánh sáng',
     lessonBlocks: [{
       type: 'micro',
-      teacherName: 'Thầy Gâu lùn',
+      teacherName: 'Gâu tiên sinh',
       title: 'Tai nghe âm thanh, mắt nhìn ánh sáng',
       points: [
         'Âm thanh phát ra khi vật rung.',
@@ -177,7 +177,7 @@ export const SUPPLEMENTAL_SCIENCE_TOPICS = [
     title: 'Khoa Học: Trái Đất và phương hướng',
     lessonBlocks: [{
       type: 'micro',
-      teacherName: 'Thầy Gâu lùn',
+      teacherName: 'Gâu tiên sinh',
       title: 'Trái Đất quay và chúng ta dùng phương hướng để định vị',
       points: [
         'Mặt Trời mọc phía Đông và lặn phía Tây.',
@@ -200,7 +200,7 @@ export const SUPPLEMENTAL_SCIENCE_TOPICS = [
     title: 'Khoa Học: Biển và đại dương',
     lessonBlocks: [{
       type: 'micro',
-      teacherName: 'Thầy Gâu lùn',
+      teacherName: 'Gâu tiên sinh',
       title: 'Biển là ngôi nhà lớn của rất nhiều sinh vật',
       points: [
         'Nước biển mặn và luôn chuyển động nhờ sóng, gió và thủy triều.',
@@ -373,7 +373,7 @@ export const SUPPLEMENTAL_VIETNAMESE_TOPICS = [
     title: 'Tiếng Việt: Dấu câu cơ bản',
     lessonBlocks: [{
       type: 'micro',
-      teacherName: 'Thầy Gâu lùn',
+      teacherName: 'Gâu tiên sinh',
       title: 'Dấu câu giúp người đọc hiểu cách ngắt nghỉ',
       points: [
         'Dấu chấm kết thúc câu kể.',
@@ -398,7 +398,7 @@ export const SUPPLEMENTAL_VIETNAMESE_TOPICS = [
     title: 'Tiếng Việt: Từ đồng nghĩa',
     lessonBlocks: [{
       type: 'micro',
-      teacherName: 'Thầy Gâu lùn',
+      teacherName: 'Gâu tiên sinh',
       title: 'Từ đồng nghĩa là những từ gần giống nhau về nghĩa',
       points: [
         'Có từ giống nhau hoàn toàn, có từ chỉ gần giống trong một số trường hợp.',
@@ -423,7 +423,7 @@ export const SUPPLEMENTAL_VIETNAMESE_TOPICS = [
     title: 'Tiếng Việt: So sánh trong câu',
     lessonBlocks: [{
       type: 'mini',
-      teacherName: 'Thầy Gâu lùn',
+      teacherName: 'Gâu tiên sinh',
       title: 'So sánh giúp câu văn sinh động hơn',
       points: [
         'So sánh là đối chiếu sự vật này với sự vật khác có nét giống nhau.',
@@ -513,7 +513,7 @@ export const SUPPLEMENTAL_IT_TOPICS = [
     title: 'Tin Học: Tệp và thư mục',
     lessonBlocks: [{
       type: 'micro',
-      teacherName: 'Thầy Gâu lùn',
+      teacherName: 'Gâu tiên sinh',
       title: 'Máy tính cũng cần sắp xếp đồ đạc gọn gàng',
       points: [
         'Tệp giống như một món đồ riêng lẻ: ảnh, bài viết, bài vẽ.',
@@ -538,7 +538,7 @@ export const SUPPLEMENTAL_IT_TOPICS = [
     title: 'Tin Học: Internet cơ bản',
     lessonBlocks: [{
       type: 'micro',
-      teacherName: 'Thầy Gâu lùn',
+      teacherName: 'Gâu tiên sinh',
       title: 'Internet giúp kết nối thông tin nhưng phải dùng an toàn',
       points: [
         'Internet cho phép xem tin tức, học bài và trò chuyện.',
@@ -563,7 +563,7 @@ export const SUPPLEMENTAL_IT_TOPICS = [
     title: 'Tin Học: Bảo vệ mắt và tư thế ngồi',
     lessonBlocks: [{
       type: 'mini',
-      teacherName: 'Thầy Gâu lùn',
+      teacherName: 'Gâu tiên sinh',
       title: 'Ngồi đúng khi dùng máy tính giúp học lâu mà vẫn khỏe',
       points: [
         'Lưng thẳng vừa phải, mắt cách màn hình một khoảng an toàn.',

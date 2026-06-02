@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-02T01:29:10.512Z",
+  "updated_at": "2026-06-02T02:44:10.820Z",
   "school_policy": {
     "grade": "lop-4",
     "official_school_sources": [
@@ -23,9 +23,11 @@
         "media_base": "https://hoc10.monkeyuni.net/",
         "role": "official_downloadable_research_corpus",
         "notes": [
-          "Public API exposes worksheet docs and slide metadata for lop 4.",
+          "Public API exposes SGK, SGV, VBT, worksheet docs and slide metadata for lop 4.",
+          "The list-book endpoint is the primary SGK registry lane for Hoc10.",
           "Direct PDF, DOCX, PPTX and ZIP URLs are available in worksheet payloads.",
-          "Slide decks are exposed as PPTX URLs in list-slide payloads."
+          "Slide decks are exposed as PPTX URLs in list-slide payloads.",
+          "Bookshelf HTML exposes SGK/SBT/SGV presence even when direct downloadable SGK files are not public in the worksheet API."
         ]
       }
     ],
@@ -43,12 +45,83 @@
     }
   },
   "hoc10": {
+    "book_collections": [
+      {
+        "book_type": {
+          "id": 1,
+          "slug": "sgk",
+          "title": "Sach giao khoa"
+        },
+        "summary": {
+          "total": 14,
+          "bySubjectId": {
+            "32": 2,
+            "33": 2,
+            "34": 1,
+            "36": 1,
+            "37": 1,
+            "38": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "69": 1,
+            "77": 1,
+            "78": 1
+          },
+          "freeOrPreviewable": 14
+        }
+      },
+      {
+        "book_type": {
+          "id": 3,
+          "slug": "sgv",
+          "title": "Sach giao vien"
+        },
+        "summary": {
+          "total": 13,
+          "bySubjectId": {
+            "32": 2,
+            "33": 1,
+            "34": 1,
+            "36": 1,
+            "37": 1,
+            "38": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "69": 1,
+            "77": 1,
+            "78": 1
+          },
+          "freeOrPreviewable": 13
+        }
+      },
+      {
+        "book_type": {
+          "id": 5,
+          "slug": "vbt",
+          "title": "Vo bai tap"
+        },
+        "summary": {
+          "total": 7,
+          "bySubjectId": {
+            "32": 2,
+            "33": 2,
+            "39": 1,
+            "77": 1,
+            "78": 1
+          },
+          "freeOrPreviewable": 7
+        }
+      }
+    ],
     "worksheet_subjects": [
       {
         "subject": {
           "id": 32,
           "slug": "tieng-viet",
-          "title": "Tieng Viet"
+          "title": "Tieng Viet",
+          "bookshelfSlug": "tieng-viet"
         },
         "summary": {
           "total": 16,
@@ -65,7 +138,8 @@
         "subject": {
           "id": 33,
           "slug": "toan",
-          "title": "Toan"
+          "title": "Toan",
+          "bookshelfSlug": "toan"
         },
         "summary": {
           "total": 13,
@@ -82,7 +156,8 @@
         "subject": {
           "id": 39,
           "slug": "tieng-anh",
-          "title": "Tieng Anh"
+          "title": "Tieng Anh",
+          "bookshelfSlug": "tieng-anh"
         },
         "summary": {
           "total": 38,
@@ -100,7 +175,8 @@
         "subject": {
           "id": 41,
           "slug": "tin-hoc",
-          "title": "Tin hoc"
+          "title": "Tin hoc",
+          "bookshelfSlug": "tin-hoc"
         },
         "summary": {
           "total": 11,
@@ -117,7 +193,8 @@
         "subject": {
           "id": 77,
           "slug": "khoa-hoc",
-          "title": "Khoa hoc"
+          "title": "Khoa hoc",
+          "bookshelfSlug": "khoa-hoc"
         },
         "summary": {
           "total": 14,
@@ -136,7 +213,8 @@
         "subject": {
           "id": 32,
           "slug": "tieng-viet",
-          "title": "Tieng Viet"
+          "title": "Tieng Viet",
+          "bookshelfSlug": "tieng-viet"
         },
         "total": 182
       },
@@ -144,7 +222,8 @@
         "subject": {
           "id": 33,
           "slug": "toan",
-          "title": "Toan"
+          "title": "Toan",
+          "bookshelfSlug": "toan"
         },
         "total": 148
       },
@@ -152,7 +231,8 @@
         "subject": {
           "id": 39,
           "slug": "tieng-anh",
-          "title": "Tieng Anh"
+          "title": "Tieng Anh",
+          "bookshelfSlug": "tieng-anh"
         },
         "total": 0
       },
@@ -160,7 +240,8 @@
         "subject": {
           "id": 41,
           "slug": "tin-hoc",
-          "title": "Tin hoc"
+          "title": "Tin hoc",
+          "bookshelfSlug": "tin-hoc"
         },
         "total": 29
       },
@@ -168,9 +249,94 @@
         "subject": {
           "id": 77,
           "slug": "khoa-hoc",
-          "title": "Khoa hoc"
+          "title": "Khoa hoc",
+          "bookshelfSlug": "khoa-hoc"
         },
         "total": 49
+      }
+    ],
+    "bookshelf_subjects": [
+      {
+        "subject": {
+          "id": 32,
+          "slug": "tieng-viet",
+          "title": "Tieng Viet",
+          "bookshelfSlug": "tieng-viet"
+        },
+        "summary": {
+          "totalSections": 0,
+          "totalCards": 0,
+          "sectionTitles": []
+        },
+        "status": "failed",
+        "error": "The operation was aborted due to timeout"
+      },
+      {
+        "subject": {
+          "id": 33,
+          "slug": "toan",
+          "title": "Toan",
+          "bookshelfSlug": "toan"
+        },
+        "summary": {
+          "totalSections": 6,
+          "totalCards": 25,
+          "sectionTitles": [
+            "Sách giáo khoa",
+            "Tiết dạy minh họa",
+            "Bài giảng PowerPoint",
+            "Học liệu điện tử",
+            "Giới thiệu, tập huấn SGK",
+            "Sách giáo viên"
+          ]
+        },
+        "status": "captured",
+        "error": null
+      },
+      {
+        "subject": {
+          "id": 39,
+          "slug": "tieng-anh",
+          "title": "Tieng Anh",
+          "bookshelfSlug": "tieng-anh"
+        },
+        "summary": {
+          "totalSections": 0,
+          "totalCards": 0,
+          "sectionTitles": []
+        },
+        "status": "failed",
+        "error": "The operation was aborted due to timeout"
+      },
+      {
+        "subject": {
+          "id": 41,
+          "slug": "tin-hoc",
+          "title": "Tin hoc",
+          "bookshelfSlug": "tin-hoc"
+        },
+        "summary": {
+          "totalSections": 0,
+          "totalCards": 0,
+          "sectionTitles": []
+        },
+        "status": "failed",
+        "error": "The operation was aborted due to timeout"
+      },
+      {
+        "subject": {
+          "id": 77,
+          "slug": "khoa-hoc",
+          "title": "Khoa hoc",
+          "bookshelfSlug": "khoa-hoc"
+        },
+        "summary": {
+          "totalSections": 0,
+          "totalCards": 0,
+          "sectionTitles": []
+        },
+        "status": "failed",
+        "error": "The operation was aborted due to timeout"
       }
     ]
   }

@@ -1,0 +1,651 @@
+[
+  {
+    "book_type": {
+      "id": 1,
+      "slug": "sgk",
+      "title": "Sach giao khoa"
+    },
+    "summary": {
+      "total": 14,
+      "bySubjectId": {
+        "32": 2,
+        "33": 2,
+        "34": 1,
+        "36": 1,
+        "37": 1,
+        "38": 1,
+        "39": 1,
+        "40": 1,
+        "41": 1,
+        "69": 1,
+        "77": 1,
+        "78": 1
+      },
+      "freeOrPreviewable": 14
+    },
+    "subjects": [
+      {
+        "subject": {
+          "id": 32,
+          "slug": "tieng-viet",
+          "title": "Tieng Viet",
+          "bookshelfSlug": "tieng-viet"
+        },
+        "rows": [
+          {
+            "id": 385,
+            "title": "Tiếng Việt 4 tập 1",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/https___vnmedia.monkeyuni.net_E_Learning_page_1_BMTiengviet4T1_24_3_2023_v1.jpg",
+            "link_html": "tieng_viet_4_tap_1",
+            "grade_id": 7,
+            "book_type_id": 1,
+            "language": 1,
+            "order_book": 1,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 32,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/tieng_viet_4_tap_1"
+          },
+          {
+            "id": 388,
+            "title": "Tiếng Việt 4 tập 2",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/https___vnmedia.monkeyuni.net_E_Learning_page_1_BMTiengviet4T2_24_3_2023_v1.jpg",
+            "link_html": "tieng_viet_4_tap_2",
+            "grade_id": 7,
+            "book_type_id": 1,
+            "language": 1,
+            "order_book": 2,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 32,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/tieng_viet_4_tap_2"
+          }
+        ],
+        "summary": {
+          "total": 2,
+          "bySubjectId": {
+            "32": 2
+          },
+          "freeOrPreviewable": 2
+        }
+      },
+      {
+        "subject": {
+          "id": 33,
+          "slug": "toan",
+          "title": "Toan",
+          "bookshelfSlug": "toan"
+        },
+        "rows": [
+          {
+            "id": 390,
+            "title": "Toán 4 tập 1",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/https___vnmedia.monkeyuni.net_E_Learning_page_1_SGKToan4tap1_25_10_2022_v1.jpg",
+            "link_html": "toan_4_tap_1",
+            "grade_id": 7,
+            "book_type_id": 1,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 33,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/toan_4_tap_1"
+          },
+          {
+            "id": 391,
+            "title": "Toán 4 tập 2",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/00_SGK_T4T2_10_07_2023_v1.png",
+            "link_html": "toan_4_tap_2",
+            "grade_id": 7,
+            "book_type_id": 1,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 33,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/toan_4_tap_2"
+          }
+        ],
+        "summary": {
+          "total": 2,
+          "bySubjectId": {
+            "33": 2
+          },
+          "freeOrPreviewable": 2
+        }
+      },
+      {
+        "subject": {
+          "id": 39,
+          "slug": "tieng-anh",
+          "title": "Tieng Anh",
+          "bookshelfSlug": "tieng-anh"
+        },
+        "rows": [
+          {
+            "id": 572,
+            "title": "Tiếng Anh 4",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/0_BIT_TiengAnh4_03042023.jpg",
+            "link_html": "tieng_anh_4",
+            "grade_id": 7,
+            "book_type_id": 1,
+            "language": 2,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 39,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/tieng_anh_4"
+          }
+        ],
+        "summary": {
+          "total": 1,
+          "bySubjectId": {
+            "39": 1
+          },
+          "freeOrPreviewable": 1
+        }
+      },
+      {
+        "subject": {
+          "id": 41,
+          "slug": "tin-hoc",
+          "title": "Tin hoc",
+          "bookshelfSlug": "tin-hoc"
+        },
+        "rows": [
+          {
+            "id": 333,
+            "title": "Tin học 4",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/00_SGK_Tinhoc4_10_05_2023_v1.png",
+            "link_html": "tin_hoc_4",
+            "grade_id": 7,
+            "book_type_id": 1,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 41,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/tin_hoc_4"
+          }
+        ],
+        "summary": {
+          "total": 1,
+          "bySubjectId": {
+            "41": 1
+          },
+          "freeOrPreviewable": 1
+        }
+      },
+      {
+        "subject": {
+          "id": 77,
+          "slug": "khoa-hoc",
+          "title": "Khoa hoc",
+          "bookshelfSlug": "khoa-hoc"
+        },
+        "rows": [
+          {
+            "id": 393,
+            "title": "Khoa học 4",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/bia%20khoa%20hoc%204.jpg",
+            "link_html": "khoa_hoc_4",
+            "grade_id": 7,
+            "book_type_id": 1,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 77,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/khoa_hoc_4"
+          }
+        ],
+        "summary": {
+          "total": 1,
+          "bySubjectId": {
+            "77": 1
+          },
+          "freeOrPreviewable": 1
+        }
+      }
+    ]
+  },
+  {
+    "book_type": {
+      "id": 3,
+      "slug": "sgv",
+      "title": "Sach giao vien"
+    },
+    "summary": {
+      "total": 13,
+      "bySubjectId": {
+        "32": 2,
+        "33": 1,
+        "34": 1,
+        "36": 1,
+        "37": 1,
+        "38": 1,
+        "39": 1,
+        "40": 1,
+        "41": 1,
+        "69": 1,
+        "77": 1,
+        "78": 1
+      },
+      "freeOrPreviewable": 13
+    },
+    "subjects": [
+      {
+        "subject": {
+          "id": 32,
+          "slug": "tieng-viet",
+          "title": "Tieng Viet",
+          "bookshelfSlug": "tieng-viet"
+        },
+        "rows": [
+          {
+            "id": 633,
+            "title": "SGV Tiếng Việt 4 - Tập 1",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/Tiengviet4T1_SGV_26_06_2023_v1.jpg",
+            "link_html": "sgv_tieng_viet_4_tap_1",
+            "grade_id": 7,
+            "book_type_id": 3,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 32,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/sgv_tieng_viet_4_tap_1"
+          },
+          {
+            "id": 634,
+            "title": "SGV Tiếng Việt 4 - Tập 2",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/Tiengviet4T2_SGV_26_06_2023_v1.jpg",
+            "link_html": "sgv_tieng_viet_4_tap_2",
+            "grade_id": 7,
+            "book_type_id": 3,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 32,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/sgv_tieng_viet_4_tap_2"
+          }
+        ],
+        "summary": {
+          "total": 2,
+          "bySubjectId": {
+            "32": 2
+          },
+          "freeOrPreviewable": 2
+        }
+      },
+      {
+        "subject": {
+          "id": 33,
+          "slug": "toan",
+          "title": "Toan",
+          "bookshelfSlug": "toan"
+        },
+        "rows": [
+          {
+            "id": 639,
+            "title": "SGV Toán 4",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/Toan4_SGV_26_06_2023_v1.jpg",
+            "link_html": "sgv_toan_4",
+            "grade_id": 7,
+            "book_type_id": 3,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 33,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/sgv_toan_4"
+          }
+        ],
+        "summary": {
+          "total": 1,
+          "bySubjectId": {
+            "33": 1
+          },
+          "freeOrPreviewable": 1
+        }
+      },
+      {
+        "subject": {
+          "id": 39,
+          "slug": "tieng-anh",
+          "title": "Tieng Anh",
+          "bookshelfSlug": "tieng-anh"
+        },
+        "rows": [
+          {
+            "id": 644,
+            "title": "SGV Tiếng Anh 4",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/Tienganh4_SGV_30_06_2023_v1.jpg",
+            "link_html": "sgv_tieng_anh_4",
+            "grade_id": 7,
+            "book_type_id": 3,
+            "language": 2,
+            "order_book": 20,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 39,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/sgv_tieng_anh_4"
+          }
+        ],
+        "summary": {
+          "total": 1,
+          "bySubjectId": {
+            "39": 1
+          },
+          "freeOrPreviewable": 1
+        }
+      },
+      {
+        "subject": {
+          "id": 41,
+          "slug": "tin-hoc",
+          "title": "Tin hoc",
+          "bookshelfSlug": "tin-hoc"
+        },
+        "rows": [
+          {
+            "id": 635,
+            "title": "SGV Tin học 4",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/Tinhoc4_SGV_26_06_2023_v1.jpg",
+            "link_html": "sgv_tin_hoc_4",
+            "grade_id": 7,
+            "book_type_id": 3,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 41,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/sgv_tin_hoc_4"
+          }
+        ],
+        "summary": {
+          "total": 1,
+          "bySubjectId": {
+            "41": 1
+          },
+          "freeOrPreviewable": 1
+        }
+      },
+      {
+        "subject": {
+          "id": 77,
+          "slug": "khoa-hoc",
+          "title": "Khoa hoc",
+          "bookshelfSlug": "khoa-hoc"
+        },
+        "rows": [
+          {
+            "id": 622,
+            "title": "SGV Khoa học 4",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/Khoahoc4_SGV_26_08_2023_v1.jpg",
+            "link_html": "sgv_khoa_hoc_4",
+            "grade_id": 7,
+            "book_type_id": 3,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 77,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/sgv_khoa_hoc_4"
+          }
+        ],
+        "summary": {
+          "total": 1,
+          "bySubjectId": {
+            "77": 1
+          },
+          "freeOrPreviewable": 1
+        }
+      }
+    ]
+  },
+  {
+    "book_type": {
+      "id": 5,
+      "slug": "vbt",
+      "title": "Vo bai tap"
+    },
+    "summary": {
+      "total": 7,
+      "bySubjectId": {
+        "32": 2,
+        "33": 2,
+        "39": 1,
+        "77": 1,
+        "78": 1
+      },
+      "freeOrPreviewable": 7
+    },
+    "subjects": [
+      {
+        "subject": {
+          "id": 32,
+          "slug": "tieng-viet",
+          "title": "Tieng Viet",
+          "bookshelfSlug": "tieng-viet"
+        },
+        "rows": [
+          {
+            "id": 413,
+            "title": "VBT Tiếng Việt 4 tập 1",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/Bia_TV4T1_SBT_09_08_2023_v1.jpg",
+            "link_html": "vbt_tieng_viet_4_tap_1",
+            "grade_id": 7,
+            "book_type_id": 5,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 0,
+            "subject_id": 32,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/vbt_tieng_viet_4_tap_1"
+          },
+          {
+            "id": 415,
+            "title": "VBT Tiếng Việt 4 tập 2",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/bia_TV4T2_SBT_09_08_2023_v1.jpg",
+            "link_html": "vbt_tieng_viet_4_tap_2",
+            "grade_id": 7,
+            "book_type_id": 5,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 32,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/vbt_tieng_viet_4_tap_2"
+          }
+        ],
+        "summary": {
+          "total": 2,
+          "bySubjectId": {
+            "32": 2
+          },
+          "freeOrPreviewable": 2
+        }
+      },
+      {
+        "subject": {
+          "id": 33,
+          "slug": "toan",
+          "title": "Toan",
+          "bookshelfSlug": "toan"
+        },
+        "rows": [
+          {
+            "id": 416,
+            "title": "VBT Toán 4 tập 1",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/bia_TOAN4T1_SBT_09_08_2023_v1.jpg",
+            "link_html": "vbt_toan_4_tap_1",
+            "grade_id": 7,
+            "book_type_id": 5,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 0,
+            "subject_id": 33,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/vbt_toan_4_tap_1"
+          },
+          {
+            "id": 418,
+            "title": "VBT Toán 4 tập 2",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/bia_TOAN4T2_SBT_09_08_2023_v1.jpg",
+            "link_html": "vbt_toan_4_tap_2",
+            "grade_id": 7,
+            "book_type_id": 5,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 33,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/vbt_toan_4_tap_2"
+          }
+        ],
+        "summary": {
+          "total": 2,
+          "bySubjectId": {
+            "33": 2
+          },
+          "freeOrPreviewable": 2
+        }
+      },
+      {
+        "subject": {
+          "id": 39,
+          "slug": "tieng-anh",
+          "title": "Tieng Anh",
+          "bookshelfSlug": "tieng-anh"
+        },
+        "rows": [
+          {
+            "id": 590,
+            "title": "SBT Tiếng Anh 4",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/B_Tienganh4_SBT_11_07_2023_v1.jpg",
+            "link_html": "sbt_tieng_anh_4",
+            "grade_id": 7,
+            "book_type_id": 5,
+            "language": 2,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 39,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/sbt_tieng_anh_4"
+          }
+        ],
+        "summary": {
+          "total": 1,
+          "bySubjectId": {
+            "39": 1
+          },
+          "freeOrPreviewable": 1
+        }
+      },
+      {
+        "subject": {
+          "id": 41,
+          "slug": "tin-hoc",
+          "title": "Tin hoc",
+          "bookshelfSlug": "tin-hoc"
+        },
+        "rows": [],
+        "summary": {
+          "total": 0,
+          "bySubjectId": {},
+          "freeOrPreviewable": 0
+        }
+      },
+      {
+        "subject": {
+          "id": 77,
+          "slug": "khoa-hoc",
+          "title": "Khoa hoc",
+          "bookshelfSlug": "khoa-hoc"
+        },
+        "rows": [
+          {
+            "id": 420,
+            "title": "VBT Khoa học 4",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/bia_KHOAHOC4_SBT_09_08_2023_v1.jpg",
+            "link_html": "vbt_khoa_hoc_4",
+            "grade_id": 7,
+            "book_type_id": 5,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 77,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/vbt_khoa_hoc_4"
+          }
+        ],
+        "summary": {
+          "total": 1,
+          "bySubjectId": {
+            "77": 1
+          },
+          "freeOrPreviewable": 1
+        }
+      }
+    ]
+  }
+]

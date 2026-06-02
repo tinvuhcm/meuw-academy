@@ -123,7 +123,7 @@ function createDefaultProfile(id, name = 'Méo', avatarColor = '#EC4899') {
       parentPin: '1234',
       soundOn: true,
       speechEnabled: true,
-      breakReminderMins: 45,
+      breakReminderMins: 30,
       theme: 'default',
     },
     stats: {
@@ -260,6 +260,9 @@ function commit() {
   _state.syncMeta = _state.syncMeta || {};
   _state.syncMeta.localUpdatedAt = new Date().toISOString();
   saveState(_state);
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new CustomEvent('meuw:state-committed'));
+  }
 }
 
 function commitSyncMetadata() {

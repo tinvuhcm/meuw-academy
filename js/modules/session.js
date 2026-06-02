@@ -3,7 +3,7 @@
  * Session View (Lists modules for AM or PM)
  */
 
-import { el, getSubjectConfig } from '../utils.js';
+import { el, formatModuleDisplayTitle, getSubjectConfig } from '../utils.js';
 import State from '../state.js';
 import Router from '../router.js';
 import { getCurriculumDay } from '../data/curriculum-loader.js';
@@ -81,7 +81,7 @@ export function renderSession(params) {
     
     const info = el('div');
     info.appendChild(el('div', { class: 'text-xs font-bold uppercase tracking-wider', style: `color: ${conf.color}` }, conf.label));
-    info.appendChild(el('h3', { class: 'font-display text-lg text-text' }, m.title));
+    info.appendChild(el('h3', { class: 'font-display text-lg text-text' }, formatModuleDisplayTitle(m)));
     
     left.appendChild(iconBox);
     left.appendChild(info);

@@ -1,5 +1,5 @@
 import { MORE_ENGLISH_TOPICS } from './more-english-topics.js';
-const TEACHER = 'Thầy Gâu lùn';
+const TEACHER = 'Gâu tiên sinh';
 
 function buildEnglishUnit({ topicKey, title, introTitle, introPoints, example, words }) {
   const questionPool = [];

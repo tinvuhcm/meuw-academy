@@ -282,19 +282,17 @@ function renderSettingsTab(container) {
 
   wrap.appendChild(el('hr', { class: 'my-6 border-border' }));
 
-  // 2. Break Reminder
+  // 2. Mandatory Break Policy
   const breakGroup = el('div', { class: 'input-group' });
-  breakGroup.innerHTML = '<label class="input-label">Nhắc nhở nghỉ giải lao (phút)</label>';
-  const breakSelect = el('select', { class: 'input-field w-full md:w-1/2 cursor-pointer' });
-  [15, 30, 45, 60, 0].forEach(val => {
-    const opt = el('option', { value: val }, val === 0 ? 'Không nhắc' : `${val} phút`);
-    if (val === (settings.breakReminderMins || 45)) opt.selected = true;
-    breakSelect.appendChild(opt);
-  });
-  breakSelect.addEventListener('change', (e) => {
-    State.setSetting('breakReminderMins', parseInt(e.target.value, 10));
-  });
-  breakGroup.appendChild(breakSelect);
+  breakGroup.innerHTML = `
+    <label class="input-label">Nghỉ giải lao bắt buộc</label>
+    <div class="p-4 rounded-xl border-2 border-border bg-bg-2 text-sm leading-relaxed">
+      Bé sẽ nghỉ bắt buộc <b>5 phút</b> sau mỗi <b>30 phút</b> học liên tục, kể cả lúc luyện tập.
+    </div>
+  `;
+  if ((settings.breakReminderMins || 0) !== 30) {
+    State.setSetting('breakReminderMins', 30);
+  }
   wrap.appendChild(breakGroup);
 
   wrap.appendChild(el('hr', { class: 'my-6 border-border' }));

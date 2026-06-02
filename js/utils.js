@@ -322,7 +322,9 @@ const SUBJECT_CONFIG = {
   'mathx':  { label: 'Toán+',     icon: '🧮', color: 'var(--math-color)',  colorLt: 'var(--math-color-lt)',  emoji: '🧮' },
   'eng':    { label: 'English',   icon: '🇬🇧', color: 'var(--eng-color)',   colorLt: 'var(--eng-color-lt)',   emoji: '🇬🇧' },
   'engs':   { label: 'Speaking',  icon: '🎤', color: 'var(--eng-color)',   colorLt: 'var(--eng-color-lt)',   emoji: '🎤' },
+  'vie':    { label: 'Tiếng Việt', icon: '📝', color: 'var(--read-color)',  colorLt: 'var(--read-color-lt)',  emoji: '📝' },
   'sci':    { label: 'Khoa học',  icon: '🔬', color: 'var(--sci-color)',   colorLt: 'var(--sci-color-lt)',   emoji: '🔬' },
+  'it':     { label: 'Tin học',   icon: '💻', color: 'var(--quiz-color)',  colorLt: 'var(--quiz-color-lt)',  emoji: '💻' },
   'read':   { label: 'Đọc hiểu', icon: '📖', color: 'var(--read-color)',  colorLt: 'var(--read-color-lt)',  emoji: '📖' },
   'draw':   { label: 'Vẽ',        icon: '🎨', color: 'var(--draw-color)',  colorLt: 'var(--draw-color-lt)',  emoji: '🎨' },
   'quiz':   { label: 'Quiz',      icon: '⚡', color: 'var(--quiz-color)',  colorLt: 'var(--quiz-color-lt)',  emoji: '⚡' },
@@ -345,6 +347,32 @@ export function getSubjectFromModuleId(moduleId) {
  */
 export function getSubjectConfig(subject) {
   return SUBJECT_CONFIG[subject] || SUBJECT_CONFIG['quiz'];
+}
+
+export function formatModuleDisplayTitle(moduleOrSubject, maybeTitle) {
+  const subject = typeof moduleOrSubject === 'object' ? moduleOrSubject?.subject : moduleOrSubject;
+  const rawTitle = typeof moduleOrSubject === 'object' ? moduleOrSubject?.title : maybeTitle;
+  const subjectLabel = getSubjectConfig(subject).label;
+  let title = String(rawTitle || '').trim();
+
+  if (title.includes(':')) {
+    title = title.split(':').slice(1).join(':').trim();
+  }
+
+  title = title
+    .replace(/^Family\s*&\s*Friends\s*4\s*-\s*/i, '')
+    .replace(/^Kết nối tri thức với cuộc sống\s*-\s*/i, '')
+    .replace(/^Chân trời sáng tạo\s*-\s*/i, '')
+    .replace(/\s+-\s+[^-]+$/g, (match) => match.includes('Jobs') ? '' : match)
+    .trim();
+
+  title = title.split(/\s*[.?!]\s+/)[0].trim();
+
+  if (/^jobs$/i.test(title)) title = 'Job';
+  if (/^doctors?$/i.test(title)) title = 'Doctor';
+  if (!title) title = rawTitle || subjectLabel;
+
+  return `[${subjectLabel}] ${title}`;
 }
 
 // ============================================

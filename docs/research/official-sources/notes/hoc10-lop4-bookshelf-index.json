@@ -1,0 +1,280 @@
+[
+  {
+    "subject": {
+      "id": 32,
+      "slug": "tieng-viet",
+      "title": "Tieng Viet",
+      "bookshelfSlug": "tieng-viet"
+    },
+    "sourceUrl": "https://www.hoc10.vn/tu-sach/tieng-viet/lop-4/",
+    "status": "failed",
+    "error": "The operation was aborted due to timeout",
+    "sections": [],
+    "rawHtmlLength": 0,
+    "summary": {
+      "totalSections": 0,
+      "totalCards": 0,
+      "sectionTitles": []
+    }
+  },
+  {
+    "status": "captured",
+    "error": null,
+    "subject": {
+      "id": 33,
+      "slug": "toan",
+      "title": "Toan",
+      "bookshelfSlug": "toan"
+    },
+    "sourceUrl": "https://www.hoc10.vn/tu-sach/toan/lop-4/",
+    "sections": [
+      {
+        "title": "Sách giáo khoa",
+        "cards": [
+          {
+            "title": null,
+            "coverUrl": "https://hoc10.monkeyuni.net/E_Learning/page/https___vnmedia.monkeyuni.net_E_Learning_page_1_SGKToan4tap1_25_10_2022_v1.jpg",
+            "alt": "Các loại sách",
+            "actionLabel": "Xem ngay"
+          },
+          {
+            "title": null,
+            "coverUrl": "https://hoc10.monkeyuni.net/E_Learning/page/00_SGK_T4T2_10_07_2023_v1.png",
+            "alt": "Các loại sách",
+            "actionLabel": "Xem ngay"
+          },
+          {
+            "title": null,
+            "coverUrl": "https://hoc10.monkeyuni.net/E_Learning/page/bia_TOAN4T1_SBT_09_08_2023_v1.jpg",
+            "alt": "Các loại sách",
+            "actionLabel": "Xem ngay"
+          },
+          {
+            "title": null,
+            "coverUrl": "https://hoc10.monkeyuni.net/E_Learning/page/bia_TOAN4T2_SBT_09_08_2023_v1.jpg",
+            "alt": "Các loại sách",
+            "actionLabel": "Xem ngay"
+          },
+          {
+            "title": null,
+            "coverUrl": "https://hoc10.monkeyuni.net/E_Learning/page/Toan4_SGV_26_06_2023_v1.jpg",
+            "alt": "Các loại sách",
+            "actionLabel": "Đọc thử"
+          }
+        ]
+      },
+      {
+        "title": "Tiết dạy minh họa",
+        "cards": [
+          {
+            "title": "Toán 4 - Em ôn lại những gì đã học",
+            "coverUrl": "http://i3.ytimg.com/vi/W24-tseUadQ/hqdefault.jpg",
+            "alt": null,
+            "actionLabel": null
+          },
+          {
+            "title": "Toán 4 - Chia số có 2 chữ số",
+            "coverUrl": "http://i3.ytimg.com/vi/C8vaNe_1_VQ/hqdefault.jpg",
+            "alt": null,
+            "actionLabel": null
+          }
+        ]
+      },
+      {
+        "title": "Bài giảng PowerPoint",
+        "cards": [
+          {
+            "title": null,
+            "coverUrl": "https://hoc10.monkeyuni.net/E_Learning/slide/img/t1_1_1703586253.png",
+            "alt": "Tuần 1 - Bài 1: Ôn tập về số và phép tính trong phạm vi 100 000 - Tiết 1",
+            "actionLabel": "Xem nhanh"
+          },
+          {
+            "title": null,
+            "coverUrl": "https://hoc10.monkeyuni.net/E_Learning/slide/img/t1_2_1703586287.png",
+            "alt": "Tuần 1 - Bài 1: Ôn tập về số và phép tính trong phạm vi 100 000 - Tiết 2",
+            "actionLabel": "Xem nhanh"
+          },
+          {
+            "title": null,
+            "coverUrl": "https://hoc10.monkeyuni.net/E_Learning/slide/img/t1_3_1703586330.png",
+            "alt": "Tuần 1 - Bài 2: Ôn tập về hình học và đo lường - Tiết 1",
+            "actionLabel": "Xem nhanh"
+          }
+        ]
+      },
+      {
+        "title": "Học liệu điện tử",
+        "cards": [
+          {
+            "title": "Phân số bằng nhau - Toán 4 tập 2 | Hoc10",
+            "coverUrl": "http://i3.ytimg.com/vi/FmSqUfi5ZRE/hqdefault.jpg",
+            "alt": null,
+            "actionLabel": null
+          },
+          {
+            "title": "So sánh hai phân số cùng mẫu số - Toán 4 tập 2| Hoc10",
+            "coverUrl": "http://i3.ytimg.com/vi/EDOnXhdZP5U/hqdefault.jpg",
+            "alt": null,
+            "actionLabel": null
+          },
+          {
+            "title": "Đơn vị đo góc. Độ (°) - Toán 4 tập 1 | Hoc10",
+            "coverUrl": "http://i3.ytimg.com/vi/wsnDXnWqoDE/hqdefault.jpg",
+            "alt": null,
+            "actionLabel": null
+          },
+          {
+            "title": "Nhân với số có hai chữ số - Toán 4 | Hoc10",
+            "coverUrl": "http://i3.ytimg.com/vi/puHfgXmvslU/hqdefault.jpg",
+            "alt": null,
+            "actionLabel": null
+          }
+        ]
+      },
+      {
+        "title": "Giới thiệu, tập huấn SGK",
+        "cards": [
+          {
+            "title": "Video giới thiệu SGK Toán 4",
+            "coverUrl": "http://i3.ytimg.com/vi/Ft4iziOvRrI/hqdefault.jpg",
+            "alt": null,
+            "actionLabel": null
+          },
+          {
+            "title": "Giới thiệu SGK Toán 4 (bản word)",
+            "coverUrl": "https://hoc10.monkeyuni.net/E_Learning/thumb/toan_4_1709088681.png",
+            "alt": null,
+            "actionLabel": null
+          },
+          {
+            "title": "Giới thiệu SGK Toán 4 (bản PPT)",
+            "coverUrl": "https://hoc10.monkeyuni.net/E_Learning/thumb/toan_4_1709088836.png",
+            "alt": null,
+            "actionLabel": null
+          },
+          {
+            "title": "TL tập huấn SGK Toán 4 (bản PDF)",
+            "coverUrl": "https://hoc10.monkeyuni.net/E_Learning/thumb/tai_lieu_tap_huan_1709004800.png",
+            "alt": null,
+            "actionLabel": null
+          },
+          {
+            "title": "TL tập huấn SGK Toán 4 (bản PPT)",
+            "coverUrl": "https://hoc10.monkeyuni.net/E_Learning/thumb/slide_tap_huan_1709004692.png",
+            "alt": null,
+            "actionLabel": null
+          },
+          {
+            "title": null,
+            "coverUrl": "https://hoc10.monkeyuni.net/assets/img/updated_logo1.png",
+            "alt": "Logo Hoc10",
+            "actionLabel": null
+          }
+        ]
+      },
+      {
+        "title": "Sách giáo viên",
+        "cards": [
+          {
+            "title": null,
+            "coverUrl": "https://hoc10.monkeyuni.net/assets/img/icon-facebook.svg",
+            "alt": "Logo facebook",
+            "actionLabel": null
+          },
+          {
+            "title": null,
+            "coverUrl": "https://hoc10.monkeyuni.net/assets/img/icon-youtube.svg",
+            "alt": "Logo youtube",
+            "actionLabel": null
+          },
+          {
+            "title": null,
+            "coverUrl": "https://images.dmca.com/Badges/dmca_protected_16_120.png?ID=5d7dee04-b7ca-4a0a-9e06-f0daaab3093a",
+            "alt": "DMCA.com Protection Status",
+            "actionLabel": null
+          },
+          {
+            "title": null,
+            "coverUrl": "https://hoc10.monkeyuni.net/E_Learning/thumb/bocongthuong.png",
+            "alt": "bo-cong-thuong",
+            "actionLabel": null
+          },
+          {
+            "title": null,
+            "coverUrl": "https://vnmedia2.monkeyuni.net/upload/hoc10/thumb/messenger-support-now.png",
+            "alt": "Logo Hoc10",
+            "actionLabel": null
+          }
+        ]
+      }
+    ],
+    "rawHtmlLength": 611189,
+    "summary": {
+      "totalSections": 6,
+      "totalCards": 25,
+      "sectionTitles": [
+        "Sách giáo khoa",
+        "Tiết dạy minh họa",
+        "Bài giảng PowerPoint",
+        "Học liệu điện tử",
+        "Giới thiệu, tập huấn SGK",
+        "Sách giáo viên"
+      ]
+    }
+  },
+  {
+    "subject": {
+      "id": 39,
+      "slug": "tieng-anh",
+      "title": "Tieng Anh",
+      "bookshelfSlug": "tieng-anh"
+    },
+    "sourceUrl": "https://www.hoc10.vn/tu-sach/tieng-anh/lop-4/",
+    "status": "failed",
+    "error": "The operation was aborted due to timeout",
+    "sections": [],
+    "rawHtmlLength": 0,
+    "summary": {
+      "totalSections": 0,
+      "totalCards": 0,
+      "sectionTitles": []
+    }
+  },
+  {
+    "subject": {
+      "id": 41,
+      "slug": "tin-hoc",
+      "title": "Tin hoc",
+      "bookshelfSlug": "tin-hoc"
+    },
+    "sourceUrl": "https://www.hoc10.vn/tu-sach/tin-hoc/lop-4/",
+    "status": "failed",
+    "error": "The operation was aborted due to timeout",
+    "sections": [],
+    "rawHtmlLength": 0,
+    "summary": {
+      "totalSections": 0,
+      "totalCards": 0,
+      "sectionTitles": []
+    }
+  },
+  {
+    "subject": {
+      "id": 77,
+      "slug": "khoa-hoc",
+      "title": "Khoa hoc",
+      "bookshelfSlug": "khoa-hoc"
+    },
+    "sourceUrl": "https://www.hoc10.vn/tu-sach/khoa-hoc/lop-4/",
+    "status": "failed",
+    "error": "The operation was aborted due to timeout",
+    "sections": [],
+    "rawHtmlLength": 0,
+    "summary": {
+      "totalSections": 0,
+      "totalCards": 0,
+      "sectionTitles": []
+    }
+  }
+]

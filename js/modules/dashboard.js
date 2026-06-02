@@ -3,7 +3,7 @@
  * Main Dashboard Screen
  */
 
-import { el, formatToday, getGreetingLine, getSubjectConfig } from '../utils.js';
+import { el, formatToday, formatModuleDisplayTitle, getGreetingLine, getSubjectConfig } from '../utils.js';
 import State from '../state.js';
 import Router from '../router.js';
 import { Mascot } from '../mascot.js';
@@ -278,7 +278,7 @@ function createSessionCard(title, emoji, modules, sessionId, dayNumber) {
     const icon = el('span', { class: `w-6 h-6 rounded-full flex-center text-xs ${isCompleted ? 'bg-correct text-white' : 'bg-bg-2 text-text-muted'}` });
     icon.innerHTML = isCompleted ? '✓' : conf.emoji;
     
-    const text = el('span', { class: isCompleted ? 'text-text-soft line-through' : 'text-text' }, m.title);
+    const text = el('span', { class: isCompleted ? 'text-text-soft line-through' : 'text-text' }, formatModuleDisplayTitle(m));
     
     item.appendChild(icon);
     item.appendChild(text);

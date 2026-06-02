@@ -128,37 +128,6 @@ function buildScienceQuestionPool(topic) {
     explanation: fact.explanation,
   }));
 
-  const statements = topic.facts.map(fact => fact.statement);
-  const variants = topic.facts.map((fact, index) => {
-    const distractors = seededShuffle(
-      statements.filter((_, statementIndex) => statementIndex !== index),
-      `${topic.topicKey}|statement|${index}`,
-    ).slice(0, 3);
-    return {
-      type: 'multiple-choice',
-      question: 'Câu nào nói đúng?',
-      options: seededShuffle([fact.statement, ...distractors], `${topic.topicKey}|statement-options|${index}`),
-      answer: fact.statement,
-      explanation: `Gợi ý nhớ bài: ${fact.statement} ${stripHtml(fact.explanation)}`,
-    };
-  });
-
-  const clueVariants = topic.facts.map((fact, index) => ({
-    type: 'multiple-choice',
-    question: `Câu nào giải thích đúng cho nhận định sau: "${fact.statement}"?`,
-    options: seededShuffle([
-      stripHtml(fact.explanation),
-      ...seededShuffle(
-        topic.facts
-          .filter((_, otherIndex) => otherIndex !== index)
-          .map(other => stripHtml(other.explanation)),
-        `${topic.topicKey}|clue|${index}`,
-      ).slice(0, 3),
-    ], `${topic.topicKey}|clue-options|${index}`),
-    answer: stripHtml(fact.explanation),
-    explanation: `Bài học cần nhớ: ${fact.statement} ${stripHtml(fact.explanation)}`,
-  }));
-
   const keywordVariants = topic.facts.map((fact, index) => {
     const answer = fact.ans;
     const distractors = seededShuffle(
@@ -174,7 +143,7 @@ function buildScienceQuestionPool(topic) {
     };
   });
 
-  return [...base, ...variants, ...clueVariants, ...keywordVariants];
+  return [...base, ...keywordVariants];
 }
 
 function buildSourceCatalog(allData) {

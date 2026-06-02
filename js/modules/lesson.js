@@ -159,7 +159,10 @@ export function renderLesson(params) {
     else triggerMascot('idle');
 
     switch (q.type) {
-      case 'multiple-choice': qEl = renderMultipleChoice(q, handleComplete); break;
+      case 'multiple-choice':
+      case 'multiple-answer':
+        qEl = renderMultipleChoice(q, handleComplete);
+        break;
       case 'fill-blank': qEl = renderFillBlank(q, handleComplete); break;
       case 'drag-match': qEl = renderDragMatch(q, handleComplete); break;
       case 'interactive-svg': qEl = renderInteractiveSVG(q, handleComplete); break;
@@ -287,7 +290,7 @@ function renderLessonBlock(block, onNext) {
   teacher.innerHTML = `
     <div class="teacher-avatar" aria-hidden="true"><img src="assets/images/gau-lun-teacher-avatar.png" alt="" class="w-full h-full object-contain" /></div>
     <div>
-      <div class="teacher-name">${block.teacherName || 'Thầy Gâu lùn'}</div>
+      <div class="teacher-name">${block.teacherName || 'Gâu tiên sinh'}</div>
       <div class="teacher-role">${block.type === 'mini' ? 'Bài học nhanh' : 'Gợi ý trước khi làm'}</div>
     </div>
   `;

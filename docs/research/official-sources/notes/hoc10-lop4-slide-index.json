@@ -3,7 +3,8 @@
     "subject": {
       "id": 32,
       "slug": "tieng-viet",
-      "title": "Tieng Viet"
+      "title": "Tieng Viet",
+      "bookshelfSlug": "tieng-viet"
     },
     "total": 182,
     "rows": [
@@ -8203,7 +8204,8 @@
     "subject": {
       "id": 33,
       "slug": "toan",
-      "title": "Toan"
+      "title": "Toan",
+      "bookshelfSlug": "toan"
     },
     "total": 148,
     "rows": [
@@ -14873,7 +14875,8 @@
     "subject": {
       "id": 39,
       "slug": "tieng-anh",
-      "title": "Tieng Anh"
+      "title": "Tieng Anh",
+      "bookshelfSlug": "tieng-anh"
     },
     "total": 0,
     "rows": []
@@ -14882,7 +14885,8 @@
     "subject": {
       "id": 41,
       "slug": "tin-hoc",
-      "title": "Tin hoc"
+      "title": "Tin hoc",
+      "bookshelfSlug": "tin-hoc"
     },
     "total": 29,
     "rows": [
@@ -16197,7 +16201,8 @@
     "subject": {
       "id": 77,
       "slug": "khoa-hoc",
-      "title": "Khoa hoc"
+      "title": "Khoa hoc",
+      "bookshelfSlug": "khoa-hoc"
     },
     "total": 49,
     "rows": [

@@ -22,10 +22,14 @@ This folder is the canonical school-source corpus for grade 4 knowledge work in 
   - Public worksheet docs for grade 4 subjects.
 - `notes/hoc10-lop4-slide-index.json`
   - Public slide-deck metadata for grade 4 subjects.
+- `notes/hoc10-lop4-book-index.json`
+  - Official Hoc10 SGK/SGV/VBT registry from the `list-book` API, grouped by subject.
+- `notes/hoc10-lop4-bookshelf-index.json`
+  - HTML-captured bookshelf metadata from Hoc10 as a fallback lane, with per-subject `status/error` when routes time out or only return a shell.
 - `notes/hoc10-download-manifest.json`
   - Local binary files downloaded from public Hoc10 worksheet URLs, including ZIP bundles for slide decks, audio, and teacher packs.
 - `scripts/fetch_official_sources.mjs`
-  - Refreshes metadata and downloads worksheet docs.
+  - Refreshes official Hoc10 SGK registry, worksheet/slide metadata, downloads public docs, and captures bookshelf HTML metadata as fallback.
 
 ## Current lane split
 

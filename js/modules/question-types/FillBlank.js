@@ -142,7 +142,7 @@ export function renderFillBlank(q, onComplete) {
         // Show Explanation
         if (q.explanation) {
           const expBox = el('div', { class: 'explanation-box mt-4 p-4 bg-wrong-bg border-2 border-wrong rounded-xl' });
-          expBox.innerHTML = `<strong>💡 Thầy Gâu lùn giải thích:</strong> ${q.explanation}`;
+          expBox.innerHTML = `<strong>💡 Gâu tiên sinh giải thích:</strong> ${q.explanation}`;
           container.appendChild(expBox);
         }
 

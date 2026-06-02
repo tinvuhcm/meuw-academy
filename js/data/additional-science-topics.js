@@ -1,4 +1,4 @@
-const TEACHER = 'Thầy Gâu lùn';
+const TEACHER = 'Gâu tiên sinh';
 
 function buildTopic({ topicKey, title, introTitle, introPoints, example, facts }) {
   return {

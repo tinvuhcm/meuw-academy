@@ -17,9 +17,21 @@ import { createScratchpad } from '../../scratchpad.js';
  */
 export function renderMultipleChoice(q, onComplete) {
   const container = el('div', { class: 'question-wrapper mc-wrapper' });
+  const correctAnswers = Array.isArray(q.correctAnswers)
+    ? q.correctAnswers
+    : Array.isArray(q.answers)
+      ? q.answers
+      : Array.isArray(q.answer)
+        ? q.answer
+        : [q.answer];
+  const isMultiAnswer = q.type === 'multiple-answer' || correctAnswers.length > 1;
+  const normalizedCorrectSet = new Set(correctAnswers.map(answer => String(answer)));
 
   // 1. Title
-  const title = el('h2', { class: 'question-title text-gradient font-display text-2xl' }, q.question);
+  const titleText = isMultiAnswer
+    ? `${q.question} ${q.question?.includes('chọn nhiều') ? '' : '(Có thể chọn nhiều đáp án đúng)'}`
+    : q.question;
+  const title = el('h2', { class: 'question-title text-gradient font-display text-2xl' }, titleText.trim());
   container.appendChild(title);
 
   // 1.5 Passage
@@ -41,6 +53,7 @@ export function renderMultipleChoice(q, onComplete) {
   const shuffledOptions = q.shuffle !== false ? shuffle(q.options) : [...q.options];
   const optionBtns = [];
   let isAnswered = false;
+  const selectedOptions = new Set();
 
   // 4. Scratchpad (if Math)
   if (q.isMath) {
@@ -48,78 +61,137 @@ export function renderMultipleChoice(q, onComplete) {
     container.appendChild(scratchpad);
   }
 
-  shuffledOptions.forEach((optText) => {
-    const isCorrect = optText === q.answer;
-    
-    const btn = el('button', { class: 'btn-option' });
-    btn.innerHTML = `<span class="opt-text">${optText}</span>`;
+  function renderExplanation(prefix) {
+    if (!q.explanation) return null;
+    const expBox = el('div', { class: 'explanation-box mt-4 p-4 bg-méo-purple-lt border-2 border-méo-purple rounded-xl text-text leading-relaxed text-sm max-h-[300px] overflow-y-auto' });
+    expBox.innerHTML = `<div class="font-bold text-méo-purple mb-2">${prefix}</div> ${q.explanation}`;
+    container.appendChild(expBox);
+    return expBox;
+  }
 
-    btn.addEventListener('click', async () => {
-      if (isAnswered) return;
-      isAnswered = true;
-      btn.classList.add('selected');
+  function finalizeSingleAnswer(isCorrect, earnedXp) {
+    if (isCorrect) {
+      Audio.correct();
+      triggerMascot('answer:correct');
+      State.recordAnswer(true);
 
-      if (isCorrect) {
-        // Correct Answer
-        btn.classList.add('correct');
-        Audio.correct();
-        triggerMascot('answer:correct');
-        State.recordAnswer(true);
-
-        // Flash XP
-        const xpSpan = el('span', { class: 'xp-flash-particle' }, `+${q.xp || 10} ⭐`);
-        const rect = btn.getBoundingClientRect();
-        xpSpan.style.left = `${rect.left + rect.width/2}px`;
-        xpSpan.style.top = `${rect.top}px`;
-        document.body.appendChild(xpSpan);
-        setTimeout(() => xpSpan.remove(), 1000);
-
-        // Show Explanation if it's a rich one (length > 60)
-        if (q.explanation && q.explanation.length > 60) {
-          const expBox = el('div', { class: 'explanation-box mt-4 p-4 bg-méo-purple-lt border-2 border-méo-purple rounded-xl text-text leading-relaxed text-sm max-h-[300px] overflow-y-auto' });
-          expBox.innerHTML = `<div class="font-bold text-méo-purple mb-2">💡 Thầy Gâu lùn bật mí:</div> ${q.explanation}`;
-          container.appendChild(expBox);
-
-          const nextBtnContainer = el('div', { class: 'mt-6 flex justify-center' });
-          const nextBtn = el('button', { class: 'btn btn-cta' }, 'Tiếp tục nha');
-          nextBtn.addEventListener('click', () => {
-            Audio.click();
-            onComplete(true, q.xp || 10);
-          });
-          nextBtnContainer.appendChild(nextBtn);
-          container.appendChild(nextBtnContainer);
-        } else {
-          await sleep(1500);
-          onComplete(true, q.xp || 10);
-        }
-      } else {
-        // Wrong Answer
-        btn.classList.add('wrong');
-        Audio.wrong();
-        triggerMascot('answer:wrong');
-        State.recordAnswer(false);
-
-        // Highlight correct
-        const correctBtn = optionBtns.find(b => b.dataset.correct === 'true');
-        if (correctBtn) correctBtn.classList.add('correct');
-
-        // Show Explanation
-        if (q.explanation) {
-          const expBox = el('div', { class: 'explanation-box mt-4 p-4 bg-méo-purple-lt border-2 border-méo-purple rounded-xl text-text leading-relaxed text-sm max-h-[300px] overflow-y-auto' });
-          expBox.innerHTML = `<div class="font-bold text-méo-purple mb-2">💡 Thầy Gâu lùn bật mí:</div> ${q.explanation}`;
-          container.appendChild(expBox);
-        }
-
-        // Show Next button to proceed anyway (don't block progress)
+      if (q.explanation && q.explanation.length > 60) {
+        renderExplanation('💡 Gâu tiên sinh bật mí:');
         const nextBtnContainer = el('div', { class: 'mt-6 flex justify-center' });
         const nextBtn = el('button', { class: 'btn btn-cta' }, 'Tiếp tục nha');
         nextBtn.addEventListener('click', () => {
           Audio.click();
-          onComplete(false, Math.floor((q.xp || 10) / 2)); // half XP for trying
+          onComplete(true, earnedXp);
         });
         nextBtnContainer.appendChild(nextBtn);
         container.appendChild(nextBtnContainer);
+        return;
       }
+
+      sleep(1500).then(() => onComplete(true, earnedXp));
+      return;
+    }
+
+    Audio.wrong();
+    triggerMascot('answer:wrong');
+    State.recordAnswer(false);
+    renderExplanation('💡 Gâu tiên sinh bật mí:');
+
+    const nextBtnContainer = el('div', { class: 'mt-6 flex justify-center' });
+    const nextBtn = el('button', { class: 'btn btn-cta' }, 'Tiếp tục nha');
+    nextBtn.addEventListener('click', () => {
+      Audio.click();
+      onComplete(false, earnedXp);
+    });
+    nextBtnContainer.appendChild(nextBtn);
+    container.appendChild(nextBtnContainer);
+  }
+
+  function finalizeMultiAnswer() {
+    if (isAnswered) return;
+    isAnswered = true;
+
+    const selected = [...selectedOptions];
+    const selectedSet = new Set(selected);
+    const isCorrect =
+      selected.length === normalizedCorrectSet.size &&
+      selected.every(option => normalizedCorrectSet.has(option));
+
+    optionBtns.forEach(btn => {
+      btn.disabled = true;
+      const optText = btn.dataset.optionText;
+      if (normalizedCorrectSet.has(optText)) {
+        btn.classList.add('correct');
+      }
+      if (selectedSet.has(optText) && !normalizedCorrectSet.has(optText)) {
+        btn.classList.add('wrong');
+      }
+    });
+
+    if (isCorrect) {
+      Audio.correct();
+      triggerMascot('answer:correct');
+      State.recordAnswer(true);
+    } else {
+      Audio.wrong();
+      triggerMascot('answer:wrong');
+      State.recordAnswer(false);
+    }
+
+    renderExplanation('💡 Gâu tiên sinh bật mí:');
+    const answerNote = el('div', { class: 'mt-4 text-sm font-bold text-text text-center' });
+    answerNote.textContent = `Đáp án đúng: ${correctAnswers.join(', ')}`;
+    container.appendChild(answerNote);
+
+    const nextBtnContainer = el('div', { class: 'mt-6 flex justify-center gap-3' });
+    const nextBtn = el('button', { class: 'btn btn-cta' }, 'Tiếp tục nha');
+    nextBtn.addEventListener('click', () => {
+      Audio.click();
+      onComplete(isCorrect, isCorrect ? (q.xp || 10) : Math.floor((q.xp || 10) / 2));
+    });
+    nextBtnContainer.appendChild(nextBtn);
+    container.appendChild(nextBtnContainer);
+  }
+
+  shuffledOptions.forEach((optText) => {
+    const isCorrect = normalizedCorrectSet.has(optText);
+    
+    const btn = el('button', { class: 'btn-option' });
+    btn.innerHTML = `<span class="opt-text">${optText}</span>`;
+    btn.dataset.optionText = String(optText);
+
+    btn.addEventListener('click', async () => {
+      if (isAnswered) return;
+      btn.classList.toggle('selected');
+
+      if (isMultiAnswer) {
+        if (selectedOptions.has(optText)) {
+          selectedOptions.delete(optText);
+        } else {
+          selectedOptions.add(optText);
+        }
+        return;
+      }
+
+      isAnswered = true;
+      if (isCorrect) {
+        btn.classList.add('correct');
+
+        const xpSpan = el('span', { class: 'xp-flash-particle' }, `+${q.xp || 10} ⭐`);
+        const rect = btn.getBoundingClientRect();
+        xpSpan.style.left = `${rect.left + rect.width / 2}px`;
+        xpSpan.style.top = `${rect.top}px`;
+        document.body.appendChild(xpSpan);
+        setTimeout(() => xpSpan.remove(), 1000);
+
+        finalizeSingleAnswer(true, q.xp || 10);
+        return;
+      }
+
+      btn.classList.add('wrong');
+      const correctBtn = optionBtns.find(b => b.dataset.correct === 'true');
+      if (correctBtn) correctBtn.classList.add('correct');
+      finalizeSingleAnswer(false, Math.floor((q.xp || 10) / 2));
     });
 
     btn.dataset.correct = isCorrect;
@@ -128,6 +200,16 @@ export function renderMultipleChoice(q, onComplete) {
   });
 
   container.appendChild(optionsGrid);
+
+  if (isMultiAnswer) {
+    const helper = el('div', { class: 'text-sm text-text-muted mt-4 text-center' }, 'Câu này có thể có nhiều đáp án đúng. Chọn xong rồi bấm nút kiểm tra nhé.');
+    const submitRow = el('div', { class: 'mt-4 flex justify-center' });
+    const submitBtn = el('button', { class: 'btn btn-cta' }, 'Kiểm tra');
+    submitBtn.addEventListener('click', () => finalizeMultiAnswer());
+    submitRow.appendChild(submitBtn);
+    container.appendChild(helper);
+    container.appendChild(submitRow);
+  }
 
   return container;
 }

@@ -1,4 +1,4 @@
-const COMMON_TEACHER = 'Thầy Gâu lùn';
+const COMMON_TEACHER = 'Gâu tiên sinh';
 
 const LESSON_LIBRARY = [
   {
