@@ -11,6 +11,7 @@ import {
   getSubjectEstimatedMinutes,
   LONG_RANGE_STUDY_POLICY,
 } from './official-knowledge-map.js';
+import { buildKnttCatalogTopics } from './kntt-topics.js';
 import {
   SUPPLEMENTAL_IT_TOPICS,
   SUPPLEMENTAL_OTHER_TOPICS,
@@ -421,6 +422,17 @@ function buildCatalog(allData) {
   SUPPLEMENTAL_OTHER_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
   buildKnowledgeMapConceptTopics().forEach(topic => mergeSupplemental(catalog, topic));
   CURATED_ENGLISH_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
+
+  // KNTT lesson pool — adds specific KNTT lesson titles with source citations
+  // Math entries get the runtime generator attached; other subjects start with empty pools
+  // and will grow as Direction 2 (PPTX parsing) populates questions
+  buildKnttCatalogTopics().forEach(topic => {
+    if (topic.subject === 'math' && topic.op) {
+      topic.generator = generateMathQuestions;
+    }
+    mergeSupplemental(catalog, topic);
+  });
+
   CATALOG_CACHE = catalog;
   return CATALOG_CACHE;
 }
