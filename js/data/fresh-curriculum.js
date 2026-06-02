@@ -2,26 +2,50 @@ import State from '../state.js';
 import { normalizeText } from '../utils.js';
 import { CURATED_ENGLISH_TOPICS } from './english-topics.js';
 import {
+  ALL_SUBJECT_CODES,
+  CORE_SUBJECT_CODES,
+  getDailyEnrichmentSubjects,
+  OFFICIAL_GRADE4_KNOWLEDGE_MAP,
+  OTHER_SUBJECT_CODES,
+  getSubjectEstimatedMinutes,
+  LONG_RANGE_STUDY_POLICY,
+} from './official-knowledge-map.js';
+import {
   SUPPLEMENTAL_IT_TOPICS,
+  SUPPLEMENTAL_OTHER_TOPICS,
   SUPPLEMENTAL_SCIENCE_TOPICS,
   SUPPLEMENTAL_VIETNAMESE_TOPICS,
 } from './supplemental-topics.js';
 
 const TARGET_QUESTION_COUNT = {
-  math: 12,
-  eng: 8,
-  vie: 8,
-  sci: 8,
-  it: 6,
+  math: 14,
+  eng: 10,
+  vie: 10,
+  sci: 10,
+  it: 8,
+  histgeo: 8,
+  music: 7,
+  art: 7,
+  ethics: 7,
+  tech: 7,
+  life: 7,
+  pe: 6,
   draw: 1,
 };
 
 const SUBJECT_DAILY_CAPS = {
-  math: 3,
+  math: 4,
   eng: 2,
-  vie: 2,
-  sci: 2,
+  vie: 3,
+  sci: 3,
   it: 1,
+  histgeo: 1,
+  music: 1,
+  art: 1,
+  ethics: 1,
+  tech: 1,
+  life: 1,
+  pe: 1,
   draw: 1,
 };
 
@@ -119,7 +143,7 @@ function ensureAnswerField(question) {
   return copy;
 }
 
-function buildScienceQuestionPool(topic) {
+function buildFactQuestionPool(topic) {
   const base = topic.facts.map(fact => ({
     type: 'multiple-choice',
     question: fact.q,
@@ -147,14 +171,7 @@ function buildScienceQuestionPool(topic) {
 }
 
 function buildSourceCatalog(allData) {
-  const bySubject = {
-    math: {},
-    eng: {},
-    vie: {},
-    sci: {},
-    it: {},
-    draw: {},
-  };
+  const bySubject = Object.fromEntries([...ALL_SUBJECT_CODES, 'draw'].map(subject => [subject, {}]));
 
   Object.values(allData).forEach(day => {
     (day.modules || []).forEach(module => {
@@ -197,6 +214,13 @@ function buildSourceCatalog(allData) {
     vie: finalizeBucket(bySubject.vie),
     sci: finalizeBucket(bySubject.sci),
     it: finalizeBucket(bySubject.it),
+    histgeo: finalizeBucket(bySubject.histgeo),
+    music: finalizeBucket(bySubject.music),
+    art: finalizeBucket(bySubject.art),
+    ethics: finalizeBucket(bySubject.ethics),
+    tech: finalizeBucket(bySubject.tech),
+    life: finalizeBucket(bySubject.life),
+    pe: finalizeBucket(bySubject.pe),
     draw: finalizeBucket(bySubject.draw),
   };
 }
@@ -204,7 +228,7 @@ function buildSourceCatalog(allData) {
 function mergeSupplemental(catalog, topic) {
   const key = moduleKey(topic.subject, topic.title);
   const existing = catalog[topic.subject].find(item => moduleKey(item.subject, item.title) === key);
-  const extraPool = topic.facts ? buildScienceQuestionPool(topic) : clone(topic.questionPool || []);
+  const extraPool = topic.facts ? buildFactQuestionPool(topic) : clone(topic.questionPool || []);
 
   if (existing) {
     if (topic.replacePool) {
@@ -239,6 +263,135 @@ function mergeSupplemental(catalog, topic) {
   });
 }
 
+function conceptBenefit(subjectKey) {
+  const map = {
+    histgeo: 'giúp em hiểu quê hương, bản đồ và con người Việt Nam',
+    music: 'giúp em cảm nhịp, nghe tốt hơn và yêu âm nhạc',
+    art: 'giúp em quan sát đẹp hơn và diễn đạt ý tưởng bằng hình ảnh',
+    ethics: 'giúp em ứng xử tử tế và có trách nhiệm hơn',
+    tech: 'giúp em làm sản phẩm theo bước và dùng dụng cụ an toàn',
+    life: 'giúp em tự phục vụ, giao tiếp và hợp tác tốt hơn',
+    pe: 'giúp em khỏe mạnh, vận động đúng và an toàn hơn',
+  };
+  return map[subjectKey] || 'giúp em học tốt hơn mỗi ngày';
+}
+
+function createConceptPrompt(subjectKey, concept) {
+  const map = {
+    histgeo: `Ví dụ nào gần nhất với việc học "${concept}"?`,
+    music: `Hoạt động nào phù hợp khi luyện "${concept}"?`,
+    art: `Khi thực hành "${concept}", em nên chú ý điều gì?`,
+    ethics: `Tình huống nào giúp em rèn "${concept}"?`,
+    tech: `Khi làm việc với "${concept}", điều gì là quan trọng?`,
+    life: `Việc nào giúp em rèn "${concept}" mỗi ngày?`,
+    pe: `Khi luyện "${concept}", em cần nhớ điều gì?`,
+  };
+  return map[subjectKey] || `Điều nào phù hợp nhất với "${concept}"?`;
+}
+
+function createConceptCorrectOption(subjectKey, concept) {
+  const map = {
+    histgeo: `Quan sát, nhận biết và nói đúng về ${concept}`,
+    music: `Nghe, vỗ tay hoặc hát để cảm nhận ${concept}`,
+    art: `Quan sát rồi thể hiện ${concept} bằng hình và màu`,
+    ethics: `Thực hành ${concept} trong cách cư xử hằng ngày`,
+    tech: `Làm theo từng bước để hiểu ${concept}`,
+    life: `Biến ${concept} thành thói quen hằng ngày`,
+    pe: `Vận động đúng cách để rèn ${concept}`,
+  };
+  return map[subjectKey] || `Hiểu và thực hành ${concept}`;
+}
+
+function buildKnowledgeMapConceptTopics() {
+  const topics = [];
+
+  OTHER_SUBJECT_CODES.forEach(subjectKey => {
+    const subject = OFFICIAL_GRADE4_KNOWLEDGE_MAP[subjectKey];
+    if (!subject) return;
+    const strandTitles = subject.strands.map(strand => strand.title);
+    const benefit = conceptBenefit(subjectKey);
+
+    subject.strands.forEach((strand, strandIndex) => {
+      strand.concepts.forEach((concept, conceptIndex) => {
+        const wrongStrands = seededShuffle(
+          strandTitles.filter(title => title !== strand.title),
+          `${subjectKey}|${strand.key}|${concept}|wrong-strands`,
+        ).slice(0, 3);
+        const otherSubjectLabels = seededShuffle(
+          OTHER_SUBJECT_CODES
+            .filter(code => code !== subjectKey)
+            .map(code => OFFICIAL_GRADE4_KNOWLEDGE_MAP[code]?.label)
+            .filter(Boolean),
+          `${subjectKey}|${concept}|other-subjects`,
+        ).slice(0, 3);
+        const neighboringConcepts = seededShuffle(
+          subject.strands
+            .flatMap(otherStrand => otherStrand.concepts)
+            .filter(otherConcept => otherConcept !== concept),
+          `${subjectKey}|${concept}|neighboring-concepts`,
+        ).slice(0, 3);
+
+        topics.push({
+          topicKey: `${subjectKey}:concept:${strand.key}:${normalizeText(concept).replace(/\s+/g, '-')}`,
+          subject: subjectKey,
+          title: `${subject.label}: ${concept}`,
+          defaultCount: 4,
+          lessonBlocks: [{
+            type: 'micro',
+            teacherName: 'Gâu tiên sinh',
+            title: `${concept} thuộc mạch ${strand.title}`,
+            points: [
+              `Đây là một phần của môn ${subject.label}.`,
+              `${concept} giúp bé ${benefit}.`,
+            ],
+            example: `Ví dụ gần gũi: ${createConceptCorrectOption(subjectKey, concept)}.`,
+          }],
+          questionPool: [
+            {
+              type: 'multiple-choice',
+              question: `Trong môn ${subject.label}, "${concept}" thuộc mạch kiến thức nào?`,
+              options: seededShuffle([strand.title, ...wrongStrands], `${subjectKey}|${strand.key}|${concept}|q1`),
+              answer: strand.title,
+              explanation: `"${concept}" nằm trong mạch ${strand.title} của môn ${subject.label}.`,
+            },
+            {
+              type: 'multiple-choice',
+              question: `"${concept}" thường được học trong môn nào?`,
+              options: seededShuffle([subject.label, ...otherSubjectLabels], `${subjectKey}|${strand.key}|${concept}|q2`),
+              answer: subject.label,
+              explanation: `"${concept}" là nội dung của môn ${subject.label}.`,
+            },
+            {
+              type: 'multiple-choice',
+              question: createConceptPrompt(subjectKey, concept),
+              options: seededShuffle([
+                createConceptCorrectOption(subjectKey, concept),
+                ...neighboringConcepts.map(otherConcept => `Nhầm sang nội dung "${otherConcept}"`),
+              ], `${subjectKey}|${strand.key}|${concept}|q3`),
+              answer: createConceptCorrectOption(subjectKey, concept),
+              explanation: `Khi học "${concept}", bé nên gắn với hành động đúng của nội dung này thay vì nhầm sang chủ đề khác.`,
+            },
+            {
+              type: 'multiple-choice',
+              question: `Vì sao bé nên học "${concept}"?`,
+              options: seededShuffle([
+                benefit,
+                'để làm bài nhanh mà không cần hiểu',
+                'để quên mất thói quen tốt',
+                'để chỉ học thuộc lòng tên bài',
+              ], `${subjectKey}|${strand.key}|${concept}|q4`),
+              answer: benefit,
+              explanation: `Học "${concept}" có ích vì ${benefit}.`,
+            },
+          ],
+        });
+      });
+    });
+  });
+
+  return topics;
+}
+
 function buildCatalog(allData) {
   if (CATALOG_CACHE) return CATALOG_CACHE;
   const catalog = buildSourceCatalog(allData);
@@ -246,6 +399,8 @@ function buildCatalog(allData) {
   SUPPLEMENTAL_SCIENCE_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
   SUPPLEMENTAL_VIETNAMESE_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
   SUPPLEMENTAL_IT_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
+  SUPPLEMENTAL_OTHER_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
+  buildKnowledgeMapConceptTopics().forEach(topic => mergeSupplemental(catalog, topic));
   CURATED_ENGLISH_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
   CATALOG_CACHE = catalog;
   return CATALOG_CACHE;
@@ -663,14 +818,29 @@ function chooseTopicEntry({ subject, dayNumber, moduleIndex, session, moduleId, 
 
 function subjectFallbackOrder(primarySubject) {
   const map = {
-    vie: ['vie', 'math', 'eng', 'sci', 'it'],
-    it: ['it', 'eng', 'math', 'sci', 'vie'],
-    sci: ['sci', 'math', 'eng', 'vie', 'it'],
-    eng: ['eng', 'math', 'sci', 'vie', 'it'],
-    math: ['math', 'eng', 'sci', 'vie', 'it'],
-    draw: ['draw', 'math', 'eng', 'sci', 'vie', 'it'],
+    vie: ['vie', 'math', 'eng', 'sci', 'histgeo', 'ethics', 'it', 'life'],
+    it: ['it', 'eng', 'math', 'tech', 'sci', 'vie', 'life'],
+    sci: ['sci', 'math', 'eng', 'histgeo', 'tech', 'vie', 'it'],
+    eng: ['eng', 'math', 'sci', 'vie', 'it', 'music', 'life'],
+    math: ['math', 'eng', 'sci', 'vie', 'histgeo', 'it', 'tech'],
+    histgeo: ['histgeo', 'vie', 'sci', 'math', 'ethics', 'life'],
+    music: ['music', 'eng', 'vie', 'art', 'life'],
+    art: ['art', 'vie', 'music', 'life', 'tech'],
+    ethics: ['ethics', 'vie', 'life', 'histgeo', 'eng'],
+    tech: ['tech', 'it', 'math', 'art', 'sci'],
+    life: ['life', 'ethics', 'vie', 'pe', 'eng'],
+    pe: ['pe', 'life', 'sci', 'math'],
+    draw: ['art', 'music', 'life', 'math', 'eng', 'sci', 'vie', 'it'],
   };
-  return map[primarySubject] || [primarySubject, 'math', 'eng', 'sci', 'vie', 'it'];
+  return map[primarySubject] || [primarySubject, ...CORE_SUBJECT_CODES];
+}
+
+function getLongRangePlanSubject(dayNumber, session, moduleIndex) {
+  const slotIndexes = LONG_RANGE_STUDY_POLICY.enrichmentSlotMap[session] || [];
+  const slotPosition = slotIndexes.indexOf(moduleIndex);
+  if (slotPosition === -1) return null;
+  const enrichment = getDailyEnrichmentSubjects(dayNumber);
+  return enrichment[slotPosition % enrichment.length] || null;
 }
 
 function getSubjectUsageScore(usage, subject) {
@@ -680,7 +850,7 @@ function getSubjectUsageScore(usage, subject) {
 function prioritizeSubjectOrder(primarySubject, subjectUsage) {
   const base = [...new Set(subjectFallbackOrder(primarySubject))];
   const preferred = primarySubject === 'it'
-    ? ['math', 'vie', 'eng', 'sci', 'it', 'draw']
+    ? ['math', 'vie', 'eng', 'sci', 'it', 'tech', 'life', 'draw']
     : base;
 
   const underCap = [];
@@ -861,12 +1031,18 @@ export function materializeDayCurriculum(dayNumber, dayData, allData) {
   const explanationSeenDay = new Set();
   const topicSeenDay = new Set();
   const topicSeenBySession = { am: new Set(), pm: new Set() };
-  const subjectUsage = { math: 0, eng: 0, vie: 0, sci: 0, it: 0, draw: 0 };
+  const subjectUsage = Object.fromEntries([...ALL_SUBJECT_CODES, 'draw'].map(subject => [subject, 0]));
+  const sessionIndexCounter = { am: 0, pm: 0 };
 
   const modules = dayData.modules.map((module, index) => {
     const completed = State.getModuleData(module.id);
     const forcedTopicKey = completed?.curriculumTopicKey || null;
-    const subjectOrder = forcedTopicKey ? [module.subject] : prioritizeSubjectOrder(module.subject, subjectUsage);
+    const sessionIndex = sessionIndexCounter[module.session] || 0;
+    sessionIndexCounter[module.session] = sessionIndex + 1;
+    const plannedSubject = forcedTopicKey ? null : getLongRangePlanSubject(dayNumber, module.session, sessionIndex);
+    const subjectOrder = forcedTopicKey
+      ? [module.subject]
+      : [...new Set([plannedSubject, ...prioritizeSubjectOrder(plannedSubject || module.subject, subjectUsage)].filter(Boolean))];
     let chosenEntry = null;
     let questions = [];
 
@@ -932,12 +1108,14 @@ export function materializeDayCurriculum(dayNumber, dayData, allData) {
       title: deriveModuleTitle(chosenEntry, questions),
       topicKey: chosenEntry.topicKey,
       lessonBlocks: clone(chosenEntry.lessonBlocks || module.lessonBlocks || []),
+      estimatedMinutes: getSubjectEstimatedMinutes(chosenEntry.subject),
       questions,
     };
   });
 
   return {
     ...dayData,
+    targetMinutes: { ...LONG_RANGE_STUDY_POLICY.targetMinutes },
     modules,
   };
 }

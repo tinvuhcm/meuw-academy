@@ -5,6 +5,7 @@
 
 import { randomPick, shuffle } from '../utils.js';
 import { ALL_DATA } from './curriculum-loader.js';
+import { OTHER_SUBJECT_CODES } from './official-knowledge-map.js';
 
 export function generatePracticeModule(numQuestions = 20, category = 'all') {
     let allModules = [];
@@ -17,7 +18,7 @@ export function generatePracticeModule(numQuestions = 20, category = 'all') {
     // Filter by category
     if (category !== 'all') {
         if (category === 'other') {
-            allModules = allModules.filter(m => m.subject === 'draw' || m.subject === 'it');
+            allModules = allModules.filter(m => OTHER_SUBJECT_CODES.includes(m.subject) || m.subject === 'draw');
         } else {
             allModules = allModules.filter(m => m.subject === category);
         }
@@ -43,7 +44,7 @@ export function generatePracticeModule(numQuestions = 20, category = 'all') {
     if (category === 'vie') title = 'Luyện Tập Tiếng Việt';
     if (category === 'eng') title = 'Luyện Tập Tiếng Anh';
     if (category === 'sci') title = 'Luyện Tập Khoa Học';
-    if (category === 'other') title = 'Luyện Tập Kỹ Năng';
+    if (category === 'other') title = 'Luyện Tập Môn Khác';
 
     return {
         id: `practice-${category}-${Date.now()}`,

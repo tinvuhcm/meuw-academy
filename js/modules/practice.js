@@ -55,6 +55,7 @@ export function renderPractice() {
     // Generate up to current day
     for (let i = 1; i <= currentDay; i++) {
       const dayData = getCurriculumDay(i);
+      const scheduledModules = State.getScheduledModulesForDayNumber(i);
       if (!dayData) continue;
       
       const dayCard = el('div', { class: 'card shadow-sm' });
@@ -62,7 +63,7 @@ export function renderPractice() {
       
       const modGrid = el('div', { class: 'grid gap-2 sm:grid-cols-2' });
       
-      dayData.modules.forEach(m => {
+      scheduledModules.forEach(m => {
         const isCompleted = State.isModuleComplete(m.id);
         if (!isCompleted && i === currentDay) return; // Only show completed or past modules
         

@@ -282,17 +282,43 @@ function renderSettingsTab(container) {
 
   wrap.appendChild(el('hr', { class: 'my-6 border-border' }));
 
-  // 2. Mandatory Break Policy
+  // 2. Break Settings
   const breakGroup = el('div', { class: 'input-group' });
-  breakGroup.innerHTML = `
-    <label class="input-label">Nghỉ giải lao bắt buộc</label>
-    <div class="p-4 rounded-xl border-2 border-border bg-bg-2 text-sm leading-relaxed">
-      Bé sẽ nghỉ bắt buộc <b>5 phút</b> sau mỗi <b>30 phút</b> học liên tục, kể cả lúc luyện tập.
-    </div>
-  `;
-  if ((settings.breakReminderMins || 0) !== 30) {
-    State.setSetting('breakReminderMins', 30);
-  }
+  breakGroup.innerHTML = `<label class="input-label">Nghỉ giải lao khi học online liên tục</label>`;
+  const breakGrid = el('div', { class: 'grid md:grid-cols-2 gap-4' });
+
+  const studyWrap = el('div');
+  studyWrap.innerHTML = `<div class="text-sm font-bold mb-2">Sau bao lâu thì nhắc nghỉ?</div>`;
+  const studySelect = el('select', { class: 'input-field' });
+  [15, 20, 25, 30, 35, 40, 45, 50, 60, 75, 90].forEach(mins => {
+    const option = el('option', { value: String(mins) }, `${mins} phút`);
+    if (Number(settings.breakReminderMins || 30) === mins) option.selected = true;
+    studySelect.appendChild(option);
+  });
+  studySelect.addEventListener('change', () => {
+    State.setSetting('breakReminderMins', Number(studySelect.value));
+    window.toast?.('Đã cập nhật thời gian học liên tục.', 'success');
+  });
+  studyWrap.appendChild(studySelect);
+
+  const breakWrap = el('div');
+  breakWrap.innerHTML = `<div class="text-sm font-bold mb-2">Thời gian nghỉ</div>`;
+  const breakSelect = el('select', { class: 'input-field' });
+  [3, 5, 7, 10, 12, 15].forEach(mins => {
+    const option = el('option', { value: String(mins) }, `${mins} phút`);
+    if (Number(settings.breakDurationMins || 5) === mins) option.selected = true;
+    breakSelect.appendChild(option);
+  });
+  breakSelect.addEventListener('change', () => {
+    State.setSetting('breakDurationMins', Number(breakSelect.value));
+    window.toast?.('Đã cập nhật thời gian nghỉ.', 'success');
+  });
+  breakWrap.appendChild(breakSelect);
+
+  breakGrid.appendChild(studyWrap);
+  breakGrid.appendChild(breakWrap);
+  breakGroup.appendChild(breakGrid);
+  breakGroup.appendChild(el('p', { class: 'text-xs text-text-muted mt-3' }, 'Áp dụng cho cả bài học chính và luyện tập. Khi hết giờ nghỉ, app sẽ mở lại để học tiếp.'));
   wrap.appendChild(breakGroup);
 
   wrap.appendChild(el('hr', { class: 'my-6 border-border' }));

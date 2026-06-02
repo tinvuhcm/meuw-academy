@@ -3,7 +3,7 @@
  * Main Dashboard Screen
  */
 
-import { el, formatToday, formatModuleDisplayTitle, getGreetingLine, getSubjectConfig } from '../utils.js';
+import { el, formatDateVI, formatToday, formatModuleDisplayTitle, getGreetingLine, getSubjectConfig } from '../utils.js';
 import State from '../state.js';
 import Router from '../router.js';
 import { Mascot } from '../mascot.js';
@@ -12,6 +12,7 @@ import { getCurriculumDay } from '../data/curriculum-loader.js';
 export function renderDashboard() {
   State.syncDailyProgress();
   const currentDay = State.getCurrentDay();
+  const currentPlan = State.getStudyPlanForDayNumber(currentDay);
   const container = el('div', { class: 'page-container dashboard-container' });
 
   // 1. App Header
@@ -81,7 +82,7 @@ export function renderDashboard() {
   
   const greetingArea = el('div', { class: 'hero-greeting-area flex-1 text-center md:text-left z-10' });
   const greetingText = el('h1', { class: 'hero-greeting font-display text-3xl md:text-4xl text-text mb-2' }, getGreetingLine());
-  const dayText = el('p', { class: 'hero-day-info text-text-muted text-lg font-bold' }, `${formatToday()} • Ngày thứ ${currentDay}`);
+  const dayText = el('p', { class: 'hero-day-info text-text-muted text-lg font-bold' }, `${formatToday()} • Ngày thứ ${currentDay} • ${currentPlan.shortLabel}`);
   
   // XP Progress
   const levelData = State.getLevel();
@@ -110,6 +111,7 @@ export function renderDashboard() {
 
   // 3. Daily Modules Overview
   const dayData = getCurriculumDay(currentDay);
+  const scheduledModules = State.getScheduledModulesForDayNumber(currentDay);
   const modulesSection = el('section', { class: 'mb-8' });
   modulesSection.appendChild(el('h2', { class: 'font-display text-2xl mb-4' }, 'Nhiệm vụ hôm nay'));
 
@@ -118,20 +120,18 @@ export function renderDashboard() {
     emptyBox.innerHTML = '<h3>Chưa có dữ liệu bài học cho ngày này!</h3>';
     modulesSection.appendChild(emptyBox);
   } else {
-    // Split AM and PM
-    const amModules = dayData.modules.filter(m => m.session === 'am');
-    const pmModules = dayData.modules.filter(m => m.session === 'pm');
-
-    const sessionGrid = el('div', { class: 'session-grid grid gap-4 md:grid-cols-2' });
-
-    // AM Card
-    const amCard = createSessionCard('Buổi Sáng', '☀️', amModules, 'am', currentDay);
-    sessionGrid.appendChild(amCard);
-
-    // PM Card
-    const pmCard = createSessionCard('Buổi Chiều', '🌙', pmModules, 'pm', currentDay);
-    sessionGrid.appendChild(pmCard);
-
+    const sessionGrid = el('div', { class: currentPlan.mode === 'merged' ? 'session-grid grid gap-4' : 'session-grid grid gap-4 md:grid-cols-2' });
+    if (currentPlan.mode === 'merged') {
+      const mergedCard = createSessionCard('Lịch Học Hôm Nay', '📘', scheduledModules, 'day', currentDay);
+      sessionGrid.appendChild(mergedCard);
+    } else {
+      const amModules = scheduledModules.filter(m => m.session === 'am');
+      const pmModules = scheduledModules.filter(m => m.session === 'pm');
+      const amCard = createSessionCard('Buổi Sáng', '☀️', amModules, 'am', currentDay);
+      const pmCard = createSessionCard('Buổi Chiều', '🌙', pmModules, 'pm', currentDay);
+      sessionGrid.appendChild(amCard);
+      sessionGrid.appendChild(pmCard);
+    }
     modulesSection.appendChild(sessionGrid);
   }
   container.appendChild(modulesSection);
@@ -323,6 +323,8 @@ function createRoadmapSection(currentDay) {
 
 function createRoadmapCard(dayNumber, dayData, currentDay) {
   const progress = State.getDayProgress(dayNumber);
+  const studyDate = State.getStudyDateForDayNumber(dayNumber);
+  const plan = State.getStudyPlanForDayNumber(dayNumber);
   const isToday = dayNumber === currentDay;
   const isPast = dayNumber < currentDay;
   const isFuture = dayNumber > currentDay;
@@ -342,7 +344,7 @@ function createRoadmapCard(dayNumber, dayData, currentDay) {
   titleRow.innerHTML = `
     <div>
       <div class="font-display text-xl">Ngày ${dayNumber}</div>
-      <div class="text-xs text-text-muted">${isToday ? 'Đang học hôm nay' : isPast ? 'Đã mở' : 'Sắp tới'}</div>
+      <div class="text-xs text-text-muted">${formatDateVI(studyDate)} • ${plan.shortLabel}</div>
     </div>
     <span class="text-xs font-bold px-3 py-1 rounded-full border ${statusClass}">${statusLabel}</span>
   `;
@@ -358,17 +360,18 @@ function createRoadmapCard(dayNumber, dayData, currentDay) {
   card.appendChild(summary);
 
   const subjectRow = el('div', { class: 'flex flex-wrap gap-1' });
-  const subjectLabels = [...new Set(dayData.modules.slice(0, 4).map(module => getSubjectConfig(module.subject).emoji))];
+  const scheduledModules = State.getScheduledModulesForDayNumber(dayNumber);
+  const subjectLabels = [...new Set(scheduledModules.slice(0, 4).map(module => getSubjectConfig(module.subject).emoji))];
   subjectLabels.forEach(label => {
     subjectRow.appendChild(el('span', { class: 'text-base' }, label));
   });
-  if (dayData.modules.length > 4) {
-    subjectRow.appendChild(el('span', { class: 'text-xs text-text-muted font-bold' }, `+${dayData.modules.length - 4}`));
+  if (scheduledModules.length > 4) {
+    subjectRow.appendChild(el('span', { class: 'text-xs text-text-muted font-bold' }, `+${scheduledModules.length - 4}`));
   }
   card.appendChild(subjectRow);
 
   card.addEventListener('click', () => {
-    Router.navigate(`/session/${dayNumber}/am`);
+    Router.navigate(`/session/${dayNumber}/${plan.mode === 'merged' ? 'day' : 'am'}`);
   });
 
   return card;

@@ -44,12 +44,20 @@ function showToast(message, type = 'info') {
 
 window.toast = showToast; // expose globally for easy access
 
-const MANDATORY_STUDY_MINUTES = 30;
-const MANDATORY_BREAK_SECONDS = 5 * 60;
 let activeStudySeconds = 0;
 let breakSecondsRemaining = 0;
 let studyTicker = null;
 let breakOverlay = null;
+
+function getBreakPolicy() {
+  const studyMinutes = Math.min(120, Math.max(10, Number(State.getSetting('breakReminderMins') || 30)));
+  const breakMinutes = Math.min(30, Math.max(1, Number(State.getSetting('breakDurationMins') || 5)));
+  return {
+    studyMinutes,
+    breakMinutes,
+    breakSeconds: breakMinutes * 60,
+  };
+}
 
 function isStudyRoute() {
   const hash = window.location.hash || '#/';
@@ -63,8 +71,8 @@ function ensureBreakOverlay() {
   breakOverlay.innerHTML = `
     <div class="card max-w-lg w-full text-center p-8 border-4 border-warning">
       <div class="text-5xl mb-4">🧃</div>
-      <h2 class="font-display text-3xl text-warning-dk mb-3">Đến giờ nghỉ 5 phút</h2>
-      <p class="font-bold text-text mb-4">Méo đã học liên tục 30 phút rồi. Mình nghỉ mắt, đứng dậy đi lại và uống nước nhé.</p>
+      <h2 data-break-title class="font-display text-3xl text-warning-dk mb-3"></h2>
+      <p data-break-message class="font-bold text-text mb-4"></p>
       <div data-break-countdown class="text-4xl font-display text-méo-purple mb-3">05:00</div>
       <div class="text-sm text-text-muted">Sau khi đếm ngược xong, app sẽ mở lại để học tiếp.</div>
     </div>
@@ -81,12 +89,18 @@ function updateBreakCountdown() {
 }
 
 function startMandatoryBreak() {
-  breakSecondsRemaining = MANDATORY_BREAK_SECONDS;
+  const policy = getBreakPolicy();
+  breakSecondsRemaining = policy.breakSeconds;
   activeStudySeconds = 0;
-  document.body.appendChild(ensureBreakOverlay());
+  const overlay = ensureBreakOverlay();
+  const titleEl = overlay.querySelector('[data-break-title]');
+  const messageEl = overlay.querySelector('[data-break-message]');
+  if (titleEl) titleEl.textContent = `Đến giờ nghỉ ${policy.breakMinutes} phút`;
+  if (messageEl) messageEl.textContent = `Méo đã học liên tục ${policy.studyMinutes} phút rồi. Mình nghỉ mắt, đứng dậy đi lại và uống nước nhé.`;
+  document.body.appendChild(overlay);
   updateBreakCountdown();
   Audio.breakReminder();
-  Mascot.sayQuick('Nghỉ 5 phút rồi mình học tiếp nhé!', 5000);
+  Mascot.sayQuick(`Nghỉ ${policy.breakMinutes} phút rồi mình học tiếp nhé!`, 5000);
 }
 
 function endMandatoryBreak() {
@@ -115,7 +129,7 @@ function initStudyBreakGuard() {
     if (document.visibilityState !== 'visible') return;
 
     activeStudySeconds += 1;
-    if (activeStudySeconds >= MANDATORY_STUDY_MINUTES * 60) {
+    if (activeStudySeconds >= getBreakPolicy().studyMinutes * 60) {
       startMandatoryBreak();
     }
   }, 1000);

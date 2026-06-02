@@ -14,9 +14,16 @@ const GRADE_ID = 7;
 const SUBJECTS = [
   { id: 32, slug: "tieng-viet", title: "Tieng Viet", bookshelfSlug: "tieng-viet" },
   { id: 33, slug: "toan", title: "Toan", bookshelfSlug: "toan" },
+  { id: 34, slug: "dao-duc", title: "Dao duc", bookshelfSlug: "dao-duc" },
+  { id: 36, slug: "am-nhac", title: "Am nhac", bookshelfSlug: "am-nhac" },
+  { id: 37, slug: "mi-thuat", title: "Mi thuat", bookshelfSlug: "mi-thuat" },
+  { id: 38, slug: "giao-duc-the-chat", title: "Giao duc the chat", bookshelfSlug: "giao-duc-the-chat" },
   { id: 39, slug: "tieng-anh", title: "Tieng Anh", bookshelfSlug: "tieng-anh" },
+  { id: 40, slug: "hoat-dong-trai-nghiem", title: "Hoat dong trai nghiem", bookshelfSlug: "hoat-dong-trai-nghiem" },
   { id: 41, slug: "tin-hoc", title: "Tin hoc", bookshelfSlug: "tin-hoc" },
+  { id: 69, slug: "cong-nghe", title: "Cong nghe", bookshelfSlug: "cong-nghe" },
   { id: 77, slug: "khoa-hoc", title: "Khoa hoc", bookshelfSlug: "khoa-hoc" },
+  { id: 78, slug: "lich-su-va-dia-li", title: "Lich su va Dia li", bookshelfSlug: "lich-su-va-dia-li" },
 ];
 
 const DOC_TYPES = new Map([

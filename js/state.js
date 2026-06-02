@@ -4,6 +4,7 @@
  */
 
 import { localDateString, normalizeText } from './utils.js';
+import { getScheduledModulesForProfileDay, getStudyDateForDay, getStudyPlanForDate } from './schedule-calendar.js';
 import { M1_DATA } from './data/curriculum-m1.js';
 import { M2_DATA } from './data/curriculum-m2.js';
 import { M3_DATA } from './data/curriculum-m3.js';
@@ -46,7 +47,9 @@ function clampDay(day) {
 }
 
 function getCurriculumModulesForDay(dayNumber) {
-  return ALL_CURRICULUM_DATA[`day${dayNumber}`]?.modules || [];
+  const profile = getActiveProfile();
+  const rawModules = ALL_CURRICULUM_DATA[`day${dayNumber}`]?.modules || [];
+  return getScheduledModulesForProfileDay(profile, dayNumber, rawModules).allModules;
 }
 
 function inferLearningStartDate(profile) {
@@ -511,6 +514,19 @@ function getCurrentDay() {
   return getActiveProfile().currentDay || 1;
 }
 
+function getStudyDateForDayNumber(dayNumber) {
+  const profile = getActiveProfile();
+  return getStudyDateForDay(profile.learningStartDate || localDateString(new Date()), dayNumber);
+}
+
+function getStudyPlanForDayNumber(dayNumber) {
+  return getStudyPlanForDate(getStudyDateForDayNumber(dayNumber));
+}
+
+function getScheduledModulesForDayNumber(dayNumber) {
+  return getCurriculumModulesForDay(dayNumber);
+}
+
 function setCurrentDay(day) {
   const profile = getActiveProfile();
   ensureScheduleMetadata(profile);
@@ -924,6 +940,9 @@ export const State = {
   isModuleComplete,
   getModuleData,
   getCurrentDay,
+  getStudyDateForDayNumber,
+  getStudyPlanForDayNumber,
+  getScheduledModulesForDayNumber,
   getDayProgress,
   getSequentialPassedDays,
   setCurrentDay,

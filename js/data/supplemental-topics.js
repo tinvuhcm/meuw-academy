@@ -2,6 +2,7 @@ import { ADDITIONAL_SCIENCE_TOPICS } from './additional-science-topics.js';
 import { ADDITIONAL_VIETNAMESE_TOPICS } from './additional-vietnamese-topics.js';
 import { MORE_SCIENCE_TOPICS } from './more-science-topics.js';
 import { MORE_VIETNAMESE_TOPICS } from './more-vietnamese-topics.js';
+import { OTHER_SUBJECT_TOPICS } from './other-subject-topics.js';
 
 export const SUPPLEMENTAL_SCIENCE_TOPICS = [
   {
@@ -582,4 +583,8 @@ export const SUPPLEMENTAL_IT_TOPICS = [
       { type: 'multiple-choice', question: 'Điều nào là mục tiêu của tư thế ngồi đúng?', options: ['Học thoải mái và bảo vệ cơ thể', 'Để máy tính sáng hơn', 'Để bàn học nhỏ lại', 'Để chuột phát nhạc'], answer: 'Học thoải mái và bảo vệ cơ thể', explanation: 'Ngồi đúng giúp bé học bền hơn mà vẫn giữ sức khỏe tốt.' },
     ],
   },
+];
+
+export const SUPPLEMENTAL_OTHER_TOPICS = [
+  ...OTHER_SUBJECT_TOPICS,
 ];

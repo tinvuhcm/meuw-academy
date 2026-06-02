@@ -225,12 +225,102 @@
   },
   {
     "subject": {
+      "id": 34,
+      "slug": "dao-duc",
+      "title": "Dao duc",
+      "bookshelfSlug": "dao-duc"
+    },
+    "sourceUrl": "https://www.hoc10.vn/tu-sach/dao-duc/lop-4/",
+    "status": "failed",
+    "error": "The operation was aborted due to timeout",
+    "sections": [],
+    "rawHtmlLength": 0,
+    "summary": {
+      "totalSections": 0,
+      "totalCards": 0,
+      "sectionTitles": []
+    }
+  },
+  {
+    "subject": {
+      "id": 36,
+      "slug": "am-nhac",
+      "title": "Am nhac",
+      "bookshelfSlug": "am-nhac"
+    },
+    "sourceUrl": "https://www.hoc10.vn/tu-sach/am-nhac/lop-4/",
+    "status": "failed",
+    "error": "The operation was aborted due to timeout",
+    "sections": [],
+    "rawHtmlLength": 0,
+    "summary": {
+      "totalSections": 0,
+      "totalCards": 0,
+      "sectionTitles": []
+    }
+  },
+  {
+    "subject": {
+      "id": 37,
+      "slug": "mi-thuat",
+      "title": "Mi thuat",
+      "bookshelfSlug": "mi-thuat"
+    },
+    "sourceUrl": "https://www.hoc10.vn/tu-sach/mi-thuat/lop-4/",
+    "status": "failed",
+    "error": "The operation was aborted due to timeout",
+    "sections": [],
+    "rawHtmlLength": 0,
+    "summary": {
+      "totalSections": 0,
+      "totalCards": 0,
+      "sectionTitles": []
+    }
+  },
+  {
+    "subject": {
+      "id": 38,
+      "slug": "giao-duc-the-chat",
+      "title": "Giao duc the chat",
+      "bookshelfSlug": "giao-duc-the-chat"
+    },
+    "sourceUrl": "https://www.hoc10.vn/tu-sach/giao-duc-the-chat/lop-4/",
+    "status": "failed",
+    "error": "The operation was aborted due to timeout",
+    "sections": [],
+    "rawHtmlLength": 0,
+    "summary": {
+      "totalSections": 0,
+      "totalCards": 0,
+      "sectionTitles": []
+    }
+  },
+  {
+    "subject": {
       "id": 39,
       "slug": "tieng-anh",
       "title": "Tieng Anh",
       "bookshelfSlug": "tieng-anh"
     },
     "sourceUrl": "https://www.hoc10.vn/tu-sach/tieng-anh/lop-4/",
+    "status": "failed",
+    "error": "The operation was aborted due to timeout",
+    "sections": [],
+    "rawHtmlLength": 0,
+    "summary": {
+      "totalSections": 0,
+      "totalCards": 0,
+      "sectionTitles": []
+    }
+  },
+  {
+    "subject": {
+      "id": 40,
+      "slug": "hoat-dong-trai-nghiem",
+      "title": "Hoat dong trai nghiem",
+      "bookshelfSlug": "hoat-dong-trai-nghiem"
+    },
+    "sourceUrl": "https://www.hoc10.vn/tu-sach/hoat-dong-trai-nghiem/lop-4/",
     "status": "failed",
     "error": "The operation was aborted due to timeout",
     "sections": [],
@@ -261,12 +351,48 @@
   },
   {
     "subject": {
+      "id": 69,
+      "slug": "cong-nghe",
+      "title": "Cong nghe",
+      "bookshelfSlug": "cong-nghe"
+    },
+    "sourceUrl": "https://www.hoc10.vn/tu-sach/cong-nghe/lop-4/",
+    "status": "failed",
+    "error": "The operation was aborted due to timeout",
+    "sections": [],
+    "rawHtmlLength": 0,
+    "summary": {
+      "totalSections": 0,
+      "totalCards": 0,
+      "sectionTitles": []
+    }
+  },
+  {
+    "subject": {
       "id": 77,
       "slug": "khoa-hoc",
       "title": "Khoa hoc",
       "bookshelfSlug": "khoa-hoc"
     },
     "sourceUrl": "https://www.hoc10.vn/tu-sach/khoa-hoc/lop-4/",
+    "status": "failed",
+    "error": "The operation was aborted due to timeout",
+    "sections": [],
+    "rawHtmlLength": 0,
+    "summary": {
+      "totalSections": 0,
+      "totalCards": 0,
+      "sectionTitles": []
+    }
+  },
+  {
+    "subject": {
+      "id": 78,
+      "slug": "lich-su-va-dia-li",
+      "title": "Lich su va Dia li",
+      "bookshelfSlug": "lich-su-va-dia-li"
+    },
+    "sourceUrl": "https://www.hoc10.vn/tu-sach/lich-su-va-dia-li/lop-4/",
     "status": "failed",
     "error": "The operation was aborted due to timeout",
     "sections": [],

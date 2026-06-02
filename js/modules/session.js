@@ -14,6 +14,8 @@ export function renderSession(params) {
   const { dayId, sessionId } = params; // e.g. { dayId: '1', sessionId: 'am' }
   const numericDayId = parseInt(dayId, 10);
   const dayData = getCurriculumDay(numericDayId);
+  const studyPlan = State.getStudyPlanForDayNumber(numericDayId);
+  const scheduledModules = State.getScheduledModulesForDayNumber(numericDayId);
   const currentDay = State.getCurrentDay();
   const isFutureDay = numericDayId > currentDay;
   
@@ -25,7 +27,7 @@ export function renderSession(params) {
   backBtn.addEventListener('click', () => { Audio.click(); Router.navigate('/'); });
   header.appendChild(backBtn);
   
-  const titleText = sessionId === 'am' ? 'Buổi Sáng ☀️' : 'Buổi Chiều 🌙';
+  const titleText = sessionId === 'day' ? 'Lịch Học Hôm Nay 📘' : sessionId === 'am' ? 'Buổi Sáng ☀️' : 'Buổi Chiều 🌙';
   const headerTitle = el('h1', { class: 'font-display text-xl' }, `Ngày ${dayId} • ${titleText}`);
   header.appendChild(headerTitle);
   header.appendChild(el('div', { style: 'width: 100px' })); // spacer
@@ -48,7 +50,14 @@ export function renderSession(params) {
     container.appendChild(notice);
   }
 
-  const modules = dayData.modules.filter(m => m.session === sessionId);
+  const effectiveSessionId = studyPlan.mode === 'merged' ? 'day' : sessionId;
+  if (studyPlan.mode === 'merged' && sessionId !== 'day') {
+    Router.navigate(`/session/${dayId}/day`);
+    return document.createDocumentFragment();
+  }
+  const modules = effectiveSessionId === 'day'
+    ? scheduledModules
+    : scheduledModules.filter(m => m.session === effectiveSessionId);
   const listWrapper = el('div', { class: 'mt-6 max-w-2xl mx-auto flex flex-col gap-4' });
 
   let foundFirstIncomplete = false;

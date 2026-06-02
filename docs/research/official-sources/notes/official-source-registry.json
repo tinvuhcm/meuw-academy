@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-02T02:44:10.820Z",
+  "updated_at": "2026-06-02T08:40:55.613Z",
   "school_policy": {
     "grade": "lop-4",
     "official_school_sources": [
@@ -154,6 +154,77 @@
       },
       {
         "subject": {
+          "id": 34,
+          "slug": "dao-duc",
+          "title": "Dao duc",
+          "bookshelfSlug": "dao-duc"
+        },
+        "summary": {
+          "total": 10,
+          "byType": {
+            "1": 1,
+            "2": 7,
+            "5": 2
+          },
+          "downloadableStudyDocs": 3
+        }
+      },
+      {
+        "subject": {
+          "id": 36,
+          "slug": "am-nhac",
+          "title": "Am nhac",
+          "bookshelfSlug": "am-nhac"
+        },
+        "summary": {
+          "total": 5,
+          "byType": {
+            "1": 1,
+            "2": 1,
+            "4": 1,
+            "5": 2
+          },
+          "downloadableStudyDocs": 4
+        }
+      },
+      {
+        "subject": {
+          "id": 37,
+          "slug": "mi-thuat",
+          "title": "Mi thuat",
+          "bookshelfSlug": "mi-thuat"
+        },
+        "summary": {
+          "total": 12,
+          "byType": {
+            "1": 1,
+            "2": 9,
+            "4": 1,
+            "5": 1
+          },
+          "downloadableStudyDocs": 3
+        }
+      },
+      {
+        "subject": {
+          "id": 38,
+          "slug": "giao-duc-the-chat",
+          "title": "Giao duc the chat",
+          "bookshelfSlug": "giao-duc-the-chat"
+        },
+        "summary": {
+          "total": 6,
+          "byType": {
+            "1": 1,
+            "2": 2,
+            "4": 1,
+            "5": 2
+          },
+          "downloadableStudyDocs": 4
+        }
+      },
+      {
+        "subject": {
           "id": 39,
           "slug": "tieng-anh",
           "title": "Tieng Anh",
@@ -169,6 +240,24 @@
             "6": 14
           },
           "downloadableStudyDocs": 21
+        }
+      },
+      {
+        "subject": {
+          "id": 40,
+          "slug": "hoat-dong-trai-nghiem",
+          "title": "Hoat dong trai nghiem",
+          "bookshelfSlug": "hoat-dong-trai-nghiem"
+        },
+        "summary": {
+          "total": 10,
+          "byType": {
+            "1": 1,
+            "2": 6,
+            "4": 1,
+            "5": 2
+          },
+          "downloadableStudyDocs": 4
         }
       },
       {
@@ -191,6 +280,24 @@
       },
       {
         "subject": {
+          "id": 69,
+          "slug": "cong-nghe",
+          "title": "Cong nghe",
+          "bookshelfSlug": "cong-nghe"
+        },
+        "summary": {
+          "total": 9,
+          "byType": {
+            "1": 1,
+            "2": 5,
+            "4": 1,
+            "5": 2
+          },
+          "downloadableStudyDocs": 4
+        }
+      },
+      {
+        "subject": {
           "id": 77,
           "slug": "khoa-hoc",
           "title": "Khoa hoc",
@@ -201,6 +308,24 @@
           "byType": {
             "1": 1,
             "2": 10,
+            "4": 1,
+            "5": 2
+          },
+          "downloadableStudyDocs": 4
+        }
+      },
+      {
+        "subject": {
+          "id": 78,
+          "slug": "lich-su-va-dia-li",
+          "title": "Lich su va Dia li",
+          "bookshelfSlug": "lich-su-va-dia-li"
+        },
+        "summary": {
+          "total": 7,
+          "byType": {
+            "1": 1,
+            "2": 3,
             "4": 1,
             "5": 2
           },
@@ -229,12 +354,57 @@
       },
       {
         "subject": {
+          "id": 34,
+          "slug": "dao-duc",
+          "title": "Dao duc",
+          "bookshelfSlug": "dao-duc"
+        },
+        "total": 12
+      },
+      {
+        "subject": {
+          "id": 36,
+          "slug": "am-nhac",
+          "title": "Am nhac",
+          "bookshelfSlug": "am-nhac"
+        },
+        "total": 0
+      },
+      {
+        "subject": {
+          "id": 37,
+          "slug": "mi-thuat",
+          "title": "Mi thuat",
+          "bookshelfSlug": "mi-thuat"
+        },
+        "total": 14
+      },
+      {
+        "subject": {
+          "id": 38,
+          "slug": "giao-duc-the-chat",
+          "title": "Giao duc the chat",
+          "bookshelfSlug": "giao-duc-the-chat"
+        },
+        "total": 0
+      },
+      {
+        "subject": {
           "id": 39,
           "slug": "tieng-anh",
           "title": "Tieng Anh",
           "bookshelfSlug": "tieng-anh"
         },
         "total": 0
+      },
+      {
+        "subject": {
+          "id": 40,
+          "slug": "hoat-dong-trai-nghiem",
+          "title": "Hoat dong trai nghiem",
+          "bookshelfSlug": "hoat-dong-trai-nghiem"
+        },
+        "total": 31
       },
       {
         "subject": {
@@ -247,12 +417,30 @@
       },
       {
         "subject": {
+          "id": 69,
+          "slug": "cong-nghe",
+          "title": "Cong nghe",
+          "bookshelfSlug": "cong-nghe"
+        },
+        "total": 12
+      },
+      {
+        "subject": {
           "id": 77,
           "slug": "khoa-hoc",
           "title": "Khoa hoc",
           "bookshelfSlug": "khoa-hoc"
         },
         "total": 49
+      },
+      {
+        "subject": {
+          "id": 78,
+          "slug": "lich-su-va-dia-li",
+          "title": "Lich su va Dia li",
+          "bookshelfSlug": "lich-su-va-dia-li"
+        },
+        "total": 27
       }
     ],
     "bookshelf_subjects": [
@@ -295,10 +483,85 @@
       },
       {
         "subject": {
+          "id": 34,
+          "slug": "dao-duc",
+          "title": "Dao duc",
+          "bookshelfSlug": "dao-duc"
+        },
+        "summary": {
+          "totalSections": 0,
+          "totalCards": 0,
+          "sectionTitles": []
+        },
+        "status": "failed",
+        "error": "The operation was aborted due to timeout"
+      },
+      {
+        "subject": {
+          "id": 36,
+          "slug": "am-nhac",
+          "title": "Am nhac",
+          "bookshelfSlug": "am-nhac"
+        },
+        "summary": {
+          "totalSections": 0,
+          "totalCards": 0,
+          "sectionTitles": []
+        },
+        "status": "failed",
+        "error": "The operation was aborted due to timeout"
+      },
+      {
+        "subject": {
+          "id": 37,
+          "slug": "mi-thuat",
+          "title": "Mi thuat",
+          "bookshelfSlug": "mi-thuat"
+        },
+        "summary": {
+          "totalSections": 0,
+          "totalCards": 0,
+          "sectionTitles": []
+        },
+        "status": "failed",
+        "error": "The operation was aborted due to timeout"
+      },
+      {
+        "subject": {
+          "id": 38,
+          "slug": "giao-duc-the-chat",
+          "title": "Giao duc the chat",
+          "bookshelfSlug": "giao-duc-the-chat"
+        },
+        "summary": {
+          "totalSections": 0,
+          "totalCards": 0,
+          "sectionTitles": []
+        },
+        "status": "failed",
+        "error": "The operation was aborted due to timeout"
+      },
+      {
+        "subject": {
           "id": 39,
           "slug": "tieng-anh",
           "title": "Tieng Anh",
           "bookshelfSlug": "tieng-anh"
+        },
+        "summary": {
+          "totalSections": 0,
+          "totalCards": 0,
+          "sectionTitles": []
+        },
+        "status": "failed",
+        "error": "The operation was aborted due to timeout"
+      },
+      {
+        "subject": {
+          "id": 40,
+          "slug": "hoat-dong-trai-nghiem",
+          "title": "Hoat dong trai nghiem",
+          "bookshelfSlug": "hoat-dong-trai-nghiem"
         },
         "summary": {
           "totalSections": 0,
@@ -325,10 +588,40 @@
       },
       {
         "subject": {
+          "id": 69,
+          "slug": "cong-nghe",
+          "title": "Cong nghe",
+          "bookshelfSlug": "cong-nghe"
+        },
+        "summary": {
+          "totalSections": 0,
+          "totalCards": 0,
+          "sectionTitles": []
+        },
+        "status": "failed",
+        "error": "The operation was aborted due to timeout"
+      },
+      {
+        "subject": {
           "id": 77,
           "slug": "khoa-hoc",
           "title": "Khoa hoc",
           "bookshelfSlug": "khoa-hoc"
+        },
+        "summary": {
+          "totalSections": 0,
+          "totalCards": 0,
+          "sectionTitles": []
+        },
+        "status": "failed",
+        "error": "The operation was aborted due to timeout"
+      },
+      {
+        "subject": {
+          "id": 78,
+          "slug": "lich-su-va-dia-li",
+          "title": "Lich su va Dia li",
+          "bookshelfSlug": "lich-su-va-dia-li"
         },
         "summary": {
           "totalSections": 0,

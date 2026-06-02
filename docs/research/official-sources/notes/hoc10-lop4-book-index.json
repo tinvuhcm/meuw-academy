@@ -128,6 +128,142 @@
       },
       {
         "subject": {
+          "id": 34,
+          "slug": "dao-duc",
+          "title": "Dao duc",
+          "bookshelfSlug": "dao-duc"
+        },
+        "rows": [
+          {
+            "id": 392,
+            "title": "Đạo đức 4",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/nh%20thumb%20(1).jpg",
+            "link_html": "dao_duc_4",
+            "grade_id": 7,
+            "book_type_id": 1,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 34,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/dao_duc_4"
+          }
+        ],
+        "summary": {
+          "total": 1,
+          "bySubjectId": {
+            "34": 1
+          },
+          "freeOrPreviewable": 1
+        }
+      },
+      {
+        "subject": {
+          "id": 36,
+          "slug": "am-nhac",
+          "title": "Am nhac",
+          "bookshelfSlug": "am-nhac"
+        },
+        "rows": [
+          {
+            "id": 403,
+            "title": "Âm nhạc 4",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/b%C3%ACa%20s%C3%A1ch.jpg",
+            "link_html": "am_nhac_4",
+            "grade_id": 7,
+            "book_type_id": 1,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 36,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/am_nhac_4"
+          }
+        ],
+        "summary": {
+          "total": 1,
+          "bySubjectId": {
+            "36": 1
+          },
+          "freeOrPreviewable": 1
+        }
+      },
+      {
+        "subject": {
+          "id": 37,
+          "slug": "mi-thuat",
+          "title": "Mi thuat",
+          "bookshelfSlug": "mi-thuat"
+        },
+        "rows": [
+          {
+            "id": 406,
+            "title": "Mĩ thuật 4",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/0_SGKMithuat4_29_5_2023_v1.jpg",
+            "link_html": "mi_thuat_4",
+            "grade_id": 7,
+            "book_type_id": 1,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 37,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/mi_thuat_4"
+          }
+        ],
+        "summary": {
+          "total": 1,
+          "bySubjectId": {
+            "37": 1
+          },
+          "freeOrPreviewable": 1
+        }
+      },
+      {
+        "subject": {
+          "id": 38,
+          "slug": "giao-duc-the-chat",
+          "title": "Giao duc the chat",
+          "bookshelfSlug": "giao-duc-the-chat"
+        },
+        "rows": [
+          {
+            "id": 407,
+            "title": "Giáo dục thể chất 4",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/00_SGK_GDTC4_22_05_2023_v1.jpg",
+            "link_html": "giao_duc_the_chat_4",
+            "grade_id": 7,
+            "book_type_id": 1,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 38,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/giao_duc_the_chat_4"
+          }
+        ],
+        "summary": {
+          "total": 1,
+          "bySubjectId": {
+            "38": 1
+          },
+          "freeOrPreviewable": 1
+        }
+      },
+      {
+        "subject": {
           "id": 39,
           "slug": "tieng-anh",
           "title": "Tieng Anh",
@@ -156,6 +292,40 @@
           "total": 1,
           "bySubjectId": {
             "39": 1
+          },
+          "freeOrPreviewable": 1
+        }
+      },
+      {
+        "subject": {
+          "id": 40,
+          "slug": "hoat-dong-trai-nghiem",
+          "title": "Hoat dong trai nghiem",
+          "bookshelfSlug": "hoat-dong-trai-nghiem"
+        },
+        "rows": [
+          {
+            "id": 409,
+            "title": "Hoạt động trải nghiệm 4",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/nh%20b%C3%ACa%20H%C4%90TN%204.jpg",
+            "link_html": "hoat_dong_trai_nghiem_4",
+            "grade_id": 7,
+            "book_type_id": 1,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 40,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/hoat_dong_trai_nghiem_4"
+          }
+        ],
+        "summary": {
+          "total": 1,
+          "bySubjectId": {
+            "40": 1
           },
           "freeOrPreviewable": 1
         }
@@ -196,6 +366,40 @@
       },
       {
         "subject": {
+          "id": 69,
+          "slug": "cong-nghe",
+          "title": "Cong nghe",
+          "bookshelfSlug": "cong-nghe"
+        },
+        "rows": [
+          {
+            "id": 394,
+            "title": "Công nghệ 4",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/00_SGK_CN4_19_05_2023_v1.png",
+            "link_html": "cong_nghe_4",
+            "grade_id": 7,
+            "book_type_id": 1,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 69,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/cong_nghe_4"
+          }
+        ],
+        "summary": {
+          "total": 1,
+          "bySubjectId": {
+            "69": 1
+          },
+          "freeOrPreviewable": 1
+        }
+      },
+      {
+        "subject": {
           "id": 77,
           "slug": "khoa-hoc",
           "title": "Khoa hoc",
@@ -224,6 +428,40 @@
           "total": 1,
           "bySubjectId": {
             "77": 1
+          },
+          "freeOrPreviewable": 1
+        }
+      },
+      {
+        "subject": {
+          "id": 78,
+          "slug": "lich-su-va-dia-li",
+          "title": "Lich su va Dia li",
+          "bookshelfSlug": "lich-su-va-dia-li"
+        },
+        "rows": [
+          {
+            "id": 332,
+            "title": "Lịch sử và Địa lí 4",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/0_SGKLichsuvaDiali4_25_10_2022_v1.jpg",
+            "link_html": "lich_su_va_dia_li_4",
+            "grade_id": 7,
+            "book_type_id": 1,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 78,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/lich_su_va_dia_li_4"
+          }
+        ],
+        "summary": {
+          "total": 1,
+          "bySubjectId": {
+            "78": 1
           },
           "freeOrPreviewable": 1
         }
@@ -342,6 +580,142 @@
       },
       {
         "subject": {
+          "id": 34,
+          "slug": "dao-duc",
+          "title": "Dao duc",
+          "bookshelfSlug": "dao-duc"
+        },
+        "rows": [
+          {
+            "id": 608,
+            "title": "SGV Đạo đức 4",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/Daoduc4_SGV_26_08_2023_v1.jpg",
+            "link_html": "sgv_dao_duc_4",
+            "grade_id": 7,
+            "book_type_id": 3,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 34,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/sgv_dao_duc_4"
+          }
+        ],
+        "summary": {
+          "total": 1,
+          "bySubjectId": {
+            "34": 1
+          },
+          "freeOrPreviewable": 1
+        }
+      },
+      {
+        "subject": {
+          "id": 36,
+          "slug": "am-nhac",
+          "title": "Am nhac",
+          "bookshelfSlug": "am-nhac"
+        },
+        "rows": [
+          {
+            "id": 601,
+            "title": "SGV Âm nhạc 4",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/Amnhac4_SGV_29_05_2023_v1.jpg",
+            "link_html": "sgv_am_nhac_4",
+            "grade_id": 7,
+            "book_type_id": 3,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 36,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/sgv_am_nhac_4"
+          }
+        ],
+        "summary": {
+          "total": 1,
+          "bySubjectId": {
+            "36": 1
+          },
+          "freeOrPreviewable": 1
+        }
+      },
+      {
+        "subject": {
+          "id": 37,
+          "slug": "mi-thuat",
+          "title": "Mi thuat",
+          "bookshelfSlug": "mi-thuat"
+        },
+        "rows": [
+          {
+            "id": 627,
+            "title": "SGV Mĩ thuật 4",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/Mithuat4_SGV_26_06_2023_v1.jpg",
+            "link_html": "sgv_mi_thuat_4",
+            "grade_id": 7,
+            "book_type_id": 3,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 37,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/sgv_mi_thuat_4"
+          }
+        ],
+        "summary": {
+          "total": 1,
+          "bySubjectId": {
+            "37": 1
+          },
+          "freeOrPreviewable": 1
+        }
+      },
+      {
+        "subject": {
+          "id": 38,
+          "slug": "giao-duc-the-chat",
+          "title": "Giao duc the chat",
+          "bookshelfSlug": "giao-duc-the-chat"
+        },
+        "rows": [
+          {
+            "id": 613,
+            "title": "SGV Giáo dục thể chất 4",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/GDTC4_SGV_26_08_2023_v1.jpg",
+            "link_html": "sgv_giao_duc_the_chat_4",
+            "grade_id": 7,
+            "book_type_id": 3,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 38,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/sgv_giao_duc_the_chat_4"
+          }
+        ],
+        "summary": {
+          "total": 1,
+          "bySubjectId": {
+            "38": 1
+          },
+          "freeOrPreviewable": 1
+        }
+      },
+      {
+        "subject": {
           "id": 39,
           "slug": "tieng-anh",
           "title": "Tieng Anh",
@@ -370,6 +744,40 @@
           "total": 1,
           "bySubjectId": {
             "39": 1
+          },
+          "freeOrPreviewable": 1
+        }
+      },
+      {
+        "subject": {
+          "id": 40,
+          "slug": "hoat-dong-trai-nghiem",
+          "title": "Hoat dong trai nghiem",
+          "bookshelfSlug": "hoat-dong-trai-nghiem"
+        },
+        "rows": [
+          {
+            "id": 618,
+            "title": "SGV Hoạt động trải nghiệm 4",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/HDTN4_SGV_26_08_2023_v1.jpg",
+            "link_html": "sgv_hoat_dong_trai_nghiem_4",
+            "grade_id": 7,
+            "book_type_id": 3,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 40,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/sgv_hoat_dong_trai_nghiem_4"
+          }
+        ],
+        "summary": {
+          "total": 1,
+          "bySubjectId": {
+            "40": 1
           },
           "freeOrPreviewable": 1
         }
@@ -410,6 +818,40 @@
       },
       {
         "subject": {
+          "id": 69,
+          "slug": "cong-nghe",
+          "title": "Cong nghe",
+          "bookshelfSlug": "cong-nghe"
+        },
+        "rows": [
+          {
+            "id": 604,
+            "title": "SGV Công nghệ 4",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/Congnghe4_SGV_29_05_2023_v1.jpg",
+            "link_html": "sgv_cong_nghe_4",
+            "grade_id": 7,
+            "book_type_id": 3,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 69,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/sgv_cong_nghe_4"
+          }
+        ],
+        "summary": {
+          "total": 1,
+          "bySubjectId": {
+            "69": 1
+          },
+          "freeOrPreviewable": 1
+        }
+      },
+      {
+        "subject": {
           "id": 77,
           "slug": "khoa-hoc",
           "title": "Khoa hoc",
@@ -438,6 +880,40 @@
           "total": 1,
           "bySubjectId": {
             "77": 1
+          },
+          "freeOrPreviewable": 1
+        }
+      },
+      {
+        "subject": {
+          "id": 78,
+          "slug": "lich-su-va-dia-li",
+          "title": "Lich su va Dia li",
+          "bookshelfSlug": "lich-su-va-dia-li"
+        },
+        "rows": [
+          {
+            "id": 625,
+            "title": "SGV Lịch sử và Địa lí 4",
+            "thumb": "https://hoc10.monkeyuni.net/E_Learning/page/LSDL4_SGV_26_06_2023_v1.jpg",
+            "link_html": "sgv_lich_su_va_dia_li_4",
+            "grade_id": 7,
+            "book_type_id": 3,
+            "language": 1,
+            "order_book": 0,
+            "status": "1",
+            "is_blocked": 1,
+            "subject_id": 78,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/sgv_lich_su_va_dia_li_4"
+          }
+        ],
+        "summary": {
+          "total": 1,
+          "bySubjectId": {
+            "78": 1
           },
           "freeOrPreviewable": 1
         }
@@ -566,6 +1042,62 @@
       },
       {
         "subject": {
+          "id": 34,
+          "slug": "dao-duc",
+          "title": "Dao duc",
+          "bookshelfSlug": "dao-duc"
+        },
+        "rows": [],
+        "summary": {
+          "total": 0,
+          "bySubjectId": {},
+          "freeOrPreviewable": 0
+        }
+      },
+      {
+        "subject": {
+          "id": 36,
+          "slug": "am-nhac",
+          "title": "Am nhac",
+          "bookshelfSlug": "am-nhac"
+        },
+        "rows": [],
+        "summary": {
+          "total": 0,
+          "bySubjectId": {},
+          "freeOrPreviewable": 0
+        }
+      },
+      {
+        "subject": {
+          "id": 37,
+          "slug": "mi-thuat",
+          "title": "Mi thuat",
+          "bookshelfSlug": "mi-thuat"
+        },
+        "rows": [],
+        "summary": {
+          "total": 0,
+          "bySubjectId": {},
+          "freeOrPreviewable": 0
+        }
+      },
+      {
+        "subject": {
+          "id": 38,
+          "slug": "giao-duc-the-chat",
+          "title": "Giao duc the chat",
+          "bookshelfSlug": "giao-duc-the-chat"
+        },
+        "rows": [],
+        "summary": {
+          "total": 0,
+          "bySubjectId": {},
+          "freeOrPreviewable": 0
+        }
+      },
+      {
+        "subject": {
           "id": 39,
           "slug": "tieng-anh",
           "title": "Tieng Anh",
@@ -600,10 +1132,38 @@
       },
       {
         "subject": {
+          "id": 40,
+          "slug": "hoat-dong-trai-nghiem",
+          "title": "Hoat dong trai nghiem",
+          "bookshelfSlug": "hoat-dong-trai-nghiem"
+        },
+        "rows": [],
+        "summary": {
+          "total": 0,
+          "bySubjectId": {},
+          "freeOrPreviewable": 0
+        }
+      },
+      {
+        "subject": {
           "id": 41,
           "slug": "tin-hoc",
           "title": "Tin hoc",
           "bookshelfSlug": "tin-hoc"
+        },
+        "rows": [],
+        "summary": {
+          "total": 0,
+          "bySubjectId": {},
+          "freeOrPreviewable": 0
+        }
+      },
+      {
+        "subject": {
+          "id": 69,
+          "slug": "cong-nghe",
+          "title": "Cong nghe",
+          "bookshelfSlug": "cong-nghe"
         },
         "rows": [],
         "summary": {
@@ -642,6 +1202,40 @@
           "total": 1,
           "bySubjectId": {
             "77": 1
+          },
+          "freeOrPreviewable": 1
+        }
+      },
+      {
+        "subject": {
+          "id": 78,
+          "slug": "lich-su-va-dia-li",
+          "title": "Lich su va Dia li",
+          "bookshelfSlug": "lich-su-va-dia-li"
+        },
+        "rows": [
+          {
+            "id": 761,
+            "title": "VBT Lịch sử và Địa lí 4",
+            "thumb": "",
+            "link_html": "vbt_lich_su_va_dia_li_4",
+            "grade_id": 7,
+            "book_type_id": 5,
+            "language": 1,
+            "order_book": 0,
+            "status": "0",
+            "is_blocked": 0,
+            "subject_id": 78,
+            "is_free": null,
+            "is_licence": null,
+            "is_active": false,
+            "readerUrl": "https://www.hoc10.vn/doc-sach/vbt_lich_su_va_dia_li_4"
+          }
+        ],
+        "summary": {
+          "total": 1,
+          "bySubjectId": {
+            "78": 1
           },
           "freeOrPreviewable": 1
         }

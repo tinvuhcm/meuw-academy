@@ -1,9 +1,11 @@
 import State from '../state.js';
+import Router from '../router.js';
 
 let started = false;
 let syncTimer = null;
 let syncInFlight = false;
 let suppressNextCommit = false;
+let lastHydratedCloudStamp = null;
 
 function getLastSyncedAtMs() {
   const syncMeta = State.getSyncMeta();
@@ -59,18 +61,21 @@ async function maybeHydrateFromCloud() {
     if (!cloud?.state) return;
 
     const cloudTime = Date.parse(cloud.updated_at || 0);
+    const cloudStamp = cloud.updated_at || null;
     const localTime = getLocalUpdatedAtMs();
     const lastSyncedAt = getLastSyncedAtMs();
     const localIsClean = localTime <= lastSyncedAt + 1000;
     const cloudIsNewer = cloudTime > localTime + 1000;
     const localIsNewer = localTime > cloudTime + 1000;
 
-    if (cloudIsNewer && localIsClean) {
+    if (cloudIsNewer && localIsClean && cloudStamp !== lastHydratedCloudStamp) {
       suppressNextCommit = true;
       State.importJSON(JSON.stringify(cloud.state));
       State.setAccountSession({ userId: session.user.id, email: session.user.email });
       State.markSynced();
-      window.location.reload();
+      lastHydratedCloudStamp = cloudStamp;
+      const currentRoute = Router.currentRoute() || (window.location.hash.startsWith('#') ? window.location.hash.slice(1) : '/') || '/';
+      Router.replace(currentRoute);
       return;
     }
 
