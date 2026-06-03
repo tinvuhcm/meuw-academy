@@ -99,10 +99,10 @@ const QUESTION_BANKS = {
       '"Con sông" là danh từ chung vì chỉ loại sự vật chung. "Sông Hồng", "Hà Nội", "Minh" là danh từ riêng.'
     ),
     makeQ(
-      'Trong câu "Cô giáo dạy chúng tôi môn Toán", có mấy danh từ?',
-      '3 danh từ: cô giáo, chúng tôi, Toán',
-      ['1 danh từ: cô giáo', '2 danh từ: cô giáo, Toán', '4 danh từ: cô, giáo, chúng, Toán'],
-      'Cô giáo (người), chúng tôi (người/nhóm người), Toán (tên môn học) đều là danh từ.'
+      'Trong câu "Bạn Lan học môn Toán", có mấy danh từ?',
+      '2 danh từ: Lan, Toán',
+      ['1 danh từ: Lan', '3 danh từ: bạn, Lan, Toán', '4 danh từ: bạn, Lan, học, Toán'],
+      'Lan là tên người, Toán là tên môn học nên đều là danh từ.'
     ),
   ],
 
@@ -437,10 +437,10 @@ const QUESTION_BANKS = {
   // ── Đọc hiểu (generic, dùng cho mọi bài đọc) ──────────────────────────
   'doc-hieu': [
     makeQ(
-      'Cô giáo cho đọc bài "Cánh cò trắng muốt". Sau khi đọc xong, cô hỏi: "Hình ảnh con cò trong bài gợi em nghĩ đến điều gì?" Em trả lời tốt nhất là:',
-      'Liên hệ với những gì bài đọc miêu tả và suy nghĩ của chính mình về hình ảnh đó',
-      ['Đọc lại nguyên đoạn bài', 'Nói tên tác giả bài thơ', 'Đếm số lần từ "con cò" xuất hiện'],
-      'Câu hỏi "gợi em nghĩ đến điều gì?" là câu hỏi suy nghĩ sâu — cần nối hình ảnh trong bài với hiểu biết và cảm xúc của chính em.'
+      'Khi gặp câu hỏi về một hình ảnh đẹp trong bài đọc, con nên làm gì?',
+      'Liên hệ với chi tiết bài đọc miêu tả và suy nghĩ của chính mình về hình ảnh đó',
+      ['Đọc lại nguyên đoạn mà không suy nghĩ', 'Chỉ nói tên tác giả', 'Chỉ đếm số lần một từ xuất hiện'],
+      'Câu hỏi về hình ảnh đẹp cần con nối chi tiết trong bài với điều con cảm nhận hoặc liên tưởng được.'
     ),
     makeQ(
       'Em đọc một đoạn văn và gặp từ "trung du" không biết nghĩa. Em nên làm gì TRƯỚC TIÊN?',
@@ -455,8 +455,8 @@ const QUESTION_BANKS = {
       'Câu hỏi "vì sao/tại sao" hỏi về nguyên nhân. Cần quay lại bài tìm câu hoặc đoạn văn giải thích lý do hành động của nhân vật.'
     ),
     makeQ(
-      'Em đang đọc bài thơ "Mẹ vắng nhà ngày bão". Cô hỏi "Ý chính của bài thơ là gì?" Em suy nghĩ thế nào?',
-      'Đọc cả bài, tìm chủ đề lặp lại nhiều nhất — đó thường là ý chính mà tác giả muốn gửi gắm',
+      'Khi Gâu tiên sinh hỏi "Ý chính của bài thơ là gì?", con nên suy nghĩ thế nào?',
+      'Đọc cả bài, tìm chủ đề lặp lại nhiều nhất hoặc thông điệp chính mà tác giả muốn gửi gắm',
       ['Chép nguyên câu đầu bài thơ', 'Nói điều mình thích nhất trong bài', 'Đếm số khổ thơ'],
       'Ý chính là thông điệp mà toàn bộ bài muốn truyền đạt. Thường là điều được nhắc đến nhiều lần hoặc được nêu rõ ở cuối bài.'
     ),
@@ -467,7 +467,7 @@ const QUESTION_BANKS = {
       'Nhân hóa gán hoạt động/cảm xúc của người cho sự vật/hiện tượng. Ở đây gió được hỏi thăm, được tặng hương — như đang nói chuyện với người.'
     ),
     makeQ(
-      'Em đọc xong bài và cô hỏi "Câu nào là câu chủ đề của đoạn 2?" Em sẽ làm gì để tìm?',
+      'Đọc xong bài, nếu Gâu tiên sinh hỏi "Câu nào là câu chủ đề của đoạn 2?", con sẽ làm gì để tìm?',
       'Đọc lại đoạn 2, tìm câu bao quát được ý của tất cả các câu còn lại trong đoạn',
       ['Chọn câu dài nhất', 'Chọn câu có nhiều tính từ nhất', 'Chọn câu cuối cùng vì câu chủ đề luôn ở cuối'],
       'Câu chủ đề là câu nêu ý khái quát nhất của đoạn — không nhất thiết ở đầu hay cuối. Hãy đọc từng câu và hỏi "câu này bao quát được toàn đoạn không?"'
@@ -554,11 +554,55 @@ function pickBank(skill, skillType) {
   if (/chính tả|lựa chọn từ ngữ|từ ngữ/i.test(s)) return QUESTION_BANKS['chinh-ta'];
 
   // skillType fallback
-  if (skillType === 'Đọc' || skillType === 'Nói và nghe') return QUESTION_BANKS['doc-hieu'];
   if (skillType === 'Nói và nghe') return QUESTION_BANKS['noi-nghe'];
+  if (skillType === 'Đọc') return QUESTION_BANKS['doc-hieu'];
   if (skillType === 'Viết') return QUESTION_BANKS['doan-van-y-kien'];
 
   return null;
+}
+
+function buildReadingSkillQuestions(topic, count = 8, seedInput = '') {
+  const lessonTitle = String(topic.knttSource?.lesson || topic.title || '').replace(/^Bài\s+\d+:\s*/i, '').trim();
+  const pool = [
+    makeQ(
+      `Sau khi đọc bài "${lessonTitle}", việc nào nên làm trước để hiểu bài chắc hơn?`,
+      'Tìm xem bài nói về ai, việc gì hoặc điều gì là chính',
+      ['Chép nguyên câu đầu của bài', 'Đếm xem bài có bao nhiêu dòng', 'Chọn ngay đáp án dài nhất'],
+      'Muốn đọc hiểu tốt, trước hết con cần nắm được nhân vật, sự việc hoặc ý chính của bài.'
+    ),
+    makeQ(
+      `Nếu gặp một từ khó trong bài "${lessonTitle}", con nên làm gì trước?`,
+      'Đọc lại câu và đoạn quanh từ đó để đoán nghĩa',
+      ['Bỏ qua ngay vì từ khó không quan trọng', 'Chọn nghĩa theo cảm tính', 'Chỉ nhìn riêng từ đó mà không cần ngữ cảnh'],
+      'Ngữ cảnh quanh từ thường giúp con hiểu nghĩa tốt hơn trước khi phải hỏi thêm.'
+    ),
+    makeQ(
+      `Khi Gâu tiên sinh hỏi "Ý chính của bài ${lessonTitle} là gì?", con nên nghĩ theo hướng nào?`,
+      'Tìm nội dung được nhắc đến nhiều nhất hoặc thông điệp mà cả bài muốn nói',
+      ['Chỉ đọc lại tên bài là đủ', 'Chọn một chi tiết nhỏ bất kì', 'Đếm xem bài có bao nhiêu nhân vật'],
+      'Ý chính là điều bao quát nhất mà toàn bộ bài đọc đang hướng tới.'
+    ),
+    makeQ(
+      `Nếu câu hỏi hỏi "Vì sao nhân vật làm như vậy?" trong bài "${lessonTitle}", con cần tìm gì?`,
+      'Tìm chi tiết hoặc câu trong bài nói về nguyên nhân',
+      ['Chỉ chọn nhân vật mình thích nhất', 'Chỉ đoán theo cảm xúc của mình', 'Bỏ qua phần chi tiết trong bài'],
+      'Câu hỏi "vì sao" luôn cần con quay lại bài để tìm nguyên nhân hoặc lí do.'
+    ),
+    makeQ(
+      `Để trả lời tốt câu hỏi về hình ảnh đẹp trong bài "${lessonTitle}", con nên làm gì?`,
+      'Chọn chi tiết gợi hình rõ và nói nó làm con liên tưởng đến điều gì',
+      ['Chỉ đọc thuộc lòng một câu bất kì', 'Chỉ nói tên tác giả', 'Bỏ qua cảm xúc của mình hoàn toàn'],
+      'Câu hỏi về hình ảnh đẹp thường cần vừa nhận ra chi tiết vừa biết nói cảm nhận hoặc liên tưởng của mình.'
+    ),
+    makeQ(
+      `Sau khi đọc bài "${lessonTitle}", con nên chú ý điều gì để trả lời chắc hơn?`,
+      'Chi tiết quan trọng và ý chính của bài',
+      ['Chỉ nhìn tên bài rồi đoán', 'Chỉ chép lại một câu bất kì', 'Chỉ nhớ vài từ rời rạc'],
+      'Với bài đọc, điều quan trọng là hiểu nội dung, chi tiết và ý chính của văn bản.'
+    ),
+  ];
+  const shuffled = seededShuffle(pool, `${seedInput}|${topic.topicKey}|vie-reading`);
+  return shuffled.slice(0, Math.max(6, Math.min(count, shuffled.length)));
 }
 
 /**
@@ -576,6 +620,10 @@ export function generateVietnameseQuestions(topic, count = 8, seedInput = '') {
   // e.g. "Đọc: Thi nhạc" → skillType="Đọc", skill="Thi nhạc"
   const skillType = rawSkill.split(':')[0].trim();
   const skill = rawSkill.replace(/^[^:]+:\s*/, '').trim();
+
+  if (skillType === 'Đọc') {
+    return buildReadingSkillQuestions(topic, count, seedInput);
+  }
 
   const bank = pickBank(skill, skillType);
   if (!bank || bank.length === 0) return [];

@@ -338,28 +338,7 @@ function getFlowExample(module) {
  * Caller (applyLessonFlowPattern) must check for null.
  */
 function buildPlayfulWarmupBlock(module) {
-  const title = getFlowTitle(module);
-  const points = getFlowPoints(module);
-  const example = getFlowExample(module);
-
-  // For math: only add warm-up if getMathTopicContent returned specific content
-  if (module.subject === 'math' && !title) return null;
-
-  // For other subjects with generic points/example: also skip warm-up
-  // (only subjects that have genuinely useful points get a warm-up)
-  if (!points || !points.length) return null;
-
-  const sourceLabel = module.lessonBlocks?.[0]?.sourceLabel || '';
-  return {
-    type: 'micro',
-    flowStage: 'warmup',
-    teacherName: COMMON_TEACHER,
-    title: title || 'Khởi động bài học',
-    sourceLabel,
-    points,
-    example: example || '',
-    cta: 'Bắt đầu nhiệm vụ',
-  };
+  return null;
 }
 
 function applyLessonFlowPattern(module) {

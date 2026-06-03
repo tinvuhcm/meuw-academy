@@ -282,7 +282,7 @@ function pickBank(lessonTitle) {
   if (/đạo đức|pháp luật|bản quyền|an toàn|văn hóa.*số/.test(t)) return BANKS['dao-duc-phap-luat'];
   if (/trình chiếu|slide|hiệu ứng|transition/.test(t)) return BANKS['trinh-chieu'];
   if (/soạn thảo|văn bản|word|chỉnh sửa văn/.test(t)) return BANKS['soan-thao-van-ban'];
-  if (/lập trình|chơi với máy|scratch|robot|vấn đề.*máy/.test(t)) return BANKS['lap-trinh-truc-quan'];
+  if (/lập trình|chơi với máy|scratch|robot|vấn đề.*máy|chương trình của em/.test(t)) return BANKS['lap-trinh-truc-quan'];
   // Generic IT fallback: mix of hardware/file/ethics
   return [...BANKS['phan-cung-phan-mem'].slice(0, 3), ...BANKS['tep-thu-muc'].slice(0, 3), ...BANKS['dao-duc-phap-luat'].slice(0, 2)];
 }

@@ -62,6 +62,33 @@ const BANKS = {
       'Lịch sử là môn học về quá khứ — từ các sự kiện lớn (chiến tranh, thống nhất đất nước) đến văn hóa truyền thống.'),
   ],
 
+  'dia-phuong-em': [
+    q('Khi học về địa phương em, điều nào quan trọng nhất?', 
+      'Biết nơi mình sống có đặc điểm thiên nhiên và hoạt động của con người như thế nào',
+      ['Chỉ cần nhớ tên một thành phố lớn khác', 'Chỉ học về các nước trên thế giới', 'Không cần liên hệ nơi mình sống'],
+      'Bài về địa phương giúp em hiểu chính nơi mình đang sống: cảnh quan, con người, nghề nghiệp và hoạt động quen thuộc.'),
+    q('Ví dụ nào gần nhất với việc tìm hiểu địa phương em?',
+      'Quan sát sông, đường phố, trường học hoặc chợ quanh nơi mình sống',
+      ['Chỉ đọc tên một vùng xa trên bản đồ', 'Chỉ học thuộc lòng năm sinh của vua', 'Chỉ nhìn ảnh nước ngoài'],
+      'Muốn hiểu địa phương, em nên bắt đầu từ những nơi, cảnh vật và hoạt động thật gần gũi quanh mình.'),
+    q('Khi nói về con người ở địa phương em, em có thể nhắc đến điều gì?',
+      'Nghề nghiệp, sinh hoạt và cách mọi người xây dựng cuộc sống ở đó',
+      ['Chỉ màu áo của một người bất kì', 'Chỉ tên món ăn ở nơi khác', 'Chỉ chiều cao của núi xa'],
+      'Con người ở địa phương hiện lên qua công việc, nếp sống, văn hóa và cách họ gắn với thiên nhiên.'),
+    q('Nếu địa phương em có sông hoặc kênh rạch, việc nào là đúng hơn?',
+      'Giữ sạch môi trường nước và không xả rác bừa bãi',
+      ['Đổ rác xuống cho nước cuốn đi', 'Vẽ bậy lên công trình công cộng', 'Bẻ cây ven đường cho vui'],
+      'Tìm hiểu địa phương cũng đi cùng với ý thức giữ gìn môi trường sống xung quanh.'),
+    q('Khi Gâu tiên sinh hỏi "Địa phương em có gì đáng quý?", em nên nghĩ theo hướng nào?',
+      'Cảnh đẹp, con người, nghề nghiệp hoặc nét văn hóa gần gũi',
+      ['Chỉ cần kể một món đồ chơi em thích', 'Chỉ nói về một nước khác', 'Chỉ chép lại câu hỏi'],
+      'Bài học này giúp em biết trân trọng những điều tốt đẹp ngay quanh nơi mình sống.'),
+    q('Bài về địa phương em muốn con hiểu điều gì?',
+      'Yêu nơi mình sống hơn khi hiểu thiên nhiên và con người ở đó',
+      ['Địa phương nào cũng giống nhau hoàn toàn', 'Chỉ nơi nổi tiếng mới đáng học', 'Không cần quan sát thực tế'],
+      'Hiểu địa phương là bước đầu để yêu quý, giữ gìn và tự hào về nơi em đang sống.'),
+  ],
+
   // ── Bài 4-6: Trung du và miền núi Bắc Bộ ─────────────────────────────
   'trung-du-mien-nui-bac-bo': [
     q('Vùng Trung du và miền núi Bắc Bộ có đặc điểm địa hình như thế nào?',
@@ -254,6 +281,8 @@ function pickBank(topicKey, lessonTitle) {
   const t = String(lessonTitle || '').toLowerCase();
 
   if (/mo-dau|lam-quen|phuong-tien-hoc-tap/.test(key)) return BANKS['mo-dau'];
+  if (/dia-phuong|địa phương|thien-nhien-va-con-nguoi-o-dia-phuong/.test(key) || /địa phương em|thiên nhiên và con người ở địa phương em/.test(t))
+    return BANKS['dia-phuong-em'];
 
   if (/trung-du|mien-nui-bac-bo|bai-4|bai-5/.test(key) || /trung du|miền núi bắc bộ/.test(t))
     return BANKS['trung-du-mien-nui-bac-bo'];
