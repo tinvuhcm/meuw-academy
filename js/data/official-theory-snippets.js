@@ -9,68 +9,205 @@ function clean(text) {
 export function getOfficialMathTheory({ title = '', op = '' } = {}) {
   const t = clean(title).toLowerCase();
   const ruleMap = [
-    {
-      match: /phân số|frac/,
-      points: [
-        'Phân số dùng để chỉ một hay nhiều phần bằng nhau của một đơn vị.',
-        'Con cần nhìn tử số và mẫu số để biết lấy mấy phần trong tổng số mấy phần bằng nhau.',
-        'Lên lớp 4, con còn học rút gọn, quy đồng và so sánh các phân số trong những trường hợp phù hợp.',
-      ],
-      example: 'Ví dụ: nếu một hình được chia thành 4 phần bằng nhau và tô 3 phần thì đó là phân số 3/4.',
-    },
-    {
-      match: /place-value|số tự nhiên|giá trị chữ số|làm tròn|hàng|lớp/,
-      points: [
-        'Số tự nhiên lớp 4 cần đọc, viết đúng và nhận ra giá trị của từng chữ số theo vị trí của nó.',
-        'Khi so sánh hoặc làm tròn số, con phải nhìn đúng hàng đang xét.',
-        'Hiểu cấu tạo thập phân sẽ giúp con tính nhanh và tránh nhầm hàng đơn vị, chục, trăm, nghìn.',
-      ],
-      example: 'Ví dụ: trong số 12 345, chữ số 3 ở hàng trăm nên có giá trị là 300.',
-    },
-    {
-      match: /data-chart|biểu đồ|thống kê/,
-      points: [
-        'Biểu đồ cột là một cách biểu diễn số liệu thống kê bằng các cột cao thấp khác nhau.',
-        'Con cần đọc tên biểu đồ, tên các đối tượng và chiều cao của từng cột.',
-        'Sau đó mới so sánh số liệu để trả lời câu hỏi nhiều nhất, ít nhất hoặc trung bình.',
-      ],
-      example: 'Ví dụ: nếu cột mèo cao hơn cột thỏ thì số bạn chọn mèo nhiều hơn số bạn chọn thỏ.',
-    },
-    {
-      match: /geo|chu vi|diện tích|hình|góc|vuông góc|song song/,
-      points: [
-        'Phần hình học lớp 4 giúp con nhận dạng hình, mô tả đặc điểm và thực hành đo, vẽ hoặc lắp ghép.',
-        'Chu vi là độ dài đường bao quanh hình, còn diện tích cho biết phần mặt phẳng bên trong hình rộng bao nhiêu.',
-        'Khi làm bài, con hãy xác định đúng mình đang tính độ dài hay đang tính phần mặt phẳng của hình.',
-      ],
-      example: 'Ví dụ: chu vi hình chữ nhật tính theo tổng các cạnh, còn diện tích tính theo chiều dài nhân chiều rộng.',
-    },
-    {
-      match: /measurement|đơn vị|đo lường|tiền|đồng hồ|giờ/,
-      points: [
-        'Đo lường lớp 4 yêu cầu con biết dùng đơn vị phù hợp và chuyển đổi đúng giữa các đơn vị quen thuộc.',
-        'Khi tính với số đo, con cần giữ đúng đơn vị hoặc đổi về cùng một đơn vị trước khi cộng, trừ, nhân, chia.',
-        'Ước lượng cũng rất quan trọng để tự kiểm tra xem kết quả có hợp lí hay không.',
-      ],
-      example: 'Ví dụ: trước khi cộng 1 m và 35 cm, con nên đổi về cùng đơn vị đo.',
-    },
+    // ── Trung bình cộng ─────────────────────────────────────────────────────
     {
       match: /average|trung bình cộng/,
       points: [
-        'Số trung bình cộng cho biết mức đại diện chung của hai hay nhiều số.',
-        'Muốn tính số trung bình cộng, con cộng các số lại rồi chia cho số lượng các số đó.',
-        'Con nên đọc kĩ đề để biết có bao nhiêu số đang được tính trung bình.',
+        'Trung bình cộng = Tổng các số ÷ Số lượng các số.',
+        'Nó cho biết "mức đại diện" chung — như điểm trung bình của một học sinh qua nhiều bài kiểm tra.',
+        'Bước làm: (1) Cộng tất cả các số. (2) Đếm có bao nhiêu số. (3) Chia tổng cho số lượng đó.',
       ],
-      example: 'Ví dụ: trung bình cộng của 6 và 8 là (6 + 8) : 2 = 7.',
+      example: 'Ví dụ: điểm 3 bài: 8, 6, 7. Tổng = 8+6+7 = 21. Số lượng = 3. Trung bình = 21÷3 = 7 điểm.',
     },
+    // ── Phân số ─────────────────────────────────────────────────────────────
+    {
+      match: /phân số|frac/,
+      points: [
+        'Phân số a/b: mẫu số b = chia thành b phần bằng nhau; tử số a = lấy a phần.',
+        'So sánh: cùng mẫu → tử lớn hơn thì phân số lớn hơn. Cùng tử → mẫu nhỏ hơn thì phân số lớn hơn.',
+        'Rút gọn: chia cả tử và mẫu cho cùng một số (ước chung) để được phân số đơn giản hơn.',
+      ],
+      example: 'Ví dụ: 6/8 rút gọn = 3/4 (chia cả 6 và 8 cho 2). So sánh: 3/5 > 2/5 (cùng mẫu, tử lớn hơn).',
+    },
+    // ── Chu vi ──────────────────────────────────────────────────────────────
+    {
+      match: /chu vi/,
+      points: [
+        'Chu vi = tổng độ dài tất cả các cạnh bao quanh hình.',
+        'Hình vuông cạnh a: C = a × 4. Hình chữ nhật dài l, rộng w: C = (l + w) × 2.',
+        'Chú ý đơn vị! Nếu các cạnh có đơn vị khác nhau, đổi về cùng đơn vị trước khi tính.',
+      ],
+      example: 'Ví dụ: sân trường hình chữ nhật dài 50 m, rộng 30 m. Chu vi = (50+30)×2 = 80×2 = 160 m.',
+    },
+    // ── Diện tích ───────────────────────────────────────────────────────────
+    {
+      match: /diện tích/,
+      points: [
+        'Diện tích = phần mặt phẳng bên trong hình (khác với chu vi là đường bao xung quanh).',
+        'Hình vuông cạnh a: S = a × a. Hình chữ nhật dài l, rộng w: S = l × w.',
+        'Đơn vị diện tích: cm², m², dm²... Đừng nhầm giữa cm (dài) và cm² (diện tích).',
+      ],
+      example: 'Ví dụ: phòng học dài 8 m, rộng 6 m → diện tích = 8×6 = 48 m². Cần 48 m² gạch để lát nền.',
+    },
+    // ── Hình học / Góc ──────────────────────────────────────────────────────
+    {
+      match: /góc|vuông góc|song song|hình thoi|hình bình hành/,
+      points: [
+        'Góc được tạo bởi 2 tia chung gốc. Góc vuông = 90°. Góc nhọn < 90°. Góc tù > 90° và < 180°.',
+        'Hai đường thẳng vuông góc cắt nhau tạo ra 4 góc vuông. Hai đường song song không cắt nhau dù kéo dài.',
+        'Dùng ê-ke để vẽ góc vuông và kiểm tra vuông góc; dùng thước để kiểm tra song song.',
+      ],
+      example: 'Ví dụ: 4 góc trong hình chữ nhật đều là góc vuông (90°). Hình bình hành có 2 cặp cạnh song song.',
+    },
+    // ── Hình học (generic) ──────────────────────────────────────────────────
+    {
+      match: /geo|hình học/,
+      points: [
+        'Hình học lớp 4: nhận dạng hình, đặc điểm từng loại, tính chu vi và diện tích.',
+        'Chu vi = đường bao xung quanh. Diện tích = phần mặt phẳng bên trong.',
+        'Khi làm bài hình học, vẽ hình và ghi số đo cụ thể vào từng cạnh trước khi tính.',
+      ],
+      example: 'Ví dụ: hình vuông cạnh 7 cm → chu vi = 7×4 = 28 cm; diện tích = 7×7 = 49 cm².',
+    },
+    // ── Biểu đồ / Thống kê ──────────────────────────────────────────────────
+    {
+      match: /data-chart|biểu đồ|thống kê|bảng số liệu/,
+      points: [
+        'Biểu đồ cột: cột cao hơn = số lớn hơn. Đọc trục dọc (con số) và trục ngang (đối tượng).',
+        '3 bước đọc biểu đồ: (1) Đọc tên biểu đồ. (2) Xác định giá trị từng cột. (3) So sánh, tính toán.',
+        'Hay gặp: tính tổng, tính hiệu, tìm cột cao nhất/thấp nhất, tính trung bình cộng từ biểu đồ.',
+      ],
+      example: 'Ví dụ: biểu đồ điểm kiểm tra: cột Toán = 9, cột Văn = 7 → Toán cao hơn Văn 9-7 = 2 điểm.',
+    },
+    // ── Biểu thức / Thứ tự ──────────────────────────────────────────────────
     {
       match: /expression|biểu thức|thứ tự phép tính/,
       points: [
-        'Biểu thức giúp con luyện tính theo đúng thứ tự, không làm lẫn lộn các phép tính.',
-        'Con cần làm trong ngoặc trước, rồi đến nhân chia, sau đó mới cộng trừ.',
-        'Nếu có thể nhóm số thuận tiện, con sẽ tính nhanh và ít sai hơn.',
+        'Quy tắc thứ tự: (1) trong ngoặc, (2) nhân và chia, (3) cộng và trừ. Đừng làm ngược!',
+        'Nếu chỉ có cùng loại phép tính (vd chỉ có +, -): làm từ trái sang phải.',
+        'Mẹo kiểm tra: thay số vào biểu thức và đọc lại từng bước có đúng thứ tự không.',
       ],
-      example: 'Ví dụ: trong 12 + 3 × 4, con phải tính 3 × 4 trước rồi mới cộng 12.',
+      example: 'Ví dụ: 5 + 3 × (12 - 4) = 5 + 3 × 8 = 5 + 24 = 29. Ngoặc trước → nhân → cộng.',
+    },
+    // ── Đo lường / Đơn vị ───────────────────────────────────────────────────
+    {
+      match: /measurement|đơn vị|đo lường/,
+      points: [
+        'Bảng chuyển đổi quan trọng: 1 km = 1 000 m; 1 m = 10 dm = 100 cm; 1 kg = 1 000 g; 1 lít = 1 000 ml.',
+        'Quy tắc khi tính với đo lường: đổi về CÙNG ĐƠN VỊ trước, sau đó mới cộng, trừ, nhân, chia.',
+        'Ước lượng để tự kiểm tra: kết quả có "hợp lý" về kích thước, trọng lượng, thể tích không?',
+      ],
+      example: 'Ví dụ: 1 km 500 m + 2 km 300 m = 1 500 m + 2 300 m = 3 800 m = 3 km 800 m.',
+    },
+    // ── Tiền ────────────────────────────────────────────────────────────────
+    {
+      match: /tiền|đồng|money/,
+      points: [
+        'Bài toán tiền thường hỏi: giá mỗi món, tổng tiền phải trả, hoặc tiền thừa.',
+        'Tiền thừa = Tiền đưa - Tiền phải trả. Tổng tiền = giá × số lượng.',
+        'Đọc kỹ đề: "1 quyển 3 000 đồng, mua 4 quyển" → 4 × 3 000 = 12 000 đồng.',
+      ],
+      example: 'Ví dụ: mua 3 cái bánh 5 000 đồng/cái, trả 20 000 đồng → thừa = 20 000 - 15 000 = 5 000 đồng.',
+    },
+    // ── Đồng hồ / Giờ phút ──────────────────────────────────────────────────
+    {
+      match: /đồng hồ|giờ phút|xem giờ|clock/,
+      points: [
+        '1 giờ = 60 phút. Khi phút ≥ 60: trừ 60 phút và cộng thêm 1 giờ.',
+        'Tính thời gian kết thúc = giờ bắt đầu + thời gian. Tính thời gian kéo dài = giờ kết thúc - giờ bắt đầu.',
+        'Đọc giờ trên đồng hồ: kim ngắn (giờ), kim dài (phút). 1 khoảng giữa 2 số = 5 phút.',
+      ],
+      example: 'Ví dụ: bắt đầu 7 giờ 45 phút, học 1 giờ 30 phút → kết thúc = 7 giờ 45 phút + 1 giờ 30 phút = 9 giờ 15 phút.',
+    },
+    // ── Giá trị chữ số / Số lớn ─────────────────────────────────────────────
+    {
+      match: /place-value|số tự nhiên|giá trị chữ số|hàng|lớp|so sánh số|số lớn|100 000|1 000 000/,
+      points: [
+        'Giá trị chữ số phụ thuộc vị trí: hàng đơn vị (1), chục (10), trăm (100), nghìn (1 000), chục nghìn (10 000), trăm nghìn (100 000).',
+        'So sánh: đếm chữ số (nhiều hơn = lớn hơn). Nếu bằng chữ số: so từng hàng từ TRÁI sang PHẢI.',
+        'Làm tròn đến hàng nào: nhìn hàng liền sau — ≥ 5 thì làm tròn lên, < 5 thì làm tròn xuống.',
+      ],
+      example: 'Ví dụ: trong 352 847, chữ số 5 ở hàng chục nghìn → giá trị 50 000. Làm tròn đến hàng nghìn: 353 000.',
+    },
+    // ── Số chẵn / Lẻ ────────────────────────────────────────────────────────
+    {
+      match: /parity|số chẵn|số lẻ/,
+      points: [
+        'Số chẵn: chia hết cho 2, chữ số cuối là 0, 2, 4, 6 hoặc 8.',
+        'Số lẻ: không chia hết cho 2, chữ số cuối là 1, 3, 5, 7 hoặc 9.',
+        'Chỉ cần nhìn CHỮ SỐ CUỐI để xác định chẵn hay lẻ — không cần chia thật sự.',
+      ],
+      example: 'Ví dụ: 2 048 → chữ số cuối 8 → chẵn. 3 751 → chữ số cuối 1 → lẻ. Tổng hai số chẵn luôn là số chẵn.',
+    },
+    // ── Tìm x / Thành phần ──────────────────────────────────────────────────
+    {
+      match: /missing|tìm x|thành phần|ẩn số/,
+      points: [
+        'Để tìm x, dùng phép tính ngược: x + b = c → x = c - b; x - b = c → x = c + b.',
+        'x × b = c → x = c ÷ b; x ÷ b = c → x = c × b.',
+        'Sau khi tìm x, KIỂM TRA bằng cách thay lại vào bài toán ban đầu.',
+      ],
+      example: 'Ví dụ: x × 6 = 54 → x = 54 ÷ 6 = 9. Kiểm tra: 9 × 6 = 54 ✓',
+    },
+    // ── Gấp / Giảm ──────────────────────────────────────────────────────────
+    {
+      match: /double-half|gấp|giảm đi|nhiều hơn|ít hơn/,
+      points: [
+        '"Gấp n lần" = NHÂN n. "Giảm n lần" = CHIA n. "Nhiều hơn n" = CỘNG n. "Ít hơn n" = TRỪ n.',
+        'Đọc kỹ đề: "gấp" và "nhiều hơn" là hai khái niệm KHÁC NHAU!',
+        '6 gấp 3 lần = 18; 6 nhiều hơn 3 = 9. Nhầm thường xảy ra ở đây!',
+      ],
+      example: 'Ví dụ: Con bò nặng 240 kg, gấp 3 lần con dê → con dê nặng 240÷3 = 80 kg. (Không phải 240-3=237 kg!)',
+    },
+    // ── Bài toán có lời văn ─────────────────────────────────────────────────
+    {
+      match: /word-problem|lời văn/,
+      points: [
+        'Quy trình 4 bước: (1) Đọc kỹ — biết gì? tìm gì? (2) Tóm tắt. (3) Chọn phép tính. (4) Tính + ghi đáp số.',
+        'Đáp số phải có đơn vị (người, kg, m, đồng...). Thiếu đơn vị = bị trừ điểm!',
+        'Kiểm tra bằng cách đọc lại đề và xem đáp số có "hợp lý" về kích thước và đơn vị không.',
+      ],
+      example: 'Ví dụ: "32 HS chia đều 4 tổ" → Biết: 32, 4 tổ. Tìm: số HS/tổ. Phép: 32÷4=8. Đáp: 8 học sinh.',
+    },
+    // ── Nhân / Chia ─────────────────────────────────────────────────────────
+    {
+      match: /\*|nhân|chia|bảng nhân|bảng chia/,
+      points: [
+        'Nhân một số với 10, 100, 1 000: thêm 1, 2, 3 chữ số 0 vào bên phải.',
+        'Chia một số cho 10, 100: bỏ đi 1, 2 chữ số 0 từ bên phải.',
+        'Nhân/chia nhiều chữ số: đặt tính dọc, thực hiện từ hàng đơn vị, chú ý "nhớ" khi tính.',
+      ],
+      example: 'Ví dụ: 36 × 25 = 36 × 100 ÷ 4 = 3 600 ÷ 4 = 900. (Nhân 25 = nhân 100 rồi chia 4 cho nhanh.)',
+    },
+    // ── Làm tròn ────────────────────────────────────────────────────────────
+    {
+      match: /rounding|làm tròn/,
+      points: [
+        'Làm tròn đến hàng nào: nhìn chữ số NGAY SAU hàng đó. Nếu ≥ 5 → tăng lên 1; nếu < 5 → giữ nguyên.',
+        'Các chữ số sau hàng làm tròn đều đổi thành 0.',
+        'Mục đích: ước lượng nhanh, kiểm tra bài, biểu diễn số xấp xỉ.',
+      ],
+      example: 'Ví dụ: 4 782 làm tròn đến hàng trăm → chữ số hàng chục = 8 ≥ 5 → 4 800. Hai chữ số sau = 00.',
+    },
+    // ── Tính nhẩm nhanh ─────────────────────────────────────────────────────
+    {
+      match: /quick|nhẩm/,
+      points: [
+        'Mẹo nhẩm: tách số tròn trước → 47 + 38 = 47 + 3 + 35 = 50 + 35 = 85.',
+        'Tính nhanh × 9 = × 10 rồi trừ đi 1 lần: 47 × 9 = 470 - 47 = 423.',
+        'Tính nhanh × 5 = ÷ 2 rồi × 10: 64 × 5 = 64 ÷ 2 × 10 = 32 × 10 = 320.',
+      ],
+      example: 'Ví dụ: 198 + 46 = 200 + 44 = 244 (dời 2 từ 46 sang 198 để được số tròn 200, trừ 2 từ 46).',
+    },
+    // ── Cộng / Trừ ──────────────────────────────────────────────────────────
+    {
+      match: /\+|cộng|trừ/,
+      points: [
+        'Đặt tính thẳng hàng: đơn vị dưới đơn vị, chục dưới chục, trăm dưới trăm.',
+        'Khi cộng: nếu tổng ≥ 10 thì "nhớ" 1 sang hàng tiếp theo. Khi trừ: nếu số bị trừ nhỏ hơn thì "mượn" 1 từ hàng cao hơn.',
+        'Kiểm tra cộng bằng phép trừ (A+B=C → C-B=A). Kiểm tra trừ bằng phép cộng.',
+      ],
+      example: 'Ví dụ: 5 006 - 1 348 → hàng đơn vị: 6-8 không được, mượn 1 chục → 16-8=8. Hàng chục: 0-1-4 không được, mượn tiếp...',
     },
   ];
 

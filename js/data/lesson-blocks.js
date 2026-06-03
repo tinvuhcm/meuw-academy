@@ -9,8 +9,230 @@ function withFlowStage(block, flowStage) {
   return { ...block, flowStage };
 }
 
+// ─── Math topic-specific warm-up content ──────────────────────────────────────
+// Returns { title, points, example } for each KNTT Toán 4 topic.
+// Covers every op from MATH_OP_RULES in kntt-topics.js.
+// Purpose: Child enters Bước 2 already knowing WHAT the lesson is about.
+
+function getMathTopicContent(module) {
+  const t = String(module.title || '').toLowerCase();
+  const key = String(module.topicKey || '').toLowerCase();
+  const combined = `${t} ${key}`;
+
+  // ── Trung bình cộng (average) ─────────────────────────────────────────────
+  if (/trung bình|average/.test(combined)) return {
+    title: 'Khởi động: Trung bình cộng',
+    points: [
+      'Trung bình cộng là con số đại diện chung cho một nhóm số — như điểm "trung bình" của cả lớp.',
+      'Công thức: CỘNG tất cả các số lại → CHIA cho SỐ LƯỢNG phần tử.',
+    ],
+    example: 'Ví dụ: 3 bạn cao 120 cm, 130 cm, 110 cm. Trung bình = (120+130+110)÷3 = 360÷3 = 120 cm.',
+  };
+
+  // ── Phân số (fractions) ───────────────────────────────────────────────────
+  if (/phân số|frac/.test(combined)) return {
+    title: 'Khởi động: Phân số',
+    points: [
+      'Phân số gồm tử số (trên) và mẫu số (dưới). Mẫu số cho biết chia thành mấy phần bằng nhau.',
+      'Tử số cho biết lấy mấy phần trong tổng số phần đó.',
+    ],
+    example: 'Ví dụ: 3/4 = chia vật thành 4 phần bằng nhau, lấy 3 phần. 1/4 < 1/2 vì 1/4 nhỏ hơn 1/2 khi mẫu lớn hơn.',
+  };
+
+  // ── Chu vi / Diện tích / Hình học ─────────────────────────────────────────
+  if (/chu vi/.test(combined)) return {
+    title: 'Khởi động: Chu vi',
+    points: [
+      'Chu vi = TỔNG ĐỘ DÀI tất cả các cạnh bao quanh hình.',
+      'Hình vuông: chu vi = cạnh × 4. Hình chữ nhật: chu vi = (dài + rộng) × 2.',
+    ],
+    example: 'Ví dụ: hình chữ nhật dài 8 cm, rộng 5 cm → chu vi = (8+5)×2 = 26 cm.',
+  };
+
+  if (/diện tích/.test(combined)) return {
+    title: 'Khởi động: Diện tích',
+    points: [
+      'Diện tích = phần MẶT PHẲNG bên trong hình (khác với chu vi là đường bao quanh).',
+      'Hình vuông: S = cạnh × cạnh. Hình chữ nhật: S = dài × rộng.',
+    ],
+    example: 'Ví dụ: căn phòng dài 6 m, rộng 4 m → diện tích = 6×4 = 24 m². Cần 24 m² sàn để lát nền.',
+  };
+
+  if (/góc|hình thoi|hình bình hành|song song|vuông góc/.test(combined)) return {
+    title: 'Khởi động: Hình học',
+    points: [
+      'Góc là hình tạo bởi 2 tia chung gốc. Góc vuông = 90°, góc nhọn < 90°, góc tù > 90°.',
+      'Hai đường thẳng vuông góc tạo thành góc 90°. Hai đường song song không cắt nhau dù kéo dài mãi.',
+    ],
+    example: 'Ví dụ: góc ở 4 góc của hình chữ nhật đều là góc vuông (90°).',
+  };
+
+  if (/hình học|hình|geo/.test(combined)) return {
+    title: 'Khởi động: Hình học',
+    points: [
+      'Hình học lớp 4 học nhận dạng hình, đặc điểm và cách tính chu vi, diện tích.',
+      'Hỏi bản thân: bài đang hỏi về đường bao (chu vi) hay phần bên trong (diện tích)?',
+    ],
+    example: 'Ví dụ: hình vuông cạnh 5 cm → chu vi = 5×4 = 20 cm, diện tích = 5×5 = 25 cm².',
+  };
+
+  // ── Biểu đồ / Thống kê ───────────────────────────────────────────────────
+  if (/biểu đồ|thống kê|bảng số liệu|data-chart/.test(combined)) return {
+    title: 'Khởi động: Biểu đồ và Thống kê',
+    points: [
+      'Biểu đồ cột biểu diễn số liệu bằng chiều cao của các cột — cột cao hơn = số lớn hơn.',
+      '3 bước đọc biểu đồ: (1) đọc tên biểu đồ, (2) đọc trục số, (3) so sánh các cột với nhau.',
+    ],
+    example: 'Ví dụ: cột "Học sinh thích Toán" cao 25, cột "thích Văn" cao 18 → có 25-18 = 7 bạn thích Toán hơn Văn.',
+  };
+
+  // ── Biểu thức / Thứ tự phép tính ─────────────────────────────────────────
+  if (/biểu thức|thứ tự phép tính|expression/.test(combined)) return {
+    title: 'Khởi động: Thứ tự phép tính',
+    points: [
+      'Quy tắc ưu tiên: nhân/chia TRƯỚC, cộng/trừ SAU. Trong ngoặc thì làm TRƯỚC hết.',
+      'Nếu chỉ có cộng/trừ (hoặc chỉ nhân/chia): làm từ TRÁI sang PHẢI theo thứ tự.',
+    ],
+    example: 'Ví dụ: 12 + 3 × 4 = 12 + 12 = 24 (không phải 15 × 4 = 60). Nhân trước, cộng sau!',
+  };
+
+  // ── Đo lường / Đơn vị ─────────────────────────────────────────────────────
+  if (/đo|đơn vị|measurement|kg|lít|ml|cm|dm|km|m²|ha/.test(combined)) return {
+    title: 'Khởi động: Đo lường và Đơn vị',
+    points: [
+      'Khi làm bài đo lường: bước 1 là ĐỔI tất cả về cùng một đơn vị, bước 2 mới tính.',
+      'Bảng đổi hay nhầm: 1 km = 1 000 m, 1 m = 100 cm, 1 kg = 1 000 g, 1 lít = 1 000 ml.',
+    ],
+    example: 'Ví dụ: 2 km 500 m + 1 km 300 m = 2 500 m + 1 300 m = 3 800 m = 3 km 800 m.',
+  };
+
+  // ── Làm tròn số ───────────────────────────────────────────────────────────
+  if (/làm tròn|rounding/.test(combined)) return {
+    title: 'Khởi động: Làm tròn số',
+    points: [
+      'Làm tròn đến hàng nào thì nhìn chữ số liền sau hàng đó: nếu ≥ 5 thì làm tròn lên, < 5 thì làm tròn xuống.',
+      'Sau khi làm tròn, các chữ số hàng thấp hơn đều trở thành 0.',
+    ],
+    example: 'Ví dụ: làm tròn 3 472 đến hàng trăm → xét chữ số hàng chục = 7 ≥ 5 → làm tròn lên → 3 500.',
+  };
+
+  // ── Giá trị chữ số / Số tự nhiên / So sánh ───────────────────────────────
+  if (/giá trị chữ số|hàng|lớp|số tự nhiên|so sánh|place-value|1 000 000|100 000/.test(combined)) return {
+    title: 'Khởi động: Giá trị chữ số và Số lớn',
+    points: [
+      'Mỗi chữ số có GIÁ TRỊ tùy vị trí: số 5 trong 500 có giá trị 500, trong 5 000 có giá trị 5 000.',
+      'So sánh số: đếm chữ số trước (nhiều chữ số hơn = số lớn hơn). Nếu bằng nhau chữ số → so sánh từ trái sang phải.',
+    ],
+    example: 'Ví dụ: trong số 25 348, chữ số 5 ở hàng nghìn, có giá trị là 5 000.',
+  };
+
+  // ── Số chẵn / Số lẻ ──────────────────────────────────────────────────────
+  if (/số chẵn|số lẻ|parity/.test(combined)) return {
+    title: 'Khởi động: Số chẵn và Số lẻ',
+    points: [
+      'Số chẵn chia hết cho 2 — chữ số cuối là 0, 2, 4, 6 hoặc 8.',
+      'Số lẻ không chia hết cho 2 — chữ số cuối là 1, 3, 5, 7 hoặc 9.',
+    ],
+    example: 'Ví dụ: 246 là số chẵn (tận cùng 6). 137 là số lẻ (tận cùng 7). Chỉ cần nhìn chữ số cuối!',
+  };
+
+  // ── Tìm x / Ẩn số / Thành phần ───────────────────────────────────────────
+  if (/tìm x|ẩn số|thành phần|missing/.test(combined)) return {
+    title: 'Khởi động: Tìm thành phần chưa biết',
+    points: [
+      'Để tìm x trong phép tính, con dùng phép tính NGƯỢC: x + 5 = 12 → x = 12 - 5.',
+      'Quy tắc: Số hạng = Tổng - Số hạng kia. Số bị trừ = Hiệu + Số trừ. Thừa số = Tích ÷ Thừa số kia.',
+    ],
+    example: 'Ví dụ: x × 4 = 36 → x = 36 ÷ 4 = 9. Kiểm tra: 9 × 4 = 36 ✓',
+  };
+
+  // ── Gấp / Giảm đi / Nhiều hơn / Ít hơn ──────────────────────────────────
+  if (/gấp|giảm đi|nhiều hơn|ít hơn|double-half/.test(combined)) return {
+    title: 'Khởi động: Gấp lên và Giảm đi',
+    points: [
+      '"Gấp n lần" nghĩa là NHÂN n. "Giảm đi n lần" nghĩa là CHIA cho n.',
+      '"Nhiều hơn n đơn vị" nghĩa là CỘNG n. "Ít hơn n đơn vị" nghĩa là TRỪ n.',
+    ],
+    example: 'Ví dụ: 12 gấp 3 lần = 12×3 = 36. 12 giảm đi 3 lần = 12÷3 = 4. 12 nhiều hơn 3 = 12+3 = 15.',
+  };
+
+  // ── Tiền ─────────────────────────────────────────────────────────────────
+  if (/tiền|đồng|money/.test(combined)) return {
+    title: 'Khởi động: Tính tiền',
+    points: [
+      'Bài toán về tiền thường hỏi: giá tiền, số tiền phải trả, số tiền còn lại hoặc số lượng mua được.',
+      'Chú ý đơn vị: nghìn đồng. 1 tờ 10 000 đồng = 10 × 1 000 đồng = mười nghìn đồng.',
+    ],
+    example: 'Ví dụ: mua 3 quyển vở 4 500 đồng/quyển, trả 20 000 đồng → tiền thừa = 20 000 - 3×4 500 = 6 500 đồng.',
+  };
+
+  // ── Đồng hồ / Thời gian ───────────────────────────────────────────────────
+  if (/đồng hồ|giờ phút|xem giờ|clock/.test(combined)) return {
+    title: 'Khởi động: Xem giờ và Tính thời gian',
+    points: [
+      '1 giờ = 60 phút. Kim giờ chỉ giờ, kim phút chỉ phút (1 vạch nhỏ = 1 phút, 1 số = 5 phút).',
+      'Tính thời gian kết thúc = giờ bắt đầu + thời gian kéo dài. Nhớ đổi khi phút ≥ 60.',
+    ],
+    example: 'Ví dụ: bắt đầu lúc 7 giờ 45 phút, kéo dài 30 phút → kết thúc lúc 7 giờ 75 phút = 8 giờ 15 phút.',
+  };
+
+  // ── Bài toán có lời văn ───────────────────────────────────────────────────
+  if (/lời văn|word-problem/.test(combined)) return {
+    title: 'Khởi động: Bài toán có lời văn',
+    points: [
+      'Bước 1: Đọc kỹ và tóm tắt — Biết gì? Tìm gì? Bước 2: Chọn phép tính phù hợp.',
+      'Bước 3: Tính toán cẩn thận. Bước 4: Ghi đáp số có đơn vị. Bước 5: Kiểm tra lại.',
+    ],
+    example: 'Ví dụ: "Lớp có 32 HS, chia đều vào 4 tổ" → Biết: 32 HS, 4 tổ. Tìm: số HS/tổ. Phép tính: 32÷4 = 8 HS.',
+  };
+
+  // ── Nhân / Chia ───────────────────────────────────────────────────────────
+  if (/nhân|chia|bảng nhân|bảng chia/.test(combined)) return {
+    title: 'Khởi động: Nhân và Chia',
+    points: [
+      'Nhân là cộng nhanh nhiều lần bằng nhau. Chia là tách đều thành nhiều phần.',
+      'Khi nhân số có nhiều chữ số: nhân từng hàng, chú ý "nhớ" khi kết quả ≥ 10.',
+    ],
+    example: 'Ví dụ: 47 × 6 = (40×6) + (7×6) = 240 + 42 = 282. Hoặc: đặt tính dọc, nhân từ hàng đơn vị.',
+  };
+
+  // ── Tính nhẩm nhanh ───────────────────────────────────────────────────────
+  if (/nhẩm|quick/.test(combined)) return {
+    title: 'Khởi động: Tính nhẩm nhanh',
+    points: [
+      'Tính nhẩm nhanh nhờ tách số tròn trước: 398 + 25 = 400 + 23 = 423.',
+      'Hoặc dùng tính chất giao hoán: a + b = b + a; a × b = b × a.',
+    ],
+    example: 'Ví dụ: 46 + 37 = 46 + 4 + 33 = 50 + 33 = 83 (tách 37 = 4 + 33, cộng 4 trước để được số tròn 50).',
+  };
+
+  // ── Cộng / Trừ (fallback for + op) ───────────────────────────────────────
+  if (/cộng|trừ/.test(combined)) return {
+    title: 'Khởi động: Cộng và Trừ',
+    points: [
+      'Cộng trừ số lớn: giữ đúng hàng (đơn vị thẳng đơn vị, chục thẳng chục) khi đặt tính.',
+      'Khi trừ: nếu chữ số hàng đơn vị ít hơn số trừ thì "mượn" 1 chục từ hàng chục.',
+    ],
+    example: 'Ví dụ: 4 023 - 1 587 → hàng đơn vị: 3 < 7, mượn 1 chục → 13 - 7 = 6. Tiếp tục từng hàng.',
+  };
+
+  // ── Generic math fallback ──────────────────────────────────────────────────
+  const topicName = String(module.title || '').replace(/^Toán:\s*/i, '').trim() || 'Toán';
+  return {
+    title: `Khởi động: ${topicName}`,
+    points: [
+      `Hôm nay mình học về: ${topicName}. Đọc kỹ bài học ngắn của Gâu tiên sinh ở Bước 2 trước khi làm bài.`,
+      'Trước khi chọn đáp án, hãy tự hỏi: bài đang yêu cầu tính gì và dùng phép tính nào?',
+    ],
+    example: `Ví dụ: với bài ${topicName}, hãy nhớ công thức hoặc quy tắc chính, rồi áp dụng từng bước.`,
+  };
+}
+
 function getFlowTitle(module) {
-  if (module.subject === 'math') return 'Khởi động toán vui';
+  if (module.subject === 'math') {
+    const content = getMathTopicContent(module);
+    return content.title;
+  }
   if (module.subject === 'eng') return 'Warm-up tiếng Anh';
   if (module.subject === 'vie') {
     const isReading = /đọc|bài đọc|doc/i.test(`${module.title || ''} ${module.topicKey || ''}`);
@@ -28,10 +250,7 @@ function getFlowTitle(module) {
 
 function getFlowPoints(module) {
   if (module.subject === 'math') {
-    return [
-      'Con thử đoán xem hôm nay mình đang làm việc với số, phân số, hình hay biểu đồ.',
-      'Trước khi tính, hãy tự nói ngắn gọn: bài này đang hỏi điều gì.',
-    ];
+    return getMathTopicContent(module).points;
   }
   if (module.subject === 'eng') {
     return [
@@ -101,7 +320,7 @@ function getFlowPoints(module) {
 }
 
 function getFlowExample(module) {
-  if (module.subject === 'math') return 'Ví dụ: nếu đề hỏi chu vi, con phải nghĩ đến độ dài đường bao quanh hình chứ không phải phần bên trong hình.';
+  if (module.subject === 'math') return getMathTopicContent(module).example;
   if (module.subject === 'eng') return 'Ví dụ: nếu bài có từ works in, con thử nghĩ ngay đến nơi làm việc phù hợp với nghề đó.';
   if (module.subject === 'vie') return 'Ví dụ: nếu câu hỏi hỏi về ý chính, con đừng chọn theo cảm giác mà hãy quay lại đúng câu trong bài.';
   if (module.subject === 'it') return 'Ví dụ: nếu bài về thư mục, con thử hình dung thư mục như một ngăn chứa nhiều tệp.';
