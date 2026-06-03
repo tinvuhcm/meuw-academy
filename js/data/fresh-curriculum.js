@@ -14,6 +14,7 @@ import {
 import { buildKnttCatalogTopics } from './kntt-topics.js';
 import { getPptxTopicsForSubject } from './kntt-pptx-questions.js';
 import { ALL_SCI_ENCYCLOPEDIA_TOPICS } from './science-encyclopedia.js';
+import { ALL_SCIENCE_WORLD_TOPICS } from './science-world.js';
 import {
   SUPPLEMENTAL_IT_TOPICS,
   SUPPLEMENTAL_OTHER_TOPICS,
@@ -437,8 +438,10 @@ function buildCatalog(allData) {
     mergeSupplemental(catalog, topic);
   });
 
-  // Science encyclopedia — engaging extra-curricular science (inventors, space, nature)
+  // Science encyclopedia — inventors, space, great inventions
   ALL_SCI_ENCYCLOPEDIA_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
+  // Science world — nature, body, animals, evolution, earth, ocean, forest
+  ALL_SCIENCE_WORLD_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
 
   // PPTX question pools — fill non-math topics with real KNTT slide content
   // Aggregated mega-topic per subject (first in array) serves 20 Q/slot.
