@@ -12,6 +12,7 @@ import {
   LONG_RANGE_STUDY_POLICY,
 } from './official-knowledge-map.js';
 import { buildKnttCatalogTopics } from './kntt-topics.js';
+import { getPptxTopicsForSubject } from './kntt-pptx-questions.js';
 import {
   SUPPLEMENTAL_IT_TOPICS,
   SUPPLEMENTAL_OTHER_TOPICS,
@@ -19,29 +20,35 @@ import {
   SUPPLEMENTAL_VIETNAMESE_TOPICS,
 } from './supplemental-topics.js';
 
+// ─── Learning time targets ───────────────────────────────────────────────────
+// Increased to reach 3.5-4h daily. Math uses generator (always hits target).
+// Non-math: actual served Q = min(TARGET, topic_pool_size).
+// With aggregated PPTX topics (20-defaultCount), each slot serves ~12-20 Q.
 const TARGET_QUESTION_COUNT = {
-  math: 14,
-  eng: 10,
-  vie: 10,
-  sci: 10,
-  it: 8,
-  histgeo: 8,
-  music: 7,
-  art: 7,
-  ethics: 7,
-  tech: 7,
-  life: 7,
-  pe: 6,
+  math: 20,
+  eng: 18,
+  vie: 20,
+  sci: 18,
+  it: 14,
+  histgeo: 14,
+  music: 10,
+  art: 10,
+  ethics: 12,
+  tech: 12,
+  life: 10,
+  pe: 10,
   draw: 1,
 };
 
+// Caps per subject per day. Sum = 25 ≈ 24-module curriculum.
+// math:5 + vie:5 + eng:3 + sci:4 + it:2 + histgeo:2 + others(music,art,ethics,tech,life,pe):1 each = 24
 const SUBJECT_DAILY_CAPS = {
-  math: 4,
-  eng: 2,
-  vie: 3,
-  sci: 3,
-  it: 1,
-  histgeo: 1,
+  math: 5,
+  eng: 3,
+  vie: 5,
+  sci: 4,
+  it: 2,
+  histgeo: 2,
   music: 1,
   art: 1,
   ethics: 1,
@@ -423,15 +430,24 @@ function buildCatalog(allData) {
   buildKnowledgeMapConceptTopics().forEach(topic => mergeSupplemental(catalog, topic));
   CURATED_ENGLISH_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
 
-  // KNTT lesson pool — adds specific KNTT lesson titles with source citations
-  // Math entries get the runtime generator attached; other subjects start with empty pools
-  // and will grow as Direction 2 (PPTX parsing) populates questions
+  // KNTT lesson pool — KNTT lesson structure with source citations
   buildKnttCatalogTopics().forEach(topic => {
     if (topic.subject === 'math' && topic.op) {
       topic.generator = generateMathQuestions;
     }
     mergeSupplemental(catalog, topic);
   });
+
+  // PPTX question pools — fill non-math topics with real KNTT slide content
+  // Aggregated mega-topic per subject (first in array) serves 20 Q/slot.
+  // Individual lesson topics add variety for the long-range scheduler.
+  const PPTX_SUBJECTS = ['vie', 'sci', 'histgeo', 'ethics', 'art', 'tech', 'life', 'it'];
+  for (const subjectCode of PPTX_SUBJECTS) {
+    const topics = getPptxTopicsForSubject(subjectCode);
+    for (const topic of topics) {
+      mergeSupplemental(catalog, topic);
+    }
+  }
 
   CATALOG_CACHE = catalog;
   return CATALOG_CACHE;

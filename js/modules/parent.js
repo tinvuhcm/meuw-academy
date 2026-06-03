@@ -696,10 +696,11 @@ function renderDataTab(container) {
   unlockArea.appendChild(unlockRow);
   wrap.appendChild(unlockArea);
 
-  // Danger Zone - Replaced with Dev Tool (Reset Current Day)
+  // Dev Tool
   const devArea = el('div', { class: 'mt-8 p-4 bg-yellow-100 border-2 border-yellow-400 rounded-xl' });
-  devArea.innerHTML = '<h3 class="font-bold text-lg mb-2 text-yellow-800">🛠️ Công cụ Phát triển (Dev Mode)</h3><p class="text-sm mb-4 text-yellow-700">Khôi phục bài học của ngày hôm nay về 0 (Học lại từ đầu).</p>';
-  const hardResetBtn = el('button', { class: 'btn bg-red-500 hover:bg-red-600 text-white border-none text-sm px-4 py-2 rounded-lg font-bold w-full' }, 'Học lại Ngày Hôm Nay');
+  devArea.innerHTML = '<h3 class="font-bold text-lg mb-2 text-yellow-800">🛠️ Công cụ Phát triển (Dev Mode)</h3>';
+
+  const hardResetBtn = el('button', { class: 'btn bg-orange-500 hover:bg-orange-600 text-white border-none text-sm px-4 py-2 rounded-lg font-bold w-full mb-3' }, 'Học lại Ngày Hôm Nay');
   hardResetBtn.addEventListener('click', async () => {
     if (confirm('BẠN CÓ CHẮC KHÔNG? Toàn bộ bài học của Ngày hôm nay sẽ bị đánh dấu là chưa hoàn thành. (XP và Huy hiệu vẫn được giữ nguyên)')) {
       const { getCurriculumDay } = await import('../data/curriculum-loader.js');
@@ -716,6 +717,17 @@ function renderDataTab(container) {
     }
   });
   devArea.appendChild(hardResetBtn);
+
+  // Reset to Day 1 — clears all progress and restarts from today
+  const day1ResetBtn = el('button', { class: 'btn bg-red-600 hover:bg-red-700 text-white border-none text-sm px-4 py-2 rounded-lg font-bold w-full' }, '🔄 Reset về Ngày 1 (Bắt đầu lại hoàn toàn)');
+  day1ResetBtn.addEventListener('click', () => {
+    if (confirm('⚠️ RESET HOÀN TOÀN?\n\nToàn bộ tiến độ, bài học đã hoàn thành, XP và lịch sử sẽ bị xóa.\nBé sẽ bắt đầu lại từ Ngày 1 hôm nay.\n\nBạn có chắc không?')) {
+      State.resetLearningProgress();
+      alert('Đã reset về Ngày 1. App sẽ tải lại ngay.');
+      window.location.reload();
+    }
+  });
+  devArea.appendChild(day1ResetBtn);
   wrap.appendChild(devArea);
 
   container.appendChild(wrap);

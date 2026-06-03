@@ -1,6 +1,6 @@
 import { localDateString } from './utils.js';
 
-export const PROGRAM_START_DATE = '2026-06-02';
+export const PROGRAM_START_DATE = '2026-06-03';
 export const SCHOOL_TERM_START = '2026-09-07';
 export const SCHOOL_TERM_END = '2027-05-22';
 export const PROGRAM_END_DATE = SCHOOL_TERM_END;

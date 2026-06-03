@@ -4,10 +4,13 @@ export const ALL_SUBJECT_CODES = [...CORE_SUBJECT_CODES, ...OTHER_SUBJECT_CODES]
 
 export const LONG_RANGE_STUDY_POLICY = {
   sourceSets: ['ket-noi-tri-thuc', 'family-and-friends-4', 'hoc10-official', 'science-extension'],
+  // Target: 3.5-4h/day. Math generator always hits 20Q×40s=13min.
+  // Non-math with PPTX pools: avg 12-18Q×35s + 1 lesson block (3min) = 10-13min per slot.
+  // 24 modules × ~10min avg = ~240min = 4h.
   targetMinutes: {
-    am: 120,
-    pm: 100,
-    total: 220,
+    am: 145,
+    pm: 115,
+    total: 260,
   },
   moduleTargets: {
     am: 14,
@@ -15,18 +18,18 @@ export const LONG_RANGE_STUDY_POLICY = {
     total: 24,
   },
   estimatedMinutesBySubject: {
-    math: 11,
-    vie: 10,
-    eng: 10,
-    sci: 10,
-    it: 9,
-    histgeo: 9,
-    music: 8,
-    art: 8,
-    ethics: 8,
-    tech: 9,
-    life: 8,
-    pe: 8,
+    math: 14,
+    vie: 13,
+    eng: 12,
+    sci: 12,
+    it: 11,
+    histgeo: 11,
+    music: 9,
+    art: 9,
+    ethics: 10,
+    tech: 10,
+    life: 9,
+    pe: 9,
   },
   enrichmentSlotMap: {
     am: [6],
