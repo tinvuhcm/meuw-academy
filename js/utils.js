@@ -379,6 +379,17 @@ export function formatModuleDisplayTitle(moduleOrSubject, maybeTitle) {
   if (/^doctors?$/i.test(title)) title = 'Doctor';
   if (!title) title = rawTitle || subjectLabel;
 
+  // Filter out unaccented Vietnamese stems (from PPTX fallback like "Luyen tu va cau")
+  // Only apply to non-English subjects — English titles are legitimately ASCII.
+  if (subject !== 'eng' && /^[a-zA-Z0-9\s\-]+$/.test(title) && title.includes(' ') && title.length > 5) {
+    title = subjectLabel; // fall back to just the subject label
+  }
+
+  // Capitalize first letter (safety net for lowercase concept names)
+  if (title.length > 0) {
+    title = title.charAt(0).toUpperCase() + title.slice(1);
+  }
+
   return `[${subjectLabel}] ${title}`;
 }
 

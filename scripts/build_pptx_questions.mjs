@@ -467,10 +467,14 @@ function processFile(jsonPath, subjectCode, subjectFolder) {
   // The Python extractor only joins 3 paragraphs, often missing the lesson name.
   const coverSlide = (raw.slides || []).find(s => s.type === 'cover');
   const coverParas = coverSlide?.paragraphs || [];
-  // Find the most useful paragraph: look for "Bài X:" patterns or longest non-subject para
+  // Find the most useful paragraph from cover slide — the actual lesson/topic name.
+  // Broader pattern to catch all Vietnamese lesson types.
+  const LESSON_PATTERN = /^(Bài|Chủ đề|Tiết|Ôn tập|Luyện tập|Luyện từ|Tập làm văn|Nói và nghe|Đọc:|Viết:|Nghe|Khám phá|Vận dụng|Bài học|Chủ điểm)/i;
+  const SUBJECT_HEADER = /^(Tuần \d+|TIẾNG VIỆT|Khoa học|Tập \d+|HĐTN|TIN HỌC|MĨ THUẬT|CÔNG NGHỆ|ĐẠO ĐỨC|Lịch Sử|Âm nhạc)/i;
+
   const lessonPara = coverParas.find(p =>
-    /^(Bài|Chủ đề|Tiết|Ôn tập|Luyện tập|Khám phá|Vận dụng)/i.test(p) ||
-    (p.length > 10 && !/^(Tuần \d+|TIẾNG VIỆT|Khoa học|Tập \d+|HĐTN|TIN HỌC|MĨ THUẬT|CÔNG NGHỆ|ĐẠO ĐỨC)/i.test(p))
+    LESSON_PATTERN.test(p) ||
+    (p.length > 10 && !SUBJECT_HEADER.test(p))
   );
 
   const rawTitle = (lessonPara || raw.extracted?.title || stem)

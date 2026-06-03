@@ -405,15 +405,22 @@ function buildKnowledgeMapConceptTopics() {
           `${subjectKey}|${concept}|neighboring-concepts`,
         ).slice(0, 3);
 
+        // Capitalize concept; for very short/single-word concepts include strand for context
+        const capConcept = concept.charAt(0).toUpperCase() + concept.slice(1);
+        const conceptWords = concept.split(' ').length;
+        const conceptTitle = conceptWords <= 2 && concept.length <= 12
+          ? `${strand.title}: ${capConcept}`   // e.g. "Làm sản phẩm đơn giản: Cắt"
+          : capConcept;                         // e.g. "Từ theo chủ điểm"
+
         topics.push({
           topicKey: `${subjectKey}:concept:${strand.key}:${normalizeText(concept).replace(/\s+/g, '-')}`,
           subject: subjectKey,
-          title: `${subject.label}: ${concept}`,
+          title: `${subject.label}: ${conceptTitle}`,
           defaultCount: 4,
           lessonBlocks: [{
             type: 'micro',
             teacherName: 'Gâu tiên sinh',
-            title: `${concept} thuộc mạch ${strand.title}`,
+            title: `${capConcept} — ${strand.title}`,
             points: [
               `Đây là một phần của môn ${subject.label}.`,
               `${concept} giúp bé ${benefit}.`,
