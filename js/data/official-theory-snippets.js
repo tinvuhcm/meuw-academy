@@ -278,3 +278,200 @@ export function getOfficialVietnameseTheory({ skillType = '', title = '' } = {})
 
   return null;
 }
+
+const IT_SOURCE = 'Nguồn: SGK Tin học 4 (KNTT), Hoc10 tập huấn GV';
+const HISTGEO_SOURCE = 'Nguồn: SGK Lịch sử và Địa lí 4 (KNTT)';
+
+/**
+ * Get SGK-based theory for Tin học 4 topics.
+ * Wired in by kntt-topics.js buildSourceTheoryBlock for it entries.
+ */
+export function getOfficialItTheory({ title = '' } = {}) {
+  const t = clean(title).toLowerCase();
+
+  if (/phần cứng|phần mềm|hardware|software/.test(t)) {
+    return {
+      sourceLabel: IT_SOURCE,
+      points: [
+        'Máy tính gồm hai phần: phần cứng (hardware) là các bộ phận vật lý như màn hình, bàn phím, chuột, CPU.',
+        'Phần mềm (software) là các chương trình chạy trên máy như hệ điều hành, Word, trò chơi — không sờ vào được.',
+        'Hai phần này phối hợp với nhau để máy tính hoạt động và giúp ích cho người dùng.',
+      ],
+      example: 'Ví dụ: bàn phím là phần cứng (con sờ vào được); Microsoft Word là phần mềm (con dùng để soạn thảo).',
+    };
+  }
+
+  if (/gõ bàn phím|luyện gõ|typing/.test(t)) {
+    return {
+      sourceLabel: IT_SOURCE,
+      points: [
+        'Gõ bàn phím đúng cách giúp con gõ nhanh hơn và bảo vệ cổ tay, vai, lưng.',
+        'Đặt tay ở hàng cơ bản: ngón trỏ trái trên F, ngón trỏ phải trên J — mỗi ngón chịu trách nhiệm một nhóm phím.',
+        'Nhìn màn hình, không nhìn bàn phím khi gõ là kỹ năng quan trọng cần luyện tập.',
+      ],
+      example: 'Ví dụ: Shift + chữ thường = chữ hoa; Ctrl+S = lưu file; Ctrl+Z = hoàn tác.',
+    };
+  }
+
+  if (/tìm kiếm|internet|trang web/.test(t)) {
+    return {
+      sourceLabel: IT_SOURCE,
+      points: [
+        'Internet là mạng máy tính toàn cầu, kết nối hàng tỉ người và thiết bị với nhau.',
+        'Muốn tìm kiếm thông tin, con dùng công cụ tìm kiếm (Google) và gõ từ khóa ngắn gọn, chính xác.',
+        'Khi đọc thông tin trên mạng, cần kiểm tra độ tin cậy của nguồn và không chia sẻ thông tin cá nhân.',
+      ],
+      example: 'Ví dụ: thay vì gõ "tôi muốn biết sông dài nhất Việt Nam là gì", hãy gõ "sông dài nhất Việt Nam".',
+    };
+  }
+
+  if (/tệp|thư mục|file|folder|lưu trữ/.test(t)) {
+    return {
+      sourceLabel: IT_SOURCE,
+      points: [
+        'Tệp (file) là đơn vị lưu trữ dữ liệu: văn bản (.docx), ảnh (.jpg), bài hát (.mp3)...',
+        'Thư mục (folder) giúp nhóm các tệp liên quan lại, giống như tủ hồ sơ nhiều ngăn.',
+        'Sắp xếp tệp có tổ chức (đặt tên rõ ràng, phân loại vào thư mục) giúp con dễ tìm lại về sau.',
+      ],
+      example: 'Ví dụ: tạo thư mục "Toán 4" → thư mục con "Bài tập" và "Ôn tập" → đặt tệp đúng chỗ.',
+    };
+  }
+
+  if (/đạo đức|pháp luật|bản quyền|an toàn|văn hóa.*số/.test(t)) {
+    return {
+      sourceLabel: IT_SOURCE,
+      points: [
+        'Sử dụng phần mềm có bản quyền là tôn trọng công sức người tạo ra và tuân thủ pháp luật.',
+        'Trên Internet, con cần bảo vệ thông tin cá nhân: không chia sẻ địa chỉ, số điện thoại cho người lạ.',
+        'Khi gặp nội dung không phù hợp, con nên tắt ngay và báo cho cha mẹ hoặc thầy cô.',
+      ],
+      example: 'Ví dụ: phần mềm miễn phí hợp pháp (như Google Docs, LibreOffice) là lựa chọn tốt thay cho phần mềm lậu.',
+    };
+  }
+
+  if (/trình chiếu|slide|powerpoint|hiệu ứng/.test(t)) {
+    return {
+      sourceLabel: IT_SOURCE,
+      points: [
+        'Bài trình chiếu (presentation) giúp trình bày ý tưởng có hình ảnh, màu sắc rõ ràng trước người xem.',
+        'Mỗi trang gọi là slide; nên dùng ít chữ, nhiều ý chính và hình ảnh minh họa phù hợp.',
+        'Hiệu ứng chuyển trang giúp bài sinh động hơn — chọn vừa phải, không quá rườm rà.',
+      ],
+      example: 'Ví dụ: tiêu đề slide dùng chữ to (36-40pt), nội dung dùng gạch đầu dòng ngắn gọn, không quá 5-6 dòng/slide.',
+    };
+  }
+
+  if (/soạn thảo|văn bản|word|chỉnh sửa văn/.test(t)) {
+    return {
+      sourceLabel: IT_SOURCE,
+      points: [
+        'Phần mềm soạn thảo văn bản (Word, Google Docs) giúp nhập, chỉnh sửa và định dạng tài liệu.',
+        'Các phím tắt quan trọng: Ctrl+S (lưu), Ctrl+B (đậm), Ctrl+I (nghiêng), Ctrl+Z (hoàn tác).',
+        'Lưu tệp thường xuyên để tránh mất dữ liệu khi mất điện hoặc máy gặp sự cố.',
+      ],
+      example: 'Ví dụ: viết bài xong, con nhấn Ctrl+S để lưu, rồi đọc lại từ đầu để kiểm tra lỗi chính tả.',
+    };
+  }
+
+  if (/lập trình|chơi với máy|scratch/.test(t)) {
+    return {
+      sourceLabel: IT_SOURCE,
+      points: [
+        'Lập trình là viết các lệnh để máy tính thực hiện theo ý muốn — như ra lệnh cho một người trợ lý.',
+        'Lập trình trực quan (Scratch) dùng khối lệnh màu sắc, kéo thả — không cần nhớ câu lệnh phức tạp.',
+        'Tư duy lập trình giúp con chia bài toán khó thành các bước nhỏ, giải quyết từng bước một.',
+      ],
+      example: 'Ví dụ: "Con mèo đi 5 bước, rồi quay phải 90°, rồi nói Xin chào!" — đây là một chương trình đơn giản.',
+    };
+  }
+
+  // Generic IT fallback
+  return {
+    sourceLabel: IT_SOURCE,
+    points: [
+      'Tin học lớp 4 giúp con học cách dùng máy tính một cách an toàn, hiệu quả và có đạo đức.',
+      'Quan trọng nhất: hiểu rõ một thao tác dùng để làm gì, rồi mới thực hành — đừng bấm thử liên tục mà không biết mục đích.',
+      'An toàn thông tin và đạo đức khi dùng máy tính là kỹ năng quan trọng suốt cuộc đời.',
+    ],
+    example: 'Ví dụ: trước khi xóa một tệp, con nên kiểm tra đây có phải tệp quan trọng không và có thể phục hồi từ Thùng rác không.',
+  };
+}
+
+/**
+ * Get SGK-based theory for Lịch sử và Địa lí 4 topics.
+ */
+export function getOfficialHistgeoTheory({ title = '', unit = '' } = {}) {
+  const t = clean(title).toLowerCase();
+  const u = clean(unit).toLowerCase();
+
+  if (/sông hồng|văn minh.*hồng|hồng.*văn minh/.test(t)) {
+    return {
+      sourceLabel: HISTGEO_SOURCE,
+      points: [
+        'Sông Hồng bắt nguồn từ Vân Nam (Trung Quốc), chảy vào Việt Nam qua Lào Cai, đổ ra biển ở Nam Định và Thái Bình.',
+        'Nước sông màu đỏ do phù sa sét đỏ — phù sa này bồi đắp tạo nên Đồng bằng Bắc Bộ màu mỡ.',
+        'Văn minh sông Hồng là cái nôi của dân tộc Việt: nông nghiệp lúa nước, trống đồng Đông Sơn, các làng nghề thủ công.',
+      ],
+      example: 'Ví dụ: nhờ phù sa sông Hồng, Đồng bằng Bắc Bộ là vùng đất nông nghiệp màu mỡ, nuôi sống hàng chục triệu người.',
+    };
+  }
+
+  if (/thăng long|hà nội|văn miếu|quốc tử giám|hồ gươm|hồ hoàn kiếm/.test(t)) {
+    return {
+      sourceLabel: HISTGEO_SOURCE,
+      points: [
+        'Thăng Long (nay là Hà Nội) được vua Lý Thái Tổ chọn làm kinh đô năm 1010 vì vị trí trung tâm, đất rộng, cao ráo.',
+        'Văn Miếu - Quốc Tử Giám (thành lập 1070-1076) là trường đại học đầu tiên của Việt Nam.',
+        'Hồ Hoàn Kiếm gắn với truyền thuyết vua Lê Lợi trả gươm thần cho Rùa Vàng sau khi đánh đuổi giặc Minh.',
+      ],
+      example: 'Ví dụ: mỗi năm vào tháng 3 âm lịch, học sinh cả nước hướng về Phú Thọ để nhớ ơn các Vua Hùng dựng nước.',
+    };
+  }
+
+  if (/đền hùng|hùng vương/.test(t)) {
+    return {
+      sourceLabel: HISTGEO_SOURCE,
+      points: [
+        'Đền Hùng ở tỉnh Phú Thọ là nơi thờ các Vua Hùng — những người dựng nên nhà nước đầu tiên của Việt Nam.',
+        'Lễ giỗ Tổ Hùng Vương (10/3 âm lịch) là ngày Quốc giỗ, nhắc nhở con cháu nhớ về cội nguồn.',
+        '"Dù ai đi ngược về xuôi / Nhớ ngày giỗ Tổ mùng mười tháng ba" — câu ca dao nổi tiếng về truyền thống uống nước nhớ nguồn.',
+      ],
+      example: 'Ví dụ: câu chuyện Lạc Long Quân và Âu Cơ sinh ra 100 người con — 50 xuống biển, 50 lên núi — giải thích nguồn gốc cộng đồng người Việt.',
+    };
+  }
+
+  if (/tây nguyên|cồng chiêng/.test(t)) {
+    return {
+      sourceLabel: HISTGEO_SOURCE,
+      points: [
+        'Tây Nguyên là cao nguyên rộng lớn, đất đỏ bazan màu mỡ, rất phù hợp trồng cà phê, cao su và hồ tiêu.',
+        'Đây là vùng sinh sống của nhiều dân tộc thiểu số (Ê Đê, Mnông, Ba Na, Gia Rai...) với văn hóa cồng chiêng độc đáo.',
+        'Lễ hội cồng chiêng Tây Nguyên được UNESCO công nhận là Di sản văn hóa phi vật thể thế giới năm 2005.',
+      ],
+      example: 'Ví dụ: cồng chiêng vang lên trong các lễ cúng thần, đám cưới, lễ mừng lúa mới — là "tiếng nói của tâm hồn" dân tộc Tây Nguyên.',
+    };
+  }
+
+  if (/nam bộ|mê kông|cửu long|đồng bằng nam/.test(t)) {
+    return {
+      sourceLabel: HISTGEO_SOURCE,
+      points: [
+        'Đồng bằng Nam Bộ được bồi đắp bởi phù sa sông Mê Kông — vựa lúa lớn nhất Việt Nam, chiếm hơn 50% sản lượng lúa cả nước.',
+        'Vùng sông nước Nam Bộ có hệ thống kênh rạch chằng chịt, chợ nổi và cuộc sống gắn liền với thuyền, ghe.',
+        'TP. Hồ Chí Minh là đô thị lớn nhất Việt Nam, trung tâm kinh tế - thương mại phía Nam.',
+      ],
+      example: 'Ví dụ: chợ nổi Cái Răng (Cần Thơ) là nơi mua bán trên sông, người dùng sào treo mẫu hàng để khách dễ nhận biết.',
+    };
+  }
+
+  // Generic histgeo fallback
+  return {
+    sourceLabel: HISTGEO_SOURCE,
+    points: [
+      'Mỗi vùng địa lý Việt Nam có đặc điểm thiên nhiên, dân cư và văn hóa riêng biệt — tạo nên sự đa dạng phong phú của đất nước.',
+      'Khi học địa lý, con hãy gắn kiến thức với bản đồ: xác định vị trí, vùng giáp ranh và đặc điểm nổi bật.',
+      'Khi học lịch sử, con hãy nhớ: ai? ở đâu? khi nào? kết quả gì? — bốn câu hỏi giúp con nắm chắc sự kiện.',
+    ],
+    example: 'Ví dụ: Đền Hùng ở Phú Thọ (ai: Vua Hùng; ở đâu: Phú Thọ; khi nào: hàng nghìn năm trước; kết quả: lập nước Văn Lang).',
+  };
+}

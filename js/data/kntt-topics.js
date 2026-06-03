@@ -13,8 +13,11 @@
 
 import { KNTT_LESSON_POOL, formatSourceCitation } from './kntt-lesson-pool.js';
 import { getBookPageUrl, getBookPageUrls } from './hts-book-pages.js';
-import { getOfficialMathTheory, getOfficialVietnameseTheory } from './official-theory-snippets.js';
+import { getOfficialMathTheory, getOfficialVietnameseTheory, getOfficialItTheory, getOfficialHistgeoTheory } from './official-theory-snippets.js';
 import { generateVietnameseQuestions } from './vie-question-generator.js';
+import { generateItQuestions } from './it-question-generator.js';
+import { generateHistgeoQuestions } from './histgeo-question-generator.js';
+import { generateTechQuestions } from './tech-question-generator.js';
 
 const SUBJECT_LABELS = {
   math: 'Toán',
@@ -266,6 +269,10 @@ function buildTheoryPoints(entry) {
   if (officialMath) return officialMath.points;
   const officialVie = entry.subject === 'vie' ? getOfficialVietnameseTheory({ skillType: skill, title }) : null;
   if (officialVie) return officialVie.points;
+  const officialIt = entry.subject === 'it' ? getOfficialItTheory({ title }) : null;
+  if (officialIt) return officialIt.points;
+  const officialHistgeo = entry.subject === 'histgeo' ? getOfficialHistgeoTheory({ title, unit: entry.source?.unit || '' }) : null;
+  if (officialHistgeo) return officialHistgeo.points;
 
   if (entry.subject === 'math') {
     if (/chu vi/i.test(title)) {
@@ -393,6 +400,10 @@ function buildTheoryExample(entry) {
   if (officialMath?.example) return officialMath.example;
   const officialVie = entry.subject === 'vie' ? getOfficialVietnameseTheory({ skillType: entry.skillType || '', title: lessonName }) : null;
   if (officialVie?.example) return officialVie.example;
+  const officialIt = entry.subject === 'it' ? getOfficialItTheory({ title: lessonName }) : null;
+  if (officialIt?.example) return officialIt.example;
+  const officialHistgeo = entry.subject === 'histgeo' ? getOfficialHistgeoTheory({ title: lessonName, unit: entry.source?.unit || '' }) : null;
+  if (officialHistgeo?.example) return officialHistgeo.example;
   if (entry.subject === 'math') {
     return `Ví dụ: trước khi tính, hãy tự hỏi bài ${lessonName} đang yêu cầu cộng, trừ, nhân, chia hay tìm quy luật.`;
   }
@@ -406,9 +417,12 @@ function buildTheoryExample(entry) {
 }
 
 function buildSourceTheoryBlock(entry, sourcePages = null) {
-  const officialMath = entry.subject === 'math' ? getOfficialMathTheory({ title: cleanLessonTitle(entry), op: entry.op || mathOpForLesson(entry.ssgkTitle) }) : null;
-  const officialVie = entry.subject === 'vie' ? getOfficialVietnameseTheory({ skillType: entry.skillType || '', title: cleanLessonTitle(entry) }) : null;
-  const official = officialMath || officialVie;
+  const lessonTitle = cleanLessonTitle(entry);
+  const officialMath = entry.subject === 'math' ? getOfficialMathTheory({ title: lessonTitle, op: entry.op || mathOpForLesson(entry.ssgkTitle) }) : null;
+  const officialVie = entry.subject === 'vie' ? getOfficialVietnameseTheory({ skillType: entry.skillType || '', title: lessonTitle }) : null;
+  const officialIt = entry.subject === 'it' ? getOfficialItTheory({ title: lessonTitle }) : null;
+  const officialHistgeo = entry.subject === 'histgeo' ? getOfficialHistgeoTheory({ title: lessonTitle, unit: entry.source?.unit || '' }) : null;
+  const official = officialMath || officialVie || officialIt || officialHistgeo;
   const pageSuffix = sourcePages && sourcePages.endPage > sourcePages.startPage
     ? `, tr.${sourcePages.startPage}-${sourcePages.endPage}`
     : (entry.source?.page ? `, tr.${entry.source.page}` : '');
@@ -603,9 +617,10 @@ function buildKnttNonMathTopics(subject, lessons) {
 
     // Choose the best question generator for this subject/skill
     let generator = generateKnttLessonQuestions;
-    if (subject === 'vie') {
-      generator = generateVietnameseQuestions;
-    }
+    if (subject === 'vie') generator = generateVietnameseQuestions;
+    else if (subject === 'it') generator = generateItQuestions;
+    else if (subject === 'histgeo') generator = generateHistgeoQuestions;
+    else if (subject === 'tech') generator = generateTechQuestions;
 
     return {
       topicKey: entry.topicKey,
