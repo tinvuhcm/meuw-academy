@@ -11,7 +11,7 @@ import {
   getSubjectEstimatedMinutes,
   LONG_RANGE_STUDY_POLICY,
 } from './official-knowledge-map.js';
-import { buildKnttCatalogTopics, generateKnttLessonQuestions } from './kntt-topics.js';
+import { buildKnttCatalogTopics } from './kntt-topics.js';
 import { getPptxTopicsForSubject } from './kntt-pptx-questions.js';
 import { ALL_SCI_ENCYCLOPEDIA_TOPICS } from './science-encyclopedia.js';
 import { ALL_SCIENCE_WORLD_TOPICS } from './science-world.js';

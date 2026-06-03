@@ -275,6 +275,46 @@ export function getOfficialEnglishTheory(topicKey = '') {
       ],
       example: 'Ví dụ: My favorite subject is Science because I like experiments.',
     },
+    'eng:ff4-can': {
+      points: [
+        'Can + động từ nguyên mẫu để nói về khả năng: She can swim. I can\'t fly.',
+        'Can không thêm s với bất kỳ chủ ngữ nào — dùng giống nhau cho I, you, he, she, they.',
+        'Câu hỏi: Can you...? → Yes, I can. / No, I can\'t. (trả lời ngắn rất quan trọng!)',
+      ],
+      example: 'Ví dụ: Can she ride a bike? Yes, she can. He can\'t play chess but he can swim.',
+    },
+    'eng:ff4-there-is-are': {
+      points: [
+        'There is + danh từ số ít: There is a park near my school.',
+        'There are + danh từ số nhiều: There are twenty students in my class.',
+        'Câu hỏi: Is there...? / Are there...? → Yes, there is/are. / No, there isn\'t/aren\'t.',
+      ],
+      example: 'Ví dụ: Is there a library? Yes, there is. Are there any shops? No, there aren\'t.',
+    },
+    'eng:ff4-prepositions': {
+      points: [
+        'in (trong), on (trên mặt), under (dưới), next to (bên cạnh), between (giữa hai thứ), behind (phía sau).',
+        'near (gần), in front of (trước mặt), opposite (đối diện).',
+        'Mẹo nhớ: The cat is ON the mat (trên), IN the box (trong), UNDER the table (dưới gầm).',
+      ],
+      example: 'Ví dụ: The book is on the desk. The dog is under the chair. The school is next to the park.',
+    },
+    'eng:ff4-imperatives': {
+      points: [
+        'Câu lệnh (imperative) dùng động từ nguyên mẫu không cần chủ ngữ: Open! Sit down!',
+        'Phủ định: Don\'t + động từ nguyên mẫu: Don\'t run. Don\'t be late.',
+        'Thêm please để lịch sự: Please open your books. / Open your books, please.',
+      ],
+      example: 'Ví dụ: Be careful! Don\'t touch. Please close the door. Sit down and listen.',
+    },
+    'eng:ff4-how-much-many': {
+      points: [
+        'How many + danh từ đếm được (số nhiều): How many students are there?',
+        'How much + danh từ không đếm được: How much water do you need?',
+        'Danh từ đếm được: book/books, student/students. Không đếm: water, milk, money, time.',
+      ],
+      example: 'Ví dụ: How many apples? (đếm được, số nhiều). How much juice? (không đếm được).',
+    },
     'eng:ff4-feelings': {
       points: [
         'Từ chỉ cảm xúc giúp con nói về bản thân và phản ứng của mình trong các tình huống hằng ngày.',

@@ -75,7 +75,114 @@ function buildSentenceTopic({ topicKey, title, introTitle, introPoints, example,
   };
 }
 
+function buildGrammarTopic({ topicKey, title, introTitle, introPoints, example, questionPool }) {
+  return {
+    topicKey,
+    subject: 'eng',
+    title,
+    lessonBlocks: [{
+      type: 'micro',
+      teacherName: TEACHER,
+      title: introTitle,
+      sourceLabel: 'Family & Friends 4 (Oxford); tư liệu hỗ trợ: Hoc10, taphuan.nxbgd.vn',
+      points: introPoints,
+      example,
+    }],
+    questionPool,
+  };
+}
+
 export const MORE_ENGLISH_TOPICS = [
+  buildGrammarTopic({
+    topicKey: 'eng:ff4-can',
+    title: 'Tiếng Anh: Family & Friends 4 - Can / Can\'t (Abilities)',
+    introTitle: 'Can dùng để nói về khả năng của mình hoặc người khác',
+    introPoints: [
+      'Can + động từ nguyên mẫu: She can swim. I can\'t fly a kite.',
+      'Câu hỏi: Can you...? → Yes, I can. / No, I can\'t.',
+    ],
+    example: 'Can she sing? Yes, she can. Can he cook? No, he can\'t.',
+    questionPool: [
+      { type: 'multiple-choice', question: 'Chọn câu đúng về khả năng:', options: ['She can ride a bike.', 'She cans ride a bike.', 'She is can ride a bike.', 'She can to ride a bike.'], answer: 'She can ride a bike.', explanation: 'Can + động từ nguyên mẫu (không thêm s, không có to).' },
+      { type: 'multiple-choice', question: 'Điền từ đúng: He ____ speak English well.', options: ['can', 'cans', 'is can', 'does can'], answer: 'can', explanation: 'Can không thêm s với bất kỳ chủ ngữ nào (I/you/he/she/they đều dùng can).' },
+      { type: 'multiple-choice', question: 'Câu hỏi đúng là:', options: ['Can you jump high?', 'Do you can jump high?', 'Are you can jump high?', 'Cans you jump high?'], answer: 'Can you jump high?', explanation: 'Câu hỏi với can: Can + chủ ngữ + động từ nguyên mẫu?' },
+      { type: 'multiple-choice', question: '"Em không biết bơi" viết đúng là:', options: ['I can\'t swim.', 'I cannot to swim.', 'I don\'t can swim.', 'I am not swim.'], answer: 'I can\'t swim.', explanation: 'Phủ định của can là can\'t (cannot).' },
+      { type: 'multiple-choice', question: 'Trả lời đúng: Can she draw?', options: ['Yes, she can.', 'Yes, she cans.', 'Yes, she does.', 'Yes, she is.'], answer: 'Yes, she can.', explanation: 'Câu trả lời ngắn: Yes, + chủ ngữ + can. / No, + chủ ngữ + can\'t.' },
+      { type: 'multiple-choice', question: '"Bạn Lan có thể hát rất hay" là:', options: ['Lan can sing very well.', 'Lan cans sing very well.', 'Lan can to sing very well.', 'Lan singing very well.'], answer: 'Lan can sing very well.', explanation: 'Can + động từ nguyên mẫu: sing (không thêm s, không có to).' },
+      { type: 'multiple-choice', question: 'Chọn câu đúng về khả năng của hai người:', options: ['My brother and I can cook.', 'My brother and I cans cook.', 'My brother and I can to cook.', 'My brother and I does can cook.'], answer: 'My brother and I can cook.', explanation: 'Can không biến đổi theo chủ ngữ. "My brother and I" → can (không thêm s).' },
+    ],
+  }),
+  buildGrammarTopic({
+    topicKey: 'eng:ff4-there-is-are',
+    title: 'Tiếng Anh: Family & Friends 4 - There is / There are',
+    introTitle: 'There is/are dùng để nói "có … ở đâu đó"',
+    introPoints: [
+      'There is + danh từ số ít: There is a cat in the garden.',
+      'There are + danh từ số nhiều: There are two books on the desk.',
+    ],
+    example: 'There is a park near my school. There are five students in the room.',
+    questionPool: [
+      { type: 'multiple-choice', question: 'Điền từ đúng: ____ a supermarket near my house.', options: ['There is', 'There are', 'There has', 'It is'], answer: 'There is', explanation: 'Supermarket là danh từ số ít → There is.' },
+      { type: 'multiple-choice', question: 'Điền từ đúng: ____ many children in the park.', options: ['There are', 'There is', 'It are', 'They is'], answer: 'There are', explanation: 'Children là danh từ số nhiều → There are.' },
+      { type: 'multiple-choice', question: 'Câu hỏi đúng là:', options: ['Is there a library here?', 'Are there a library here?', 'There is a library?', 'Has there a library?'], answer: 'Is there a library here?', explanation: 'Câu hỏi số ít: Is there + danh từ số ít?' },
+      { type: 'multiple-choice', question: 'Câu hỏi đúng là:', options: ['Are there any shops?', 'Is there any shops?', 'Do there shops?', 'Have there shops?'], answer: 'Are there any shops?', explanation: 'Shops là số nhiều → Are there + any + danh từ số nhiều?' },
+      { type: 'multiple-choice', question: '"Có ba cái cửa sổ trong phòng" là:', options: ['There are three windows in the room.', 'There is three windows in the room.', 'It are three windows in the room.', 'Three windows is in the room.'], answer: 'There are three windows in the room.', explanation: 'Three windows là số nhiều → There are.' },
+      { type: 'multiple-choice', question: 'Trả lời đúng: Are there any trees?', options: ['Yes, there are.', 'Yes, it is.', 'Yes, there is.', 'Yes, they are.'], answer: 'Yes, there are.', explanation: 'Trả lời ngắn: Yes, there are. / No, there aren\'t.' },
+    ],
+  }),
+  buildGrammarTopic({
+    topicKey: 'eng:ff4-prepositions',
+    title: 'Tiếng Anh: Family & Friends 4 - Prepositions of place',
+    introTitle: 'Giới từ chỉ vị trí rất hay dùng trong mô tả',
+    introPoints: [
+      'in (trong), on (trên), under (dưới), next to (bên cạnh), between (giữa).',
+      'in front of (trước mặt), behind (phía sau), near (gần).',
+    ],
+    example: 'The book is on the desk. The cat is under the chair. The school is near the park.',
+    questionPool: [
+      { type: 'multiple-choice', question: 'The pen is ____ the pencil case.', options: ['in', 'on', 'at', 'from'], answer: 'in', explanation: '"In" dùng cho vật bên trong một cái gì đó. The pen is in the pencil case = bút nằm trong hộp bút.' },
+      { type: 'multiple-choice', question: 'The book is ____ the desk.', options: ['on', 'in', 'under', 'behind'], answer: 'on', explanation: '"On" dùng cho vật đặt trên bề mặt.' },
+      { type: 'multiple-choice', question: 'The dog is ____ the table.', options: ['under', 'on', 'in', 'between'], answer: 'under', explanation: '"Under" = dưới. The dog is under the table = con chó ở dưới gầm bàn.' },
+      { type: 'multiple-choice', question: 'The post office is ____ the bank and the school.', options: ['between', 'next to', 'near', 'behind'], answer: 'between', explanation: '"Between" dùng khi nói thứ gì đó ở giữa hai thứ khác.' },
+      { type: 'multiple-choice', question: '"Cửa hàng ở bên cạnh bệnh viện" là:', options: ['The shop is next to the hospital.', 'The shop is between the hospital.', 'The shop is in the hospital.', 'The shop is on the hospital.'], answer: 'The shop is next to the hospital.', explanation: '"Next to" = bên cạnh một thứ khác.' },
+      { type: 'multiple-choice', question: 'Where is your school? — It is ____ my house.', options: ['near', 'in', 'on', 'between'], answer: 'near', explanation: '"Near" = gần. My school is near my house = trường tôi gần nhà tôi.' },
+    ],
+  }),
+  buildGrammarTopic({
+    topicKey: 'eng:ff4-imperatives',
+    title: 'Tiếng Anh: Family & Friends 4 - Imperatives (Lệnh)',
+    introTitle: 'Câu mệnh lệnh dùng động từ nguyên mẫu ở đầu câu',
+    introPoints: [
+      'Khẳng định: Open your book. Sit down. Listen carefully.',
+      'Phủ định: Don\'t run. Don\'t touch. Don\'t be late.',
+    ],
+    example: 'Stand up! Open your books. Don\'t talk in class. Be quiet, please.',
+    questionPool: [
+      { type: 'multiple-choice', question: '"Hãy ngồi xuống" là:', options: ['Sit down!', 'You sit down!', 'Sitting down!', 'To sit down!'], answer: 'Sit down!', explanation: 'Câu lệnh: dùng động từ nguyên mẫu không cần chủ ngữ.' },
+      { type: 'multiple-choice', question: '"Đừng chạy trong hành lang" là:', options: ['Don\'t run in the corridor.', 'Not run in the corridor.', 'No running the corridor.', 'Don\'t to run in the corridor.'], answer: 'Don\'t run in the corridor.', explanation: 'Phủ định lệnh: Don\'t + động từ nguyên mẫu.' },
+      { type: 'multiple-choice', question: 'Câu lệnh nào đúng?', options: ['Please close the door.', 'Please to close the door.', 'Please closing the door.', 'You please close the door.'], answer: 'Please close the door.', explanation: 'Please + động từ nguyên mẫu để yêu cầu lịch sự.' },
+      { type: 'multiple-choice', question: '"Hãy cẩn thận!" là:', options: ['Be careful!', 'To be careful!', 'Being careful!', 'You be careful!'], answer: 'Be careful!', explanation: 'Với tính từ, câu lệnh dùng Be + tính từ: Be careful! Be quiet! Be happy!' },
+      { type: 'multiple-choice', question: '"Đừng quên làm bài tập về nhà" là:', options: ['Don\'t forget your homework.', 'Not forget your homework.', 'Don\'t to forget your homework.', 'No forgetting homework.'], answer: 'Don\'t forget your homework.', explanation: 'Phủ định lệnh: Don\'t + động từ nguyên mẫu (forget, không phải forgetting).' },
+    ],
+  }),
+  buildGrammarTopic({
+    topicKey: 'eng:ff4-how-much-many',
+    title: 'Tiếng Anh: Family & Friends 4 - How much / How many',
+    introTitle: 'How much / How many để hỏi về số lượng',
+    introPoints: [
+      'How many + danh từ đếm được số nhiều: How many students?',
+      'How much + danh từ không đếm được: How much water? How much money?',
+    ],
+    example: 'How many books do you have? How much milk do we need?',
+    questionPool: [
+      { type: 'multiple-choice', question: '____ pencils are there in the box?', options: ['How many', 'How much', 'How long', 'What'], answer: 'How many', explanation: '"Pencils" là danh từ đếm được (số nhiều) → How many.' },
+      { type: 'multiple-choice', question: '____ water do you drink every day?', options: ['How much', 'How many', 'How often', 'What'], answer: 'How much', explanation: '"Water" là danh từ không đếm được → How much.' },
+      { type: 'multiple-choice', question: '____ chairs are in the classroom?', options: ['How many', 'How much', 'How long', 'How far'], answer: 'How many', explanation: '"Chairs" là danh từ đếm được số nhiều → How many.' },
+      { type: 'multiple-choice', question: '____ juice is in the fridge?', options: ['How much', 'How many', 'How long', 'How often'], answer: 'How much', explanation: '"Juice" là danh từ không đếm được (chất lỏng) → How much.' },
+      { type: 'multiple-choice', question: 'Câu hỏi đúng về tiền:', options: ['How much does it cost?', 'How many does it cost?', 'How long does it cost?', 'What does it cost much?'], answer: 'How much does it cost?', explanation: '"Money/price" là không đếm được → How much does it cost?' },
+      { type: 'multiple-choice', question: 'Câu nào đúng khi hỏi số lượng người:', options: ['How many people are there?', 'How much people are there?', 'How many person are there?', 'How much persons are there?'], answer: 'How many people are there?', explanation: '"People" là danh từ đếm được số nhiều → How many. ("People" đã là số nhiều, không cần thêm s).' },
+    ],
+  }),
   buildEnglishUnit({
     topicKey: 'eng:ff4-jobs',
     title: 'Tiếng Anh: Family & Friends 4 - Jobs',
