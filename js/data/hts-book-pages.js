@@ -1,9 +1,22 @@
 /**
  * HTS Book Page CDN URL Templates
  * Auto-generated from hts-image-download-manifest.json
- * 
- * URL format: ${template}-${pageNo}.jpg
+ *
+ * URL format: ${template}-${cdnPageNo}.jpg
  * CDN is publicly accessible (no auth needed).
+ *
+ * ── Page number offset ───────────────────────────────────────────────────────
+ * Each book's CDN page numbering starts at 1 (= front cover, not physically
+ * numbered). Physical printed page 1 → CDN file page 2.
+ *
+ * Offset = number of non-numbered pages at the front of the book.
+ * Confirmed: book 11382 (TV4 Tập 1) — CDN page 90 = physical page 89 → offset 1.
+ *
+ * Formula: cdnPage = physicalPageNo + BOOK_PAGE_OFFSET[bookId]
+ *
+ * The KNTT lesson pool stores PHYSICAL page numbers (same as the printed number
+ * visible at the bottom of each page, and matching taphuan.nxbgd.vn viewer URLs).
+ * Always apply the offset when building CDN URLs.
  */
 
 export const HTS_BOOK_CDN_TEMPLATES = {
@@ -23,21 +36,53 @@ export const HTS_BOOK_CDN_TEMPLATES = {
 };
 
 /**
- * Get CDN URL for a specific page of a book.
- * @param {number} bookId  - HTS bookId from KNTT_LESSON_POOL source
- * @param {number} pageNo  - page number (1-based)
- * @returns {string|null}
+ * Page offset per book: cdnFilePageNo = physicalPageNo + offset.
+ *
+ * Offset = count of non-physically-numbered pages at the front (cover, etc.).
+ * All KNTT lớp 4 textbooks confirmed to have offset = 1 (cover only).
+ *
+ * If a specific book is found to have a different offset, add an override here:
+ *   11384: 2  // Toán 4 if confirmed to have 2 front matter pages, etc.
+ *
+ * Confirmed via screenshot evidence (2026-06-03):
+ *   Book 11382: CDN page 90 = physical page 89 → offset 1 ✓
  */
-export function getBookPageUrl(bookId, pageNo) {
-  const template = HTS_BOOK_CDN_TEMPLATES[bookId];
-  if (!template || !pageNo) return null;
-  return `${template}-${pageNo}.jpg`;
+const BOOK_PAGE_OFFSETS = {
+  // Default offset for all KNTT lớp 4 books = 1 (cover page not physically numbered)
+  _default: 1,
+};
+
+function getOffset(bookId) {
+  return BOOK_PAGE_OFFSETS[bookId] ?? BOOK_PAGE_OFFSETS._default;
 }
 
-export function getBookPageUrls(bookId, startPage, endPage) {
-  if (!bookId || !startPage) return [];
-  const from = Number(startPage);
-  const to = Number(endPage || startPage);
+/**
+ * Get CDN URL for a specific physical page of a book.
+ *
+ * @param {number} bookId      - HTS bookId from KNTT_LESSON_POOL source
+ * @param {number} physicalPage - Physical page number as printed in the book
+ *                               (matches taphuan.nxbgd.vn viewer URL #page=N)
+ * @returns {string|null}
+ */
+export function getBookPageUrl(bookId, physicalPage) {
+  const template = HTS_BOOK_CDN_TEMPLATES[bookId];
+  if (!template || !physicalPage) return null;
+  const cdnPage = Number(physicalPage) + getOffset(bookId);
+  return `${template}-${cdnPage}.jpg`;
+}
+
+/**
+ * Get CDN URLs for a range of physical pages.
+ *
+ * @param {number} bookId
+ * @param {number} startPhysicalPage  - inclusive
+ * @param {number} endPhysicalPage    - inclusive
+ * @returns {string[]}
+ */
+export function getBookPageUrls(bookId, startPhysicalPage, endPhysicalPage) {
+  if (!bookId || !startPhysicalPage) return [];
+  const from = Number(startPhysicalPage);
+  const to = Number(endPhysicalPage || startPhysicalPage);
   if (!Number.isFinite(from) || !Number.isFinite(to) || to < from) return [];
   const pages = [];
   for (let page = from; page <= to; page++) {
