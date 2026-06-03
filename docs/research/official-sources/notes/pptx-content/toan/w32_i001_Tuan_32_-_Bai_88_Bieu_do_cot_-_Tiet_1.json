@@ -1,0 +1,376 @@
+{
+  "meta": {
+    "file": "w32_i001_Tuan_32_-_Bai_88_Bieu_do_cot_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w32_i001_Tuan_32_-_Bai_88_Bieu_do_cot_-_Tiet_1.pptx",
+    "slideCount": 23
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 2",
+        "Tuần 32",
+        "Bài 88: Biểu đồ cột - Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "content",
+      "paragraphs": [
+        "Ai nhanh hơn",
+        "Số bạn nữ trong tổ:               ;             ;             ;",
+        "Tổ trưởng đếm nhanh và lên viết trên bảng lớp (hoặc báo số lượng cho giáo viên viết).",
+        "Tổ nào báo số lượng nhanh nhất và chính xác thì thắng lượt chơi đó."
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "Biểu đồ là một cách biểu diễn số liệu thống kê dưới dạng các hình vẽ. Ngoài dạng biểu đồ tranh đã được giới thiệu ở Toán 2, Toán 4 giới thiệu dạng biểu đồ cột",
+        "Ví dụ: Biểu đồ cột giới thiệu dưới đây thống kê ý kiến về con vật được lựa chọn để nuôi ở gia đình của một nhóm học sinh"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "Nhiệm vụ 1: Hình thành kiến thức về biểu đồ cột",
+        "Tìm hiểu về số học sinh lựa chọn vật nuôi, người ta thu thập, phân loại, kiểm đếm và thể hiện qua biểu đồ cột. Đây là biểu đồ cột."
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "questions",
+      "paragraphs": [
+        "Biểu đồ này biểu thị gì?",
+        "Hàng ngang bên dưới cho biết gì?",
+        "Nhận xét sự liên quan của độ cao các cột tô màu với số ghi ở cột bên trái?",
+        "Tên biểu đồ: Số học sinh lựa chọn vật nuôi trong gia đình).",
+        "Các con vật nuôi.",
+        "Dựa vào các số này, ta biết số học sinh",
+        "lựa chọn vật nuôi trong nhà."
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "questions",
+      "paragraphs": [
+        "Nhiệm vụ 2: Hình thành kiến thức về cách đọc biểu đồ cột",
+        "Biểu đồ này có mấy cột?",
+        "Tại sao lại có  cột?",
+        "Đó là những con vật nào?",
+        "Bên dưới mỗi cột ghi gì?",
+        "Trên đầu mỗi cột ghi gì?",
+        "4 cột",
+        "Vì có 4 con vật  nuôi",
+        "Chó, mèo, thỏ, cá",
+        "Tên con vật",
+        "Số học sinh lựa chọn"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "Ví dụ: Nhìn vào biểu đồ cột, ta thấy ngay",
+        "Chó có số học sinh lựa chọn nhiều nhất: 8 học sinh (cột cao nhất và trên đầu cột ghi số 8).",
+        "Thỏ có số học sinh lựa chọn ít nhất: 4 học sinh (cột thấp nhất và trên đầu cột ghi số 4).",
+        "Chó có số học sinh chọn nhiều hơn Mèo (cột Chó cao hơn cột Mèo).",
+        "Dựa vào độ cao, thấp của các cột màu, ta dễ dàng so sánh số học sinh ứng với vật nuôi"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "Ví dụ: Nhìn vào biểu đồ, ta thấy ngay",
+        "Chó có số học sinh chọn nhiều hơn Mèo (8  6  2)",
+        "Mèo có số học sinh chọn nhiều hơn Thỏ (6  4  2)",
+        "Nhìn vào biểu đồ cột và kết hợp với việc thực hiện các phép tính, ta dễ dàng tìm được phần hơn,…"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 12,
+      "type": "questions",
+      "paragraphs": [
+        "01",
+        "Quan sát biểu đồ cột sau và trả lời câu hỏi:",
+        "a) Những nghề nghiệp nào được các bạn học sinh lớp 4A lựa chọn?",
+        "b) Có bao nhiêu học sinh muốn trở thành bác sĩ?",
+        "c) Nghề nghiệp nào được ưa thích nhất?",
+        "d) Có bao nhiêu học sinh đã tham gia bình chọn?"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "a) Những nghề nghiệp được các bạn học sinh lớp 4A lựa chọn: Hoạ sĩ, Ca sĩ, Công an, Giáo viên, Bác sĩ.",
+        "b) Có 6 học sinh muốn trở thành Bác sĩ.",
+        "c) Các bạn ưa thích nghề Giáo viên.",
+        "d) Có tất cả 34 học sinh tham gia  bình chọn."
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "questions",
+      "paragraphs": [
+        "01",
+        "Biểu đồ này nói về điều gì ?",
+        "Hàng ngang bên dưới cho biết gì ?",
+        "Cột số bên trái cho biết gì ?",
+        "Mỗi cột thể hiện điều gì ?"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "questions",
+      "paragraphs": [
+        "02",
+        "Quan sát biểu đồ cột sau và trả lời câu hỏi:",
+        "a) Khuê đã đọc bao nhiêu quyển sách?",
+        "b) Bạn nào đọc nhiều quyển sách nhất?",
+        "c) Những bạn nào đã đọc số quyển sách bằng nhau?",
+        "d) Cả 5 bạn đã đọc bao nhiêu quyển sách?",
+        "e) Nam dự kiến sẽ đọc 10 quyển sách. Hỏi Nam cần đọc bao nhiêu quyển sách nữa?"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "a) Khuê đã đọc 8 quyển sách.",
+        "b) Bạn Giang là người đọc nhiều sách nhất.",
+        "c) Những bạn đọc số sách bằng nhau: Ngân, Nguyên.",
+        "d) Cả 5 bạn đã đọc được: 35 quyển sách.",
+        "e) Số sách Nam cần đọc là: 10  6  4 (quyển sách)."
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "questions",
+      "paragraphs": [
+        "03",
+        "Quan sát biểu đồ cột sau và trả lời câu hỏi:",
+        "a) Số lượng xuất khẩu hạt tiêu của Việt Nam trong năm 2020 là bao nhiêu tấn?",
+        "b) Mặt hàng nào Việt Nam xuất khẩu nhiều nhất trong năm 2020?",
+        "c) Tổng khối số lượng xuất khẩu của bốn mặt hàng trên là bao nhiêu tấn?"
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "content",
+      "paragraphs": [
+        "03",
+        "a) Số lượng xuất khẩu hạt tiêu của Việt Nam năm 2020 là: 285 292 tấn.",
+        "c) Tổng khối lượng xuất khẩu của bốn mặt hàng trên là:",
+        "514 718  1 565 280  285 292  134 964  2 500 254 (tấn).",
+        "b) Mặt hàng xuất khẩu nhiều nhất là cà phê."
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em học thêm được điều gì?",
+        "+ Đọc và mô tả được các số liệu ở dạng biểu đồ cột.",
+        "+ Biết phân tích số liệu cho trên biểu đồ cột."
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 21,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước",
+        "Bài 88: Biểu đồ cột",
+        "– Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 22,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 23,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 2 Tuần 32",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Tìm hiểu về số học sinh lựa chọn vật nuôi, người ta thu thập, phân loại, kiểm đếm và thể hiện qua biểu đồ cột. Đây là biểu đồ cột.",
+        "slide": 6
+      },
+      {
+        "type": "question",
+        "text": "Biểu đồ này biểu thị gì?",
+        "slide": 7
+      },
+      {
+        "type": "question",
+        "text": "Hàng ngang bên dưới cho biết gì?",
+        "slide": 7
+      },
+      {
+        "type": "question",
+        "text": "Nhận xét sự liên quan của độ cao các cột tô màu với số ghi ở cột bên trái?",
+        "slide": 7
+      },
+      {
+        "type": "question",
+        "text": "Biểu đồ này có mấy cột?",
+        "slide": 8
+      },
+      {
+        "type": "question",
+        "text": "Tại sao lại có  cột?",
+        "slide": 8
+      },
+      {
+        "type": "question",
+        "text": "Đó là những con vật nào?",
+        "slide": 8
+      },
+      {
+        "type": "question",
+        "text": "Bên dưới mỗi cột ghi gì?",
+        "slide": 8
+      },
+      {
+        "type": "question",
+        "text": "Trên đầu mỗi cột ghi gì?",
+        "slide": 8
+      },
+      {
+        "type": "question",
+        "text": "a) Những nghề nghiệp nào được các bạn học sinh lớp 4A lựa chọn?",
+        "slide": 12
+      },
+      {
+        "type": "question",
+        "text": "b) Có bao nhiêu học sinh muốn trở thành bác sĩ?",
+        "slide": 12
+      },
+      {
+        "type": "question",
+        "text": "c) Nghề nghiệp nào được ưa thích nhất?",
+        "slide": 12
+      },
+      {
+        "type": "question",
+        "text": "d) Có bao nhiêu học sinh đã tham gia bình chọn?",
+        "slide": 12
+      },
+      {
+        "type": "question",
+        "text": "Biểu đồ này nói về điều gì ?",
+        "slide": 14
+      },
+      {
+        "type": "question",
+        "text": "Hàng ngang bên dưới cho biết gì ?",
+        "slide": 14
+      },
+      {
+        "type": "question",
+        "text": "Cột số bên trái cho biết gì ?",
+        "slide": 14
+      },
+      {
+        "type": "question",
+        "text": "Mỗi cột thể hiện điều gì ?",
+        "slide": 14
+      },
+      {
+        "type": "question",
+        "text": "a) Khuê đã đọc bao nhiêu quyển sách?",
+        "slide": 15
+      },
+      {
+        "type": "question",
+        "text": "b) Bạn nào đọc nhiều quyển sách nhất?",
+        "slide": 15
+      },
+      {
+        "type": "question",
+        "text": "c) Những bạn nào đã đọc số quyển sách bằng nhau?",
+        "slide": 15
+      },
+      {
+        "type": "question",
+        "text": "d) Cả 5 bạn đã đọc bao nhiêu quyển sách?",
+        "slide": 15
+      },
+      {
+        "type": "question",
+        "text": "e) Nam dự kiến sẽ đọc 10 quyển sách. Hỏi Nam cần đọc bao nhiêu quyển sách nữa?",
+        "slide": 15
+      },
+      {
+        "type": "question",
+        "text": "a) Số lượng xuất khẩu hạt tiêu của Việt Nam trong năm 2020 là bao nhiêu tấn?",
+        "slide": 17
+      },
+      {
+        "type": "question",
+        "text": "b) Mặt hàng nào Việt Nam xuất khẩu nhiều nhất trong năm 2020?",
+        "slide": 17
+      },
+      {
+        "type": "question",
+        "text": "c) Tổng khối số lượng xuất khẩu của bốn mặt hàng trên là bao nhiêu tấn?",
+        "slide": 17
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em học thêm được điều gì?",
+        "slide": 19
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước",
+        "slide": 21
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

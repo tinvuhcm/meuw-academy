@@ -1,0 +1,379 @@
+{
+  "meta": {
+    "file": "w35_i002_Tuan_35_-_Bai_95_On_tap_ve_mot_so_yeu_to_thong_ke_va_xac_suat_-_Tiet_2.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w35_i002_Tuan_35_-_Bai_95_On_tap_ve_mot_so_yeu_to_thong_ke_va_xac_suat_-_Tiet_2.pptx",
+    "slideCount": 24
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 2",
+        "Tuần 35",
+        "Bài 95: Ôn tập về một số yếu tố thống kê và xác suất Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 1: Chiều cao lần lượt của các vận động viên bóng chuyền là:",
+        "180 cm ; 175 cm ; 182 cm ; 178 cm",
+        "Sắp xếp chiều cao của các vận động viên theo thứ tự từ thấp đến cao?",
+        "A. 180 cm; 175 cm; 182 cm; 178 cm",
+        "B. 180 cm; 182 cm; 175 cm; 178 cm",
+        "C. 175 cm; 178 cm; 180 cm; 182 cm",
+        "D. 175 cm; 178 cm; 182 cm; 180 cm"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 2: Biểu đồ dưới đây cho biết số học sinh tham gia các lớp ngoại khoá của một trường tiểu học.",
+        "Dựa vào biểu đồ, hãy trả lời các câu hỏi:",
+        "2.1. Có mấy lớp ngoại khoá?",
+        "A. 4 lớp",
+        "B. 3 lớp",
+        "C. 2 lớp",
+        "D. 1 lớp"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 2: Biểu đồ dưới đây cho biết số học sinh tham gia các lớp ngoại khoá của một trường tiểu học.",
+        "Dựa vào biểu đồ, hãy trả lời các câu hỏi:",
+        "2.2. Lớp ngoại khóa nào có học sinh tham gia nhiều nhất?",
+        "A. Múa",
+        "B. Bơi",
+        "C. Cờ",
+        "D. Võ"
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 2: Biểu đồ dưới đây cho biết số học sinh tham gia các lớp ngoại khoá của một trường tiểu học.",
+        "Dựa vào biểu đồ, hãy trả lời các câu hỏi:",
+        "2.3. Lớp ngoại khóa nào có học sinh tham gia ít nhất?",
+        "A. Múa",
+        "B. Bơi",
+        "C. Cờ",
+        "D. Võ"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 2: Biểu đồ dưới đây cho biết số học sinh tham gia các lớp ngoại khoá của một trường tiểu học.",
+        "Dựa vào biểu đồ, hãy trả lời các câu hỏi:",
+        "2.4. Có tất cả bao nhiêu học sinh tham gia?",
+        "A. 150 học sinh",
+        "B. 160 học sinh",
+        "C. 180 học sinh",
+        "D. 170 học sinh"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 2: Biểu đồ dưới đây cho biết số học sinh tham gia các lớp ngoại khoá của một trường tiểu học.",
+        "Dựa vào biểu đồ, hãy trả lời các câu hỏi:",
+        "2.5. Hai lớp ngoại khoá nào có học sinh tham gia bằng nhau?",
+        "A. Bơi, Võ",
+        "B. Võ, Múa",
+        "C. Cờ, Múa",
+        "D. Bơi, Múa"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 10,
+      "type": "questions",
+      "paragraphs": [
+        "03",
+        "Quan sát biểu đồ dưới đây và trả lời các câu hỏi:",
+        "Trong 5 tháng đầu năm:",
+        "a) Có tất cả bao nhiêu lượt khách tham quan khu di tích đó?",
+        "b) Tháng nào có số lượt khách tham quan nhiều nhất?",
+        "c) Trung bình mỗi tháng có bao nhiêu lượt khách tham quan?"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "03",
+        "a) Có tất cả: 100 + 180 + 250 + 300 + 420 = 1250 (lượt khách).",
+        "b) Tháng 2 là tháng có số lượt khách tham quan nhiều nhất với 420 lượt khách.",
+        "c) Trung bình mỗi tháng có số lượt khách tham quan là:",
+        "(lượt khách)."
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "04",
+        "Ngân và Huy trải nghiệm trò chơi vòng quay may mắn như sau:",
+        "Kết quả của 10 lần quay được ghi lại như sau:",
+        "Hãy cho biết số lần thắng của Ngân, số lần thắng của Huy!",
+        "Số xuất hiện",
+        "15",
+        "17",
+        "13",
+        "18",
+        "Người thắng",
+        "Huy",
+        "Ngân",
+        "Ngân",
+        "Huy",
+        "Ngân",
+        "Ngân",
+        "Ngân",
+        "Huy",
+        "Huy",
+        "Ngân"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "questions",
+      "paragraphs": [
+        "04",
+        "Số lần thắng của Ngân ? Số lần thắng của Huy ? Giải thích kết quả?",
+        "Ai là người có số lần thắng nhiều hơn ?",
+        "Trả lời",
+        "Số lần thắng của Ngân là 6 lần (Ngân quay vào các ô có số từ đến 10)",
+        "Số lần thắng của Huy là 4 lần (Huy quay vào các ô có số từ 11 đến 20)",
+        "Ngân là người có số lần thắng nhiều hơn."
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "questions",
+      "paragraphs": [
+        "04",
+        "Nếu quay vào ô số chẵn thì Ngân thắng, quay vào ô số lẻ thì Huy thắng",
+        "- Số lần thắng của Ngân? Số lần thắng của Huy?",
+        "- Ai là người có số lần thắng nhiều hơn?"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 16,
+      "type": "questions",
+      "paragraphs": [
+        "05",
+        "Nam và Mai cùng chơi trò tung đồng xu. Nam sẽ thắng nếu mặt S xuất hiện, Mai sẽ thắng nếu mặt N xuất hiện.",
+        "a) Em có đồng ý với dự đoán của bạn Nam không? Tại sao?",
+        "b) Hãy cùng bạn tung đồng xu 5 lần, 10 lần và ghi lại kết quả"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "questions",
+      "paragraphs": [
+        "05",
+        "a)",
+        "Ở lượt tung thứ nhất, đồng xu xuất hiện mặt S, Nam là người thắng",
+        "Ở lượt tung thứ hai:",
+        "- Nếu đồng xu xuất hiện mặt N, Mai là người thắng",
+        "→ Nam dự đoán đúng",
+        "- Nếu đồng xu xuất hiện mặt S, Nam là người thắng",
+        "→ Nam dự đoán sai",
+        "Khi tung đồng xu, có mấy khả năng xảy ra?",
+        "Có đồng ý với dự đoán của Nam không?",
+        "2 khả năng",
+        "Trả lời"
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "content",
+      "paragraphs": [
+        "05",
+        "Hoạt động nhóm",
+        "b)",
+        "Lượt 1",
+        "Bạn thứ nhất thực hiện tung đồng xu 5 lần, bạn thứ 2 lại quan sát và ghi lại kết quả.",
+        "Lượt 2",
+        "Bạn thứ hai thực hiện tung đồng xu 10 lần, bạn thứ nhất quan sát và ghi lại kết quả.",
+        "Khi tung đồng xu, có hai khả năng xảy ra là: mặt N xuất hiện hoặc mặt S xuất hiện."
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em ôn tập được những kiến thức gì?"
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "questions",
+      "paragraphs": [
+        "Để nắm chắc kiến thức đó, em nhắn bạn điều gì?"
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 22,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học.",
+        "Hoàn thành bài tập trong SBT.",
+        "Đọc và chuẩn bị trước",
+        "Bài 96: Ôn tập chung"
+      ]
+    },
+    {
+      "slideNo": 23,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 24,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 2 Tuần 35",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Sắp xếp chiều cao của các vận động viên theo thứ tự từ thấp đến cao?",
+        "slide": 3
+      },
+      {
+        "type": "question",
+        "text": "2.1. Có mấy lớp ngoại khoá?",
+        "slide": 4
+      },
+      {
+        "type": "question",
+        "text": "2.2. Lớp ngoại khóa nào có học sinh tham gia nhiều nhất?",
+        "slide": 5
+      },
+      {
+        "type": "question",
+        "text": "2.3. Lớp ngoại khóa nào có học sinh tham gia ít nhất?",
+        "slide": 6
+      },
+      {
+        "type": "question",
+        "text": "2.4. Có tất cả bao nhiêu học sinh tham gia?",
+        "slide": 7
+      },
+      {
+        "type": "question",
+        "text": "2.5. Hai lớp ngoại khoá nào có học sinh tham gia bằng nhau?",
+        "slide": 8
+      },
+      {
+        "type": "question",
+        "text": "a) Có tất cả bao nhiêu lượt khách tham quan khu di tích đó?",
+        "slide": 10
+      },
+      {
+        "type": "question",
+        "text": "b) Tháng nào có số lượt khách tham quan nhiều nhất?",
+        "slide": 10
+      },
+      {
+        "type": "question",
+        "text": "c) Trung bình mỗi tháng có bao nhiêu lượt khách tham quan?",
+        "slide": 10
+      },
+      {
+        "type": "task",
+        "text": "Hãy cho biết số lần thắng của Ngân, số lần thắng của Huy!",
+        "slide": 12
+      },
+      {
+        "type": "question",
+        "text": "Số lần thắng của Ngân ? Số lần thắng của Huy ? Giải thích kết quả?",
+        "slide": 13
+      },
+      {
+        "type": "question",
+        "text": "Ai là người có số lần thắng nhiều hơn ?",
+        "slide": 13
+      },
+      {
+        "type": "question",
+        "text": "- Số lần thắng của Ngân? Số lần thắng của Huy?",
+        "slide": 14
+      },
+      {
+        "type": "question",
+        "text": "- Ai là người có số lần thắng nhiều hơn?",
+        "slide": 14
+      },
+      {
+        "type": "question",
+        "text": "a) Em có đồng ý với dự đoán của bạn Nam không? Tại sao?",
+        "slide": 16
+      },
+      {
+        "type": "question",
+        "text": "Khi tung đồng xu, có mấy khả năng xảy ra?",
+        "slide": 17
+      },
+      {
+        "type": "question",
+        "text": "Có đồng ý với dự đoán của Nam không?",
+        "slide": 17
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em ôn tập được những kiến thức gì?",
+        "slide": 19
+      },
+      {
+        "type": "question",
+        "text": "Để nắm chắc kiến thức đó, em nhắn bạn điều gì?",
+        "slide": 20
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước",
+        "slide": 22
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

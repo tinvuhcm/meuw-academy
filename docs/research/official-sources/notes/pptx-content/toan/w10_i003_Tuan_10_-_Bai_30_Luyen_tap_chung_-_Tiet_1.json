@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "file": "w10_i003_Tuan_10_-_Bai_30_Luyen_tap_chung_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w10_i003_Tuan_10_-_Bai_30_Luyen_tap_chung_-_Tiet_1.pptx",
+    "slideCount": 14
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 1",
+        "Tuần 10",
+        "Bài 30: Luyện tập chung - Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Lớp 4A có 25 học sinh, lớp 4B có 35 học sinh, lớp 4C có 30 học sinh. Hỏi trung bình mỗi lớp có bao nhiêu học sinh?",
+        "Bài giải",
+        "Tổng số học sinh của ba lớp là:",
+        "25  35  30  90 (học sinh)",
+        "Trung bình mỗi lớp có số học sinh là:",
+        "90  3  30 (học sinh)",
+        "Đáp số: 30 học sinh."
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 5,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Tính chiều cao trung bình của 4 bạn Bảo, Thư, Long và Hoài. Biết Bảo cao 131 cm, Thư cao 130 cm, Long cao 135 cm và Hoài cao 140 cm.",
+        "Bài giải",
+        "Tổng chiều cao của bốn bạn là:",
+        "131 130  135 140  536 (cm)",
+        "Chiều cao trung bình của mỗi bạn là:",
+        "536 4  134 (cm)",
+        "Đáp số: 134 cm."
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "questions",
+      "paragraphs": [
+        "02",
+        "Khối Hai trồng được 183 cây, khối Ba trồng được 209 cây, khối Bốn trồng được 216 cây, khối Năm trồng được 240 cây. Hỏi trung bình mỗi khối trồng được bao nhiêu cây?"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "questions",
+      "paragraphs": [
+        "02",
+        "Khối Hai trồng được 183 cây, khối Ba trồng được 209 cây, khối Bốn trồng được 216 cây, khối Năm trồng được 240 cây. Hỏi trung bình mỗi khối trồng được bao nhiêu cây?",
+        "Bài giải",
+        "Tổng số cây cả bốn khối trồng được là:",
+        "183  209  216  240  848 (cây)",
+        "Trung bình mỗi khối trồng được số cây là:",
+        "848  4  212 (cây)",
+        "Đáp số: 212 cây."
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "questions",
+      "paragraphs": [
+        "03",
+        "Số?",
+        "Tổng của hai số",
+        "Hiệu của hai số",
+        "Số bé",
+        "Số lớn",
+        "135",
+        "47",
+        "518",
+        "236",
+        "44",
+        "91",
+        "141",
+        "377"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em biết thêm được điều gì?"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "questions",
+      "paragraphs": [
+        "Để có thể làm tốt các bài tập trên,                  em nhắn bạn điều gì?"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 12,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 1 Tuần 10",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Lớp 4A có 25 học sinh, lớp 4B có 35 học sinh, lớp 4C có 30 học sinh. Hỏi trung bình mỗi lớp có bao nhiêu học sinh?",
+        "slide": 3
+      },
+      {
+        "type": "task",
+        "text": "Tính chiều cao trung bình của 4 bạn Bảo, Thư, Long và Hoài. Biết Bảo cao 131 cm, Thư cao 130 cm, Long cao 135 cm và Hoài cao 140 cm.",
+        "slide": 5
+      },
+      {
+        "type": "question",
+        "text": "Khối Hai trồng được 183 cây, khối Ba trồng được 209 cây, khối Bốn trồng được 216 cây, khối Năm trồng được 240 cây. Hỏi trung bình mỗi khối trồng được bao nhiêu cây?",
+        "slide": 6
+      },
+      {
+        "type": "question",
+        "text": "Khối Hai trồng được 183 cây, khối Ba trồng được 209 cây, khối Bốn trồng được 216 cây, khối Năm trồng được 240 cây. Hỏi trung bình mỗi khối trồng được bao nhiêu cây?",
+        "slide": 7
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em biết thêm được điều gì?",
+        "slide": 9
+      },
+      {
+        "type": "question",
+        "text": "Để có thể làm tốt các bài tập trên,                  em nhắn bạn điều gì?",
+        "slide": 10
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

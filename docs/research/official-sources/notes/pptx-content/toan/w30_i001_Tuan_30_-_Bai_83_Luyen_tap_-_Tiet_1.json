@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "file": "w30_i001_Tuan_30_-_Bai_83_Luyen_tap_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w30_i001_Tuan_30_-_Bai_83_Luyen_tap_-_Tiet_1.pptx",
+    "slideCount": 15
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 2",
+        "Tuần 30",
+        "Bài 83: Luyện tập - Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "content",
+      "paragraphs": [
+        "Ai nhanh hơn"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 5,
+      "type": "questions",
+      "paragraphs": [
+        "01",
+        "Số?",
+        "15",
+        "12",
+        "12",
+        "48",
+        "60"
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "Tính (theo mẫu):",
+        "a)  của 20 km.",
+        "b) của 28 g.",
+        "c)  của 100 ml.",
+        "d) của 640 tấn.",
+        "e)  của 40 .",
+        "g) của 1 giờ."
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "Tính (theo mẫu):",
+        "Trả lời",
+        "a) Ta có:  của 20 là: Vậy  của 20 km là  km.",
+        "b) Ta có:  của 28 là: Vậy  của 28 g là  g.",
+        "c) Ta có:  của 100 là: Vậy  của 100 ml là  ml."
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "Tính (theo mẫu):",
+        "d) Ta có:  của 640 là: Vậy  của 640 tấn là  tấn.",
+        "e) Ta có:  của 40 là: Vậy  của 40  là .",
+        "g) Ta có:  của 60 là: Vậy  của 60 phút là  phút.",
+        "Trả lời"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "questions",
+      "paragraphs": [
+        "04",
+        "Nhà chú Toàn thu hoạch được 660 kg cà phê. Chú Toàn đã bán được  số cà phê đó. Hỏi nhà chú Toàn còn lại bao nhiêu ki-lô-gam cà phê?"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "Bài giải",
+        "Số cà phê chú Toàn đã bán được là:",
+        "(kg)",
+        "Chú Toàn còn lại số cà phê là:",
+        "660 – 440 = 220 (kg)",
+        "Đáp số: 220 kg cà phê."
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay em học được những gì?",
+        "+ Luyện tập, củng cố kĩ năng tìm phân số của một số.",
+        "+ Vận dụng để giải bài toán về tìm phân số của một số."
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 13,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước",
+        "Bài 83: Luyện tập – Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 15,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 2 Tuần 30",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Tính (theo mẫu):",
+        "slide": 6
+      },
+      {
+        "type": "task",
+        "text": "Tính (theo mẫu):",
+        "slide": 7
+      },
+      {
+        "type": "task",
+        "text": "Tính (theo mẫu):",
+        "slide": 8
+      },
+      {
+        "type": "question",
+        "text": "Nhà chú Toàn thu hoạch được 660 kg cà phê. Chú Toàn đã bán được  số cà phê đó. Hỏi nhà chú Toàn còn lại bao nhiêu ki-lô-gam cà phê?",
+        "slide": 9
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay em học được những gì?",
+        "slide": 11
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước",
+        "slide": 13
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

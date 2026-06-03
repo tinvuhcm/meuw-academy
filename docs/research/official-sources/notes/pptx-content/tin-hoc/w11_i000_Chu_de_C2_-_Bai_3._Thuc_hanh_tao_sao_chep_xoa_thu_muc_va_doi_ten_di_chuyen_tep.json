@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "file": "w11_i000_Chu_de_C2_-_Bai_3._Thuc_hanh_tao_sao_chep_xoa_thu_muc_va_doi_ten_di_chuyen_tep.pptx",
+    "subject": "tin-hoc",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tin-hoc\\slides\\w11_i000_Chu_de_C2_-_Bai_3._Thuc_hanh_tao_sao_chep_xoa_thu_muc_va_doi_ten_di_chuyen_tep.pptx",
+    "slideCount": 14
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "Tin học 4",
+        "CHỦ ĐỀ C2. Tổ chức cây thư mục",
+        "lưu trữ thông tin trong máy tính",
+        "Bài 3. Thực hành tạo, sao chép, xoá thư mục và đổi tên, di chuyển tệp"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "content",
+      "paragraphs": [
+        "Nêu ý nghĩa của một số lệnh sau:",
+        "Move to",
+        "Copy to",
+        "Delete",
+        "Rename",
+        "New folder"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "Move to  di chuyển thư mục, tệp",
+        "Copy to  sao chép thư mục, tệp",
+        "Delete  xóa thư mục, tệp",
+        "Rename  đổi tên thư mục, tệp.",
+        "New folder  tạo thư mục, tệp",
+        "Hướng dẫn trả lời"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 6,
+      "type": "questions",
+      "paragraphs": [
+        "1. THỰC HÀNH TẠO, SAO CHÉP THƯ MỤC",
+        "Em hãy tạo cây thư mục để lưu các ảnh sưu tập theo chủ đề như Hình 1.",
+        "Hình 1. Cây thư mục AnhSuuTap"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "CÁC BƯỚC TIẾN HÀNH",
+        "AnhSuuTam",
+        "Tạo thư mục – New folder",
+        "DongVat",
+        "ThucVat",
+        "[ tạo thư mục con ]",
+        "Sao chép thư mục – Copy to",
+        "(1)",
+        "(2)",
+        "(4)",
+        "AnhVe",
+        "AnhChup",
+        "[ tạo thư mục con ]",
+        "(3)"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "2. THỰC HÀNH DI CHUYỂN, ĐỔI TÊN TỆP, XÓA THƯ MỤC",
+        "Trong thư mục AnhDongThucVat ở Hình 2, em hãy đổi tên tệp. Cay chuoi co la mau xanh thành CayChuoi_Ve. Sau đó, em hãy di chuyển các tệp ở thư mục AnhDongThucVat ở Hình 2 vào các thư mục phù hợp như ở Hình 3 rồi xóa thư mục AnhDongThucVat.",
+        "Hình 2. Thư mục AnhDongThucVat",
+        "Hình 3. Cây thư mục AnhSuuTap",
+        "Yêu cầu"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "HƯỚNG DẪN THỰC HÀNH",
+        "Đổi tên tệp Cay chuoi co la mau xanh thành CayChuoi_Ve bằng cách sử dụng lệnh Rename.",
+        "Di chuyển các tệp ảnh ở thư mục AnhDongThucVat vào các thư mục phù hợp như Hình 3 bằng cách sử dụng lệnh Move to.",
+        "Xóa thư mục AnhDongThucVat bằng cách sử dụng lệnh Delete."
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 11,
+      "type": "questions",
+      "paragraphs": [
+        "Nhiệm vụ",
+        "Em hãy tạo cây thư mục để lưu các tài liệu học tập theo từng môn học. Trong thư mục của mỗi môn học, em cần tạo 2 thư mục HocKi1, HocKi2 để lưu tài liệu của từng kì."
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "HƯỚNG DẪN VỀ NHÀ",
+        "Ôn tập lại nội dung kiến thức chính của bài học ngày hôm nay.",
+        "Đọc và chuẩn bị trước Bài D_Bài học: Tôn trọng quyền tác giả của phần mềm."
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "Tin học 4 CHỦ ĐỀ C2. Tổ chức cây thư mục lưu trữ thông tin trong máy tính",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Em hãy tạo cây thư mục để lưu các ảnh sưu tập theo chủ đề như Hình 1.",
+        "slide": 6
+      },
+      {
+        "type": "task",
+        "text": "Em hãy tạo cây thư mục để lưu các tài liệu học tập theo từng môn học. Trong thư mục của mỗi môn học, em cần tạo 2 thư mục HocKi1, HocKi2 để lưu tài liệu của từng kì.",
+        "slide": 11
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước Bài D_Bài học: Tôn trọng quyền tác giả của phần mềm.",
+        "slide": 12
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

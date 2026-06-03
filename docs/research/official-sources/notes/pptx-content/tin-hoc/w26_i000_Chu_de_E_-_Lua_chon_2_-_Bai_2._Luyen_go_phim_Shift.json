@@ -1,0 +1,210 @@
+{
+  "meta": {
+    "file": "w26_i000_Chu_de_E_-_Lua_chon_2_-_Bai_2._Luyen_go_phim_Shift.pptx",
+    "subject": "tin-hoc",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tin-hoc\\slides\\w26_i000_Chu_de_E_-_Lua_chon_2_-_Bai_2._Luyen_go_phim_Shift.pptx",
+    "slideCount": 18
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "Tin học 4",
+        "Chủ đề E",
+        "Ứng dụng tin học",
+        "Bài 2: Luyện gõ phím Shift"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Quan sát trên các hàng phím và chỉ ra những phím nào có hai kí tự? Để gõ được các kí tự đó ta sẽ làm như thế nào?",
+        "Để gõ được các kí tự đó ta sẽ nhấn phím Shift và gõ phím có hai kí tự.",
+        "Những phím có hai kí tự là:"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 5,
+      "type": "questions",
+      "paragraphs": [
+        "1. Cách dùng phím Shift",
+        "Em hãy quan sát trên bàn phím và xác định vị trí của phím Shift."
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "Trên bàn phím có 2 phím Shift, nằm ở hai đầu của hàng phím dưới.",
+        "1. Cách dùng phím Shift"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "questions",
+      "paragraphs": [
+        "1. Cách dùng phím Shift",
+        "Để thuận tiện cho thao tác khi sử dụng phím Shift: nếu phải dùng bàn tay trái để gõ phím thì nhấn, giữ phím Shift bằng ngón út phải; nếu phải dùng bàn tay phải để gõ phím thì nhấn, giữ phím Shift bằng ngón út trái.",
+        "Vì sao lại cần có tới 2 phím Shift trên bàn phím?"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "questions",
+      "paragraphs": [
+        "2. Luyện gõ phím Shift với phần mềm",
+        "a) Khóa học EN 2. Beginner, Bài 2. Shift keys – Lesson 1 để luyện gõ các chữ F, J, D, K (Hình 2.a).",
+        "Thảo luận nhóm đôi",
+        "Em hãy chọn các khóa học và bài học tương ứng (Hình 2):"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "questions",
+      "paragraphs": [
+        "2. Luyện gõ phím Shift với phần mềm",
+        "Thảo luận nhóm đôi",
+        "Em hãy chọn các khóa học và bài học tương ứng (Hình 2):",
+        "b) Khóa học EN 2. Beginner, Bài 3. Digit keys – Lesson 1 để luyện gõ các số 5, 6, 7, 8 và các kí tự %, ^, &amp;. * (Hình 2.b)."
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "theory",
+      "paragraphs": [
+        "2. Luyện gõ phím Shift với phần mềm",
+        "Ghi nhớ",
+        "Để gõ kí tự nằm ở phía trên của phím có hai kí tự: nhấn, giữ phím Shift và gõ phím có kí tự đó.",
+        "Để gõ chữ hoa: nhấn, giữ phím Shift và gõ phím có chữ đó."
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 12,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy chọn một số bài trong các bài học 2. Shift keys, 3. Digit keys để luyện gõ các chữ hoa, các kí tự.",
+        "Sau các lần luyện gõ, em hãy mở thống kê kết quả trên phần mềm. Đối chiếu giữa các lần luyện gõ, em có thấy kết quả của mình tăng lên không?"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 14,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy kích hoạt phần mềm Word và thực hành gõ lại một đoạn của bài thơ “Mỗi người một việc” của tác giả Nguyễn Văn Chương."
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "theory",
+      "paragraphs": [
+        "Để gõ kí tự nằm ở phía trên của phím có hai kí tự, em nhấn, giữ phím Shift và gõ phím có kí tự đó.",
+        "Để gõ chữ hoa, em nhấn, giữ phím Shift và gõ phím có chữ đó.",
+        "GHI NHỚ"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "content",
+      "paragraphs": [
+        "Ôn lại các kiến thức đã học ở Bài 2",
+        "Đọc và chuẩn bị trước Chủ đề F – Bài 1: Làm quen với lập trình trực quan"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 18,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "Tin học 4 Chủ đề E Ứng dụng tin học",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Quan sát trên các hàng phím và chỉ ra những phím nào có hai kí tự? Để gõ được các kí tự đó ta sẽ làm như thế nào?",
+        "slide": 3
+      },
+      {
+        "type": "task",
+        "text": "Em hãy quan sát trên bàn phím và xác định vị trí của phím Shift.",
+        "slide": 5
+      },
+      {
+        "type": "question",
+        "text": "Vì sao lại cần có tới 2 phím Shift trên bàn phím?",
+        "slide": 7
+      },
+      {
+        "type": "task",
+        "text": "Em hãy chọn các khóa học và bài học tương ứng (Hình 2):",
+        "slide": 8
+      },
+      {
+        "type": "task",
+        "text": "Em hãy chọn các khóa học và bài học tương ứng (Hình 2):",
+        "slide": 9
+      },
+      {
+        "type": "task",
+        "text": "Em hãy chọn một số bài trong các bài học 2. Shift keys, 3. Digit keys để luyện gõ các chữ hoa, các kí tự.",
+        "slide": 12
+      },
+      {
+        "type": "question",
+        "text": "Sau các lần luyện gõ, em hãy mở thống kê kết quả trên phần mềm. Đối chiếu giữa các lần luyện gõ, em có thấy kết quả của mình tăng lên không?",
+        "slide": 12
+      },
+      {
+        "type": "task",
+        "text": "Em hãy kích hoạt phần mềm Word và thực hành gõ lại một đoạn của bài thơ “Mỗi người một việc” của tác giả Nguyễn Văn Chương.",
+        "slide": 14
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước Chủ đề F – Bài 1: Làm quen với lập trình trực quan",
+        "slide": 16
+      }
+    ],
+    "vocab": [],
+    "keyPoints": [
+      "2. Luyện gõ phím Shift với phần mềm",
+      "Để gõ kí tự nằm ở phía trên của phím có hai kí tự: nhấn, giữ phím Shift và gõ phím có kí tự đó.",
+      "Để gõ chữ hoa: nhấn, giữ phím Shift và gõ phím có chữ đó.",
+      "Để gõ kí tự nằm ở phía trên của phím có hai kí tự, em nhấn, giữ phím Shift và gõ phím có kí tự đó.",
+      "Để gõ chữ hoa, em nhấn, giữ phím Shift và gõ phím có chữ đó."
+    ]
+  }
+}

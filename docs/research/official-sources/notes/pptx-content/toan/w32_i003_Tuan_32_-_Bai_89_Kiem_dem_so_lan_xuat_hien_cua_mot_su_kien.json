@@ -1,0 +1,357 @@
+{
+  "meta": {
+    "file": "w32_i003_Tuan_32_-_Bai_89_Kiem_dem_so_lan_xuat_hien_cua_mot_su_kien.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w32_i003_Tuan_32_-_Bai_89_Kiem_dem_so_lan_xuat_hien_cua_mot_su_kien.pptx",
+    "slideCount": 27
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 2",
+        "Tuần 32",
+        "Bài 89: Kiểm đếm số lần xuất hiện của một sự kiện"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Tập tầm vông",
+        "Người đấu giấu một vật nhỏ trong lòng một bàn tay và nắm cả hai tay lại rồi hát",
+        "“Tập tầm vông",
+        "Tay không tay có",
+        "Tập tầm vó",
+        "Tay có tay không",
+        "Tay nào có, tay nào không?”",
+        "Người đoán chỉ một tay của người đố. Nếu đoán đúng, người đoán trở thành người đố, trò chơi lại tiếp tục."
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "Kết quả 5 lần tung đồng xu liên tiếp được ghi nhận vào bảng."
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "Ba bạn cùng chơi trò chơi tung đồng xu,  bạn đầu tiên tung đồng xu 5 lần liên tiếp, bạn thứ hai quan sát và ghi lại mặt xuất hiện quả đồng xu, bạn còn lại đếm số lần xuất hiện mặt  S (mặt sấp)."
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "Ví dụ",
+        "Lần tung",
+        "Kết quả tung",
+        "Mặt S xuất hiện",
+        "Mặt N xuất hiện",
+        "Mặt N xuất hiện",
+        "Mặt N xuất hiện",
+        "Mặt S xuất hiện",
+        "Ở mỗi lần tung đồng xu, hai sự kiện có thể xảy ra là : mặt N xuất hiện, mặt S xuất hiện.",
+        "Sau khi tung đồng xu nhiều lần, ta kiểm đếm được số lần xuất hiện lặp lại của mặt N và mặt S.",
+        "Mặt N xuất hiện: 3 lần",
+        "Mặt S xuất hiện: 2 lần"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "questions",
+      "paragraphs": [
+        "Khi tung đồng xu, có mấy khả năng xảy ra?",
+        "Mặt N xuất hiện mấy lần?",
+        "Mặt S xuất hiện mấy lần?",
+        "Khi tung đồng xu, có hai khả năng xảy ra:",
+        "Mặt N xuất hiện: 3 lần.",
+        "Mặt S xuất hiện: 2 lần.",
+        "Trả lời",
+        "Mặt N",
+        "Mặt S"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "theory",
+      "paragraphs": [
+        "KẾT LUẬN",
+        "Khi bạn nữ tung đồng xu, có hai khả năng xảy ra là : xuất hiện mặt N hoặc xuất hiện mặt S.",
+        "Tung đồng xu nhiều lần, ta kiểm đếm được số lần lặp lại của một sự kiện.",
+        "Ví dụ : Sau 5 lần thực hiện, mặt N xuất hiện 3 lần, mặt S xuất hiện 2 lần."
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Tung một đồng xu 5 lần liên tiếp, ta có kết quả như sau:",
+        "Lần tung",
+        "Kết quả tung",
+        "Mặt N xuất hiện",
+        "Mặt N xuất hiện",
+        "Mặt S xuất hiện",
+        "Mặt N xuất hiện",
+        "Mặt S xuất hiện",
+        "Hãy cho biết số lần xuất hiện mặt N và số lần xuất hiện mặt S sau 5 lần tung đồng xu."
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "questions",
+      "paragraphs": [
+        "01",
+        "Lần tung",
+        "Kết quả tung",
+        "Mặt N xuất hiện",
+        "Mặt N xuất hiện",
+        "Mặt S xuất hiện",
+        "Mặt N xuất hiện",
+        "Mặt S xuất hiện",
+        "Đồng xu được tung mấy lần?",
+        "Khi tung đồng xu, có mấy khả năng xảy ra?"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Lần tung",
+        "Kết quả tung",
+        "Mặt N xuất hiện",
+        "Mặt N xuất hiện",
+        "Mặt S xuất hiện",
+        "Mặt N xuất hiện",
+        "Mặt S xuất hiện",
+        "Mặt N xuất hiện: 3 lần.",
+        "Mặt S xuất hiện: 2 lần."
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "questions",
+      "paragraphs": [
+        "02",
+        "Gieo một con xúc xắc 10 lần liên tiếp, ta có kết quả như sau:",
+        "Hãy cho biết số lần xuất hiện mặt 1 chấm và số lần xuất hiện mặt 6 chấm sau 10 lần gieo xúc xắc?"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "questions",
+      "paragraphs": [
+        "02",
+        "Xúc xắc được gieo mấy lần?",
+        "Khi gieo xúc xắc , có mấy khả năng xảy ra?",
+        "10 lần",
+        "6 khả năng xảy ra"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "Mặt 1 chấm xuất hiện: 3 lần",
+        "Mặt 6 chấm xuất hiện: 1 lần"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "content",
+      "paragraphs": [
+        "03",
+        "Trò chơi “Quay kim trên vòng tròn”",
+        "Quay kim trên vòng tròn 10 lần liên tiếp, ta có kết quả như sau:",
+        "Hãy cho biết số lần kim dừng đúng ở phần màu xanh; màu đỏ; màu vàng của hình tròn."
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "content",
+      "paragraphs": [
+        "03",
+        "Số lần kim dừng ở phần màu xanh: 5 lần (lần quay thứ 1, thứ 4, thứ 5, thứ 6 và thứ 10)."
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "content",
+      "paragraphs": [
+        "03",
+        "Số lần kim dừng ở phần màu đỏ: 2 lần (lần quay thứ 2, thứ 7)."
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "content",
+      "paragraphs": [
+        "03",
+        "Số lần kim dừng ở phần màu vàng: 3 lần (lần quay thứ 3, thứ 8 và thứ 9)."
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 22,
+      "type": "questions",
+      "paragraphs": [
+        "05",
+        "Thực hành: Tung một đồng xu 20 lần liên tiếp. Sử dụng vạch kiểm để kiểm đếm và hoàn thành bảng sau.",
+        "Mặt xuất hiện",
+        "Kiểm đếm",
+        "Tổng kết quả",
+        "Mặt N",
+        "Mặt S",
+        "Khi tung đồng xu, có mấy khả năng xảy ra?",
+        "Số lần xuất hiện mặt N?",
+        "Số lần xuất hiện mặt S?"
+      ]
+    },
+    {
+      "slideNo": 23,
+      "type": "content",
+      "paragraphs": [
+        "Học sinh chia sẻ hôm nay học được những gì."
+      ]
+    },
+    {
+      "slideNo": 24,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 25,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước",
+        "Bài 90: Em ôn lại những gì đã học"
+      ]
+    },
+    {
+      "slideNo": 26,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 27,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 2 Tuần 32",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Khi tung đồng xu, có mấy khả năng xảy ra?",
+        "slide": 8
+      },
+      {
+        "type": "question",
+        "text": "Mặt N xuất hiện mấy lần?",
+        "slide": 8
+      },
+      {
+        "type": "question",
+        "text": "Mặt S xuất hiện mấy lần?",
+        "slide": 8
+      },
+      {
+        "type": "task",
+        "text": "Hãy cho biết số lần xuất hiện mặt N và số lần xuất hiện mặt S sau 5 lần tung đồng xu.",
+        "slide": 11
+      },
+      {
+        "type": "question",
+        "text": "Đồng xu được tung mấy lần?",
+        "slide": 12
+      },
+      {
+        "type": "question",
+        "text": "Khi tung đồng xu, có mấy khả năng xảy ra?",
+        "slide": 12
+      },
+      {
+        "type": "question",
+        "text": "Hãy cho biết số lần xuất hiện mặt 1 chấm và số lần xuất hiện mặt 6 chấm sau 10 lần gieo xúc xắc?",
+        "slide": 14
+      },
+      {
+        "type": "question",
+        "text": "Xúc xắc được gieo mấy lần?",
+        "slide": 15
+      },
+      {
+        "type": "question",
+        "text": "Khi gieo xúc xắc , có mấy khả năng xảy ra?",
+        "slide": 15
+      },
+      {
+        "type": "task",
+        "text": "Hãy cho biết số lần kim dừng đúng ở phần màu xanh; màu đỏ; màu vàng của hình tròn.",
+        "slide": 17
+      },
+      {
+        "type": "question",
+        "text": "Khi tung đồng xu, có mấy khả năng xảy ra?",
+        "slide": 22
+      },
+      {
+        "type": "question",
+        "text": "Số lần xuất hiện mặt N?",
+        "slide": 22
+      },
+      {
+        "type": "question",
+        "text": "Số lần xuất hiện mặt S?",
+        "slide": 22
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước",
+        "slide": 25
+      }
+    ],
+    "vocab": [],
+    "keyPoints": [
+      "Khi bạn nữ tung đồng xu, có hai khả năng xảy ra là : xuất hiện mặt N hoặc xuất hiện mặt S.",
+      "Tung đồng xu nhiều lần, ta kiểm đếm được số lần lặp lại của một sự kiện.",
+      "Ví dụ : Sau 5 lần thực hiện, mặt N xuất hiện 3 lần, mặt S xuất hiện 2 lần."
+    ]
+  }
+}

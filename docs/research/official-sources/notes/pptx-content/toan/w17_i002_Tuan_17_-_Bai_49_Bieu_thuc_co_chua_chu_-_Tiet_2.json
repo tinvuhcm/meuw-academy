@@ -1,0 +1,297 @@
+{
+  "meta": {
+    "file": "w17_i002_Tuan_17_-_Bai_49_Bieu_thuc_co_chua_chu_-_Tiet_2.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w17_i002_Tuan_17_-_Bai_49_Bieu_thuc_co_chua_chu_-_Tiet_2.pptx",
+    "slideCount": 24
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 1",
+        "Tuần 17",
+        "Bài 49: Biểu thức có chứa chữ - Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "activity",
+      "paragraphs": [
+        "HOẠT ĐỘNG CẶP ĐÔI",
+        "a + b + c",
+        "a – b + c",
+        "a + b  c",
+        "(a + b) : c",
+        "12",
+        "15",
+        "10",
+        "18",
+        "14",
+        "22",
+        "30",
+        "42",
+        "32",
+        "65",
+        "a + b + c",
+        "a – b + c",
+        "(a + b) : c",
+        "12",
+        "15",
+        "10",
+        "18",
+        "14",
+        "22",
+        "30",
+        "42",
+        "32",
+        "65",
+        "03",
+        "Số?"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "04",
+        "HOẠT ĐỘNG NHÓM",
+        "a) Đọc và giải thích cho bạn:",
+        "Một hình chữ nhật có chiều dài là a, chiều rộng là b.",
+        "Gọi P là chu vi của hình chữ nhật,",
+        "S là diện tích của hình chữ nhật."
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "content",
+      "paragraphs": [
+        "04",
+        "HOẠT ĐỘNG NHÓM",
+        "Ta có:",
+        "- Công thức tính chu vi hình chữ nhật là: P = (a  b)  2",
+        "- Công thức tính diện tích hình chữ nhật là:  S = a  b",
+        "a, b cùng một đơn vị đo.",
+        "Ví dụ: Hình chữ nhật có chiều dài a = 10 cm, chiều rộng b = 5 cm thì có:",
+        "+ Chu vi là: P = (10  5)  2 = 30 (cm);",
+        "+ Diện tích là: S = 10  5 = 50 (cm2)."
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "04",
+        "HOẠT ĐỘNG NHÓM",
+        "b) Áp dụng công thức trên để tính chu vi hình chữ nhật, biết:",
+        "a = 13 cm, b = 12 cm;",
+        "a = 35 km, b = 15 km.",
+        "c) Áp dụng công thức trên để tính diện tích hình chữ nhật, biết:",
+        "a = 60 cm, b = 30 cm;",
+        "a = 42 cm, b = 21 cm."
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "04",
+        "HOẠT ĐỘNG NHÓM",
+        "Trả lời",
+        "b) + Chu vi hình chữ nhật có chiều dài a = 13 cm, chiều rộng b = 12 cm là:",
+        "P = (a  b)  2 = (13  12)  2 = 25  2 = 50 (cm).",
+        "+ Chu vi hình chữ nhật có chiều dài a = 35 km, b = 15 km là:",
+        "P = (a  b)  2 = (35  15)  2 = 50  2 = 100 (km)."
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "04",
+        "HOẠT ĐỘNG NHÓM",
+        "Trả lời",
+        "c) + Diện tích hình chữ nhật có chiều dài a = 60 cm, chiều rộng b = 30 cm là:",
+        "S = a  b = 60  30 = 1 800 (cm2).",
+        "+ Diện tích hình chữ nhật có chiều dài a = 42 cm, b = 21 cm là:",
+        "S = a  b = 42  21 = 882 (cm2)."
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 10,
+      "type": "questions",
+      "paragraphs": [
+        "05",
+        "Em hãy đo chiều dài và chiều rộng rồi tính chu vi của bìa sách Toán, bảng con,…",
+        "HOẠT ĐỘNG NHÓM",
+        "Ví dụ:",
+        "Bìa quyển sách Toán có chiều rộng là 19 cm, chiều dài là 26 cm.",
+        "Chu vi của bìa quyển sách Toán là",
+        "(26  19)  2 = 90 (cm)"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "Hướng dẫn",
+        "Click vào bắt đầu để đến trò chơi.",
+        "Click vào các đáp án để hiện đáp án đúng/sai.",
+        "Bấm chuột trái để chuyển sang câu hỏi tiếp theo.",
+        "Bắt đầu"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 1: Giá trị của biểu thức a × 12 + a × 88",
+        "với a = 87 là:",
+        "B. 8 700",
+        "A. 870",
+        "C. 99 900",
+        "D. 10 000"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 2: Giá trị của biểu thức",
+        "a + 5 + b + 5 + a + 5 + b + 5",
+        "với a + b = 20 là:",
+        "C. 60",
+        "B. 70",
+        "A. 80",
+        "D. 90"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 3: Nếu a = 9 240 thì giá trị biểu thức",
+        "45 105 – a : 5 là:",
+        "B. 43 257",
+        "A. 7 173",
+        "C. 9 870",
+        "D. 7 183"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 4: Tính giá trị của biểu thức 9 900  m  2",
+        "biết m là số bé nhất có hai chữ số.",
+        "A. 9 880",
+        "B. 9 809",
+        "C. 9 870",
+        "D. 9 882"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 5: Tìm m để giá trị của biểu thức",
+        "m  200  3 = 850.",
+        "D. m = 250",
+        "B. m = 270",
+        "C. m = 200",
+        "A. m = 600"
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "content",
+      "paragraphs": [
+        "Cảm ơn các bạn đã chọn vòng cổ cho tớ!",
+        "KẾT THÚC"
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em biết thêm được điều gì?"
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "questions",
+      "paragraphs": [
+        "Những điều đó giúp ích gì cho em trong cuộc sống hằng ngày?"
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 22,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước",
+        "Bài 50: Em ôn lại những gì đã học"
+      ]
+    },
+    {
+      "slideNo": 23,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 24,
+      "type": "empty",
+      "paragraphs": []
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 1 Tuần 17",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Em hãy đo chiều dài và chiều rộng rồi tính chu vi của bìa sách Toán, bảng con,…",
+        "slide": 10
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em biết thêm được điều gì?",
+        "slide": 19
+      },
+      {
+        "type": "question",
+        "text": "Những điều đó giúp ích gì cho em trong cuộc sống hằng ngày?",
+        "slide": 20
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước",
+        "slide": 22
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

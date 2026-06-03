@@ -1,0 +1,719 @@
+{
+  "kind": "docx",
+  "path": "docs/research/official-sources/downloads/hoc10/lop4/tin-hoc/worksheets/04_Gioi_thieu_SGK_Tin_hoc_4_ban_word.docx",
+  "paragraphs": [
+    {
+      "index": 1,
+      "text": "GIỚI THIỆU SÁCH GIÁO KHOA TIN HỌC 4",
+      "chars": 35
+    },
+    {
+      "index": 2,
+      "text": "BỘ SÁCH CÁNH DIỀU",
+      "chars": 17
+    },
+    {
+      "index": 4,
+      "text": "Tổng Chủ biên: PGS. TS. Hồ Sĩ Đàm",
+      "chars": 33
+    },
+    {
+      "index": 5,
+      "text": "Chủ biên: GS. TS. Nguyễn Thanh Thủy",
+      "chars": 35
+    },
+    {
+      "index": 6,
+      "text": "GIỚI THIỆU CHUNG",
+      "chars": 16
+    },
+    {
+      "index": 7,
+      "text": "Nhà xuất bản",
+      "chars": 12
+    },
+    {
+      "index": 8,
+      "text": "Tin học 4 trong bộ sách giáo khoa Tin học Cánh Diều do Nhà xuất bản Đại học Sư phạm Hà Nội phối hợp với Công ty Đầu tư Xuất bản - Thiết bị Giáo dục Việt Nam (VEPIC) thực hiện. Sách có 72 trang, khổ 19 × 26,5 cm, in 4 màu.",
+      "chars": 221
+    },
+    {
+      "index": 9,
+      "text": "Đội ngũ tác giả",
+      "chars": 15
+    },
+    {
+      "index": 10,
+      "text": "Sách được biên soạn bởi các nhà giáo thuộc trường Đại học Sư phạm Hà Nội và Đại học Quốc gia Hà Nội, Học viện Công nghệ Bưu chính viễn thông giàu kinh nghiệm và tâm huyết trong lĩnh vực giáo dục tin học.",
+      "chars": 203
+    },
+    {
+      "index": 11,
+      "text": "Tổng Chủ biên: PGS. TS. NGND. Hồ Sĩ Đàm.",
+      "chars": 40
+    },
+    {
+      "index": 12,
+      "text": "Chủ biên: GS. TS. NGUT. Nguyễn Thanh Thủy.",
+      "chars": 42
+    },
+    {
+      "index": 13,
+      "text": "Các tác giả: PGS. TS. NGUT. Hồ Cẩm Hà, TS. Nguyễn Chí Trung, TS. Đỗ Thị Bích Ngọc, ThS. Nguyễn Thị Hồng.",
+      "chars": 104
+    },
+    {
+      "index": 14,
+      "text": "Tập thể tác giả là những chuyên gia trong giáo dục tin học với các đóng góp tiêu biểu như sau:",
+      "chars": 94
+    },
+    {
+      "index": 15,
+      "text": "Tham gia Ban phát triển Chương trình môn Tin học 2018 với vai trò thành viên chủ chốt; Biên soạn bộ sách giáo khoa môn Tin học với vai trò Tổng Chủ biên, Chủ biên và tác giả.",
+      "chars": 174
+    },
+    {
+      "index": 16,
+      "text": "Xây dựng chương trình bồi dưỡng giáo viên Tin học trình độ cử nhân Sư phạm Tin học; Chủ biên, tác giả các tài liệu đào tạo và bồi dưỡng, tập huấn giáo viên; Trực tiếp đào tạo và bồi dưỡng giáo viên.",
+      "chars": 198
+    },
+    {
+      "index": 17,
+      "text": "Xây dựng chương trình và trực tiếp đào tạo thạc sĩ, tiến sĩ chuyên ngành Lí luận và Phương pháp dạy học.",
+      "chars": 104
+    },
+    {
+      "index": 18,
+      "text": "Biên soạn các tài liệu về chương trình, sách giáo khoa, phương pháp dạy học, kiểm tra, đánh giá trong giáo dục với vai trò Chủ biên, tác giả và giảng viên tập huấn.",
+      "chars": 164
+    },
+    {
+      "index": 19,
+      "text": "Biên soạn bộ sách “Hướng dẫn dạy học Tin học theo Chương trình môn Tin học 2018” ở cấp tiểu học, trung học cơ sở và trung học phổ thông với vai trò Tổng Chủ biên, Chủ biên và tác giả.",
+      "chars": 183
+    },
+    {
+      "index": 21,
+      "text": "MỤC TIÊU",
+      "chars": 8
+    },
+    {
+      "index": 22,
+      "text": "Đáp ứng yêu cầu của Chương trình (CT) môn Tin học 2018:",
+      "chars": 55
+    },
+    {
+      "index": 23,
+      "text": "Hình thành và phát triển năng lực (NL) tin học, góp phần phát triển năm phẩm chất và ba năng lực chung được xác định trong Chương trình Giáo dục phổ thông (CTGDPT) 2018.",
+      "chars": 169
+    },
+    {
+      "index": 24,
+      "text": "Năng lực Tin học, được hình thành và phát triển xuyên suốt tất cả các lớp từ lớp 3 đến lớp 12, gồm năm thành phần sau đây:",
+      "chars": 122
+    },
+    {
+      "index": 37,
+      "text": "Cung cấp ba mạch kiến thức Học vấn số hoá phổ thông (DL), Công nghệ thông tin và truyền thông (ICT), Khoa học máy tính (CS) thông qua 6 chủ đề.",
+      "chars": 143
+    },
+    {
+      "index": 38,
+      "text": "Năm thành phần NL tin học, ba mạch kiến thức và sáu chủ đề nội dung xuyên suốt có mối quan hệ biện chứng, logic tương hỗ.",
+      "chars": 121
+    },
+    {
+      "index": 43,
+      "text": "Đối với học sinh (HS) là tài liệu chính giúp:",
+      "chars": 45
+    },
+    {
+      "index": 44,
+      "text": "Chiếm lĩnh tri thức, tìm tòi và vận dụng tri thức theo yêu cầu cần đạt (YCCĐ).",
+      "chars": 78
+    },
+    {
+      "index": 45,
+      "text": "Có thể tự học được. Khi biên soạn các tác giả luôn tuân thủ các định hướng chủ đạo: giảm tải, giảm số trang, phù hợp với tâm lí lứa tuổi và thời lượng bài học. Để đảm bảo yêu cầu chất lượng và có tính sư phạm, cung cấp cho học sinh đủ kiến thức và kĩ năng cốt lõi, chấp nhận 72 trang sách để trình bày kiến thức và kĩ năng, diễn đạt nội dung không quá cô đọng, dễ hiểu với nhiều ví dụ, giúp học sinh tự học với sự hướng dẫn của GV. Tuy rằng, khi đó giá thành sách có thể cao hơn một chút.",
+      "chars": 491
+    },
+    {
+      "index": 46,
+      "text": "Đối với giáo viên (GV) là tài liệu chính giúp:",
+      "chars": 46
+    },
+    {
+      "index": 47,
+      "text": "Định hướng, lựa chọn nội dung, phương pháp, hình thức, phương tiện dạy học và công cụ đánh giá kết quả học tập của HS.",
+      "chars": 118
+    },
+    {
+      "index": 48,
+      "text": "Hỗ trợ GV có ý tưởng sư phạm trong soạn giáo án, tổ chức dạy học. Chương trình môn Tin học 4 hoàn toàn mới, nên GV có thể gặp ít nhiều khó khăn khi tổ chức giảng dạy. Do đó, SGK Tin học 4 được biên soạn theo định hướng giảm thiểu khó khăn cho GV, giúp GV tham khảo trực tiếp SGK để biên soạn giáo án một cách phù hợp với điều kiện của HS và nhà trường.",
+      "chars": 352
+    },
+    {
+      "index": 49,
+      "text": "Đối với cán bộ quản lí (CBQL) và phụ huynh học sinh",
+      "chars": 51
+    },
+    {
+      "index": 50,
+      "text": "Là tài liệu giúp CBQL chuyên môn Tin học của nhà trường làm căn cứ để định hướng chỉ đạo, hướng dẫn các cơ sở xây dựng, điều chỉnh kế hoạch triển khai dạy học, làm tiêu chí để đánh giá chất lượng, dạy và học tin học ở cơ sở.",
+      "chars": 224
+    },
+    {
+      "index": 51,
+      "text": "Là tài liệu giúp phụ huynh nắm vững đúng mức YCCĐ hỗ trợ con em mình tự học ở nhà, tránh đòi hỏi vượt chuẩn đối với HS.",
+      "chars": 119
+    },
+    {
+      "index": 53,
+      "text": "CÁCH TIẾP CẬN",
+      "chars": 13
+    },
+    {
+      "index": 54,
+      "text": "Tập thể tác giả đã nghiên cứu sâu sắc CT GDPT tổng thể và Chương trình môn Tin học 2018, các mô hình sách giáo khoa (SGK) Tin học trong và ngoài nước. Từ đó bộ sách Tin học Cánh Diều được thiết kế có tính khoa học và sư phạm, đảm bảo sự nhất quán xuyên suốt từ lớp 3 đến lớp 12 về mô hình, cách tiếp cận, cấu trúc trình bày. Ngoài tính nhất quán về quan điểm và định hướng của toàn bộ bộ sách, ở mỗi cấp học sách được biên soạn đáp ứng những đặc điểm riêng phù hợp với tâm sinh lí, sự phát triển năng lực và cách học của học sinh ở cấp học đó. Đây là nét đặc trưng nổi bật, thể hiện đặc sắc riêng của bộ sách Tin học Cánh Diều.",
+      "chars": 627
+    },
+    {
+      "index": 55,
+      "text": "Trên cơ sở thiết kế tổng thể của toàn bộ sách Tin học Cánh Diều, SGK Tin học 4 được biên soạn theo bốn cách tiếp cận chính. Sau đây trình bày rõ hơn về bốn cách tiếp cận quan trọng đó.",
+      "chars": 184
+    },
+    {
+      "index": 56,
+      "text": "3.1 Tiếp cận phát triển phẩm chất, năng lực",
+      "chars": 43
+    },
+    {
+      "index": 57,
+      "text": "Bộ SGK Cánh Diều được biên soạn theo tiếp cận phát triển năng lực. Phù hợp với xu hướng phát triển của giáo dục các nước tiên tiến, SGK Tin học Cánh Diều hướng tới mục đích giúp HS vận dụng kiến thức để giải quyết vấn đề trong thực tiễn, giúp trả lời câu hỏi “Học xong, học sinh làm được những gì?”. Mục tiêu chính của SGK Tin học Cánh Diều là hình thành và phát triển năng lực Tin học, góp phần hình thành các phẩm chất cốt lõi và năng lực chung theo yêu cầu của CT GDPT tổng thể 2018.",
+      "chars": 486
+    },
+    {
+      "index": 58,
+      "text": "Phương pháp hình thành và phát triển phẩm chất chủ yếu",
+      "chars": 54
+    },
+    {
+      "index": 59,
+      "text": "Tất cả sáu chủ đề môn Tin học 4 giúp hình thành và phát triển những phẩm chất chủ yếu: yêu nước, nhân ái, chăm chỉ, trung thực và trách nhiệm một cách hiệu quả cho HS. Các chủ đề “Đạo đức, pháp luật và văn hoá trong môi trường số”, “Ứng dụng tin học” tạo ra các hoạt động, tình huống giúp HS bộc lộ được các phẩm chất qua ứng xử trong môi trường số.",
+      "chars": 349
+    },
+    {
+      "index": 60,
+      "text": "Căn cứ vào các biểu hiện của những phẩm chất được mô tả trong CT GDPT tổng thể 2018, GV sẽ giúp HS hình thành và phát triển phẩm chất cho học sinh trong suốt cả quá trình dạy học và tổ chức hoạt động sư phạm.",
+      "chars": 210
+    },
+    {
+      "index": 61,
+      "text": "Phương pháp hình thành và phát triển năng lực chung",
+      "chars": 51
+    },
+    {
+      "index": 62,
+      "text": "Nội dung và các yêu cầu cần đạt ở sáu chủ đề trong Chương trình môn Tin học 4 giúp hình thành và phát triển trực tiếp ba thành phần của năng lực tin học: (NLd) “Ứng dụng công nghệ thông tin và truyền thông trong học và tự học”; (NLe) “Hợp tác trong môi trường số” và (NLc) “Giải quyết vấn đề với sự hỗ trợ của công nghệ thông tin và truyền thông”. Ba thành phần của năng lực tin học này góp phần cụ thể, trực tiếp trong phát triển ba năng lực chung “tự chủ và tự học”, “giao tiếp và hợp tác”, “giải quyết vấn đề và sáng tạo”.",
+      "chars": 525
+    },
+    {
+      "index": 63,
+      "text": "Căn cứ vào tình huống cụ thể trong môi trường số và dựa vào các biểu hiện của năng lực chung được mô tả trong CT GDPT tổng thể 2018, GV sẽ giúp HS hình thành và phát triển năng lực chung trong suốt cả quá trình dạy học và tổ chức hoạt động sư phạm.",
+      "chars": 250
+    },
+    {
+      "index": 64,
+      "text": "Năm thành phần năng lực Tin học được hình thành và phát triển thông qua hệ thống các YCCĐ được mô tả trong Chương trình Tin học ở mỗi cấp, mỗi lớp học.",
+      "chars": 151
+    },
+    {
+      "index": 65,
+      "text": "Các YCCĐ tương ứng với sáu chủ đề môn Tin học lớp 4 trong Chương trình Tin học 2018 được mô tả trong bảng sau đây:",
+      "chars": 114
+    },
+    {
+      "index": 67,
+      "text": "Theo cách tiếp cận phát triển năng lực Tin học, SGK Tin học 4 Cánh Diều được biên soạn theo nguyên tắc:",
+      "chars": 103
+    },
+    {
+      "index": 68,
+      "text": "Tất cả kiến thức đều được minh hoạ, có liên hệ với thực tế, giúp HS giải quyết một vài vấn đề vừa sức với các em trong bối cảnh thực tiễn nhất định.",
+      "chars": 149
+    },
+    {
+      "index": 69,
+      "text": "HS đạt được mục tiêu ở mỗi bài học sẽ đạt được YCCĐ của chủ đề con và chủ đề tương ứng. Đạt được đầy đủ các yêu cầu của sáu chủ đề cũng chính là đạt được đầy đủ các YCCĐ của CT môn Tin học 4.",
+      "chars": 191
+    },
+    {
+      "index": 71,
+      "text": "3.2 Tiếp cận hoạt động",
+      "chars": 22
+    },
+    {
+      "index": 72,
+      "text": "Ý nghĩa của cách tiếp cận này là: bằng hoạt động và thông qua hoạt động tích cực, trò chơi, HS thu nhận được kiến thức và chuyển hoá thành hiểu biết của mình, vận dụng được kiến thức vào các tình huống thực tiễn. Sách Tin học 4 Cánh Diều thiết kế các hoạt động, trò chơi cho mỗi bài học.",
+      "chars": 287
+    },
+    {
+      "index": 73,
+      "text": "Với GV, các hoạt động, trò chơi được thiết kế nhằm:",
+      "chars": 51
+    },
+    {
+      "index": 74,
+      "text": "Hỗ trợ cho GV về ý tưởng sư phạm, thông qua các hoạt động, trò chơi để kiến tạo kiến thức mới cho HS, dẫn dắt HS tiếp thu kiến thức, kĩ năng mới một cách tự nhiên, dễ dàng hơn.",
+      "chars": 176
+    },
+    {
+      "index": 75,
+      "text": "Hỗ trợ GV trong việc bồi dưỡng ý thức tự học cho HS và khuyến khích HS khám phá kiến thức mới cũng như tự đánh giá kết quả học tập của bản thân.",
+      "chars": 144
+    },
+    {
+      "index": 76,
+      "text": "Một số ví dụ minh chứng:",
+      "chars": 24
+    },
+    {
+      "index": 77,
+      "text": "Ví dụ 1: Hoạt động 2 Bài 2, chủ đề C1 đưa ra các ví dụ liên quan đến Sao La, một trong những loài thú hiếm nhất trên thế giới, được tìm thấy ở Việt Nam.",
+      "chars": 152
+    },
+    {
+      "index": 78,
+      "text": "Ví dụ 2: Hoạt động thực hành tạo văn bản, Bài 5 chủ đề E2 giúp các em khi tạo văn bản “Hoa tặng mẹ” nhân ngày 8-3.",
+      "chars": 115
+    },
+    {
+      "index": 79,
+      "text": "3. 3 Tiếp cận đối tượng",
+      "chars": 23
+    },
+    {
+      "index": 80,
+      "text": "Với cách tiếp cận đối tượng, sách Tin học 4 Cánh Diều đặt mục đích đảm bảo tính phù hợp của sách với đối tượng HS, đồng thời thực hiện được dạy học phân hoá.",
+      "chars": 157
+    },
+    {
+      "index": 81,
+      "text": "Tận dụng những trải nghiệm HS đã có trong cuộc sống để xây dựng kiến thức mới, hình thành kĩ năng mới cho HS.",
+      "chars": 109
+    },
+    {
+      "index": 82,
+      "text": "Đặc biệt coi trọng sự phù hợp về tâm lí lứa tuổi, các ví dụ, các tình huống, các minh hoạ đến từ đời sống gần gũi với các em, gắn kết với các môn học khác.",
+      "chars": 155
+    },
+    {
+      "index": 83,
+      "text": "Theo thống kê của Bộ Giáo dục và Đào tạo hiện nay vẫn còn 14 tỉnh, thành tại đó HS cấp tiểu học được học Tin học chỉ từ 20% đến 50 %; số GV chưa đạt chuẩn chiếm 30%; gần 30% số trường chưa có phòng học Tin học. SGK Tin học 4 cần phải tinh giản tối đa, đưa các ví dụ, các hoạt động, các bài luyện tập với các mức độ (khó, trung bình, dễ) khác nhau và đa dạng nhằm giúp GV các tỉnh, thành, vùng miền trong triển khai, sử dụng SGK thuận lợi với tình hình thực tế. Có một số bài học không nhất thiết phải sử dụng máy tính.",
+      "chars": 523
+    },
+    {
+      "index": 84,
+      "text": "Thực hiện dạy học phân hoá để phát triển được năng lực của mọi HS. Thông tin được trình bày ở nhiều hình thức khác nhau trong các bài học. Trong chủ đề E. ỨNG DỤNG TIN HỌC, có tuỳ chọn để GV quyết định giữa nội dung chủ đề con Chủ đề lựa chọn 1 Sử dụng công cụ đa phương tiện để tìm hiểu lịch sử, văn hoá và Chủ đề lựa chọn 2 Sử dụng phần mềm luyện gõ bàn phím.",
+      "chars": 362
+    },
+    {
+      "index": 85,
+      "text": "Bài luyện tập cũng được cân nhắc cho phù hợp với yêu cầu dạy học cho đối tượng đa dạng và phổ cập, cụ thể khi có hai bài luyện tập thì bài đầu tiên là bài đơn giản, còn bài luyện tập thứ hai khó hơn một chút.",
+      "chars": 208
+    },
+    {
+      "index": 86,
+      "text": "Các bài học thể hiện sự tích hợp, liên thông với môn học khác, đưa vào nhiều tình huống yêu cầu sự vận dụng cả các kiến thức môn học khác.",
+      "chars": 138
+    },
+    {
+      "index": 87,
+      "text": "Ví dụ 1: Ở một số bài học thầy, cô giáo khai thác tranh ảnh, chọn lọc chiếu lên màn hình máy tính của GV để giúp HS quan sát nhận biết.",
+      "chars": 137
+    },
+    {
+      "index": 88,
+      "text": "Ví dụ 2: Một số tranh ảnh trong SGK thầy, cô giáo có thể thay thế cho phù hợp với HS địa phương.",
+      "chars": 96
+    },
+    {
+      "index": 89,
+      "text": "Ví dụ 3: Với các chủ đề lựa chọn 1 và 2, có thể chọn chủ đề phù hợp với thực tế của địa phương, phù hợp với HS của vùng miền khác nhau.",
+      "chars": 136
+    },
+    {
+      "index": 90,
+      "text": "3.4 Tiếp cận hệ thống",
+      "chars": 21
+    },
+    {
+      "index": 91,
+      "text": "Cách tiếp cận hệ thống được thể hiện trong toàn bộ bộ SGK Tin học Cánh Diều:",
+      "chars": 77
+    },
+    {
+      "index": 92,
+      "text": "Đảm bảo tính liên thông giữa các cấp học (nội môn, liên môn).",
+      "chars": 61
+    },
+    {
+      "index": 93,
+      "text": "Đảm bảo tính kế thừa và nhất quán xuyên suốt từ lớp 3 đến lớp 12. Sách biên soạn với các nguyên tắc sư phạm, xen kẽ nội dung lí thuyết với thực hành.",
+      "chars": 149
+    },
+    {
+      "index": 94,
+      "text": "Ví dụ: Ở chủ đề lựa chọn 1, Bài 1 và Bài 2 liên quan nhiều đến môn học lịch sử, địa lí thể hiện sự liên thông rất rõ ràng giữa các môn. Các ví dụ, bài tập cũng thể hiện tính liên môn rất được coi trọng.",
+      "chars": 202
+    },
+    {
+      "index": 95,
+      "text": "4. TỔ CHỨC NỘI DUNG VÀ THỜI LƯỢNG",
+      "chars": 33
+    },
+    {
+      "index": 96,
+      "text": "Sách gồm 6 chủ đề (từ A đến F), không có chủ đề G, được chia thành 33 bài học. Khi dạy, chỉ chọn Chủ đề lựa chọn 1 (2 tiết) hoặc Chủ đề lựa chọn 2 (2 tiết) tuỳ thuộc vào điều kiện và yêu cầu của nhà trường. Cuối môn học có bài Thực hành: Nhiệm vụ và sản phẩm. Mỗi bài học dự kiến phù hợp với việc dạy trong 1 tiết học, giúp GV linh hoạt trong tổ chức dạy học 1 tiết/1 tuần hoặc 2 tiết/1 tuần (tương ứng với 2 bài học). Ngoài 31 tiết học và 2 tiết kiểm tra định kì, GV còn có 2 tiết dự phòng, giúp sử dụng để ôn tập hoặc kiểm tra đánh giá. GV cũng có thể dùng 2 tiết dự phòng này để học bổ sung khi có sự cố nghỉ học, phải học bù.",
+      "chars": 631
+    },
+    {
+      "index": 97,
+      "text": "Nội dung và phân bổ thời lượng cho các bài như mô tả ở bảng sau đây:",
+      "chars": 68
+    },
+    {
+      "index": 100,
+      "text": "5. CẤU TRÚC BÀI HỌC",
+      "chars": 19
+    },
+    {
+      "index": 101,
+      "text": "Mỗi chủ đề có thể gồm một số chủ đề con. Mỗi chủ đề con có một số bài học. Các bài học trong một chủ đề con, chủ đề được đánh số thứ tự bắt đầu từ 1. Điều này làm cho GV có thể linh hoạt thay đổi thứ tự các chủ đề hoặc thứ tự các bài học trong một chủ đề sao cho phù hợp với kế hoạch triển khai dạy học của nhà trường (miễn là đảm bảo tính logic quan hệ giữa nội dung các bài học. Trong chủ đề E, có 2 chủ đề con là tuỳ chọn, được GV quyết định tuỳ thuộc vào điều kiện thực tế của nhà trường, sao cho phù hợp với thực tế. Mỗi bài học lí thuyết, mỗi bài thực hành đều được thiết kế cho 1 tiết học. Các bài học đều có cấu trúc chung như sau:",
+      "chars": 641
+    },
+    {
+      "index": 102,
+      "text": "Phần mở đầu nêu mục tiêu cần đạt của bài học.",
+      "chars": 45
+    },
+    {
+      "index": 103,
+      "text": "Phần khởi động nêu vấn đề, tạo hứng thú và dẫn dắt các em vào bài học một cách tự nhiên.",
+      "chars": 88
+    },
+    {
+      "index": 104,
+      "text": "Phần kiến thức mới gồm các hoạt động, trò chơi giúp kiến tạo kiến thức.",
+      "chars": 71
+    },
+    {
+      "index": 105,
+      "text": "Luyện tập gồm câu hỏi và bài tập luyện tập.",
+      "chars": 43
+    },
+    {
+      "index": 106,
+      "text": "Vận dụng nêu nhiệm vụ vận dụng kiến thức.",
+      "chars": 41
+    },
+    {
+      "index": 107,
+      "text": "Ghi nhớ giúp HS tóm tắt lại nội dung chính, cốt lõi.",
+      "chars": 52
+    },
+    {
+      "index": 108,
+      "text": "Nội dung bài học được tổ chức theo cấu trúc phù hợp với quá trình nhận thức của HS, gồm các mục sau đây:",
+      "chars": 104
+    },
+    {
+      "index": 109,
+      "text": "Mục tiêu của bài học được nêu ở ngay sau tên bài học với đoạn văn “Học xong bài này, em sẽ”. Những điều nêu ở đoạn văn tiếp sau đó thể hiện YCCĐ của chương trình tương ứng với nội dung bài, giúp cho HS, GV và cả phụ huynh xác định được đích đến của bài học.",
+      "chars": 257
+    },
+    {
+      "index": 110,
+      "text": "Khởi động là một câu hỏi hoặc một bài tập nhỏ nhưng thể hiện được bản chất vấn đề cần được giải quyết bởi kiến thức của bài học. Hoạt động dùng để nêu vấn đề như vậy làm học sinh liên tưởng và triệu hồi kiến thức đã có, có nhu cầu và hứng thú khám phá kiến thức mới để giải quyết.",
+      "chars": 280
+    },
+    {
+      "index": 111,
+      "text": "Kiến thức mới được chia thành một số mục, mỗi mục hình thành cho học sinh một đơn vị kiến thức nhỏ của bài học. Để kiến tạo nên kiến thức ở mỗi mục như vậy, GV có thể tổ chức cho HS các hoạt động, trong đó có những trò chơi. Các hoạt động là các biện pháp mang tính sư phạm để giúp HS hứng thú học tập, tiếp thu được dễ dàng và sâu sắc những kiến thức mới. Các trò chơi nhằm tăng tính tương tác và hoạt động của HS, đồng thời tăng độ hứng thú trong tiếp thu kiến thức. GV hoàn toàn có thể thay đổi các hoạt động này bằng các hoạt động phù hợp hơn với đối tượng HS của mình. Toàn bộ phần văn bản (không kể các hoạt động) cung cấp thông tin hình thành kiến thức mới của bài. Các câu được nhấn mạnh trong mỗi mục được in màu xanh, giúp HS tập trung vào kiến thức mới thông qua các khái niệm cốt lõi, các kĩ năng cơ bản.",
+      "chars": 817
+    },
+    {
+      "index": 112,
+      "text": "Luyện tập có mục đích củng cố kiến thức mới, rèn luyện kiến thức và kĩ năng vừa hình thành bằng cách áp dụng trực tiếp hoặc làm tương tự những gì vừa tiếp thu. Thông qua luyện tập HS làm cho kiến thức mới trở thành của mình, HS bắt đầu có những kĩ năng mới.",
+      "chars": 257
+    },
+    {
+      "index": 113,
+      "text": "Vận dụng giúp chuyển hoá kiến thức kĩ năng mới thành của mình thông qua giải quyết một vấn đề thực tiễn trong học tập, cuộc sống. Không thể dừng ở mức chỉ có kiến thức, HS phải được phát triển năng lực dùng kiến thức kĩ năng để giải quyết các vấn đề thực tiễn. Bài tập vận dụng đòi hỏi HS phải sử dụng hiểu biết mới có cùng với những kiến thức tích lũy được để giải quyết một vấn đề thực tiễn hoặc gần với thực tiễn, vừa sức các em.",
+      "chars": 432
+    },
+    {
+      "index": 114,
+      "text": "Ghi nhớ gồm các câu, đoạn văn súc tích, cô đọng giúp HS nhớ kiến thức mới của bài học.",
+      "chars": 86
+    },
+    {
+      "index": 115,
+      "text": "Một điểm nhấn mạnh là do tính mở của SGK cao. Về cơ bản, SGK đã được biên soạn để GV có thể thực hiện hết tất cả các phần của bài học ngay trên lớp. Trường hợp cụ thể, GV cần có hướng dẫn để HS tự học ở nhà và GV cần có các biện pháp kiểm soát để đảm bảo rằng HS đã hiểu, hoàn thành bài học và đạt được mục tiêu và các YCCĐ của bài học đó.",
+      "chars": 339
+    },
+    {
+      "index": 116,
+      "text": "MỘT SỐ CẦN CHÚ Ý ĐỐI VỚI GIÁO VIÊN",
+      "chars": 35
+    },
+    {
+      "index": 117,
+      "text": "Về đổi mới tư duy",
+      "chars": 17
+    },
+    {
+      "index": 118,
+      "text": "CT môn Tin học 2018 được phê duyệt mang tính pháp lí, bắt buộc thực hiện. Các bộ SGK được nhóm tác giả biên soạn bám sát các quan điểm, mục tiêu, định hướng yêu cầu cần đạt, nội dung giáo dục, phương pháp giáo dục và đánh giá kết quả giáo dục của CT môn Tin học 2018.",
+      "chars": 268
+    },
+    {
+      "index": 119,
+      "text": "CT môn Tin học 2018 được xây dựng theo mô hình phát triển phẩm chất chủ yếu, năng lực chung, được chi tiết hoá bằng những YCCĐ. HS đạt được tất cả những YCCĐ đã đặt ra của chương trình cũng có nghĩa là học sinh có được những phẩm chất và năng lực mà giáo dục tin học lấy làm mục tiêu. Bởi vậy các YCCĐ nêu trong CT luôn phải được tham chiếu đến trong quá trình triển khai môn Tin học ở toàn bậc học phổ thông. YCCĐ được chi tiết tương ứng với từng chủ đề nội dung ở mỗi lớp, mỗi cấp. Tất cả các hoạt động từ thiết kế nội dung giáo dục, lựa chọn phương pháp dạy học, lựa chọn phương pháp đánh giá kết quả học tập đến biên soạn SGK chuẩn bị học liệu đều phải tham chiếu đến các YCCĐ.",
+      "chars": 681
+    },
+    {
+      "index": 121,
+      "text": "Có các mức độ cần đạt: Biết, Hiểu và Vận dụng. Trong các YCCĐ sử dụng một số động từ để thể hiện mức độ đáp ứng yêu cầu cần đạt về năng lực của HS.",
+      "chars": 147
+    },
+    {
+      "index": 122,
+      "text": "Về tính mở của SGK",
+      "chars": 18
+    },
+    {
+      "index": 123,
+      "text": "GV hoàn toàn có thể thay thế nội dung các hoạt động, các trò chơi, các ví dụ, các minh hoạ, các bài luyện tập. GV có thể sắp xếp, tổ chức lại các bài học, điều chỉnh phân bố thời lượng,… trên cơ sở đảm bảo được các mục tiêu của tất cả các bài học trong mỗi chủ đề con, chủ đề, để đạt YCCĐ của môn Tin học 4.",
+      "chars": 307
+    },
+    {
+      "index": 124,
+      "text": "GV được quyền chọn phần mềm ứng dụng khác, tương đương. Ví dụ, các phần mềm được giới thiệu trong SGK Tin học 4 có nhiều phần mềm có tính năng tương đương thay thế được hoặc dùng cùng phần mềm đó nhưng là phiên bản mới, có tính cập nhật, phổ biến hơn. Vì vậy, GV cần thường xuyên cập nhật các công nghệ hiện đại, trước mắt, lâu dài, xây dựng kho học liệu ngày càng hiện đại, phong phú hơn.",
+      "chars": 389
+    },
+    {
+      "index": 125,
+      "text": "GV cần linh hoạt và sáng tạo trong lựa chọn tư liệu, thiết kế các hoạt động sư phạm, tổ chức dạy học,… miễn là không chệch các mục tiêu học tập và các YCCĐ.",
+      "chars": 156
+    },
+    {
+      "index": 126,
+      "text": "Về dạy học phân hoá",
+      "chars": 19
+    },
+    {
+      "index": 127,
+      "text": "GV có thể khai thác trực tiếp các tình huống, trò chơi, các câu hỏi mở có trong SGK, mở rộng thêm các bài luyện tập có tính mở để hướng dẫn riêng cho các đối tượng HS khá hơn. Trong mọi trường hợp, GV cần chú ý bồi dưỡng ý thức tự học cho HS, khuyến khích HS tự khám phá, tự đánh giá, phát triển năng lực tuỳ theo khả năng cá nhân mỗi HS.",
+      "chars": 339
+    },
+    {
+      "index": 128,
+      "text": "SGK Tin học 4",
+      "chars": 13
+    },
+    {
+      "index": 129,
+      "text": "Bộ sách Tin học ở Tiểu học do các tác giả là chuyên gia chuyên sâu thuộc lĩnh vực Tin học biên soạn, theo cách tiếp cận, mô hình , cấu trúc nhất quán xuyên suốt từ lớp 3 đến lớp 12. Trong đó SGK Tin học 4 Cánh Diều cũng được biên soạn riêng, nhất quán về mô hình, cấu trúc, cách tiếp cận chung của Bộ sách Tin học Cánh Diều do cùng một tập thể tác giả biên soạn.",
+      "chars": 362
+    },
+    {
+      "index": 131,
+      "text": "Về đổi mới phương pháp tổ chức dạy học; khuyến khích học sinh tích cực, chủ động, sáng tạo trong học tập",
+      "chars": 104
+    },
+    {
+      "index": 132,
+      "text": "Quyển sách được biên soạn với quan điểm đổi mới phương pháp giáo dục tin học phù hợp với phát triển năng lực cho HS, được thể hiện ở việc tăng cường tổ chức cho HS hoạt động, tương tác và làm việc nhóm; yêu cầu và hướng dẫn HS làm sản phẩm phù hợp với yêu cầu bài học. Sách tạo cơ hội tốt để GV sử dụng các phương pháp dạy học tích cực. Dưới đây nhấn mạnh một số thuận lợi về tổ chức dạy học cho GV khi sử dụng quyển sách này:",
+      "chars": 426
+    },
+    {
+      "index": 133,
+      "text": "Sử dụng kĩ thuật dạy học trực quan và phương pháp dạy thực hành. Phương pháp dạy học thực hành rất quan trọng, đặc biệt trong phát triển năng lực sử dụng công cụ và phần mềm kĩ thuật số cho học sinh. Trong các bài học, trước các trình bày có tính lí thuyết, luôn có các hoạt động quan sát trực quan. Hoặc là các bài thực hành với những nhiệm vụ từ đơn giản đến phức tạp dần, giúp học sinh rèn luyện kĩ năng đơn lẻ đến phối hợp các thao tác trong các bài luyện tập.",
+      "chars": 464
+    },
+    {
+      "index": 134,
+      "text": "Hướng dẫn HS làm bài tập theo nhóm. Ở Chủ đề F, HS bắt đầu được hướng dẫn thực hiện bài tập theo nhóm, được tham gia tự đánh giá sản phẩm và khả năng làm việc nhóm.",
+      "chars": 164
+    },
+    {
+      "index": 135,
+      "text": "Khuyến khích học sinh tự khám phá. Trong một số bài học, các tình huống khuyến khích học sinh sử dụng các chức năng cơ bản của các phần mềm đơn giản để có thể tự khám phá tiếp theo.",
+      "chars": 181
+    },
+    {
+      "index": 136,
+      "text": "Thực hiện dạy học phân hoá để phát triển được năng lực của mọi HS. Thông tin được trình bày ở nhiều hình thức khác nhau trong các bài học. Bài tập ở mỗi bài được chia thành bài đơn giản, có bài dễ và bài khó hơn. Các bài đọc thêm cũng khích lệ HS hiểu biết rộng hơn, góp phần gây hứng thú với môn học và cho thấy mối liên hệ giữa bài học với cuộc sống.",
+      "chars": 352
+    },
+    {
+      "index": 138,
+      "text": "ÔN TẬP, KIỂM TRA, ĐÁNH GIÁ ĐỊNH KÌ VÀ CUỐI NĂM",
+      "chars": 47
+    },
+    {
+      "index": 139,
+      "text": "Chương trình mới được xây dựng theo hướng tiếp cận phát triển năng lực đòi hỏi kiểm tra, đánh giá cũng phải thay đổi đồng bộ.",
+      "chars": 125
+    },
+    {
+      "index": 140,
+      "text": "Những định hướng lớn cho kiểm tra, đánh giá môn Tin học trong nhà trường phổ thông được nhắc lại sau đây:",
+      "chars": 105
+    },
+    {
+      "index": 141,
+      "text": "- Sử dụng thường xuyên nhiều phương pháp đánh giá như đánh giá sản phẩm, đánh giá qua hồ sơ học tập, đánh giá qua quan sát hoạt động học tập, qua bài tập, đánh giá qua trả lời câu hỏi hoặc đối thoại.",
+      "chars": 199
+    },
+    {
+      "index": 142,
+      "text": "- Kết luận đánh giá của GV về năng lực tin học của mỗi HS dựa trên sự tổng hợp các kết quả đánh giá thường xuyên và kết quả đánh giá định kì.",
+      "chars": 141
+    },
+    {
+      "index": 143,
+      "text": "Một số điểm trao đổi liên quan đến kiểm tra, đánh giá Tin học ở lớp 4. GV cần bám sát thực hiện kiểm tra đánh giá theo Thông tư 272020/ BGDĐT về đánh giá HS tiểu học và Quyết định số 2904/QD-BGD ĐT triển khai dạy học, kiểm tra đánh giá , biểu mẫu hồ sơ cho môn “ Tin học và Công nghệ” như là hai môn học độc lập.",
+      "chars": 312
+    },
+    {
+      "index": 144,
+      "text": "Phối hợp đánh giá thường xuyên với đánh giá định kì, phối hợp nhận xét và chấm điểm để HS điều chỉnh việc học tập của mình nhằm đạt kết quả học tập tốt hơn. Tôn trọng đúng mức đánh giá thường xuyên và những nhận xét. Kết quả đánh giá phải giúp HS tự so sánh được thành công của bản thân với yêu cầu về năng lực.",
+      "chars": 311
+    },
+    {
+      "index": 145,
+      "text": "Có thể sử dụng nhiều phương pháp đánh giá thường xuyên như đánh giá qua quan sát hoạt động học tập; đánh giá qua trả lời câu hỏi, đối thoại; đánh giá qua bài luyện tập; đánh giá sản phẩm nhóm.",
+      "chars": 192
+    },
+    {
+      "index": 146,
+      "text": "Động viên HS chia sẻ ý tưởng hoặc kiến thức mới cho bạn bè.",
+      "chars": 59
+    },
+    {
+      "index": 147,
+      "text": "Cần đánh giá cao HS có khả năng chủ động tìm hiểu, học hỏi thêm để hoàn thiện kiến thức và kĩ năng trong bài học. Dựa vào mức độ thực hiện các yêu cầu cần đạt, có biểu hiện cụ thể về các thành phần năng lực để đánh giá theo các mức: Hoàn thành tốt; Hoàn thành; Chưa hoàn thành.",
+      "chars": 277
+    },
+    {
+      "index": 148,
+      "text": "- Bài kiểm tra định kì cuối học kì với đề gồm các câu hỏi, bài tập thiết kế Theo các mức: Mức 1: Nhận biết, mô tả nội dung đã học, áp dụng trực tiếp giải quyết vấn đề quen thuộc; Mức 2: Sắp xếp, kết nối được một số nội dung đã học để giải quyết vấn đề tương tự; Mức 3: Vận dụng được các kiến thức đã học để giải quyết vấn đề mới hoặc có những phản hồi hợp lí.",
+      "chars": 360
+    },
+    {
+      "index": 149,
+      "text": "- Đánh giá định kì về phát triển phẩm chất, năng lực tin học thông qua các nhận xét: Tốt, Đạt và Cần cố gắng.",
+      "chars": 109
+    },
+    {
+      "index": 150,
+      "text": "THIẾT BỊ DẠY HỌC, HỌC LIỆU",
+      "chars": 26
+    },
+    {
+      "index": 151,
+      "text": "Với quy định phòng máy có kết nối Internet và tối đa ba HS sử dụng chung một máy trong giờ thực hành là đủ để HS có thể đạt được kĩ năng theo yêu cầu của chương trình. Nếu có điều kiện trang thiết bị phòng máy và máy tính thực hành tốt hơn, các giờ dạy càng đạt hiệu quả cao hơn.",
+      "chars": 279
+    },
+    {
+      "index": 152,
+      "text": "Trong phòng thực hành cần được trang bị đủ máy tính, máy chiếu. Khi dạy trên lớp, GV cần chủ động tìm kiếm và chuẩn bị các học liệu một cách linh hoạt từ các nguồn như Internet, sách tham khảo, tranh ảnh. Một số trường có bảng thông minh, GV nên tận dụng thiết bị này trong giảng dạy.",
+      "chars": 284
+    },
+    {
+      "index": 153,
+      "text": "GV nên tìm hiểu Thông tư “Danh mục Thiết bị dạy học tối thiểu cấp tiểu học Môn Tin học” do Bộ ban hành. Trong đó quy định rõ trang thiết bị tối thiểu trang bị cho: Phòng thực hành tin học; Phần mềm; Thiết bị dạy học trực quan và Các thiết bị khác. GV cần yêu cầu cơ sở giáo dục phải cung cấp đầy đủ trang thiết bị tối thiểu đã quy định trong Danh mục.",
+      "chars": 351
+    },
+    {
+      "index": 155,
+      "text": "TÀI LIỆU THAM KHẢO, BỔ TRỢ",
+      "chars": 26
+    },
+    {
+      "index": 156,
+      "text": "9.1 Sách giáo viên",
+      "chars": 18
+    },
+    {
+      "index": 157,
+      "text": "SGV giúp GV nắm vững SGK sâu hơn và có những gợi ý về phương pháp tổ chức dạy học các bài học, gồm 2 phần:",
+      "chars": 106
+    },
+    {
+      "index": 158,
+      "text": "Phần một, Những vấn đề chung, mở đầu bằng nội dung giới thiệu khái quát chương trình môn Tin học ở cấp tiểu học cùng với những mục tiêu chung và mục tiêu đặc thù của môn học. Với đặc thù của mình, mục tiêu chính của môn Tin học là hình thành và phát triển năng lực tin học. Do vậy, biểu hiện của mỗi thành phần năng lực tin học phù hợp với học sinh cấp tiểu học được nêu lại để GV thuận tiện theo dõi và tra cứu trong khi khai thác tất cả các nội dung trong SGK. Cũng trong phần này, một số lưu ý về YCCĐ và nội dung giáo dục Tin học lớp 4 được trình bày ngắn gọn.",
+      "chars": 566
+    },
+    {
+      "index": 159,
+      "text": "Phần hai, Những vấn đề cụ thể, gồm những hướng dẫn và gợi ý cho GV ở mức mỗi chủ đề, chủ đề con và được chi tiết đến từng bài học trong mỗi chủ đề, chủ đề con. Tuỳ theo sự cần thiết, tương ứng với mỗi chủ đề sẽ có những hướng dẫn về khái niệm mới không dễ tiếp thu đối với HS, những giải thích và lưu ý về mức độ YCCĐ, một số kiến thức cung cấp thêm cho GV. Với từng bài học, SGV sẽ nêu một số gợi ý về phương pháp dạy học, về kiểm tra đánh giá thường xuyên, cuối cùng là mục đáp án, hướng dẫn trả lời tất cả các câu hỏi có trong các Hoạt động, Luyện tập, Vận dụng trong SGK. GV nên tham khảo thêm các tài liệu chuyên môn để có thể khuyến khích một số HS tự khám phá, mở rộng kiến thức, qua đó thực hiện dạy học phân hoá.",
+      "chars": 721
+    },
+    {
+      "index": 160,
+      "text": "9.2 Sách bài tập",
+      "chars": 16
+    },
+    {
+      "index": 161,
+      "text": "Sách bài tập hỗ trợ HS thực hiện các bài tập theo hướng dẫn của thầy, cô giáo, đồng thời là một tài liệu chính giúp HS tự học và tự tìm hiểu để mở rộng, nâng cao kiến thức. Giáo viên sử dụng sách để lựa chọn được bài tập phù hợp cho học sinh và có thể xây dựng công cụ kiểm tra đánh giá. Sách bài tập là tài liệu hỗ trợ thiết thực cho GV tổ chức dạy học phân hóa. Ngoài ra, sách bài tập cũng có thể là tài liệu tham khảo cho cán bộ quản lí khi cần có công cụ đánh giá chung trong trường, cụm trường hoặc toàn Sở Giáo dục và Đào tạo. Cuốn sách cũng giúp phụ huynh có thể hỗ trợ HS tự học ở nhà, tự đánh giá khách quan kết quả học tập của mình.",
+      "chars": 658
+    },
+    {
+      "index": 162,
+      "text": "Sách bài tập gồm hai phần:",
+      "chars": 29
+    },
+    {
+      "index": 163,
+      "text": "Phần I. Câu hỏi và bài tập. Tương ứng với mỗi bài học, nội dung của phần này gồm: (1) Tóm tắt nội dung bài học; (2) Câu hỏi và bài tập. Bài tập có thể ở các dạng: trắc nghiệm; tự luận; thực hành và Dự án học tập. Mỗi bài tập được đánh số thứ tự theo chủ đề, trước các chữ số là chữ cái in hoa – tên chủ đề tương ứng.",
+      "chars": 317
+    },
+    {
+      "index": 164,
+      "text": "Phần II. Hướng dẫn trả lời Câu hỏi và bài tập. Học sinh cần chủ động và nỗ lực tự thực hiện các câu hỏi và bài tập trước (ở phần I). Nội dung tương ứng ở phần II là những hướng dẫn làm bài để gợi ý cho học sinh hoặc để học sinh đối sánh, kiểm tra lại kết quả làm bài của bản thân.",
+      "chars": 281
+    },
+    {
+      "index": 165,
+      "text": "9.3 Học liệu điện tử",
+      "chars": 20
+    },
+    {
+      "index": 166,
+      "text": "HS và GV có thể sử dụng học liệu điện tử phục vụ dạy học trực tuyến và dạy học trên truyền hình:",
+      "chars": 96
+    },
+    {
+      "index": 167,
+      "text": "Bộ sách Cánh Diều đã xây dựng SGK điện tử trên Website www.hoc10.vn bao gồm: bộ sách CD, video minh họa, công cụ hỗ trợ dạy học, học tập tương tác. Ngoài ra còn có CTGDPT 2018, tài liệu tập huấn GV sử dụng SGK, video tiết dạy minh họa.",
+      "chars": 235
+    },
+    {
+      "index": 168,
+      "text": "Trên Youtube, kênh Hoc10 có video hướng dẫn sử dụng chi tiết: xem video, hình ảnh, làm bài tập tương tác trên sách, dùng các công cụ phục vụ dạy và học trực tuyến.",
+      "chars": 163
+    }
+  ],
+  "fullText": "GIỚI THIỆU SÁCH GIÁO KHOA TIN HỌC 4\n\nBỘ SÁCH CÁNH DIỀU\n\nTổng Chủ biên: PGS. TS. Hồ Sĩ Đàm\n\nChủ biên: GS. TS. Nguyễn Thanh Thủy\n\nGIỚI THIỆU CHUNG\n\nNhà xuất bản\n\nTin học 4 trong bộ sách giáo khoa Tin học Cánh Diều do Nhà xuất bản Đại học Sư phạm Hà Nội phối hợp với Công ty Đầu tư Xuất bản - Thiết bị Giáo dục Việt Nam (VEPIC) thực hiện. Sách có 72 trang, khổ 19 × 26,5 cm, in 4 màu.\n\nĐội ngũ tác giả\n\nSách được biên soạn bởi các nhà giáo thuộc trường Đại học Sư phạm Hà Nội và Đại học Quốc gia Hà Nội, Học viện Công nghệ Bưu chính viễn thông giàu kinh nghiệm và tâm huyết trong lĩnh vực giáo dục tin học.\n\nTổng Chủ biên: PGS. TS. NGND. Hồ Sĩ Đàm.\n\nChủ biên: GS. TS. NGUT. Nguyễn Thanh Thủy.\n\nCác tác giả: PGS. TS. NGUT. Hồ Cẩm Hà, TS. Nguyễn Chí Trung, TS. Đỗ Thị Bích Ngọc, ThS. Nguyễn Thị Hồng.\n\nTập thể tác giả là những chuyên gia trong giáo dục tin học với các đóng góp tiêu biểu như sau:\n\nTham gia Ban phát triển Chương trình môn Tin học 2018 với vai trò thành viên chủ chốt; Biên soạn bộ sách giáo khoa môn Tin học với vai trò Tổng Chủ biên, Chủ biên và tác giả.\n\nXây dựng chương trình bồi dưỡng giáo viên Tin học trình độ cử nhân Sư phạm Tin học; Chủ biên, tác giả các tài liệu đào tạo và bồi dưỡng, tập huấn giáo viên; Trực tiếp đào tạo và bồi dưỡng giáo viên.\n\nXây dựng chương trình và trực tiếp đào tạo thạc sĩ, tiến sĩ chuyên ngành Lí luận và Phương pháp dạy học.\n\nBiên soạn các tài liệu về chương trình, sách giáo khoa, phương pháp dạy học, kiểm tra, đánh giá trong giáo dục với vai trò Chủ biên, tác giả và giảng viên tập huấn.\n\nBiên soạn bộ sách “Hướng dẫn dạy học Tin học theo Chương trình môn Tin học 2018” ở cấp tiểu học, trung học cơ sở và trung học phổ thông với vai trò Tổng Chủ biên, Chủ biên và tác giả.\n\nMỤC TIÊU\n\nĐáp ứng yêu cầu của Chương trình (CT) môn Tin học 2018:\n\nHình thành và phát triển năng lực (NL) tin học, góp phần phát triển năm phẩm chất và ba năng lực chung được xác định trong Chương trình Giáo dục phổ thông (CTGDPT) 2018.\n\nNăng lực Tin học, được hình thành và phát triển xuyên suốt tất cả các lớp từ lớp 3 đến lớp 12, gồm năm thành phần sau đây:\n\nCung cấp ba mạch kiến thức Học vấn số hoá phổ thông (DL), Công nghệ thông tin và truyền thông (ICT), Khoa học máy tính (CS) thông qua 6 chủ đề.\n\nNăm thành phần NL tin học, ba mạch kiến thức và sáu chủ đề nội dung xuyên suốt có mối quan hệ biện chứng, logic tương hỗ.\n\nĐối với học sinh (HS) là tài liệu chính giúp:\n\nChiếm lĩnh tri thức, tìm tòi và vận dụng tri thức theo yêu cầu cần đạt (YCCĐ).\n\nCó thể tự học được. Khi biên soạn các tác giả luôn tuân thủ các định hướng chủ đạo: giảm tải, giảm số trang, phù hợp với tâm lí lứa tuổi và thời lượng bài học. Để đảm bảo yêu cầu chất lượng và có tính sư phạm, cung cấp cho học sinh đủ kiến thức và kĩ năng cốt lõi, chấp nhận 72 trang sách để trình bày kiến thức và kĩ năng, diễn đạt nội dung không quá cô đọng, dễ hiểu với nhiều ví dụ, giúp học sinh tự học với sự hướng dẫn của GV. Tuy rằng, khi đó giá thành sách có thể cao hơn một chút.\n\nĐối với giáo viên (GV) là tài liệu chính giúp:\n\nĐịnh hướng, lựa chọn nội dung, phương pháp, hình thức, phương tiện dạy học và công cụ đánh giá kết quả học tập của HS.\n\nHỗ trợ GV có ý tưởng sư phạm trong soạn giáo án, tổ chức dạy học. Chương trình môn Tin học 4 hoàn toàn mới, nên GV có thể gặp ít nhiều khó khăn khi tổ chức giảng dạy. Do đó, SGK Tin học 4 được biên soạn theo định hướng giảm thiểu khó khăn cho GV, giúp GV tham khảo trực tiếp SGK để biên soạn giáo án một cách phù hợp với điều kiện của HS và nhà trường.\n\nĐối với cán bộ quản lí (CBQL) và phụ huynh học sinh\n\nLà tài liệu giúp CBQL chuyên môn Tin học của nhà trường làm căn cứ để định hướng chỉ đạo, hướng dẫn các cơ sở xây dựng, điều chỉnh kế hoạch triển khai dạy học, làm tiêu chí để đánh giá chất lượng, dạy và học tin học ở cơ sở.\n\nLà tài liệu giúp phụ huynh nắm vững đúng mức YCCĐ hỗ trợ con em mình tự học ở nhà, tránh đòi hỏi vượt chuẩn đối với HS.\n\nCÁCH TIẾP CẬN\n\nTập thể tác giả đã nghiên cứu sâu sắc CT GDPT tổng thể và Chương trình môn Tin học 2018, các mô hình sách giáo khoa (SGK) Tin học trong và ngoài nước. Từ đó bộ sách Tin học Cánh Diều được thiết kế có tính khoa học và sư phạm, đảm bảo sự nhất quán xuyên suốt từ lớp 3 đến lớp 12 về mô hình, cách tiếp cận, cấu trúc trình bày. Ngoài tính nhất quán về quan điểm và định hướng của toàn bộ bộ sách, ở mỗi cấp học sách được biên soạn đáp ứng những đặc điểm riêng phù hợp với tâm sinh lí, sự phát triển năng lực và cách học của học sinh ở cấp học đó. Đây là nét đặc trưng nổi bật, thể hiện đặc sắc riêng của bộ sách Tin học Cánh Diều.\n\nTrên cơ sở thiết kế tổng thể của toàn bộ sách Tin học Cánh Diều, SGK Tin học 4 được biên soạn theo bốn cách tiếp cận chính. Sau đây trình bày rõ hơn về bốn cách tiếp cận quan trọng đó.\n\n3.1 Tiếp cận phát triển phẩm chất, năng lực\n\nBộ SGK Cánh Diều được biên soạn theo tiếp cận phát triển năng lực. Phù hợp với xu hướng phát triển của giáo dục các nước tiên tiến, SGK Tin học Cánh Diều hướng tới mục đích giúp HS vận dụng kiến thức để giải quyết vấn đề trong thực tiễn, giúp trả lời câu hỏi “Học xong, học sinh làm được những gì?”. Mục tiêu chính của SGK Tin học Cánh Diều là hình thành và phát triển năng lực Tin học, góp phần hình thành các phẩm chất cốt lõi và năng lực chung theo yêu cầu của CT GDPT tổng thể 2018.\n\nPhương pháp hình thành và phát triển phẩm chất chủ yếu\n\nTất cả sáu chủ đề môn Tin học 4 giúp hình thành và phát triển những phẩm chất chủ yếu: yêu nước, nhân ái, chăm chỉ, trung thực và trách nhiệm một cách hiệu quả cho HS. Các chủ đề “Đạo đức, pháp luật và văn hoá trong môi trường số”, “Ứng dụng tin học” tạo ra các hoạt động, tình huống giúp HS bộc lộ được các phẩm chất qua ứng xử trong môi trường số.\n\nCăn cứ vào các biểu hiện của những phẩm chất được mô tả trong CT GDPT tổng thể 2018, GV sẽ giúp HS hình thành và phát triển phẩm chất cho học sinh trong suốt cả quá trình dạy học và tổ chức hoạt động sư phạm.\n\nPhương pháp hình thành và phát triển năng lực chung\n\nNội dung và các yêu cầu cần đạt ở sáu chủ đề trong Chương trình môn Tin học 4 giúp hình thành và phát triển trực tiếp ba thành phần của năng lực tin học: (NLd) “Ứng dụng công nghệ thông tin và truyền thông trong học và tự học”; (NLe) “Hợp tác trong môi trường số” và (NLc) “Giải quyết vấn đề với sự hỗ trợ của công nghệ thông tin và truyền thông”. Ba thành phần của năng lực tin học này góp phần cụ thể, trực tiếp trong phát triển ba năng lực chung “tự chủ và tự học”, “giao tiếp và hợp tác”, “giải quyết vấn đề và sáng tạo”.\n\nCăn cứ vào tình huống cụ thể trong môi trường số và dựa vào các biểu hiện của năng lực chung được mô tả trong CT GDPT tổng thể 2018, GV sẽ giúp HS hình thành và phát triển năng lực chung trong suốt cả quá trình dạy học và tổ chức hoạt động sư phạm.\n\nNăm thành phần năng lực Tin học được hình thành và phát triển thông qua hệ thống các YCCĐ được mô tả trong Chương trình Tin học ở mỗi cấp, mỗi lớp học.\n\nCác YCCĐ tương ứng với sáu chủ đề môn Tin học lớp 4 trong Chương trình Tin học 2018 được mô tả trong bảng sau đây:\n\nTheo cách tiếp cận phát triển năng lực Tin học, SGK Tin học 4 Cánh Diều được biên soạn theo nguyên tắc:\n\nTất cả kiến thức đều được minh hoạ, có liên hệ với thực tế, giúp HS giải quyết một vài vấn đề vừa sức với các em trong bối cảnh thực tiễn nhất định.\n\nHS đạt được mục tiêu ở mỗi bài học sẽ đạt được YCCĐ của chủ đề con và chủ đề tương ứng. Đạt được đầy đủ các yêu cầu của sáu chủ đề cũng chính là đạt được đầy đủ các YCCĐ của CT môn Tin học 4.\n\n3.2 Tiếp cận hoạt động\n\nÝ nghĩa của cách tiếp cận này là: bằng hoạt động và thông qua hoạt động tích cực, trò chơi, HS thu nhận được kiến thức và chuyển hoá thành hiểu biết của mình, vận dụng được kiến thức vào các tình huống thực tiễn. Sách Tin học 4 Cánh Diều thiết kế các hoạt động, trò chơi cho mỗi bài học.\n\nVới GV, các hoạt động, trò chơi được thiết kế nhằm:\n\nHỗ trợ cho GV về ý tưởng sư phạm, thông qua các hoạt động, trò chơi để kiến tạo kiến thức mới cho HS, dẫn dắt HS tiếp thu kiến thức, kĩ năng mới một cách tự nhiên, dễ dàng hơn.\n\nHỗ trợ GV trong việc bồi dưỡng ý thức tự học cho HS và khuyến khích HS khám phá kiến thức mới cũng như tự đánh giá kết quả học tập của bản thân.\n\nMột số ví dụ minh chứng:\n\nVí dụ 1: Hoạt động 2 Bài 2, chủ đề C1 đưa ra các ví dụ liên quan đến Sao La, một trong những loài thú hiếm nhất trên thế giới, được tìm thấy ở Việt Nam.\n\nVí dụ 2: Hoạt động thực hành tạo văn bản, Bài 5 chủ đề E2 giúp các em khi tạo văn bản “Hoa tặng mẹ” nhân ngày 8-3.\n\n3. 3 Tiếp cận đối tượng\n\nVới cách tiếp cận đối tượng, sách Tin học 4 Cánh Diều đặt mục đích đảm bảo tính phù hợp của sách với đối tượng HS, đồng thời thực hiện được dạy học phân hoá.\n\nTận dụng những trải nghiệm HS đã có trong cuộc sống để xây dựng kiến thức mới, hình thành kĩ năng mới cho HS.\n\nĐặc biệt coi trọng sự phù hợp về tâm lí lứa tuổi, các ví dụ, các tình huống, các minh hoạ đến từ đời sống gần gũi với các em, gắn kết với các môn học khác.\n\nTheo thống kê của Bộ Giáo dục và Đào tạo hiện nay vẫn còn 14 tỉnh, thành tại đó HS cấp tiểu học được học Tin học chỉ từ 20% đến 50 %; số GV chưa đạt chuẩn chiếm 30%; gần 30% số trường chưa có phòng học Tin học. SGK Tin học 4 cần phải tinh giản tối đa, đưa các ví dụ, các hoạt động, các bài luyện tập với các mức độ (khó, trung bình, dễ) khác nhau và đa dạng nhằm giúp GV các tỉnh, thành, vùng miền trong triển khai, sử dụng SGK thuận lợi với tình hình thực tế. Có một số bài học không nhất thiết phải sử dụng máy tính.\n\nThực hiện dạy học phân hoá để phát triển được năng lực của mọi HS. Thông tin được trình bày ở nhiều hình thức khác nhau trong các bài học. Trong chủ đề E. ỨNG DỤNG TIN HỌC, có tuỳ chọn để GV quyết định giữa nội dung chủ đề con Chủ đề lựa chọn 1 Sử dụng công cụ đa phương tiện để tìm hiểu lịch sử, văn hoá và Chủ đề lựa chọn 2 Sử dụng phần mềm luyện gõ bàn phím.\n\nBài luyện tập cũng được cân nhắc cho phù hợp với yêu cầu dạy học cho đối tượng đa dạng và phổ cập, cụ thể khi có hai bài luyện tập thì bài đầu tiên là bài đơn giản, còn bài luyện tập thứ hai khó hơn một chút.\n\nCác bài học thể hiện sự tích hợp, liên thông với môn học khác, đưa vào nhiều tình huống yêu cầu sự vận dụng cả các kiến thức môn học khác.\n\nVí dụ 1: Ở một số bài học thầy, cô giáo khai thác tranh ảnh, chọn lọc chiếu lên màn hình máy tính của GV để giúp HS quan sát nhận biết.\n\nVí dụ 2: Một số tranh ảnh trong SGK thầy, cô giáo có thể thay thế cho phù hợp với HS địa phương.\n\nVí dụ 3: Với các chủ đề lựa chọn 1 và 2, có thể chọn chủ đề phù hợp với thực tế của địa phương, phù hợp với HS của vùng miền khác nhau.\n\n3.4 Tiếp cận hệ thống\n\nCách tiếp cận hệ thống được thể hiện trong toàn bộ bộ SGK Tin học Cánh Diều:\n\nĐảm bảo tính liên thông giữa các cấp học (nội môn, liên môn).\n\nĐảm bảo tính kế thừa và nhất quán xuyên suốt từ lớp 3 đến lớp 12. Sách biên soạn với các nguyên tắc sư phạm, xen kẽ nội dung lí thuyết với thực hành.\n\nVí dụ: Ở chủ đề lựa chọn 1, Bài 1 và Bài 2 liên quan nhiều đến môn học lịch sử, địa lí thể hiện sự liên thông rất rõ ràng giữa các môn. Các ví dụ, bài tập cũng thể hiện tính liên môn rất được coi trọng.\n\n4. TỔ CHỨC NỘI DUNG VÀ THỜI LƯỢNG\n\nSách gồm 6 chủ đề (từ A đến F), không có chủ đề G, được chia thành 33 bài học. Khi dạy, chỉ chọn Chủ đề lựa chọn 1 (2 tiết) hoặc Chủ đề lựa chọn 2 (2 tiết) tuỳ thuộc vào điều kiện và yêu cầu của nhà trường. Cuối môn học có bài Thực hành: Nhiệm vụ và sản phẩm. Mỗi bài học dự kiến phù hợp với việc dạy trong 1 tiết học, giúp GV linh hoạt trong tổ chức dạy học 1 tiết/1 tuần hoặc 2 tiết/1 tuần (tương ứng với 2 bài học). Ngoài 31 tiết học và 2 tiết kiểm tra định kì, GV còn có 2 tiết dự phòng, giúp sử dụng để ôn tập hoặc kiểm tra đánh giá. GV cũng có thể dùng 2 tiết dự phòng này để học bổ sung khi có sự cố nghỉ học, phải học bù.\n\nNội dung và phân bổ thời lượng cho các bài như mô tả ở bảng sau đây:\n\n5. CẤU TRÚC BÀI HỌC\n\nMỗi chủ đề có thể gồm một số chủ đề con. Mỗi chủ đề con có một số bài học. Các bài học trong một chủ đề con, chủ đề được đánh số thứ tự bắt đầu từ 1. Điều này làm cho GV có thể linh hoạt thay đổi thứ tự các chủ đề hoặc thứ tự các bài học trong một chủ đề sao cho phù hợp với kế hoạch triển khai dạy học của nhà trường (miễn là đảm bảo tính logic quan hệ giữa nội dung các bài học. Trong chủ đề E, có 2 chủ đề con là tuỳ chọn, được GV quyết định tuỳ thuộc vào điều kiện thực tế của nhà trường, sao cho phù hợp với thực tế. Mỗi bài học lí thuyết, mỗi bài thực hành đều được thiết kế cho 1 tiết học. Các bài học đều có cấu trúc chung như sau:\n\nPhần mở đầu nêu mục tiêu cần đạt của bài học.\n\nPhần khởi động nêu vấn đề, tạo hứng thú và dẫn dắt các em vào bài học một cách tự nhiên.\n\nPhần kiến thức mới gồm các hoạt động, trò chơi giúp kiến tạo kiến thức.\n\nLuyện tập gồm câu hỏi và bài tập luyện tập.\n\nVận dụng nêu nhiệm vụ vận dụng kiến thức.\n\nGhi nhớ giúp HS tóm tắt lại nội dung chính, cốt lõi.\n\nNội dung bài học được tổ chức theo cấu trúc phù hợp với quá trình nhận thức của HS, gồm các mục sau đây:\n\nMục tiêu của bài học được nêu ở ngay sau tên bài học với đoạn văn “Học xong bài này, em sẽ”. Những điều nêu ở đoạn văn tiếp sau đó thể hiện YCCĐ của chương trình tương ứng với nội dung bài, giúp cho HS, GV và cả phụ huynh xác định được đích đến của bài học.\n\nKhởi động là một câu hỏi hoặc một bài tập nhỏ nhưng thể hiện được bản chất vấn đề cần được giải quyết bởi kiến thức của bài học. Hoạt động dùng để nêu vấn đề như vậy làm học sinh liên tưởng và triệu hồi kiến thức đã có, có nhu cầu và hứng thú khám phá kiến thức mới để giải quyết.\n\nKiến thức mới được chia thành một số mục, mỗi mục hình thành cho học sinh một đơn vị kiến thức nhỏ của bài học. Để kiến tạo nên kiến thức ở mỗi mục như vậy, GV có thể tổ chức cho HS các hoạt động, trong đó có những trò chơi. Các hoạt động là các biện pháp mang tính sư phạm để giúp HS hứng thú học tập, tiếp thu được dễ dàng và sâu sắc những kiến thức mới. Các trò chơi nhằm tăng tính tương tác và hoạt động của HS, đồng thời tăng độ hứng thú trong tiếp thu kiến thức. GV hoàn toàn có thể thay đổi các hoạt động này bằng các hoạt động phù hợp hơn với đối tượng HS của mình. Toàn bộ phần văn bản (không kể các hoạt động) cung cấp thông tin hình thành kiến thức mới của bài. Các câu được nhấn mạnh trong mỗi mục được in màu xanh, giúp HS tập trung vào kiến thức mới thông qua các khái niệm cốt lõi, các kĩ năng cơ bản.\n\nLuyện tập có mục đích củng cố kiến thức mới, rèn luyện kiến thức và kĩ năng vừa hình thành bằng cách áp dụng trực tiếp hoặc làm tương tự những gì vừa tiếp thu. Thông qua luyện tập HS làm cho kiến thức mới trở thành của mình, HS bắt đầu có những kĩ năng mới.\n\nVận dụng giúp chuyển hoá kiến thức kĩ năng mới thành của mình thông qua giải quyết một vấn đề thực tiễn trong học tập, cuộc sống. Không thể dừng ở mức chỉ có kiến thức, HS phải được phát triển năng lực dùng kiến thức kĩ năng để giải quyết các vấn đề thực tiễn. Bài tập vận dụng đòi hỏi HS phải sử dụng hiểu biết mới có cùng với những kiến thức tích lũy được để giải quyết một vấn đề thực tiễn hoặc gần với thực tiễn, vừa sức các em.\n\nGhi nhớ gồm các câu, đoạn văn súc tích, cô đọng giúp HS nhớ kiến thức mới của bài học.\n\nMột điểm nhấn mạnh là do tính mở của SGK cao. Về cơ bản, SGK đã được biên soạn để GV có thể thực hiện hết tất cả các phần của bài học ngay trên lớp. Trường hợp cụ thể, GV cần có hướng dẫn để HS tự học ở nhà và GV cần có các biện pháp kiểm soát để đảm bảo rằng HS đã hiểu, hoàn thành bài học và đạt được mục tiêu và các YCCĐ của bài học đó.\n\nMỘT SỐ CẦN CHÚ Ý ĐỐI VỚI GIÁO VIÊN\n\nVề đổi mới tư duy\n\nCT môn Tin học 2018 được phê duyệt mang tính pháp lí, bắt buộc thực hiện. Các bộ SGK được nhóm tác giả biên soạn bám sát các quan điểm, mục tiêu, định hướng yêu cầu cần đạt, nội dung giáo dục, phương pháp giáo dục và đánh giá kết quả giáo dục của CT môn Tin học 2018.\n\nCT môn Tin học 2018 được xây dựng theo mô hình phát triển phẩm chất chủ yếu, năng lực chung, được chi tiết hoá bằng những YCCĐ. HS đạt được tất cả những YCCĐ đã đặt ra của chương trình cũng có nghĩa là học sinh có được những phẩm chất và năng lực mà giáo dục tin học lấy làm mục tiêu. Bởi vậy các YCCĐ nêu trong CT luôn phải được tham chiếu đến trong quá trình triển khai môn Tin học ở toàn bậc học phổ thông. YCCĐ được chi tiết tương ứng với từng chủ đề nội dung ở mỗi lớp, mỗi cấp. Tất cả các hoạt động từ thiết kế nội dung giáo dục, lựa chọn phương pháp dạy học, lựa chọn phương pháp đánh giá kết quả học tập đến biên soạn SGK chuẩn bị học liệu đều phải tham chiếu đến các YCCĐ.\n\nCó các mức độ cần đạt: Biết, Hiểu và Vận dụng. Trong các YCCĐ sử dụng một số động từ để thể hiện mức độ đáp ứng yêu cầu cần đạt về năng lực của HS.\n\nVề tính mở của SGK\n\nGV hoàn toàn có thể thay thế nội dung các hoạt động, các trò chơi, các ví dụ, các minh hoạ, các bài luyện tập. GV có thể sắp xếp, tổ chức lại các bài học, điều chỉnh phân bố thời lượng,… trên cơ sở đảm bảo được các mục tiêu của tất cả các bài học trong mỗi chủ đề con, chủ đề, để đạt YCCĐ của môn Tin học 4.\n\nGV được quyền chọn phần mềm ứng dụng khác, tương đương. Ví dụ, các phần mềm được giới thiệu trong SGK Tin học 4 có nhiều phần mềm có tính năng tương đương thay thế được hoặc dùng cùng phần mềm đó nhưng là phiên bản mới, có tính cập nhật, phổ biến hơn. Vì vậy, GV cần thường xuyên cập nhật các công nghệ hiện đại, trước mắt, lâu dài, xây dựng kho học liệu ngày càng hiện đại, phong phú hơn.\n\nGV cần linh hoạt và sáng tạo trong lựa chọn tư liệu, thiết kế các hoạt động sư phạm, tổ chức dạy học,… miễn là không chệch các mục tiêu học tập và các YCCĐ.\n\nVề dạy học phân hoá\n\nGV có thể khai thác trực tiếp các tình huống, trò chơi, các câu hỏi mở có trong SGK, mở rộng thêm các bài luyện tập có tính mở để hướng dẫn riêng cho các đối tượng HS khá hơn. Trong mọi trường hợp, GV cần chú ý bồi dưỡng ý thức tự học cho HS, khuyến khích HS tự khám phá, tự đánh giá, phát triển năng lực tuỳ theo khả năng cá nhân mỗi HS.\n\nSGK Tin học 4\n\nBộ sách Tin học ở Tiểu học do các tác giả là chuyên gia chuyên sâu thuộc lĩnh vực Tin học biên soạn, theo cách tiếp cận, mô hình , cấu trúc nhất quán xuyên suốt từ lớp 3 đến lớp 12. Trong đó SGK Tin học 4 Cánh Diều cũng được biên soạn riêng, nhất quán về mô hình, cấu trúc, cách tiếp cận chung của Bộ sách Tin học Cánh Diều do cùng một tập thể tác giả biên soạn.\n\nVề đổi mới phương pháp tổ chức dạy học; khuyến khích học sinh tích cực, chủ động, sáng tạo trong học tập\n\nQuyển sách được biên soạn với quan điểm đổi mới phương pháp giáo dục tin học phù hợp với phát triển năng lực cho HS, được thể hiện ở việc tăng cường tổ chức cho HS hoạt động, tương tác và làm việc nhóm; yêu cầu và hướng dẫn HS làm sản phẩm phù hợp với yêu cầu bài học. Sách tạo cơ hội tốt để GV sử dụng các phương pháp dạy học tích cực. Dưới đây nhấn mạnh một số thuận lợi về tổ chức dạy học cho GV khi sử dụng quyển sách này:\n\nSử dụng kĩ thuật dạy học trực quan và phương pháp dạy thực hành. Phương pháp dạy học thực hành rất quan trọng, đặc biệt trong phát triển năng lực sử dụng công cụ và phần mềm kĩ thuật số cho học sinh. Trong các bài học, trước các trình bày có tính lí thuyết, luôn có các hoạt động quan sát trực quan. Hoặc là các bài thực hành với những nhiệm vụ từ đơn giản đến phức tạp dần, giúp học sinh rèn luyện kĩ năng đơn lẻ đến phối hợp các thao tác trong các bài luyện tập.\n\nHướng dẫn HS làm bài tập theo nhóm. Ở Chủ đề F, HS bắt đầu được hướng dẫn thực hiện bài tập theo nhóm, được tham gia tự đánh giá sản phẩm và khả năng làm việc nhóm.\n\nKhuyến khích học sinh tự khám phá. Trong một số bài học, các tình huống khuyến khích học sinh sử dụng các chức năng cơ bản của các phần mềm đơn giản để có thể tự khám phá tiếp theo.\n\nThực hiện dạy học phân hoá để phát triển được năng lực của mọi HS. Thông tin được trình bày ở nhiều hình thức khác nhau trong các bài học. Bài tập ở mỗi bài được chia thành bài đơn giản, có bài dễ và bài khó hơn. Các bài đọc thêm cũng khích lệ HS hiểu biết rộng hơn, góp phần gây hứng thú với môn học và cho thấy mối liên hệ giữa bài học với cuộc sống.\n\nÔN TẬP, KIỂM TRA, ĐÁNH GIÁ ĐỊNH KÌ VÀ CUỐI NĂM\n\nChương trình mới được xây dựng theo hướng tiếp cận phát triển năng lực đòi hỏi kiểm tra, đánh giá cũng phải thay đổi đồng bộ.\n\nNhững định hướng lớn cho kiểm tra, đánh giá môn Tin học trong nhà trường phổ thông được nhắc lại sau đây:\n\n- Sử dụng thường xuyên nhiều phương pháp đánh giá như đánh giá sản phẩm, đánh giá qua hồ sơ học tập, đánh giá qua quan sát hoạt động học tập, qua bài tập, đánh giá qua trả lời câu hỏi hoặc đối thoại.\n\n- Kết luận đánh giá của GV về năng lực tin học của mỗi HS dựa trên sự tổng hợp các kết quả đánh giá thường xuyên và kết quả đánh giá định kì.\n\nMột số điểm trao đổi liên quan đến kiểm tra, đánh giá Tin học ở lớp 4. GV cần bám sát thực hiện kiểm tra đánh giá theo Thông tư 272020/ BGDĐT về đánh giá HS tiểu học và Quyết định số 2904/QD-BGD ĐT triển khai dạy học, kiểm tra đánh giá , biểu mẫu hồ sơ cho môn “ Tin học và Công nghệ” như là hai môn học độc lập.\n\nPhối hợp đánh giá thường xuyên với đánh giá định kì, phối hợp nhận xét và chấm điểm để HS điều chỉnh việc học tập của mình nhằm đạt kết quả học tập tốt hơn. Tôn trọng đúng mức đánh giá thường xuyên và những nhận xét. Kết quả đánh giá phải giúp HS tự so sánh được thành công của bản thân với yêu cầu về năng lực.\n\nCó thể sử dụng nhiều phương pháp đánh giá thường xuyên như đánh giá qua quan sát hoạt động học tập; đánh giá qua trả lời câu hỏi, đối thoại; đánh giá qua bài luyện tập; đánh giá sản phẩm nhóm.\n\nĐộng viên HS chia sẻ ý tưởng hoặc kiến thức mới cho bạn bè.\n\nCần đánh giá cao HS có khả năng chủ động tìm hiểu, học hỏi thêm để hoàn thiện kiến thức và kĩ năng trong bài học. Dựa vào mức độ thực hiện các yêu cầu cần đạt, có biểu hiện cụ thể về các thành phần năng lực để đánh giá theo các mức: Hoàn thành tốt; Hoàn thành; Chưa hoàn thành.\n\n- Bài kiểm tra định kì cuối học kì với đề gồm các câu hỏi, bài tập thiết kế Theo các mức: Mức 1: Nhận biết, mô tả nội dung đã học, áp dụng trực tiếp giải quyết vấn đề quen thuộc; Mức 2: Sắp xếp, kết nối được một số nội dung đã học để giải quyết vấn đề tương tự; Mức 3: Vận dụng được các kiến thức đã học để giải quyết vấn đề mới hoặc có những phản hồi hợp lí.\n\n- Đánh giá định kì về phát triển phẩm chất, năng lực tin học thông qua các nhận xét: Tốt, Đạt và Cần cố gắng.\n\nTHIẾT BỊ DẠY HỌC, HỌC LIỆU\n\nVới quy định phòng máy có kết nối Internet và tối đa ba HS sử dụng chung một máy trong giờ thực hành là đủ để HS có thể đạt được kĩ năng theo yêu cầu của chương trình. Nếu có điều kiện trang thiết bị phòng máy và máy tính thực hành tốt hơn, các giờ dạy càng đạt hiệu quả cao hơn.\n\nTrong phòng thực hành cần được trang bị đủ máy tính, máy chiếu. Khi dạy trên lớp, GV cần chủ động tìm kiếm và chuẩn bị các học liệu một cách linh hoạt từ các nguồn như Internet, sách tham khảo, tranh ảnh. Một số trường có bảng thông minh, GV nên tận dụng thiết bị này trong giảng dạy.\n\nGV nên tìm hiểu Thông tư “Danh mục Thiết bị dạy học tối thiểu cấp tiểu học Môn Tin học” do Bộ ban hành. Trong đó quy định rõ trang thiết bị tối thiểu trang bị cho: Phòng thực hành tin học; Phần mềm; Thiết bị dạy học trực quan và Các thiết bị khác. GV cần yêu cầu cơ sở giáo dục phải cung cấp đầy đủ trang thiết bị tối thiểu đã quy định trong Danh mục.\n\nTÀI LIỆU THAM KHẢO, BỔ TRỢ\n\n9.1 Sách giáo viên\n\nSGV giúp GV nắm vững SGK sâu hơn và có những gợi ý về phương pháp tổ chức dạy học các bài học, gồm 2 phần:\n\nPhần một, Những vấn đề chung, mở đầu bằng nội dung giới thiệu khái quát chương trình môn Tin học ở cấp tiểu học cùng với những mục tiêu chung và mục tiêu đặc thù của môn học. Với đặc thù của mình, mục tiêu chính của môn Tin học là hình thành và phát triển năng lực tin học. Do vậy, biểu hiện của mỗi thành phần năng lực tin học phù hợp với học sinh cấp tiểu học được nêu lại để GV thuận tiện theo dõi và tra cứu trong khi khai thác tất cả các nội dung trong SGK. Cũng trong phần này, một số lưu ý về YCCĐ và nội dung giáo dục Tin học lớp 4 được trình bày ngắn gọn.\n\nPhần hai, Những vấn đề cụ thể, gồm những hướng dẫn và gợi ý cho GV ở mức mỗi chủ đề, chủ đề con và được chi tiết đến từng bài học trong mỗi chủ đề, chủ đề con. Tuỳ theo sự cần thiết, tương ứng với mỗi chủ đề sẽ có những hướng dẫn về khái niệm mới không dễ tiếp thu đối với HS, những giải thích và lưu ý về mức độ YCCĐ, một số kiến thức cung cấp thêm cho GV. Với từng bài học, SGV sẽ nêu một số gợi ý về phương pháp dạy học, về kiểm tra đánh giá thường xuyên, cuối cùng là mục đáp án, hướng dẫn trả lời tất cả các câu hỏi có trong các Hoạt động, Luyện tập, Vận dụng trong SGK. GV nên tham khảo thêm các tài liệu chuyên môn để có thể khuyến khích một số HS tự khám phá, mở rộng kiến thức, qua đó thực hiện dạy học phân hoá.\n\n9.2 Sách bài tập\n\nSách bài tập hỗ trợ HS thực hiện các bài tập theo hướng dẫn của thầy, cô giáo, đồng thời là một tài liệu chính giúp HS tự học và tự tìm hiểu để mở rộng, nâng cao kiến thức. Giáo viên sử dụng sách để lựa chọn được bài tập phù hợp cho học sinh và có thể xây dựng công cụ kiểm tra đánh giá. Sách bài tập là tài liệu hỗ trợ thiết thực cho GV tổ chức dạy học phân hóa. Ngoài ra, sách bài tập cũng có thể là tài liệu tham khảo cho cán bộ quản lí khi cần có công cụ đánh giá chung trong trường, cụm trường hoặc toàn Sở Giáo dục và Đào tạo. Cuốn sách cũng giúp phụ huynh có thể hỗ trợ HS tự học ở nhà, tự đánh giá khách quan kết quả học tập của mình.\n\nSách bài tập gồm hai phần:\n\nPhần I. Câu hỏi và bài tập. Tương ứng với mỗi bài học, nội dung của phần này gồm: (1) Tóm tắt nội dung bài học; (2) Câu hỏi và bài tập. Bài tập có thể ở các dạng: trắc nghiệm; tự luận; thực hành và Dự án học tập. Mỗi bài tập được đánh số thứ tự theo chủ đề, trước các chữ số là chữ cái in hoa – tên chủ đề tương ứng.\n\nPhần II. Hướng dẫn trả lời Câu hỏi và bài tập. Học sinh cần chủ động và nỗ lực tự thực hiện các câu hỏi và bài tập trước (ở phần I). Nội dung tương ứng ở phần II là những hướng dẫn làm bài để gợi ý cho học sinh hoặc để học sinh đối sánh, kiểm tra lại kết quả làm bài của bản thân.\n\n9.3 Học liệu điện tử\n\nHS và GV có thể sử dụng học liệu điện tử phục vụ dạy học trực tuyến và dạy học trên truyền hình:\n\nBộ sách Cánh Diều đã xây dựng SGK điện tử trên Website www.hoc10.vn bao gồm: bộ sách CD, video minh họa, công cụ hỗ trợ dạy học, học tập tương tác. Ngoài ra còn có CTGDPT 2018, tài liệu tập huấn GV sử dụng SGK, video tiết dạy minh họa.\n\nTrên Youtube, kênh Hoc10 có video hướng dẫn sử dụng chi tiết: xem video, hình ảnh, làm bài tập tương tác trên sách, dùng các công cụ phục vụ dạy và học trực tuyến.",
+  "paragraphCount": 141,
+  "meta": {
+    "source": "hoc10",
+    "subject": "tin-hoc",
+    "category": "worksheets"
+  },
+  "sourceName": "04_Gioi_thieu_SGK_Tin_hoc_4_ban_word.docx"
+}

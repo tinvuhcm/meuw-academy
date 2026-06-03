@@ -1,0 +1,329 @@
+{
+  "meta": {
+    "file": "w35_i001_Tuan_35_-_Bai_95_On_tap_ve_mot_so_yeu_to_thong_ke_va_xac_suat_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w35_i001_Tuan_35_-_Bai_95_On_tap_ve_mot_so_yeu_to_thong_ke_va_xac_suat_-_Tiet_1.pptx",
+    "slideCount": 21
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 2",
+        "Tuần 35",
+        "Bài 95: Ôn tập về một số",
+        "yếu tố thống kê và xác suất",
+        "Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "content",
+      "paragraphs": [
+        "Nhiệm vụ bí mật",
+        "HS lấy ngẫu nhiên một tờ giấy ghi nhiệm vụ bí mật. HS mở nhiệm vụ, có thể trả lời hoặc mời một vài bạn khác trả lời.",
+        "HS nào trả lời được nhiều câu hỏi nhất sẽ dành chiến thắng.",
+        "Luật chơi"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "questions",
+      "paragraphs": [
+        "Khi kiểm đếm số lượng, chúng ta thường dùng cách nào để ghi lại kết quả?",
+        "Bảng thống kê cho ta biết điều gì?",
+        "Biểu đồ cột cho ta biết điều gì?",
+        "Một số câu hỏi tham khảo"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Khi đi thăm vườn cây ăn quả nhà ông, Nguyên đã kiểm đếm một loại cây ăn quả và ghi lại kết quả như sau :"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "a) Hãy giúp Nguyên kiểm đếm số lượng từng loại cây bằng cách hoàn thành bảng dưới đây:",
+        "Loại cây",
+        "Nhãn",
+        "Xoài",
+        "Cam",
+        "Bưởi",
+        "Mít",
+        "Số lượng",
+        "11",
+        "16",
+        "22",
+        "11",
+        "10"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "b) Nêu cách hoàn thành biểu đồ cột để biểu diễn các số liệu trên:",
+        "Loại cây",
+        "Nhãn",
+        "Xoài",
+        "Cam",
+        "Bưởi",
+        "Mít",
+        "Số lượng",
+        "11",
+        "16",
+        "22",
+        "11",
+        "10",
+        "16",
+        "22",
+        "11",
+        "Xoài",
+        "Cam",
+        "Bưởi",
+        "Mít",
+        "10"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "questions",
+      "paragraphs": [
+        "01",
+        "c) Trả lời các câu hỏi:",
+        "-  Nguyên đã kiểm đếm những loại cây nào trong vườn nhà ông?",
+        "- Trong các loại cây Nguyên kiểm đếm, loại cây nào số lượng nhiều nhất? Ít nhất? Những cây nào có số lượng bằng nhau?",
+        "-  Nguyên đã kiểm đếm tất cả bao nhiêu cây trong vườn nhà ông",
+        "- Trung bình mỗi loại cây trong vườn nhà ông có bao nhiêu cây?",
+        "Trả lời",
+        "- Nguyên đã kiểm đếm các loại cây:",
+        "Nhãn",
+        "Xoài",
+        "Cam",
+        "Bưởi",
+        "Mít"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Trả lời:",
+        "Loại cây có số lượng nhiều nhất là:",
+        "Loại cây có số lượng ít nhất là:",
+        "Số cây Nguyên đã kiểm đếm trong vườn nhà ông là:",
+        "11 + 16 + 22 + 11 + 10 = 70 (cây)",
+        "Cây Cam",
+        "Cây Mít",
+        "Cây Nhãn và cây Bưởi có số lượng bằng nhau (đều bằng 11 cây)."
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Trả lời",
+        "Trung bình mỗi loại cây trong vườn có số cây là:",
+        "Nhắc lại cách kiểm đếm.",
+        "Ý nghĩa của việc kiểm đếm trong cuộc sống."
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "Đại hội thể thao Đông Nam Á SEA Game 31 được tổ chức tại Việt Nam vào tháng 5 năm 2022. Trong đó, đoàn thể thao Việt Nam đã đạt được 205 huy chương Vàng, 125 huy chương Bạc và 116 huy chương Đồng. Đoàn thể thao Thái Lan đã đạt được 92 huy chương Vàng, 103 huy chương Bạc và 136 huy chương Đồng.",
+        "a) Dựa và thông tin trên hãy hoàn thành bảng thống kê sau :",
+        "Huy chương vàng",
+        "Vàng",
+        "Bạc",
+        "Đồng",
+        "Việt Nam",
+        "Thái Lan",
+        "205",
+        "125",
+        "116",
+        "92",
+        "103",
+        "136",
+        "02"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "questions",
+      "paragraphs": [
+        "b) Thảo luận về số liệu trong bảng thống kê trên và nêu nhận xét.",
+        "Bảng thống kê số liệu cho biết về gì?",
+        "Có bao nhiêu huy loại huy chương được thống kê trong bảng?",
+        "Loại huy chương đội tuyển Việt Nam đạt nhiều nhất?",
+        "Bảng thống kê số liệu cho biết số lượng huy chương đạt được của đoàn tuyển thể thao Việt Nam và Thái Lan tại SEA Game 31.",
+        "02"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "- 3 loại huy chương:",
+        "- Huy chương đoàn thể thao Việt Nam đạt được:",
+        "Nhiều nhất là:",
+        "Ít nhất là:",
+        "- Huy chương đoàn thể thao Thái Lan đạt được:",
+        "Nhiều nhất là:",
+        "Ít nhất là:",
+        "02",
+        "Vàng",
+        "Bạc",
+        "Đồng",
+        "Huy chương Vàng (205 huy chương)",
+        "Huy chương Đồng (116 huy chương)",
+        "Huy chương Đồng (136 huy chương)",
+        "Huy chương Vàng (92 huy chương)"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "Tổng số huy chương mà 2 đoàn đạt được là:",
+        "205  125  106  92 + 103  136  767 (huy chương)",
+        "Số huy chương của đoàn thể thao Việt Nam nhiều hơn số huy chương của đoàn thể thao Thái Lan."
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em ôn tập được những kiến thức gì?"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "questions",
+      "paragraphs": [
+        "Để nắm chắc kiến thức đó, em nhắn bạn điều gì?"
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 19,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước",
+        "Bài 94 – Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 21,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 2 Tuần 35",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Khi kiểm đếm số lượng, chúng ta thường dùng cách nào để ghi lại kết quả?",
+        "slide": 4
+      },
+      {
+        "type": "question",
+        "text": "Bảng thống kê cho ta biết điều gì?",
+        "slide": 4
+      },
+      {
+        "type": "question",
+        "text": "Biểu đồ cột cho ta biết điều gì?",
+        "slide": 4
+      },
+      {
+        "type": "question",
+        "text": "-  Nguyên đã kiểm đếm những loại cây nào trong vườn nhà ông?",
+        "slide": 9
+      },
+      {
+        "type": "question",
+        "text": "- Trong các loại cây Nguyên kiểm đếm, loại cây nào số lượng nhiều nhất? Ít nhất? Những cây nào có số lượng bằng nhau?",
+        "slide": 9
+      },
+      {
+        "type": "question",
+        "text": "- Trung bình mỗi loại cây trong vườn nhà ông có bao nhiêu cây?",
+        "slide": 9
+      },
+      {
+        "type": "question",
+        "text": "Bảng thống kê số liệu cho biết về gì?",
+        "slide": 13
+      },
+      {
+        "type": "question",
+        "text": "Có bao nhiêu huy loại huy chương được thống kê trong bảng?",
+        "slide": 13
+      },
+      {
+        "type": "question",
+        "text": "Loại huy chương đội tuyển Việt Nam đạt nhiều nhất?",
+        "slide": 13
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em ôn tập được những kiến thức gì?",
+        "slide": 16
+      },
+      {
+        "type": "question",
+        "text": "Để nắm chắc kiến thức đó, em nhắn bạn điều gì?",
+        "slide": 17
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước",
+        "slide": 19
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

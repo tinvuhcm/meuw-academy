@@ -1,0 +1,198 @@
+{
+  "meta": {
+    "file": "w13_i001_Tuan_13_-_Bai_38_Chia_cho_so_co_mot_chu_so_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w13_i001_Tuan_13_-_Bai_38_Chia_cho_so_co_mot_chu_so_-_Tiet_1.pptx",
+    "slideCount": 15
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 1",
+        "Tuần 13",
+        "Bài 38: Chia cho số có một chữ số - Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "content",
+      "paragraphs": [
+        "Đặt tính rồi tính",
+        "396  3",
+        "1 720  5",
+        "396",
+        "132",
+        "09",
+        "06",
+        "1 720",
+        "344",
+        "22",
+        "20"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "questions",
+      "paragraphs": [
+        "187 284  6 = ?"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "187 284  6",
+        "18 chia 6 được 3, viết 3;",
+        "3 nhân 6 bằng 18, 18 trừ 18 bằng 0, viết 0.",
+        "Hạ 7, 7 chia 6 được 1, viết 1;",
+        "1 nhân 6 bằng 6, 7 trừ 6 bằng 1, viết 1.",
+        "Hạ 2, được 12, 12 chia 6 được 2, viết 2;",
+        "2 nhân 6 bằng 12, 12 trừ 12 bằng 0, viết 0.",
+        "Hạ 8, 8 chia 6 được 1, viết 1;",
+        "1 nhân 6 bằng 6, 8 trừ 6 bằng 2, viết 2.",
+        "Hạ 4, được 24, 24 chia 6 bằng 4, viết 4;",
+        "4 nhân 6 bằng 24, 24 trừ 24 bằng 0, viết 0.",
+        "Chia theo thức tự từ trái sang phải:",
+        "187 284",
+        "Vậy 187 284  3  31 214"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Tính:",
+        "274 596",
+        "91 532",
+        "04",
+        "1 5",
+        "09",
+        "72 846",
+        "12 141",
+        "12",
+        "0 8",
+        "24",
+        "367 639",
+        "91 909",
+        "07",
+        "3 6",
+        "03"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "Đặt tính rồi tính:",
+        "72 060  4",
+        "230 855  5",
+        "133 456  7",
+        "249 018  6",
+        "72 060",
+        "18 015",
+        "32",
+        "0 0",
+        "06",
+        "20",
+        "230 855",
+        "46 171",
+        "30",
+        "0 8",
+        "35",
+        "05",
+        "133 456",
+        "19 065",
+        "63",
+        "0 4",
+        "45",
+        "36",
+        "249 018",
+        "41 503",
+        "09",
+        "3 0",
+        "01",
+        "18"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em học thêm được điều gì?"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "questions",
+      "paragraphs": [
+        "Khi đặt tính và tính, em nhắn bạn cần lưu ý những gì?"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 13,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 15,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 1 Tuần 13",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em học thêm được điều gì?",
+        "slide": 10
+      },
+      {
+        "type": "question",
+        "text": "Khi đặt tính và tính, em nhắn bạn cần lưu ý những gì?",
+        "slide": 11
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

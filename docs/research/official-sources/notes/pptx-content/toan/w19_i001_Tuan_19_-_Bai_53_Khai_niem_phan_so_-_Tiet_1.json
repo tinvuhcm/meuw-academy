@@ -1,0 +1,184 @@
+{
+  "meta": {
+    "file": "w19_i001_Tuan_19_-_Bai_53_Khai_niem_phan_so_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w19_i001_Tuan_19_-_Bai_53_Khai_niem_phan_so_-_Tiet_1.pptx",
+    "slideCount": 18
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 2",
+        "Tuần 19",
+        "Bài 53: Khái niệm phân số",
+        "Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Chia hình tròn thành hai phần bằng nhau và tô màu một phần, ta có . Chia hình vuông thành bốn phần bằng nhau và tô màu ba phần thì có thể được diễn tả tương tự không?"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 5,
+      "type": "content",
+      "paragraphs": [
+        "Chia hình tròn thành 4 phần bằng nhau. Tô màu 3 phần.",
+        "Ta nói: Đã tô màu ba phần tư hình tròn.",
+        "Viết là  ; đọc là ba phần tư.",
+        "Ta gọi là một phân số."
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "Tử số",
+        "Mẫu số",
+        "Mẫu số cho biết hình tròn được chia thành 4 phần bằng nhau. Tử số cho biết 3 phần bằng nhau đã được tô màu.",
+        "Trong mỗi phân số, tử số là số tự nhiên viết trên gạch ngang, mẫu số là số tự nhiên khác 0 viết dưới gạch ngang."
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "a) Chọn các thẻ tương ứng với mỗi hình:",
+        "Một phần năm",
+        "Một phần hai",
+        "Một phần sáu"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "b) Thực hiện (theo mẫu):",
+        "Năm phần tám",
+        "Bốn phần tám"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "c) Nêu tử số, mẫu số của mỗi phân số có ở câu b.",
+        "Trả lời",
+        "Phân số    có tử số là 3, mẫu số là 5.",
+        "Phân số   \tcó tử số là 5, mẫu số là 8.",
+        "Phân số   \tcó tử số là 4, mẫu số là 8.",
+        "01"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "Chỉ ra lỗi sai trong mỗi phát biểu sau:",
+        "02",
+        "Hình tam giác, không được chia thành 2 nửa bằng nhau.",
+        "Hình chữ nhật, không được chia thành 3 phần bằng nhau.",
+        "Hình vuông, không được chia thành 3 phần bằng nhau."
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "a) Nêu rồi đọc phân số chỉ số phần đã tô màu trong mỗi hình dưới đây (theo mẫu):",
+        "03",
+        "Ba phần năm",
+        "Bốn phần bảy"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "b) Nêu phân số chỉ số lon nước ngọt còn lại trong mỗi hộp:",
+        "03",
+        "12"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em đã học được những gì?"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 16,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước Bài 53: Khái niệm phân số (Tiết 2)"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 18,
+      "type": "empty",
+      "paragraphs": []
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 2 Tuần 19",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Chia hình tròn thành hai phần bằng nhau và tô màu một phần, ta có . Chia hình vuông thành bốn phần bằng nhau và tô màu ba phần thì có thể được diễn tả tương tự không?",
+        "slide": 3
+      },
+      {
+        "type": "task",
+        "text": "Viết là  ; đọc là ba phần tư.",
+        "slide": 5
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em đã học được những gì?",
+        "slide": 14
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước Bài 53: Khái niệm phân số (Tiết 2)",
+        "slide": 16
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

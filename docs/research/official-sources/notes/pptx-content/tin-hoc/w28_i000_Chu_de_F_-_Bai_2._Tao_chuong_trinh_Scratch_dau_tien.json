@@ -1,0 +1,303 @@
+{
+  "meta": {
+    "file": "w28_i000_Chu_de_F_-_Bai_2._Tao_chuong_trinh_Scratch_dau_tien.pptx",
+    "subject": "tin-hoc",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tin-hoc\\slides\\w28_i000_Chu_de_F_-_Bai_2._Tao_chuong_trinh_Scratch_dau_tien.pptx",
+    "slideCount": 29
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "Tin học 4",
+        "Chủ đề F",
+        "Làm quen với lập trình trực quan",
+        "Bài 2: Tạo chương trình",
+        "Scatch đầu tiên"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "a) Vùng Lập trình có mấy lệnh? Màu sắc, hình dạng các \tlệnh đó khác nhau như thế nào?",
+        "b) Khi nháy chuột vào       thì nhân vật Mèo hoạt động \tnhư thế nào ở vùng Sân khấu?"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "a) Ba lệnh với ba màu khác nhau tương ứng với ba nhóm lệnh. Các lệnh có hai hình dạng khác nhau: các lệnh bên dưới có phần lõm xuống để ghép với các lệnh trước đó; lệnh đầu tiên không có phần lõm nên không ghép được lệnh trước đó.",
+        "b) Nhân vật Mèo sẽ bắt đầu di chuyển 10 bước và nói Xin chào trong 2 giây."
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "MỘT SỐ LỆNH CƠ BẢN TRONG NHÓM LỆNH SỰ KIỆN"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "questions",
+      "paragraphs": [
+        "Quan sát hướng dẫn sau đó thực hành tạo",
+        "các lệnh như Hình 1 và nháy chuột vào     .",
+        "Nhân vật Mèo ở vùng Sân khấu hoạt động như thế nào?"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "Quan sát hướng dẫn sau đó thực hành tạo",
+        "các lệnh như Hình 1 và nháy chuột vào     .",
+        "Nhân vật Mèo trên sân khấu hoạt động di chuyển 10 bước và nói \"Xin chào\" trong 2 giây."
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "questions",
+      "paragraphs": [
+        "Theo em, có thể ghép thêm lệnh nào trước lệnh                      được không?",
+        "Không thể ghép các lệnh khác vào trước lệnh                   ."
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "Một số lệnh cơ bản trong nhóm lệnh Sự kiện"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "Mô tả những sự kiện nào có thể làm cho các lệnh thực hiện ngoài nháy chuột vào      .",
+        "Các lệnh ghép sau các lệnh ở bảng 1 sẽ được thực hiện khi có sự kiện tương ứng xảy ra (ví dụ: nháy chuột vào    , gõ phím, nháy chuột vào nhân vật trên vùng Sân khấu)."
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "TẠO CHƯƠNG TRÌNH GIỚI THIỆU VỀ BẢN THÂN"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "Cho biết các bước tạo một chương trình",
+        "Bước 1: Tìm hiểu yêu cầu."
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "Cho biết các bước tạo một chương trình",
+        "Bước 1: Tìm hiểu yêu cầu.",
+        "Bước 2: Tìm hiểu kịch bản."
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "content",
+      "paragraphs": [
+        "Cho biết các bước tạo một chương trình",
+        "Bước 1: Tìm hiểu yêu cầu.",
+        "Bước 2: Tìm hiểu kịch bản.",
+        "Bước 3: Lập trình và chạy thử chương trình."
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "content",
+      "paragraphs": [
+        "1. Di chuyển 10 bước.",
+        "2. Hiện bóng nói “Xin chào! Tớ là học sinh lớp 4!” trong 3 giây.",
+        "3. Hiện bóng nói “Tớ thích Scratch!” trong 3 giây.",
+        "Kịch bản cho nhân vật",
+        "Khi nháy chuột vào     , nhân vật Mèo trên vùng Sân khấu thực hiện lần lượt:"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "content",
+      "paragraphs": [
+        "Lưu ý",
+        "Kịch bản giúp em lập trình nhanh hơn vì đã chọn và sắp xếp thứ tự lệnh."
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "content",
+      "paragraphs": [
+        "Cách lưu chương trình vào máy tính",
+        "B2: Chọn Lưu về máy tính.",
+        "B1: Chọn Tập tin."
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "questions",
+      "paragraphs": [
+        "Khi nháy chuột vào     , em thấy nhân vật Mèo ở vùng Sân khấu có hoạt động đúng như kịch bản không?",
+        "Nhân vật Mèo có hoạt động đúng như kịch bản."
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 21,
+      "type": "questions",
+      "paragraphs": [
+        "Em có thể ghép lệnh                               trước lệnh            được không?",
+        "Bài tập 1",
+        "Trả lời:",
+        "Không vì lệnh                     không có phần lõm để ghép và nó luôn đứng trước các lệnh khác để điều khiển nhân vật khi sự kiện nháy chuột vào      được kích hoạt."
+      ]
+    },
+    {
+      "slideNo": 22,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy cho biết kết quả sau khi thực hiện hai chương trình A và B  giống và khác nhau như thế nào?",
+        "Bài tập 2"
+      ]
+    },
+    {
+      "slideNo": 23,
+      "type": "content",
+      "paragraphs": [
+        "Giống: đều di chuyển nhân vật 1 đoạn về phía trước dài 10 bước và hiển thị bóng nói “Xin chào!” trong 2 giây.",
+        "Khác:",
+        "A: Hiển thị bóng nói trong 2 giây rồi mới di chuyển.",
+        "B: Di chuyển và hiển thị bóng nói đồng thời.",
+        "Trả lời:"
+      ]
+    },
+    {
+      "slideNo": 24,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 25,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy tạo chương trình để khi nháy chuột vào  nhân vật Mèo hiển thị lần lượt 2 bóng nói giới thiệu: tên, sở thích của em.",
+        "Gợi ý:"
+      ]
+    },
+    {
+      "slideNo": 26,
+      "type": "theory",
+      "paragraphs": [
+        "Chương trình Scratch gồm các lệnh được ghép với nhau theo thứ tự phù hợp.",
+        "Nhóm lệnh Sự kiện chứa một số lệnh giúp em tạo chương trình có thể bắt đầu chạy bằng cách sử dụng chuột, bàn phím.",
+        "GHI NHỚ"
+      ]
+    },
+    {
+      "slideNo": 27,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "02",
+        "Ôn lại các kiến thức đã học ở Bài 2",
+        "Đọc và chuẩn bị trước Bài 3:",
+        "Tạo chương trình có phông nền thay đổi"
+      ]
+    },
+    {
+      "slideNo": 28,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 29,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "Tin học 4 Chủ đề F Làm quen với lập trình trực quan",
+    "questions": [
+      {
+        "type": "question",
+        "text": "a) Vùng Lập trình có mấy lệnh? Màu sắc, hình dạng các \tlệnh đó khác nhau như thế nào?",
+        "slide": 3
+      },
+      {
+        "type": "question",
+        "text": "b) Khi nháy chuột vào       thì nhân vật Mèo hoạt động \tnhư thế nào ở vùng Sân khấu?",
+        "slide": 3
+      },
+      {
+        "type": "question",
+        "text": "Nhân vật Mèo ở vùng Sân khấu hoạt động như thế nào?",
+        "slide": 7
+      },
+      {
+        "type": "question",
+        "text": "Theo em, có thể ghép thêm lệnh nào trước lệnh                      được không?",
+        "slide": 9
+      },
+      {
+        "type": "question",
+        "text": "Khi nháy chuột vào     , em thấy nhân vật Mèo ở vùng Sân khấu có hoạt động đúng như kịch bản không?",
+        "slide": 19
+      },
+      {
+        "type": "question",
+        "text": "Em có thể ghép lệnh                               trước lệnh            được không?",
+        "slide": 21
+      },
+      {
+        "type": "question",
+        "text": "Em hãy cho biết kết quả sau khi thực hiện hai chương trình A và B  giống và khác nhau như thế nào?",
+        "slide": 22
+      },
+      {
+        "type": "task",
+        "text": "Em hãy tạo chương trình để khi nháy chuột vào  nhân vật Mèo hiển thị lần lượt 2 bóng nói giới thiệu: tên, sở thích của em.",
+        "slide": 25
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước Bài 3:",
+        "slide": 27
+      }
+    ],
+    "vocab": [],
+    "keyPoints": [
+      "Chương trình Scratch gồm các lệnh được ghép với nhau theo thứ tự phù hợp.",
+      "Nhóm lệnh Sự kiện chứa một số lệnh giúp em tạo chương trình có thể bắt đầu chạy bằng cách sử dụng chuột, bàn phím."
+    ]
+  }
+}

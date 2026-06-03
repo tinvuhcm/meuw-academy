@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "file": "w29_i004_Tuan_29_-_Bai_82_Tim_phan_so_cua_mot_so_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w29_i004_Tuan_29_-_Bai_82_Tim_phan_so_cua_mot_so_-_Tiet_1.pptx",
+    "slideCount": 18
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 2",
+        "Tuần 29",
+        "Bài 82: Tìm phân số của một số Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Có bao nhiêu hình tròn?",
+        "Lấy ra bao nhiêu phần số hình tròn?",
+        "Câu hỏi là gì?"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "questions",
+      "paragraphs": [
+        "Có 12 hình tròn",
+        "Lấy ra  số hình tròn",
+        "Hỏi: “Số hình tròn được lấy ra là bao nhiêu?”"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "questions",
+      "paragraphs": [
+        "A. TÌM PHÂN SỐ CỦA MỘT SỐ",
+        "Phân số  cho ta biết điều gì?",
+        "của 12 hình tròn là bao nhiêu?"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "Nếu số hình tròn được chia thành 3 phần thì là một phần của số hình tròn đó",
+        "Tức là: (12 : 3)",
+        "của 12 hình tròn là:",
+        "Số hình tròn được lấy ra là:",
+        "4 hình tròn"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "questions",
+      "paragraphs": [
+        "của 12 hình tròn là bao nhiêu?",
+        "Muốn tìm  của 12, ta thực hiện phép tính gì?"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "questions",
+      "paragraphs": [
+        "của 12 hình tròn là 8 hình tròn.",
+        "Ta thực hiện phép nhân :",
+        "Vậy muốn tìm phân số của một số ta làm thế nào?"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "Muốn tìm phân số của một số, ta lấy số đó nhân với phân số đã cho.",
+        "Ví dụ:",
+        "a)",
+        "b)",
+        "= 1",
+        "= 18"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 1: Số?",
+        "của 10 ngôi sao là:",
+        "của 12 hình vuông:",
+        "ngôi sao",
+        "hình vuông",
+        "10"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 2:",
+        "Tìm phân số của một số trong mỗi trường hợp sau:",
+        "a) của 18 là",
+        "của 42 là",
+        "b)  của 20 là",
+        "của 21 là",
+        "c)  của 35 là",
+        "của 36 là",
+        "15",
+        "14"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "questions",
+      "paragraphs": [
+        "CỦNG CỐ, DẶN DÒ",
+        "Qua bài học hôm nay, em học được những gì?",
+        "Muốn tìm phân số của một số làm thế nào?"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước Bài 82: Tìm phân số của một số - Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 18,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 2 Tuần 29",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Có bao nhiêu hình tròn?",
+        "slide": 3
+      },
+      {
+        "type": "question",
+        "text": "Lấy ra bao nhiêu phần số hình tròn?",
+        "slide": 3
+      },
+      {
+        "type": "question",
+        "text": "Phân số  cho ta biết điều gì?",
+        "slide": 6
+      },
+      {
+        "type": "question",
+        "text": "của 12 hình tròn là bao nhiêu?",
+        "slide": 6
+      },
+      {
+        "type": "question",
+        "text": "của 12 hình tròn là bao nhiêu?",
+        "slide": 8
+      },
+      {
+        "type": "question",
+        "text": "Muốn tìm  của 12, ta thực hiện phép tính gì?",
+        "slide": 8
+      },
+      {
+        "type": "question",
+        "text": "Vậy muốn tìm phân số của một số ta làm thế nào?",
+        "slide": 9
+      },
+      {
+        "type": "task",
+        "text": "Tìm phân số của một số trong mỗi trường hợp sau:",
+        "slide": 13
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em học được những gì?",
+        "slide": 14
+      },
+      {
+        "type": "question",
+        "text": "Muốn tìm phân số của một số làm thế nào?",
+        "slide": 14
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước Bài 82: Tìm phân số của một số - Tiết 2",
+        "slide": 16
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

@@ -1,0 +1,285 @@
+{
+  "meta": {
+    "file": "w21_i000_Chu_de_E2_-_Bai_6._Cac_thao_tac_co_ban_voi_khoi_van_ban.pptx",
+    "subject": "tin-hoc",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tin-hoc\\slides\\w21_i000_Chu_de_E2_-_Bai_6._Cac_thao_tac_co_ban_voi_khoi_van_ban.pptx",
+    "slideCount": 23
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "Tin học 4",
+        "Chủ đề E2",
+        "Tập soạn thảo văn bản",
+        "Bài 6: Các thao tác cơ bản với khối văn bản"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Hai văn bản ở Hình 1 có cùng nội dung nhưng các câu được sắp xếp khác nhau. Em thích văn bản nào hơn?",
+        "LỚP EM",
+        "Lớp em có 35 bạn. Cô giáo chủ nhiệm dạy rất hay. Các bạn lớp em đều chăm học. Lớp em rất yêu quý cô.",
+        "Em yêu lớp em",
+        "LỚP EM",
+        "Lớp em có 35 bạn. Các bạn lớp em đều chăm học. Cô giáo chủ nhiệm dạy rất hay. Lớp em rất yêu quý cô.",
+        "Em yêu lớp em",
+        "a) Văn bản 1",
+        "b) Văn bản 2",
+        "Hình 1. Hai văn bản kể về lớp em"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 5,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "CHỌN VÀ XÓA MỘT KHỐI VĂN BẢN"
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "activity",
+      "paragraphs": [
+        "Hoạt động 1: Có thể chọn câu thứ hai trong văn bản 1 để xoá. Sau đó, gõ lại câu đã xoá này ở trước câu “Lớp em rất quý cô”. Kết quả nhận được sẽ là văn bản 2. Em hãy cùng bạn sửa văn bản 1 thành văn bản 2 theo cách trên",
+        "Khối văn bản là một phần văn bản giữa hai vị trí bất kì trong văn bản",
+        "Hai cách chọn khối văn bản trước khi bấm phím Delete để xoá nó:",
+        "Chọn bằng chuột",
+        "Chọn bằng bàn phím"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "Chọn một khối văn bản bằng chuột: Di chuyển và nháy chuột vào vị trí đầu khối rồi kéo thả chuột đến vị trí cuối khối. Khối văn bản đã chọn được đánh dấu bằng màu xám. Hình 2 minh hoạ kết quả chọn khối văn bản",
+        "Hình 2. Kết quả chọn một khối văn bản"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "Chọn khối văn bản bằng bàn phím: Đưa con trỏ soạn thảo đến vị trí đầu khối rồi nhấn và giữ phím Shift trong khi gõ phím mũi tên để mở rộng vùng đánh dấu khối cho đến vị trí cuối khối",
+        "LỚP EM",
+        "Lớp em có 35 bạn. Cô giáo chủ nhiệm dạy rất hay. Các bạn lớp em đều chăm học. Lớp em rất yêu quý cô.",
+        "Em yêu lớp em"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "questions",
+      "paragraphs": [
+        "Di chuyển và nháy chuột vào vị trí đầu khối rồi kéo thả chuột đến vị trí cuối khối",
+        "Khối vị trí đã chọn được đánh dấu bằng màu xám",
+        "Nhấn phím Delete để xóa",
+        "LỚP EM",
+        "Lớp em có 35 bạn. Cô giáo chủ nhiệm dạy rất hay. Các bạn lớp em đều chăm học. Lớp em rất yêu quý cô.",
+        "Em yêu lớp em",
+        "Hoạt động 2:",
+        "Có thể xoá một khối văn bản đã chọn bằng cách bấm phím Delete",
+        "Nếu muốn xoá câu thứ hai trong văn bản 1, em sẽ thực hiệnnhư thế nào?"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "DI CHUYỂN VÀ SAO CHÉP MỘT KHỐI VĂN BẢN"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "activity",
+      "paragraphs": [
+        "Hoạt động 3: Trong văn bản 1 ở Hình 1, có thể di chuyển câu thứ hai đến vị trí sau câu thứ ba. Kết quả nhận được là văn bản 2. Em hãy tìm hiểu cách di chuyển một khối văn bản để sửa văn bản 1 thành văn bản 2 theo cách nhanh hơn",
+        "Hình 3 thể hiện nhóm lệnh trong dải lệnh Home sử dụng để di chuyển và sao chép khối văn bản",
+        "Hình 3. Nhóm lệnh để di chuyển và sao chép"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "Để di chuyển (sao chép) một khối văn bản, em thực hiện các bước sau:",
+        "Bước 1. Chọn khối văn bản cần di chuyển (sao chép)",
+        "Bước 3. Đặt con trỏ soạn thảo vào vị trí cần di chuyển đến",
+        "Bước 2. Nháy chuột vào lệnh Cut/Copy để “cắt”/sao chép khối văn bản đã chọn",
+        "Bước 4. Nháy chuột vào lệnh Paste để “dán” khối văn bản vào vị trí con trỏ ở Bước 3"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "Các em hãy phân biệt hai thao tác di chuyển và sao chép khối văn bản",
+        "Khi sao chép, nội dung khối văn bản xuất hiện ở hai nơi. Khi di chuyển, nội dung khối văn bản chỉ xuất hiện ở nơi chuyển đến"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 15,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy soạn thảo bốn câu đầu của bài hát “Ai yêu Bác Hồ Chí Minh hơn thiếu niên nhi đồng”, mỗi câu một dòng. Khi soạn thảo, em hãy chọn khối văn bản sẽ được lặp lại để sao chép mà không phải gõ lại. Em sẽ thực hiện như thế nào nếu muốn xoá câu đầu tiên của bài hát?"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "content",
+      "paragraphs": [
+        "Soạn thảo câu thơ thứ nhất",
+        "Chọn khối văn bản là câu thơ này rồi chọn lệnh Copy. Thực hiện 3 lần các thao tác: xuống dòng và chọn lệnh Paste",
+        "Ở dòng thứ tư, xoá “niên nhi đồng” và thay bằng “nhi Việt Nam”",
+        "“Ai yêu Bác Hồ Chí Minh hơn thiếu niên nhi đồng”",
+        "Ai yêu Bác Hồ Chí Minh hơn thiếu niên nhi đồng",
+        "Ai yêu Bác Hồ Chí Minh hơn thiếu niên nhi đồng",
+        "Ai yêu Bác Hồ Chí Minh hơn thiếu niên nhi đồng",
+        "Ai yêu Bác Hồ Chí Minh hơn thiếu nhi Việt Nam",
+        "Để xoá câu đầu tiên của bài hát, chọn khối văn bản là câu thơ này rồi nhấn phím Delete"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 18,
+      "type": "content",
+      "paragraphs": [
+        "NẶN ĐỒ CHƠI",
+        "Đây là quả na",
+        "Đây là quả thị",
+        "Quả này phần cha",
+        "Quả này phần mẹ",
+        "Hình 4. Một khổ thơ trong bài thơ “Nặn đồ chơi”",
+        "Bạn Nam soạn thảo một khổ thơ trong bài thơ “Nặn đồ chơi” như ở Hình 4. Ta thấy hai câu thơ đầu bị gõ nhầm thứ tự, hai câu thơ cuối cũng vậy. Em hãy nói cho bạn Nam cách nhanh nhất sửa lại cho đúng."
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "content",
+      "paragraphs": [
+        "NẶN ĐỒ CHƠI",
+        "Đây là quả na",
+        "Đây là quả thị",
+        "Quả này phần cha",
+        "Quả này phần mẹ",
+        "Di chuyển câu thơ đầu xuống dưới câu thơ thứ hai:",
+        "Chọn câu thơ đầu rồi chọn lệnh Cut. Câu thơ thứ hai trở thành câu thơ đầu.",
+        "Đặt con trỏ vào cuối câu thơ này và nhấn Enter để ngắt xuống dòng.",
+        "Thực hiện lệnh Paste để dán câu thơ đầu vào dòng này.",
+        "Làm tương tự với câu thơ thứ ba và thứ tư."
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "theory",
+      "paragraphs": [
+        "Chọn khối văn bản bằng cách dùng chuột hoặc bàn phím để đánh dấu khối từ vị trí đầu đến vị trí cuối của khối.",
+        "Bấm phím Delete để xoá khối văn bản đã chọn.",
+        "Sử dụng các lệnh Cut, Copy và Paste để di chuyển và sao chép khối văn bản.",
+        "GHI NHỚ"
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "content",
+      "paragraphs": [
+        "Ôn lại các kiến thức đã học ở Bài 6",
+        "Đọc và chuẩn bị trước",
+        "Bài 7: Thực hành tổng hợp chủ đề “Tập soạn thảo văn bản”"
+      ]
+    },
+    {
+      "slideNo": 22,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 23,
+      "type": "empty",
+      "paragraphs": []
+    }
+  ],
+  "extracted": {
+    "title": "Tin học 4 Chủ đề E2 Tập soạn thảo văn bản",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Hai văn bản ở Hình 1 có cùng nội dung nhưng các câu được sắp xếp khác nhau. Em thích văn bản nào hơn?",
+        "slide": 3
+      },
+      {
+        "type": "task",
+        "text": "Chọn bằng chuột",
+        "slide": 6
+      },
+      {
+        "type": "task",
+        "text": "Chọn bằng bàn phím",
+        "slide": 6
+      },
+      {
+        "type": "task",
+        "text": "Chọn một khối văn bản bằng chuột: Di chuyển và nháy chuột vào vị trí đầu khối rồi kéo thả chuột đến vị trí cuối khối. Khối văn bản đã chọn được đánh dấu bằng màu xám. Hình 2 minh hoạ kết quả chọn khối văn bản",
+        "slide": 7
+      },
+      {
+        "type": "task",
+        "text": "Chọn khối văn bản bằng bàn phím: Đưa con trỏ soạn thảo đến vị trí đầu khối rồi nhấn và giữ phím Shift trong khi gõ phím mũi tên để mở rộng vùng đánh dấu khối cho đến vị trí cuối khối",
+        "slide": 8
+      },
+      {
+        "type": "question",
+        "text": "Nếu muốn xoá câu thứ hai trong văn bản 1, em sẽ thực hiệnnhư thế nào?",
+        "slide": 9
+      },
+      {
+        "type": "question",
+        "text": "Em hãy soạn thảo bốn câu đầu của bài hát “Ai yêu Bác Hồ Chí Minh hơn thiếu niên nhi đồng”, mỗi câu một dòng. Khi soạn thảo, em hãy chọn khối văn bản sẽ được lặp lại để sao chép mà không phải gõ lại. Em sẽ thực hiện như thế nào nếu muốn xoá câu đầu tiên của bài hát?",
+        "slide": 15
+      },
+      {
+        "type": "task",
+        "text": "Chọn khối văn bản là câu thơ này rồi chọn lệnh Copy. Thực hiện 3 lần các thao tác: xuống dòng và chọn lệnh Paste",
+        "slide": 16
+      },
+      {
+        "type": "task",
+        "text": "Chọn câu thơ đầu rồi chọn lệnh Cut. Câu thơ thứ hai trở thành câu thơ đầu.",
+        "slide": 19
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước",
+        "slide": 21
+      }
+    ],
+    "vocab": [],
+    "keyPoints": [
+      "Chọn khối văn bản bằng cách dùng chuột hoặc bàn phím để đánh dấu khối từ vị trí đầu đến vị trí cuối của khối.",
+      "Bấm phím Delete để xoá khối văn bản đã chọn.",
+      "Sử dụng các lệnh Cut, Copy và Paste để di chuyển và sao chép khối văn bản."
+    ]
+  }
+}

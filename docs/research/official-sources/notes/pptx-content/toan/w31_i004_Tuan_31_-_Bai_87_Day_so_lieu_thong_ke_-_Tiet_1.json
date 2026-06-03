@@ -1,0 +1,341 @@
+{
+  "meta": {
+    "file": "w31_i004_Tuan_31_-_Bai_87_Day_so_lieu_thong_ke_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w31_i004_Tuan_31_-_Bai_87_Day_so_lieu_thong_ke_-_Tiet_1.pptx",
+    "slideCount": 24
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 2",
+        "Tuần 31",
+        "Bài 87: Dãy số liệu thống kê Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Có hai đội đang thi đấu bóng rổ",
+        "Có bao nhiêu đội thi đấu?"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "questions",
+      "paragraphs": [
+        "Đội áo xanh có 15 điểm",
+        "Đội áo vàng có 14 điểm",
+        "Số điểm của từng đội như thế nào?"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "Đội bóng rổ của Khôi tham gia giải bóng rổ thành phố với số điểm trong mỗi trận đấu của mùa giải được liệt kê như sau: 12; 16; 19; 7; 20.",
+        "Ví dụ 1",
+        "Liệt kê số điểm theo thứ tự của các trận đấu ở đội của Khôi.",
+        "Nhận xét về số liệu vừa liệt kê ở trên",
+        "Trả lời",
+        "Số điểm theo thứ tự của các trận đấu:",
+        "Các số liệu được sắp xếp theo một thứ tự nhất định (theo thứ tự của các trận đấu).",
+        "12",
+        "16",
+        "19",
+        "20",
+        "Các số liệu thống kê như trên cho ta một dãy số liệu thống kê."
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "Liệt kê số đo chiều cao của 10 học sinh.",
+        "Nhận xét về số liệu vừa liệt kê ở trên.",
+        "Số đo chiều cao của 10 bạn học sinh được liệt kê như sau:",
+        "132 cm; 129cm; 130 cm; 125 cm; 130 cm; 122 cm; 138 cm; 137 cm; 135 cm; 145 cm.",
+        "Ví dụ 2"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "Trả lời",
+        "Số đo chiều cao của học sinh theo thứ tự đo từng em là: 132 cm; 129cm; 130 cm; 125 cm; 130 cm; 122 cm; 138 cm; 137 cm; 135 cm; 145 cm.",
+        "Các số liệu được sắp xếp theo một thứ tự nhất định (theo thứ tự đo chiều cao từng học sinh)",
+        "Các số liệu thống kê như trên cho ta một",
+        "dãy số liệu thống kê."
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "questions",
+      "paragraphs": [
+        "Các số liệu thống kê, được sắp xếp theo một thứ tự nhất định cho ta một dãy số liệu thống kê.",
+        "Dãy số liệu thống kê là gì ?"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "Ví dụ tham khảo",
+        "Số cân nặng của một em bé 2 tuổi được bác sĩ theo dõi (từ tháng 1 đến tháng 5) và thống kê như sau:",
+        "Các số liệu trên được sắp xếp theo một thứ tự nhất định (theo tháng) cho ta một dãy số liệu thống kê.",
+        "Tháng",
+        "Số cân nặng (kg)",
+        "10",
+        "11"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Một cửa hàng bán đồ chơi trẻ em đã bán được số lượng thú nhồi bông như sau:",
+        "Chó bông: 10 con; thỏ bông: 11 con; mèo bông: 5 con; gấu bông: 15 con.",
+        "Hãy lập dãy số liệu thống kê về số lượng đã bán của lần lượt mỗi loại thú nhồi bông theo thứ tự ở trên"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Trả lời:",
+        "Số liệu thống kê số lượng thú nhồi bông đã bán là",
+        "Thú bông",
+        "Chó",
+        "Thỏ",
+        "Mèo",
+        "Gấu",
+        "Số lượng",
+        "10",
+        "11",
+        "15",
+        "Nhận xét",
+        "Thú bông cửa hàng bán được nhiều nhất: Gấu bông.",
+        "Thú bông cửa hàng bán được ít nhất: Mèo bông.",
+        "Cửa hàng bán được tất cả: 44 con."
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "Số sách mà một cửa hàng đã bán được trong 4 tháng như sau: Tháng Ba: 250 cuốn; tháng Tư: 180 cuốn; tháng Năm: 400 cuốn; tháng Sáu: 350 cuốn.",
+        "a) Hãy lập danh sách số liệu thống kê về số sách mà cửa hàng bán được lần lượt theo thứ tự các tháng ở trên.",
+        "Tháng",
+        "Sách đã bán",
+        "250 cuốn",
+        "180 cuốn",
+        "400 cuốn",
+        "350 cuốn",
+        "Trả lời:"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "questions",
+      "paragraphs": [
+        "02",
+        "Số sách mà một cửa hàng đã bán được trong 4 tháng như sau: Tháng Ba: 250 cuốn; tháng Tư: 180 cuốn; tháng Năm: 400 cuốn; tháng Sáu: 350 cuốn.",
+        "b) Cửa hàng bán được nhiều sách nhất vào tháng nào? Cửa hàng bán được ít sách nhất vào tháng nào?",
+        "Trả lời:",
+        "Dựa vào bảng số liệu thống kê, ta thấy:",
+        "Tháng 5 cửa hàng bán được nhiều sách nhất.",
+        "Tháng 4 cửa hàng bán được ít sách nhất."
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "questions",
+      "paragraphs": [
+        "02",
+        "Số sách mà một cửa hàng đã bán được trong 4 tháng như sau: Tháng Ba: 250 cuốn; tháng Tư: 180 cuốn; tháng Năm: 400 cuốn; tháng Sáu: 350 cuốn.",
+        "c) Trung bình mỗi tháng, cửa hàng bán được bao nhiêu quyển sách?",
+        "Trả lời:",
+        "Trung bình mỗi tháng bán được số sách là:",
+        "(cuốn)"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "questions",
+      "paragraphs": [
+        "03",
+        "Số học sinh ở các khối lớp của Trường Tiểu học Phú Xá như sau:",
+        "Khối Một: 95 nữ, 105 nam; khối Hai: 70 nữ ; 80 nam; khối Ba: 82 nữ, 90 nam; khối Bốn: 91 nữ, 98 nam; khối Năm: 79 nữ, 85 nam.",
+        "a) Hãy lập:",
+        "- Dãy số liệu thống kê về số học sinh nữ ở lần lượt mỗi khối lớp của Trường",
+        "Tiểu học Phú Xá.",
+        "- Dãy số liệu thống kê về số học sinh nam ở lần lượt mỗi khối lớp của Trường Tiểu học Phú Xá.",
+        "b) Trả lời các câu hỏi:",
+        "- Khối Bốn của trường có tất cả bao nhiêu học sinh?",
+        "- Ở khối Một, số học sinh nam nhiều hơn số học sinh nữ là bao nhiêu?",
+        "- Trường Tiểu học Phú Xá có tất cả bao nhiêu học sinh?"
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "content",
+      "paragraphs": [
+        "03",
+        "Trả lời:",
+        "a) Số liệu thống kê số học sinh nữ:",
+        "Khối",
+        "HS nữ",
+        "95",
+        "70",
+        "82",
+        "91",
+        "79",
+        "Số liệu thống kê số học sinh nam:",
+        "Khối",
+        "HS nam",
+        "105",
+        "80",
+        "90",
+        "98",
+        "85"
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "content",
+      "paragraphs": [
+        "03",
+        "Trả lời:",
+        "b) Khối Bốn có số học sinh là: 91 + 98 = 189 (học sinh)",
+        "Ở khối Một, số học sinh nam nhiều hơn số học sinh nữ là: 105 – 95 = 10 (học sinh)",
+        "Trường Tiểu học Phú Xá có tất cả:",
+        "95 + 70 + 82 + 91 + 79 + 105 + 80 + 90 + 98 + 85 = 875 (học sinh)."
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em học thêm được điều gì?",
+        "+ Nhận biết về dãy số liệu thống kê và thực hành lập dãy số liệu thống kê.",
+        "+ Học cách sắp xếp, phân tích, xử lí số liệu trong dãy số liệu thống kê."
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 22,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước",
+        "Bài 87: Dãy số liệu thống kê – Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 23,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 24,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 2 Tuần 31",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Có bao nhiêu đội thi đấu?",
+        "slide": 3
+      },
+      {
+        "type": "question",
+        "text": "Số điểm của từng đội như thế nào?",
+        "slide": 4
+      },
+      {
+        "type": "question",
+        "text": "Dãy số liệu thống kê là gì ?",
+        "slide": 9
+      },
+      {
+        "type": "task",
+        "text": "Hãy lập dãy số liệu thống kê về số lượng đã bán của lần lượt mỗi loại thú nhồi bông theo thứ tự ở trên",
+        "slide": 12
+      },
+      {
+        "type": "question",
+        "text": "b) Cửa hàng bán được nhiều sách nhất vào tháng nào? Cửa hàng bán được ít sách nhất vào tháng nào?",
+        "slide": 15
+      },
+      {
+        "type": "question",
+        "text": "c) Trung bình mỗi tháng, cửa hàng bán được bao nhiêu quyển sách?",
+        "slide": 16
+      },
+      {
+        "type": "question",
+        "text": "- Khối Bốn của trường có tất cả bao nhiêu học sinh?",
+        "slide": 17
+      },
+      {
+        "type": "question",
+        "text": "- Ở khối Một, số học sinh nam nhiều hơn số học sinh nữ là bao nhiêu?",
+        "slide": 17
+      },
+      {
+        "type": "question",
+        "text": "- Trường Tiểu học Phú Xá có tất cả bao nhiêu học sinh?",
+        "slide": 17
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em học thêm được điều gì?",
+        "slide": 20
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước",
+        "slide": 22
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

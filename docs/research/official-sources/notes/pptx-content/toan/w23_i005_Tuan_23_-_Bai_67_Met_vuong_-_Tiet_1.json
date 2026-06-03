@@ -1,0 +1,187 @@
+{
+  "meta": {
+    "file": "w23_i005_Tuan_23_-_Bai_67_Met_vuong_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w23_i005_Tuan_23_-_Bai_67_Met_vuong_-_Tiet_1.pptx",
+    "slideCount": 16
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 2",
+        "Tuần 23",
+        "Bài 67: Mét vuông - Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Để đo diện tích bề mặt một quển sách, mặt bàn học có thể dùng đơn vị đo là",
+        "xăng-ti-mét vuông. Nhưng để đo diện tích một căn phòng, một mảnh vườn hay",
+        "một bức tường thì ta phải dùng một đơn vị diện tích khác, đó là đơn vị nào?"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 5,
+      "type": "content",
+      "paragraphs": [
+        "Để đo diện tích người ta còn dùng đơn vị mét vuông.",
+        "Mét vuông là diện tích của hình vuông có cạnh dài 1 m.",
+        "Mét vuông viết tắt là m2.",
+        "1 m"
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "a) Đọc các số đo diện tích sau: 175 m2, 20 m2, 5 600 m2.",
+        "175 m2",
+        "20 m2",
+        "5 600 m2",
+        "Một trăm bảy mươi lăm mét vuông.",
+        "Hai mươi mét vuông.",
+        "Năm nghìn sáu trăm mét vuông."
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "b) Viết các số đo diện tích sau:",
+        "Sáu nghìn bốn trăm ba mươi mét vuông:",
+        "Mười hai nghìn năm trăm mét vuông:",
+        "Một trăm ba mươi lăm mét vuông:",
+        "6 430 m2",
+        "12 500 m2",
+        "135 m2"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "Chọn đơn vị đo diện tích (cm2, m2) thích hợp để đặt vào ô",
+        "a) Diện tích một viên gạch lát nền là 3 600",
+        "b) Diện tích một sân chơi là 3 600",
+        "c) Diện tích một chiếc phong bì là 135",
+        "d) Diện tích một căn phòng là 30",
+        "cm2",
+        "m2",
+        "cm2",
+        "m2"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "03",
+        "Tính diện tích tấm thảm dạng hình chữ nhật có chiều dài 8 m, chiều rộng 6 m.",
+        "Bài giải",
+        "Diện tích tấm thảm hình chữ nhật là:",
+        "8  6 = 48 (m2)",
+        "Đáp số: 48 m2."
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "03",
+        "b) Tính diện tích mảnh vườn hình vuông có cạnh 12 m.",
+        "Bài giải",
+        "Diện tích mảnh vườn hình vuông là:",
+        "12  12 = 144 (m2)",
+        "Đáp số: 144 m2."
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em học được những kiến thức gì?"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 14,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học.",
+        "Hoàn thành bài tập trong SBT",
+        "Đọc và chuẩn bị trước",
+        "Bài 67: Mét vuông",
+        "Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 16,
+      "type": "empty",
+      "paragraphs": []
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 2 Tuần 23",
+    "questions": [
+      {
+        "type": "question",
+        "text": "một bức tường thì ta phải dùng một đơn vị diện tích khác, đó là đơn vị nào?",
+        "slide": 3
+      },
+      {
+        "type": "task",
+        "text": "Chọn đơn vị đo diện tích (cm2, m2) thích hợp để đặt vào ô",
+        "slide": 9
+      },
+      {
+        "type": "task",
+        "text": "Tính diện tích tấm thảm dạng hình chữ nhật có chiều dài 8 m, chiều rộng 6 m.",
+        "slide": 10
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em học được những kiến thức gì?",
+        "slide": 12
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước",
+        "slide": 14
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

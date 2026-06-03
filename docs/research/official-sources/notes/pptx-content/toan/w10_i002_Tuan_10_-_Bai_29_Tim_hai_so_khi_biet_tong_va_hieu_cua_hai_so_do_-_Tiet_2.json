@@ -1,0 +1,320 @@
+{
+  "meta": {
+    "file": "w10_i002_Tuan_10_-_Bai_29_Tim_hai_so_khi_biet_tong_va_hieu_cua_hai_so_do_-_Tiet_2.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w10_i002_Tuan_10_-_Bai_29_Tim_hai_so_khi_biet_tong_va_hieu_cua_hai_so_do_-_Tiet_2.pptx",
+    "slideCount": 23
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 1",
+        "Tuần 10",
+        "Bài 29: Tìm hai số khi biết tổng và hiệu của hai số đó – Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "02",
+        "Trong hộp có 12 chiếc bút gồm bút đen và bút xanh. Số bút đen ít hơn số bút xanh 4 chiếc. Hỏi trong hộp đó có bao nhiêu chiếc bút mỗi loại?",
+        "Bút xanh",
+        "Bút đen",
+        "12 bút",
+        "4 bút",
+        "? bút",
+        "? bút"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "Bài giải",
+        "Cách 1:",
+        "Số chiếc bút xanh là:",
+        "(12  4)2  8 (bút)",
+        "Số chiếc bút đen là:",
+        "8  4  4 (bút)",
+        "Đáp số: Bút xanh: 8 bút;",
+        "Bút đen: 4 bút.",
+        "Cách 2:",
+        "Số chiếc bút đen là:",
+        "(12  4)  2  4 (bút)",
+        "Số chiếc bút xanh là:",
+        "4  4 8 (bút)",
+        "Đáp số: Bút đen: 4 bút;",
+        "Bút xanh: 8 bút."
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "questions",
+      "paragraphs": [
+        "03",
+        "Tổng số tuổi của bố và mẹ là 65 tuổi. Bố hơn mẹ 5 tuổi. Hỏi bố bao nhiêu tuổi, mẹ bao nhiêu tuổi?",
+        "Bố",
+        "Mẹ",
+        "65 tuổi",
+        "5 tuổi",
+        "? tuổi",
+        "? tuổi"
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "03",
+        "Bài giải",
+        "Cách 1:",
+        "Tuổi của bố là:",
+        "(65  5)  2  35 (tuổi)",
+        "Tuổi của mẹ là:",
+        "35  5  30 (tuổi)",
+        "Đáp số: Bố: 35 tuổi;",
+        "Mẹ: 30 tuổi.",
+        "Cách 2:",
+        "Tuổi của mẹ là:",
+        "(65  5)  2  30 (tuổi)",
+        "Tuổi của bố là:",
+        "30  5  35 (tuổi)",
+        "Đáp số: Mẹ: 30 tuổi;",
+        "Bố: 35 tuổi."
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 8,
+      "type": "questions",
+      "paragraphs": [
+        "04",
+        "Cuối tuần, Tuấn được bố dẫn đi chơi tại một khu du lịch. Tuấn thấy bố trả tiền vé của hai người là 500 000 đồng. Tuấn hỏi bố: “Vé vào cửa của mỗi người là bao nhiêu tiền?”. Bố trả lời: “Vé của người lớn trong ngày cuối tuần hơn vé trẻ em là 100 000 đồng”. Tính giá vé ngày cuối tuần của người lớn, trẻ em."
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "questions",
+      "paragraphs": [
+        "04",
+        "Cuối tuần, Tuấn được bố dẫn đi chơi tại một khu du lịch. Tuấn thấy bố trả tiền vé của hai người là 500 000 đồng. Tuấn hỏi bố: “Vé vào cửa của mỗi người là bao nhiêu tiền?”. Bố trả lời: “Vé của người lớn trong ngày cuối tuần hơn vé trẻ em là 100 000 đồng”. Tính giá vé ngày cuối tuần của người lớn, trẻ em.",
+        "Vé người lớn",
+        "? đồng",
+        "? đồng",
+        "Vé trẻ em",
+        "500 000 đồng",
+        "100 000 đồng"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "questions",
+      "paragraphs": [
+        "04",
+        "Cuối tuần, Tuấn được bố dẫn đi chơi tại một khu du lịch. Tuấn thấy bố trả tiền vé của hai người là 500 000 đồng. Tuấn hỏi bố: “Vé vào cửa của mỗi người là bao nhiêu tiền?”. Bố trả lời: “Vé của người lớn trong ngày cuối tuần hơn vé trẻ em là 100 000 đồng”. Tính giá vé ngày cuối tuần của người lớn, trẻ em.",
+        "Bài giải",
+        "Cách 1",
+        "Giá tiền vé người lớn là:",
+        "(500 000  100 000)  2  300 000 (đồng)",
+        "Giá tiền vé trẻ em là:",
+        "300 000 100 000  200 000 (đồng)",
+        "Đáp số: Vé người lớn: 300 000 đồng;",
+        "Vé trẻ em: 200 000 đồng."
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "questions",
+      "paragraphs": [
+        "04",
+        "Cuối tuần, Tuấn được bố dẫn đi chơi tại một khu du lịch. Tuấn thấy bố trả tiền vé của hai người là 500 000 đồng. Tuấn hỏi bố: “Vé vào cửa của mỗi người là bao nhiêu tiền?”. Bố trả lời: “Vé của người lớn trong ngày cuối tuần hơn vé trẻ em là 100 000 đồng”. Tính giá vé ngày cuối tuần của người lớn, trẻ em.",
+        "Bài giải",
+        "Cách 2",
+        "Giá tiền vé trẻ em là:",
+        "(500 000  100 000) 2  200 000 (đồng)",
+        "Giá tiền vé người lớn là:",
+        "200 000  100 000  300 000 (đồng)",
+        "Đáp số: Vé trẻ em: 200 000 đồng;",
+        "Vé người lớn: 300 000 đồng."
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "questions",
+      "paragraphs": [
+        "TRÒ CHƠI – NGƯỜI TỐT",
+        "Em hãy giúp bà lão đi lên cầu thang bằng cách trả lời lần lượt  các câu hỏi tương ứng với số bậc thang."
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "Bậc 1",
+        "Bậc 2",
+        "Bậc 3",
+        "Bậc 4",
+        "Bậc 5"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "questions",
+      "paragraphs": [
+        "Tuổi chị và tuổi em cộng lại được 36 tuổi. Em kém chị 8 tuổi. Hỏi chị bao nhiêu tuổi, em bao nhiêu tuổi?",
+        "A. Chị: 20 tuổi, em: 12 tuổi.",
+        "C. Chị: 20 tuổi, em: 16 tuổi.",
+        "B. Chị: 24 tuổi, em: 12 tuổi.",
+        "D. Chị: 22 tuổi, em: 14 tuổi.",
+        "TIẾP TỤC"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "questions",
+      "paragraphs": [
+        "Thu hoạch từ hai thửa ruộng được 5 tấn 2 tạ thóc. Thu hoạch ở thửa ruộng thứ nhất được nhiều hơn ở thửa ruộng thứ hai 8 tạ thóc. Hỏi thu hoạch được ở mỗi thửa ruộng bao nhiêu ki-lô-gam thóc?",
+        "A. Thửa ruộng 1: 3 000 kg; thửa ruộng 2: 2 200 kg.",
+        "B. Thửa ruộng 1: 3 200 kg; thửa ruộng 2: 2 000 kg.",
+        "C. Thửa ruộng 1: 2 800 kg; thửa ruộng 2: 2 400 kg.",
+        "D. Thửa ruộng 1: 2 800 kg; thửa ruộng 2: 2 600 kg.",
+        "TIẾP TỤC"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "questions",
+      "paragraphs": [
+        "Một lớp học có 28 bạn học sinh. Số bạn nam nhiều hơn số bạn nữ là 4 bạn. Hỏi lớp học đó có bao nhiêu bạn học sinh nam, bao nhiêu bạn học sinh nữ?",
+        "A. 15 học sinh nam, 13 học sinh nữ.",
+        "B. 16 học sinh nam, 12 học sinh nữ.",
+        "C. 17 học sinh nam, 11 học sinh nữ.",
+        "D. 18 học sinh nam, 10 học sinh nữ.",
+        "TIẾP TỤC"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "content",
+      "paragraphs": [
+        "Tổng của hai số bằng 8, hiệu của chúng cũng bằng 8. Tìm hai số đó.",
+        "A. 0 và 8.",
+        "B. 1 và 7.",
+        "C. 2 và 6.",
+        "D. 3 và 5.",
+        "TIẾP TỤC"
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "content",
+      "paragraphs": [
+        "Trung bình cộng của hai số là 158, nếu thêm 28 đơn vị vào số thứ nhất ta được số thứ hai. Vậy số thứ hai là .........",
+        "A. 93.",
+        "B. 316.",
+        "C. 172.",
+        "D. 158.",
+        "TIẾP TỤC"
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em biết thêm được điều gì?"
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 21,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước",
+        "Bài 30: Luyện tập chung"
+      ]
+    },
+    {
+      "slideNo": 22,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 23,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 1 Tuần 10",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Trong hộp có 12 chiếc bút gồm bút đen và bút xanh. Số bút đen ít hơn số bút xanh 4 chiếc. Hỏi trong hộp đó có bao nhiêu chiếc bút mỗi loại?",
+        "slide": 3
+      },
+      {
+        "type": "question",
+        "text": "Tổng số tuổi của bố và mẹ là 65 tuổi. Bố hơn mẹ 5 tuổi. Hỏi bố bao nhiêu tuổi, mẹ bao nhiêu tuổi?",
+        "slide": 5
+      },
+      {
+        "type": "task",
+        "text": "Em hãy giúp bà lão đi lên cầu thang bằng cách trả lời lần lượt  các câu hỏi tương ứng với số bậc thang.",
+        "slide": 12
+      },
+      {
+        "type": "question",
+        "text": "Tuổi chị và tuổi em cộng lại được 36 tuổi. Em kém chị 8 tuổi. Hỏi chị bao nhiêu tuổi, em bao nhiêu tuổi?",
+        "slide": 14
+      },
+      {
+        "type": "question",
+        "text": "Thu hoạch từ hai thửa ruộng được 5 tấn 2 tạ thóc. Thu hoạch ở thửa ruộng thứ nhất được nhiều hơn ở thửa ruộng thứ hai 8 tạ thóc. Hỏi thu hoạch được ở mỗi thửa ruộng bao nhiêu ki-lô-gam thóc?",
+        "slide": 15
+      },
+      {
+        "type": "question",
+        "text": "Một lớp học có 28 bạn học sinh. Số bạn nam nhiều hơn số bạn nữ là 4 bạn. Hỏi lớp học đó có bao nhiêu bạn học sinh nam, bao nhiêu bạn học sinh nữ?",
+        "slide": 16
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em biết thêm được điều gì?",
+        "slide": 19
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước",
+        "slide": 21
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "file": "w21_i001_Tuan_21_-_Bai_59_Rut_gon_phan_so_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w21_i001_Tuan_21_-_Bai_59_Rut_gon_phan_so_-_Tiet_1.pptx",
+    "slideCount": 19
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 2",
+        "Tuần 21",
+        "Bài 59: Rút gọn phân số",
+        "Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "content",
+      "paragraphs": [
+        "TRÒ CHƠI “Đố bạn”",
+        "Đố bạn tìm được phân số bằng phân số nhưng có tử số và mẫu số bé hơn.",
+        "Đố bạn tìm được phân số bằng phân số  nhưng có tử số và mẫu số bé hơn."
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 5,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "Ví dụ",
+        "Cho phân số . Theo tính chất cơ bản của phân số, ta có:",
+        "Ta thấy:",
+        "Hai phân số và bằng nhau.",
+        "Tử số và mẫu số của phân số  đều bé hơn tử số và mẫu số của phân số .",
+        "Ta nói rằng: Phân số đã được rút gọn thành phân số  ."
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "theory",
+      "paragraphs": [
+        "Nhận xét:",
+        "3 và 4 không cùng chia hết cho một số tự nhiên nào lớn hơn 1, nên phân số không thể rút gọn được nữa. Ta nói rằng:",
+        "Phân số  là phân số tối giản.",
+        "Phân số đã được rút gọn thành phân số tối giản ."
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "2. Cách rút gọn phân số",
+        "Khi rút gọn phân số ta có thể làm như sau:",
+        "Xét xem tử số và mẫu số cùng chia hết cho số tự nhiên nào lớn hơn 1.",
+        "Chia cả tử số và mẫu số cho số đó.",
+        "Ví dụ: Rút gọn phân số .",
+        "Ta thấy 15 và 25 đều chia hết cho 5.",
+        "Do đó:"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Rút gọn các phân số:",
+        "16",
+        "a)",
+        "20",
+        "c)",
+        "b)",
+        "16",
+        "d)",
+        "4 : 4",
+        "16 : 4",
+        "9 : 3",
+        "6 : 3",
+        "5 : 5",
+        "20 : 5",
+        "6 : 2",
+        "16 : 2"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "Rút gọn các phân số sau về phấn số tối giản:",
+        "16",
+        "a)",
+        "24",
+        "18",
+        "c)",
+        "10",
+        "30",
+        "b)",
+        "20",
+        "28",
+        "d)",
+        "8 : 8",
+        "16 : 8",
+        "10 : 10",
+        "30 : 10",
+        "24 : 6",
+        "18 : 6",
+        "20 : 4",
+        "28 : 4",
+        "Ghi chú: Khi rút gọn phân số, ta nên rút gọn cho đến khi nhận được phân số tối giản."
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "questions",
+      "paragraphs": [
+        "03",
+        "a) Phân số nào trong các phân số: ,  ,  ,   là phấn số tối giản?",
+        "Trả lời",
+        "Các phân số tối giản là:  ,  , ."
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "questions",
+      "paragraphs": [
+        "03",
+        "b) Hãy tìm ba phân số tối giản, ba phân số chưa tối giản. Rút gọn các phân số chưa tối giản vừa tìm?",
+        "Trả lời",
+        "Các phân số tối giản là:  ,  , .",
+        "Các phân số chưa tối giản là:  ,  , .",
+        "6 : 2",
+        "8 : 2",
+        "12",
+        "3 : 3",
+        "12 : 3",
+        "7 : 7",
+        "42 : 7",
+        "42"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em học được những kiến thức gì?"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "questions",
+      "paragraphs": [
+        "Khi rút gọn phân số em cần lưu ý điều gì?"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 17,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước Bài 59: Rút gọn",
+        "phân số - Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 19,
+      "type": "empty",
+      "paragraphs": []
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 2 Tuần 21",
+    "questions": [
+      {
+        "type": "question",
+        "text": "a) Phân số nào trong các phân số: ,  ,  ,   là phấn số tối giản?",
+        "slide": 12
+      },
+      {
+        "type": "question",
+        "text": "b) Hãy tìm ba phân số tối giản, ba phân số chưa tối giản. Rút gọn các phân số chưa tối giản vừa tìm?",
+        "slide": 13
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em học được những kiến thức gì?",
+        "slide": 14
+      },
+      {
+        "type": "question",
+        "text": "Khi rút gọn phân số em cần lưu ý điều gì?",
+        "slide": 15
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước Bài 59: Rút gọn",
+        "slide": 17
+      }
+    ],
+    "vocab": [],
+    "keyPoints": [
+      "3 và 4 không cùng chia hết cho một số tự nhiên nào lớn hơn 1, nên phân số không thể rút gọn được nữa. Ta nói rằng:",
+      "Phân số  là phân số tối giản.",
+      "Phân số đã được rút gọn thành phân số tối giản ."
+    ]
+  }
+}

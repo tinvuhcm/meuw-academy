@@ -1,0 +1,163 @@
+{
+  "meta": {
+    "file": "w24_i002_Tuan_24_-_Bai_68_de-xi-met_vuong_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w24_i002_Tuan_24_-_Bai_68_de-xi-met_vuong_-_Tiet_1.pptx",
+    "slideCount": 16
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 2",
+        "Tuần 24",
+        "Bài 68: Đề - xi - mét vuông Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 4,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 5,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "Để đo diện tích người ta còn dùng đơn vị đề-xi-mét vuông.",
+        "Đề-xi-mét vuông là diện tích của hình vuông có cạnh dài 1 dm.",
+        "Đề-xi-mét vuông viết tắt là dm2.",
+        "1 dm2 = 100 cm2 ; 1 m2 = 100 dm2 và ngược lại",
+        "100 cm2 = 1 dm2 ; 100 dm2  = 1 m2."
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "a) Đọc các số đo diện tích sau: 82 dm2, 754 dm2, 1 250 dm2.",
+        "82 dm2",
+        "754 dm2",
+        "1 250 dm2",
+        "Tám mươi hai đề-xi-mét vuông.",
+        "Bảy trăm năm mươi tư đề-xi-mét vuông.",
+        "Một nghìn hai trăm năm mươi đề-xi-mét vuông."
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "b) Viết các số đo diện tích sau:",
+        "Mười lăm nghìn đề-xi-mét vuông.",
+        "Ba mươi bảy nghìn sáu trăm đề-xi-mét vuông.",
+        "15 000 dm2",
+        "37 600 dm2"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "a) Tính diện tích hình chữ nhật có chiều dài 12 dm, chiều rộng 8 dm.",
+        "HOẠT ĐỘNG CẶP ĐÔI",
+        "Bài giải",
+        "Diện tích hình chữ nhật là:",
+        "12  8 = 96 (dm2)",
+        "Đáp số: 96 dm2"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "b) Tính diện tích hình vuông có cạnh 15 dm.",
+        "HOẠT ĐỘNG CẶP ĐÔI",
+        "Bài giải",
+        "Diện tích hình vuông là:",
+        "15  15 = 225 (dm2)",
+        "Đáp số: 225 dm2"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em học được những kiến thức gì?"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 14,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước",
+        "Bài 68: Đề-xi-mét vuông - Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 16,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 2 Tuần 24",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em học được những kiến thức gì?",
+        "slide": 12
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước",
+        "slide": 14
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

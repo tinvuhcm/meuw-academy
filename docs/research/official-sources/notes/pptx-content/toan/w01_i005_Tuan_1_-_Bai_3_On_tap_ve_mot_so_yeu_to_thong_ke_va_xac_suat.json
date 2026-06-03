@@ -1,0 +1,438 @@
+{
+  "meta": {
+    "file": "w01_i005_Tuan_1_-_Bai_3_On_tap_ve_mot_so_yeu_to_thong_ke_va_xac_suat.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w01_i005_Tuan_1_-_Bai_3_On_tap_ve_mot_so_yeu_to_thong_ke_va_xac_suat.pptx",
+    "slideCount": 22
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 1",
+        "Tuần 1",
+        "Bài 3: Ôn tập một số yếu tố thống kê và xác suất"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy kể tên các bài học nói về thống kê hoặc xác suất đã được học ở lớp 2 và lớp 3.",
+        "Hãy kể lại một trò chơi trong đó có sử dụng các thuật ngữ “chắc chắn xảy ra”, “có thể xảy ra”, “không thể xảy ra” để mô tả các khả năng xảy ra của một hoạt động nào đó trong trò chơi."
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "Trả lời",
+        "Các bài học nói về thống kê hoặc xác suất đã được học là:",
+        "Chắc chắn – Có thể - Không thể (lớp 2)",
+        "Thu thập, phân loại, ghi chép số liệu thống kê",
+        "Bảng số liệu thống kê",
+        "Khả năng xảy ra của một sự kiện (lớp 3)"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "content",
+      "paragraphs": [
+        "Trả lời",
+        "b) Mô tả:",
+        "Chuẩn bị một lọ đựng viên bi các màu: xanh, đỏ, vàng",
+        "Bạn bốc bi bịt mắt và được yêu cầu bốc một viên bi xanh trong lọ",
+        "Có thể xảy ra các trường hợp:"
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 7,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 1",
+        "Quan sát biểu đồ tranh sau rồi trả lời các câu hỏi:",
+        "Trong ngày thứ Bảy:",
+        "Cửa hàng bán được những loại cây nào?",
+        "Cửa hàng bán được bao nhiêu cây",
+        "xương rồng?",
+        "c) Loại cây nào cửa hàng bán được nhiều nhất?",
+        "d) Cửa hàng bán được số cây hoa nhài gấp mấy lần số cây hoa ly?"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 1",
+        "Trong ngày thứ Bảy:",
+        "Cửa hàng bán được 5 loại cây: cây hoa ly,",
+        "cây hoa hồng, cây hoa giấy, cây xương rồng, cây hoa nhài.",
+        "b) Cửa hàng bán được: 3  4 = 12 cây xương rồng.",
+        "c) Loại cây cửa hàng bán được nhiều nhất là: cây hoa hồng.",
+        "d) Cửa hàng bán được số cây hoa nhài là: 4  4 = 16 cây.",
+        "Cửa hàng bán được số cây hoa ly là: 2  4 = 8 cây.",
+        "Cửa hàng bán được số cây hoa nhài gấp số cây hoa ly: 16 : 8 = 2 lần.",
+        "Trả lời:"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 2",
+        "Số học sinh đi xe buýt đến trường ở lớp 4C của một trường",
+        "tiểu học được ghi lại như sau:",
+        "Số học sinh lớp 4C đi xe buýt đến trường",
+        "Ngày trong tuần",
+        "Thứ Hai",
+        "Thứ Ba",
+        "Thứ Tư",
+        "Thứ Năm",
+        "Thứ Sáu",
+        "Số học sinh",
+        "16",
+        "15",
+        "17",
+        "15",
+        "12"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 2",
+        "a) Trả lời các câu hỏi:",
+        "Thứ Hai có bao nhiêu học sinh đi xe buýt đến trường?",
+        "Ngày nào có nhiều học sinh đi xe buýt đến trường nhất? Ngày nào có ít học sinh đi xe buýt đến trường nhất?",
+        "b) Em hãy đặt thêm câu hỏi từ thông tin có được trong bảng số liệu thống kê trên"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 2 (SGK – tr10)",
+        "a)",
+        "Thứ Hai có 16 học sinh đi xe buýt đến trường.",
+        "Thứ Tư có nhiều học sinh đi xe buýt đến trường nhất.",
+        "Thứ Sáu có ít học sinh đi xe buýt đến trường nhất.",
+        "b) Câu hỏi:",
+        "Hai ngày nào có số học sinh đi xe buýt đến trường bằng nhau?",
+        "Có bao nhiêu học sinh đi xe buýt đến trường vào thứ Ba?",
+        "Ngày trong tuần",
+        "Thứ Hai",
+        "Thứ Ba",
+        "Thứ Tư",
+        "Thứ Năm",
+        "Thứ Sáu",
+        "Số học sinh",
+        "16",
+        "15",
+        "17",
+        "15",
+        "12",
+        "Trả lời"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 3",
+        "Bạn Thảo được phân công ghi lại nhiệt độ vào lúc 10 giờ sáng của tất cả các ngày trong một tuần như ở bảng sau:",
+        "Ngày",
+        "Thứ Hai",
+        "Thứ Ba",
+        "Thứ Tư",
+        "Thứ Năm",
+        "Thứ Sáu",
+        "Thứ Bảy",
+        "Chủ Nhật",
+        "Nhiệt độ (C)",
+        "23",
+        "21",
+        "20",
+        "21",
+        "26",
+        "28",
+        "27",
+        "Ngày",
+        "Thứ Hai",
+        "Thứ Ba",
+        "Thứ Tư",
+        "Thứ Năm",
+        "Thứ Sáu",
+        "Thứ Bảy",
+        "Chủ Nhật",
+        "23",
+        "21",
+        "20",
+        "21",
+        "26",
+        "28",
+        "27",
+        "Nhiệt độ vào lúc 10 giờ sáng của các ngày trong một tuần"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 3 (SGK – tr11)",
+        "Vào lúc 10 giờ sáng:",
+        "Ngày thứ Ba nhiệt độ là bao nhiêu độ C?",
+        "Ngày Chủ Nhật nhiệt độ là bao nhiêu độ C?",
+        "Nhiệt độ cao nhất trong tuần là bao nhiêu độ C?",
+        "Ngày nào trong tuần có nhiệt độ thấp nhất?",
+        "Em có nhận xét gì về nhiệt độ của những ngày đầu tuần và những ngày cuối tuần?",
+        "Ngày",
+        "Thứ Hai",
+        "Thứ Ba",
+        "Thứ Tư",
+        "Thứ Năm",
+        "Thứ Sáu",
+        "Thứ Bảy",
+        "Chủ Nhật",
+        "Nhiệt độ (C)",
+        "23",
+        "21",
+        "20",
+        "21",
+        "26",
+        "28",
+        "27",
+        "Ngày",
+        "Thứ Hai",
+        "Thứ Ba",
+        "Thứ Tư",
+        "Thứ Năm",
+        "Thứ Sáu",
+        "Thứ Bảy",
+        "Chủ Nhật",
+        "23",
+        "21",
+        "20",
+        "21",
+        "26",
+        "28",
+        "27",
+        "Nhiệt độ vào lúc 10 giờ sáng của các ngày trong một tuần"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 3 (SGK – tr11)",
+        "Vào lúc 10 giờ sáng:",
+        "a) Ngày thứ Ba nhiệt độ là 21 độ C.",
+        "b) Ngày Chủ nhật nhiệt độ là 27 độ C.",
+        "c) Nhiệt độ cao nhất trong tuần là 28 độ C.",
+        "d) Thứ Tư có nhiệt độ thấp nhất.",
+        "e) Nhiệt độ của những ngày đầu tuần thấp hơn nhiệt độ của những ngày cuối tuần.",
+        "Nhiệt độ vào lúc 10 giờ sáng của các ngày trong một tuần",
+        "Ngày",
+        "Thứ Hai",
+        "Thứ Ba",
+        "Thứ Tư",
+        "Thứ Năm",
+        "Thứ Sáu",
+        "Thứ Bảy",
+        "Chủ Nhật",
+        "Nhiệt độ (C)",
+        "23",
+        "21",
+        "20",
+        "21",
+        "26",
+        "28",
+        "27",
+        "Ngày",
+        "Thứ Hai",
+        "Thứ Ba",
+        "Thứ Tư",
+        "Thứ Năm",
+        "Thứ Sáu",
+        "Thứ Bảy",
+        "Chủ Nhật",
+        "23",
+        "21",
+        "20",
+        "21",
+        "26",
+        "28",
+        "27",
+        "Trả lời:"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 4 (SGK – tr11)",
+        "An quay vòng quay một lần. Khi vòng quay dừng lại thì chiếc kim sẽ chỉ vào một ô đã tô màu. Theo em, chiếc kim có những khả năng chỉ vào ô màu nào?",
+        "Trả lời:",
+        "Ô màu vàng, ô màu xanh, ô màu đỏ hoặc ô màu tím."
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em đã ôn tập được những kiến thức gì?"
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "questions",
+      "paragraphs": [
+        "Để nắm chắc kiến thức đó, em nhắn bạn điều gì?"
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước Bài 4 – Các số trong phạm vi 1 000 000"
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 22,
+      "type": "empty",
+      "paragraphs": []
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 1 Tuần 1",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Em hãy kể tên các bài học nói về thống kê hoặc xác suất đã được học ở lớp 2 và lớp 3.",
+        "slide": 3
+      },
+      {
+        "type": "task",
+        "text": "Hãy kể lại một trò chơi trong đó có sử dụng các thuật ngữ “chắc chắn xảy ra”, “có thể xảy ra”, “không thể xảy ra” để mô tả các khả năng xảy ra của một hoạt động nào đó trong trò chơi.",
+        "slide": 3
+      },
+      {
+        "type": "question",
+        "text": "Cửa hàng bán được những loại cây nào?",
+        "slide": 7
+      },
+      {
+        "type": "question",
+        "text": "c) Loại cây nào cửa hàng bán được nhiều nhất?",
+        "slide": 7
+      },
+      {
+        "type": "question",
+        "text": "d) Cửa hàng bán được số cây hoa nhài gấp mấy lần số cây hoa ly?",
+        "slide": 7
+      },
+      {
+        "type": "question",
+        "text": "Thứ Hai có bao nhiêu học sinh đi xe buýt đến trường?",
+        "slide": 10
+      },
+      {
+        "type": "question",
+        "text": "Ngày nào có nhiều học sinh đi xe buýt đến trường nhất? Ngày nào có ít học sinh đi xe buýt đến trường nhất?",
+        "slide": 10
+      },
+      {
+        "type": "question",
+        "text": "Hai ngày nào có số học sinh đi xe buýt đến trường bằng nhau?",
+        "slide": 11
+      },
+      {
+        "type": "question",
+        "text": "Có bao nhiêu học sinh đi xe buýt đến trường vào thứ Ba?",
+        "slide": 11
+      },
+      {
+        "type": "question",
+        "text": "Ngày thứ Ba nhiệt độ là bao nhiêu độ C?",
+        "slide": 13
+      },
+      {
+        "type": "question",
+        "text": "Ngày Chủ Nhật nhiệt độ là bao nhiêu độ C?",
+        "slide": 13
+      },
+      {
+        "type": "question",
+        "text": "Nhiệt độ cao nhất trong tuần là bao nhiêu độ C?",
+        "slide": 13
+      },
+      {
+        "type": "question",
+        "text": "Ngày nào trong tuần có nhiệt độ thấp nhất?",
+        "slide": 13
+      },
+      {
+        "type": "question",
+        "text": "Em có nhận xét gì về nhiệt độ của những ngày đầu tuần và những ngày cuối tuần?",
+        "slide": 13
+      },
+      {
+        "type": "question",
+        "text": "An quay vòng quay một lần. Khi vòng quay dừng lại thì chiếc kim sẽ chỉ vào một ô đã tô màu. Theo em, chiếc kim có những khả năng chỉ vào ô màu nào?",
+        "slide": 16
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em đã ôn tập được những kiến thức gì?",
+        "slide": 17
+      },
+      {
+        "type": "question",
+        "text": "Để nắm chắc kiến thức đó, em nhắn bạn điều gì?",
+        "slide": 18
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước Bài 4 – Các số trong phạm vi 1 000 000",
+        "slide": 20
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

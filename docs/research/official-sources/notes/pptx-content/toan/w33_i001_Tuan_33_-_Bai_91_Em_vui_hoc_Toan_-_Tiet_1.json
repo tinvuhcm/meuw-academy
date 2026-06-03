@@ -1,0 +1,315 @@
+{
+  "meta": {
+    "file": "w33_i001_Tuan_33_-_Bai_91_Em_vui_hoc_Toan_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w33_i001_Tuan_33_-_Bai_91_Em_vui_hoc_Toan_-_Tiet_1.pptx",
+    "slideCount": 17
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 2",
+        "Tuần 33",
+        "Bài 91: Em vui học Toán - Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Giá bán của một số loại trái cây",
+        "Trái cây",
+        "Táo",
+        "Cam",
+        "Ổi",
+        "Xoài",
+        "Giá bán/kg",
+        "50 000",
+        "35 000",
+        "25 000",
+        "45 000",
+        "Bảng số liệu cho biết về gì?",
+        "Có bao nhiêu loại trái cây?",
+        "Trái cây nào có giá tiền cao nhất?",
+        "Trái cây nào có giá tiền thấp nhất?",
+        "Nếu mua 3 kg táo, 2 kg ổi, 1 kg cam và 1 kg xoài thì hết bao nhiêu tiền?"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "Giá bán của một số loại trái cây",
+        "Trái cây",
+        "Táo",
+        "Cam",
+        "Ổi",
+        "Xoài",
+        "Giá bán/kg",
+        "50 000",
+        "35 000",
+        "25 000",
+        "45 000",
+        "loại trái cây:",
+        "Cam",
+        "Xoài",
+        "Trái cây có giá tiền cao nhất:",
+        "Trái cây có giá tiền thấp nhất:",
+        "Táo",
+        "Ổi",
+        "Táo",
+        "Ổi"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "content",
+      "paragraphs": [
+        "Giá bán của một số loại trái cây",
+        "Trái cây",
+        "Táo",
+        "Cam",
+        "Ổi",
+        "Xoài",
+        "Giá bán/kg",
+        "50 000",
+        "35 000",
+        "25 000",
+        "45 000",
+        "Mua 3kg táo, 2kg ổi, 1kg cam và 1kg xoài hết số tiền là:",
+        "3  50 000  2  25 000  1  35 000  1  45 000  280 000 (đồng)"
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Thực hiện các hoạt động sau:",
+        "Mỗi nhóm lựa chọn một tiêu chí thống kê: cân nặng, chiều cao, cỡ giày,...",
+        "Thu nhập thông tin từ các bạn trong nhóm rồi ghi vào bảng."
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Thực hiện các hoạt động sau:",
+        "Đọc các số liệu trong bảng thống kê rồi rút ra nhận xét.",
+        "Trưng bày vào báo cáo kết quả."
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Nhiệm vụ",
+        "Thảo luận những vẫn đề cần thu nhập dữ liệu:",
+        "Cân nặng",
+        "Chiều cao",
+        "Cỡ giày",
+        "Thực hiện thu nhập số liệu và ghi lại kết quả vào bảng thống kê với vấn đề được chọn.",
+        "Phân công thu nhập thông tin trong nhóm rồi tổng hợp lại."
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "questions",
+      "paragraphs": [
+        "01",
+        "Tổng hợp kết quả thành bảng số liệu, báo cáo kết quả, nêu nhận xét, đặt câu hỏi liên quan:",
+        "Bảng thống kê cho ta biết điều gì?",
+        "Có bao nhiêu học sinh?",
+        "Phân loại (số cỡ giày, số cân nặng, …) trong bảng thống kê?",
+        "…..",
+        "Biểu diễn số liệu thống kê bằng biểu đồ cột."
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Ví dụ tham khảo",
+        "Số thứ tự",
+        "Tên",
+        "Cỡ giày",
+        "Phương Anh",
+        "32",
+        "Ngọc Hà",
+        "33",
+        "Phương Thảo",
+        "34",
+        "Hà Linh",
+        "35",
+        "Phương Nam",
+        "33",
+        "Thanh Trúc",
+        "34",
+        "Thành Trung",
+        "36",
+        "Quốc Dương",
+        "34",
+        "Thu Huệ",
+        "33",
+        "10",
+        "Gia Bảo",
+        "35",
+        "11",
+        "Phúc Khang",
+        "34",
+        "12",
+        "Bảo Bình",
+        "32",
+        "13",
+        "Thu Huyền",
+        "34",
+        "14",
+        "Huy Đan",
+        "33",
+        "15",
+        "Hồng Phúc",
+        "34",
+        "Thống kê cỡ giày của các bạn nhóm 3."
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Trả lời",
+        "Bảng “Thống kê cỡ giày của các bạn nhóm 3”.",
+        "Cỡ giày được chia thành 5 loại:",
+        "Cỡ giày lớn nhất:",
+        "Có          học sinh.",
+        "15",
+        "Cỡ giày nhỏ nhất:",
+        "36",
+        "32",
+        "Cỡ 32",
+        "Cỡ 33",
+        "Cỡ 34",
+        "Cỡ 35",
+        "Cỡ 36"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Trả lời",
+        "Số học sinh đi cỡ giày 36:",
+        "1 học sinh",
+        "Số học sinh đi cỡ giày 32:",
+        "2 học sinh",
+        "Cỡ giày trung bình của nhóm 3 là:",
+        "34."
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 15,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước",
+        "Bài 91: Em vui học Toán Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 17,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 2 Tuần 33",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Bảng số liệu cho biết về gì?",
+        "slide": 3
+      },
+      {
+        "type": "question",
+        "text": "Có bao nhiêu loại trái cây?",
+        "slide": 3
+      },
+      {
+        "type": "question",
+        "text": "Trái cây nào có giá tiền cao nhất?",
+        "slide": 3
+      },
+      {
+        "type": "question",
+        "text": "Trái cây nào có giá tiền thấp nhất?",
+        "slide": 3
+      },
+      {
+        "type": "question",
+        "text": "Nếu mua 3 kg táo, 2 kg ổi, 1 kg cam và 1 kg xoài thì hết bao nhiêu tiền?",
+        "slide": 3
+      },
+      {
+        "type": "task",
+        "text": "Đọc các số liệu trong bảng thống kê rồi rút ra nhận xét.",
+        "slide": 8
+      },
+      {
+        "type": "question",
+        "text": "Bảng thống kê cho ta biết điều gì?",
+        "slide": 10
+      },
+      {
+        "type": "question",
+        "text": "Có bao nhiêu học sinh?",
+        "slide": 10
+      },
+      {
+        "type": "question",
+        "text": "Phân loại (số cỡ giày, số cân nặng, …) trong bảng thống kê?",
+        "slide": 10
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước",
+        "slide": 15
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

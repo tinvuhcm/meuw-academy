@@ -1,0 +1,332 @@
+{
+  "meta": {
+    "file": "w14_i002_Tuan_14_-_Bai_41_Luyen_tap_-_Tiet_2.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w14_i002_Tuan_14_-_Bai_41_Luyen_tap_-_Tiet_2.pptx",
+    "slideCount": 25
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 1",
+        "Tuần 14",
+        "Bài 41: Luyện tập - Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "04",
+        "Cuộn dây thép dài 5 m thì cân nặng 250 g. Hỏi cuộn dây thép cùng loại đó cân nặng 2 500 g thì dài bao nhiêu mét?"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "Các bước giải bài toán liên quan đến rút về đơn vị",
+        "* Dạng 1: Bài toán liên quan đến một phép chia và một phép nhân.",
+        "Bước 1: Tìm giá trị một phần (thực hiện phép chia).",
+        "Bước 2: Tìm giá trị nhiều phần đó (thực hiện phép nhân)."
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "content",
+      "paragraphs": [
+        "Các bước giải bài toán liên quan đến rút về đơn vị",
+        "* Dạng 2: Bài toán liên quan đến hai phép chia.",
+        "Bước 1: Tìm giá trị một phần (thực hiện phép chia).",
+        "Bước 2: Tìm số phần có được theo giá trị đó (thực hiện phép chia)."
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "questions",
+      "paragraphs": [
+        "04",
+        "Cuộn dây thép dài 5 m thì cân nặng 250 g. Hỏi cuộn dây thép cùng loại đó cân nặng 2 500 g thì dài bao nhiêu mét?",
+        "Bài giải",
+        "Cuộn dây thép dài 1 m thì cân nặng là:",
+        "250  5  50 (g)",
+        "Cuộn dây thép cân nặng 2 500 g thì dài số mét là:",
+        "2 500  50  50 (m)",
+        "Đáp số: 50 m."
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "questions",
+      "paragraphs": [
+        "05",
+        "Một xưởng sản xuất thủ công mĩ nghệ sản xuất được 315 sản phẩm làm bằng cây lục bình trong 9 ngày. Hỏi:",
+        "a) Trung bình mỗi ngày xưởng thủ công đó sản xuất được bao nhiêu sản phẩm làm bằng cây lục bình?",
+        "b) Với sản lượng như trên, để sản xuất được 280 sản phẩm xưởng thủ công đó cần sản xuất trong mấy ngày?",
+        "HOẠT ĐỘNG CẶP ĐÔI"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "05",
+        "Bài giải",
+        "a) Trung bình mỗi ngày xưởng thủ công đó sản xuất được số sản phẩm làm bằng cây lục bình là:",
+        "315  9  35 (sản phẩm)",
+        "b) Để sản xuất được 280 sản phẩm xưởng thủ công đó cần sản xuất trong số ngày là:",
+        "280  35  8 (ngày)",
+        "Đáp số: a) 35 sản phẩm,",
+        "b) 8 ngày."
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "06",
+        "Quan sát giá bán của mỗi loại hộp giấy trong hình vẽ"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "questions",
+      "paragraphs": [
+        "06",
+        "Chọn đáp án thích hợp:",
+        "Nếu cần mua 25 hộp giấy nhỏ thì nên chọn cách mua nào để số tiền phải trả là tiết kiệm nhất?",
+        "A. Mua 1 hộp to, 5 hộp nhỏ.",
+        "B. Mua 1 hộp to, 1 hộp vừa và 2 hộp nhỏ.",
+        "C. Mua 8 hộp vừa và 1 hộp nhỏ.",
+        "D. Mua 25 hộp nhỏ."
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "06",
+        "a) Mua 1 hộp to và 5 hộp nhỏ hết số tiền là:",
+        "200 000  13 000  5  265 000 (đồng)",
+        "b) Mua 1 hộp to, 1 hộp vừa và 2 hộp nhỏ hết số tiền là:",
+        "200 000  35 000  13 000  2  261 000 (đồng)",
+        "c) Mua 8 hộp vừa và 1 hộp nhỏ hết số tiền là:",
+        "35 000  8  13 000  293 000 (đồng)",
+        "d) Mua 25 hộp nhỏ hết số tiền là:",
+        "13 000 25  325 000 (đồng)",
+        "Vậy mua 1 hộp to, 1 hộp vừa và 2 hộp nhỏ thì số tiền phải trả là tiết kiệm nhất."
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "TRÒ CHƠI LEO CỘT MỠ",
+        "Mỗi đội có 3 thành viên, các em hãy giúp cả 3 thành viên leo được hết lên cột mỡ bằng cách trả lời các câu hỏi. Mỗi câu trả lời đúng là một thành viên sẽ được leo lên cột. Trả lời sai quyền trả lời sẽ được trao cho đội còn lại."
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "Đội 1",
+        "Đội 2"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 1",
+        "Một cửa hàng có 6 thùng nước mắm như nhau chứa tổng cộng 54 lít. Cửa hàng đã bán hết 36 lít. Hỏi cửa hàng đã bán bao nhiêu thùng nước mắm?",
+        "A. 1 thùng.",
+        "B. 2 thùng.",
+        "C. 3 thùng.",
+        "D. 4 thùng."
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 2",
+        "Có 480 tấn hàng, một toa tàu chở được 60 tấn hàng. Hỏi cần bao nhiêu toa tàu để chở được hết tổng  số tấn hang đó?",
+        "A. 8 toa tàu.",
+        "B. 5 toa tàu.",
+        "C. 6 toa tàu.",
+        "D. 7 toa tàu."
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 3",
+        "Cuộn dây thép dài 5 m thì cân nặng 200 g. Hỏi cuộn dây thép cùng loại đó cân nặng 1 600 g thì dài bao nhiêu mét?",
+        "A. 30 m.",
+        "B. 40 m.",
+        "C. 20 m.",
+        "D. 15 m."
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 4",
+        "48 cái bánh thì cần 4 hộp. Hỏi 72 cái bánh thì cần bao nhiêu hộp?",
+        "A. 4 hộp.",
+        "B. 5 hộp.",
+        "C. 6 hộp.",
+        "D. 7 hộp."
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 5",
+        "Có 1 200 kg gạo đựng vào các bao, mỗi bao đựng được 50 kg gạo. Hỏi cần bao nhiêu bao để đựng hết số gạo?",
+        "A. 24 bao.",
+        "B. 25 bao.",
+        "C. 26 bao.",
+        "D. 27 bao."
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em biết thêm được điều gì?"
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "questions",
+      "paragraphs": [
+        "Khi thực hiện phép chia một số cho số có hai chữ số, em nhắn bạn cần lưu ý những gì?"
+      ]
+    },
+    {
+      "slideNo": 22,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 23,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước",
+        "Bài 42: Chia cho số có hai chữ số (tiếp theo)"
+      ]
+    },
+    {
+      "slideNo": 24,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 25,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 1 Tuần 14",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Cuộn dây thép dài 5 m thì cân nặng 250 g. Hỏi cuộn dây thép cùng loại đó cân nặng 2 500 g thì dài bao nhiêu mét?",
+        "slide": 3
+      },
+      {
+        "type": "question",
+        "text": "Cuộn dây thép dài 5 m thì cân nặng 250 g. Hỏi cuộn dây thép cùng loại đó cân nặng 2 500 g thì dài bao nhiêu mét?",
+        "slide": 6
+      },
+      {
+        "type": "question",
+        "text": "a) Trung bình mỗi ngày xưởng thủ công đó sản xuất được bao nhiêu sản phẩm làm bằng cây lục bình?",
+        "slide": 7
+      },
+      {
+        "type": "question",
+        "text": "b) Với sản lượng như trên, để sản xuất được 280 sản phẩm xưởng thủ công đó cần sản xuất trong mấy ngày?",
+        "slide": 7
+      },
+      {
+        "type": "task",
+        "text": "Chọn đáp án thích hợp:",
+        "slide": 11
+      },
+      {
+        "type": "question",
+        "text": "Nếu cần mua 25 hộp giấy nhỏ thì nên chọn cách mua nào để số tiền phải trả là tiết kiệm nhất?",
+        "slide": 11
+      },
+      {
+        "type": "question",
+        "text": "Một cửa hàng có 6 thùng nước mắm như nhau chứa tổng cộng 54 lít. Cửa hàng đã bán hết 36 lít. Hỏi cửa hàng đã bán bao nhiêu thùng nước mắm?",
+        "slide": 15
+      },
+      {
+        "type": "question",
+        "text": "Có 480 tấn hàng, một toa tàu chở được 60 tấn hàng. Hỏi cần bao nhiêu toa tàu để chở được hết tổng  số tấn hang đó?",
+        "slide": 16
+      },
+      {
+        "type": "question",
+        "text": "Cuộn dây thép dài 5 m thì cân nặng 200 g. Hỏi cuộn dây thép cùng loại đó cân nặng 1 600 g thì dài bao nhiêu mét?",
+        "slide": 17
+      },
+      {
+        "type": "question",
+        "text": "48 cái bánh thì cần 4 hộp. Hỏi 72 cái bánh thì cần bao nhiêu hộp?",
+        "slide": 18
+      },
+      {
+        "type": "question",
+        "text": "Có 1 200 kg gạo đựng vào các bao, mỗi bao đựng được 50 kg gạo. Hỏi cần bao nhiêu bao để đựng hết số gạo?",
+        "slide": 19
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em biết thêm được điều gì?",
+        "slide": 20
+      },
+      {
+        "type": "question",
+        "text": "Khi thực hiện phép chia một số cho số có hai chữ số, em nhắn bạn cần lưu ý những gì?",
+        "slide": 21
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước",
+        "slide": 23
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

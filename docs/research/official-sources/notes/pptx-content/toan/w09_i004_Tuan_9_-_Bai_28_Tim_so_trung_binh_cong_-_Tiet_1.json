@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "file": "w09_i004_Tuan_9_-_Bai_28_Tim_so_trung_binh_cong_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w09_i004_Tuan_9_-_Bai_28_Tim_so_trung_binh_cong_-_Tiet_1.pptx",
+    "slideCount": 20
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 1",
+        "Tuần 9",
+        "Bài 28: Tìm số trung bình cộng",
+        "Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 3,
+      "type": "content",
+      "paragraphs": [
+        "THẢO LUẬN CẶP ĐÔI"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "Chồng sách 1",
+        "Chồng sách 2",
+        "Chồng sách 3",
+        "Khi san đều số sách vào mỗi chồng thì ở mỗi chồng sách có 12 quyển."
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "Muốn tìm số sách san đều vào mỗi chồng, ta lấy tổng số sách chia cho 3.",
+        "Ta gọi 12 là số trung bình cộng của ba số 11, 15 và 10.Ta nói: Trung bình mỗi chồng có 12 quyển sách.",
+        "Số sách san đều vào mỗi chồng là:",
+        "(11 + 15 + 10) : 3 = 12 (quyển)",
+        "SỐ TRUNG BÌNH CỘNG",
+        "Ấn để đến",
+        "video hướng dẫn"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến",
+        "video hướng dẫn",
+        "Muốn tìm số trung bình cộng của nhiều số, ta thực hiện các bước sau:",
+        "Bước 1: Ta tính tổng của các số đó.",
+        "Bước 2: Lấy tổng tìm được chia cho số các số hạng."
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "VÍ DỤ",
+        "Số học sinh của 3 nhóm lần lượt là 35 học sinh, 40 học sinh, 45 học sinh.",
+        "Ta có: Trung bình mỗi nhóm có số học sinh là:",
+        "(35 + 40 + 45) : 3 = 40 (học sinh)"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "questions",
+      "paragraphs": [
+        "GIẢI BÀI TOÁN VỀ TÌM SỐ TRUNG BÌNH CỘNG",
+        "THẢO LUẬN NHÓM",
+        "BÀI TOÁN: Ba bạn Hiền, Hoa và Thanh vào rừng hái nấm. Hiền hai được 14 cây nấm, hoa hái được 16 cây nấm và Thanh hái được 12 cây nấm. Hỏi trung bình mỗi bạn hái được bao nhiêu cây nấm?"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "THẢO LUẬN NHÓM"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "Bài giải",
+        "Tổng số cây nấm ba bạn hái được là:",
+        "14 + 16 + 12 = 42 (cây)",
+        "Trung bình mỗi bạn hái được số cây nấm là:",
+        "42 : 3 = 14 (cây)",
+        "Đáp số: 14 cây nấm"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "Số trung bình cộng của các số 36 và 38 là: \t(36 + 38) : 2 = 37",
+        "b) Số trung bình cộng của các số 4, 3 và 8 là: \t(4 + 3 + 8) : 3 = 5",
+        "Bài tập 1 SGK – tr69",
+        "Tìm số trung bình cộng của mỗi nhóm số sau:",
+        "a) 36 và 38",
+        "c) 12, 23, 5 và 44",
+        "b) 4, 3 và 8",
+        "d) 35, 40, 45, 50 và 55",
+        "Trả lời"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "c) Số trung bình cộng của các số 12, 23, 5 và 44 là: \t(12 + 23 + 5 + 44) : 4 = 21",
+        "d) Số trung bình cộng của các số 35, 40, 45, 50 và 55 là:\t(35 + 40 + 45 + 50 + 55) : 5 = 45",
+        "Bài tập 1 SGK – tr69",
+        "Tìm số trung bình cộng của mỗi nhóm số sau:",
+        "a) 36 và 38",
+        "c) 12, 23, 5 và 44",
+        "b) 4, 3 và 8",
+        "d) 35, 40, 45, 50 và 55",
+        "Trả lời"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 2 SGK – tr70",
+        "Mai cân nặng 36 kg, Hưng cân nặng 37 kg, Lan cân nặng 33 kg, Duy cân nặng 38 kg. Hỏi trung bình mỗi bạn cân nặng bao nhiêu ki-lô-gam?",
+        "Bài giải",
+        "Tổng số cân nặng của bốn bạn là:36 + 37 + 33 + 38 = 144 (kg)",
+        "Trung bình mỗi bạn cân nặng là:144 : 4 = 36 (kg)Đáp số: 36 kg."
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "questions",
+      "paragraphs": [
+        "CỦNG CỐ, DẶN DÒ",
+        "Qua bài học hôm nay, em biết thêm được điều gì?"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT"
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 20,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 1 Tuần 9",
+    "questions": [
+      {
+        "type": "question",
+        "text": "BÀI TOÁN: Ba bạn Hiền, Hoa và Thanh vào rừng hái nấm. Hiền hai được 14 cây nấm, hoa hái được 16 cây nấm và Thanh hái được 12 cây nấm. Hỏi trung bình mỗi bạn hái được bao nhiêu cây nấm?",
+        "slide": 9
+      },
+      {
+        "type": "task",
+        "text": "Tìm số trung bình cộng của mỗi nhóm số sau:",
+        "slide": 13
+      },
+      {
+        "type": "task",
+        "text": "Tìm số trung bình cộng của mỗi nhóm số sau:",
+        "slide": 14
+      },
+      {
+        "type": "question",
+        "text": "Mai cân nặng 36 kg, Hưng cân nặng 37 kg, Lan cân nặng 33 kg, Duy cân nặng 38 kg. Hỏi trung bình mỗi bạn cân nặng bao nhiêu ki-lô-gam?",
+        "slide": 15
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em biết thêm được điều gì?",
+        "slide": 16
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

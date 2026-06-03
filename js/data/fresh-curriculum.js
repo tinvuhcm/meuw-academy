@@ -11,7 +11,7 @@ import {
   getSubjectEstimatedMinutes,
   LONG_RANGE_STUDY_POLICY,
 } from './official-knowledge-map.js';
-import { buildKnttCatalogTopics } from './kntt-topics.js';
+import { buildKnttCatalogTopics, generateKnttLessonQuestions } from './kntt-topics.js';
 import { getPptxTopicsForSubject } from './kntt-pptx-questions.js';
 import { ALL_SCI_ENCYCLOPEDIA_TOPICS } from './science-encyclopedia.js';
 import { ALL_SCIENCE_WORLD_TOPICS } from './science-world.js';
@@ -308,6 +308,15 @@ function mergeSupplemental(catalog, topic) {
     if (!existing.topicKey || existing.topicKey === key) {
       existing.topicKey = topic.topicKey;
     }
+    if (!existing.generator && topic.generator) {
+      existing.generator = topic.generator;
+    }
+    if (!existing.knttSource && topic.knttSource) {
+      existing.knttSource = clone(topic.knttSource);
+    }
+    if (existing.sequenceIndex === undefined && topic.sequenceIndex !== undefined) {
+      existing.sequenceIndex = topic.sequenceIndex;
+    }
     if (topic.defaultCount) existing.defaultCount = topic.defaultCount;
     return;
   }
@@ -319,6 +328,9 @@ function mergeSupplemental(catalog, topic) {
     lessonBlocks: clone(topic.lessonBlocks || []),
     questionPool: extraPool.map(ensureAnswerField),
     defaultCount: topic.defaultCount,
+    generator: topic.generator,
+    knttSource: topic.knttSource ? clone(topic.knttSource) : undefined,
+    sequenceIndex: topic.sequenceIndex,
   });
 }
 
@@ -488,6 +500,8 @@ function buildCatalog(allData) {
   buildKnttCatalogTopics().forEach(topic => {
     if (topic.subject === 'math' && topic.op) {
       topic.generator = generateMathQuestions;
+    } else if (!topic.generator && topic.knttSource) {
+      topic.generator = generateKnttLessonQuestions;
     }
     mergeSupplemental(catalog, topic);
   });
@@ -500,10 +514,10 @@ function buildCatalog(allData) {
   // Vietnam topics — Lịch sử & Địa lí Việt Nam (handwritten, source-verified)
   ALL_VIETNAM_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
 
-  // PPTX question pools — fill non-math topics with real KNTT slide content
-  // Aggregated mega-topic per subject (first in array) serves 20 Q/slot.
-  // ethics, pe, life excluded (no longer active subjects).
-  const PPTX_SUBJECTS = ['vie', 'sci', 'histgeo', 'art', 'tech', 'it'];
+  // PPTX slide-derived question pools are unreliable for direct runtime QA,
+  // especially for SGK reading/language content where extracted answers often
+  // become nonsensical. Keep only the science lane unchanged for now.
+  const PPTX_SUBJECTS = ['sci'];
   for (const subjectCode of PPTX_SUBJECTS) {
     const topics = getPptxTopicsForSubject(subjectCode);
     for (const topic of topics) {

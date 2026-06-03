@@ -1,0 +1,291 @@
+{
+  "meta": {
+    "file": "w21_i003_Tuan_21_-_Bai_60_Quy_dong_mau_so_cac_phan_so_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w21_i003_Tuan_21_-_Bai_60_Quy_dong_mau_so_cac_phan_so_-_Tiet_1.pptx",
+    "slideCount": 25
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 2",
+        "Tuần 21",
+        "Bài 60: Quy đồng mẫu số",
+        "các phân số - Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "content",
+      "paragraphs": [
+        "TRÒ CHƠI “Đố bạn”",
+        "Đố bạn tìm được phân số bằng phân số  nhưng có cùng mẫu số với .",
+        "Đố bạn tìm được phân số bằng phân số",
+        "nhưng có cùng mẫu số với  ."
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 5,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "Ví dụ",
+        "Cho hai phân số  và  . Hãy viết hai phân số trên thành hai phân số có cùng mẫu số là 8."
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "Ta có:",
+        "1  2",
+        "4  2",
+        ", giữ nguyên phân số  .",
+        "Ta nói rằng hai phân số  và  đã được quy đồng mẫu số thành hai phân số    và   ; 8 gọi là mẫu số chung của hai phân số   và  .",
+        "Mẫu số chung 8 chia hết cho mẫu số của hai phân số   và  ."
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "Quy đồng mẫu số hai phân số là việc áp dụng tính chất cơ bản để biến đổi hai phân số thành các phân số có mẫu số chung."
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "2. Cách quy đồng mẫu số hai phân số",
+        "Khi quy đồng mẫu số hai phân số  và  , ta làm như sau:"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "2. Cách quy đồng mẫu số hai phân số",
+        "Chọn mẫu số chung:",
+        "Vì 6 chia hết cho 3 nên ta chọn 6 làm mẫu số chung.",
+        "Thực hiện quy đồng mẫu số:",
+        "Ta có:",
+        "2  2",
+        "3  2",
+        ", giữ nguyên phân số",
+        "Vậy quy đồng mẫu số hai phân số  và ta được hai phân số  và  ."
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Tìm mẫu số chung của hai phân số:",
+        "Trả lời",
+        "a) Vì 15 chia hết cho 3 nên ta chọn 15 là mẫu số chung của hai phân số",
+        "và",
+        "15"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Tìm mẫu số chung của hai phân số:",
+        "Trả lời",
+        "b) Vì 64 chia hết cho 8 nên ta chọn 64 là mẫu số chung của hai phân số",
+        "64",
+        "và"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Tìm mẫu số chung của hai phân số:",
+        "Trả lời",
+        "c) Vì 22 chia hết cho 11 nên ta chọn 22 là mẫu số chung của hai phân số",
+        "21",
+        "22",
+        "và",
+        "11"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Tìm mẫu số chung của hai phân số:",
+        "Trả lời",
+        "d) Vì 100 chia hết cho 25 nên ta chọn 100 là mẫu số chung của hai phân số",
+        "25",
+        "và",
+        "72",
+        "100"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "Viết hai phân số   và  thành hai phân số có mẫu số chung:",
+        "Trả lời",
+        "Vì 42 chia hết cho 6 nên ta chọn 42 làm mẫu số chung. Thực hiện quy đồng mẫu số, ta có:  =  =  , giữ nguyên phân số",
+        "Vậy quy đồng mẫu số hai phân số  và  ta được hai phân số \t và ."
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "content",
+      "paragraphs": [
+        "03",
+        "Quy đồng mẫu số hai phân số:",
+        "Vì 10 chia hết cho 2 nên ta chọn 10 làm mẫu số chung. Thực hiện quy đồng mẫu số, ta có:",
+        "=  = , giữ nguyên phân số .",
+        "Vậy quy đồng mẫu số hai phân số  và  ta được hai phân số  và  ."
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "content",
+      "paragraphs": [
+        "03",
+        "Quy đồng mẫu số hai phân số:",
+        "Vì 24 chia hết cho 3 nên ta chọn 24 làm mẫu số chung. Thực hiện quy đồng mẫu số, ta có:",
+        "=  = , giữ nguyên phân số .",
+        "Vậy quy đồng mẫu số hai phân số  và  ta được hai phân số  và  ."
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "content",
+      "paragraphs": [
+        "03",
+        "Quy đồng mẫu số hai phân số:",
+        "Vì 24 chia hết cho 12 nên ta chọn 24 làm mẫu số chung. Thực hiện quy đồng mẫu số, ta có:",
+        "=  = , giữ nguyên phân số .",
+        "Vậy quy đồng mẫu số hai phân số  và  ta được hai phân số  và  ."
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em học được những kiến thức gì?"
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "questions",
+      "paragraphs": [
+        "Muốn quy đồng mẫu số hai phân số trong trường hợp mẫu số chung là một trong hai mẫu số của hai phân số đã cho em cần lưu ý điều gì?",
+        "+ Xác định mẫu số chung;",
+        "+ Tìm thương của mẫu số chung và mẫu số của hai phân số kia;",
+        "+ Lấy thương tìm được nhân với tử số và mẫu số của phân số kia;",
+        "+ Giữ nguyên phân số có mẫu số là mẫu số chung."
+      ]
+    },
+    {
+      "slideNo": 22,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 23,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước Bài 60: Quy đồng mẫu số các phân số - Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 24,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 25,
+      "type": "empty",
+      "paragraphs": []
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 2 Tuần 21",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Chọn mẫu số chung:",
+        "slide": 10
+      },
+      {
+        "type": "task",
+        "text": "Tìm mẫu số chung của hai phân số:",
+        "slide": 12
+      },
+      {
+        "type": "task",
+        "text": "Tìm mẫu số chung của hai phân số:",
+        "slide": 13
+      },
+      {
+        "type": "task",
+        "text": "Tìm mẫu số chung của hai phân số:",
+        "slide": 14
+      },
+      {
+        "type": "task",
+        "text": "Tìm mẫu số chung của hai phân số:",
+        "slide": 15
+      },
+      {
+        "type": "task",
+        "text": "Viết hai phân số   và  thành hai phân số có mẫu số chung:",
+        "slide": 16
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em học được những kiến thức gì?",
+        "slide": 20
+      },
+      {
+        "type": "question",
+        "text": "Muốn quy đồng mẫu số hai phân số trong trường hợp mẫu số chung là một trong hai mẫu số của hai phân số đã cho em cần lưu ý điều gì?",
+        "slide": 21
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước Bài 60: Quy đồng mẫu số các phân số - Tiết 2",
+        "slide": 23
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

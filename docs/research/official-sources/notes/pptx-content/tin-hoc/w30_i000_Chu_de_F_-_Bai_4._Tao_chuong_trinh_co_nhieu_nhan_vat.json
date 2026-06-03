@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "file": "w30_i000_Chu_de_F_-_Bai_4._Tao_chuong_trinh_co_nhieu_nhan_vat.pptx",
+    "subject": "tin-hoc",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tin-hoc\\slides\\w30_i000_Chu_de_F_-_Bai_4._Tao_chuong_trinh_co_nhieu_nhan_vat.pptx",
+    "slideCount": 21
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "Tin học 4",
+        "Chủ đề F",
+        "Làm quen với lập trình trực quan",
+        "Bài 4: Tạo chương trình có nhiều nhân vật"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Quan sát Hình 1 trong SGK và trả lời câu hỏi:",
+        "Hãy mô tả vùng Nhân vật có các nhân vật nào?",
+        "Các nhân vật ở vùng Nhân vật có điểm gì giống và khác so với các nhân vật ở vùng Sân khấu?"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "Quan sát Hình 1 trong SGK và trả lời câu hỏi:",
+        "Vùng Nhân vật có 2 nhân vật là mèo và người; hình ảnh nhân vật ở vùng Nhân vật và vùng Sân khấu giống nhau, chỉ khác nhau về kích thước."
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "1. Thêm, xóa, đổi tên nhân vật",
+        "Các bước xóa, thêm, đổi tên nhân vật"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Cuộc thi chạy",
+        "Nêu các bước tạo một chương trình Cuộc thi chạy."
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Cuộc thi chạy",
+        "Các bước thực hiện tạo chương trình Cuộc thi chạy:",
+        "Bước 1: Tìm hiểu yêu cầu."
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Cuộc thi chạy",
+        "Các bước thực hiện tạo chương trình Cuộc thi chạy:",
+        "Bước 1: Tìm hiểu yêu cầu.",
+        "Bước 2: Dựa trên kịch bản của nhân vật An, xây dựng kịch bản của nhân vật Bích."
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Cuộc thi chạy",
+        "Các bước thực hiện tạo chương trình Cuộc thi chạy:",
+        "Bước 3: Thêm nhân vật An, Bích.",
+        "Bước 4: Lập trình cho nhân vật An như hướng dẫn (hình 5).",
+        "Bước 5: Lập trình cho nhân vật Bích như kịch bản đã xây dựng ở bước 2."
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Cuộc thi chạy",
+        "Quan sát chạy thử chương trình Cuộc thi chạy",
+        "Yêu cầu chương trình: Cuộc thi chạy có hai nhân vật An và Bích. Khi người chơi gõ phím “a” thì An di chuyển, gõ phím “b” thì Bích di chuyển."
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Cuộc thi chạy",
+        "Phân tích hoạt động của nhân vật và cùng đưa ra kịch bản."
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Cuộc thi chạy",
+        "Phân tích hoạt động của nhân vật: khi người chơi gõ phím “a” thì An di chuyển, gõ phím “b” thì Bích di chuyển.",
+        "Kịch bản: khi gõ phím “a” thì An hoạt động như sau: Di chuyển một đoạn dài 10 bước."
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 15,
+      "type": "questions",
+      "paragraphs": [
+        "Ở màn hình môi trường lập trình Scratch, vùng nào dùng để thêm nhân vật?",
+        "Bài 1",
+        "Một chương trình có hai nhân vật Minh và Huyền. Để chọn lập trình cho nhân vật Huyền, em cần nháy chuột vào đâu?",
+        "Bài 2",
+        "Vùng Nhân vật.",
+        "Nháy chuột vào nhân vật Huyền ở vùng Nhân vật."
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 17,
+      "type": "content",
+      "paragraphs": [
+        "Thêm 2 nhân vật, lập trình cho mỗi nhân vật đều có khối lệnh như sau:",
+        "Hãy tạo một chương trình có hai nhân vật. Khi nháy chuột vào mỗi nhân vật trên vùng Sân khấu, nhân vật đó sẽ hiển thị bóng nói."
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "theory",
+      "paragraphs": [
+        "Em có thể sử dụng       ở vùng Nhân vật để thêm nhân vật.",
+        "Mỗi nhân vật cần được lập trình riêng. Để lập trình cho một nhân vật, em cần nháy chuột vào nhân vật đó ở vùng Nhân vật.",
+        "GHI NHỚ"
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "content",
+      "paragraphs": [
+        "Ôn lại các kiến thức đã học ở Bài 4",
+        "Đọc và chuẩn bị trước Bài 5:",
+        "Tạo chương trình có nhân vật chuyển động",
+        "01",
+        "02"
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 21,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "Tin học 4 Chủ đề F Làm quen với lập trình trực quan",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Hãy mô tả vùng Nhân vật có các nhân vật nào?",
+        "slide": 3
+      },
+      {
+        "type": "question",
+        "text": "Các nhân vật ở vùng Nhân vật có điểm gì giống và khác so với các nhân vật ở vùng Sân khấu?",
+        "slide": 3
+      },
+      {
+        "type": "question",
+        "text": "Ở màn hình môi trường lập trình Scratch, vùng nào dùng để thêm nhân vật?",
+        "slide": 15
+      },
+      {
+        "type": "question",
+        "text": "Một chương trình có hai nhân vật Minh và Huyền. Để chọn lập trình cho nhân vật Huyền, em cần nháy chuột vào đâu?",
+        "slide": 15
+      },
+      {
+        "type": "task",
+        "text": "Hãy tạo một chương trình có hai nhân vật. Khi nháy chuột vào mỗi nhân vật trên vùng Sân khấu, nhân vật đó sẽ hiển thị bóng nói.",
+        "slide": 17
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước Bài 5:",
+        "slide": 19
+      }
+    ],
+    "vocab": [],
+    "keyPoints": [
+      "Em có thể sử dụng       ở vùng Nhân vật để thêm nhân vật.",
+      "Mỗi nhân vật cần được lập trình riêng. Để lập trình cho một nhân vật, em cần nháy chuột vào nhân vật đó ở vùng Nhân vật."
+    ]
+  }
+}

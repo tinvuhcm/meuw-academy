@@ -9,11 +9,23 @@ This folder is the canonical school-source corpus for grade 4 knowledge work in 
 
 ## Book series policy
 
-**Active series: Kết nối tri thức với cuộc sống (KNTT) only.**
+This repo does **not** use one blanket SGK policy for all subjects.
 
-Basis: Bộ GD&ĐT Quyết định số 3588/QĐ-BGDĐT — KNTT là bộ SGK thống nhất toàn quốc từ năm học 2026-2027.
+Current curriculum-source policy:
 
-Do not use "Chân trời sáng tạo" (CTST) content in app curriculum or knowledge pool. Both series are cataloged in `notes/hts-lop4-book-indexes.json` for reference, but only KNTT data feeds into app runtime.
+- `Toán`, `Tiếng Việt`, `Tin học`
+  - primary school-source lane may combine approved official SGK lineages and teacher materials as directed by the user
+  - do not mirror lessons mechanically; extract the knowledge core and rebuild lesson flow for the app
+- `English`
+  - **main SGK and program anchor: `Family & Friends 4`**
+  - `Explore Our World / Tiếng Anh 4 (Cánh Diều)` may remain as a support lane for teacher assets, media, pacing, and reference activities
+  - do not let `Explore Our World` replace `Family & Friends 4` as the main English curriculum truth
+- `Khoa học`
+  - broader educational extension is allowed beyond SGK, but keep it separate from the school-subject SGK lane
+
+Guardrail:
+
+- when subject-level policy changes, update this file and the handoff docs immediately so another agent does not continue from stale assumptions
 
 ## Policy
 

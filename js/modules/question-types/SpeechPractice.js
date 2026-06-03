@@ -8,6 +8,36 @@ import { triggerMascot } from '../../mascot.js';
 import { Audio } from '../../audio.js';
 import State from '../../state.js';
 
+function createPlaybackPanel(q) {
+  if (!q.audioSrc && !q.sampleAudioSrc) return null;
+  const src = q.audioSrc || q.sampleAudioSrc;
+  const panel = el('div', { class: 'speech-prompt-card mt-4 flex flex-col gap-3' });
+  panel.appendChild(el('div', { class: 'speech-prompt-text' }, q.audioPromptText || 'Nghe mẫu rồi nói lại hoặc nói theo ý của con nhé.'));
+
+  const playBtn = el(
+    'button',
+    { class: 'btn btn-outline self-start flex items-center gap-2' },
+    q.audioLabel || '🔊 Nghe mẫu',
+  );
+
+  let player = null;
+  playBtn.addEventListener('click', () => {
+    Audio.click();
+    try {
+      if (!player) {
+        player = new window.Audio(src);
+      }
+      player.currentTime = 0;
+      void player.play();
+    } catch (error) {
+      console.warn('[SpeechPractice] Audio playback failed', error);
+    }
+  });
+
+  panel.appendChild(playBtn);
+  return panel;
+}
+
 export function renderSpeechPractice(q, onComplete) {
   const container = el('div', { class: 'question-wrapper speech-wrapper' });
 
@@ -26,6 +56,11 @@ export function renderSpeechPractice(q, onComplete) {
     promptCard.appendChild(sampleBox);
   }
   container.appendChild(promptCard);
+
+  const playbackPanel = createPlaybackPanel(q);
+  if (playbackPanel) {
+    container.appendChild(playbackPanel);
+  }
 
   // 3. Web Speech API Setup
   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;

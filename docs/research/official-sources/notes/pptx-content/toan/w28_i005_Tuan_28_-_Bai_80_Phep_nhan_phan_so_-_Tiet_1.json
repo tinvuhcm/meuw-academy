@@ -1,0 +1,295 @@
+{
+  "meta": {
+    "file": "w28_i005_Tuan_28_-_Bai_80_Phep_nhan_phan_so_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w28_i005_Tuan_28_-_Bai_80_Phep_nhan_phan_so_-_Tiet_1.pptx",
+    "slideCount": 24
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 2",
+        "Tuần 28",
+        "Bài 80: Phép nhân phân số",
+        "Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Hình chữ nhật được gắn hoa có chiều dài bằng mấy phần chiều dài tấm bảng?",
+        "chiều dài tấm bảng"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "questions",
+      "paragraphs": [
+        "Chiều rộng hình chữ nhật bằng mấy phần chiều rộng tấm bảng?",
+        "chiều rộng tấm bảng"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "questions",
+      "paragraphs": [
+        "Diện tích hình chữ nhật được gắn hoa chiếm bao nhiêu phần diện tích tấm bảng?",
+        "Chiếmdiện tích tấm bảng."
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "questions",
+      "paragraphs": [
+        "Công thức tính diện tích hình chữ nhật là gì?",
+        "Diện tích hình chữ nhật bằng chiều dài nhân với chiều rộng (cùng đơn vị đo).",
+        "Tấm bảng được chia làm mấy phần? Có bao nhiêu phần được gắn hoa?",
+        "Tấm bảng được chia thành 8 ô vuông bằng nhau, có 3 ô vuông được gắn hoa."
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "questions",
+      "paragraphs": [
+        "Muốn tính diện tích hình chữ nhật được gắn hoa, ta thực hiện phép tính gì?",
+        "Ta thực hiện phép tính nhân theo công thức tính diện tích hình chữ nhật."
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "Diện tích phần cắm hoa bằng:",
+        "Làm cách nào để thực hiện phép nhân hai phân số"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "questions",
+      "paragraphs": [
+        "Diện tích hình chữ nhật được gắn hoa là bao nhiêu?",
+        "Diện tích hình chữ nhật đã gắn hoa là:"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "theory",
+      "paragraphs": [
+        "Nhận xét về tử số và mẫu số của 3 phân số",
+        "Tử số của phân số thứ 3 là tích của tử số thứ nhất và tử số thứ hai",
+        "Mẫu số của phân số thứ 3 là tích của mẫu số thứ nhất và mẫu số thứ hai"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "questions",
+      "paragraphs": [
+        "Vậy muốn nhân hai phân số, ta làm như thế nào?",
+        "Muốn nhân hai phân số, ta lấy tử số nhân với tử số, mẫu số nhân với mẫu số."
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "Ví dụ:",
+        "Ta có:",
+        "Vậy:"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 1: Tính:"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 2: Rút gọn rồi tính:",
+        "a)",
+        "b)",
+        "c)",
+        "d)",
+        "Rút gọn phân số , giữ nguyên phân số",
+        "Thực hiện  phép tính:",
+        "Trả lời",
+        "a)"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "content",
+      "paragraphs": [
+        "b)",
+        "c)",
+        "d)"
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 4: Tính (theo mẫu):",
+        "Mẫu:",
+        "Ta có thể viết gọn như sau:",
+        "Mẫu:",
+        "Ta có thể viết gọn như sau:",
+        "a)",
+        "b)",
+        "c)",
+        "d)"
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "content",
+      "paragraphs": [
+        "Trả lời:",
+        "a)",
+        "=  =",
+        "b)",
+        "c)",
+        "d)",
+        "Khi nhân một phân số với số tự nhiên, ta nhận tử số với số tự nhiên đó và giữ nguyên mẫu số"
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "questions",
+      "paragraphs": [
+        "CỦNG CỐ, DẶN DÒ",
+        "Qua bài học hôm nay, em học được những gì?",
+        "Muốn nhân hai phân số ta làm thế nào?"
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 22,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "02",
+        "03",
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước Bài 80: Phép nhân phân số – Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 23,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 24,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 2 Tuần 28",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Hình chữ nhật được gắn hoa có chiều dài bằng mấy phần chiều dài tấm bảng?",
+        "slide": 3
+      },
+      {
+        "type": "question",
+        "text": "Chiều rộng hình chữ nhật bằng mấy phần chiều rộng tấm bảng?",
+        "slide": 4
+      },
+      {
+        "type": "question",
+        "text": "Diện tích hình chữ nhật được gắn hoa chiếm bao nhiêu phần diện tích tấm bảng?",
+        "slide": 5
+      },
+      {
+        "type": "question",
+        "text": "Công thức tính diện tích hình chữ nhật là gì?",
+        "slide": 6
+      },
+      {
+        "type": "question",
+        "text": "Tấm bảng được chia làm mấy phần? Có bao nhiêu phần được gắn hoa?",
+        "slide": 6
+      },
+      {
+        "type": "question",
+        "text": "Muốn tính diện tích hình chữ nhật được gắn hoa, ta thực hiện phép tính gì?",
+        "slide": 7
+      },
+      {
+        "type": "question",
+        "text": "Diện tích hình chữ nhật được gắn hoa là bao nhiêu?",
+        "slide": 10
+      },
+      {
+        "type": "question",
+        "text": "Vậy muốn nhân hai phân số, ta làm như thế nào?",
+        "slide": 12
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em học được những gì?",
+        "slide": 20
+      },
+      {
+        "type": "question",
+        "text": "Muốn nhân hai phân số ta làm thế nào?",
+        "slide": 20
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước Bài 80: Phép nhân phân số – Tiết 2",
+        "slide": 22
+      }
+    ],
+    "vocab": [],
+    "keyPoints": [
+      "Nhận xét về tử số và mẫu số của 3 phân số",
+      "Tử số của phân số thứ 3 là tích của tử số thứ nhất và tử số thứ hai",
+      "Mẫu số của phân số thứ 3 là tích của mẫu số thứ nhất và mẫu số thứ hai"
+    ]
+  }
+}

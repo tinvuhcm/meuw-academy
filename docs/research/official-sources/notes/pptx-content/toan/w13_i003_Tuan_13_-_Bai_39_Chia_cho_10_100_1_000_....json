@@ -1,0 +1,385 @@
+{
+  "meta": {
+    "file": "w13_i003_Tuan_13_-_Bai_39_Chia_cho_10_100_1_000_....pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w13_i003_Tuan_13_-_Bai_39_Chia_cho_10_100_1_000_....pptx",
+    "slideCount": 27
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 1",
+        "Tuần 13",
+        "Bài 39: Chia cho",
+        "10, 100, 1 000, ......"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "content",
+      "paragraphs": [
+        "23  10 = 230 tương ứng với 230  10  23",
+        "37  10 = 370 tương ứng với 370  10  37",
+        "23  10  230",
+        "370  10  37",
+        "37  10  370",
+        "230  10  23"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 5,
+      "type": "questions",
+      "paragraphs": [
+        "230  10  ?",
+        "2 300  100  ?",
+        "230  10  23 vì 23  10  230",
+        "Khi chia 230 cho 10 ta chỉ việc bỏ bớt đi một chữ số 0 ở bên phải của số 230.",
+        "2 300  100  23 vì 23  100  2 300",
+        "Khi chia 2 300 cho 100 ta chỉ việc bỏ bớt đi hai chữ số 0 ở bên phải của số 2 300.",
+        "Khi chia số tròn chục, tròn trăm, tròn nghìn,… cho 10, 100, 1 000,… ta chỉ việc bỏ bớt đi một, hai, ba,… chữ số 0 ở bên phải số đó."
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Tính nhẩm:",
+        "8 000  10",
+        "8 000  100",
+        "8 000  1 000",
+        "130 10",
+        "1 500  10",
+        "56 000  10",
+        "56 000  100",
+        "56 000  1 000",
+        "6 400  10",
+        "6 400  100",
+        "64 000  1 000",
+        "2 300  100",
+        "1 800  100",
+        "21 000  1 000",
+        "203 000  1 000",
+        "800",
+        "80",
+        "5 600",
+        "560",
+        "56",
+        "640",
+        "64",
+        "64",
+        "13",
+        "150",
+        "23",
+        "18",
+        "21",
+        "203"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "questions",
+      "paragraphs": [
+        "02",
+        "Tính nhẩm:",
+        "Mẫu",
+        "840  40  ?",
+        "Nhẩm 840  40  84  4  21",
+        "a)\t350  50 =",
+        "240  30 =",
+        "b)\t2 400  60 =",
+        "6 300  70 =",
+        "40",
+        "90"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "questions",
+      "paragraphs": [
+        "03",
+        "Để vận chuyển hết các bao gạo, mỗi bao cân nặng 100 kg. Người ta đã dùng một xe ô tô có trọng tải 25 tấn và một xe công-ten-nơ có trọng tải 60 tấn. Hỏi có thể xếp nhiều nhất bao nhiêu bao gạo lên xe ô tô, bao nhiêu bao gạo lên xe công-ten-nơ?"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "03",
+        "Bài giải",
+        "Đổi 25 tấn  25 000 kg; 60 tấn  60 000 kg",
+        "Số bao gạo có thể xếp nhiều nhất lên xe ô tô là:",
+        "25 000  100  250 (bao)",
+        "Số bao gạo có thể xếp nhiều nhất lên xe công-ten-nơ là:",
+        "60 000  100  600 (bao)",
+        "Đáp số: Ô tô: 250 bao gạo;",
+        "Công-ten-nơ: 600 bao gạo."
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "04",
+        "TRÒ CHƠI “AI NHANH, AI ĐÚNG”"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "TRÒ CHƠI",
+        "CHÉM HOA QUẢ"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "ĐIỂM",
+        "ĐỘI BẮP CẢI",
+        "ĐIỂM",
+        "ĐỘI CÀ RỐT"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "questions",
+      "paragraphs": [
+        "Tính giá trị của biểu thức:",
+        "1 200  100  88 000  1 000  ?",
+        "A. 120.",
+        "B. 100.",
+        "C. 1 000.",
+        "D. 1 100."
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "content",
+      "paragraphs": [
+        "Viết số thích thợp vào chỗ trống:",
+        "3 000 kg =              tấn.",
+        "A. 3",
+        "B. 30",
+        "C. 300",
+        "D. 1 000"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "questions",
+      "paragraphs": [
+        "Tính nhẩm:",
+        "4 000  10  ?",
+        "A. 500.",
+        "B. 600.",
+        "C. 40.",
+        "D. 400."
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "questions",
+      "paragraphs": [
+        "Tính nhẩm:",
+        "600  20  ?",
+        "A. 40.",
+        "B. 400.",
+        "C. 30.",
+        "D. 300."
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "questions",
+      "paragraphs": [
+        "Tính giá trị của biểu thức.",
+        "2 400  10  760 000  1 000  ?",
+        "A. 1 000.",
+        "B. 100.",
+        "C. 10 000.",
+        "D. 10."
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "content",
+      "paragraphs": [
+        "A. 420",
+        "B. 42",
+        "C. 4",
+        "D. 2",
+        "Viết số thích hợp vào chỗ trống:",
+        "4 200 kg =              tạ."
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "questions",
+      "paragraphs": [
+        "Tính nhẩm:",
+        "508 200  10  ?",
+        "A. 58 200.",
+        "B. 5 820.",
+        "C. 50 820.",
+        "D. 582."
+      ]
+    },
+    {
+      "slideNo": 22,
+      "type": "questions",
+      "paragraphs": [
+        "Tính nhẩm:",
+        "3 900  30 ?",
+        "A. 1 300.",
+        "B. 13.",
+        "C. 103.",
+        "D. 130."
+      ]
+    },
+    {
+      "slideNo": 23,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em học thêm được điều gì?"
+      ]
+    },
+    {
+      "slideNo": 24,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 25,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước",
+        "Bài 40: Chia cho số có hai chữ số"
+      ]
+    },
+    {
+      "slideNo": 26,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 27,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 1 Tuần 13",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Tính nhẩm:",
+        "slide": 7
+      },
+      {
+        "type": "task",
+        "text": "Tính nhẩm:",
+        "slide": 8
+      },
+      {
+        "type": "question",
+        "text": "Để vận chuyển hết các bao gạo, mỗi bao cân nặng 100 kg. Người ta đã dùng một xe ô tô có trọng tải 25 tấn và một xe công-ten-nơ có trọng tải 60 tấn. Hỏi có thể xếp nhiều nhất bao nhiêu bao gạo lên xe ô tô, bao nhiêu bao gạo lên xe công-ten-nơ?",
+        "slide": 9
+      },
+      {
+        "type": "task",
+        "text": "Tính giá trị của biểu thức:",
+        "slide": 15
+      },
+      {
+        "type": "question",
+        "text": "1 200  100  88 000  1 000  ?",
+        "slide": 15
+      },
+      {
+        "type": "task",
+        "text": "Viết số thích thợp vào chỗ trống:",
+        "slide": 16
+      },
+      {
+        "type": "task",
+        "text": "Tính nhẩm:",
+        "slide": 17
+      },
+      {
+        "type": "task",
+        "text": "Tính nhẩm:",
+        "slide": 18
+      },
+      {
+        "type": "task",
+        "text": "Tính giá trị của biểu thức.",
+        "slide": 19
+      },
+      {
+        "type": "question",
+        "text": "2 400  10  760 000  1 000  ?",
+        "slide": 19
+      },
+      {
+        "type": "task",
+        "text": "Viết số thích hợp vào chỗ trống:",
+        "slide": 20
+      },
+      {
+        "type": "task",
+        "text": "Tính nhẩm:",
+        "slide": 21
+      },
+      {
+        "type": "task",
+        "text": "Tính nhẩm:",
+        "slide": 22
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em học thêm được điều gì?",
+        "slide": 23
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước",
+        "slide": 25
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

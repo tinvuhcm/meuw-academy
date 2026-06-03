@@ -1,0 +1,255 @@
+{
+  "meta": {
+    "file": "w31_i000_Chu_de_F_-_Bai_5._Tao_chuong_trinh_co_nhan_vat_chuyen_dong.pptx",
+    "subject": "tin-hoc",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tin-hoc\\slides\\w31_i000_Chu_de_F_-_Bai_5._Tao_chuong_trinh_co_nhan_vat_chuyen_dong.pptx",
+    "slideCount": 24
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "Tin học 4",
+        "Chủ đề F",
+        "Làm quen với lập trình trực quan",
+        "Bài 5: Tạo chương trình có nhân vật chuyển động"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy mô tả một số chuyển động của các nhân vật trong một số trò chơi, hoạt hình mà em biết."
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "Một số chuyển động của các nhân vật trong chương trình: đi thẳng, xoay tròn, bay,..."
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "1. Nhóm lệnh chuyển động",
+        "Một số lệnh trong nhóm lệnh Chuyển động:"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "questions",
+      "paragraphs": [
+        "1. Nhóm lệnh chuyển động",
+        "Em hãy cho biết lệnh nào làm nhân vật",
+        "thay đổi vị trí, lệnh nào làm nhân vật xoay?",
+        "Lệnh làm nhân vật xoay:",
+        "Lệnh thay đổi vị trí:"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Khám phá đại dương",
+        "Cho biết các bước tạo một chương trình Khám phá đại dương."
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Khám phá đại dương",
+        "Các bước thực hiện tạo chương trình Khám phá đại dương:",
+        "Bước 1: Tìm hiểu yêu cầu."
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Khám phá đại dương",
+        "Các bước thực hiện tạo chương trình Khám phá đại dương:",
+        "Bước 1: Tìm hiểu yêu cầu.",
+        "Bước 2: Dựa trên kịch bản của nhân vật Cá, xây dựng kịch bản của nhân vật Sao biển."
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Khám phá đại dương",
+        "Các bước thực hiện tạo chương trình Khám phá đại dương:",
+        "Bước 1: Tìm hiểu yêu cầu.",
+        "Bước 2: Dựa trên kịch bản của nhân vật Cá, xây dựng kịch bản của nhân vật Sao biển.",
+        "Bước 3: Thêm nhân vật Cá, Sao biển và phông nền như ở Hình 1."
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Khám phá đại dương",
+        "Các bước thực hiện tạo chương trình Khám phá đại dương:",
+        "Bước 4: Lập trình cho nhân vật Cá như hướng dẫn (hình 2).",
+        "Bước 5: Lập trình cho nhân vật Sao biển như kịch bản đã xây dựng ở bước 2."
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Khám phá đại dương",
+        "Quan sát chạy thử chương trình Khám phá đại dương",
+        "Yêu cầu chương trình: Chương trình gồm hai nhân vật Cá và Sao biển như ở Hình 1. Khi người chơi nháy chuột vào các nhân vật trên vùng Sân khấu thì:",
+        "Nhân vật Cá: bơi tới một vị trí ngẫu nhiên.",
+        "Nhân vật Sao biển: xoay về phía phải."
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Khám phá đại dương",
+        "Phân tích hoạt động của nhân vật và cùng đưa ra kịch bản."
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Khám phá đại dương",
+        "Phân tích hoạt động của nhân vật:",
+        "Khi người chơi nháy chuột vào các nhân vật trên vùng Sân khấu thì:",
+        "Nhân vật Cá: bơi tới một vị trí ngẫu nhiên.",
+        "Nhân vật Sao biển: xoay về phía phải."
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Khám phá đại dương",
+        "Kịch bản: khi nháy chuột vào nhân vật Cá trên vùng Sân khấu, nhân vật Cá thực hiện như sau: Di chuyển từ từ tới vị trí ngẫu nhiên trên vùng Sân khấu."
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 18,
+      "type": "questions",
+      "paragraphs": [
+        "Em sử dụng lệnh nào trong Bảng 1 để:",
+        "a) Nhân vật xoay về phía bên trái trên vùng Sân khấu?",
+        "b) Nhân vật thay đổi vị trí trên vùng Sân khấu?",
+        "b)",
+        "a)"
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 20,
+      "type": "content",
+      "paragraphs": [
+        "Hãy tạo một chương trình có nhân vật Quả bóng, mỗi khi nháy chuột vào quả bóng, nó sẽ di chuyển từ từ tới vị trí ngẫu nhiên trong 2 giây.",
+        "Thêm nhân vật Quả bóng, lập",
+        "trình cho nhân vật như sau:"
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "theory",
+      "paragraphs": [
+        "Nhóm lệnh Chuyển động chứa các lệnh điều khiển nhân vật chuyển động, xoay theo nhiều cách khác nhau.",
+        "GHI NHỚ"
+      ]
+    },
+    {
+      "slideNo": 22,
+      "type": "content",
+      "paragraphs": [
+        "Ôn lại các kiến thức đã học ở Bài 5",
+        "Đọc và chuẩn bị trước Bài 6: Tạo chương trình có nhân vật thay đổi kích thước, màu sắc"
+      ]
+    },
+    {
+      "slideNo": 23,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 24,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "Tin học 4 Chủ đề F Làm quen với lập trình trực quan",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Em hãy mô tả một số chuyển động của các nhân vật trong một số trò chơi, hoạt hình mà em biết.",
+        "slide": 3
+      },
+      {
+        "type": "task",
+        "text": "Em hãy cho biết lệnh nào làm nhân vật",
+        "slide": 7
+      },
+      {
+        "type": "question",
+        "text": "thay đổi vị trí, lệnh nào làm nhân vật xoay?",
+        "slide": 7
+      },
+      {
+        "type": "question",
+        "text": "a) Nhân vật xoay về phía bên trái trên vùng Sân khấu?",
+        "slide": 18
+      },
+      {
+        "type": "question",
+        "text": "b) Nhân vật thay đổi vị trí trên vùng Sân khấu?",
+        "slide": 18
+      },
+      {
+        "type": "task",
+        "text": "Hãy tạo một chương trình có nhân vật Quả bóng, mỗi khi nháy chuột vào quả bóng, nó sẽ di chuyển từ từ tới vị trí ngẫu nhiên trong 2 giây.",
+        "slide": 20
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước Bài 6: Tạo chương trình có nhân vật thay đổi kích thước, màu sắc",
+        "slide": 22
+      }
+    ],
+    "vocab": [],
+    "keyPoints": [
+      "Nhóm lệnh Chuyển động chứa các lệnh điều khiển nhân vật chuyển động, xoay theo nhiều cách khác nhau."
+    ]
+  }
+}

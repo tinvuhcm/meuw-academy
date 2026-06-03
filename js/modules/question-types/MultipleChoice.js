@@ -9,6 +9,40 @@ import { Audio } from '../../audio.js';
 import State from '../../state.js';
 import { createScratchpad } from '../../scratchpad.js';
 
+function createAudioPrompt(q) {
+  if (!q.audioSrc) return null;
+
+  const wrapper = el('div', { class: 'mb-4 flex flex-col gap-2' });
+  const hint = el(
+    'div',
+    { class: 'text-sm font-bold text-text-muted' },
+    q.audioHint || 'Nghe kĩ rồi chọn đáp án đúng nhé.',
+  );
+  const playBtn = el(
+    'button',
+    { class: 'btn btn-outline self-start flex items-center gap-2' },
+    q.audioLabel || '🔊 Nghe audio',
+  );
+
+  let player = null;
+  playBtn.addEventListener('click', () => {
+    Audio.click();
+    try {
+      if (!player) {
+        player = new window.Audio(q.audioSrc);
+      }
+      player.currentTime = 0;
+      void player.play();
+    } catch (error) {
+      console.warn('[MultipleChoice] Audio playback failed', error);
+    }
+  });
+
+  wrapper.appendChild(hint);
+  wrapper.appendChild(playBtn);
+  return wrapper;
+}
+
 /**
  * Render Multiple Choice Question
  * @param {Object} q - Question data
@@ -39,6 +73,11 @@ export function renderMultipleChoice(q, onComplete) {
     const passageBox = el('div', { class: 'passage-box mb-4 p-4 bg-surface border-2 border-border rounded-xl text-text leading-relaxed text-sm max-h-[200px] overflow-y-auto italic' });
     passageBox.innerHTML = q.passage;
     container.appendChild(passageBox);
+  }
+
+  const audioPrompt = createAudioPrompt(q);
+  if (audioPrompt) {
+    container.appendChild(audioPrompt);
   }
 
   // 2. Illustration (SVG string or key)

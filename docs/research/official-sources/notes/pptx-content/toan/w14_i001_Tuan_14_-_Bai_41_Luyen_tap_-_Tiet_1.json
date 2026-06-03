@@ -1,0 +1,230 @@
+{
+  "meta": {
+    "file": "w14_i001_Tuan_14_-_Bai_41_Luyen_tap_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w14_i001_Tuan_14_-_Bai_41_Luyen_tap_-_Tiet_1.pptx",
+    "slideCount": 15
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 1",
+        "Tuần 14",
+        "Bài 41: Luyện tập - Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "content",
+      "paragraphs": [
+        "TRÒ CHƠI - Con số bí mật",
+        "20 x            = 80",
+        "30 x            = 150",
+        "360 : 6 =",
+        "40 x            = 160",
+        "1 400 :            = 70",
+        "750 : 15 =",
+        "60",
+        "20",
+        "50"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 5,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Chọn các số thích hợp trong các số 2; 3; 4; 5; 6; 7; 8; 9 để xếp vào ô            :",
+        "20 x            &lt; 81",
+        "30 x            &lt; 96",
+        "40 x            &lt; 98",
+        "50 x            &lt; 180",
+        "70 x            &lt; 142",
+        "60 x            &lt; 488"
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "a) Tính:",
+        "128",
+        "128",
+        "32",
+        "104",
+        "98",
+        "49",
+        "302",
+        "295",
+        "59",
+        "207",
+        "204",
+        "68"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "b) Đặt tính rồi tính:",
+        "153 : 51",
+        "195 : 39",
+        "259 : 63",
+        "324 : 78",
+        "155 : 37",
+        "558 : 67",
+        "164 : 82",
+        "304 : 59",
+        "153",
+        "153",
+        "51",
+        "195",
+        "195",
+        "39",
+        "259",
+        "252",
+        "63",
+        "324",
+        "312",
+        "12",
+        "78",
+        "Trả lời"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "b) Đặt tính rồi tính:",
+        "153 : 51",
+        "195 : 39",
+        "259 : 63",
+        "324 : 78",
+        "155 : 37",
+        "558 : 67",
+        "164 : 82",
+        "304 : 59",
+        "155",
+        "148",
+        "37",
+        "558",
+        "536",
+        "22",
+        "67",
+        "164",
+        "164",
+        "82",
+        "304",
+        "295",
+        "59",
+        "Trả lời"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "questions",
+      "paragraphs": [
+        "03",
+        "Mỗi toa tàu chở được 60 tấn hàng.",
+        "a) Cần bao nhiêu toa tàu để chở hết 480 tấn hàng?",
+        "b) Cần ít nhất bao nhiêu toa tàu để chở hết 590 tấn hàng?",
+        "Bài giải",
+        "a) Để chở hết 480 tấn hàng cần số toa tàu là:",
+        "480 : 60 = 8 (toa)",
+        "b) Ta có: 590 : 60 = 9 (dư 50)",
+        "Vậy để chở hết 590 tấn hàng cần ít nhất 10 toa tàu."
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em biết thêm được điều gì?"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "questions",
+      "paragraphs": [
+        "Khi thực hiện phép chia một số cho số có hai chữ số, em nhắn bạn cần lưu ý những gì?"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 13,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 15,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 1 Tuần 14",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Chọn các số thích hợp trong các số 2; 3; 4; 5; 6; 7; 8; 9 để xếp vào ô            :",
+        "slide": 5
+      },
+      {
+        "type": "question",
+        "text": "a) Cần bao nhiêu toa tàu để chở hết 480 tấn hàng?",
+        "slide": 9
+      },
+      {
+        "type": "question",
+        "text": "b) Cần ít nhất bao nhiêu toa tàu để chở hết 590 tấn hàng?",
+        "slide": 9
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em biết thêm được điều gì?",
+        "slide": 10
+      },
+      {
+        "type": "question",
+        "text": "Khi thực hiện phép chia một số cho số có hai chữ số, em nhắn bạn cần lưu ý những gì?",
+        "slide": 11
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

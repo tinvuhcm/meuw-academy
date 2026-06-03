@@ -1,0 +1,481 @@
+{
+  "meta": {
+    "file": "w12_i001_Tuan_12_-_Bai_34_Cac_tinh_chat_cua_phep_nhan.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w12_i001_Tuan_12_-_Bai_34_Cac_tinh_chat_cua_phep_nhan.pptx",
+    "slideCount": 35
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 1",
+        "Tuần 12",
+        "Bài 34: Các tính chất của phép nhân"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "activity",
+      "paragraphs": [
+        "HOẠT ĐỘNG CẶP ĐÔI"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "Tìm những cặp thẻ có cùng giá trị.",
+        "8  3",
+        "( 3  5 )  6",
+        "1  6",
+        "0  6",
+        "= 15  6 = 90",
+        "= 24",
+        "= 0",
+        "= 6",
+        "3  8",
+        "6  1",
+        "6  0",
+        "3  ( 5  6 )",
+        "= 3  30 = 90",
+        "= 24",
+        "= 0",
+        "= 6"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "Khi thực hiện phép nhân hai số, ta có thể đổi chỗ các thừa số mà tích không thay đổi.",
+        "1. Tính chất giao hoán của phép nhân",
+        "8  3 = 24",
+        "3  8 = 24",
+        "Nên 8  3 = 3  8"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "Khi nhân một tích hai số với số thứ ba, ta có thể nhân số thứ nhất với tích của số thứ hai và số thứ ba.",
+        "2. Tính chất kết hợp của phép nhân",
+        "( 3  5 )  6 = 15  6 = 90",
+        "3  ( 5  6 ) = 3  30 = 90",
+        "Vậy ( 3  5 )  6 = 3  ( 5  6 )"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "+ Số nào nhân với 1 cũng cho kết quả bằng chính số đó.",
+        "+ Số nào nhân với 0 cũng cho kết quả bằng 0.",
+        "3. Nhân với số 1. Nhân với số 0",
+        "6  1 = 6",
+        "1  6 = 6",
+        "4  0 = 0",
+        "0  4 = 0"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 10,
+      "type": "questions",
+      "paragraphs": [
+        "01",
+        "Số?",
+        "106",
+        "3 456"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "Tính bằng cách thuận tiện (theo mẫu):",
+        "Mẫu: 35  2  5 = 35  (2  5)",
+        "= 35  10",
+        "= 350",
+        "a) 216 × 5 × 2",
+        "c) 5 × 19 × 2",
+        "b) 4 × 76 × 25",
+        "d) 125 × 23 × 8",
+        "25 × 92 × 4 = ( 25 × 4 ) × 92",
+        "= 100 × 92",
+        "= 9 200"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "Tính bằng cách thuận tiện (theo mẫu):",
+        "a) 216  5  2 = 216  ( 5  2 )",
+        "= 216  10",
+        "= 2 160",
+        "b) 4  76  25 = ( 4  25 )  76",
+        "= 100  76",
+        "= 7 600",
+        "c) 5  19  2 = ( 5  2 )  19",
+        "= 10  19",
+        "= 190",
+        "d) 125  23  8 = ( 125  8 )  23",
+        "= 1 000  23",
+        "= 23 000"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "questions",
+      "paragraphs": [
+        "03",
+        "Một nhóm 5 người dự định đi dã ngoại trong 3 ngày. Mỗi ngày một người dự kiến mang theo 2 kg đồ ăn uống. Hỏi nhóm người này cần mang theo bao nhiêu ki-lô-gam đồ ăn uống trong quá trình dã ngoại?",
+        "HOẠT ĐỘNG CẶP ĐÔI"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "03",
+        "Bài giải",
+        "Tổng số ki-lô-gam đồ ăn uống cần mang theo trong quá trình dã ngoại là:",
+        "2  3  5 = 30 (kg)",
+        "Đáp số: 30 kg đồ ăn uống."
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 16,
+      "type": "questions",
+      "paragraphs": [
+        "04",
+        "Một khu chung cư có 4 tòa nhà, mỗi tòa nhà dành ra 25 tầng để ở, mỗi tầng có 12 căn hộ. Hỏi khu chung cư này có bao nhiêu căn hộ để ở?",
+        "HOẠT ĐỘNG CẶP ĐÔI"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "content",
+      "paragraphs": [
+        "04",
+        "Bài giải",
+        "Khu chung cư có tất cả số tầng để ở là:",
+        "25  4 = 100 ( tầng )",
+        "Khu chung cư có tất cả số căn hộ để ở là:",
+        "100  12 = 1 200 (căn hộ)",
+        "Đáp số: 1 200 căn hộ."
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "content",
+      "paragraphs": [
+        "TRÒ CHƠI",
+        "VƯỢT CHƯỚNG NGẠI VẬT"
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "content",
+      "paragraphs": [
+        "Mỗi đội sẽ điều khiển một Robot về đích bằng cách trả lời các câu hỏi một cách chính xác và nhanh nhất. Nếu trả lời sai đội còn lại  sẽ được quyền trả lời.",
+        "Trên đường đi sẽ có những trái tim, nếu trả lời đúng những câu hỏi trái tim, đội bạn sẽ được đi 2 bước.",
+        "LUẬT CHƠI"
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 21,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 1",
+        "Tính  giá trị biểu thức:",
+        "12  2  5  73  5  2 = ?",
+        "A. 840.",
+        "B. 850.",
+        "C. 860.",
+        "D. 870."
+      ]
+    },
+    {
+      "slideNo": 22,
+      "type": "questions",
+      "paragraphs": [
+        "A. 172",
+        "B. 1",
+        "C. 271",
+        "D. 0",
+        "Câu 2",
+        "Điền số thích hợp vào chỗ chấm:",
+        "172  1 = ...........  72"
+      ]
+    },
+    {
+      "slideNo": 23,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 3",
+        "A. Nhân với số 0.",
+        "B. Nhân với số 1.",
+        "C. Tính chất kết hợp.",
+        "D. Tính chất giao hoán.",
+        "Phép tính dưới đây là tính chất gì của phép nhân?",
+        "82  24 = 24  82"
+      ]
+    },
+    {
+      "slideNo": 24,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 4",
+        "Điền số thích hợp vào chỗ chấm:",
+        "13  32 = 32 × ............",
+        "A. 13",
+        "B. 1",
+        "C. 32",
+        "D. 0"
+      ]
+    },
+    {
+      "slideNo": 25,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 5",
+        "Phép tính dưới đây là tính chất gì của phép nhân?",
+        "5  (7  12) = (5  7)  12",
+        "A. Nhân với số 0",
+        "B. Nhân với số 1",
+        "C. Tính chất kết hợp",
+        "D. Tính chất giao hoán"
+      ]
+    },
+    {
+      "slideNo": 26,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 6",
+        "A. 28 000.",
+        "B. 38 000.",
+        "C. 29 000.",
+        "D. 39 000.",
+        "Gấp 28 lần số 1 000 ta được số:"
+      ]
+    },
+    {
+      "slideNo": 27,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 7",
+        "Phép tính dưới đây là tính chất gì của phép nhân?",
+        "4  30  0 = 0  30  4",
+        "A. Nhân với số 0.",
+        "B. Nhân với số 1.",
+        "C. Tính chất kết hợp.",
+        "D. Tính chất giao hoán."
+      ]
+    },
+    {
+      "slideNo": 28,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 8",
+        "Tính giá trị biểu thức sau:",
+        "1 234  100  50 = ?",
+        "A. 6 432.",
+        "B. 6 324.",
+        "C. 6 342.",
+        "D.  6 234."
+      ]
+    },
+    {
+      "slideNo": 29,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 9",
+        "Phép tính dưới đây là tính chất gì của phép nhân?",
+        "326  1 = 1  326",
+        "A. Nhân với số 0.",
+        "B. Nhân với số 1.",
+        "C. Tính chất kết hợp.",
+        "D. Tính chất giao hoán."
+      ]
+    },
+    {
+      "slideNo": 30,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 10",
+        "Tính giá trị biểu thức sau:",
+        "125  50  8 = ?",
+        "A. 30 000.",
+        "B. 40 000.",
+        "C. 50 000.",
+        "D.  60 000."
+      ]
+    },
+    {
+      "slideNo": 31,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em biết thêm được điều gì?"
+      ]
+    },
+    {
+      "slideNo": 32,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 33,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước",
+        "Bài 35: Luyện tập"
+      ]
+    },
+    {
+      "slideNo": 34,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 35,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 1 Tuần 12",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Tìm những cặp thẻ có cùng giá trị.",
+        "slide": 4
+      },
+      {
+        "type": "task",
+        "text": "Tính bằng cách thuận tiện (theo mẫu):",
+        "slide": 11
+      },
+      {
+        "type": "task",
+        "text": "Tính bằng cách thuận tiện (theo mẫu):",
+        "slide": 12
+      },
+      {
+        "type": "question",
+        "text": "Một nhóm 5 người dự định đi dã ngoại trong 3 ngày. Mỗi ngày một người dự kiến mang theo 2 kg đồ ăn uống. Hỏi nhóm người này cần mang theo bao nhiêu ki-lô-gam đồ ăn uống trong quá trình dã ngoại?",
+        "slide": 13
+      },
+      {
+        "type": "question",
+        "text": "Một khu chung cư có 4 tòa nhà, mỗi tòa nhà dành ra 25 tầng để ở, mỗi tầng có 12 căn hộ. Hỏi khu chung cư này có bao nhiêu căn hộ để ở?",
+        "slide": 16
+      },
+      {
+        "type": "task",
+        "text": "Tính  giá trị biểu thức:",
+        "slide": 21
+      },
+      {
+        "type": "question",
+        "text": "12  2  5  73  5  2 = ?",
+        "slide": 21
+      },
+      {
+        "type": "task",
+        "text": "Điền số thích hợp vào chỗ chấm:",
+        "slide": 22
+      },
+      {
+        "type": "question",
+        "text": "Phép tính dưới đây là tính chất gì của phép nhân?",
+        "slide": 23
+      },
+      {
+        "type": "task",
+        "text": "Điền số thích hợp vào chỗ chấm:",
+        "slide": 24
+      },
+      {
+        "type": "question",
+        "text": "Phép tính dưới đây là tính chất gì của phép nhân?",
+        "slide": 25
+      },
+      {
+        "type": "question",
+        "text": "Phép tính dưới đây là tính chất gì của phép nhân?",
+        "slide": 27
+      },
+      {
+        "type": "task",
+        "text": "Tính giá trị biểu thức sau:",
+        "slide": 28
+      },
+      {
+        "type": "question",
+        "text": "1 234  100  50 = ?",
+        "slide": 28
+      },
+      {
+        "type": "question",
+        "text": "Phép tính dưới đây là tính chất gì của phép nhân?",
+        "slide": 29
+      },
+      {
+        "type": "task",
+        "text": "Tính giá trị biểu thức sau:",
+        "slide": 30
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em biết thêm được điều gì?",
+        "slide": 31
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước",
+        "slide": 33
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

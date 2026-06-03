@@ -1,0 +1,242 @@
+{
+  "meta": {
+    "file": "w11_i002_Tuan_11_-_Bai_32_Nhan_voi_so_co_hai_chu_so_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w11_i002_Tuan_11_-_Bai_32_Nhan_voi_so_co_hai_chu_so_-_Tiet_1.pptx",
+    "slideCount": 16
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 1",
+        "Tuần 11",
+        "Bài 32: Nhân với số có hai chữ số  Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "content",
+      "paragraphs": [
+        "Đặt tính rồi tính",
+        "105 622 5",
+        "105 622",
+        "528 110"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "questions",
+      "paragraphs": [
+        "Tại bể bơi bơi có chiều dài 25m, một vận động viên đã bơi được",
+        "53 vòng dọc theo chiều dài của bể bơi. Hỏi vận động viên đó đã bơi được quãng đường dài bao nhiêu mét?"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 6,
+      "type": "questions",
+      "paragraphs": [
+        "Tính 25 x 53 = ?",
+        "Thảo luận nhóm",
+        "Nhân theo thứ tự từ phải sang trái:",
+        "3 nhân 5 bằng 15, viết 5, nhớ 1;",
+        "3 nhân 2 bằng 6, thêm 1 bằng 7, viết 7.",
+        "5 nhân 5 bằng 25, viết 5 ( dưới 7 ), nhớ 2;",
+        "5 nhân 2 bằng 10, thêm 2 bằng 12, viết 12.",
+        "Hạ 5;",
+        "7 cộng 5 bằng 12, viết 2, nhớ 1;",
+        "2 thêm 1 bằng 3, viết 3;",
+        "Hạ 1.",
+        "25",
+        "53",
+        "Vậy 25 x 53 = 1 325",
+        "Ấn vào để xem",
+        "hướng dẫn tính"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "questions",
+      "paragraphs": [
+        "Tính 25 x 53 = ?",
+        "Trong cách tính trên:",
+        "75 gọi là tích riêng thứ nhất.",
+        "125 gọi là tích riêng thứ hai, được viết lùi sang bên trái một cột vì nó là 125 chục, nêu viết đầy đủ thì phải là 1 250 (tích của 50 và 25).",
+        "25",
+        "53",
+        "Vậy 25 x 53 = 1 325",
+        "Ấn vào để xem",
+        "hướng dẫn tính",
+        "Thảo luận nhóm"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "questions",
+      "paragraphs": [
+        "Ví dụ:",
+        "72  31  ?",
+        "72",
+        "31",
+        "72",
+        "2232",
+        "45  26  ?",
+        "58  19  ?",
+        "01",
+        "02",
+        "03",
+        "45",
+        "26",
+        "270",
+        "1170",
+        "58",
+        "19",
+        "522",
+        "1102",
+        "216",
+        "90",
+        "58"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Tính:",
+        "36",
+        "12",
+        "72",
+        "432",
+        "36",
+        "24",
+        "49",
+        "216",
+        "1176",
+        "96",
+        "48",
+        "61",
+        "48",
+        "2928",
+        "288",
+        "75",
+        "43",
+        "225",
+        "3225",
+        "300"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "Đặt tính rồi tính:",
+        "369  12",
+        "218  34",
+        "412  21",
+        "785  23",
+        "369",
+        "12",
+        "738",
+        "4428",
+        "369",
+        "218",
+        "34",
+        "872",
+        "7412",
+        "654",
+        "412",
+        "21",
+        "412",
+        "8652",
+        "824",
+        "785",
+        "23",
+        "2355",
+        "18055",
+        "1570"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em biết thêm được điều gì?"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 14,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 16,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 1 Tuần 11",
+    "questions": [
+      {
+        "type": "question",
+        "text": "53 vòng dọc theo chiều dài của bể bơi. Hỏi vận động viên đó đã bơi được quãng đường dài bao nhiêu mét?",
+        "slide": 4
+      },
+      {
+        "type": "question",
+        "text": "Tính 25 x 53 = ?",
+        "slide": 6
+      },
+      {
+        "type": "question",
+        "text": "Tính 25 x 53 = ?",
+        "slide": 7
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em biết thêm được điều gì?",
+        "slide": 12
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

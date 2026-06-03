@@ -1,0 +1,231 @@
+{
+  "meta": {
+    "file": "w05_i005_Tuan_5_-_Bai_17_Bai_toan_lien_quan_den_rut_ve_don_vi_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w05_i005_Tuan_5_-_Bai_17_Bai_toan_lien_quan_den_rut_ve_don_vi_-_Tiet_1.pptx",
+    "slideCount": 18
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 1",
+        "Tuần 5",
+        "Bài 17: Bài toán liên quan đến rút về đơn vị - Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 3,
+      "type": "content",
+      "paragraphs": [
+        "Tính giá tiền của một chiếc bút."
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "content",
+      "paragraphs": [
+        "Bài toán liên quan đến một phép chia và một phép nhân (Bài tập khởi động)",
+        "Bài toán liên quan đến rút về đơn vị có 2 dạng",
+        "Bài toán liên quan đến hai phép chia (Bài tập 2)"
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "questions",
+      "paragraphs": [
+        "* Dạng 1: Bài toán liên quan đến một phép chia và một phép nhân",
+        "Bài toán: Cửa hàng bán 5 chiếc bút chì giá 30 000 đồng. Bạn Bình muốn mua 8 chiếc bút chì như thế. Hỏi bạn Bình phải trả bao nhiêu tiền?",
+        "Tóm tắt",
+        "5 bút chì: 30 000 đồng",
+        "8 bút chì: ? đồng"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "questions",
+      "paragraphs": [
+        "Em hiểu",
+        "Mua 8 chiếc bút chì cần phải trả bao nhiêu tiền?",
+        "5 chiếc bút chì giá 30 000 đồng.",
+        "Bạn làm tính chia 30 000 : 5 rồi lấy kết quả nhân với 8",
+        "Tôi tìm giá tiền 1 chiếc bút chì rồi tính số tiền 8 chiếc bút chì",
+        "Em nghĩ"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "Bài giải",
+        "Giá tiền 1 chiếc bút chì là:",
+        "30 000 : 5 = 6 000 (đồng)",
+        "Mua 8 chiếc bút chì phải trả số tiền là:",
+        "6 000  8 = 48 000 (đồng)",
+        "Đáp số: 48 000 đồng.",
+        "Ghi kết quả có tên đơn vị trong dấu ngoặc.",
+        "Đáp số ghi đầy đủ cả số và tên đơn vị."
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "Với dạng “rút về đơn vị” liên quan đến một phép chia và một phép nhân, thường tiến hành theo hai bước giải:",
+        "Bước 1: Tìm giá trị một phần (thực hiện phép chia).",
+        "Bước 2: Tìm giá trị nhiều phần đó (thực hiện phép nhân)."
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "questions",
+      "paragraphs": [
+        "Ví dụ:",
+        "3 nhóm có 12 người. Hỏi 4 nhóm có bao nhiêu người?",
+        "5 can chứa 10 lít nước trái cây. Hỏi 6 can chứa bao nhiêu lít nước trái cây?"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 12,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 1 (SGK – tr42)",
+        "a) Mua 4 hộp sữa chua nha đam hết 32 000 đồng. Hỏi mua 6 hộp sữa chua như thế hết bao nhiêu tiền?",
+        "Tóm tắt",
+        "4 hộp: 32 000 đồng",
+        "6 hộp: ? đồng",
+        "Giải",
+        "Giá tiền 1 hộp sữa chua là:",
+        "32 000 : 4 = 8 000 (đồng)",
+        "Mua 6 hộp sữa chua phải trả số tiền là:",
+        "8 000 x 6 = 48 000 (đồng)",
+        "Đáp số: 48 000 đồng."
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 1 (SGK – tr42)",
+        "b) Mua một quả dưa hấu ruột đỏ nặng 3 kg hết 48 000 đồng. Hỏi mua một quả dưa hấu ruột đỏ nặng 5 kg hết bao nhiêu tiền?",
+        "Tóm tắt",
+        "3 kg: 48 000 đồng",
+        "5 kg: ? đồng",
+        "Giải",
+        "Giá tiền 1 kg dưa hấu ruột đỏ là:",
+        "48 000 : 3 = 16 000 (đồng)",
+        "Mua một quả dưa hấu ruột đỏ nặng 5 kg hết số tiền là:",
+        "16 000 x 5 = 80 000 (đồng)",
+        "Đáp số: 80 000 đồng."
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em biết thêm được điều gì?"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Chuẩn bị trước Bài 17:",
+        "Bài toán liên quan đến rút về đơn vị - Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 18,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 1 Tuần 5",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Tính giá tiền của một chiếc bút.",
+        "slide": 3
+      },
+      {
+        "type": "question",
+        "text": "Bài toán: Cửa hàng bán 5 chiếc bút chì giá 30 000 đồng. Bạn Bình muốn mua 8 chiếc bút chì như thế. Hỏi bạn Bình phải trả bao nhiêu tiền?",
+        "slide": 6
+      },
+      {
+        "type": "question",
+        "text": "Mua 8 chiếc bút chì cần phải trả bao nhiêu tiền?",
+        "slide": 7
+      },
+      {
+        "type": "question",
+        "text": "3 nhóm có 12 người. Hỏi 4 nhóm có bao nhiêu người?",
+        "slide": 10
+      },
+      {
+        "type": "question",
+        "text": "5 can chứa 10 lít nước trái cây. Hỏi 6 can chứa bao nhiêu lít nước trái cây?",
+        "slide": 10
+      },
+      {
+        "type": "question",
+        "text": "a) Mua 4 hộp sữa chua nha đam hết 32 000 đồng. Hỏi mua 6 hộp sữa chua như thế hết bao nhiêu tiền?",
+        "slide": 12
+      },
+      {
+        "type": "question",
+        "text": "b) Mua một quả dưa hấu ruột đỏ nặng 3 kg hết 48 000 đồng. Hỏi mua một quả dưa hấu ruột đỏ nặng 5 kg hết bao nhiêu tiền?",
+        "slide": 13
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em biết thêm được điều gì?",
+        "slide": 14
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

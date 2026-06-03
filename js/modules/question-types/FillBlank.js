@@ -28,6 +28,7 @@ export function renderFillBlank(q, onComplete) {
   const inputs = [];
   let attempts = 0;
   let isAnswered = false;
+  const maxAttempts = q._maxAttempts || 3;
   
   const blanks = q.blanks || [{ answer: q.answer || '', type: 'text' }];
 
@@ -125,7 +126,7 @@ export function renderFillBlank(q, onComplete) {
       onComplete(true, xp);
     } else {
       Audio.wrong();
-      if (attempts >= 3) {
+      if (attempts >= maxAttempts) {
         isAnswered = true;
         submitBtn.disabled = true;
         triggerMascot('answer:wrong', { customLines: ['Hơi khó đúng không? Xem đáp án nhé!'] });

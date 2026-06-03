@@ -1,0 +1,426 @@
+{
+  "meta": {
+    "file": "w12_i003_Tuan_12_-_Bai_36_Nhan_voi_10_100_1_000_....pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w12_i003_Tuan_12_-_Bai_36_Nhan_voi_10_100_1_000_....pptx",
+    "slideCount": 27
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 1",
+        "Tuần 12",
+        "Bài 36: Nhân với 10, 100, 1 000,..."
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "content",
+      "paragraphs": [
+        "THẢO LUẬN NHÓM"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 5,
+      "type": "questions",
+      "paragraphs": [
+        "a) 47  10 = ?",
+        "b) 47  100 = ?",
+        "47  10 = 10  47",
+        "(tính chất giao hoán của phép nhân)",
+        "Nhẩm: 1 chục  47 = 47 chục = 470",
+        "Vậy 47  10 = 470.",
+        "47  100 = 100  47",
+        "(tính chất giao hoán của phép nhân)",
+        "Nhẩm: 1 trăm  47 = 47 trăm = 4 700",
+        "Vậy 47  100 = 4 700.",
+        "Khi nhân một số với 10, 100, 1 000,… ta chỉ việc viết thêm một, hai, ba,… chữ số 0 vào bên phải số đó."
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "Thực hiện các phép tính sau:",
+        "72  10 =",
+        "10  35 =",
+        "48  10 =",
+        "43  100 =",
+        "100  63 =",
+        "92  1 000 =",
+        "720",
+        "350",
+        "480",
+        "4 300",
+        "6 300",
+        "92 000"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Tính nhẩm:",
+        "5  10 =",
+        "5  100 =",
+        "5  1 000 =",
+        "32  10 =",
+        "32  100 =",
+        "32  1000 =",
+        "50",
+        "500",
+        "5 000",
+        "320",
+        "3 200",
+        "32 000",
+        "183  10 =",
+        "183  100 =",
+        "183   1000 =",
+        "307  10 =",
+        "560  100 =",
+        "105   1000 =",
+        "1 830",
+        "18 300",
+        "183 000",
+        "3 070",
+        "56 000",
+        "105 000"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "Vận dụng các tính chất của phép nhân để tính nhẩm (theo mẫu):",
+        "HOẠT ĐỘNG CẶP ĐÔI",
+        "Mẫu: 3  40 = 3  4  10 = 12  10 = 120",
+        "3  50",
+        "3  200",
+        "2  4 000",
+        "2  80",
+        "4  300",
+        "3  7 000",
+        "9  70",
+        "5  300",
+        "6  2 000",
+        "3  50",
+        "= 3  5  10",
+        "= 15  10 = 150",
+        "3  200",
+        "= 3  2  100",
+        "= 6  100 = 600",
+        "2  4 000",
+        "= 2  4  1 000",
+        "= 8  1 000 = 8 000"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "Vận dụng các tính chất của phép nhân để tính nhẩm (theo mẫu):",
+        "HOẠT ĐỘNG CẶP ĐÔI",
+        "Mẫu: 3  40 = 3  4  10 = 12  10 = 120",
+        "2  80",
+        "= 2  8  10",
+        "= 16 10 = 160",
+        "4  300",
+        "= 4  3  100",
+        "= 12  100 = 1 200",
+        "3  7 000",
+        "= 3  7  1 000",
+        "= 21  1 000 = 21 000",
+        "3  50",
+        "3  200",
+        "2  4 000",
+        "2  80",
+        "4  300",
+        "3  7 000",
+        "9  70",
+        "5  300",
+        "6  2 000"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "Vận dụng các tính chất của phép nhân để tính nhẩm (theo mẫu):",
+        "HOẠT ĐỘNG CẶP ĐÔI",
+        "Mẫu: 3  40 = 3  4  10 = 12  10 = 120",
+        "9  70",
+        "= 9  7  10",
+        "= 63  10 = 630",
+        "5  300",
+        "= 5  3  100",
+        "= 15  100 = 1 500",
+        "6  2 000",
+        "= 6  2  1 000",
+        "= 12  1 000 = 12 000",
+        "3  50",
+        "3  200",
+        "2  4 000",
+        "2 80",
+        "4  300",
+        "3  7 000",
+        "9  70",
+        "5  300",
+        "6  2 000"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "03",
+        "Vận dụng các tính chất của phép nhân để tính nhẩm:",
+        "HOẠT ĐỘNG CẶP ĐÔI",
+        "20 x 70",
+        "= 2 x 10 x 7 x 10",
+        "= 2 x 7 x 10 x 10",
+        "=  14 x 100 = 1 400",
+        "40 x 40",
+        "= 4 x 10 x 4 x10",
+        "= 4 x 4 x 10 x 10",
+        "= 16 x 100 = 1 600",
+        "300 x 40",
+        "= 3 x 100 x 4 x 10",
+        "= 3 x 4 x 100 x 10",
+        "=  12 x 1 000 = 12 000",
+        "600 x 30",
+        "= 6 x 100 x 3 x10",
+        "= 6 x 3 x 100 x 10",
+        "= 18 x 1 000 = 18 000",
+        "2 000 x 30",
+        "= 2 x 1 000 x 3 x 10",
+        "= 2 x 3 x 1 000 x 10",
+        "=  6 x 10 000 = 60 000",
+        "3 000 x 60",
+        "= 3 x 1 000 x 6 x10",
+        "= 3 x 6 x 1 000 x 10",
+        "= 18 x 10 000 = 180 000"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "questions",
+      "paragraphs": [
+        "04",
+        "Một cửa hàng xếp các cuốn sổ ghi chép vào trong các thùng, mỗi thùng chứa được 1 000 cuốn sổ. Hỏi 43 thùng như vật chứa được tất cả bao nhiêu cuốn sổ ghi chép?",
+        "Bài giải",
+        "Số cuốn sổ ghi chép được chứa trong 43 thùng là:",
+        "43  1 000 = 43 000 (cuốn)",
+        "Đáp số: 43 000 cuốn sổ."
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 15,
+      "type": "content",
+      "paragraphs": [
+        "05",
+        "TRÒ CHƠI “TÍNH NHẨM”",
+        "Luật chơi",
+        "Một học sinh nêu phép tính nhân một số với 10, 100, 1 000,…",
+        "(ví dụ: 1 234  10) và đố bạn tìm kết quả. Sau đó, học sinh đổi lượt cho nhau, một người đố, một người trả lời."
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "content",
+      "paragraphs": [
+        "TRÒ CHƠI “BÉ LÀM ĐẦU BẾP”",
+        "Hãy giúp hai anh em nhà Nam nấu một số món ăn yêu thích của gia đình bằng cách trả lời đúng câu hỏi. Mỗi một câu hỏi đúng là một món ăn sẽ hoàn thành."
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "content",
+      "paragraphs": [
+        "Thịt bò nướng",
+        "Gà rán",
+        "Cua hấp",
+        "Mỳ tôm trứng",
+        "Thịt xiên nướng",
+        "Danh sách món:"
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "questions",
+      "paragraphs": [
+        "C. 45 000.",
+        "A. 4 500.",
+        "B. 450.",
+        "D. 450 000.",
+        "Tính nhẩm kết quả của phép tính sau:",
+        "45  1 000  ?"
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "content",
+      "paragraphs": [
+        "C. 8",
+        "A. 6",
+        "B. 7",
+        "D. 9",
+        "Vận dụng tính chất của phép nhân để",
+        "điền số thích hợp vào chỗ chấm:",
+        "7  700  ..?...  7  100  49  100  4 900"
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "questions",
+      "paragraphs": [
+        "C. 3 820.",
+        "A. 3 082.",
+        "B. 3 028.",
+        "D. 3 280.",
+        "Tính giá trị của biểu thức:",
+        "34  100 – 12  10  ?"
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "questions",
+      "paragraphs": [
+        "C. 163 000.",
+        "A. 16 300.",
+        "B. 1 630.",
+        "D. 16 030.",
+        "Tính nhẩm kết quả của phép tính sau:",
+        "163  100  ?"
+      ]
+    },
+    {
+      "slideNo": 22,
+      "type": "content",
+      "paragraphs": [
+        "C. 6",
+        "A. 8",
+        "B. 3",
+        "D. 18",
+        "Vận dụng tính chất của phép nhân để điền số thích hợp vào chỗ chấm:",
+        "3  6 000  3  ..?..  1 000  18  1 000  18 000"
+      ]
+    },
+    {
+      "slideNo": 23,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em biết thêm được điều gì?"
+      ]
+    },
+    {
+      "slideNo": 24,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 25,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước",
+        "Bài 37: Luyện tập chung"
+      ]
+    },
+    {
+      "slideNo": 26,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 27,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 1 Tuần 12",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Tính nhẩm:",
+        "slide": 8
+      },
+      {
+        "type": "question",
+        "text": "Một cửa hàng xếp các cuốn sổ ghi chép vào trong các thùng, mỗi thùng chứa được 1 000 cuốn sổ. Hỏi 43 thùng như vật chứa được tất cả bao nhiêu cuốn sổ ghi chép?",
+        "slide": 13
+      },
+      {
+        "type": "task",
+        "text": "Hãy giúp hai anh em nhà Nam nấu một số món ăn yêu thích của gia đình bằng cách trả lời đúng câu hỏi. Mỗi một câu hỏi đúng là một món ăn sẽ hoàn thành.",
+        "slide": 16
+      },
+      {
+        "type": "task",
+        "text": "Tính nhẩm kết quả của phép tính sau:",
+        "slide": 18
+      },
+      {
+        "type": "task",
+        "text": "Tính giá trị của biểu thức:",
+        "slide": 20
+      },
+      {
+        "type": "question",
+        "text": "34  100 – 12  10  ?",
+        "slide": 20
+      },
+      {
+        "type": "task",
+        "text": "Tính nhẩm kết quả của phép tính sau:",
+        "slide": 21
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em biết thêm được điều gì?",
+        "slide": 23
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước",
+        "slide": 25
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

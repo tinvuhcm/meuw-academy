@@ -1,0 +1,257 @@
+{
+  "meta": {
+    "file": "w10_i000_Chu_de_C2_-_Bai_2._Di_chuyen_sao_chep_thu_muc_va_tep.pptx",
+    "subject": "tin-hoc",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tin-hoc\\slides\\w10_i000_Chu_de_C2_-_Bai_2._Di_chuyen_sao_chep_thu_muc_va_tep.pptx",
+    "slideCount": 23
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "Tin học 4",
+        "CHỦ ĐỀ C2. Tổ chức cây thư mục",
+        "lưu trữ thông tin trong máy tính",
+        "Bài 2. Di chuyển, sao chép thư mục và tệp"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Hình 1a",
+        "Quan sát hình ảnh và trả lời câu hỏi:",
+        "Theo em, tệp GioiThieuTo1 nên di chuyển vào thư mục con nào?"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "ChuDeA_Bai1",
+        "GioiThieuTo1",
+        "Chúng ta nên di chuyển tệp như sau:"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "1. DI CHUYỂN TỆP, THƯ MỤC",
+        "1. Em hãy thực hiện các bước như ở Hình 1 để di chuyển tệp GioiThieuTo1 vào thư mục To1. Từ đó, em hãy nêu các bước để di chuyển một tệp, thư mục.",
+        "Hoạt động 1"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "Lưu ý",
+        "Không thể thấy tệp, thư mục ở vị trí cũ khi đã di chuyển.",
+        "Vì vậy, nên cẩn thận khi thực hiện di chuyển các tệp, thư mục trong máy tính."
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "activity",
+      "paragraphs": [
+        "Hoạt động 1",
+        "2. Em hãy trả lời các câu hỏi:",
+        "Trong thư mục Lop4 còn có tệp GioiThieuTo1 không?",
+        "Tệp GioiThieuTo1 là bài trình chiếu của To1. Theo em, có nên di chuyển tệp này vào thư mục To2 không?",
+        "Để di chuyển thư mục, em có thể dung lệnh gì?"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "Trong thư mục Lop4 không còn tệp GioiThieuTo1.",
+        "Không nên di chuyển tệp GioiThieuTo1 vào thư mục To2.",
+        "Dễ bị nhầm là tệp GioiThieuTo1 là bài của To2.",
+        "HƯỚNG DẪN TRẢ LỜI"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "GioiThieuLop4",
+        "GioiThieuTo1",
+        "Move to"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "theory",
+      "paragraphs": [
+        "Trong phần mềm quản lí tệp, ở dải lệnh Home, có thể di chuyển tệp, thư mục bằng lệnh Move to.",
+        "Khi di chuyển thư mục thì mọi tệp, thư mục nằm trong nó sẽ di chuyển theo. Nếu di chuyển nhầm, sẽ khó để tìm lại được tệp, như thự mục đó nữa.",
+        "Kết luận"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "questions",
+      "paragraphs": [
+        "2. SAO CHÉP TỆP, THƯ MỤC",
+        "Hoạt động 2",
+        "Các bước để sao chép tệp, thư mục thực hiện tương tự như các bước di chuyển tệp, thư mục ở Hình 1. Em thực hiện Bước 1, Bước 2, Bước 3 tương tự như Hình 1. Riêng Bước 4, em thay lệnh Move to thành Copy to.",
+        "Em hãy sao chép thư mục To4 và lưu bản sao vào thư mục Documents."
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 15,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 16,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 1. tr23",
+        "Trong hình 1a, nếu em di chuyển thư mục Lop4 vào ổ địa D: thì có các tệp, thư mục nào sau đây di chuyển theo?",
+        "Chỉ có tệp GioiThieuTo1.",
+        "Chỉ có bốn thư mục To1, To2, To3, To4.",
+        "Cả tệp GioiThieuTo1 và bốn thư mục To1, To2, To3, To4.",
+        "Không có tệp, thư mục nào."
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 2. tr23",
+        "Lệnh nào sau đây giúp em sao chép thư mục?",
+        "A. Move to",
+        "C. Delete",
+        "B. Copy to",
+        "D. Rename",
+        "B. Copy to"
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 19,
+      "type": "content",
+      "paragraphs": [
+        "Tạo thư mục bằng lệnh New folder.",
+        "Xoá thư mục bằng lệnh Move to."
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "theory",
+      "paragraphs": [
+        "Lệnh Move to trong dải lệnh Home giúp em di chuyển thư mục, tệp.",
+        "Lệnh Copy to trong dải lệnh Home giúp em sao chép thư mục, tệp.",
+        "Khi di chuyển một thư mục, các thư mục và tệp nằm trong nó cũng sẽ bị di chuyển.",
+        "Ghi nhớ"
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "content",
+      "paragraphs": [
+        "HƯỚNG DẪN VỀ NHÀ",
+        "Ôn tập lại nội dung chính của bài học ngày hôm nay.",
+        "Hoàn thành các nhiệm vụ được giao về nhà.",
+        "Đọc trước, chuẩn bị bài mới Bài 3. Thực hành tạo, sao chép, xóa thư mục và đổi tên, di chuyển tệp."
+      ]
+    },
+    {
+      "slideNo": 22,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 23,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "Tin học 4 CHỦ ĐỀ C2. Tổ chức cây thư mục lưu trữ thông tin trong máy tính",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Theo em, tệp GioiThieuTo1 nên di chuyển vào thư mục con nào?",
+        "slide": 3
+      },
+      {
+        "type": "question",
+        "text": "Trong thư mục Lop4 còn có tệp GioiThieuTo1 không?",
+        "slide": 9
+      },
+      {
+        "type": "question",
+        "text": "Tệp GioiThieuTo1 là bài trình chiếu của To1. Theo em, có nên di chuyển tệp này vào thư mục To2 không?",
+        "slide": 9
+      },
+      {
+        "type": "question",
+        "text": "Để di chuyển thư mục, em có thể dung lệnh gì?",
+        "slide": 9
+      },
+      {
+        "type": "task",
+        "text": "Em hãy sao chép thư mục To4 và lưu bản sao vào thư mục Documents.",
+        "slide": 13
+      },
+      {
+        "type": "question",
+        "text": "Trong hình 1a, nếu em di chuyển thư mục Lop4 vào ổ địa D: thì có các tệp, thư mục nào sau đây di chuyển theo?",
+        "slide": 16
+      },
+      {
+        "type": "question",
+        "text": "Lệnh nào sau đây giúp em sao chép thư mục?",
+        "slide": 17
+      },
+      {
+        "type": "task",
+        "text": "Đọc trước, chuẩn bị bài mới Bài 3. Thực hành tạo, sao chép, xóa thư mục và đổi tên, di chuyển tệp.",
+        "slide": 21
+      }
+    ],
+    "vocab": [],
+    "keyPoints": [
+      "Trong phần mềm quản lí tệp, ở dải lệnh Home, có thể di chuyển tệp, thư mục bằng lệnh Move to.",
+      "Khi di chuyển thư mục thì mọi tệp, thư mục nằm trong nó sẽ di chuyển theo. Nếu di chuyển nhầm, sẽ khó để tìm lại được tệp, như thự mục đó nữa.",
+      "Lệnh Move to trong dải lệnh Home giúp em di chuyển thư mục, tệp.",
+      "Lệnh Copy to trong dải lệnh Home giúp em sao chép thư mục, tệp.",
+      "Khi di chuyển một thư mục, các thư mục và tệp nằm trong nó cũng sẽ bị di chuyển."
+    ]
+  }
+}

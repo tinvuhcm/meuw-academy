@@ -1,0 +1,272 @@
+{
+  "meta": {
+    "file": "w35_i000_Chu_de_F_-_Bai_7._Thuc_hanh_tao_chuong_trinh_cua_em.pptx",
+    "subject": "tin-hoc",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tin-hoc\\slides\\w35_i000_Chu_de_F_-_Bai_7._Thuc_hanh_tao_chuong_trinh_cua_em.pptx",
+    "slideCount": 25
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "Tin học 4",
+        "Chủ đề F",
+        "Làm quen với lập trình trực quan",
+        "Bài 7: Thực hành",
+        "tạo chương trình của em",
+        "(Bài tập theo nhóm)"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "content",
+      "paragraphs": [
+        "Thảo luận theo nhóm và trả lời câu hỏi: Kể tên các chương trình có ở các bài học trước."
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "Các chương trình đã học:",
+        "Giới thiệu về bản thân",
+        "Địa điểm yêu thích",
+        "Cuộc thi chạy",
+        "Khám phá đại dương",
+        "Cá biến hình"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "Nhiệm vụ",
+        "của nhóm em",
+        "01"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "1. Nhiệm vụ của nhóm em",
+        "Mỗi nhóm chọn ít nhất một hoạt động của nhân vật trong danh sách. Hãy tạo chương trình có ít nhất một phông nền và hai nhân vật để thực hiện với hoạt động mà nhóm em đã chọn.",
+        "2. Nhân vật chuyển động theo nhiều cách khác nhau.",
+        "3. Nhân vật thay đổi hình dạng, màu sắc.",
+        "1. Nhân vật kể một câu chuyện."
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "Thu hoạch sau",
+        "bài tập theo nhóm",
+        "02"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "questions",
+      "paragraphs": [
+        "2. Thu hoạch sau bài tập theo nhóm",
+        "2) Theo em, nhiều bạn cùng làm một chương trình có thuận lợi gì?",
+        "1) Chương trình của nhóm em đã sử dụng các nhóm lệnh nào?"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "Bài tham khảo",
+        "Tên chương trình: Mèo đuổi chuột.",
+        "Yêu cầu: Em dùng con trỏ để điều khiển Mèo di chuyển. Chuột xuất hiện ở các vị trí ngẫu nhiên và lướt với tốc độ 0.3 giây. Mèo bắt được chuột thì cộng 5 điểm. Mèo chạm chó săn thì trừ 3 điểm. Khi điểm lớn hơn 200 thì xuất hiện chữ YOU WIN."
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "Bài tham khảo",
+        "Tên phông nền/",
+        "Nhân vật",
+        "Kịch bản",
+        "Phông nền",
+        "Chọn phông nền Forest.",
+        "Nhân vật Mèo",
+        "Em dùng con trỏ để điều khiển Mèo di chuyển."
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "Bài tham khảo",
+        "Tên phông nền/",
+        "Nhân vật",
+        "Kịch bản",
+        "Nhân vật Chuột",
+        "Chuột xuất hiện ở các vị trí ngẫu nhiên và lướt với tốc độ 0.3 giây.",
+        "Nhân vật Chó săn",
+        "Xuất hiện ngẫu nhiên."
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "Bài tham khảo"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "Bài tham khảo"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "content",
+      "paragraphs": [
+        "Bài tham khảo"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "content",
+      "paragraphs": [
+        "Bài tham khảo"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 18,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 1: Nhóm lệnh .......... thay đổi kích thước,",
+        "màu sắc của nhân vật.",
+        "A. Di chuyển.",
+        "B. Hiển thị.",
+        "C. Sự kiện.",
+        "D. Điều khiển."
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 2: Hãy mô tả lệnh sau:",
+        "A. Chờ 10 giây.",
+        "B. Lặp 10 vòng.",
+        "C. Lùi về phía sau",
+        "10 bước.",
+        "D. Tiến lên phía trước",
+        "10 bước."
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 3: Nhóm lệnh Hiển thị có thay đổi được",
+        "màu sắc của phông nền không?",
+        "A. Có.",
+        "B. Không."
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 4: “Có thể thêm bớt nhân vật, thay đổi phông nền sân khấu cho phù hợp với nội dung, ý tưởng câu chuyện.” Đúng hay Sai?",
+        "A. Đúng.",
+        "B. Sai."
+      ]
+    },
+    {
+      "slideNo": 22,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 5: Ý nghĩa của lệnh                   là",
+        "A. Em xoay trái 15 độ.",
+        "B. Nhân vật xoay trái 15 độ.",
+        "C. Nhân vật xoay phải 15 độ.",
+        "D. Hình nền xoay phải 15 độ."
+      ]
+    },
+    {
+      "slideNo": 23,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "01",
+        "Ôn lại các kiến thức đã học.",
+        "Luyện tập tạo các chương trình."
+      ]
+    },
+    {
+      "slideNo": 24,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 25,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "Tin học 4 Chủ đề F Làm quen với lập trình trực quan",
+    "questions": [
+      {
+        "type": "question",
+        "text": "2) Theo em, nhiều bạn cùng làm một chương trình có thuận lợi gì?",
+        "slide": 9
+      },
+      {
+        "type": "question",
+        "text": "1) Chương trình của nhóm em đã sử dụng các nhóm lệnh nào?",
+        "slide": 9
+      },
+      {
+        "type": "task",
+        "text": "Chọn phông nền Forest.",
+        "slide": 11
+      },
+      {
+        "type": "question",
+        "text": "màu sắc của phông nền không?",
+        "slide": 20
+      },
+      {
+        "type": "question",
+        "text": "Câu 4: “Có thể thêm bớt nhân vật, thay đổi phông nền sân khấu cho phù hợp với nội dung, ý tưởng câu chuyện.” Đúng hay Sai?",
+        "slide": 21
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

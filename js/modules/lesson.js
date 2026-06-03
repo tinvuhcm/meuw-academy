@@ -22,6 +22,28 @@ import { renderDrawingCanvas } from './question-types/DrawingCanvas.js';
 import { renderColorFill } from './question-types/ColorFill.js';
 import { renderMiniQuiz } from './question-types/MiniQuiz.js';
 
+function getLessonBlockMeta(block) {
+  if (block.type === 'reading-page' || block.flowStage === 'reading') {
+    return {
+      badge: 'Bước 3',
+      role: 'Đọc hoặc xem nguồn gốc bài học',
+      hint: 'Đọc kĩ rồi mới làm bài để tìm ý nhanh hơn.',
+    };
+  }
+  if (block.flowStage === 'warmup' || block.__flowWarmup) {
+    return {
+      badge: 'Bước 1',
+      role: 'Khởi động cùng Gâu tiên sinh',
+      hint: 'Đoán nhanh nhiệm vụ học để vào bài dễ hơn.',
+    };
+  }
+  return {
+    badge: 'Bước 2',
+    role: 'Bài học ngắn trước khi luyện tập',
+    hint: 'Nắm ý chính trước để làm bài chắc tay hơn.',
+  };
+}
+
 export function renderLesson(params) {
   const isRandomPractice = params.dayId === 'practice';
   const dayId = isRandomPractice ? 'practice' : parseInt(params.dayId, 10);
@@ -83,6 +105,18 @@ export function renderLesson(params) {
     ...lessonBlocks.map(block => ({ kind: 'lesson', block })),
     ...moduleData.questions.map(question => ({ kind: 'question', question })),
   ];
+
+  // If there's a reading-page block, keep a reference for the "Xem lại" button
+  const readingBlock = lessonBlocks.find(b => b.type === 'reading-page') || null;
+  const reviewableLessonBlocks = lessonBlocks.filter(block => {
+    if (block.type === 'reading-page') return true;
+    return Boolean((block.points && block.points.length) || block.example || block.title);
+  });
+  // Detect reading lessons even without a book-image block (e.g. PPTX bài đọc topics)
+  const isReadingLesson = !!readingBlock || (
+    moduleData.subject === 'vie' &&
+    /bai.?doc|b[àa]i[\s-]*đọc/i.test(`${moduleData.topicKey || ''} ${moduleData.title || ''}`)
+  );
   const numQuestions = moduleData.questions.length;
   const numSteps = flowItems.length;
   const progressBox = el('div', { class: 'card mt-4' });
@@ -130,7 +164,11 @@ export function renderLesson(params) {
 
     const item = flowItems[index];
     if (item.kind === 'lesson') {
-      triggerMascot('lesson:start', { customLines: ['Nghe bài học ngắn trước nhé!'] });
+      if (item.block.type === 'reading-page') {
+        triggerMascot('lesson:start', { customLines: ['Đọc bài trong sách giáo khoa trước nhé!'] });
+      } else {
+        triggerMascot('lesson:start', { customLines: ['Nghe bài học ngắn trước nhé!'] });
+      }
       card.appendChild(renderLessonBlock(item.block, () => {
         Audio.click();
         currentIndex++;
@@ -163,7 +201,10 @@ export function renderLesson(params) {
       case 'multiple-answer':
         qEl = renderMultipleChoice(q, handleComplete);
         break;
-      case 'fill-blank': qEl = renderFillBlank(q, handleComplete); break;
+      case 'fill-blank':
+        // Non-math vocab fill-blanks are too hard for kids — reduce to 1 attempt before hint
+        qEl = renderFillBlank(q.isMath ? q : { ...q, _maxAttempts: 1 }, handleComplete);
+        break;
       case 'drag-match': qEl = renderDragMatch(q, handleComplete); break;
       case 'interactive-svg': qEl = renderInteractiveSVG(q, handleComplete); break;
       case 'speech-practice': qEl = renderSpeechPractice(q, handleComplete); break;
@@ -179,6 +220,22 @@ export function renderLesson(params) {
     }
 
     card.appendChild(qEl);
+
+    // "Xem lại bài đọc / bài học" button — shown during questions whenever we have reviewable lesson content
+    if (reviewableLessonBlocks.length) {
+      const reviewRow = el('div', { class: 'flex justify-end mt-3' });
+      const reviewBtn = el(
+        'button',
+        { class: 'btn btn-outline text-xs py-1 px-3' },
+        isReadingLesson ? '📖 Xem lại bài đọc' : '📘 Xem lại bài học',
+      );
+      reviewBtn.addEventListener('click', () => {
+        Audio.click();
+        openLessonReviewModal(moduleData, reviewableLessonBlocks, readingBlock);
+      });
+      reviewRow.appendChild(reviewBtn);
+      card.appendChild(reviewRow);
+    }
   }
 
   function showCompletion() {
@@ -284,19 +341,258 @@ export function renderLesson(params) {
   return container;
 }
 
+function renderReadingPageBlock(block, onNext) {
+  const wrapper = el('div', { class: 'lesson-reading-block flex flex-col gap-3' });
+  const meta = getLessonBlockMeta(block);
+  const pageNumbers = block.startPage && block.endPage
+    ? Array.from({ length: (block.endPage - block.startPage) + 1 }, (_, idx) => block.startPage + idx)
+    : [];
+
+  // Header
+  const header = el('div', { class: 'flex items-center gap-2 mb-1' });
+  header.innerHTML = `<span class="text-2xl">📖</span><div>
+    <div class="text-[11px] uppercase tracking-[0.18em] font-black text-méo-purple">${meta.badge} • ${meta.role}</div>
+    <div class="font-display text-lg text-méo-purple">${block.title || 'Bài đọc'}</div>
+    ${block.sourceLabel ? `<div class="text-xs text-text-muted">${block.sourceLabel}</div>` : ''}
+  </div>`;
+  wrapper.appendChild(header);
+  wrapper.appendChild(el('div', { class: 'text-sm text-text-muted' }, 'Đây là trang SGK thật của bài học. Con đọc kĩ rồi mới làm bài nhé.'));
+  wrapper.appendChild(el('div', { class: 'text-xs font-bold text-warning-dk bg-warning-bg rounded-xl px-3 py-2' }, meta.hint));
+
+  // Page image viewer
+  const pages = block.pages || [];
+  let currentPageIdx = 0;
+
+  const imgWrap = el('div', { class: 'relative rounded-xl overflow-hidden border border-border bg-gray-50' });
+  const img = el('img', {
+    src: pages[0] || '',
+    alt: 'Trang SGK',
+    class: 'w-full block',
+    style: 'max-height: 60vh; object-fit: contain;',
+  });
+  img.onerror = () => { imgWrap.innerHTML = '<div class="p-8 text-center text-text-muted">Không tải được ảnh sách. Vẫn có thể làm bài tiếp.</div>'; };
+  imgWrap.appendChild(img);
+  wrapper.appendChild(imgWrap);
+
+  // Page navigation (if 2 pages)
+  if (pages.length > 1) {
+    const nav = el('div', { class: 'flex justify-center gap-2' });
+    pages.forEach((url, idx) => {
+      const btn = el('button', {
+        class: `btn text-sm py-1 px-4 ${idx === 0 ? 'btn-cta' : 'btn-outline'}`,
+      }, pageNumbers[idx] ? `Trang ${pageNumbers[idx]}` : `Trang ${idx + 1}`);
+      btn.addEventListener('click', () => {
+        img.src = url;
+        currentPageIdx = idx;
+        nav.querySelectorAll('button').forEach((b, i) => {
+          b.className = `btn text-sm py-1 px-4 ${i === idx ? 'btn-cta' : 'btn-outline'}`;
+        });
+        Audio.click();
+      });
+      nav.appendChild(btn);
+    });
+    wrapper.appendChild(nav);
+  }
+
+  // Done reading → proceed to questions
+  const nextRow = el('div', { class: 'flex justify-center mt-2' });
+  const nextBtn = el('button', { class: 'btn btn-cta w-full max-w-xs' }, '✅ Đã đọc xong — Làm bài!');
+  nextBtn.addEventListener('click', onNext);
+  nextRow.appendChild(nextBtn);
+  wrapper.appendChild(nextRow);
+
+  return wrapper;
+}
+
+function renderReviewTheoryBlock(block) {
+  const meta = getLessonBlockMeta(block);
+  const card = el('div', { class: 'border border-border rounded-2xl p-4 bg-bg-2 flex flex-col gap-3' });
+  card.appendChild(el('div', { class: 'text-[11px] uppercase tracking-[0.18em] font-black text-méo-purple' }, `${meta.badge} • ${meta.role}`));
+  card.appendChild(el('h3', { class: 'font-display text-xl text-méo-purple' }, block.title || 'Bài học ngắn'));
+  if (block.sourceLabel) {
+    card.appendChild(el('div', { class: 'text-xs font-bold text-text-muted' }, block.sourceLabel));
+  }
+  if (block.sourcePages?.length) {
+    const pageBtn = el('button', { class: 'btn btn-outline text-sm py-1 px-3 self-start' }, '📘 Xem trang SGK thật');
+    pageBtn.addEventListener('click', () => {
+      Audio.click();
+      openSourcePagesModal(block);
+    });
+    card.appendChild(pageBtn);
+  }
+
+  (block.points || []).forEach(point => {
+    const row = el('div', { class: 'lesson-theory-point' });
+    row.innerHTML = `<span class="lesson-point-dot"></span><span>${point}</span>`;
+    card.appendChild(row);
+  });
+
+  if (block.example) {
+    const example = el('div', { class: 'lesson-theory-example' });
+    example.innerHTML = block.example;
+    card.appendChild(example);
+  }
+
+  return card;
+}
+
+function renderReviewReadingBlock(block) {
+  const meta = getLessonBlockMeta(block);
+  const section = el('div', { class: 'flex flex-col gap-3' });
+  const pageNumbers = block.startPage && block.endPage
+    ? Array.from({ length: (block.endPage - block.startPage) + 1 }, (_, idx) => block.startPage + idx)
+    : [];
+  section.appendChild(el('div', { class: 'text-[11px] uppercase tracking-[0.18em] font-black text-méo-purple' }, `${meta.badge} • ${meta.role}`));
+  section.appendChild(el('h3', { class: 'font-display text-xl text-méo-purple' }, block.title || 'Bài đọc SGK'));
+  if (block.sourceLabel) {
+    section.appendChild(el('div', { class: 'text-xs font-bold text-text-muted' }, block.sourceLabel));
+  }
+  section.appendChild(el('div', { class: 'text-sm text-text-muted' }, 'Đọc lại đúng trang SGK này nếu con muốn tìm ý chính, chi tiết hoặc xem lại câu chữ ban đầu.'));
+
+  const pages = block.pages || [];
+  if (pages.length > 0) {
+    const imgEl = el('img', { src: pages[0], alt: 'Trang SGK', class: 'w-full rounded-lg block border border-border bg-white', style: 'max-height: 70vh; object-fit: contain;' });
+    section.appendChild(imgEl);
+
+    if (pages.length > 1) {
+      const nav = el('div', { class: 'flex justify-center gap-2' });
+      pages.forEach((url, i) => {
+        const b = el('button', { class: `btn text-sm py-1 px-4 ${i === 0 ? 'btn-cta' : 'btn-outline'}` }, pageNumbers[i] ? `Trang ${pageNumbers[i]}` : `Trang ${i + 1}`);
+        b.addEventListener('click', () => {
+          imgEl.src = url;
+          nav.querySelectorAll('button').forEach((nb, ni) => {
+            nb.className = `btn text-sm py-1 px-4 ${ni === i ? 'btn-cta' : 'btn-outline'}`;
+          });
+          Audio.click();
+        });
+        nav.appendChild(b);
+      });
+      section.appendChild(nav);
+    }
+  } else {
+    const msg = el('div', { class: 'p-6 text-center border border-border rounded-2xl bg-bg-2' });
+    msg.innerHTML = `
+      <div class="text-5xl mb-4">📚</div>
+      <p class="font-bold text-lg mb-2">Mở SGK để đọc lại bài nhé!</p>
+      <p class="text-text-muted text-sm">Đọc kỹ bài đọc, chú ý các từ in đậm và ghi chú giải nghĩa bên cạnh.</p>
+    `;
+    section.appendChild(msg);
+  }
+
+  return section;
+}
+
+function openSourcePagesModal(block) {
+  const pages = block.sourcePages || [];
+  if (!pages.length) return;
+
+  const pageNumbers = block.sourceStartPage && block.sourceEndPage
+    ? Array.from({ length: (block.sourceEndPage - block.sourceStartPage) + 1 }, (_, idx) => block.sourceStartPage + idx)
+    : [];
+
+  const overlay = el('div', {
+    class: 'fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4',
+    style: 'backdrop-filter: blur(4px)',
+  });
+  const modal = el('div', { class: 'bg-surface rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-auto p-4 flex flex-col gap-4' });
+  const closeRow = el('div', { class: 'flex justify-between items-center sticky top-0 bg-surface py-1' });
+  closeRow.appendChild(el('span', { class: 'font-display text-lg text-méo-purple' }, block.title || 'Trang SGK'));
+  const closeBtn = el('button', { class: 'btn btn-outline text-sm py-1 px-3' }, '✕ Đóng');
+  closeBtn.addEventListener('click', () => overlay.remove());
+  closeRow.appendChild(closeBtn);
+  modal.appendChild(closeRow);
+
+  if (block.sourceLabel) {
+    modal.appendChild(el('div', { class: 'text-xs font-bold text-text-muted' }, block.sourceLabel));
+  }
+  modal.appendChild(el('div', { class: 'text-sm text-text-muted' }, 'Đây là đúng trang SGK của bài học để con xem lại lí thuyết hoặc ví dụ gốc.'));
+
+  const imgEl = el('img', {
+    src: pages[0],
+    alt: 'Trang SGK',
+    class: 'w-full rounded-lg block border border-border bg-white',
+    style: 'max-height: 70vh; object-fit: contain;',
+  });
+  modal.appendChild(imgEl);
+
+  if (pages.length > 1) {
+    const nav = el('div', { class: 'flex justify-center gap-2 flex-wrap' });
+    pages.forEach((url, i) => {
+      const btn = el('button', { class: `btn text-sm py-1 px-4 ${i === 0 ? 'btn-cta' : 'btn-outline'}` }, pageNumbers[i] ? `Trang ${pageNumbers[i]}` : `Trang ${i + 1}`);
+      btn.addEventListener('click', () => {
+        imgEl.src = url;
+        nav.querySelectorAll('button').forEach((nb, ni) => {
+          nb.className = `btn text-sm py-1 px-4 ${ni === i ? 'btn-cta' : 'btn-outline'}`;
+        });
+        Audio.click();
+      });
+      nav.appendChild(btn);
+    });
+    modal.appendChild(nav);
+  }
+
+  overlay.appendChild(modal);
+  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
+  document.body.appendChild(overlay);
+}
+
+function openLessonReviewModal(moduleData, lessonBlocks, readingBlock) {
+  const overlay = el('div', {
+    class: 'fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4',
+    style: 'backdrop-filter: blur(4px)',
+  });
+  const modal = el('div', { class: 'bg-surface rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-auto p-4 flex flex-col gap-4' });
+  const closeRow = el('div', { class: 'flex justify-between items-center sticky top-0 bg-surface py-1' });
+  closeRow.appendChild(el('span', { class: 'font-display text-lg text-méo-purple' }, (readingBlock?.title || moduleData.title) || 'Bài học'));
+  const closeBtn = el('button', { class: 'btn btn-outline text-sm py-1 px-3' }, '✕ Đóng');
+  closeBtn.addEventListener('click', () => overlay.remove());
+  closeRow.appendChild(closeBtn);
+  modal.appendChild(closeRow);
+
+  lessonBlocks.forEach(block => {
+    if (block.type === 'reading-page') {
+      modal.appendChild(renderReviewReadingBlock(block));
+      return;
+    }
+    modal.appendChild(renderReviewTheoryBlock(block));
+  });
+
+  overlay.appendChild(modal);
+  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
+  document.body.appendChild(overlay);
+}
+
 function renderLessonBlock(block, onNext) {
+  // Dispatch to specialized renderer for reading pages
+  if (block.type === 'reading-page') {
+    return renderReadingPageBlock(block, onNext);
+  }
+
+  const meta = getLessonBlockMeta(block);
   const wrapper = el('div', { class: 'lesson-theory-block' });
   const teacher = el('div', { class: 'lesson-teacher-card' });
   teacher.innerHTML = `
     <div class="teacher-avatar" aria-hidden="true"><img src="assets/images/gau-lun-teacher-avatar.png" alt="" class="w-full h-full object-contain" /></div>
     <div>
       <div class="teacher-name">${block.teacherName || 'Gâu tiên sinh'}</div>
-      <div class="teacher-role">${block.type === 'mini' ? 'Bài học nhanh' : 'Gợi ý trước khi làm'}</div>
+      <div class="teacher-role">${meta.badge} • ${meta.role}</div>
     </div>
   `;
 
   const content = el('div', { class: 'lesson-theory-content' });
+  content.appendChild(el('div', { class: 'text-xs font-bold text-warning-dk bg-warning-bg rounded-xl px-3 py-2 mb-3' }, meta.hint));
   content.appendChild(el('h2', { class: 'font-display text-2xl text-méo-purple mb-3' }, block.title || 'Bài học ngắn'));
+  if (block.sourceLabel) {
+    content.appendChild(el('div', { class: 'text-xs font-bold text-text-muted mb-3' }, block.sourceLabel));
+  }
+  if (block.sourcePages?.length) {
+    const pageBtn = el('button', { class: 'btn btn-outline text-sm py-1 px-3 mb-3' }, '📘 Xem trang SGK thật');
+    pageBtn.addEventListener('click', () => {
+      Audio.click();
+      openSourcePagesModal(block);
+    });
+    content.appendChild(pageBtn);
+  }
 
   (block.points || []).forEach(point => {
     const row = el('div', { class: 'lesson-theory-point' });

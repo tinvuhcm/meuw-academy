@@ -1,4 +1,5 @@
 import { MORE_ENGLISH_TOPICS } from './more-english-topics.js';
+import { getOfficialEnglishTheory } from './official-theory-snippets.js';
 const TEACHER = 'Gâu tiên sinh';
 
 function buildEnglishUnit({ topicKey, title, introTitle, introPoints, example, words }) {
@@ -40,6 +41,7 @@ function buildEnglishUnit({ topicKey, title, introTitle, introPoints, example, w
     }
   });
 
+  const theory = getOfficialEnglishTheory(topicKey);
   return {
     topicKey,
     subject: 'eng',
@@ -48,8 +50,9 @@ function buildEnglishUnit({ topicKey, title, introTitle, introPoints, example, w
       type: 'micro',
       teacherName: TEACHER,
       title: introTitle,
-      points: introPoints,
-      example,
+      sourceLabel: theory?.sourceLabel || 'Nguồn tham chiếu: Family & Friends 4 / English 4',
+      points: theory?.points || introPoints,
+      example: theory?.example || example,
     }],
     questionPool,
   };

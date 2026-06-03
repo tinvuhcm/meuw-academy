@@ -1,0 +1,160 @@
+{
+  "meta": {
+    "file": "w28_i003_Tuan_28_-_Bai_79_Luyen_tap_chung_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w28_i003_Tuan_28_-_Bai_79_Luyen_tap_chung_-_Tiet_1.pptx",
+    "slideCount": 14
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 2",
+        "Tuần 28",
+        "Bài 79: Luyện tập chung - Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 3,
+      "type": "content",
+      "paragraphs": [
+        "Giải ô chữ"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 1: Tính",
+        "a)  =",
+        "b)  =",
+        "c)  =",
+        "d)  =",
+        "e)  =",
+        "g)  =",
+        "h)  ="
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 2:",
+        "a) Tính rồi so sánh:",
+        "b) Lấy ví dụ tương tự câu a rồi đố bạn thực hiện.",
+        "Nhận xét: Khi thực hiện phép cộng hai phân số, ta có thể đổi chỗ các số hạng trong một tổng mà tổng của chúng không thay đổi"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "a)",
+        "Ta có:",
+        "Vậy:",
+        "Ta có:  =",
+        "Vậy:"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "b) Ví dụ:",
+        "Ta có:  ="
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 5:",
+        "Bác thợ mộc làm một cái hộp gỗ hết  giờ, làm một khay gỗ hết  giờ. Hỏi thời gian bác làm cái hộp nhiều hơn thời gian làm cái khay là bao lâu?",
+        "Bài giải",
+        "Thời gian làm cái hộp nhiều hơn thời gian làm cái khay là:",
+        "(giờ)",
+        "Đáp số:  giờ"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "questions",
+      "paragraphs": [
+        "CỦNG CỐ, DẶN DÒ",
+        "Qua bài học hôm nay, em học được những gì?",
+        "+ Ôn tập cộng, trừ phân số (cùng mẫu số hoặc khác mẫu số); + Tính chất giao hoán, kết hợp của phép cộng phân số và vận dụng"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước",
+        "Bài 79: Luyện tập chung – Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 2 Tuần 28",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Bác thợ mộc làm một cái hộp gỗ hết  giờ, làm một khay gỗ hết  giờ. Hỏi thời gian bác làm cái hộp nhiều hơn thời gian làm cái khay là bao lâu?",
+        "slide": 9
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em học được những gì?",
+        "slide": 10
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước",
+        "slide": 12
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

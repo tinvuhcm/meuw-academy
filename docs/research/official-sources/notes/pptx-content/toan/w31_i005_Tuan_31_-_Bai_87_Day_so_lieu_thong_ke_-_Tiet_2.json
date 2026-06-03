@@ -1,0 +1,400 @@
+{
+  "meta": {
+    "file": "w31_i005_Tuan_31_-_Bai_87_Day_so_lieu_thong_ke_-_Tiet_2.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w31_i005_Tuan_31_-_Bai_87_Day_so_lieu_thong_ke_-_Tiet_2.pptx",
+    "slideCount": 26
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 2",
+        "Tuần 31",
+        "Bài 87: Dãy số liệu thống kê Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "content",
+      "paragraphs": [
+        "TRÒ CHƠI HÁI CAM"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 5,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 1: Một cửa hàng đồ chơi đã bán",
+        "được số lượng thú bông như bảng sau:",
+        "Số lượng thú bông bán được nhiều nhất là",
+        "A. Chó bông",
+        "B. Gấu bông",
+        "C. Thỏ bông",
+        "D. Mèo bông",
+        "Thú bông",
+        "Chó",
+        "Thỏ",
+        "Mèo",
+        "Gấu",
+        "Số lượng",
+        "10",
+        "15",
+        "12"
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "questions",
+      "paragraphs": [
+        "A. Tháng 1",
+        "B. Tháng 2",
+        "C. Tháng 3",
+        "D. Tháng 4",
+        "Câu 2 : Số ngày chạy bộ của bạn Nam",
+        "trong 4 tháng được ghi lại như sau:",
+        "Tháng có số ngày chạy bộ ít nhất là :",
+        "Tháng",
+        "Tháng 1",
+        "Tháng 2",
+        "Tháng 3",
+        "Tháng 4",
+        "Số ngày chạy bộ",
+        "10",
+        "15",
+        "15"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "questions",
+      "paragraphs": [
+        "A. Tổ 1",
+        "B. Tổ 2",
+        "C. Tổ 3",
+        "D. Tổ 4",
+        "Câu 3 : Danh sách các bạn được khen thưởng",
+        "trong tuần của lớp 4A được ghi lại ở bảng sau:",
+        "Tổ nào có số bạn được khen thưởng nhiều nhất?",
+        "Tổ",
+        "Tổ 1",
+        "Tổ 2",
+        "Tổ 3",
+        "Tổ 4",
+        "Số bạn"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "Dưới đây là hình ảnh cây cà chưa được mỗi lớp trồng ở vườn trường:",
+        "Đếm số lượng quả trên mỗi cây cà chua và trả lời các câu hỏi",
+        "Câu hỏi"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 4: Lớp nào trồng được cây cà chua có nhiều quả nhất?",
+        "Lớp 4A",
+        "B. Lớp 4B",
+        "C. Lớp 4C",
+        "D. Lớp 4D"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 5: Hai lớp trồng cây cà chua có số quả bằng nhau là:",
+        "A. Lớp 4A và lớp 4E",
+        "B. Lớp 4B và lớp 4C",
+        "C. Lớp 4C và lớp 4D",
+        "D. Lớp 4D và lớp 4E"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 12,
+      "type": "questions",
+      "paragraphs": [
+        "04",
+        "Một trạm đo khí tượng ghi lại nhiệt độ các buổi sáng trong một tuần như sau:",
+        "Thứ Hai: 33 °C; thứ Ba: 36 °C, thứ Tư: 38 °C; thứ Năm: 37 °C; thứ Sáu: 35 °C; thứ Bảy: 34 °C; Chủ nhật: 39 °C.",
+        "Trả lời các câu hỏi:",
+        "Sáng thứ Tư, nhiệt độ là bao nhiêu độ C?",
+        "Sáng thứ Tư, nhiệt độ là 38 °C."
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "questions",
+      "paragraphs": [
+        "04",
+        "Một trạm đo khí tượng ghi lại nhiệt độ các buổi sáng trong một tuần như sau:",
+        "Thứ Hai: 33 °C; thứ Ba: 36 °C, thứ Tư: 38 °C; thứ Năm: 37 °C; thứ Sáu: 35 °C; thứ Bảy: 34 °C; Chủ nhật: 39 °C.",
+        "Trả lời các câu hỏi:",
+        "Nhiệt độ buổi sáng cao nhất trong tuần vào thứ mấy?",
+        "Nhiệt độ buổi sáng cao nhất trong tuần là 39 °C vào Chủ nhật."
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "questions",
+      "paragraphs": [
+        "04",
+        "Một trạm đo khí tượng ghi lại nhiệt độ các buổi sáng trong một tuần như sau:",
+        "Thứ Hai: 33 °C; thứ Ba: 36 °C, thứ Tư: 38 °C; thứ Năm: 37 °C; thứ Sáu: 35 °C; thứ Bảy: 34 °C; Chủ nhật: 39 °C.",
+        "Trả lời các câu hỏi:",
+        "Nhiệt độ buổi sáng thấp nhất trong tuần vào thứ mấy?",
+        "Nhiệt độ buổi sáng thấp nhất trong tuần là 33°C vào thứ Hai."
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "questions",
+      "paragraphs": [
+        "04",
+        "Một trạm đo khí tượng ghi lại nhiệt độ các buổi sáng trong một tuần như sau:",
+        "Thứ Hai: 33 °C; thứ Ba: 36 °C, thứ Tư: 38 °C; thứ Năm: 37 °C; thứ Sáu: 35 °C; thứ Bảy: 34 °C; Chủ nhật: 39 °C.",
+        "Trả lời các câu hỏi:",
+        "Nhiệt độ trung bình các buổi sáng trong tuần là bao nhiêu độ C?",
+        "Nhiệt độ trung bình các buổi sáng trong tuần là:  = 36 ()"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "questions",
+      "paragraphs": [
+        "05",
+        "Một đoàn du lịch xuyên Việt đã ghi lại số km di chuyển trong mỗi ngày như sau:",
+        "Ngày 1: 158 km; ngày 2: 60 km; ngày 3: 104 km; ngày 4: 37 km; ngày 5: 182 km; ngày 6: 90 km; ngày 7: 55 km.",
+        "a) Hãy hoàn thiện bảng thống kê về số km đoàn du lịch đã di chuyển trong các ngày trên?",
+        "Ngày di chuyển",
+        "Ngày 1",
+        "Ngày 2",
+        "Ngày 3",
+        "Ngày 4",
+        "Ngày 5",
+        "Ngày 6",
+        "Ngày 7",
+        "Số km di chuyển",
+        "158",
+        "60",
+        "104",
+        "37",
+        "182",
+        "90",
+        "55"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "questions",
+      "paragraphs": [
+        "05",
+        "Một đoàn du lịch xuyên Việt đã ghi lại số km di chuyển trong mỗi ngày như sau:",
+        "Ngày 1: 158 km; ngày 2: 60 km; ngày 3: 104 km; ngày 4: 37 km; ngày 5: 182 km; ngày 6: 90 km; ngày 7: 55 km.",
+        "b) Trả lời câu hỏi :",
+        "- Trong ngày 5, đoàn du lịch đã di chuyển bao nhiều km?",
+        "- Tổng chiều dài quãng đường đoàn du lịch đã di chuyển trong ngày 6 và ngày 7 là bao nhiêu km?",
+        "- Đoàn du lịch di chuyển nhiều nhất vào ngày nào?",
+        "- Trung bình mỗi ngày, đoàn du lịch đi chuyển bao nhiêu km?"
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "content",
+      "paragraphs": [
+        "05",
+        "+ Trong ngày thứ 5, đoàn đã di chuyển 182 km.",
+        "+ Tổng chiều dài quãng đường đoàn du lịch di chuyển trong ngày thứ 6 và thứ 7 là: 90 + 55 = 145 (km).",
+        "+ Đoàn du lịch di chuyển nhiều nhất vào ngày thứ năm: 182 km.",
+        "+ Trung bình, mối ngày đoàn di chuyển được:",
+        "Trả lời:"
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 20,
+      "type": "questions",
+      "paragraphs": [
+        "06",
+        "Dân số (ước tính) của Việt Nam ở một số năm trog giai đoạn từ năm 1979 đến năm 2019 được liệt kê như sau :",
+        "Năm 1979: 53 triệu; năm 1989: 67 triệu; năm 1999: 79 triệu; năm 2009: 97 triệu; năm 2019: 96 triệu.",
+        "Trả lời câu hỏi:",
+        "-  Năm 2019 dân số (ước tính) của Việt Nam là bao nhiêu triệu người?",
+        "- Từ năm 1979 đến năm 2019, dân số của Việt Nam tăng thêm bao",
+        "nhiêu triệu người?"
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "content",
+      "paragraphs": [
+        "06",
+        "Bảng thống kê số liệu dân số Việt Nam từ năm 1979 đến năm 2019",
+        "Năm",
+        "1979",
+        "1989",
+        "1999",
+        "2009",
+        "2019",
+        "Số dân",
+        "53",
+        "67",
+        "79",
+        "97",
+        "96",
+        "Năm 2019 dân số Việt Nam (ước tính) là: 96 triệu người",
+        "Từ năm 1979 đến năm 2019, dân số Việt Nam tăng thêm:",
+        "96 – 53 = 43 (triệu người).",
+        "Trả lời:"
+      ]
+    },
+    {
+      "slideNo": 22,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em học thêm được điều gì?",
+        "+ Nhận biết về dãy số liệu thống kê và thực hành lập dãy số liệu thống kê.",
+        "+ Học cách sắp xếp, phân tích, xử lí số liệu trong dãy số liệu thống kê."
+      ]
+    },
+    {
+      "slideNo": 23,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 24,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước",
+        "Bài 88: Biểu đồ cột"
+      ]
+    },
+    {
+      "slideNo": 25,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 26,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 2 Tuần 31",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Tổ nào có số bạn được khen thưởng nhiều nhất?",
+        "slide": 7
+      },
+      {
+        "type": "question",
+        "text": "Câu 4: Lớp nào trồng được cây cà chua có nhiều quả nhất?",
+        "slide": 9
+      },
+      {
+        "type": "question",
+        "text": "Sáng thứ Tư, nhiệt độ là bao nhiêu độ C?",
+        "slide": 12
+      },
+      {
+        "type": "question",
+        "text": "Nhiệt độ buổi sáng cao nhất trong tuần vào thứ mấy?",
+        "slide": 13
+      },
+      {
+        "type": "question",
+        "text": "Nhiệt độ buổi sáng thấp nhất trong tuần vào thứ mấy?",
+        "slide": 14
+      },
+      {
+        "type": "question",
+        "text": "Nhiệt độ trung bình các buổi sáng trong tuần là bao nhiêu độ C?",
+        "slide": 15
+      },
+      {
+        "type": "question",
+        "text": "a) Hãy hoàn thiện bảng thống kê về số km đoàn du lịch đã di chuyển trong các ngày trên?",
+        "slide": 16
+      },
+      {
+        "type": "question",
+        "text": "- Trong ngày 5, đoàn du lịch đã di chuyển bao nhiều km?",
+        "slide": 17
+      },
+      {
+        "type": "question",
+        "text": "- Tổng chiều dài quãng đường đoàn du lịch đã di chuyển trong ngày 6 và ngày 7 là bao nhiêu km?",
+        "slide": 17
+      },
+      {
+        "type": "question",
+        "text": "- Đoàn du lịch di chuyển nhiều nhất vào ngày nào?",
+        "slide": 17
+      },
+      {
+        "type": "question",
+        "text": "- Trung bình mỗi ngày, đoàn du lịch đi chuyển bao nhiêu km?",
+        "slide": 17
+      },
+      {
+        "type": "question",
+        "text": "-  Năm 2019 dân số (ước tính) của Việt Nam là bao nhiêu triệu người?",
+        "slide": 20
+      },
+      {
+        "type": "question",
+        "text": "nhiêu triệu người?",
+        "slide": 20
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em học thêm được điều gì?",
+        "slide": 22
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước",
+        "slide": 24
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

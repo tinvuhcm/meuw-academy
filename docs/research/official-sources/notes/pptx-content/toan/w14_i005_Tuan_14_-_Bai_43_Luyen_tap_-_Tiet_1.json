@@ -1,0 +1,228 @@
+{
+  "meta": {
+    "file": "w14_i005_Tuan_14_-_Bai_43_Luyen_tap_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w14_i005_Tuan_14_-_Bai_43_Luyen_tap_-_Tiet_1.pptx",
+    "slideCount": 14
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 1",
+        "Tuần 14",
+        "Bài 43: Luyện tập - Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "content",
+      "paragraphs": [
+        "TRÒ CHƠI - Con số bí mật",
+        "20             &lt; 172",
+        "30             &lt; 256",
+        "270             &lt; 9",
+        "140             &lt; 8",
+        "90",
+        "20"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 5,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Tính (theo mẫu):",
+        "768",
+        "128",
+        "128",
+        "64",
+        "12",
+        "64",
+        "Mẫu:",
+        "624",
+        "264",
+        "252",
+        "12",
+        "36",
+        "17",
+        "36",
+        "672",
+        "72",
+        "72",
+        "12",
+        "56",
+        "60",
+        "943",
+        "23",
+        "23",
+        "23",
+        "41",
+        "92"
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Tính (theo mẫu):",
+        "768",
+        "128",
+        "128",
+        "64",
+        "12",
+        "64",
+        "Mẫu:",
+        "4 144",
+        "74",
+        "74",
+        "37",
+        "112",
+        "3 7",
+        "44",
+        "37",
+        "3 604",
+        "34",
+        "34",
+        "17",
+        "212",
+        "3 4",
+        "20",
+        "17",
+        "8 699",
+        "89",
+        "84",
+        "21",
+        "414",
+        "8 4",
+        "29",
+        "21"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "Đặt tính rồi tính:",
+        "186  62",
+        "236  59",
+        "301  49",
+        "242  78",
+        "a)",
+        "186",
+        "186",
+        "62",
+        "236",
+        "236",
+        "59",
+        "301",
+        "294",
+        "49",
+        "242",
+        "234",
+        "78"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "questions",
+      "paragraphs": [
+        "03",
+        "Một trường tiểu học thuê ô tô chở 135 học sinh đi trải nghiệm thực tế. Mỗi chiếc ô tô chở được 45 học sinh. Hỏi nhà trường cần thuê bao nhiêu chiếc ô tô?",
+        "Bài giải",
+        "Nhà trường cần thuê số xe ô tô là:",
+        "135  45  3 (xe)",
+        "Đáp số: 3 xe ô tô."
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em biết thêm được điều gì?"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "questions",
+      "paragraphs": [
+        "Khi thực hiện phép chia cho số có hai chữ số, em nhắn bạn cần lưu ý những gì?"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 12,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 1 Tuần 14",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Tính (theo mẫu):",
+        "slide": 5
+      },
+      {
+        "type": "task",
+        "text": "Tính (theo mẫu):",
+        "slide": 6
+      },
+      {
+        "type": "question",
+        "text": "Một trường tiểu học thuê ô tô chở 135 học sinh đi trải nghiệm thực tế. Mỗi chiếc ô tô chở được 45 học sinh. Hỏi nhà trường cần thuê bao nhiêu chiếc ô tô?",
+        "slide": 8
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em biết thêm được điều gì?",
+        "slide": 9
+      },
+      {
+        "type": "question",
+        "text": "Khi thực hiện phép chia cho số có hai chữ số, em nhắn bạn cần lưu ý những gì?",
+        "slide": 10
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

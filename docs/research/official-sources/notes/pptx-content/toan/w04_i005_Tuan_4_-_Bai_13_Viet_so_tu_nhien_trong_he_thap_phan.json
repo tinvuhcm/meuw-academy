@@ -1,0 +1,357 @@
+{
+  "meta": {
+    "file": "w04_i005_Tuan_4_-_Bai_13_Viet_so_tu_nhien_trong_he_thap_phan.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w04_i005_Tuan_4_-_Bai_13_Viet_so_tu_nhien_trong_he_thap_phan.pptx",
+    "slideCount": 24
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 1",
+        "Tuần 4",
+        "Bài 13: Viết số tự nhiên trong hệ thập phân"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy đọc lời thoại của nhân vật và thảo luận về hệ đếm thập phân.",
+        "Hệ thập phân hay còn gọi là hệ đếm cơ số 10, đây là hệ đếm rộng rãi và phổ biến nhất trong toán học và đời sống hàng ngày."
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "questions",
+      "paragraphs": [
+        "Thế nào là hệ thập phân?",
+        "Cách viết số tự nhiên trong hệ thập phân?",
+        "Cách so sánh hai số tự nhiên?",
+        "Đọc thông tin nêu trong khung kiến thức và trả lời các câu hỏi."
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "Hệ thập phân",
+        "Trong hệ thập phân, cứ mười đơn vị ở một hàng hợp lại thành một đơn vị ở hàng trên tiếp liền nó.",
+        "Ví dụ:",
+        "10 đơn vị = 1 chục",
+        "10 chục = 1 trăm",
+        "10 trăm = 1 nghìn"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "Viết số tự nhiên trong hệ thập phân",
+        "Với mười chữ số: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 có thể viết được mọi số tự nhiên.",
+        "Ví dụ:",
+        "123 456 789",
+        "201 964",
+        "355"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "Viết số tự nhiên trong hệ thập phân",
+        "Ở mỗi hàng chỉ có thể viết được một chữ số. Giá trị của mỗi chữ số phụ thuộc vào vị trí của nó trong số đó.",
+        "Ví dụ:",
+        "Số 888 có 3 chữ số 8, từ phải sang trái mỗi chữ số 8 lần lượt nhận giá trị: 8, 80, 800.",
+        "Viết số tự nhiên với các đặc điểm trên được gọi là viết số tự nhiên trong hệ thập phân."
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "So sánh hai số tự nhiên là xác định số nào lớn hơn, bé hơn hoặc bằng nhau.",
+        "Để so sánh hai số tự nhiên, có hai cách:",
+        "Dựa vào vị trí các số trong dãy số tự nhiên, số nào đếm trước thì bé hơn.",
+        "Dựa vào quy tắc so sánh số có nhiều chữ số."
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 11,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 1 (SGK – tr34)",
+        "a) Đọc các số sau:",
+        "651          5 064         800 310          9 106 783          573 811 00",
+        "b) Viết các số sau:",
+        "- Hai mươi tư nghìn năm trăm mười sáu,",
+        "- Ba trăm linh bảy nghìn bốn trăm hai mươi mốt,",
+        "- Một triệu hai trăm năm mươi nghìn không trăm mười bảy,",
+        "- Mười lăm triệu không trăm bốn mươi nghìn sáu trăm linh tám."
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 1 (SGK – tr34)",
+        "a) Đọc các số sau:",
+        "651 đọc là: Sáu trăm năm mươi mốt.",
+        "5 064 đọc là: Năm nghìn không trăm sáu mươi tư.",
+        "800 310 đọc là: Tám trăm nghìn ba trăm mười.",
+        "9 106 783: Chín triệu một trăm linh sáu nghìn bảy trăm tám mươi ba.",
+        "573 811 000: Năm trăm bảy mươi ba triệu tám trăm mười một nghìn."
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 1 (SGK – tr34)",
+        "b) Viết các số sau:",
+        "- Hai mươi tư nghìn năm trăm mười sáu: 24 516.",
+        "- Ba trăm linh bảy nghìn bốn trăm hai mươi mốt: 307 421.",
+        "- Một triệu hai trăm năm mươi nghìn không trăm mười bảy: 1 250 017.",
+        "- Mười lăm triệu không trăm bốn mươi nghìn sáu trăm linh tám: 15 040 608."
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 2 (SGK – tr34):",
+        "Viết mỗi số sau thành tổng (theo mẫu):",
+        "Mẫu: 10 837 = 10 000 + 800 + 30 + 7",
+        "265 175     =",
+        "1 050 694  =",
+        "321 126     =",
+        "57 605       =",
+        "200 000 + 60 000 + 5 000 + 100 + 70 + 5",
+        "1 000 000 + 50 000 + 600 + 90 + 4",
+        "300 000 + 20 000 + 1 000 + 100 + 20 + 6",
+        "50 000 + 7 000 + 600 + 5"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 3 (SGK – tr34): Số ?",
+        "Số liền trước",
+        "Số đã cho",
+        "Số liền sau",
+        "99",
+        "1 270",
+        "8 010",
+        "2 068",
+        "14 050",
+        "1 271",
+        "1 269",
+        "8 009",
+        "2 067",
+        "14 049",
+        "100",
+        "98",
+        "8 011",
+        "2 069",
+        "14 051"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 4 (SGK – tr34)",
+        "Hành tinh",
+        "Khoảng cách đến Mặt Trời (km)",
+        "Trái Đất",
+        "149 600 000",
+        "Sao Kim",
+        "108 000 000",
+        "Sao Thủy",
+        "57 910 000",
+        "Sao Hỏa",
+        "227 700 000",
+        "Khoảng cách từ Trái Đất, Sao Kim, Sao Thủy, Sao Hỏa đến Mặt Trời được biểu thị trong bảng bên.",
+        "Hãy sắp xếp khoảng cách từ các hành tinh trên đến Mặt Trời theo thứ tự từ gần nhất đến xa nhất."
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 4 (SGK – tr34)",
+        "Hành tinh",
+        "Khoảng cách đến Mặt Trời (km)",
+        "Trái Đất",
+        "149 600 000",
+        "Sao Kim",
+        "108 000 000",
+        "Sao Thủy",
+        "57 910 000",
+        "Sao Hỏa",
+        "227 700 000",
+        "Vì: 57 910 000 &lt; 108 000 000 &lt; 149 600 000 &lt; 227 700 000",
+        "→ Khoảng cách từ các hành tinh đến Mặt trời theo thứ tự từ gần nhất đến xa nhất là:",
+        "Sao Thủy, Sao Kim, Trái Đất, Sao Hỏa."
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em biết thêm được điều gì?"
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "questions",
+      "paragraphs": [
+        "Để có thể làm tốt các bài tập trên, em nhắn bạn điều gì?"
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 22,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước Bài 14: Yến, tạ, tấn"
+      ]
+    },
+    {
+      "slideNo": 23,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 24,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 1 Tuần 4",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Em hãy đọc lời thoại của nhân vật và thảo luận về hệ đếm thập phân.",
+        "slide": 3
+      },
+      {
+        "type": "question",
+        "text": "Thế nào là hệ thập phân?",
+        "slide": 5
+      },
+      {
+        "type": "question",
+        "text": "Cách viết số tự nhiên trong hệ thập phân?",
+        "slide": 5
+      },
+      {
+        "type": "question",
+        "text": "Cách so sánh hai số tự nhiên?",
+        "slide": 5
+      },
+      {
+        "type": "task",
+        "text": "Đọc thông tin nêu trong khung kiến thức và trả lời các câu hỏi.",
+        "slide": 5
+      },
+      {
+        "type": "task",
+        "text": "Viết số tự nhiên trong hệ thập phân",
+        "slide": 7
+      },
+      {
+        "type": "task",
+        "text": "Viết số tự nhiên trong hệ thập phân",
+        "slide": 8
+      },
+      {
+        "type": "task",
+        "text": "Viết số tự nhiên với các đặc điểm trên được gọi là viết số tự nhiên trong hệ thập phân.",
+        "slide": 8
+      },
+      {
+        "type": "task",
+        "text": "So sánh hai số tự nhiên là xác định số nào lớn hơn, bé hơn hoặc bằng nhau.",
+        "slide": 9
+      },
+      {
+        "type": "task",
+        "text": "Viết mỗi số sau thành tổng (theo mẫu):",
+        "slide": 14
+      },
+      {
+        "type": "question",
+        "text": "Bài tập 3 (SGK – tr34): Số ?",
+        "slide": 15
+      },
+      {
+        "type": "task",
+        "text": "Hãy sắp xếp khoảng cách từ các hành tinh trên đến Mặt Trời theo thứ tự từ gần nhất đến xa nhất.",
+        "slide": 17
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em biết thêm được điều gì?",
+        "slide": 19
+      },
+      {
+        "type": "question",
+        "text": "Để có thể làm tốt các bài tập trên, em nhắn bạn điều gì?",
+        "slide": 20
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước Bài 14: Yến, tạ, tấn",
+        "slide": 22
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

@@ -1,0 +1,320 @@
+{
+  "meta": {
+    "file": "w09_i000_Chu_de_C2_-_Bai_1._Tao_va_xoa_thu_muc_doi_ten_va_xoa_tep.pptx",
+    "subject": "tin-hoc",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tin-hoc\\slides\\w09_i000_Chu_de_C2_-_Bai_1._Tao_va_xoa_thu_muc_doi_ten_va_xoa_tep.pptx",
+    "slideCount": 24
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "Tin học 4",
+        "CHỦ ĐỀ C2. Tổ chức cây thư mục",
+        "lưu trữ thông tin trong máy tính",
+        "Bài 1. Tạo và xoá thư mục, đổi tên và xoá tệp"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "New Folder",
+        "Lệnh New folder trên dải lệnh Home dùng để làm gì?"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "New Folder",
+        "Lệnh New folder trên dải lệnh Home dùng để tạo thư mục mới."
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "questions",
+      "paragraphs": [
+        "Quan sát hình 1 và thực hiện yêu cầu:",
+        "Hình 1. Ví dụ cây thư mục TinHoc4",
+        "Em hãy sử dụng lệnh New folder để tạo thêm thư mục con ChuDeD trong thư mục TinHoc4 ở Hình 1."
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 7,
+      "type": "questions",
+      "paragraphs": [
+        "1. ĐỔI TÊN TỆP",
+        "Đọc thông tin trong SGK tr. 20 và thực hiện yêu cầu:",
+        "Có mấy bước để thực hiện đổi tên tệp?",
+        "Từng bước thực hiện như thế nào?"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "activity",
+      "paragraphs": [
+        "Hoạt động 1.",
+        "Em hãy đổi tên tệp BaiA_1 thành ChuDeA_Bai1 theo các bước sau, từ đó nêu các bước đổi tên tệp:",
+        "Chọn tên tệp BaiA_1",
+        "Nháy chuột vào lệnh Rename ở dải lệnh Home.",
+        "Gõ tên tệp mới ChuDeA_Bai1 và nhấn Enter."
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "theory",
+      "paragraphs": [
+        "KẾT LUẬN",
+        "Trong phần mềm quản lí tệp, ở dải lệnh Home, em có thể đổi tên tệp bằng lệnh Rename."
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "questions",
+      "paragraphs": [
+        "2. XÓA THƯ MỤC, TỆP",
+        "Hoạt động 2.",
+        "Em hãy xóa tệp ChuDeA_Bai1 bằng các chọn tệp và nháy chuột vào lệnh Delete.",
+        "Các bước thực hiện:",
+        "Truy cập vào thư mục Tinhoc4 trong máy tính.",
+        "Click chọn tệp ChuDeA_Bai1.",
+        "Nháy chuột vào lệnh Delete trên dải lệnh Home."
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "questions",
+      "paragraphs": [
+        "Đọc hoạt động 2 và trả lời câu hỏi sau đây:",
+        "Trong thư mục Tinhoc4 còn có tệp ChuDeA_Bai1 không?",
+        "Tệp ChuDeA_Bai1 có thể mở được nữa không?",
+        "Để xóa thư mục, em có thể dùng lệnh nào?"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "ChuDeA_Bai1",
+        "Sau khi đổi tên của tệp",
+        "Không còn trong thư mục Tinhoc4.",
+        "Tệp ChuDeA_Bai1 không thể mở được nữa."
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "Để xóa thư mục, có thể dùng lệnh Delete"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "theory",
+      "paragraphs": [
+        "KẾT LUẬN",
+        "Cần kiểm tra cẩn thận các tệp, thư mục trước khi xóa để tránh xóa nhầm.",
+        "Trong phần mềm quản lí tệp, ở dải lệnh Home, có thể xóa thư mục hoặc tệp bằng lệnh Delete.",
+        "Các thông tin trong thư mục, tệp sẽ bị mất, ta không thể nhìn thấy tệp, thư mục đã bị xóa.",
+        "Xóa nhầm có thể dẫn đến mất thông tin quan trọng, máy tính không hoạt động được."
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 16,
+      "type": "questions",
+      "paragraphs": [
+        "Để đổi tên một thư mục, em dùng lệnh nào sau đây?",
+        "Bài tập 1. SGK tr. 21",
+        "A. Rename",
+        "C. Delete",
+        "B. Copy to",
+        "D. Move to",
+        "A. Rename"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "questions",
+      "paragraphs": [
+        "Nếu xóa thư mục Lop4 ở Hình 2 thì các thư mục, tệp nào bị xóa?",
+        "Bài tập 2. SGK tr. 21",
+        "A. Chỉ xóa thư mục Lop4, các thư mục tệp nằm trong Lop4 không bị xóa.",
+        "B. Chỉ xóa các thư mục To1, To2, To3, To4 và tệp GioiThieuTo1.",
+        "C. Xóa cả thư mục Lop4 và các thư mục To1, To2, To3, To4 và tệp GioiThieuTo1.",
+        "D. Xóa thư mục Lop4 và tệp GioiThieuTo1."
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy cho biết điểm khác nhau giữa lệnh Move to và lệnh Copy to.",
+        "Bài tập 3. SGK tr. 21",
+        "Sau khi thực hiện lệnh Move to: không còn tệp/thư mục được di chuyển ở vị trí cũ.",
+        "Sau khi thực hiện lệnh Copy to: vẫn còn tệp/thư mục được sao chép ở vị trí cũ."
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 20,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy tạo thư mục ThuNghiem, rồi thực hiện xóa thư mục này.",
+        "Tạo thư mục bằng lệnh",
+        "New folder.",
+        "Xoá thư mục bằng lệnh Delete."
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "theory",
+      "paragraphs": [
+        "Trong phần mềm quản lí tệp, ở dải lệnh Home, em có thể đổi tên tệp bằng lệnh Rename, xóa thư muc bằng lệnh Delete.",
+        "Em cần kiểm tra lại tên thư mục, tên tệp trước khi xóa. Xóa nhầm làm mất thông tin hoặc máy tính không hoạt động được.",
+        "GHI NHỚ"
+      ]
+    },
+    {
+      "slideNo": 22,
+      "type": "content",
+      "paragraphs": [
+        "HƯỚNG DẪN VỀ NHÀ",
+        "Ôn tập lại nội dung kiến thức đã học trong bài ngày hôm nay.",
+        "Hoàn thành các nhiệm vụ được giao về nhà.",
+        "Chuẩn bị, đọc trước bài mới, Bài 2. Di chuyển, sao chép thư mục và tệp."
+      ]
+    },
+    {
+      "slideNo": 23,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 24,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "Tin học 4 CHỦ ĐỀ C2. Tổ chức cây thư mục lưu trữ thông tin trong máy tính",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Lệnh New folder trên dải lệnh Home dùng để làm gì?",
+        "slide": 3
+      },
+      {
+        "type": "task",
+        "text": "Em hãy sử dụng lệnh New folder để tạo thêm thư mục con ChuDeD trong thư mục TinHoc4 ở Hình 1.",
+        "slide": 5
+      },
+      {
+        "type": "task",
+        "text": "Đọc thông tin trong SGK tr. 20 và thực hiện yêu cầu:",
+        "slide": 7
+      },
+      {
+        "type": "question",
+        "text": "Có mấy bước để thực hiện đổi tên tệp?",
+        "slide": 7
+      },
+      {
+        "type": "question",
+        "text": "Từng bước thực hiện như thế nào?",
+        "slide": 7
+      },
+      {
+        "type": "task",
+        "text": "Em hãy đổi tên tệp BaiA_1 thành ChuDeA_Bai1 theo các bước sau, từ đó nêu các bước đổi tên tệp:",
+        "slide": 8
+      },
+      {
+        "type": "task",
+        "text": "Chọn tên tệp BaiA_1",
+        "slide": 8
+      },
+      {
+        "type": "task",
+        "text": "Em hãy xóa tệp ChuDeA_Bai1 bằng các chọn tệp và nháy chuột vào lệnh Delete.",
+        "slide": 10
+      },
+      {
+        "type": "task",
+        "text": "Đọc hoạt động 2 và trả lời câu hỏi sau đây:",
+        "slide": 11
+      },
+      {
+        "type": "question",
+        "text": "Trong thư mục Tinhoc4 còn có tệp ChuDeA_Bai1 không?",
+        "slide": 11
+      },
+      {
+        "type": "question",
+        "text": "Tệp ChuDeA_Bai1 có thể mở được nữa không?",
+        "slide": 11
+      },
+      {
+        "type": "question",
+        "text": "Để xóa thư mục, em có thể dùng lệnh nào?",
+        "slide": 11
+      },
+      {
+        "type": "question",
+        "text": "Để đổi tên một thư mục, em dùng lệnh nào sau đây?",
+        "slide": 16
+      },
+      {
+        "type": "question",
+        "text": "Nếu xóa thư mục Lop4 ở Hình 2 thì các thư mục, tệp nào bị xóa?",
+        "slide": 17
+      },
+      {
+        "type": "task",
+        "text": "Em hãy cho biết điểm khác nhau giữa lệnh Move to và lệnh Copy to.",
+        "slide": 18
+      },
+      {
+        "type": "task",
+        "text": "Em hãy tạo thư mục ThuNghiem, rồi thực hiện xóa thư mục này.",
+        "slide": 20
+      }
+    ],
+    "vocab": [],
+    "keyPoints": [
+      "Trong phần mềm quản lí tệp, ở dải lệnh Home, em có thể đổi tên tệp bằng lệnh Rename.",
+      "Cần kiểm tra cẩn thận các tệp, thư mục trước khi xóa để tránh xóa nhầm.",
+      "Trong phần mềm quản lí tệp, ở dải lệnh Home, có thể xóa thư mục hoặc tệp bằng lệnh Delete.",
+      "Các thông tin trong thư mục, tệp sẽ bị mất, ta không thể nhìn thấy tệp, thư mục đã bị xóa.",
+      "Xóa nhầm có thể dẫn đến mất thông tin quan trọng, máy tính không hoạt động được.",
+      "Trong phần mềm quản lí tệp, ở dải lệnh Home, em có thể đổi tên tệp bằng lệnh Rename, xóa thư muc bằng lệnh Delete.",
+      "Em cần kiểm tra lại tên thư mục, tên tệp trước khi xóa. Xóa nhầm làm mất thông tin hoặc máy tính không hoạt động được."
+    ]
+  }
+}

@@ -1,0 +1,305 @@
+{
+  "meta": {
+    "file": "w06_i001_Tuan_6_-_Bai_17_Bai_toan_lien_quan_den_rut_ve_don_vi_-_Tiet_2.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w06_i001_Tuan_6_-_Bai_17_Bai_toan_lien_quan_den_rut_ve_don_vi_-_Tiet_2.pptx",
+    "slideCount": 23
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 1",
+        "Tuần 6",
+        "Bài 17: Bài toán liên quan đến rút về đơn vị - Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Bài toán:",
+        "Có 30 hộp bánh được chia đều vào 5 thùng. Hỏi 7 thùng bánh như vậy có bao nhiêu hộp bánh?"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "Bài giải",
+        "Số hộp bánh đựng trong mỗi thùng là:",
+        "30 : 5 = 6 (hộp bánh)",
+        "Số hộp bánh có trong 7 thùng là:",
+        "6 x 7 = 42 (hộp bánh)",
+        "Đáp số: 42 hộp bánh."
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "questions",
+      "paragraphs": [
+        "* Dạng 2: Bài toán liên quan đến hai phép chia",
+        "Mẫu:",
+        "Người ta đóng gói 12 kg hạt sen vào 3 túi như nhau. Hỏi 20 kg hạt sen thì đóng được bao nhiêu túi như thế?"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "questions",
+      "paragraphs": [
+        "Tìm số túi cần để đóng hết 20 kg hạt sen, ta làm tính chia 20 : 4 = 5",
+        "Tìm số ki-lô-gam hạt sen trong mỗi túi, ta làm tính chia 12 : 3 = 4",
+        "12 kg hạt sen đóng vào 3 túi như nhau. Hỏi 20 kg hạt sen thì đóng được bao nhiêu túi như thế?"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "* Dạng 2: Bài toán liên quan đến hai phép chia",
+        "Bài giải",
+        "Số hạt sen trong mỗi túi cân nặng là:",
+        "12 : 3 = 4 (kg)",
+        "Số túi cần để đóng hết 20 kg hạt sen là:",
+        "20 : 4 = 5 (túi)",
+        "Đáp số: 5 túi."
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "questions",
+      "paragraphs": [
+        "Ví dụ:",
+        "45 học sinh xếp thành 9 hàng đều nhau. Hỏi 60 học sinh xếp được thành bao nhiêu hàng đều nhau?",
+        "Một người trong 12 phút đạp xe được 3 km. Hỏi trong 28 phút đạp xe được bao nhiêu km?"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "Với dạng “rút về đơn vị” liên quan đến hai phép chia, thường tiến hành theo hai bước giải:",
+        "Bước 1: Tìm giá trị một phần (thực hiện phép chia).",
+        "Bước 2: Tìm số phần có được theo giá trị đó (thực hiện phép chia)."
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 12,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 2 (SGK – tr42):",
+        "Giải các bài toán sau (theo mẫu):",
+        "a) Rót hết 35 l sữa vào đầy 7 can giống nhau. Hỏi để rót hết 40 l sữa cần bao nhiêu can như thế?",
+        "Tóm tắt",
+        "35 lít: 7 can",
+        "40 lít: ? can",
+        "Bài giải",
+        "Số lít sữa trong mỗi can là:",
+        "35 : 7 = 5 (lít)",
+        "Số can để chứa hết 40 lít sữa là:",
+        "40 : 5 = 8 (can)",
+        "Đáp số: 8 can."
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 2 (SGK – tr42):",
+        "Giải các bài toán sau (theo mẫu):",
+        "b) Người ta đóng 24 viên thuốc vào 4 vỉ đều nhau. Hỏi 6 672 viên thuốc thì đóng được vào bao nhiêu vỉ thuốc như thế?",
+        "Tóm tắt",
+        "24 viên thuốc: 4 vỉ",
+        "6 672 viên thuốc: ? vỉ",
+        "Bài giải",
+        "Số viên thuốc có trong mỗi vỉ thuốc là:",
+        "24 : 4 = 6 (viên)",
+        "Số vỉ thuốc đóng được từ 6 672 viên thuốc là:",
+        "6 672 : 6 = 1 112 (vỉ)",
+        "Đáp số: 1 112 vỉ thuốc."
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 15,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 3 (SGK – tr42)",
+        "Nhân dịp đầu năm học mới, một nhà sách có chương trình khuyến mãi như sau: “Cứ mua 5 quyển sách được tặng 10 chiếc nhãn vở”.",
+        "a) Hỏi mua 20 quyển sách được tặng bao nhiêu chiếc nhãn vở?",
+        "b) Theo em, chị Huệ mua 23 quyển sách thì được tặng bao nhiêu chiếc nhãn vở?"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 3 (SGK – tr42)",
+        "Tóm tắt",
+        "5 quyển sách: 10 nhãn vở",
+        "a) 20 quyển sách: ? nhãn vở",
+        "b) 23 quyển sách: ? nhãn vở"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 3 (SGK – tr42)",
+        "a)",
+        "Số chiếc nhãn vở được tặng khi mua 1 quyển sách là:",
+        "10 : 5 = 2 (chiếc)",
+        "Mua 20 quyển sách được tặng số chiếc nhãn vở là:",
+        "2 x 20 = 40 (chiếc)"
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 3 (SGK – tr42)",
+        "b)",
+        "Mua 23 quyển sách thì được tặng số chiếc nhãn vở là:",
+        "2 x 23 = 46 (chiếc)",
+        "Đáp số: a) 40 chiếc nhãn vở.",
+        "b) 46 chiếc nhãn vở."
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em biết thêm được điều gì?"
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước Bài 18: Luyện tập"
+      ]
+    },
+    {
+      "slideNo": 22,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 23,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 1 Tuần 6",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Có 30 hộp bánh được chia đều vào 5 thùng. Hỏi 7 thùng bánh như vậy có bao nhiêu hộp bánh?",
+        "slide": 3
+      },
+      {
+        "type": "question",
+        "text": "Người ta đóng gói 12 kg hạt sen vào 3 túi như nhau. Hỏi 20 kg hạt sen thì đóng được bao nhiêu túi như thế?",
+        "slide": 6
+      },
+      {
+        "type": "task",
+        "text": "Tìm số túi cần để đóng hết 20 kg hạt sen, ta làm tính chia 20 : 4 = 5",
+        "slide": 7
+      },
+      {
+        "type": "task",
+        "text": "Tìm số ki-lô-gam hạt sen trong mỗi túi, ta làm tính chia 12 : 3 = 4",
+        "slide": 7
+      },
+      {
+        "type": "question",
+        "text": "12 kg hạt sen đóng vào 3 túi như nhau. Hỏi 20 kg hạt sen thì đóng được bao nhiêu túi như thế?",
+        "slide": 7
+      },
+      {
+        "type": "question",
+        "text": "45 học sinh xếp thành 9 hàng đều nhau. Hỏi 60 học sinh xếp được thành bao nhiêu hàng đều nhau?",
+        "slide": 9
+      },
+      {
+        "type": "question",
+        "text": "Một người trong 12 phút đạp xe được 3 km. Hỏi trong 28 phút đạp xe được bao nhiêu km?",
+        "slide": 9
+      },
+      {
+        "type": "question",
+        "text": "a) Rót hết 35 l sữa vào đầy 7 can giống nhau. Hỏi để rót hết 40 l sữa cần bao nhiêu can như thế?",
+        "slide": 12
+      },
+      {
+        "type": "question",
+        "text": "b) Người ta đóng 24 viên thuốc vào 4 vỉ đều nhau. Hỏi 6 672 viên thuốc thì đóng được vào bao nhiêu vỉ thuốc như thế?",
+        "slide": 13
+      },
+      {
+        "type": "question",
+        "text": "a) Hỏi mua 20 quyển sách được tặng bao nhiêu chiếc nhãn vở?",
+        "slide": 15
+      },
+      {
+        "type": "question",
+        "text": "b) Theo em, chị Huệ mua 23 quyển sách thì được tặng bao nhiêu chiếc nhãn vở?",
+        "slide": 15
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em biết thêm được điều gì?",
+        "slide": 19
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước Bài 18: Luyện tập",
+        "slide": 21
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

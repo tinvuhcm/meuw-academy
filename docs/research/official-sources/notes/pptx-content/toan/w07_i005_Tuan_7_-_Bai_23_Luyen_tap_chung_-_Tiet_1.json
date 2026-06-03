@@ -1,0 +1,157 @@
+{
+  "meta": {
+    "file": "w07_i005_Tuan_7_-_Bai_23_Luyen_tap_chung_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w07_i005_Tuan_7_-_Bai_23_Luyen_tap_chung_-_Tiet_1.pptx",
+    "slideCount": 14
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 1",
+        "Tuần 7",
+        "Bài 23: Luyện tập chung - Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 3,
+      "type": "content",
+      "paragraphs": [
+        "“Tôi cần, tôi cần”",
+        "Tôi cần một góc nhọn",
+        "Tôi cần hai đường thẳng song song",
+        "Tôi cần một góc tù"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 1 (SGK – tr57)",
+        "a) Trong các góc sau, góc nào là góc nhọn, góc vuông, góc tù?",
+        "b) Dùng thước đo góc để đo độ lớn của các góc trên"
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 1 (SGK – tr57)",
+        "Góc nhọn là góc có số đo bé hơn 90",
+        "Góc tù là góc có số đo lớn hơn 90",
+        "Góc bẹt là góc có số đo bằng 180."
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 1 (SGK – tr57)",
+        "a) Góc nhọn: Góc đỉnh O, cạnh OA, OB.",
+        "Góc vuông: Góc đỉnh N, cạnh NM, NP.",
+        "Góc tù: Góc đỉnh I, cạnh IK, IH.",
+        "b) Góc đỉnh O, cạnh OA, OB có số đo góc là 60°.",
+        "Góc đỉnh I, cạnh IK, IH có số đo góc là 120°.",
+        "Góc đỉnh N, cạnh NM, NP có số đo góc là 90°."
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 2 (SGK – tr57)",
+        "Chỉ ra các cặp đường thẳng song song với nhau, các cặp",
+        "đường thẳng vuông góc với nhau trong hình dưới đây:"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 2 (SGK – tr57)",
+        "Cặp đường thẳng song song với nhau:",
+        "Cặp đường thẳng vuông góc với nhau:"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "questions",
+      "paragraphs": [
+        "CỦNG CỐ, DẶN DÒ",
+        "Qua bài học hôm nay, em biết thêm được điều gì?",
+        "Để nắm chắc kiến thức đó, em nhắn bạn điều gì?"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Chuẩn bị trước Bài 23: Luyện tập chung – Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 1 Tuần 7",
+    "questions": [
+      {
+        "type": "question",
+        "text": "a) Trong các góc sau, góc nào là góc nhọn, góc vuông, góc tù?",
+        "slide": 5
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em biết thêm được điều gì?",
+        "slide": 10
+      },
+      {
+        "type": "question",
+        "text": "Để nắm chắc kiến thức đó, em nhắn bạn điều gì?",
+        "slide": 10
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

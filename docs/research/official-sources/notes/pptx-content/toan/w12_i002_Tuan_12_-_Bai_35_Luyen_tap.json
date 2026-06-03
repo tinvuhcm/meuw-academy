@@ -1,0 +1,436 @@
+{
+  "meta": {
+    "file": "w12_i002_Tuan_12_-_Bai_35_Luyen_tap.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w12_i002_Tuan_12_-_Bai_35_Luyen_tap.pptx",
+    "slideCount": 28
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 1",
+        "Tuần 12",
+        "Bài 35: Luyện tập"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "content",
+      "paragraphs": [
+        "Không thực hiện phép tính, hãy so sánh.",
+        "a) 15  7           7  15",
+        "b ) ( 2  8 )  24           2  ( 8  24 )",
+        "d ) 34  0           0  34",
+        "c ) 126  1          1 126"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 5,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "a) Tính và so sánh giá trị của hai biểu thức sau:",
+        "Trả lời",
+        "5  (4  3) và 5  4  5  3",
+        "Cách 1: 5  (4  3)",
+        "5  7",
+        "35",
+        "Cách 2: 5  4  5  3",
+        "20  15",
+        "35",
+        "Vậy 5  ( 4  3 )  5 4  5  3"
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "b) Thảo luận nội dung sau và lấy ví dụ minh họa:",
+        "Khi nhân một số với một tổng, ta có thể nhân số đó với từng số hạng của tổng, rồi cộng các kết quả với nhau.",
+        "25  (8  4)",
+        "25  8  25  4",
+        "200  100  300",
+        "Ví dụ:",
+        "Khi nhân một tổng với một số, ta có thể nhân từng số hạng của tổng với số đó, rồi cộng các kết quả với nhau.",
+        "(12  8)  5",
+        "12  5  8  5",
+        "60  40  100"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "c) Tính:",
+        "32  (200  3)",
+        "32  200  32  3",
+        "6 400  96",
+        "6 496",
+        "(125  9)  8",
+        "125  8  9  8",
+        "1 000  72",
+        "1 072",
+        "Trả lời",
+        "32  (200  3)",
+        "(125  9)  8"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "a) Tính và so sánh giá trị của hai biểu thức sau:",
+        "Trả lời",
+        "6  (7  5) và 6  7  6  5",
+        "Cách 1: 6  (7 5)",
+        "6  2",
+        "12",
+        "Cách 2: 6  7  6  5",
+        "42  30",
+        "12",
+        "Vậy 6  (7  5)  6  7 6  5",
+        "HOẠT ĐỘNG THEO NHÓM BÀN"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "b) Thảo luận nội dung sau và lấy ví dụ minh họa:",
+        "Khi nhân một số với một hiệu, ta có thể nhân số đó với số bị trừ và số trừ, rồi trừ hai kết quả với nhau.",
+        "20  (12  7)",
+        "20  12 – 20  7",
+        "240  140 100",
+        "Ví dụ:",
+        "Khi nhân một hiệu với một số, ta có lần lượt nhân số bị trừ và số trừ với số đó, rồi cộng các kết quả với nhau.",
+        "(15  5)  5",
+        "15  5  5  5",
+        "75  25  50"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "c) Tính:",
+        "28  (10  1)",
+        "28  10 28  1",
+        "280  28",
+        "252",
+        "(100  1)  36",
+        "100  36  1  36",
+        "3 600 – 36",
+        "3 564",
+        "Trả lời",
+        "28  (10  1)",
+        "(100  1)  36"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "03",
+        "Tính bằng hai cách",
+        "Cách 1:",
+        "93  8  93  2",
+        "744  186",
+        "930",
+        "Cách 2:",
+        "93  8  93  2",
+        "93  (8  2)",
+        "93  10  930",
+        "Trả lời",
+        "a. 93  8  93  2",
+        "b. 36  9  64  9",
+        "c. 57  8  57  7"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "03",
+        "Tính bằng hai cách",
+        "Cách 1:",
+        "36  9  64  9",
+        "324  576",
+        "900",
+        "Cách 2:",
+        "36  9  64  9",
+        "(36  64)  9",
+        "100  9  900",
+        "Trả lời",
+        "a. 93  8  93  2",
+        "b. 36  9  64  9",
+        "c. 57  8  57  7"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "03",
+        "Tính bằng hai cách",
+        "Cách 1:",
+        "57  8  57  7",
+        "456  399",
+        "57",
+        "Cách 2:",
+        "57  8  57  7",
+        "57  (8  7)",
+        "57  1  57",
+        "Trả lời",
+        "a. 93  8  93  2",
+        "b. 36  9  64  9",
+        "c. 57  8  57  7"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 15,
+      "type": "questions",
+      "paragraphs": [
+        "04",
+        "Minh đã giúp bác Phú tính số viên gạch ốp tường bếp theo hai cách sau đây:",
+        "Em hãy thảo luận về hai cách tính trên.",
+        "Cách 1: (5  3)  10",
+        "Cách 2: (4  6)  8"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "content",
+      "paragraphs": [
+        "04",
+        "Có ý nghĩa:",
+        "Chiều rộng (5  3) nhân với chiều dài (4  6), tức là 8  10 = 80. Vậy số viên gạch ốp tường bếp là 80 viên.",
+        "Cách 1: (5  3)  10",
+        "Cách 2: (4  6)  8",
+        "Có ý nghĩa:",
+        "Chiều dài (4  6) nhân với chiều rộng (5  3), tức là 10  8 = 80. Vậy số viên gạch ốp tường bếp là 80 viên."
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "content",
+      "paragraphs": [
+        "Môi đội đều được chia 5 hình khối. Có 5 câu hỏi trắc nghiệm. Độị nào trả lời đúng và nhanh nhất sẽ được quyền tô màu hình của đội mình. Nếu trả lời sai, đội còn lại được quyền tô màu.",
+        "Hết 5 câu hỏi đội nào tô được nhiều hình nhất sẽ chiến thắng.",
+        "TRÒ CHƠI – TÔ MÀU"
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "content",
+      "paragraphs": [
+        "Đội 1",
+        "Đội 2",
+        "Đội 1"
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 1",
+        "Tính giá trị biểu thức sau:",
+        "6  ( 15  15 )  ?",
+        "A. 180.",
+        "B. 190.",
+        "C. 200.",
+        "D. 210."
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "questions",
+      "paragraphs": [
+        "A. 72.",
+        "C. 90.",
+        "B. 162.",
+        "D. 126.",
+        "Câu 2",
+        "Tính giá trị biểu thức sau:",
+        "18  4  18  5  ?"
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 3",
+        "Tính giá trị biểu thức sau:",
+        "20  (19  9)  ?",
+        "A. 180.",
+        "B. 190.",
+        "C. 200.",
+        "D. 210."
+      ]
+    },
+    {
+      "slideNo": 22,
+      "type": "questions",
+      "paragraphs": [
+        "A. 1 400.",
+        "C. 1 300.",
+        "B. 1 600.",
+        "D. 1 500.",
+        "Câu 4",
+        "Tính giá trị biểu thức sau:",
+        "150  7  150  3  ?"
+      ]
+    },
+    {
+      "slideNo": 23,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 5",
+        "Tính giá trị biểu thức sau:",
+        "130  (20  10)  ?",
+        "A. 1 400.",
+        "B. 1 200.",
+        "C. 1 500.",
+        "D. 1 300."
+      ]
+    },
+    {
+      "slideNo": 24,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em biết thêm được điều gì?"
+      ]
+    },
+    {
+      "slideNo": 25,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 26,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước",
+        "Bài 36: Nhân với",
+        "10, 100, 1 000,…"
+      ]
+    },
+    {
+      "slideNo": 27,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 28,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 1 Tuần 12",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Tính bằng hai cách",
+        "slide": 11
+      },
+      {
+        "type": "task",
+        "text": "Tính bằng hai cách",
+        "slide": 12
+      },
+      {
+        "type": "task",
+        "text": "Tính bằng hai cách",
+        "slide": 13
+      },
+      {
+        "type": "task",
+        "text": "Em hãy thảo luận về hai cách tính trên.",
+        "slide": 15
+      },
+      {
+        "type": "task",
+        "text": "Tính giá trị biểu thức sau:",
+        "slide": 19
+      },
+      {
+        "type": "question",
+        "text": "6  ( 15  15 )  ?",
+        "slide": 19
+      },
+      {
+        "type": "task",
+        "text": "Tính giá trị biểu thức sau:",
+        "slide": 20
+      },
+      {
+        "type": "task",
+        "text": "Tính giá trị biểu thức sau:",
+        "slide": 21
+      },
+      {
+        "type": "task",
+        "text": "Tính giá trị biểu thức sau:",
+        "slide": 22
+      },
+      {
+        "type": "question",
+        "text": "150  7  150  3  ?",
+        "slide": 22
+      },
+      {
+        "type": "task",
+        "text": "Tính giá trị biểu thức sau:",
+        "slide": 23
+      },
+      {
+        "type": "question",
+        "text": "130  (20  10)  ?",
+        "slide": 23
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em biết thêm được điều gì?",
+        "slide": 24
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước",
+        "slide": 26
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

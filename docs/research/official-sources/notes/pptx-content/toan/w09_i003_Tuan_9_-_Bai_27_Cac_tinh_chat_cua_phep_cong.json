@@ -1,0 +1,429 @@
+{
+  "meta": {
+    "file": "w09_i003_Tuan_9_-_Bai_27_Cac_tinh_chat_cua_phep_cong.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w09_i003_Tuan_9_-_Bai_27_Cac_tinh_chat_cua_phep_cong.pptx",
+    "slideCount": 31
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 1",
+        "Tuần 9",
+        "Bài 27: Các tính chất của phép cộng"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 3,
+      "type": "activity",
+      "paragraphs": [
+        "HOẠT ĐỘNG CẶP ĐÔI"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "5 + 7",
+        "7 + 0",
+        "( 3 + 5 ) + 6",
+        "0 + 7",
+        "7 + 5",
+        "3 + ( 5 + 6 )"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "Khi thực hiện phép tính cộng hai số, ta có thể đổi chỗ các số hạng mà tổng không thay đổi.",
+        "Tính chất giao hoán của phép cộng",
+        "5 + 7 = 12",
+        "7 + 5 = 12"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "Khi cộng một tổng hai số với số thứ ba, ta có thể cộng số thứ nhất với tổng của số thứ hai và số thứ ba.",
+        "Tính chất kết hợp của phép cộng",
+        "( 3 + 5 ) + 6 = 14",
+        "3 + ( 5 + 6 ) = 14"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "Số nào cộng với 0 cũng cho kết quả bằng chính số đó.",
+        "Tính chất cộng với số 0",
+        "0 + 7 = 7",
+        "7 + 0 = 7"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 1 (SGK – tr67) Số ?",
+        "a) 34 + 99 =            + 34",
+        "13 + 297 = 297 +",
+        "201 + 118 =           + 201",
+        "b) 9 +            = 9",
+        "61 +            = 61",
+        "6 + 4 + 8 = ( 6 +           ) + 8",
+        "( 24 + 8 ) + 12 = 24 + ( 8 +          )",
+        "98 + 63 + 37 = 98 + ( 63 +           )",
+        "+ 0 = 87",
+        "+ 10 = 10",
+        "99",
+        "13",
+        "118",
+        "12",
+        "37",
+        "87"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 2 (SGK – tr67)",
+        "Tính bằng cách thuận tiện (theo mẫu)",
+        "75 + 25 + 46 = ( 75 + 25 ) + 46",
+        "= 100 + 46",
+        "= 146",
+        "37 + 8 + 3 = ( 37 + 3 ) + 8",
+        "= 40 + 8",
+        "= 48",
+        "a) 36 + 14 + 9",
+        "b) 51 + 12 + 18",
+        "c) 65 + 9 + 5",
+        "d) 31 + 26 + 69"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "Trả lời",
+        "a) 36 + 14 + 9",
+        "= ( 36 + 14 ) + 9",
+        "= 50 + 9 = 59",
+        "b) 51 + 12 + 18",
+        "= 51 + ( 12 + 18 )",
+        "= 51 + 30 = 81",
+        "c) 65 + 9 + 5",
+        "= ( 65 + 5 ) + 9",
+        "= 70 + 9 = 79",
+        "d) 31 + 26 + 69",
+        "= ( 31 + 69 ) + 26",
+        "= 100 + 26 = 126"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 3 (SGK – tr68)",
+        "Tính bằng cách thuận tiện (theo mẫu)"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "Trả lời",
+        "93 + 107 + 59",
+        "= (93 + 107) + 59",
+        "= 200 + 59 = 259",
+        "82 + 157 + 143",
+        "= 82 + (157 + 143)",
+        "= 82 + 300 = 382",
+        "32 + 146 + 18",
+        "= 32 + 18 + 146",
+        "= (32 + 18) + 146",
+        "= 50 + 146 = 196",
+        "120 + 170 + 280",
+        "= 120 + 280 + 170",
+        "= (120 + 280) + 170",
+        "= 400 + 170 = 570"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 4 (SGK – tr68)",
+        "Hai anh em Hoàng Đức và Phương Dung đi cùng mẹ vào siêu thị. Khi tính tiền, cô bán hàng đưa hoá đơn ghi như dưới đây.",
+        "Mẹ đưa cho cô bán hàng 500 000 đồng. Em hãy kiểm tra lại hoá đơn và cho biết cô bán hàng cần trả lại bao nhiêu tiền."
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "content",
+      "paragraphs": [
+        "Bài giải",
+        "Tổng số tiền mua hàng là:",
+        "130 000 + 135 000 + 65 000",
+        "= 130 000 + (135 000 + 65 000)",
+        "= 130 000 + 200 000 = 330 000 (đồng)",
+        "Số tiền cần trả lại là:",
+        "500 000 – 330 000 = 170 000 (đồng)",
+        "→ Cô bán hàng cần trả lại 170 000 đồng."
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "content",
+      "paragraphs": [
+        "Bức tranh bí ẩn",
+        "Có một bức tranh ẩn dưới 6 mảnh ghép. Học sinh có quyền lựa chọn một mảnh ghép bất kì. Mỗi mảnh ghép tương ứng với 1 câu hỏi. Trả lời đúng mảnh ghép sẽ được lật mở. Trả lời sai bạn khác sẽ có quyền trả lời. Từ miếng ghép thứ 4, ai có câu trả lời đúng về nội dung bức tranh sẽ là người thắng cuộc.",
+        "TRÒ CHƠI"
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "content",
+      "paragraphs": [
+        "ĐÁP ÁN"
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "questions",
+      "paragraphs": [
+        "Để đi từ nhà mình đến nhà Nam, Việt cần đi qua một cổng làng và một cây cổ thụ. Khoảng cách từ nhà Việt đến cổng làng là 182 m. Khoảng cách từ cổng làng đến cây cổ thụ là 75 m. Khoảng cách từ cây cổ thụ đén nhà Nam là 218 m. Hỏi quãng đường Việt cần đi dài bao nhiêu mét?",
+        "A. 470 m",
+        "B. 475 m",
+        "C. 480 m",
+        "D. 485 m",
+        "CÂU 1",
+        "B. 475 m"
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "questions",
+      "paragraphs": [
+        "Tính thuận tiện biểu thức sau:",
+        "63 + 35 + 47 + 25 = ?",
+        "A. 150",
+        "B. 160",
+        "C. 170",
+        "D. 180",
+        "CÂU 2",
+        "C. 170"
+      ]
+    },
+    {
+      "slideNo": 22,
+      "type": "content",
+      "paragraphs": [
+        "A. 120",
+        "B. 125",
+        "C. 140",
+        "D. 145",
+        "CÂU 3",
+        "Điền số thích hợp vào chỗ trống:",
+        "45 + (1 234 +              ) = 1 234 + ( 45 + 120)",
+        "A. 120"
+      ]
+    },
+    {
+      "slideNo": 23,
+      "type": "content",
+      "paragraphs": [
+        "A. 6 000",
+        "B. 725",
+        "C. 6 725",
+        "D. 161 291",
+        "CÂU 4",
+        "Điền số thích hợp vào chỗ trống:",
+        "161 291 +                  = ( 6 000 + 725 ) + 161 291",
+        "C. 6 725 m"
+      ]
+    },
+    {
+      "slideNo": 24,
+      "type": "content",
+      "paragraphs": [
+        "CÂU 5",
+        "So sánh:",
+        "4 824 + 3 579               3 579 + 4 824",
+        "A. &gt;",
+        "B. &lt;",
+        "C. =",
+        "C. ="
+      ]
+    },
+    {
+      "slideNo": 25,
+      "type": "questions",
+      "paragraphs": [
+        "CÂU 6",
+        "Cho biểu thức: 375 + 28.",
+        "Biểu thức nào sau đây có giá trị bằng biểu thức đã cho?",
+        "A. 28 + 377",
+        "B. 28 + 375",
+        "C. 28 + 370",
+        "D. 28 + 357",
+        "B. 28 + 375"
+      ]
+    },
+    {
+      "slideNo": 26,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 27,
+      "type": "questions",
+      "paragraphs": [
+        "CỦNG CỐ, DẶN DÒ",
+        "Qua bài học hôm nay, em biết thêm được điều gì?"
+      ]
+    },
+    {
+      "slideNo": 28,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 29,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước Bài 28: Tìm số trung bình cộng"
+      ]
+    },
+    {
+      "slideNo": 30,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 31,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 1 Tuần 9",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Tính chất giao hoán của phép cộng",
+        "slide": 6
+      },
+      {
+        "type": "task",
+        "text": "Tính chất kết hợp của phép cộng",
+        "slide": 7
+      },
+      {
+        "type": "task",
+        "text": "Tính chất cộng với số 0",
+        "slide": 8
+      },
+      {
+        "type": "question",
+        "text": "Bài tập 1 (SGK – tr67) Số ?",
+        "slide": 10
+      },
+      {
+        "type": "task",
+        "text": "Tính bằng cách thuận tiện (theo mẫu)",
+        "slide": 11
+      },
+      {
+        "type": "task",
+        "text": "Tính bằng cách thuận tiện (theo mẫu)",
+        "slide": 13
+      },
+      {
+        "type": "question",
+        "text": "Để đi từ nhà mình đến nhà Nam, Việt cần đi qua một cổng làng và một cây cổ thụ. Khoảng cách từ nhà Việt đến cổng làng là 182 m. Khoảng cách từ cổng làng đến cây cổ thụ là 75 m. Khoảng cách từ cây cổ thụ đén nhà Nam là 218 m. Hỏi quãng đường Việt cần đi dài bao nhiêu mét?",
+        "slide": 20
+      },
+      {
+        "type": "task",
+        "text": "Tính thuận tiện biểu thức sau:",
+        "slide": 21
+      },
+      {
+        "type": "question",
+        "text": "63 + 35 + 47 + 25 = ?",
+        "slide": 21
+      },
+      {
+        "type": "task",
+        "text": "Điền số thích hợp vào chỗ trống:",
+        "slide": 22
+      },
+      {
+        "type": "task",
+        "text": "Điền số thích hợp vào chỗ trống:",
+        "slide": 23
+      },
+      {
+        "type": "question",
+        "text": "Biểu thức nào sau đây có giá trị bằng biểu thức đã cho?",
+        "slide": 25
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em biết thêm được điều gì?",
+        "slide": 27
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước Bài 28: Tìm số trung bình cộng",
+        "slide": 29
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

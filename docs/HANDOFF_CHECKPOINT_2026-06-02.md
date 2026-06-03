@@ -1,7 +1,8 @@
 # Meuw Academy Handoff Checkpoint
 
-Updated: `2026-06-02 18:52:04 +07:00`  
-Repo head at writing: `30fc044`
+Updated: `2026-06-03 12:35:00 +07:00`  
+Repo head at writing: `67b2124`  
+Local worktree note: there are additional uncommitted curriculum/runtime changes after this head; see the section `Latest local checkpoint`.
 
 ## Purpose
 
@@ -189,6 +190,44 @@ Still true:
 - question-level freshness is much better than before
 - topic-family repetition is still too high
 - the engine needs a finer map than broad subject-family topics
+
+## Latest local checkpoint
+
+This section captures local work completed after the current git head and not yet pushed at the time of writing.
+
+Files touched in this local lane:
+
+- [F:/projects/meuw_academy/js/data/kntt-topics.js](F:/projects/meuw_academy/js/data/kntt-topics.js)
+- [F:/projects/meuw_academy/js/data/fresh-curriculum.js](F:/projects/meuw_academy/js/data/fresh-curriculum.js)
+- [F:/projects/meuw_academy/js/modules/lesson.js](F:/projects/meuw_academy/js/modules/lesson.js)
+
+What changed:
+
+- `lesson.js` now lets the learner open `Xem lại bài đọc` or `Xem lại bài học` during practice, in a popup, without leaving the lesson flow.
+- KNTT lesson topics now carry short SGK-based `Gâu tiên sinh` theory blocks before practice.
+- KNTT reading lessons can show the actual SGK page image from the Hành Trang Số CDN as a `reading-page` block.
+- That `reading-page` lane was strengthened again: reading lessons now infer a fuller SGK page span from lesson order instead of assuming only 1-2 pages.
+- PPTX-derived runtime QA was disabled for the SGK-sensitive lanes `vie / histgeo / art / tech / it`; only `sci` still keeps the PPTX lane for now.
+- A real architecture bug was found and fixed in the local branch: `mergeSupplemental()` had been dropping `generator` and KNTT metadata when merging topics into the runtime catalog.
+- KNTT non-math topics now have a metadata-driven generator so they can produce stable SGK-aligned practice instead of falling back too quickly.
+
+Local verification completed for this lane:
+
+- `node --check` passes for:
+  - [F:/projects/meuw_academy/js/data/kntt-topics.js](F:/projects/meuw_academy/js/data/kntt-topics.js)
+  - [F:/projects/meuw_academy/js/data/fresh-curriculum.js](F:/projects/meuw_academy/js/data/fresh-curriculum.js)
+  - [F:/projects/meuw_academy/js/modules/lesson.js](F:/projects/meuw_academy/js/modules/lesson.js)
+- Sample verify with stubbed localStorage:
+  - `10` materialized days checked
+  - `0` modules under `4` questions
+  - `60` KNTT-like `vie/it/histgeo` modules confirmed to materialize with questions
+
+Still not complete:
+
+- This is not yet a full SGK text-extraction pipeline.
+- Current KNTT-generated practice is metadata-driven from `book / unit / lesson / skill / page`, not full OCR text.
+- Exact SGK reading content is currently guaranteed by page-backed lesson spans, not by machine-readable OCR text.
+- Deeper lesson-specific QA for `Toán / Tiếng Việt / Tin học / Lịch sử-Địa lí` is still a high-value next step.
 
 ## Sync/account checkpoint
 

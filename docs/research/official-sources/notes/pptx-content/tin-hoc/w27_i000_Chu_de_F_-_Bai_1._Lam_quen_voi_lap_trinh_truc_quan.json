@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "file": "w27_i000_Chu_de_F_-_Bai_1._Lam_quen_voi_lap_trinh_truc_quan.pptx",
+    "subject": "tin-hoc",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tin-hoc\\slides\\w27_i000_Chu_de_F_-_Bai_1._Lam_quen_voi_lap_trinh_truc_quan.pptx",
+    "slideCount": 27
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "Tin học 4",
+        "Chủ đề F",
+        "Làm quen với lập trình trực quan",
+        "Bài 1: Làm quen với",
+        "lập trình trực quan"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy kể tên các phần mềm, trò chơi trong máy tính mà em biết. Theo em, người ta tạo ra các phần mềm, trò chơi đó bằng cách nào?"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "Tên các phần mềm, trò chơi máy tính: Phần mềm Windows, phần mềm diệt virus BKAV; trò chơi cờ vua, cờ tướng,…",
+        "Người ta tạo ra các phần mềm, trò chơi đó bằng cách lập trình."
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Giới thiệu về Scratch"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "1. Giới thiệu về Scratch",
+        "Scratch là ngôn ngữ được nhiều học sinh trên khắp thế giới sử dụng. Môi trường lập trình Scratch cho phép em tạo ra các chương trình đơn giản như các trò chơi, hoạt hình,…."
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "Bước 1: Nháy đúp chuột vào biểu tượng Scratch       trên màn hình.",
+        "Các bước kích hoạt phần mềm",
+        "Bước 2: Nháy chuột vào     và chọn một ngôn ngữ từ danh sách, ví dụ: Tiếng Việt.",
+        "1. Giới thiệu về Scratch"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy kể tên các vùng trên màn hình của môi trường lập trình Scratch.",
+        "1. Giới thiệu về Scratch"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "Các vùng trên màn hình của môi trường lập trình Scratch",
+        "1. Giới thiệu về Scratch"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "Lệnh và nhóm lệnh Scratch"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "2. Lệnh và nhóm lệnh Scratch",
+        "Các bước điều khiển nhân vật Mèo trên vùng Sân khấu di chuyển về phía trước một đoạn dài 15 bước:"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "questions",
+      "paragraphs": [
+        "Theo em, khi nháy chuột vào lệnh vừa tạo ở vùng Lập trình, nhân vật Mèo di chuyển như thế nào?",
+        "Khi nháy chuột vào lệnh vừa tạo ở vùng Lập trình, nhân vật Mèo di chuyển về phía trước một đoạn dài 15 bước.",
+        "2. Lệnh và nhóm lệnh Scratch"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "B1: Chọn nhóm Hiển thị.",
+        "Điều khiển nhân vật Mèo hiển thị bóng nói",
+        "B2: Chọn lệnh",
+        "B3: Kéo lệnh đã chọn sang Vùng Lập trình.",
+        "2. Lệnh và nhóm lệnh Scratch"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "content",
+      "paragraphs": [
+        "B4: Ghép 2 lệnh",
+        "với nhau.",
+        "Điều khiển nhân vật Mèo hiển thị bóng nói",
+        "B5: Thay:",
+        "“Xin chào” thành “Xin chào! Bạn tên là gì?”",
+        "Số 2 thành số 3.",
+        "2. Lệnh và nhóm lệnh Scratch"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "activity",
+      "paragraphs": [
+        "Thực hành theo các bước đã hướng dẫn, nháy chuột vào hai lệnh vừa tạo ở vùng Lập trình và quan sát hoạt động của nhân vật Mèo ở vùng Sân khấu.",
+        "Nhân vật Mèo di chuyển về phía trước 15 bước rồi nói “Xin chào! Bạn tên là gì” trong 3 giây.",
+        "2. Lệnh và nhóm lệnh Scratch"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "questions",
+      "paragraphs": [
+        "Vì sao ở bước 4 ta phải ghép 2 lệnh với nhau?",
+        "Thực hành kiểm chứng:",
+        "TH1: Để các lệnh tách rời và phải nháy chuột vào từng lệnh để thực hiện.",
+        "TH2: Các lệnh ghép với nhau và nháy chuột vào cả 2 lệnh.",
+        "Ghép các lệnh giúp cho hành động của nhân vật được thực hiện liên tiếp.",
+        "2. Lệnh và nhóm lệnh Scratch"
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 19,
+      "type": "questions",
+      "paragraphs": [
+        "(1) Trong màn hình của môi trường lập trình Scratch, em có thể ghép các lệnh với nhau ở vùng nào?",
+        "(2) Để lập trình nhân vật Mèo hiển thị bóng nói, em dùng lệnh nào?"
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "questions",
+      "paragraphs": [
+        "(1) Trong màn hình của môi trường lập trình Scratch, em có thể ghép các lệnh với nhau ở vùng nào?",
+        "(2) Để lập trình nhân vật Mèo hiển thị bóng nói, em dùng lệnh nào?",
+        "(1) Trong vùng Lập trình.",
+        "(2) Lệnh",
+        "hoặc lệnh             ."
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 22,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy kéo thả ba lệnh đầu tiên ở nhóm lệnh Chuyển động và quan sát xem các lệnh điều khiển nhân vật Mèo hoạt động như thế nào ở vùng Sân khấu?"
+      ]
+    },
+    {
+      "slideNo": 23,
+      "type": "content",
+      "paragraphs": [
+        "Nhân vật tiến về phía trước một đoạn 10 bước.",
+        "Nhân vật xoay theo chiều kim đồng hồ 15 độ.",
+        "Nhân vật xoay ngược chiều kim đồng hồ 15 độ."
+      ]
+    },
+    {
+      "slideNo": 24,
+      "type": "theory",
+      "paragraphs": [
+        "Màn hình của môi trường lập trình Scratch gồm năm vùng chính: Thư viện lệnh, Lập trình, Sân khấu, Nhân vật và Phông nền.",
+        "Ở vùng Thư viện lệnh, các lệnh được phân loại thành các nhóm lệnh với màu nền và chức năng khác nhau.",
+        "GHI NHỚ"
+      ]
+    },
+    {
+      "slideNo": 25,
+      "type": "content",
+      "paragraphs": [
+        "Ôn lại các kiến thức đã học ở Bài 1",
+        "01",
+        "02",
+        "Đọc và chuẩn bị trước Bài 2:",
+        "Tạo chương trình Scratch đầu tiên"
+      ]
+    },
+    {
+      "slideNo": 26,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 27,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "Tin học 4 Chủ đề F Làm quen với lập trình trực quan",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Em hãy kể tên các phần mềm, trò chơi trong máy tính mà em biết. Theo em, người ta tạo ra các phần mềm, trò chơi đó bằng cách nào?",
+        "slide": 3
+      },
+      {
+        "type": "task",
+        "text": "Em hãy kể tên các vùng trên màn hình của môi trường lập trình Scratch.",
+        "slide": 9
+      },
+      {
+        "type": "question",
+        "text": "Theo em, khi nháy chuột vào lệnh vừa tạo ở vùng Lập trình, nhân vật Mèo di chuyển như thế nào?",
+        "slide": 13
+      },
+      {
+        "type": "question",
+        "text": "Vì sao ở bước 4 ta phải ghép 2 lệnh với nhau?",
+        "slide": 17
+      },
+      {
+        "type": "question",
+        "text": "(1) Trong màn hình của môi trường lập trình Scratch, em có thể ghép các lệnh với nhau ở vùng nào?",
+        "slide": 19
+      },
+      {
+        "type": "question",
+        "text": "(2) Để lập trình nhân vật Mèo hiển thị bóng nói, em dùng lệnh nào?",
+        "slide": 19
+      },
+      {
+        "type": "question",
+        "text": "(1) Trong màn hình của môi trường lập trình Scratch, em có thể ghép các lệnh với nhau ở vùng nào?",
+        "slide": 20
+      },
+      {
+        "type": "question",
+        "text": "(2) Để lập trình nhân vật Mèo hiển thị bóng nói, em dùng lệnh nào?",
+        "slide": 20
+      },
+      {
+        "type": "question",
+        "text": "Em hãy kéo thả ba lệnh đầu tiên ở nhóm lệnh Chuyển động và quan sát xem các lệnh điều khiển nhân vật Mèo hoạt động như thế nào ở vùng Sân khấu?",
+        "slide": 22
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước Bài 2:",
+        "slide": 25
+      }
+    ],
+    "vocab": [],
+    "keyPoints": [
+      "Màn hình của môi trường lập trình Scratch gồm năm vùng chính: Thư viện lệnh, Lập trình, Sân khấu, Nhân vật và Phông nền.",
+      "Ở vùng Thư viện lệnh, các lệnh được phân loại thành các nhóm lệnh với màu nền và chức năng khác nhau."
+    ]
+  }
+}

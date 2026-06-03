@@ -1,0 +1,208 @@
+{
+  "meta": {
+    "file": "w30_i005_Tuan_30_-_Bai_85_Luyen_tap_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w30_i005_Tuan_30_-_Bai_85_Luyen_tap_-_Tiet_1.pptx",
+    "slideCount": 18
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 2",
+        "Tuần 30",
+        "Bài 85: Luyện tập - Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "content",
+      "paragraphs": [
+        "Ai nhanh, ai đúng"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 5,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Tính",
+        "Giải"
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "Tính",
+        "Giải"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "03",
+        "Tính (theo mẫu)"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "03",
+        "Tính (theo mẫu):",
+        "Trả lời"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "03",
+        "Tính (theo mẫu)"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "03",
+        "Tính (theo mẫu)",
+        "Trả lời"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "Khi chia một số tự nhiên cho một phân số, ta có thể nhân số tự nhiên với mẫu số rồi chia cho tử số.",
+        "Khi chia một phân số cho số tự nhiên, ta có thể chia tử số cho tích của số tự nhiên với mẫu số."
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "questions",
+      "paragraphs": [
+        "05",
+        "Tuấn Anh cắt một sợi dây dài 9 dm ra thành các đoạn dây dài  dm. Hỏi Tuấn Anh cắt được mấy đoạn dây như vậy?"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "questions",
+      "paragraphs": [
+        "05",
+        "Tóm tắt",
+        "Bài giải",
+        "Sợi dây dài : 9 dm",
+        "Cắt thành đoạn dây",
+        "Mỗi đoạn dài:  dm",
+        "Số đoạn dây cắt được ?",
+        "Số đoạn dây Tuấn Anh cắt được là:",
+        "(đoạn)",
+        "Đáp số: 6 đoạn dây."
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em học thêm được điều gì?",
+        "+ Ôn tập, củng cố kĩ năng nhân, chia hai phân số.",
+        "+ Biết cách chia số tự nhiên cho phân số và chia phân số cho số tự nhiên."
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 16,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước",
+        "Bài 85: Luyện tập – Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 18,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 2 Tuần 30",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Tính (theo mẫu)",
+        "slide": 7
+      },
+      {
+        "type": "task",
+        "text": "Tính (theo mẫu):",
+        "slide": 8
+      },
+      {
+        "type": "task",
+        "text": "Tính (theo mẫu)",
+        "slide": 9
+      },
+      {
+        "type": "task",
+        "text": "Tính (theo mẫu)",
+        "slide": 10
+      },
+      {
+        "type": "question",
+        "text": "Tuấn Anh cắt một sợi dây dài 9 dm ra thành các đoạn dây dài  dm. Hỏi Tuấn Anh cắt được mấy đoạn dây như vậy?",
+        "slide": 12
+      },
+      {
+        "type": "question",
+        "text": "Số đoạn dây cắt được ?",
+        "slide": 13
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em học thêm được điều gì?",
+        "slide": 14
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước",
+        "slide": 16
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

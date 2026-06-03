@@ -1,0 +1,193 @@
+{
+  "meta": {
+    "file": "w01_i004_Tuan_1_-_Bai_2_On_tap_ve_hinh_hoc_va_do_luong_-_Tiet_2.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w01_i004_Tuan_1_-_Bai_2_On_tap_ve_hinh_hoc_va_do_luong_-_Tiet_2.pptx",
+    "slideCount": 18
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 1",
+        "Tuần 1",
+        "Bài 2: Ôn tập về hình học",
+        "và đo lường - Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 3,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "nhiệt độ.",
+        "khối lượng.",
+        "thời gian.",
+        "diện tích.",
+        "Độ C là đơn vị đo",
+        "01"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "content",
+      "paragraphs": [
+        "Chiều dài nhân với chiều rộng",
+        "(cùng đơn vị đo)",
+        "Độ dài một cạnh nhân với chính nó",
+        "Ta lấy chiều dài trừ chiều rộng",
+        "(cùng đơn vị đo)",
+        "Chiều dài cộng chiều rộng",
+        "(cùng đơn vị đo)",
+        "Muốn tính diện tích hình chữ nhật",
+        "02"
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "ml",
+        "kg",
+        "Chọn các đơn vị đo dung tích",
+        "03"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 8,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 4: Đọc nhiệt độ ghi trên mỗi nhiệt kế sau:",
+        "10C",
+        "25 C",
+        "40 C",
+        "22 C"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 5: Chọn thẻ ghi cân nặng thích hợp với mỗi hình vẽ sau:",
+        "1 kg",
+        "2 kg",
+        "5 kg"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "A. 4 000 l.",
+        "Bài tập 6: Chọn đáp án đúng:",
+        "Hệ thống xử lí nước thải trong một cơ sở sản xuất mỗi ngày xử lí 36 000 l nước thải được chứa trong 4 chiếc bể như nhau.",
+        "Mỗi bể chứa số lít nước thải là:",
+        "D. 12 000 l .",
+        "C. 9 000 l .",
+        "B. 6 000 l ."
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 7",
+        "Quan sát sơ đồ các gian hàng của một Hội chợ về sản phẩm thủ công mĩ nghệ và cho biết gian hàng nào có diện tích lớn nhất"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "16 ô",
+        "Bài tập 7: Bài giải",
+        "8 ô",
+        "12 ô",
+        "4 ô",
+        "12 ô",
+        "16 ô",
+        "Vậy gian hàng gốm sứ có diện tích lớn nhất."
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy chia sẻ về những việc đã thực hiện được trong bài học này"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước Bài 3 – Ôn tập về một số yếu tố thống kê và xác suất"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 18,
+      "type": "empty",
+      "paragraphs": []
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 1 Tuần 1",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Chọn các đơn vị đo dung tích",
+        "slide": 6
+      },
+      {
+        "type": "task",
+        "text": "Em hãy chia sẻ về những việc đã thực hiện được trong bài học này",
+        "slide": 14
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước Bài 3 – Ôn tập về một số yếu tố thống kê và xác suất",
+        "slide": 16
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

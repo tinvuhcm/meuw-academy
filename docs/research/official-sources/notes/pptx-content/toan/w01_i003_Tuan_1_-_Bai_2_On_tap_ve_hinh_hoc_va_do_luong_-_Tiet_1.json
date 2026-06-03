@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "file": "w01_i003_Tuan_1_-_Bai_2_On_tap_ve_hinh_hoc_va_do_luong_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w01_i003_Tuan_1_-_Bai_2_On_tap_ve_hinh_hoc_va_do_luong_-_Tiet_1.pptx",
+    "slideCount": 23
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 1",
+        "Tuần 1",
+        "Bài 2: Ôn tập về hình học và đo lường - Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "“Ai nhanh hơn”",
+        "Em hãy nêu các kiến thức về hình học và đo lường đã học ở lớp 3.",
+        "Góc vuông; tính chu vi hình tam giác; đọc nhiệt độ;…"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 5,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 1: Trò chơi “Đố bạn”",
+        "Kể tên các hình đã học.",
+        "Nêu cách tính chu vi hình tam giác,",
+        "hình tứ giác, hình chữ nhật, hình vuông.",
+        "Nêu cách tính diện tích hình chữ nhật, hình vuông.",
+        "Kể tên các đơn vị đo độ dài, khối lượng, dung tích, diện tích đã học."
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 1: Trò chơi “Đố bạn”",
+        "Kể tên các kiến thức hình học đã học.",
+        "Điểm",
+        "Trung điểm đoạn thẳng",
+        "Góc vuông,",
+        "góc không vuông"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "Kể tên các hình đã học",
+        "Hình tam giác",
+        "Hình tứ giác",
+        "Hình chữ nhật",
+        "Hình vuông",
+        "Hình tròn"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "Kể tên các khối hình đã học.",
+        "Khối hộp chữ nhật",
+        "Khối lập phương"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "Nêu cách tính chu vi hình tam giác, hình tứ giác, hình chữ nhật, hình vuông.",
+        "Chu vi hình tam giác bằng tổng độ dài các cạnh của hình đó",
+        "Chu vi hình tứ giác bằng tổng độ dài các cạnh của hình đó",
+        "Chu vi của tam giác ABC là:",
+        "2 + 3 + 3 = 8 (cm)",
+        "Chu vi của tứ giác MNPQ là:",
+        "3 + 4 + 2 + 5 = 14 (cm)"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "Nêu cách tính chu vi hình tam giác, hình tứ giác, hình chữ nhật, hình vuông",
+        "Chu vi hình chữ nhật bằng chiều dài cộng với chiều rộng (cùng đơn vị đo) rồi nhân với 2",
+        "Chu vi hình vuông bằng độ dài một cạnh nhân với 4",
+        "Chu vi của hình chữ nhật ABCD là:",
+        "(5 + 2)  2 = 14 (cm)",
+        "Chu vi của hình vuông MNPQ là:",
+        "3  4 = 12 (cm)"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "Nêu cách tính diện tích hình chữ nhật, hình vuông.",
+        "Diện tích hình chữ nhật bằng chiều dài nhân với chiều rộng (cùng đơn vị đo)",
+        "Diện tích hình chữ nhật ABCD là:",
+        "5  2 = 10 ()"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "Nêu cách tính diện tích hình chữ nhật, hình vuông.",
+        "Diện tích hình vuông bằng độ dài một cạnh nhân với chính nó",
+        "Diện tích hình vuông MNPQ là:",
+        "3  3 = 9 ()"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "Kể tên các đơn vị đo độ dài, khối lượng, dung tích, diện tích đã học.",
+        "Các đơn vị đo đã học là: mi-li-mét, gam, mi-li-lít, xăng-ti-mét vuông."
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 2",
+        "a) Dùng ê ke kiểm tra rồi nêu tên góc vuông, góc không vuông trong các hình sau:",
+        "b) Đo độ dài các cạnh rồi tính chu vi, diện tích mỗi hình sau:"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 2",
+        "Góc vuông",
+        "Góc đỉnh N, cạnh NM, NO.",
+        "Góc vuông",
+        "Góc đỉnh B, cạnh BA, BC.",
+        "Góc vuông",
+        "Góc đỉnh I, cạnh IH, IK.",
+        "Góc không vuông",
+        "Góc đỉnh S,",
+        "cạnh SR, ST.",
+        "a)"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 2",
+        "b) Đo độ dài các cạnh rồi tính chu vi, diện tích mỗi hình sau:",
+        "4 cm",
+        "2 cm",
+        "2 cm",
+        "Chu vi hình chữ nhật ABCD:",
+        "(4 + 2)  2 = 12 (cm)",
+        "Diện tích hình chữ nhật ABCD:",
+        "4  2 = 8 ()",
+        "Chu vi hình vuông GHIK:",
+        "2 4 = 8 (cm)",
+        "Diện tích hình chữ nhật ABCD:",
+        "2  2 = 4 ()"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 3",
+        "Sơn mỗi mặt của từng khối hình bên bằng một màu khác nhau. Theo em, cần bao nhiêu màu để sơn hết các mặt của từng khối hình đó?",
+        "TRAO ĐỔI CẶP ĐÔI"
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "activity",
+      "paragraphs": [
+        "Bài tập 3: Bài giải",
+        "Khối lập phương có 6 mặt",
+        "→ Cần 6 màu để sơn hết các mặt",
+        "Khối chữ nhật có 6 mặt",
+        "→ Cần 6 màu để sơn hết các mặt",
+        "Khối lập phương",
+        "Khối hộp chữ nhật"
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy chia sẻ về những việc đã thực hiện được trong bài học này"
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Chuẩn bị bài mới",
+        "Bài 2 – Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 22,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 23,
+      "type": "empty",
+      "paragraphs": []
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 1 Tuần 1",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Em hãy nêu các kiến thức về hình học và đo lường đã học ở lớp 3.",
+        "slide": 3
+      },
+      {
+        "type": "task",
+        "text": "Kể tên các hình đã học.",
+        "slide": 5
+      },
+      {
+        "type": "task",
+        "text": "Kể tên các đơn vị đo độ dài, khối lượng, dung tích, diện tích đã học.",
+        "slide": 5
+      },
+      {
+        "type": "task",
+        "text": "Kể tên các kiến thức hình học đã học.",
+        "slide": 6
+      },
+      {
+        "type": "task",
+        "text": "Kể tên các hình đã học",
+        "slide": 7
+      },
+      {
+        "type": "task",
+        "text": "Kể tên các khối hình đã học.",
+        "slide": 8
+      },
+      {
+        "type": "task",
+        "text": "Kể tên các đơn vị đo độ dài, khối lượng, dung tích, diện tích đã học.",
+        "slide": 13
+      },
+      {
+        "type": "question",
+        "text": "Sơn mỗi mặt của từng khối hình bên bằng một màu khác nhau. Theo em, cần bao nhiêu màu để sơn hết các mặt của từng khối hình đó?",
+        "slide": 17
+      },
+      {
+        "type": "task",
+        "text": "Em hãy chia sẻ về những việc đã thực hiện được trong bài học này",
+        "slide": 19
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

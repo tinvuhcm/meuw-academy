@@ -1,0 +1,424 @@
+{
+  "meta": {
+    "file": "w01_i000_Chu_de_A1_-_Bai_1._Phan_cung_may_tinh.pptx",
+    "subject": "tin-hoc",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tin-hoc\\slides\\w01_i000_Chu_de_A1_-_Bai_1._Phan_cung_may_tinh.pptx",
+    "slideCount": 33
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "Tin học 4",
+        "CHỦ ĐỀ A1. Phần cứng và phần mềm",
+        "Bài 1. Phần cứng máy tính"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Trò chơi “Ai nhanh hơn?”",
+        "Em hãy kể tên những thiết bị thuộc thành phần cơ bản của máy tính?",
+        "Em còn biết những thiết bị nào khác của máy tính, hãy chia sẻ cho bạn cùng biết.",
+        "Nhóm chiến thắng là nhóm kể được nhiều và chính xác nhất"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "THÀNH PHẦN CƠ BẢN CỦA MÁY TÍNH",
+        "CPU",
+        "RAM",
+        "Ổ cứng",
+        "Bộ nguồn"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "content",
+      "paragraphs": [
+        "CÁC THIẾT BỊ KHÁC CỦA MÁY TÍNH",
+        "Chuột",
+        "Loa",
+        "Bàn phím",
+        "Cổng kết nối"
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 7,
+      "type": "questions",
+      "paragraphs": [
+        "1. PHẦN CỨNG VÀ THIẾT BỊ NGOẠI VI",
+        "Đọc khái niệm mục 1 SGK trang 5 và trả lời câu hỏi:",
+        "Phần cứng của máy tính là gì? Các thiết bị phần cứng bên ngoài thân máy được gọi là gì?",
+        "Kể tên một số phần cứng của máy tính.",
+        "Làm thế nào em nhận biết được đó là phần cứng của máy tính."
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "Phần cứng: là những thiết bị của máy tính ở bên trong và bên ngoài thân máy, kể cả thân máy. (CPU, ổ cứng, bàn phím,…)",
+        "Thiết bị ngoại vi: là các thiết bị phần cứng bên ngoài thân máy.",
+        "Nhận biết: phần cứng có thể nhận biết được vì chúng ta có thể quan sát hình dạng của chúng."
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "questions",
+      "paragraphs": [
+        "Một số thiết bị ngoại vi phổ biến được chỉ ra ở Hình 1. Theo em, mỗi thiết bị này bổ sung cho máy tính chức năng gì? Hãy chia sẻ cho các bạn cùng biết.",
+        "Thảo luận nhóm đôi"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "Trả lời",
+        "Nghe âm thanh phát ra từ máy tính.",
+        "In các dữ liệu từ máy tính ra giấy.",
+        "Điều khiển tín hiệu mạng.",
+        "Truyền tải hình ảnh, bài giảng với kích thước màn hình rộng lớn.",
+        "Lưu trữ thông tin, dữ liệu của máy tính và có thể tháo rời.",
+        "Đọc và ghi dữ liệu lên đĩa DVD, CD."
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "Các thiết bị ngoại vi giúp máy tính thực hiện chức năng gì. Nêu ví dụ.",
+        "Vai trò:",
+        " Giúp máy tính tiếp nhận và đưa ra thông tin.",
+        " Giúp máy tính mở rộng khả năng lưu trữ.",
+        "Ví dụ:",
+        "Máy in: bổ sung chức năng in thông tin ra giấy.",
+        "Modem: bổ sung chức năng nhận và gửi thông tin trong mạng máy tính."
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "theory",
+      "paragraphs": [
+        "Mỗi thiết bị ngoại vi bổ sung chức năng hữu ích cho máy tính.",
+        "KẾT LUẬN"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "questions",
+      "paragraphs": [
+        "2. TÌM HIỂU VỀ CÁC THIẾT BỊ, PHẦN CỨNG BÊN TRONG THÂN MÁY",
+        "Em có biết những thiết bị phần cứng nào nằm ở trong thân máy không? Hãy kể tên các thiết bị đó.",
+        "Những thiết bị phần cứng nằm ở trong thân máy:",
+        "Bộ nguồn máy tính",
+        "CPU, RAM (bộ nhớ trong)",
+        "Bảng mạch chính",
+        "Bộ nhớ ngoài (ổ đĩa cứng)",
+        "Quạt tản nhiệt,…"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "Thảo luận nhóm đôi",
+        "Hình 2 cho biết một số thiết bị phần cứng bên trong thân máy. Em hãy cùng bạn quan sát để biết tên và chức năng của chúng. Sau đó, các em hãy hoàn thành Phiếu bài tập sau:",
+        "Tên thiết bị",
+        "Chức năng",
+        "…………………………………………………………………………",
+        "………………………………………………………………………...."
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "content",
+      "paragraphs": [
+        "Tên thiết bị",
+        "Chức năng",
+        "Bộ nguồn",
+        "Cung cấp điện cho máy tính hoạt động.",
+        "Bộ vi xử lí CPU",
+        "Thực hiện các tính toán, xử lí thông tin.",
+        "Bộ nhớ trong RAM",
+        "Chức các thông tin lấy từ bộ nhớ ngoài để tính toán, xử lí",
+        "Bảng mạch chính",
+        "Kết nối các thiết bị với nhau.",
+        "Bộ nhớ ngoài (ổ đĩa cứng)",
+        "Lưu trữ thông tin.",
+        "Trả lời"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "content",
+      "paragraphs": [
+        "Một số thiết bị khác",
+        "hạ nhiệt bộ vi xử lí xuống ở mức phù hợp để máy tính hoạt động ổn định",
+        "Quạt tản nhiệt",
+        "xử lí các thông tin về hình ảnh trong máy tính",
+        "Card màn hình"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "content",
+      "paragraphs": [
+        "Một số thiết bị phần cứng bên trong thân máy",
+        "Bộ nguồn máy tính",
+        "Bộ vi xử lí CPU",
+        "Bảng mạch chính",
+        "Bộ nhớ trong (RAM)",
+        "Bộ nhớ ngoài (ổ đĩa cứng)"
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "theory",
+      "paragraphs": [
+        "Bên trong thân máy tính có các thiết bị phần cứng giúp máy tính thực hiện các hoạt động xử lí và lưu trữ thông tin.",
+        "KẾT LUẬN"
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "content",
+      "paragraphs": [
+        "TRÒ CHƠI ĐIỀN VÀO CHỖ TRỐNG",
+        "Em và bạn cùng bàn hãy điền tên các thiết bị phần cứng vừa học vào hình sau:",
+        "Chân cắm ATA: dùng kết nối giữa máy tính với các ổ đĩa cứng, ổ đĩa quang trong máy.",
+        "Các thẻ cắm mở rộng: dùng để cắm các card rời vào máy tính như card màn hình,…"
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "content",
+      "paragraphs": [
+        "Màn hình",
+        "Chuột",
+        "Bàn phím",
+        "Ổ đĩa quang",
+        "Bộ nguồn",
+        "Ổ đĩa cứng",
+        "Bộ ngớ trong (RAM)",
+        "Bộ vi xử lí (CPU)",
+        "Bảng mạch chính"
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "theory",
+      "paragraphs": [
+        "Các thiết bị ngoại vi giúp máy tính nhận thông tin vào, đưa thông tin ra hoặc mở rộng khả năng lưu trữ.",
+        "Các thiết bị phần cứng bên trong thân máy giúp máy tính thực hiện các hoạt động xử lí và lưu trữ thông tin.",
+        "GHI NHỚ"
+      ]
+    },
+    {
+      "slideNo": 22,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 23,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 1: Phần cứng là gì?",
+        "A. Thiết bị máy tính bên trong và bên ngoài thân máy.",
+        "B. Thiết bị bên ngoài máy tính và bộ nguồn điện.",
+        "C. Thiết bị máy tính và ứng dụng trong máy tính.",
+        "D. Thiết bị bên trong máy tính, màn hình, chuột và bàn phím."
+      ]
+    },
+    {
+      "slideNo": 24,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 2. Chức năng của thiết bị nhớ flash với máy tính là gì?",
+        "B. Mở rộng khả năng lưu trữ",
+        "thông tin.",
+        "A. Truyền tải hình ảnh, dữ liệu.",
+        "C. Phát ra âm thanh.",
+        "D. Nhận và gửi thông tin trong mạng máy tính."
+      ]
+    },
+    {
+      "slideNo": 25,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 3. Bộ nhớ trong có chức năng gì?",
+        "C. Chứa thông tin lấy từ bộ nhớ ngoài để tính toán và xử lí.",
+        "A. Xử lí thông tin.",
+        "B. Kết nối các thiết bị với nhau.",
+        "D. Cả ba chức năng trên."
+      ]
+    },
+    {
+      "slideNo": 26,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 4. Đây là hình ảnh về phần cứng nào của máy tính?",
+        "D. Bảng mạch chính.",
+        "B. Bộ nguồn.",
+        "A. Bộ vi xử lí CPU",
+        "C. Bộ nhớ ngoài."
+      ]
+    },
+    {
+      "slideNo": 27,
+      "type": "questions",
+      "paragraphs": [
+        "D. Thiết bị ngoại vi.",
+        "A. Thiết bị trung tâm.",
+        "B. Thiết bị ở xa.",
+        "C. Thiết bị bên ngoài.",
+        "Câu 5. Các thiết bị phần cứng bên ngoài thân máy còn được gọi là:"
+      ]
+    },
+    {
+      "slideNo": 28,
+      "type": "questions",
+      "paragraphs": [
+        "Trong các thiết bị phần cứng của máy tính sau đây, những thiết bị nào giúp máy tính thực hiện chức năng đưa thông tin ra: máy in, tai nghe, máy chiếu, bàn phím, chuột?",
+        "Các thiết bị thực hiện chức năng đưa thông tin ra: máy in, tai nghe, máy chiếu."
+      ]
+    },
+    {
+      "slideNo": 29,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 30,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy nêu tên và chức năng của các thiết bị ngoại vi mà em đã từng nhìn thấy:",
+        "Tên thiết bị",
+        "Chức năng",
+        "Chuột",
+        "Điều khiển các hoạt động của máy tính dễ dàng và thuận tiện hơn.",
+        "Bàn phím",
+        "Nhập dữ liệu vào máy tính",
+        "Màn hình",
+        "Hiển thị hình ảnh, văn bản, dữ liệu",
+        "Loa",
+        "Phát âm thanh",
+        "Máy in",
+        "In thông tin ra giấy"
+      ]
+    },
+    {
+      "slideNo": 31,
+      "type": "content",
+      "paragraphs": [
+        "HƯỚNG DẪN VỀ NHÀ",
+        "Ôn lại các kiến thức đã học ở Bài 1.",
+        "Hoàn thành bài tập trong VBT Tin học 4.",
+        "Đọc và chuẩn bị trước Bài 2: Phần mềm máy tính."
+      ]
+    },
+    {
+      "slideNo": 32,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 33,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "Tin học 4 CHỦ ĐỀ A1. Phần cứng và phần mềm Bài 1. Phần cứng máy tính",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Em hãy kể tên những thiết bị thuộc thành phần cơ bản của máy tính?",
+        "slide": 3
+      },
+      {
+        "type": "task",
+        "text": "Đọc khái niệm mục 1 SGK trang 5 và trả lời câu hỏi:",
+        "slide": 7
+      },
+      {
+        "type": "question",
+        "text": "Phần cứng của máy tính là gì? Các thiết bị phần cứng bên ngoài thân máy được gọi là gì?",
+        "slide": 7
+      },
+      {
+        "type": "task",
+        "text": "Kể tên một số phần cứng của máy tính.",
+        "slide": 7
+      },
+      {
+        "type": "task",
+        "text": "Đọc và ghi dữ liệu lên đĩa DVD, CD.",
+        "slide": 10
+      },
+      {
+        "type": "question",
+        "text": "Câu 1: Phần cứng là gì?",
+        "slide": 23
+      },
+      {
+        "type": "question",
+        "text": "Câu 2. Chức năng của thiết bị nhớ flash với máy tính là gì?",
+        "slide": 24
+      },
+      {
+        "type": "question",
+        "text": "Câu 3. Bộ nhớ trong có chức năng gì?",
+        "slide": 25
+      },
+      {
+        "type": "question",
+        "text": "Câu 4. Đây là hình ảnh về phần cứng nào của máy tính?",
+        "slide": 26
+      },
+      {
+        "type": "question",
+        "text": "Trong các thiết bị phần cứng của máy tính sau đây, những thiết bị nào giúp máy tính thực hiện chức năng đưa thông tin ra: máy in, tai nghe, máy chiếu, bàn phím, chuột?",
+        "slide": 28
+      },
+      {
+        "type": "task",
+        "text": "Em hãy nêu tên và chức năng của các thiết bị ngoại vi mà em đã từng nhìn thấy:",
+        "slide": 30
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước Bài 2: Phần mềm máy tính.",
+        "slide": 31
+      }
+    ],
+    "vocab": [],
+    "keyPoints": [
+      "Mỗi thiết bị ngoại vi bổ sung chức năng hữu ích cho máy tính.",
+      "Bên trong thân máy tính có các thiết bị phần cứng giúp máy tính thực hiện các hoạt động xử lí và lưu trữ thông tin.",
+      "Các thiết bị ngoại vi giúp máy tính nhận thông tin vào, đưa thông tin ra hoặc mở rộng khả năng lưu trữ.",
+      "Các thiết bị phần cứng bên trong thân máy giúp máy tính thực hiện các hoạt động xử lí và lưu trữ thông tin."
+    ]
+  }
+}

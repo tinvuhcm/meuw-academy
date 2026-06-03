@@ -1,0 +1,1776 @@
+{
+  "source": "hoc10",
+  "subject": "tieng-anh",
+  "note": "Audio ZIP inventory for Tiếng Anh 4 - Explore Our World; treat as support media lane only. English curriculum truth should stay anchored to Family & Friends 4 unless the user changes policy.",
+  "items": [
+    {
+      "kind": "teacher_audio",
+      "zipPath": "docs/research/official-sources/downloads/hoc10/lop4/tieng-anh/worksheets/07_Audio_SGV.zip",
+      "entryCount": 200,
+      "entries": [
+        {
+          "name": "CD1/01 G4 SB Track A1.mp3",
+          "bytes": 1054372
+        },
+        {
+          "name": "CD1/02 G4 SB Track A2.mp3",
+          "bytes": 1996870
+        },
+        {
+          "name": "CD1/03 G4 SB Track A3.mp3",
+          "bytes": 1331270
+        },
+        {
+          "name": "CD1/04 G4 SB Track A4.mp3",
+          "bytes": 980184
+        },
+        {
+          "name": "CD1/05 G4 SB Track A5.mp3",
+          "bytes": 638502
+        },
+        {
+          "name": "CD1/06 G4 SB Track A6.mp3",
+          "bytes": 1294698
+        },
+        {
+          "name": "CD1/07 G4 SB Track A7.mp3",
+          "bytes": 666714
+        },
+        {
+          "name": "CD1/08 G4 SB Track A8.mp3",
+          "bytes": 1257082
+        },
+        {
+          "name": "CD1/09 G4 SB Track A9.mp3",
+          "bytes": 832853
+        },
+        {
+          "name": "CD1/10 G4 SB Track A10.mp3",
+          "bytes": 1700119
+        },
+        {
+          "name": "CD1/11 G4 SB Track A11.mp3",
+          "bytes": 907041
+        },
+        {
+          "name": "CD1/12 G4 SB Track A12.mp3",
+          "bytes": 924804
+        },
+        {
+          "name": "CD1/13 G4 SB Track A13.mp3",
+          "bytes": 1663547
+        },
+        {
+          "name": "CD1/14 G4 SB Track A14.mp3",
+          "bytes": 924804
+        },
+        {
+          "name": "CD1/15 G4 SB Track A15.mp3",
+          "bytes": 1774306
+        },
+        {
+          "name": "CD1/16 G4 SB Track A16.mp3",
+          "bytes": 888233
+        },
+        {
+          "name": "CD1/17 G4 SB Track A17.mp3",
+          "bytes": 740902
+        },
+        {
+          "name": "CD1/18 G4 SB Track A18.mp3",
+          "bytes": 1848494
+        },
+        {
+          "name": "CD1/19 G4 SB Track A19.mp3",
+          "bytes": 814045
+        },
+        {
+          "name": "CD1/20 G4 SB Track A20.mp3",
+          "bytes": 888233
+        },
+        {
+          "name": "CD1/21 G4 SB Track A21.mp3",
+          "bytes": 2032396
+        },
+        {
+          "name": "CD1/22 G4 SB Track A22.mp3",
+          "bytes": 814045
+        },
+        {
+          "name": "CD1/23 G4 SB Track A23.mp3",
+          "bytes": 2106584
+        },
+        {
+          "name": "CD1/24 G4 SB Track A24.mp3",
+          "bytes": 2364674
+        },
+        {
+          "name": "CD1/25 G4 SB Track A25.mp3",
+          "bytes": 2364674
+        },
+        {
+          "name": "CD1/26 G4 SB Track A26.mp3",
+          "bytes": 1183939
+        },
+        {
+          "name": "CD1/27 G4 SB Track A27.mp3",
+          "bytes": 1183939
+        },
+        {
+          "name": "CD1/28 G4 SB Track A28.mp3",
+          "bytes": 2956086
+        },
+        {
+          "name": "CD1/29 G4 SB Track A29.mp3",
+          "bytes": 1109751
+        },
+        {
+          "name": "CD1/30 G4 SB Track A30.mp3",
+          "bytes": 1626976
+        },
+        {
+          "name": "CD1/31 G4 SB Track A31.mp3",
+          "bytes": 1663547
+        },
+        {
+          "name": "CD1/32 G4 SB Track A32.mp3",
+          "bytes": 391254
+        },
+        {
+          "name": "CD1/33 G4 SB Track A33.mp3",
+          "bytes": 2291531
+        },
+        {
+          "name": "CD1/34 G4 SB Track A34.mp3",
+          "bytes": 1608168
+        },
+        {
+          "name": "CD1/35 G4 SB Track A35.mp3",
+          "bytes": 1331270
+        },
+        {
+          "name": "CD1/36 G4 SB Track A36.mp3",
+          "bytes": 888233
+        },
+        {
+          "name": "CD1/37 G4 SB Track A37.mp3",
+          "bytes": 1201702
+        },
+        {
+          "name": "CD1/38 G4 SB Track A38.mp3",
+          "bytes": 1035563
+        },
+        {
+          "name": "CD1/39 G4 SB Track A39.mp3",
+          "bytes": 2623808
+        },
+        {
+          "name": "CD1/40 G4 SB Track A40.mp3",
+          "bytes": 1073180
+        },
+        {
+          "name": "CD1/41 G4 SB Track A41.mp3",
+          "bytes": 888233
+        },
+        {
+          "name": "CD1/42 G4 SB Track A42.mp3",
+          "bytes": 1331270
+        },
+        {
+          "name": "CD1/43 G4 SB Track A43.mp3",
+          "bytes": 2070012
+        },
+        {
+          "name": "CD1/44 G4 SB Track A44.mp3",
+          "bytes": 870489
+        },
+        {
+          "name": "CD1/45 G4 SB Track A45.mp3",
+          "bytes": 2070012
+        },
+        {
+          "name": "CD1/46 G4 SB Track A46.mp3",
+          "bytes": 1035563
+        },
+        {
+          "name": "CD1/47 G4 SB Track A47.mp3",
+          "bytes": 1405457
+        },
+        {
+          "name": "CD1/48 G4 SB Track A48.mp3",
+          "bytes": 1109751
+        },
+        {
+          "name": "CD1/49 G4 SB Track A49.mp3",
+          "bytes": 1032462
+        },
+        {
+          "name": "CD1/50 G4 SB Track A50.mp3",
+          "bytes": 1017800
+        },
+        {
+          "name": "CD1/51 G4 SB Track A51.mp3",
+          "bytes": 2032396
+        },
+        {
+          "name": "CD1/52 G4 SB Track A52.mp3",
+          "bytes": 1257082
+        },
+        {
+          "name": "CD1/53 G4 SB Track A53.mp3",
+          "bytes": 1257082
+        },
+        {
+          "name": "CD1/54 G4 SB Track A54.mp3",
+          "bytes": 998992
+        },
+        {
+          "name": "CD1/55 G4 SB Track A55.mp3",
+          "bytes": 2144200
+        },
+        {
+          "name": "CD1/56 G4 SB Track A56.mp3",
+          "bytes": 1589359
+        },
+        {
+          "name": "CD1/57 G4 SB Track A57.mp3",
+          "bytes": 1258127
+        },
+        {
+          "name": "CD1/58 G4 SB Track A58.mp3",
+          "bytes": 851661
+        },
+        {
+          "name": "CD1/59 G4 SB Track A59.mp3",
+          "bytes": 1737735
+        },
+        {
+          "name": "CD1/60 G4 SB Track A60.mp3",
+          "bytes": 1571596
+        },
+        {
+          "name": "CD1/61 G4 SB Track A61.mp3",
+          "bytes": 1109751
+        },
+        {
+          "name": "CD1/62 G4 SB Track A62.mp3",
+          "bytes": 1035563
+        },
+        {
+          "name": "CD1/63 G4 SB Track A63.mp3",
+          "bytes": 2438861
+        },
+        {
+          "name": "CD1/64 G4 SB Track A64.mp3",
+          "bytes": 980184
+        },
+        {
+          "name": "CD1/65 G4 SB Track A65.mp3",
+          "bytes": 1109751
+        },
+        {
+          "name": "CD1/66 G4 SB Track A66.mp3",
+          "bytes": 2033441
+        },
+        {
+          "name": "CD1/67 G4 SB Track A67.mp3",
+          "bytes": 1146323
+        },
+        {
+          "name": "CD1/68 G4 SB Track A68.mp3",
+          "bytes": 1810878
+        },
+        {
+          "name": "CD1/69 G4 SB Track A69.mp3",
+          "bytes": 509030
+        },
+        {
+          "name": "CD1/70 G4 SB Track A70.mp3",
+          "bytes": 510485
+        },
+        {
+          "name": "CD1/71 G4 SB Track A71.mp3",
+          "bytes": 1073180
+        },
+        {
+          "name": "CD1/72 G4 SB Track A72.mp3",
+          "bytes": 717027
+        },
+        {
+          "name": "CD1/73 G4 SB Track A73.mp3",
+          "bytes": 1589359
+        },
+        {
+          "name": "CD1/74 G4 SB Track A74.mp3",
+          "bytes": 1423221
+        },
+        {
+          "name": "CD1/75 G4 SB Track A75.mp3",
+          "bytes": 1188122
+        },
+        {
+          "name": "CD1/76 G4 SB Track A76.mp3",
+          "bytes": 1405457
+        },
+        {
+          "name": "CD1/77 G4 SB Track A77.mp3",
+          "bytes": 1405457
+        },
+        {
+          "name": "CD1/78 G4 SB Track A78.mp3",
+          "bytes": 1017800
+        },
+        {
+          "name": "CD1/79 G4 SB Track A79.mp3",
+          "bytes": 2144200
+        },
+        {
+          "name": "CD1/80 G4 SB Track A80.mp3",
+          "bytes": 1609212
+        },
+        {
+          "name": "CD1/81 G4 SB Track A81.mp3",
+          "bytes": 1442029
+        },
+        {
+          "name": "CD1/82 G4 SB Track A82.mp3",
+          "bytes": 888233
+        },
+        {
+          "name": "CD2/001 G4 SB Track B1.mp3",
+          "bytes": 1109751
+        },
+        {
+          "name": "CD2/002 G4 SB Track B2.mp3",
+          "bytes": 1054372
+        },
+        {
+          "name": "CD2/003 G4 SB Track B3.mp3",
+          "bytes": 1885066
+        },
+        {
+          "name": "CD2/004 G4 SB Track B4.mp3",
+          "bytes": 888233
+        },
+        {
+          "name": "CD2/005 G4 SB Track B5.mp3",
+          "bytes": 962421
+        },
+        {
+          "name": "CD2/006 G4 SB Track B6.mp3",
+          "bytes": 1959253
+        },
+        {
+          "name": "CD2/007 G4 SB Track B7.mp3",
+          "bytes": 1183939
+        },
+        {
+          "name": "CD2/008 G4 SB Track B8.mp3",
+          "bytes": 2106584
+        },
+        {
+          "name": "CD2/009 G4 SB Track B9.mp3",
+          "bytes": 2253914
+        },
+        {
+          "name": "CD2/010 G4 SB Track B10.mp3",
+          "bytes": 2291531
+        },
+        {
+          "name": "CD2/011 G4 SB Track B11.mp3",
+          "bytes": 924804
+        },
+        {
+          "name": "CD2/012 G4 SB Track B12.mp3",
+          "bytes": 2143155
+        },
+        {
+          "name": "CD2/013 G4 SB Track B13.mp3",
+          "bytes": 962421
+        },
+        {
+          "name": "CD2/014 G4 SB Track B14.mp3",
+          "bytes": 2144200
+        },
+        {
+          "name": "CD2/015 G4 SB Track B15.mp3",
+          "bytes": 1294698
+        },
+        {
+          "name": "CD2/016 G4 SB Track B16.mp3",
+          "bytes": 1848494
+        },
+        {
+          "name": "CD2/017 G4 SB Track B17.mp3",
+          "bytes": 1257082
+        },
+        {
+          "name": "CD2/018 G4 SB Track B18.mp3",
+          "bytes": 513067
+        },
+        {
+          "name": "CD2/019 G4 SB Track B19.mp3",
+          "bytes": 888233
+        },
+        {
+          "name": "CD2/020 G4 SB Track B20.mp3",
+          "bytes": 2661425
+        },
+        {
+          "name": "CD2/021 G4 SB Track B21.mp3",
+          "bytes": 1626976
+        },
+        {
+          "name": "CD2/022 G4 SB Track B22.mp3",
+          "bytes": 1008406
+        },
+        {
+          "name": "CD2/023 G4 SB Track B23.mp3",
+          "bytes": 758666
+        },
+        {
+          "name": "CD2/024 G4 SB Track B24.mp3",
+          "bytes": 764937
+        },
+        {
+          "name": "CD2/025 G4 SB Track B25.mp3",
+          "bytes": 1885066
+        },
+        {
+          "name": "CD2/026 G4 SB Track B26.mp3",
+          "bytes": 1054372
+        },
+        {
+          "name": "CD2/027 G4 SB Track B27.mp3",
+          "bytes": 980184
+        },
+        {
+          "name": "CD2/028 G4 SB Track B28.mp3",
+          "bytes": 924804
+        },
+        {
+          "name": "CD2/029 G4 SB Track B29.mp3",
+          "bytes": 924804
+        },
+        {
+          "name": "CD2/030 G4 SB Track B30.mp3",
+          "bytes": 1663547
+        },
+        {
+          "name": "CD2/031 G4 SB Track B31.mp3",
+          "bytes": 1239319
+        },
+        {
+          "name": "CD2/032 G4 SB Track B32.mp3",
+          "bytes": 800737
+        },
+        {
+          "name": "CD2/033 G4 SB Track B33.mp3",
+          "bytes": 435973
+        },
+        {
+          "name": "CD2/034 G4 SB Track B34.mp3",
+          "bytes": 1442029
+        },
+        {
+          "name": "CD2/035 G4 SB Track B35.mp3",
+          "bytes": 1035563
+        },
+        {
+          "name": "CD2/036 G4 SB Track B36.mp3",
+          "bytes": 998992
+        },
+        {
+          "name": "CD2/037 G4 SB Track B37.mp3",
+          "bytes": 921511
+        },
+        {
+          "name": "CD2/038 G4 SB Track B38.mp3",
+          "bytes": 759710
+        },
+        {
+          "name": "CD2/039 G4 SB Track B39.mp3",
+          "bytes": 1552788
+        },
+        {
+          "name": "CD2/040 G4 SB Track B40.mp3",
+          "bytes": 1258127
+        },
+        {
+          "name": "CD2/041 G4 SB Track B41.mp3",
+          "bytes": 1109751
+        },
+        {
+          "name": "CD2/042 G4 SB Track B42.mp3",
+          "bytes": 1035563
+        },
+        {
+          "name": "CD2/043 G4 SB Track B43.mp3",
+          "bytes": 2365719
+        },
+        {
+          "name": "CD2/044 G4 SB Track B44.mp3",
+          "bytes": 1589359
+        },
+        {
+          "name": "CD2/045 G4 SB Track B45.mp3",
+          "bytes": 929384
+        },
+        {
+          "name": "CD2/046 G4 SB Track B46.mp3",
+          "bytes": 962421
+        },
+        {
+          "name": "CD2/047 G4 SB Track B47.mp3",
+          "bytes": 1036608
+        },
+        {
+          "name": "CD2/048 G4 SB Track B48.mp3",
+          "bytes": 981229
+        },
+        {
+          "name": "CD2/049 G4 SB Track B49.mp3",
+          "bytes": 1810878
+        },
+        {
+          "name": "CD2/050 G4 SB Track B50.mp3",
+          "bytes": 1073180
+        },
+        {
+          "name": "CD2/051 G4 SB Track B51.mp3",
+          "bytes": 1073180
+        },
+        {
+          "name": "CD2/052 G4 SB Track B52.mp3",
+          "bytes": 1718927
+        },
+        {
+          "name": "CD2/053 G4 SB Track B53.mp3",
+          "bytes": 1128559
+        },
+        {
+          "name": "CD2/054 G4 SB Track B54.mp3",
+          "bytes": 1234923
+        },
+        {
+          "name": "CD2/055 G4 SB Track B55.mp3",
+          "bytes": 1460837
+        },
+        {
+          "name": "CD2/056 G4 SB Track B56.mp3",
+          "bytes": 1460837
+        },
+        {
+          "name": "CD2/057 G4 SB Track B57.mp3",
+          "bytes": 998992
+        },
+        {
+          "name": "CD2/058 G4 SB Track B58.mp3",
+          "bytes": 1478600
+        },
+        {
+          "name": "CD2/059 G4 SB Track B59.mp3",
+          "bytes": 1109751
+        },
+        {
+          "name": "CD2/060 G4 SB Track B60.mp3",
+          "bytes": 2291531
+        },
+        {
+          "name": "CD2/061 G4 SB Track B61.mp3",
+          "bytes": 1035563
+        },
+        {
+          "name": "CD2/062 G4 SB Track B62.mp3",
+          "bytes": 2438861
+        },
+        {
+          "name": "CD2/063 G4 SB Track B63.mp3",
+          "bytes": 1532998
+        },
+        {
+          "name": "CD2/064 G4 SB Track B64.mp3",
+          "bytes": 1331270
+        },
+        {
+          "name": "CD2/065 G4 SB Track B65.mp3",
+          "bytes": 1367841
+        },
+        {
+          "name": "CD2/066 G4 SB Track B66.mp3",
+          "bytes": 980184
+        },
+        {
+          "name": "CD2/067 G4 SB Track B67.mp3",
+          "bytes": 3399123
+        },
+        {
+          "name": "CD2/068 G4 SB Track B68.mp3",
+          "bytes": 1682355
+        },
+        {
+          "name": "CD2/069 G4 SB Track B69.mp3",
+          "bytes": 1239319
+        },
+        {
+          "name": "CD2/070 G4 SB Track B70.mp3",
+          "bytes": 1035563
+        },
+        {
+          "name": "CD2/071 G4 SB Track B71.mp3",
+          "bytes": 2070012
+        },
+        {
+          "name": "CD2/072 G4 SB Track B72.mp3",
+          "bytes": 1183939
+        },
+        {
+          "name": "CD2/073 G4 SB Track B73.mp3",
+          "bytes": 1090943
+        },
+        {
+          "name": "CD2/074 G4 SB Track B74.mp3",
+          "bytes": 1996870
+        },
+        {
+          "name": "CD2/075 G4 SB Track B75.mp3",
+          "bytes": 1035563
+        },
+        {
+          "name": "CD2/076 G4 SB Track B76.mp3",
+          "bytes": 1147368
+        },
+        {
+          "name": "CD2/077 G4 SB Track B77.mp3",
+          "bytes": 1922682
+        },
+        {
+          "name": "CD2/078 G4 SB Track B78.mp3",
+          "bytes": 1090943
+        },
+        {
+          "name": "CD2/079 G4 SB Track B79.mp3",
+          "bytes": 2291531
+        },
+        {
+          "name": "CD2/080 G4 SB Track B80.mp3",
+          "bytes": 1257082
+        },
+        {
+          "name": "CD2/081 G4 SB Track B81.mp3",
+          "bytes": 1220510
+        },
+        {
+          "name": "CD2/082 G4 SB Track B82.mp3",
+          "bytes": 980184
+        },
+        {
+          "name": "CD2/083 G4 SB Track B83.mp3",
+          "bytes": 1886110
+        },
+        {
+          "name": "CD2/084 G4 SB Track B84.mp3",
+          "bytes": 1036608
+        },
+        {
+          "name": "CD2/085 G4 SB Track B85.mp3",
+          "bytes": 3472266
+        },
+        {
+          "name": "CD2/086 G4 SB Track B86.mp3",
+          "bytes": 1479645
+        },
+        {
+          "name": "CD2/087 G4 SB Track B87.mp3",
+          "bytes": 1516217
+        },
+        {
+          "name": "CD2/088 G4 SB Track B88.mp3",
+          "bytes": 631879
+        },
+        {
+          "name": "CD2/089 G4 SB Track B89.mp3",
+          "bytes": 924804
+        },
+        {
+          "name": "CD2/090 G4 SB Track B90.mp3",
+          "bytes": 2919514
+        },
+        {
+          "name": "CD2/091 G4 SB Track B91.mp3",
+          "bytes": 1331270
+        },
+        {
+          "name": "CD2/092 G4 SB Track B92.mp3",
+          "bytes": 1442029
+        },
+        {
+          "name": "CD2/093 G4 SB Track B93.mp3",
+          "bytes": 1312461
+        },
+        {
+          "name": "CD2/094 G4 SB Track B94.mp3",
+          "bytes": 915400
+        },
+        {
+          "name": "CD2/095 G4 SB Track B95.mp3",
+          "bytes": 962421
+        },
+        {
+          "name": "CD2/096 G4 SB Track B96.mp3",
+          "bytes": 1264945
+        },
+        {
+          "name": "CD2/097 G4 SB Track B97.mp3",
+          "bytes": 419325
+        },
+        {
+          "name": "CD2/098 G4 SB Track B98.mp3",
+          "bytes": 888233
+        },
+        {
+          "name": "CD2/099 G4 SB Track B99.mp3",
+          "bytes": 3177604
+        },
+        {
+          "name": "CD2/100 G4 SB Track B100.mp3",
+          "bytes": 1165131
+        },
+        {
+          "name": "CD2/101 G4 SB Track B101.mp3",
+          "bytes": 1995825
+        },
+        {
+          "name": "CD2/102 G4 SB Track B102.mp3",
+          "bytes": 2144200
+        },
+        {
+          "name": "CD2/103 G4 SB Track B103.mp3",
+          "bytes": 1183939
+        },
+        {
+          "name": "CD2/104 G4 SB Track B104.mp3",
+          "bytes": 1183939
+        },
+        {
+          "name": "CD2/105 G4 SB Track B105.mp3",
+          "bytes": 962421
+        },
+        {
+          "name": "CD2/106 G4 SB Track B106.mp3",
+          "bytes": 1132678
+        },
+        {
+          "name": "CD2/107 G4 SB Track B107.mp3",
+          "bytes": 1090943
+        },
+        {
+          "name": "CD2/108 G4 SB Track B108.mp3",
+          "bytes": 2107629
+        },
+        {
+          "name": "CD2/109 G4 SB Track B109.mp3",
+          "bytes": 1165131
+        },
+        {
+          "name": "CD2/110 G4 SB Track B110.mp3",
+          "bytes": 1331270
+        },
+        {
+          "name": "CD2/111 G4 SB Track B111.mp3",
+          "bytes": 1294698
+        },
+        {
+          "name": "CD2/112 G4 SB Track B112.mp3",
+          "bytes": 998992
+        },
+        {
+          "name": "CD2/113 G4 SB Track B113.mp3",
+          "bytes": 3104461
+        },
+        {
+          "name": "CD2/114 G4 SB Track B114.mp3",
+          "bytes": 1700119
+        },
+        {
+          "name": "CD2/115 G4 SB Track B115.mp3",
+          "bytes": 1367841
+        },
+        {
+          "name": "CD2/116 G4 SB Track B116.mp3",
+          "bytes": 432216
+        },
+        {
+          "name": "CD2/117 G4 SB Track B117.mp3",
+          "bytes": 775376
+        },
+        {
+          "name": "CD2/118 G4 SB Track B118.mp3",
+          "bytes": 2143155
+        }
+      ]
+    },
+    {
+      "kind": "workbook_audio",
+      "zipPath": "docs/research/official-sources/downloads/hoc10/lop4/tieng-anh/worksheets/08_Audio_SBT.zip",
+      "entryCount": 37,
+      "entries": [
+        {
+          "name": "2. Audio SBT/01 G4 WB Track 1.mp3",
+          "bytes": 425329
+        },
+        {
+          "name": "2. Audio SBT/02 G4 WB Track 2.mp3",
+          "bytes": 283598
+        },
+        {
+          "name": "2. Audio SBT/03 G4 WB Track 3.mp3",
+          "bytes": 1848608
+        },
+        {
+          "name": "2. Audio SBT/04 G4 WB Track 4.mp3",
+          "bytes": 412771
+        },
+        {
+          "name": "2. Audio SBT/05 G4 WB Track 5.mp3",
+          "bytes": 456768
+        },
+        {
+          "name": "2. Audio SBT/06 G4 WB Track 6.mp3",
+          "bytes": 354098
+        },
+        {
+          "name": "2. Audio SBT/07 G4 WB Track 7.mp3",
+          "bytes": 446576
+        },
+        {
+          "name": "2. Audio SBT/08 G4 WB Track 8.mp3",
+          "bytes": 464158
+        },
+        {
+          "name": "2. Audio SBT/09 G4 WB Track 9.mp3",
+          "bytes": 409425
+        },
+        {
+          "name": "2. Audio SBT/10 G4 WB Track 10.mp3",
+          "bytes": 423625
+        },
+        {
+          "name": "2. Audio SBT/11 G4 WB Track 11.mp3",
+          "bytes": 356638
+        },
+        {
+          "name": "2. Audio SBT/12 G4 WB Track 12.mp3",
+          "bytes": 466511
+        },
+        {
+          "name": "2. Audio SBT/13 G4 WB Track 13.mp3",
+          "bytes": 341267
+        },
+        {
+          "name": "2. Audio SBT/14 G4 WB Track 14.mp3",
+          "bytes": 309930
+        },
+        {
+          "name": "2. Audio SBT/15 G4 WB Track 15.mp3",
+          "bytes": 370874
+        },
+        {
+          "name": "2. Audio SBT/16 G4 WB Track 16.mp3",
+          "bytes": 401681
+        },
+        {
+          "name": "2. Audio SBT/17 G4 WB Track 17.mp3",
+          "bytes": 2003222
+        },
+        {
+          "name": "2. Audio SBT/18 G4 WB Track 18.mp3",
+          "bytes": 376897
+        },
+        {
+          "name": "2. Audio SBT/19 G4 WB Track 19.mp3",
+          "bytes": 375093
+        },
+        {
+          "name": "2. Audio SBT/20 G4 WB Track 20.mp3",
+          "bytes": 465575
+        },
+        {
+          "name": "2. Audio SBT/21 G4 WB Track 21.mp3",
+          "bytes": 463938
+        },
+        {
+          "name": "2. Audio SBT/22 G4 WB Track 22.mp3",
+          "bytes": 411248
+        },
+        {
+          "name": "2. Audio SBT/23 G4 WB Track 23.mp3",
+          "bytes": 688761
+        },
+        {
+          "name": "2. Audio SBT/24 G4 WB Track 24.mp3",
+          "bytes": 373677
+        },
+        {
+          "name": "2. Audio SBT/25 G4 WB Track 25.mp3",
+          "bytes": 351718
+        },
+        {
+          "name": "2. Audio SBT/26 G4 WB Track 26.mp3",
+          "bytes": 400923
+        },
+        {
+          "name": "2. Audio SBT/27 G4 WB Track 27.mp3",
+          "bytes": 2131775
+        },
+        {
+          "name": "2. Audio SBT/28 G4 WB Track 28.mp3",
+          "bytes": 285996
+        },
+        {
+          "name": "2. Audio SBT/29 G4 WB Track 29.mp3",
+          "bytes": 308493
+        },
+        {
+          "name": "2. Audio SBT/30 G4 WB Track 30.mp3",
+          "bytes": 490400
+        },
+        {
+          "name": "2. Audio SBT/31 G4 WB Track 31.mp3",
+          "bytes": 412301
+        },
+        {
+          "name": "2. Audio SBT/32 G4 WB Track 32.mp3",
+          "bytes": 3130667
+        },
+        {
+          "name": "2. Audio SBT/33 G4 WB Track 33.mp3",
+          "bytes": 337734
+        },
+        {
+          "name": "2. Audio SBT/34 G4 WB Track 34.mp3",
+          "bytes": 357640
+        },
+        {
+          "name": "2. Audio SBT/35 G4 WB Track 35.mp3",
+          "bytes": 548455
+        },
+        {
+          "name": "2. Audio SBT/36 G4 WB Track 36.mp3",
+          "bytes": 646189
+        },
+        {
+          "name": "2. Audio SBT/37 G4 WB Track 37.mp3",
+          "bytes": 429495
+        }
+      ]
+    },
+    {
+      "kind": "student_book_audio",
+      "zipPath": "docs/research/official-sources/downloads/hoc10/lop4/tieng-anh/worksheets/09_Audio_SHS.zip",
+      "entryCount": 200,
+      "entries": [
+        {
+          "name": "CD1/01 G4 SB Track A1.mp3",
+          "bytes": 1054372
+        },
+        {
+          "name": "CD1/02 G4 SB Track A2.mp3",
+          "bytes": 1996870
+        },
+        {
+          "name": "CD1/03 G4 SB Track A3.mp3",
+          "bytes": 1331270
+        },
+        {
+          "name": "CD1/04 G4 SB Track A4.mp3",
+          "bytes": 980184
+        },
+        {
+          "name": "CD1/05 G4 SB Track A5.mp3",
+          "bytes": 638502
+        },
+        {
+          "name": "CD1/06 G4 SB Track A6.mp3",
+          "bytes": 1294698
+        },
+        {
+          "name": "CD1/07 G4 SB Track A7.mp3",
+          "bytes": 666714
+        },
+        {
+          "name": "CD1/08 G4 SB Track A8.mp3",
+          "bytes": 1257082
+        },
+        {
+          "name": "CD1/09 G4 SB Track A9.mp3",
+          "bytes": 832853
+        },
+        {
+          "name": "CD1/10 G4 SB Track A10.mp3",
+          "bytes": 1700119
+        },
+        {
+          "name": "CD1/11 G4 SB Track A11.mp3",
+          "bytes": 907041
+        },
+        {
+          "name": "CD1/12 G4 SB Track A12.mp3",
+          "bytes": 924804
+        },
+        {
+          "name": "CD1/13 G4 SB Track A13.mp3",
+          "bytes": 1663547
+        },
+        {
+          "name": "CD1/14 G4 SB Track A14.mp3",
+          "bytes": 924804
+        },
+        {
+          "name": "CD1/15 G4 SB Track A15.mp3",
+          "bytes": 1774306
+        },
+        {
+          "name": "CD1/16 G4 SB Track A16.mp3",
+          "bytes": 888233
+        },
+        {
+          "name": "CD1/17 G4 SB Track A17.mp3",
+          "bytes": 740902
+        },
+        {
+          "name": "CD1/18 G4 SB Track A18.mp3",
+          "bytes": 1848494
+        },
+        {
+          "name": "CD1/19 G4 SB Track A19.mp3",
+          "bytes": 814045
+        },
+        {
+          "name": "CD1/20 G4 SB Track A20.mp3",
+          "bytes": 888233
+        },
+        {
+          "name": "CD1/21 G4 SB Track A21.mp3",
+          "bytes": 2032396
+        },
+        {
+          "name": "CD1/22 G4 SB Track A22.mp3",
+          "bytes": 814045
+        },
+        {
+          "name": "CD1/23 G4 SB Track A23.mp3",
+          "bytes": 2106584
+        },
+        {
+          "name": "CD1/24 G4 SB Track A24.mp3",
+          "bytes": 2364674
+        },
+        {
+          "name": "CD1/25 G4 SB Track A25.mp3",
+          "bytes": 2364674
+        },
+        {
+          "name": "CD1/26 G4 SB Track A26.mp3",
+          "bytes": 1183939
+        },
+        {
+          "name": "CD1/27 G4 SB Track A27.mp3",
+          "bytes": 1183939
+        },
+        {
+          "name": "CD1/28 G4 SB Track A28.mp3",
+          "bytes": 2956086
+        },
+        {
+          "name": "CD1/29 G4 SB Track A29.mp3",
+          "bytes": 1109751
+        },
+        {
+          "name": "CD1/30 G4 SB Track A30.mp3",
+          "bytes": 1626976
+        },
+        {
+          "name": "CD1/31 G4 SB Track A31.mp3",
+          "bytes": 1663547
+        },
+        {
+          "name": "CD1/32 G4 SB Track A32.mp3",
+          "bytes": 391254
+        },
+        {
+          "name": "CD1/33 G4 SB Track A33.mp3",
+          "bytes": 2291531
+        },
+        {
+          "name": "CD1/34 G4 SB Track A34.mp3",
+          "bytes": 1608168
+        },
+        {
+          "name": "CD1/35 G4 SB Track A35.mp3",
+          "bytes": 1331270
+        },
+        {
+          "name": "CD1/36 G4 SB Track A36.mp3",
+          "bytes": 888233
+        },
+        {
+          "name": "CD1/37 G4 SB Track A37.mp3",
+          "bytes": 1201702
+        },
+        {
+          "name": "CD1/38 G4 SB Track A38.mp3",
+          "bytes": 1035563
+        },
+        {
+          "name": "CD1/39 G4 SB Track A39.mp3",
+          "bytes": 2623808
+        },
+        {
+          "name": "CD1/40 G4 SB Track A40.mp3",
+          "bytes": 1073180
+        },
+        {
+          "name": "CD1/41 G4 SB Track A41.mp3",
+          "bytes": 888233
+        },
+        {
+          "name": "CD1/42 G4 SB Track A42.mp3",
+          "bytes": 1331270
+        },
+        {
+          "name": "CD1/43 G4 SB Track A43.mp3",
+          "bytes": 2070012
+        },
+        {
+          "name": "CD1/44 G4 SB Track A44.mp3",
+          "bytes": 870489
+        },
+        {
+          "name": "CD1/45 G4 SB Track A45.mp3",
+          "bytes": 2070012
+        },
+        {
+          "name": "CD1/46 G4 SB Track A46.mp3",
+          "bytes": 1035563
+        },
+        {
+          "name": "CD1/47 G4 SB Track A47.mp3",
+          "bytes": 1405457
+        },
+        {
+          "name": "CD1/48 G4 SB Track A48.mp3",
+          "bytes": 1109751
+        },
+        {
+          "name": "CD1/49 G4 SB Track A49.mp3",
+          "bytes": 1032462
+        },
+        {
+          "name": "CD1/50 G4 SB Track A50.mp3",
+          "bytes": 1017800
+        },
+        {
+          "name": "CD1/51 G4 SB Track A51.mp3",
+          "bytes": 2032396
+        },
+        {
+          "name": "CD1/52 G4 SB Track A52.mp3",
+          "bytes": 1257082
+        },
+        {
+          "name": "CD1/53 G4 SB Track A53.mp3",
+          "bytes": 1257082
+        },
+        {
+          "name": "CD1/54 G4 SB Track A54.mp3",
+          "bytes": 998992
+        },
+        {
+          "name": "CD1/55 G4 SB Track A55.mp3",
+          "bytes": 2144200
+        },
+        {
+          "name": "CD1/56 G4 SB Track A56.mp3",
+          "bytes": 1589359
+        },
+        {
+          "name": "CD1/57 G4 SB Track A57.mp3",
+          "bytes": 1258127
+        },
+        {
+          "name": "CD1/58 G4 SB Track A58.mp3",
+          "bytes": 851661
+        },
+        {
+          "name": "CD1/59 G4 SB Track A59.mp3",
+          "bytes": 1737735
+        },
+        {
+          "name": "CD1/60 G4 SB Track A60.mp3",
+          "bytes": 1571596
+        },
+        {
+          "name": "CD1/61 G4 SB Track A61.mp3",
+          "bytes": 1109751
+        },
+        {
+          "name": "CD1/62 G4 SB Track A62.mp3",
+          "bytes": 1035563
+        },
+        {
+          "name": "CD1/63 G4 SB Track A63.mp3",
+          "bytes": 2438861
+        },
+        {
+          "name": "CD1/64 G4 SB Track A64.mp3",
+          "bytes": 980184
+        },
+        {
+          "name": "CD1/65 G4 SB Track A65.mp3",
+          "bytes": 1109751
+        },
+        {
+          "name": "CD1/66 G4 SB Track A66.mp3",
+          "bytes": 2033441
+        },
+        {
+          "name": "CD1/67 G4 SB Track A67.mp3",
+          "bytes": 1146323
+        },
+        {
+          "name": "CD1/68 G4 SB Track A68.mp3",
+          "bytes": 1810878
+        },
+        {
+          "name": "CD1/69 G4 SB Track A69.mp3",
+          "bytes": 509030
+        },
+        {
+          "name": "CD1/70 G4 SB Track A70.mp3",
+          "bytes": 510485
+        },
+        {
+          "name": "CD1/71 G4 SB Track A71.mp3",
+          "bytes": 1073180
+        },
+        {
+          "name": "CD1/72 G4 SB Track A72.mp3",
+          "bytes": 717027
+        },
+        {
+          "name": "CD1/73 G4 SB Track A73.mp3",
+          "bytes": 1589359
+        },
+        {
+          "name": "CD1/74 G4 SB Track A74.mp3",
+          "bytes": 1423221
+        },
+        {
+          "name": "CD1/75 G4 SB Track A75.mp3",
+          "bytes": 1188122
+        },
+        {
+          "name": "CD1/76 G4 SB Track A76.mp3",
+          "bytes": 1405457
+        },
+        {
+          "name": "CD1/77 G4 SB Track A77.mp3",
+          "bytes": 1405457
+        },
+        {
+          "name": "CD1/78 G4 SB Track A78.mp3",
+          "bytes": 1017800
+        },
+        {
+          "name": "CD1/79 G4 SB Track A79.mp3",
+          "bytes": 2144200
+        },
+        {
+          "name": "CD1/80 G4 SB Track A80.mp3",
+          "bytes": 1609212
+        },
+        {
+          "name": "CD1/81 G4 SB Track A81.mp3",
+          "bytes": 1442029
+        },
+        {
+          "name": "CD1/82 G4 SB Track A82.mp3",
+          "bytes": 888233
+        },
+        {
+          "name": "CD2/001 G4 SB Track B1.mp3",
+          "bytes": 1109751
+        },
+        {
+          "name": "CD2/002 G4 SB Track B2.mp3",
+          "bytes": 1054372
+        },
+        {
+          "name": "CD2/003 G4 SB Track B3.mp3",
+          "bytes": 1885066
+        },
+        {
+          "name": "CD2/004 G4 SB Track B4.mp3",
+          "bytes": 888233
+        },
+        {
+          "name": "CD2/005 G4 SB Track B5.mp3",
+          "bytes": 962421
+        },
+        {
+          "name": "CD2/006 G4 SB Track B6.mp3",
+          "bytes": 1959253
+        },
+        {
+          "name": "CD2/007 G4 SB Track B7.mp3",
+          "bytes": 1183939
+        },
+        {
+          "name": "CD2/008 G4 SB Track B8.mp3",
+          "bytes": 2106584
+        },
+        {
+          "name": "CD2/009 G4 SB Track B9.mp3",
+          "bytes": 2253914
+        },
+        {
+          "name": "CD2/010 G4 SB Track B10.mp3",
+          "bytes": 2291531
+        },
+        {
+          "name": "CD2/011 G4 SB Track B11.mp3",
+          "bytes": 924804
+        },
+        {
+          "name": "CD2/012 G4 SB Track B12.mp3",
+          "bytes": 2143155
+        },
+        {
+          "name": "CD2/013 G4 SB Track B13.mp3",
+          "bytes": 962421
+        },
+        {
+          "name": "CD2/014 G4 SB Track B14.mp3",
+          "bytes": 2144200
+        },
+        {
+          "name": "CD2/015 G4 SB Track B15.mp3",
+          "bytes": 1294698
+        },
+        {
+          "name": "CD2/016 G4 SB Track B16.mp3",
+          "bytes": 1848494
+        },
+        {
+          "name": "CD2/017 G4 SB Track B17.mp3",
+          "bytes": 1257082
+        },
+        {
+          "name": "CD2/018 G4 SB Track B18.mp3",
+          "bytes": 513067
+        },
+        {
+          "name": "CD2/019 G4 SB Track B19.mp3",
+          "bytes": 888233
+        },
+        {
+          "name": "CD2/020 G4 SB Track B20.mp3",
+          "bytes": 2661425
+        },
+        {
+          "name": "CD2/021 G4 SB Track B21.mp3",
+          "bytes": 1626976
+        },
+        {
+          "name": "CD2/022 G4 SB Track B22.mp3",
+          "bytes": 1008406
+        },
+        {
+          "name": "CD2/023 G4 SB Track B23.mp3",
+          "bytes": 758666
+        },
+        {
+          "name": "CD2/024 G4 SB Track B24.mp3",
+          "bytes": 764937
+        },
+        {
+          "name": "CD2/025 G4 SB Track B25.mp3",
+          "bytes": 1885066
+        },
+        {
+          "name": "CD2/026 G4 SB Track B26.mp3",
+          "bytes": 1054372
+        },
+        {
+          "name": "CD2/027 G4 SB Track B27.mp3",
+          "bytes": 980184
+        },
+        {
+          "name": "CD2/028 G4 SB Track B28.mp3",
+          "bytes": 924804
+        },
+        {
+          "name": "CD2/029 G4 SB Track B29.mp3",
+          "bytes": 924804
+        },
+        {
+          "name": "CD2/030 G4 SB Track B30.mp3",
+          "bytes": 1663547
+        },
+        {
+          "name": "CD2/031 G4 SB Track B31.mp3",
+          "bytes": 1239319
+        },
+        {
+          "name": "CD2/032 G4 SB Track B32.mp3",
+          "bytes": 800737
+        },
+        {
+          "name": "CD2/033 G4 SB Track B33.mp3",
+          "bytes": 435973
+        },
+        {
+          "name": "CD2/034 G4 SB Track B34.mp3",
+          "bytes": 1442029
+        },
+        {
+          "name": "CD2/035 G4 SB Track B35.mp3",
+          "bytes": 1035563
+        },
+        {
+          "name": "CD2/036 G4 SB Track B36.mp3",
+          "bytes": 998992
+        },
+        {
+          "name": "CD2/037 G4 SB Track B37.mp3",
+          "bytes": 921511
+        },
+        {
+          "name": "CD2/038 G4 SB Track B38.mp3",
+          "bytes": 759710
+        },
+        {
+          "name": "CD2/039 G4 SB Track B39.mp3",
+          "bytes": 1552788
+        },
+        {
+          "name": "CD2/040 G4 SB Track B40.mp3",
+          "bytes": 1258127
+        },
+        {
+          "name": "CD2/041 G4 SB Track B41.mp3",
+          "bytes": 1109751
+        },
+        {
+          "name": "CD2/042 G4 SB Track B42.mp3",
+          "bytes": 1035563
+        },
+        {
+          "name": "CD2/043 G4 SB Track B43.mp3",
+          "bytes": 2365719
+        },
+        {
+          "name": "CD2/044 G4 SB Track B44.mp3",
+          "bytes": 1589359
+        },
+        {
+          "name": "CD2/045 G4 SB Track B45.mp3",
+          "bytes": 929384
+        },
+        {
+          "name": "CD2/046 G4 SB Track B46.mp3",
+          "bytes": 962421
+        },
+        {
+          "name": "CD2/047 G4 SB Track B47.mp3",
+          "bytes": 1036608
+        },
+        {
+          "name": "CD2/048 G4 SB Track B48.mp3",
+          "bytes": 981229
+        },
+        {
+          "name": "CD2/049 G4 SB Track B49.mp3",
+          "bytes": 1810878
+        },
+        {
+          "name": "CD2/050 G4 SB Track B50.mp3",
+          "bytes": 1073180
+        },
+        {
+          "name": "CD2/051 G4 SB Track B51.mp3",
+          "bytes": 1073180
+        },
+        {
+          "name": "CD2/052 G4 SB Track B52.mp3",
+          "bytes": 1718927
+        },
+        {
+          "name": "CD2/053 G4 SB Track B53.mp3",
+          "bytes": 1128559
+        },
+        {
+          "name": "CD2/054 G4 SB Track B54.mp3",
+          "bytes": 1234923
+        },
+        {
+          "name": "CD2/055 G4 SB Track B55.mp3",
+          "bytes": 1460837
+        },
+        {
+          "name": "CD2/056 G4 SB Track B56.mp3",
+          "bytes": 1460837
+        },
+        {
+          "name": "CD2/057 G4 SB Track B57.mp3",
+          "bytes": 998992
+        },
+        {
+          "name": "CD2/058 G4 SB Track B58.mp3",
+          "bytes": 1478600
+        },
+        {
+          "name": "CD2/059 G4 SB Track B59.mp3",
+          "bytes": 1109751
+        },
+        {
+          "name": "CD2/060 G4 SB Track B60.mp3",
+          "bytes": 2291531
+        },
+        {
+          "name": "CD2/061 G4 SB Track B61.mp3",
+          "bytes": 1035563
+        },
+        {
+          "name": "CD2/062 G4 SB Track B62.mp3",
+          "bytes": 2438861
+        },
+        {
+          "name": "CD2/063 G4 SB Track B63.mp3",
+          "bytes": 1532998
+        },
+        {
+          "name": "CD2/064 G4 SB Track B64.mp3",
+          "bytes": 1331270
+        },
+        {
+          "name": "CD2/065 G4 SB Track B65.mp3",
+          "bytes": 1367841
+        },
+        {
+          "name": "CD2/066 G4 SB Track B66.mp3",
+          "bytes": 980184
+        },
+        {
+          "name": "CD2/067 G4 SB Track B67.mp3",
+          "bytes": 3399123
+        },
+        {
+          "name": "CD2/068 G4 SB Track B68.mp3",
+          "bytes": 1682355
+        },
+        {
+          "name": "CD2/069 G4 SB Track B69.mp3",
+          "bytes": 1239319
+        },
+        {
+          "name": "CD2/070 G4 SB Track B70.mp3",
+          "bytes": 1035563
+        },
+        {
+          "name": "CD2/071 G4 SB Track B71.mp3",
+          "bytes": 2070012
+        },
+        {
+          "name": "CD2/072 G4 SB Track B72.mp3",
+          "bytes": 1183939
+        },
+        {
+          "name": "CD2/073 G4 SB Track B73.mp3",
+          "bytes": 1090943
+        },
+        {
+          "name": "CD2/074 G4 SB Track B74.mp3",
+          "bytes": 1996870
+        },
+        {
+          "name": "CD2/075 G4 SB Track B75.mp3",
+          "bytes": 1035563
+        },
+        {
+          "name": "CD2/076 G4 SB Track B76.mp3",
+          "bytes": 1147368
+        },
+        {
+          "name": "CD2/077 G4 SB Track B77.mp3",
+          "bytes": 1922682
+        },
+        {
+          "name": "CD2/078 G4 SB Track B78.mp3",
+          "bytes": 1090943
+        },
+        {
+          "name": "CD2/079 G4 SB Track B79.mp3",
+          "bytes": 2291531
+        },
+        {
+          "name": "CD2/080 G4 SB Track B80.mp3",
+          "bytes": 1257082
+        },
+        {
+          "name": "CD2/081 G4 SB Track B81.mp3",
+          "bytes": 1220510
+        },
+        {
+          "name": "CD2/082 G4 SB Track B82.mp3",
+          "bytes": 980184
+        },
+        {
+          "name": "CD2/083 G4 SB Track B83.mp3",
+          "bytes": 1886110
+        },
+        {
+          "name": "CD2/084 G4 SB Track B84.mp3",
+          "bytes": 1036608
+        },
+        {
+          "name": "CD2/085 G4 SB Track B85.mp3",
+          "bytes": 3472266
+        },
+        {
+          "name": "CD2/086 G4 SB Track B86.mp3",
+          "bytes": 1479645
+        },
+        {
+          "name": "CD2/087 G4 SB Track B87.mp3",
+          "bytes": 1516217
+        },
+        {
+          "name": "CD2/088 G4 SB Track B88.mp3",
+          "bytes": 631879
+        },
+        {
+          "name": "CD2/089 G4 SB Track B89.mp3",
+          "bytes": 924804
+        },
+        {
+          "name": "CD2/090 G4 SB Track B90.mp3",
+          "bytes": 2919514
+        },
+        {
+          "name": "CD2/091 G4 SB Track B91.mp3",
+          "bytes": 1331270
+        },
+        {
+          "name": "CD2/092 G4 SB Track B92.mp3",
+          "bytes": 1442029
+        },
+        {
+          "name": "CD2/093 G4 SB Track B93.mp3",
+          "bytes": 1312461
+        },
+        {
+          "name": "CD2/094 G4 SB Track B94.mp3",
+          "bytes": 915400
+        },
+        {
+          "name": "CD2/095 G4 SB Track B95.mp3",
+          "bytes": 962421
+        },
+        {
+          "name": "CD2/096 G4 SB Track B96.mp3",
+          "bytes": 1264945
+        },
+        {
+          "name": "CD2/097 G4 SB Track B97.mp3",
+          "bytes": 419325
+        },
+        {
+          "name": "CD2/098 G4 SB Track B98.mp3",
+          "bytes": 888233
+        },
+        {
+          "name": "CD2/099 G4 SB Track B99.mp3",
+          "bytes": 3177604
+        },
+        {
+          "name": "CD2/100 G4 SB Track B100.mp3",
+          "bytes": 1165131
+        },
+        {
+          "name": "CD2/101 G4 SB Track B101.mp3",
+          "bytes": 1995825
+        },
+        {
+          "name": "CD2/102 G4 SB Track B102.mp3",
+          "bytes": 2144200
+        },
+        {
+          "name": "CD2/103 G4 SB Track B103.mp3",
+          "bytes": 1183939
+        },
+        {
+          "name": "CD2/104 G4 SB Track B104.mp3",
+          "bytes": 1183939
+        },
+        {
+          "name": "CD2/105 G4 SB Track B105.mp3",
+          "bytes": 962421
+        },
+        {
+          "name": "CD2/106 G4 SB Track B106.mp3",
+          "bytes": 1132678
+        },
+        {
+          "name": "CD2/107 G4 SB Track B107.mp3",
+          "bytes": 1090943
+        },
+        {
+          "name": "CD2/108 G4 SB Track B108.mp3",
+          "bytes": 2107629
+        },
+        {
+          "name": "CD2/109 G4 SB Track B109.mp3",
+          "bytes": 1165131
+        },
+        {
+          "name": "CD2/110 G4 SB Track B110.mp3",
+          "bytes": 1331270
+        },
+        {
+          "name": "CD2/111 G4 SB Track B111.mp3",
+          "bytes": 1294698
+        },
+        {
+          "name": "CD2/112 G4 SB Track B112.mp3",
+          "bytes": 998992
+        },
+        {
+          "name": "CD2/113 G4 SB Track B113.mp3",
+          "bytes": 3104461
+        },
+        {
+          "name": "CD2/114 G4 SB Track B114.mp3",
+          "bytes": 1700119
+        },
+        {
+          "name": "CD2/115 G4 SB Track B115.mp3",
+          "bytes": 1367841
+        },
+        {
+          "name": "CD2/116 G4 SB Track B116.mp3",
+          "bytes": 432216
+        },
+        {
+          "name": "CD2/117 G4 SB Track B117.mp3",
+          "bytes": 775376
+        },
+        {
+          "name": "CD2/118 G4 SB Track B118.mp3",
+          "bytes": 2143155
+        }
+      ]
+    }
+  ]
+}

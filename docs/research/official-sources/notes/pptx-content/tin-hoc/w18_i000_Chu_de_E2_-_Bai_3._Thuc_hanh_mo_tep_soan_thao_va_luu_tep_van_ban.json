@@ -1,0 +1,197 @@
+{
+  "meta": {
+    "file": "w18_i000_Chu_de_E2_-_Bai_3._Thuc_hanh_mo_tep_soan_thao_va_luu_tep_van_ban.pptx",
+    "subject": "tin-hoc",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tin-hoc\\slides\\w18_i000_Chu_de_E2_-_Bai_3._Thuc_hanh_mo_tep_soan_thao_va_luu_tep_van_ban.pptx",
+    "slideCount": 16
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "Tin học 4",
+        "Chủ đề E2",
+        "Tập soạn thảo văn bản",
+        "Bài 3: Thực hành mở tệp, soạn thảo và lưu tệp văn bản"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy phân biệt chức năng các lệnh New, Open, Save và Save As trong bảng chọn File của phần mềm soạn thảo văn bản",
+        "New",
+        "Open",
+        "Save",
+        "Save As",
+        "Mở trang văn bản mới",
+        "Mở tệp văn bản",
+        "Lưu văn bản",
+        "Lưu văn bản sang tệp mới với tên khác"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 5,
+      "type": "activity",
+      "paragraphs": [
+        "THỰC HÀNH TẠO TỆP VĂN BẢN MỚI",
+        "01"
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy thực hiện các công việc sau",
+        "a) Kích hoạt phần mềm soạn thảo văn bản và tạo một tệp văn bản mới",
+        "b) Gõ ba điều đầu tiên trong “Năm điều Bác Hồ dạy thiếu niên, nhi đồng” như ở Hình 1",
+        "c) Lưu văn bản vào thư mục theo yêu cầu với tên tệp là Làm theo lời Bác dạy",
+        "Hình 1. Văn bản được soạn thảo"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "Hướng dẫn thực hành",
+        "a) Chọn lệnh New trong bảng chọn File để tạo tệp văn bản mới",
+        "b) Gõ ba điều đầu tiên Bác Hồ dạy thiếu niên, nhi đồng",
+        "Để gõ được tiếng Việt em cần kiểm tra xem phần mềm hỗ trợ gõ tiếng Việt đã được kích hoạt và đang ở chế độ gõ tiếng Việt chưa",
+        "c) Chọn lệnh Save trong bảng chọn File để lưu văn bản và đặt tên tệp theo yêu cầu",
+        "Gõ từng kí tự tiếng Việt trước và bỏ dấu ở cuối từ. Để gõ một kí tự là chữ hoa thì giữ kèm phím Shift"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "activity",
+      "paragraphs": [
+        "THỰC HÀNH MỞ TỆP VÀ LƯU VĂN BẢN SANG TỆP MỚI",
+        "02"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy thực hiện các công việc sau",
+        "a) Mở tệp Làm theo lời Bác dạy",
+        "b) Sửa nội dung văn bản để nhận được kết quả như ở Hình 2",
+        "c) Lưu văn bản sang một tệp mới với tên tệp là Năm điều Bác Hồ dạy",
+        "NĂM ĐIỀU BÁC HỒ DẠY",
+        "Yêu Tổ quốc, yêu đồng bào",
+        "Học tập tốt, lao động tốt",
+        "Đoàn kết tốt, kỉ luật tốt",
+        "Giữ gìn vệ sinh thật tốt",
+        "Khiêm tốn, thật thà, dũng cảm.",
+        "Hình 2. Nội dung tập sau khi sửa"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "Hướng dẫn thực hành",
+        "a) Chọn lệnh Open trong bảng chọn File để mở tệp văn bản Làm theo lời Bác dạy đã lưu",
+        "b) Sửa nội dung văn bản:",
+        "Đưa con trỏ soạn thảo đến đầu dòng thứ nhất và nhấn Enter để tạo ra một dòng trống thành dòng đầu tiên",
+        "Gõ dòng chữ “NĂM ĐIỀU BÁC HỒ DẠY” vào dòng trống vừa tạo",
+        "Đưa con trỏ vào cuối dòng cuối cùng và nhấn Enter để xuống đầu dòng trống mới",
+        "Gõ hai dòng văn bản cần bổ sung",
+        "c) Chọn lệnh Save As trong bảng chọn File để lưu văn bản sang tập mới và đặt tên tệp là Năm điều Bác Hồ dạy"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "Bạn An sử dụng phần mềm soạn văn bản để tạo một tập lưu danh sách tên các bạn trong nhóm của mình. Dù bạn An đã gõ tiếng Việt kiểu Telex nhưng kết quả hiện ra vẫn không đúng (Hình 3a). Em hãy cho biết nguyên nhân và nói cho bạn An biết làm thế nào để gõ được đúng nội dung văn bản như ở Hình 3b",
+        "NHOMS 1",
+        "Lee Thu Thaor",
+        "Traanf Ngocj Anhs",
+        "DDoox Thu Trang",
+        "Nhóm 1",
+        "Lê Thu Thảo",
+        "Trần Ngọc Ánh",
+        "Đỗ Thu Trang",
+        "Hình 3. Nội dung văn bản"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "Cần xem xét những nguyên nhân sau có thể không gõ được tiếng Việt:",
+        "Bộ gõ tiếng Việt chưa được kích hoạt: Không nhìn thấy biểu tượng Unikey ở trên thanh tác vụ",
+        "Đang ở chế độ gõ tiếng Anh: Biểu tượng Unikey không có hình chữ",
+        "Chọn sai bảng mã hoặc kiểu gõ: Không phải bảng mã Unicode và không phải kiểu gõ Telex"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "Ôn lại các kiến thức đã học ở Bài 3",
+        "Đọc và chuẩn bị trước",
+        "Bài 4: Chèn ảnh vào văn bản"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 16,
+      "type": "empty",
+      "paragraphs": []
+    }
+  ],
+  "extracted": {
+    "title": "Tin học 4 Chủ đề E2 Tập soạn thảo văn bản",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Em hãy phân biệt chức năng các lệnh New, Open, Save và Save As trong bảng chọn File của phần mềm soạn thảo văn bản",
+        "slide": 3
+      },
+      {
+        "type": "task",
+        "text": "Em hãy thực hiện các công việc sau",
+        "slide": 6
+      },
+      {
+        "type": "task",
+        "text": "Em hãy thực hiện các công việc sau",
+        "slide": 9
+      },
+      {
+        "type": "task",
+        "text": "Chọn sai bảng mã hoặc kiểu gõ: Không phải bảng mã Unicode và không phải kiểu gõ Telex",
+        "slide": 13
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước",
+        "slide": 14
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

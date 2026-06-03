@@ -1,0 +1,260 @@
+{
+  "meta": {
+    "file": "w33_i003_Tuan_33_-_Bai_92_On_tap_ve_so_tu_nhien_va_cac_phep_tinh_voi_so_tu_nhien_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w33_i003_Tuan_33_-_Bai_92_On_tap_ve_so_tu_nhien_va_cac_phep_tinh_voi_so_tu_nhien_-_Tiet_1.pptx",
+    "slideCount": 19
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 2",
+        "Tuần 33",
+        "Bài 92: Ôn tập về số tự nhiên và các phép tính với số tự nhiên - Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Đố bạn",
+        "Đố bạn, đố bạn!",
+        "Đố gì, đố gì?",
+        "Đọc số 64 832",
+        "Sáu mươi tư nghìn tám trăm ba mươi hai"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "questions",
+      "paragraphs": [
+        "Đố bạn",
+        "Đố bạn, đố bạn!",
+        "Đố gì, đố gì?",
+        "Nêu cấu tạo số 56 704",
+        "56 704 gồm 5 chục nghìn, 6 nghìn, 7 trăm, 0 chục và 4 đơn vị"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 6,
+      "type": "questions",
+      "paragraphs": [
+        "01",
+        "a) Trò chơi “Đố bạn”: Em hãy viết một số có nhiều chữ số rồi đố bạn đọc, sau đó bạn được một số và đó em viết số đó:",
+        "b) Trong các số em vừa viết, số nào là số lẻ, số nào là số chẵn?",
+        "c) Trong các số em vừa viết, số nào lớn nhất, số nào bé nhất?",
+        "Hoạt động nhóm đôi"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Ví dụ tham khảo",
+        "a)",
+        "Năm nghìn ba trăm hai mươi lăm",
+        "5 325"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "5 325",
+        "Số chẵn là: 24 500",
+        "Số lẻ là: 5 325",
+        "b)"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "5 325",
+        "Số bé nhất: 5 325",
+        "Số lớn nhất: 24 500",
+        "c)"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "Viết mỗi số sau thành tổng (theo mẫu):",
+        "a) 13 876",
+        "b) 204 038",
+        "c) 50 877",
+        "d) 8 672 980",
+        "= 10 000 + 3 000 + 800 + 70 + 6",
+        "= 200 000 + 4 000 + 30 + 8",
+        "= 50 000 + 800 + 70 + 7",
+        "= 8 000 000 + 600 000 + 70 000 + 2 000 + 900 + 80"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "04",
+        "Đặt tính rồi tính:",
+        "a) 19 315 + 43 627",
+        "b) 79 371  47 849",
+        "c) 4 132  23",
+        "d) 1 929 : 32",
+        "1 929",
+        "32",
+        "1 92",
+        "60",
+        "95 036"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "questions",
+      "paragraphs": [
+        "06",
+        "Có 224 thùng hàng cần chuyển ra sân bay, biết rằng mỗi chuyến xe chở được 56 thùng hàng. Hỏi:",
+        "a) Để chở hết các thùng hàng ra sân bay cần mấy chuyến xe như thế?",
+        "b) Biết rằng quãng đường từ kho hàng đến sân bay là 183 km, trung bình mỗi giờ ô tô đi được 60 km. Hỏi ô tô đó đi từ kho đến sân bay hết khoảng mấy giờ?"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "questions",
+      "paragraphs": [
+        "06",
+        "a) Để biết số xe cần để chở hết các thùng hàng, ta thực hiện phép tính gì?",
+        "b) Để biết ô tô đi từ kho đến sân bay hết mấy giờ, ta thực hiện phép tính gì?",
+        "Bài giải",
+        "a) Để chở các thùng hàng ra sân bay cần số chuyến xe là: 224 : 56 = 4 (xe)",
+        "b) Thời gian ô tô đi từ kho đến sân bay là: 180 : 60 = 3 (giờ)",
+        "Đáp số: a) 4 xe.",
+        "b) 3 giờ."
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em ôn tập được những kiến thức gì?"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "questions",
+      "paragraphs": [
+        "Để nắm chắc kiến thức đó, em nhắn bạn điều gì?"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 17,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước",
+        "Bài 92: Ôn tập về số tự nhiên và các phép tính với số tự nhiên – Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 19,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 2 Tuần 33",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Đọc số 64 832",
+        "slide": 3
+      },
+      {
+        "type": "question",
+        "text": "b) Trong các số em vừa viết, số nào là số lẻ, số nào là số chẵn?",
+        "slide": 6
+      },
+      {
+        "type": "question",
+        "text": "c) Trong các số em vừa viết, số nào lớn nhất, số nào bé nhất?",
+        "slide": 6
+      },
+      {
+        "type": "task",
+        "text": "Viết mỗi số sau thành tổng (theo mẫu):",
+        "slide": 10
+      },
+      {
+        "type": "question",
+        "text": "a) Để chở hết các thùng hàng ra sân bay cần mấy chuyến xe như thế?",
+        "slide": 12
+      },
+      {
+        "type": "question",
+        "text": "b) Biết rằng quãng đường từ kho hàng đến sân bay là 183 km, trung bình mỗi giờ ô tô đi được 60 km. Hỏi ô tô đó đi từ kho đến sân bay hết khoảng mấy giờ?",
+        "slide": 12
+      },
+      {
+        "type": "question",
+        "text": "a) Để biết số xe cần để chở hết các thùng hàng, ta thực hiện phép tính gì?",
+        "slide": 13
+      },
+      {
+        "type": "question",
+        "text": "b) Để biết ô tô đi từ kho đến sân bay hết mấy giờ, ta thực hiện phép tính gì?",
+        "slide": 13
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em ôn tập được những kiến thức gì?",
+        "slide": 14
+      },
+      {
+        "type": "question",
+        "text": "Để nắm chắc kiến thức đó, em nhắn bạn điều gì?",
+        "slide": 15
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước",
+        "slide": 17
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

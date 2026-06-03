@@ -1,0 +1,184 @@
+{
+  "meta": {
+    "file": "w13_i004_Tuan_13_-_Bai_40_Chia_cho_so_co_hai_chu_so_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w13_i004_Tuan_13_-_Bai_40_Chia_cho_so_co_hai_chu_so_-_Tiet_1.pptx",
+    "slideCount": 16
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 1",
+        "Tuần 13",
+        "Bài 40: Chia cho số có hai chữ số - Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "content",
+      "paragraphs": [
+        "Thực hiện phép tính sau:",
+        "62 965",
+        "12 593",
+        "12",
+        "2 9",
+        "46",
+        "12 288",
+        "48",
+        "2 048",
+        "0 2",
+        "28"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "questions",
+      "paragraphs": [
+        "Để biết 76 kg cỏ đủ cho mấy con bò ăn trong một ngày ta thực hiện phép tính:",
+        "76  19 = ?"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 6,
+      "type": "questions",
+      "paragraphs": [
+        "76  19 = ?"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "76",
+        "19",
+        "76 chia 19 được 4, viết 4;",
+        "4 nhân 9 bằng 36, viết 6 nhớ 3;",
+        "4 nhân 1 bằng 4, thêm 3 bằng 7, viết 7;",
+        "76 trừ 76 bằng 0, viết 0.",
+        "Vậy 76  19  4"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Tính:",
+        "93",
+        "93",
+        "31",
+        "83",
+        "80",
+        "40",
+        "63",
+        "56",
+        "28",
+        "89",
+        "87",
+        "29"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "Đặt tính rồi tính:",
+        "84",
+        "84",
+        "21",
+        "64",
+        "64",
+        "32",
+        "77",
+        "72",
+        "18",
+        "79",
+        "72",
+        "36",
+        "84  21",
+        "64  32",
+        "77  18",
+        "79  36"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em học thêm được điều gì?"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "questions",
+      "paragraphs": [
+        "Khi đặt tính và tính, em nhắn bạn cần lưu ý những gì?"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 14,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 16,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 1 Tuần 13",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em học thêm được điều gì?",
+        "slide": 11
+      },
+      {
+        "type": "question",
+        "text": "Khi đặt tính và tính, em nhắn bạn cần lưu ý những gì?",
+        "slide": 12
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

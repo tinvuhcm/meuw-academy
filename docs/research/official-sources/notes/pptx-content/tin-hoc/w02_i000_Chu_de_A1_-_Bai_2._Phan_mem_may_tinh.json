@@ -1,0 +1,339 @@
+{
+  "meta": {
+    "file": "w02_i000_Chu_de_A1_-_Bai_2._Phan_mem_may_tinh.pptx",
+    "subject": "tin-hoc",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tin-hoc\\slides\\w02_i000_Chu_de_A1_-_Bai_2._Phan_mem_may_tinh.pptx",
+    "slideCount": 25
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "Tin học 4",
+        "CHỦ ĐỀ A1. Phần cứng và phần mềm",
+        "Bài 2. Phần mềm máy tính"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy suy nghĩ và trả lời câu hỏi sau đây:",
+        "Theo em, nếu chỉ có phần cứng thì máy tính có thực hiện được hoạt động xử lí thông tin mà em yêu cầu không?",
+        "Không có phần mềm, máy không xử lí được các yêu cầu."
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 5,
+      "type": "questions",
+      "paragraphs": [
+        "1. PHẦN MỀM VÀ MỐI QUAN HỆ  VỚI PHẦN CỨNG",
+        "Em hãy kể tên những phần mềm trong hình?",
+        "Cho biết chức năng của những phần mềm đó là gì?",
+        "Quan sát hình ảnh trong SHS tr.7 và trả lời câu hỏi:",
+        "a. Kể tên phần mềm trình chiếu"
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "Scratch",
+        "MS Powerpoint",
+        "MS Word",
+        "Google Chrome",
+        "Unikey",
+        "Lập trình",
+        "Tạo video",
+        "Tạo bài trình chiếu",
+        "Soạn thảo văn bản",
+        "Tìm kiếm thông tin",
+        "Hỗ trợ gõ tiếng Việt"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "b. Quan hệ giữa phần cứng và phần mềm trình chiếu",
+        "Theo em để tạo bài trình chiếu ta cần có máy tính hay phần mềm trình chiếu.",
+        "Đọc thông tin trong SHS và trả lời câu hỏi"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "Để tạo được bài trình chiếu",
+        "Máy tính",
+        "Phần mềm trình chiếu",
+        "Thực hiện được các chức năng tạo một bài thuyết trình nhờ có phần cứng",
+        "Trợ giúp tạo ra được bài trình chiếu dựa vào các lệnh, các hướng dẫn của phần mềm"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "Phần cứng",
+        "Phần mềm",
+        "Thực hiện được chức năng",
+        "Hoạt động được nhờ có chỉ dẫn",
+        "Quan hệ phụ thuộc lẫn nhau"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "Scratch",
+        "Phần mềm Scratch thực hiện được chức năng tạo kịch bản cho nhân vật trên sân khấu nhờ có phần cứng (màn hình, bộ nhớ, bộ vi xử lí,…).",
+        "Phần cứng hoạt động nhờ có chức năng của phần mềm (tạo nhân vật, kéo thả các khối lệnh và chạy chương trình).",
+        "Ví dụ"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "questions",
+      "paragraphs": [
+        "2. THAO TÁC KHÔNG ĐÚNG SẼ GÂY RA LỖI PHẦN MỀM VÀ HƯ HẠI PHẦN CỨNG",
+        "Theo em điều gì sẽ xảy ra nếu em tắt máy tính bằng cách nhấn và giữ nút nguồn trên thân máy?",
+        "Hình 2. Máy tính báo khởi động lại một cách bất thường"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "Hậu quả khi cấp, ngắt nguồn điện cho máy tính sai cách",
+        "Máy tính bị tắt đột ngột",
+        "Việc đọc, ghi trên ổ đĩa bị ngừng lại",
+        "Các phần mềm đang mở chưa được đóng lại",
+        "Ổ đĩa trong máy có thể bị hư hại, phần mềm bị lỗi"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "activity",
+      "paragraphs": [
+        "HOẠT ĐỘNG NHÓM",
+        "Em hãy điền vào cột thứ hai ví dụ về thao tác không đúng cách trong quá trình sử dụng máy tính gây ra lỗi phần mềm và hư hại phần cứng.",
+        "Thao tác không đúng cách",
+        "Thao tác",
+        "Hiện tượng",
+        "Sử dụng phần mềm không đúng cách",
+        "Máy tính bị treo.",
+        "Làm máy tính bị nhiễm virus",
+        "Máy tính bị nhiễm virus, hoạt động chậm lại, không ngừng khởi động lại."
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "Thao tác không đúng cách",
+        "Thao tác",
+        "Hiện tượng",
+        "Sử dụng phần mềm không đúng cách",
+        "Mở quá nhiều phần mềm.",
+        "Thực hiện một thao tác bất thường mà phần cứng không đáp ứng được.",
+        "Máy tính bị treo.",
+        "Làm máy tính bị nhiễm virus",
+        "Truy cập trang web độc hại.",
+        "Mở một đường liên kết trên một trang web không tin cậy.",
+        "Máy tính bị nhiễm virus, hoạt động chậm lại, không ngừng khởi động lại.",
+        "HƯỚNG DẪN TRẢ LỜI"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 16,
+      "type": "questions",
+      "paragraphs": [
+        "Suy nghĩ và trả lời các câu hỏi sau:",
+        "Em hãy kể tên một phần mềm. Nếu không có phần cứng thì phần mềm đó có thực hiện được chức năng của mình hay không?",
+        "Em hãy nêu một số ví dụ về thao tác không đúng cách, dẫn đến lỗi phần mềm và hư hại phần cứng."
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy kể tên một phần mềm. Nếu không có phần cứng thì phần mềm đó có thực hiện được chức năng của mình hay không?",
+        "Nếu không có phần cứng máy tính thì phần mềm trình chiếu không thực hiện được chức năng của mình",
+        "Không có bàn phím để nhập nội dung trang trình chiếu.",
+        "Không có màn hình để hiện trang trình chiếu. Không có chỗ lưu phần mềm.",
+        "Không có bộ vi xử lí để chạy phần mềm."
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "questions",
+      "paragraphs": [
+        "Một số thao tác không đúng cách",
+        "Nhấn và giữ phím nguồn để tắt máy có thể gây ra lỗi phần mềm và hư hại ổ đĩa cứng.",
+        "Kích hoạt một trò chơi từ một trang web độc hại có thể làm máy tính bị nhiễm virus. Virus có thể gât ra lỗi phần mềm.",
+        "Kích hoạt một phần mềm mới được cập nhật nhưng phần cứng lỗi thời không đáp ứng được sẽ làm cho máy tính bị treo.",
+        "Em hãy nêu một số ví dụ về thao tác không đúng cách, dẫn đến lỗi phần mềm và hư hại phần cứng."
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 20,
+      "type": "questions",
+      "paragraphs": [
+        "Đọc tình huống sau đây và trả lời câu hỏi:",
+        "Máy tính của bạn Nam bị hỏng bàn phím. Người thợ sửa máy tính cho biết: “Do gõ mạnh tay nên một số phím bị liệt, cần thay. Một số phím bị sai chức năng do phần mềm điều khiển bàn phím bị virus, cần chạy phần mềm diệt virus”.",
+        "Em hãy cho biết máy tính của Nam bị hỏng phần mềm và phần cứng nào. Vì sao?",
+        "Tình huống"
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "content",
+      "paragraphs": [
+        "HƯỚNG DẪN TRẢ LỜI",
+        "Máy tính của Nam bị hỏng một số phím của bàn phím (phần cứng) do gõ mạnh tay.",
+        "Phần mềm bị lỗi là phần mềm điều khiển bàn phím do phần mềm này bị nhiễm virus."
+      ]
+    },
+    {
+      "slideNo": 22,
+      "type": "theory",
+      "paragraphs": [
+        "GHI NHỚ",
+        "Phần mềm hướng dẫn phần cứng hoạt động. Phần cứng giúp phần mềm thực hiện được chức năng của mình.",
+        "Khi sử dụng máy tính, thao tác không đúng cách sẽ gây ra lỗi phần mềm và hư hại phần cứng."
+      ]
+    },
+    {
+      "slideNo": 23,
+      "type": "content",
+      "paragraphs": [
+        "HƯỚNG DẪN VỀ NHÀ",
+        "Ôn tập lại các nội dung chính đã học trong bài.",
+        "Đọc và chuẩn bị trước Bài 1: Em tập gõ bàn phím số."
+      ]
+    },
+    {
+      "slideNo": 24,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 25,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "Tin học 4 CHỦ ĐỀ A1. Phần cứng và phần mềm Bài 2. Phần mềm máy tính",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Em hãy suy nghĩ và trả lời câu hỏi sau đây:",
+        "slide": 3
+      },
+      {
+        "type": "question",
+        "text": "Theo em, nếu chỉ có phần cứng thì máy tính có thực hiện được hoạt động xử lí thông tin mà em yêu cầu không?",
+        "slide": 3
+      },
+      {
+        "type": "question",
+        "text": "Em hãy kể tên những phần mềm trong hình?",
+        "slide": 5
+      },
+      {
+        "type": "question",
+        "text": "Cho biết chức năng của những phần mềm đó là gì?",
+        "slide": 5
+      },
+      {
+        "type": "task",
+        "text": "Tìm kiếm thông tin",
+        "slide": 6
+      },
+      {
+        "type": "task",
+        "text": "Đọc thông tin trong SHS và trả lời câu hỏi",
+        "slide": 7
+      },
+      {
+        "type": "question",
+        "text": "Theo em điều gì sẽ xảy ra nếu em tắt máy tính bằng cách nhấn và giữ nút nguồn trên thân máy?",
+        "slide": 11
+      },
+      {
+        "type": "task",
+        "text": "Em hãy điền vào cột thứ hai ví dụ về thao tác không đúng cách trong quá trình sử dụng máy tính gây ra lỗi phần mềm và hư hại phần cứng.",
+        "slide": 13
+      },
+      {
+        "type": "question",
+        "text": "Em hãy kể tên một phần mềm. Nếu không có phần cứng thì phần mềm đó có thực hiện được chức năng của mình hay không?",
+        "slide": 16
+      },
+      {
+        "type": "task",
+        "text": "Em hãy nêu một số ví dụ về thao tác không đúng cách, dẫn đến lỗi phần mềm và hư hại phần cứng.",
+        "slide": 16
+      },
+      {
+        "type": "question",
+        "text": "Em hãy kể tên một phần mềm. Nếu không có phần cứng thì phần mềm đó có thực hiện được chức năng của mình hay không?",
+        "slide": 17
+      },
+      {
+        "type": "task",
+        "text": "Em hãy nêu một số ví dụ về thao tác không đúng cách, dẫn đến lỗi phần mềm và hư hại phần cứng.",
+        "slide": 18
+      },
+      {
+        "type": "task",
+        "text": "Đọc tình huống sau đây và trả lời câu hỏi:",
+        "slide": 20
+      },
+      {
+        "type": "question",
+        "text": "Em hãy cho biết máy tính của Nam bị hỏng phần mềm và phần cứng nào. Vì sao?",
+        "slide": 20
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước Bài 1: Em tập gõ bàn phím số.",
+        "slide": 23
+      }
+    ],
+    "vocab": [],
+    "keyPoints": [
+      "Phần mềm hướng dẫn phần cứng hoạt động. Phần cứng giúp phần mềm thực hiện được chức năng của mình.",
+      "Khi sử dụng máy tính, thao tác không đúng cách sẽ gây ra lỗi phần mềm và hư hại phần cứng."
+    ]
+  }
+}

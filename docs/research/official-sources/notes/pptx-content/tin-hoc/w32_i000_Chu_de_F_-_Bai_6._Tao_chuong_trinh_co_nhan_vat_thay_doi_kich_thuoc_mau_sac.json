@@ -1,0 +1,319 @@
+{
+  "meta": {
+    "file": "w32_i000_Chu_de_F_-_Bai_6._Tao_chuong_trinh_co_nhan_vat_thay_doi_kich_thuoc_mau_sac.pptx",
+    "subject": "tin-hoc",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tin-hoc\\slides\\w32_i000_Chu_de_F_-_Bai_6._Tao_chuong_trinh_co_nhan_vat_thay_doi_kich_thuoc_mau_sac.pptx",
+    "slideCount": 33
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "Tin học 4",
+        "Chủ đề F",
+        "Làm quen với lập trình trực quan",
+        "Bài 6: Tạo chương trình có nhân vật thay đổi kích thước, màu sắc"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "content",
+      "paragraphs": [
+        "Mô tả một số thay đổi về màu sắc, kích thước, hình ảnh của các nhân vật trong một trò chơi hoặc hoạt hình mà em biết."
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "Kích thước: khi ở xa thì kích thước nhân vật nhỏ hơn khi ở gần.",
+        "Các nhân vật có những chuyển động khác nhau, thay đổi tùy thuộc vào cảnh phim.",
+        "Màu sắc: xanh nước biển và nâu.",
+        "Hoạt hình Tom và Jerry"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "Tạo các hiệu ứng hình ảnh"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "1. Tạo các hiệu ứng hình ảnh",
+        "Một số lệnh trong nhóm lệnh Hiển thị:"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "questions",
+      "paragraphs": [
+        "1. Tạo các hiệu ứng hình ảnh",
+        "Em hãy cho biết lệnh nào làm nhân vật thay đổi màu sắc, lệnh nào làm nhân vật thay đổi kích thước."
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "Lệnh làm nhân vật thay đổi kích thước:",
+        "Lệnh có thể làm nhân vật thay đổi màu sắc:",
+        "1. Tạo các hiệu ứng hình ảnh"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "Tạo chương trình Cá biến hình"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "Cho biết các bước tạo một chương trình Cá biến hình.",
+        "2. Tạo chương trình Cá biến hình"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Cá biến hình",
+        "Bước 1: Tìm hiểu yêu cầu."
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Cá biến hình",
+        "Bước 2: Dựa trên kịch bản của nhân vật Cá Nóc, xây dựng kịch bản của nhân vật Sứa."
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Cá biến hình",
+        "Bước 3: Thêm hai nhân vật Cá Nóc và Sứa và phông nền phù hợp."
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Cá biến hình",
+        "Bước 4: Lập trình cho nhân vật Cá Nóc theo hướng dẫn."
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Cá biến hình",
+        "Bước 5: Lập trình cho nhân vật Sứa theo kịch bản ở bước 2."
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "content",
+      "paragraphs": [
+        "Quan sát chạy thử chương trình Cá biến hình",
+        "Yêu cầu của chương trình:",
+        "Nháy chuột vào các nhân vật ở vùng Sân khấu, sẽ có hiệu ứng sau:",
+        "Nhân vật Cá Nóc: phình to ra và bơi tới một vị trí ngẫu nhiên, rồi nhỏ lại như cũ.",
+        "Nhân vật Sứa: đổi màu và bơi tới một vị trí ngẫu nhiên, rồi quay về màu cũ.",
+        "2. Tạo chương trình Cá biến hình"
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "content",
+      "paragraphs": [
+        "Phân tích hoạt động của nhân vật và cùng đưa ra kịch bản.",
+        "2. Tạo chương trình Cá biến hình"
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "content",
+      "paragraphs": [
+        "Nhân vật Sứa: đổi màu và bơi tới một vị trí ngẫu nhiên, rồi quay về màu cũ.",
+        "Phân tích hoạt động của nhân vật:",
+        "Nhân vật Cá Nóc: phình to ra và bơi tới một vị trí ngẫu nhiên, rồi nhỏ lại như cũ.",
+        "2. Tạo chương trình Cá biến hình"
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "content",
+      "paragraphs": [
+        "Kịch bản: khi nháy chuột vào nhân vật Cá Nóc trên vùng Sân khấu, nhân vật Cá Nóc thực hiện như sau:",
+        "Tăng lên gấp đôi kích thước.",
+        "Di chuyển từ từ tới vị trí ngẫu nhiên ở vùng Sân khấu.",
+        "Giảm kích thước về như cũ.",
+        "2. Tạo chương trình Cá biến hình"
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "content",
+      "paragraphs": [
+        "Yêu cầu: thực hiện thêm nhân vật và lập trình theo hướng dẫn.",
+        "2. Tạo chương trình Cá biến hình"
+      ]
+    },
+    {
+      "slideNo": 22,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Cá biến hình",
+        "Lưu ý:",
+        "Trong bài này cần 1 lệnh                    hoặc 1 lệnh tương tự cần thời gian thực hiện ở giữa 2 lệnh Hiển thị.",
+        "Nếu không, các lệnh sẽ thực hiện quá nhanh và chúng ta chỉ nhìn thấy kết quả cuối cùng chứ không thấy rõ kết quả của từng lệnh."
+      ]
+    },
+    {
+      "slideNo": 23,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 24,
+      "type": "questions",
+      "paragraphs": [
+        "Để thay đổi màu sắc của nhân vật, em sử dụng lệnh nào trong Bảng 1?",
+        "Bài 1"
+      ]
+    },
+    {
+      "slideNo": 25,
+      "type": "questions",
+      "paragraphs": [
+        "Lệnh nào sau đây làm kích thước nhân vật to lên?",
+        "A.",
+        "B.",
+        "Bài 2"
+      ]
+    },
+    {
+      "slideNo": 26,
+      "type": "questions",
+      "paragraphs": [
+        "Em\t Hãy điền vào chỗ trống (?):",
+        "Nhóm lệnh                              có lệnh làm nhân vật xoay.",
+        "2) Nhóm lệnh                    có lệnh làm nhân vật nhỏ đi.",
+        "Bài 3",
+        "Chuyển động",
+        "Hiển thị"
+      ]
+    },
+    {
+      "slideNo": 27,
+      "type": "questions",
+      "paragraphs": [
+        "Nhóm lệnh Hiển thị dùng để làm gì? Em có thể chọn nhiều đáp án.",
+        "1) Thay đổi vị trí nhân vật.",
+        "2) Thay đổi màu sắc ảnh phông nền.",
+        "3) Thay đổi kích thước nhân vật.",
+        "4) Thay đổi kích thước phông nền.",
+        "Bài 4"
+      ]
+    },
+    {
+      "slideNo": 28,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 29,
+      "type": "content",
+      "paragraphs": [
+        "Thêm nhân vật Quả bóng, lập trình cho nhân vật như sau:",
+        "Hãy tạo một chương trình có nhân vật Quả bóng, mỗi khi nháy chuột vào quả bóng, nó sẽ thay đổi màu sắc."
+      ]
+    },
+    {
+      "slideNo": 30,
+      "type": "theory",
+      "paragraphs": [
+        "Nhóm lệnh Hiển thị chứa các lệnh để thay đổi kích thước, màu sắc của nhân vật và thay đổi màu sắc của phông nền.",
+        "GHI NHỚ"
+      ]
+    },
+    {
+      "slideNo": 31,
+      "type": "content",
+      "paragraphs": [
+        "Ôn lại các kiến thức đã học ở Bài 6",
+        "Đọc và chuẩn bị trước Bài 7: Thực hành tạo chương trình của em"
+      ]
+    },
+    {
+      "slideNo": 32,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 33,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "Tin học 4 Chủ đề F Làm quen với lập trình trực quan",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Em hãy cho biết lệnh nào làm nhân vật thay đổi màu sắc, lệnh nào làm nhân vật thay đổi kích thước.",
+        "slide": 8
+      },
+      {
+        "type": "question",
+        "text": "Để thay đổi màu sắc của nhân vật, em sử dụng lệnh nào trong Bảng 1?",
+        "slide": 24
+      },
+      {
+        "type": "question",
+        "text": "Lệnh nào sau đây làm kích thước nhân vật to lên?",
+        "slide": 25
+      },
+      {
+        "type": "task",
+        "text": "Hãy tạo một chương trình có nhân vật Quả bóng, mỗi khi nháy chuột vào quả bóng, nó sẽ thay đổi màu sắc.",
+        "slide": 29
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước Bài 7: Thực hành tạo chương trình của em",
+        "slide": 31
+      }
+    ],
+    "vocab": [],
+    "keyPoints": [
+      "Nhóm lệnh Hiển thị chứa các lệnh để thay đổi kích thước, màu sắc của nhân vật và thay đổi màu sắc của phông nền."
+    ]
+  }
+}

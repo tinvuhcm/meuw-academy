@@ -1,0 +1,290 @@
+{
+  "meta": {
+    "file": "w32_i002_Tuan_32_-_Bai_88_Bieu_do_cot_-_Tiet_2.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w32_i002_Tuan_32_-_Bai_88_Bieu_do_cot_-_Tiet_2.pptx",
+    "slideCount": 22
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 2",
+        "Tuần 32",
+        "Bài 88: Biểu đồ cột - Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "content",
+      "paragraphs": [
+        "Quan sát biểu đồ cột sau và trả lời câu hỏi"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "questions",
+      "paragraphs": [
+        "A. Hoa",
+        "B. Liên",
+        "C. Mai",
+        "D. Dũng",
+        "Câu 1: Bạn nào trồng được nhiều cây nhất?"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "questions",
+      "paragraphs": [
+        "A. Lan",
+        "B. Hoa",
+        "C. Liên",
+        "D. Mai",
+        "Câu 2: Bạn nào trồng ít cây nhất?"
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "questions",
+      "paragraphs": [
+        "A. 5",
+        "B. 3",
+        "C. 8",
+        "D. 4",
+        "Câu 3: Bạn Liên trồng được bao nhiêu cây?"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "questions",
+      "paragraphs": [
+        "A. 2",
+        "B. 4",
+        "C. 3",
+        "D. 5",
+        "Câu 4: Bạn Mai trồng nhiều hơn bạn Dũng bao nhiêu cây?"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "questions",
+      "paragraphs": [
+        "A. 1",
+        "B. 2",
+        "C. 3",
+        "D. 5",
+        "Câu 5: Bạn Lan và Hoa trồng được tổng cộng bao nhiêu cây ?"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "04",
+        "Quan sát biểu đồ sau rồi nói những thông tin em biết được từ biểu đồ:"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "questions",
+      "paragraphs": [
+        "04",
+        "Biểu đồ này nói về điều gì ?",
+        "Hàng ngang bên dưới cho biết gì?",
+        "Cột số bên trái cho biết gì ?",
+        "Thông tin từ biểu đồ",
+        "Biểu đồ cho biết Số huy chương của đoàn thể thao Việt Nam tại SEA Game 30.",
+        "Huy chương vàng: 98",
+        "Huy chương bạc: 85",
+        "Huy chương đồng: 105"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "04",
+        "Huy chương nhiều nhất: huy chương đồng;",
+        "Huy chương ít nhất: huy chương bạc.",
+        "Số huy chương vàng nhiều hơn số huy chương bạc: 98 – 85 = 13 (huy chương)",
+        "Số huy chương vàng ít hơn số huy chương đồng: 105 – 98 = 7 (huy chương)",
+        "Tổng số huy chương cả đoàn thể thao Việt Nam đạt được tại SEA Game 30 là: 98 + 85 +105 = 288 (huy chương)"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "05",
+        "Một cơ sở sản xuất miến dong trong 4 tháng đầu năm đã sản xuất được lượng miến dong như sau:",
+        "Tháng 1: 5 tấn",
+        "Tháng 2: 4 tấn",
+        "Tháng 3: 6 tấn",
+        "Tháng 4: 5 tấn"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "content",
+      "paragraphs": [
+        "05",
+        "a) Hoàn thiện biểu đồ sau:",
+        "Tháng 2",
+        "Tháng 4"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "questions",
+      "paragraphs": [
+        "05",
+        "b) Trả lời câu hỏi:",
+        "- Lượng miến dong cơ sở đó sản xuất được trong 4 tháng là bao nhiêu tấn?",
+        "- Trung bình, mỗi tháng cơ sở đó sản xuất được bao nhiêu tấn miến dong?",
+        "- Nếu cứ sản xuất với lượng trung bình như 4 tháng đầu năm thì cả năm cơ sở đó sản xuất được bao nhiêu tấn miến dong?",
+        "Trả lời",
+        "Lượng miến dong cơ sở đó sản xuất được trong 4 tháng:",
+        "5  4  6 5  20 (tấn)"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "content",
+      "paragraphs": [
+        "05",
+        "Trả lời",
+        "Trung bình mỗi tháng cơ sở đó sản xuất được:  (tấn)",
+        "Nếu cứ sản xuất với sản lượng trung bình thì cả năm cơ sở đó sản xuất được số lượng miến dong là:"
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em học thêm được điều gì?",
+        "+ Đọc và mô tả được các số liệu ở dạng biểu đồ cột.",
+        "+ Biết phân tích số liệu cho trên biểu đồ cột."
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 20,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước",
+        "Bài 89: Kiểm đếm số lần xuất hiện của một sự kiện"
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 22,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 2 Tuần 32",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Câu 1: Bạn nào trồng được nhiều cây nhất?",
+        "slide": 4
+      },
+      {
+        "type": "question",
+        "text": "Câu 2: Bạn nào trồng ít cây nhất?",
+        "slide": 5
+      },
+      {
+        "type": "question",
+        "text": "Câu 3: Bạn Liên trồng được bao nhiêu cây?",
+        "slide": 6
+      },
+      {
+        "type": "question",
+        "text": "Câu 4: Bạn Mai trồng nhiều hơn bạn Dũng bao nhiêu cây?",
+        "slide": 7
+      },
+      {
+        "type": "question",
+        "text": "Câu 5: Bạn Lan và Hoa trồng được tổng cộng bao nhiêu cây ?",
+        "slide": 8
+      },
+      {
+        "type": "question",
+        "text": "Biểu đồ này nói về điều gì ?",
+        "slide": 11
+      },
+      {
+        "type": "question",
+        "text": "Hàng ngang bên dưới cho biết gì?",
+        "slide": 11
+      },
+      {
+        "type": "question",
+        "text": "Cột số bên trái cho biết gì ?",
+        "slide": 11
+      },
+      {
+        "type": "question",
+        "text": "- Lượng miến dong cơ sở đó sản xuất được trong 4 tháng là bao nhiêu tấn?",
+        "slide": 16
+      },
+      {
+        "type": "question",
+        "text": "- Trung bình, mỗi tháng cơ sở đó sản xuất được bao nhiêu tấn miến dong?",
+        "slide": 16
+      },
+      {
+        "type": "question",
+        "text": "- Nếu cứ sản xuất với lượng trung bình như 4 tháng đầu năm thì cả năm cơ sở đó sản xuất được bao nhiêu tấn miến dong?",
+        "slide": 16
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em học thêm được điều gì?",
+        "slide": 18
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước",
+        "slide": 20
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

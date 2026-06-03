@@ -1,0 +1,231 @@
+{
+  "meta": {
+    "file": "w10_i001_Tuan_10_-_Bai_29_Tim_hai_so_khi_biet_tong_va_hieu_cua_hai_so_do_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w10_i001_Tuan_10_-_Bai_29_Tim_hai_so_khi_biet_tong_va_hieu_cua_hai_so_do_-_Tiet_1.pptx",
+    "slideCount": 19
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 1",
+        "Tuần 10",
+        "Bài 29: Tìm hai số khi biết tổng và hiệu của hai số đó – Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Có 18 bạn học sinh tình nguyện tham gia hoạt động bảo vệ môi trường. Biết rằng số bạn nam nhiều hơn số bạn nữ 4 bạn. Hỏi có bao nhiêu bạn nam, bao nhiêu bạn nữ?",
+        "HOẠT ĐỘNG NHÓM"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 5,
+      "type": "content",
+      "paragraphs": [
+        "Giả sử số bạn của 2 nhóm là bằng nhau, thì số người của mỗi nhóm là:",
+        "18  2  9 (bạn)",
+        "Số nam và số nữ chênh lệch nhau là 4 bạn. Nếu “ngắt bỏ” sự chênh lệch này thì số bạn của 2 nhóm cũng sẽ đều nhau. Muốn “ngắt bỏ” ta làm phép trừ, lấy 18  4, khi đó số người của mỗi nhóm là:",
+        "(18  4) 2  7 (bạn)",
+        "Số bạn nam",
+        "Số bạn nữ",
+        "4 bạn",
+        "18 bạn"
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "Tổng của hai số là 18. Hiệu của hai số là 4. Tìm hai số đó.",
+        "Số bạn nam",
+        "Số bạn nữ",
+        "4 bạn",
+        "18 bạn",
+        "Cách 1:",
+        "Nếu bớt 4 bạn nam thì số bạn nam bằng số bạn nữ. Vậy:",
+        "Số bạn nữ là: (18  4) 2  7 (bạn)",
+        "Số bạn nam là: 7  4  11 (bạn)"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "Tổng của hai số là 18. Hiệu của hai số là 4. Tìm hai số đó.",
+        "Số bạn nam",
+        "Số bạn nữ",
+        "4 bạn",
+        "18 bạn",
+        "Cách 2:",
+        "Nếu thêm 4 bạn nữ thì số bạn nữ bằng số bạn nam. Vậy:",
+        "Số bạn nam là: (18  4)  2  11 (bạn)",
+        "Số bạn nữ là: 11  4  7 (bạn)",
+        "4 bạn"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Tìm hai số khi biết tổng và hiệu của chúng lần lượt là:",
+        "Tổng hai số là 63 và hiệu của hai số là 17. Hai số cần tìm là:",
+        "Số bé là: (63  17)  2  23",
+        "Số lớn là: (63  17)  2  40",
+        "Trả lời"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Tìm hai số khi biết tổng và hiệu của chúng lần lượt là:",
+        "Tổng hai số là 29 và hiệu hai số là 21. Hai số cần tìm là:",
+        "Số bé là: (29 21)  2  4",
+        "Số lớn là: (29  21)2  25",
+        "Trả lời"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Tìm hai số khi biết tổng và hiệu của chúng lần lượt là:",
+        "Tổng của hai số là 26 và hiệu hai số là 6. Hai số cần tìm là:",
+        "Số bé là: (26  6)  2  10",
+        "Số lớn là: (26  6)  2  16",
+        "Trả lời"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Tìm hai số khi biết tổng và hiệu của chúng lần lượt là:",
+        "Tổng của hai số là 58 và hiệu của hai số là 38. Hai số cần tìm là:",
+        "Số bé là: (58 38)  2  10",
+        "Số lớn là: (58  38)  2 48",
+        "Trả lời"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Tìm hai số khi biết tổng và hiệu của chúng lần lượt là:",
+        "Muốn tìm hai số khi biết tổng và hiệu của hai số đó, ta có thể thực hiện theo một trong hai cách sau:",
+        "Cách 1: Số bé = (tổng – hiệu) : 2",
+        "Cách 2: Số lớn = (tổng + hiệu) : 2",
+        "NHẬN XÉT"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em biết thêm được điều gì?"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 17,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT"
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 19,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 1 Tuần 10",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Có 18 bạn học sinh tình nguyện tham gia hoạt động bảo vệ môi trường. Biết rằng số bạn nam nhiều hơn số bạn nữ 4 bạn. Hỏi có bao nhiêu bạn nam, bao nhiêu bạn nữ?",
+        "slide": 3
+      },
+      {
+        "type": "task",
+        "text": "Tìm hai số khi biết tổng và hiệu của chúng lần lượt là:",
+        "slide": 10
+      },
+      {
+        "type": "task",
+        "text": "Tìm hai số khi biết tổng và hiệu của chúng lần lượt là:",
+        "slide": 11
+      },
+      {
+        "type": "task",
+        "text": "Tìm hai số khi biết tổng và hiệu của chúng lần lượt là:",
+        "slide": 12
+      },
+      {
+        "type": "task",
+        "text": "Tìm hai số khi biết tổng và hiệu của chúng lần lượt là:",
+        "slide": 13
+      },
+      {
+        "type": "task",
+        "text": "Tìm hai số khi biết tổng và hiệu của chúng lần lượt là:",
+        "slide": 14
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em biết thêm được điều gì?",
+        "slide": 15
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

@@ -1,0 +1,336 @@
+{
+  "meta": {
+    "file": "w11_i003_Tuan_11_-_Bai_32_Nhan_voi_so_co_hai_chu_so_-_Tiet_2.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w11_i003_Tuan_11_-_Bai_32_Nhan_voi_so_co_hai_chu_so_-_Tiet_2.pptx",
+    "slideCount": 26
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 1",
+        "Tuần 11",
+        "Bài 32: Nhân với số có hai chữ số Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "03",
+        "Vườn dâu tây nhà chị Na có 31 luống, mỗi luống có 26 cây. Hỏi vườn dâu tây nhà chị Na có tất cả bao nhiêu cây dâu tây?",
+        "Hoạt động cặp đôi",
+        "Số cây dâu tây trong vườn dâu tây nhà chị Na là:",
+        "26  31  806 (cây)",
+        "Đáp số: 806 cây.",
+        "Bài giải"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "04",
+        "Tim một người khỏe mạnh bình thường mỗi phút đập khoảng 75 lần. Tính số lần đập của tim người đó trong 24 giờ."
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "content",
+      "paragraphs": [
+        "04",
+        "Bài giải",
+        "Số lần đập của tim trong 1 giờ là:",
+        "75  60 = 4 500 (lần)",
+        "Số lần đập của tim trong 24 giờ là:",
+        "4 500  24 = 108 000 (lần)",
+        "Đáp số: 108 000 lần."
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 7,
+      "type": "questions",
+      "paragraphs": [
+        "05",
+        "Một sân bay quốc tế trung bình mỗi giờ thực hiện 44 chuyến bay đến và đi. Hỏi mỗi ngày sân bay đó thực hiện bao nhiêu chuyến bay đến và đi?",
+        "Hoạt động cặp đôi"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "05",
+        "Bài giải",
+        "Số chuyến bay đến và đi mà mỗi ngày sân bay đó thực hiện là:",
+        "44  24 = 1 056 (chuyến)",
+        "Đáp số: 1 056 chuyến."
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "TRÒ CHƠI CUỘC ĐUA KỲ THÚ"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "10"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "Tìm phép tính có giá trị lớn nhất trong các phép tính sau:",
+        "48  12",
+        "42 18",
+        "24 18",
+        "81  24"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "questions",
+      "paragraphs": [
+        "Mai tập nhảy dây. Trong 1 phút Mai nhảy được 68 vòng. Hỏi trong 30 phút tương tự thế Mai nhảy được bao nhiêu vòng dây?",
+        "680 vòng.",
+        "3 030 vòng.",
+        "2 680 vòng.",
+        "2 040 vòng."
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "questions",
+      "paragraphs": [
+        "Tìm kết quả của phép tính sau: 17  14 = ?",
+        "248.",
+        "428.",
+        "348.",
+        "238."
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "questions",
+      "paragraphs": [
+        "Một trường học có 20 lớp, mỗi lớp đều có 45 học sinh. Hỏi trường học có tất cả bao nhiêu học sinh?",
+        "200 học sinh.",
+        "450 học sinh.",
+        "900 học sinh.",
+        "650 học sinh."
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "questions",
+      "paragraphs": [
+        "Bé Mai có 20 túi kẹo, mỗi túi kẹo có 40 cái kẹo. Hỏi bé Mai có tất cả bao nhiêu cái kẹo?",
+        "80 cái kẹo.",
+        "800 cái kẹo.",
+        "400 cái kẹo.",
+        "40 cái kẹo."
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "questions",
+      "paragraphs": [
+        "Vườn táo nhà cô Mai có 20 luống, mỗi luống có 30 cây. Hỏi vườn táo nhà cô Mai có tất cả bao nhiêu cây?",
+        "320 cây.",
+        "50 cây.",
+        "230 cây.",
+        "600 cây."
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "questions",
+      "paragraphs": [
+        "Tính giá trị biểu thức sau:",
+        "3  (110  13)  0 ?",
+        "3.",
+        "0.",
+        "3 030.",
+        "3 300."
+      ]
+    },
+    {
+      "slideNo": 18,
+      "type": "questions",
+      "paragraphs": [
+        "Tại bể bơi có chiều dài 25m, một vận động viên đã bơi được 50 vòng dọc theo chiều dài của bể. Hỏi vận động viên đó đã bơi được quãng đường dài bao nhiêu mét?",
+        "1 025 m.",
+        "2 150 m.",
+        "1 502 m.",
+        "1 250 m."
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "questions",
+      "paragraphs": [
+        "Tính giá trị biểu thức sau:",
+        "1 234  100  50 = ?",
+        "6 432.",
+        "6 234.",
+        "6 532.",
+        "6 324."
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "content",
+      "paragraphs": [
+        "Gấp 67 lần số 482 ta được số:",
+        "10",
+        "34 392.",
+        "33 294.",
+        "39 432.",
+        "32 294."
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 22,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em biết thêm được điều gì?"
+      ]
+    },
+    {
+      "slideNo": 23,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 24,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước",
+        "Bài 33: Luyện tập"
+      ]
+    },
+    {
+      "slideNo": 25,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 26,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 1 Tuần 11",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Vườn dâu tây nhà chị Na có 31 luống, mỗi luống có 26 cây. Hỏi vườn dâu tây nhà chị Na có tất cả bao nhiêu cây dâu tây?",
+        "slide": 3
+      },
+      {
+        "type": "question",
+        "text": "Một sân bay quốc tế trung bình mỗi giờ thực hiện 44 chuyến bay đến và đi. Hỏi mỗi ngày sân bay đó thực hiện bao nhiêu chuyến bay đến và đi?",
+        "slide": 7
+      },
+      {
+        "type": "task",
+        "text": "Tìm phép tính có giá trị lớn nhất trong các phép tính sau:",
+        "slide": 11
+      },
+      {
+        "type": "question",
+        "text": "Mai tập nhảy dây. Trong 1 phút Mai nhảy được 68 vòng. Hỏi trong 30 phút tương tự thế Mai nhảy được bao nhiêu vòng dây?",
+        "slide": 12
+      },
+      {
+        "type": "question",
+        "text": "Tìm kết quả của phép tính sau: 17  14 = ?",
+        "slide": 13
+      },
+      {
+        "type": "question",
+        "text": "Một trường học có 20 lớp, mỗi lớp đều có 45 học sinh. Hỏi trường học có tất cả bao nhiêu học sinh?",
+        "slide": 14
+      },
+      {
+        "type": "question",
+        "text": "Bé Mai có 20 túi kẹo, mỗi túi kẹo có 40 cái kẹo. Hỏi bé Mai có tất cả bao nhiêu cái kẹo?",
+        "slide": 15
+      },
+      {
+        "type": "question",
+        "text": "Vườn táo nhà cô Mai có 20 luống, mỗi luống có 30 cây. Hỏi vườn táo nhà cô Mai có tất cả bao nhiêu cây?",
+        "slide": 16
+      },
+      {
+        "type": "task",
+        "text": "Tính giá trị biểu thức sau:",
+        "slide": 17
+      },
+      {
+        "type": "question",
+        "text": "3  (110  13)  0 ?",
+        "slide": 17
+      },
+      {
+        "type": "question",
+        "text": "Tại bể bơi có chiều dài 25m, một vận động viên đã bơi được 50 vòng dọc theo chiều dài của bể. Hỏi vận động viên đó đã bơi được quãng đường dài bao nhiêu mét?",
+        "slide": 18
+      },
+      {
+        "type": "task",
+        "text": "Tính giá trị biểu thức sau:",
+        "slide": 19
+      },
+      {
+        "type": "question",
+        "text": "1 234  100  50 = ?",
+        "slide": 19
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em biết thêm được điều gì?",
+        "slide": 22
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước",
+        "slide": 24
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

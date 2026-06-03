@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "file": "w02_i002_Tuan_2_-_Bai_viet_3_Luyen_tap_viet_doan_van_ve_mot_nhan_vat.pptx",
+    "subject": "tieng-viet",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-viet\\slides\\w02_i002_Tuan_2_-_Bai_viet_3_Luyen_tap_viet_doan_van_ve_mot_nhan_vat.pptx",
+    "slideCount": 12
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TIẾNG VIỆT 4",
+        "Tập 1",
+        "Tuần 2",
+        "Bài viết 3: Luyện tập viết đoạn văn về một nhân vật"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy nhắc lại dàn ý (cách sắp xếp ý) trong một đoạn văn về một nhân vật."
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 5,
+      "type": "activity",
+      "paragraphs": [
+        "HOẠT ĐỘNG 1. CHUẨN BỊ VIẾT",
+        "NHẮC LẠI KIẾN THỨC",
+        "Em hãy nhắc lại quy tắc bàn tay để xác định những việc cần làm khi viết đoạn văn về một nhân vật."
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy trình bày lại kết quả tìm ý và sắp xếp ý ở tiết trước"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "activity",
+      "paragraphs": [
+        "HOẠT ĐỘNG 2. VIẾT ĐOẠN VĂN",
+        "Em hãy viết đoạn văn nêu cảm nghĩ về một nhân vật trong một câu chuyện mà em yêu thích hoặc đã học."
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "activity",
+      "paragraphs": [
+        "HOẠT ĐỘNG 3. GIỚI THIỆU, CHỈNH SỬA BÀI VIẾT",
+        "Em hãy đọc đoạn văn của mình cho cả lớp nghe"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "Hoàn thiện bài viết sau khi chỉnh sửa",
+        "Chuẩn bị",
+        "Trao đổi: Chân dung của em, của bạn"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TIẾNG VIỆT 4 Tập 1 Tuần 2",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Em hãy nhắc lại dàn ý (cách sắp xếp ý) trong một đoạn văn về một nhân vật.",
+        "slide": 3
+      },
+      {
+        "type": "task",
+        "text": "Em hãy nhắc lại quy tắc bàn tay để xác định những việc cần làm khi viết đoạn văn về một nhân vật.",
+        "slide": 5
+      },
+      {
+        "type": "task",
+        "text": "Em hãy trình bày lại kết quả tìm ý và sắp xếp ý ở tiết trước",
+        "slide": 6
+      },
+      {
+        "type": "task",
+        "text": "Em hãy viết đoạn văn nêu cảm nghĩ về một nhân vật trong một câu chuyện mà em yêu thích hoặc đã học.",
+        "slide": 7
+      },
+      {
+        "type": "task",
+        "text": "Em hãy đọc đoạn văn của mình cho cả lớp nghe",
+        "slide": 8
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

@@ -1,0 +1,284 @@
+{
+  "items": [
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/am-nhac/worksheets/02_TL_tap_huan_SGK_Am_nhac_4_ban_PDF.pdf",
+      "kind": "pdf",
+      "meta": {
+        "source": "hoc10",
+        "subject": "am-nhac",
+        "category": "worksheets"
+      },
+      "textChars": 37396
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/am-nhac/worksheets/04_Gioi_thieu_SGK_Am_nhac_4_ban_word.docx",
+      "kind": "docx",
+      "meta": {
+        "source": "hoc10",
+        "subject": "am-nhac",
+        "category": "worksheets"
+      },
+      "textChars": 5735
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/cong-nghe/worksheets/02_TL_tap_huan_SGK_Cong_nghe_4_ban_PDF.pdf",
+      "kind": "pdf",
+      "meta": {
+        "source": "hoc10",
+        "subject": "cong-nghe",
+        "category": "worksheets"
+      },
+      "textChars": 60441
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/cong-nghe/worksheets/04_Gioi_thieu_SGK_Cong_nghe_4_ban_word.docx",
+      "kind": "docx",
+      "meta": {
+        "source": "hoc10",
+        "subject": "cong-nghe",
+        "category": "worksheets"
+      },
+      "textChars": 4902
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/dao-duc/worksheets/02_TL_tap_huan_SGK_ao_uc_4_ban_PDF.pdf",
+      "kind": "pdf",
+      "meta": {
+        "source": "hoc10",
+        "subject": "dao-duc",
+        "category": "worksheets"
+      },
+      "textChars": 62388
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/giao-duc-the-chat/worksheets/02_TL_tap_huan_SGK_GD_the_chat_4_ban_PDF.pdf",
+      "kind": "pdf",
+      "meta": {
+        "source": "hoc10",
+        "subject": "giao-duc-the-chat",
+        "category": "worksheets"
+      },
+      "textChars": 44121
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/giao-duc-the-chat/worksheets/04_Gioi_thieu_SGK_GD_the_chat_4_ban_word.docx",
+      "kind": "docx",
+      "meta": {
+        "source": "hoc10",
+        "subject": "giao-duc-the-chat",
+        "category": "worksheets"
+      },
+      "textChars": 7933
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/hoat-dong-trai-nghiem/worksheets/02_TL_tap_huan_SGK_H_TN_4_ban_PDF.pdf",
+      "kind": "pdf",
+      "meta": {
+        "source": "hoc10",
+        "subject": "hoat-dong-trai-nghiem",
+        "category": "worksheets"
+      },
+      "textChars": 67172
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/hoat-dong-trai-nghiem/worksheets/04_Gioi_thieu_SGK_H_TN_4_ban_word.docx",
+      "kind": "docx",
+      "meta": {
+        "source": "hoc10",
+        "subject": "hoat-dong-trai-nghiem",
+        "category": "worksheets"
+      },
+      "textChars": 8936
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/khoa-hoc/worksheets/02_TL_tap_huan_SGK_Khoa_hoc_4_ban_PDF.pdf",
+      "kind": "pdf",
+      "meta": {
+        "source": "hoc10",
+        "subject": "khoa-hoc",
+        "category": "worksheets"
+      },
+      "textChars": 37794
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/khoa-hoc/worksheets/04_Gioi_thieu_SGK_Khoa_hoc_4_ban_word.docx",
+      "kind": "docx",
+      "meta": {
+        "source": "hoc10",
+        "subject": "khoa-hoc",
+        "category": "worksheets"
+      },
+      "textChars": 6703
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/lich-su-va-dia-li/worksheets/02_TL_tap_huan_SGK_LS_va_L_4_Ban_PDF.pdf",
+      "kind": "pdf",
+      "meta": {
+        "source": "hoc10",
+        "subject": "lich-su-va-dia-li",
+        "category": "worksheets"
+      },
+      "textChars": 104898
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/lich-su-va-dia-li/worksheets/04_Gioi_thieu_SGK_LS_va_L_4_ban_word.docx",
+      "kind": "docx",
+      "meta": {
+        "source": "hoc10",
+        "subject": "lich-su-va-dia-li",
+        "category": "worksheets"
+      },
+      "textChars": 8659
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/mi-thuat/worksheets/02_TL_tap_huan_SGK_Mi_thuat_4_ban_PDF.pdf",
+      "kind": "pdf",
+      "meta": {
+        "source": "hoc10",
+        "subject": "mi-thuat",
+        "category": "worksheets"
+      },
+      "textChars": 66933
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/mi-thuat/worksheets/04_Gioi_thieu_SGK_Mi_thuat_4_ban_word.docx",
+      "kind": "docx",
+      "meta": {
+        "source": "hoc10",
+        "subject": "mi-thuat",
+        "category": "worksheets"
+      },
+      "textChars": 3033
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/tieng-anh/worksheets/02_TL_tap_huan_SGK_Tieng_Anh_4_ban_PDF.pdf",
+      "kind": "pdf",
+      "meta": {
+        "source": "hoc10",
+        "subject": "tieng-anh",
+        "category": "worksheets"
+      },
+      "textChars": 155380
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/tieng-anh/worksheets/03_Thu_lien_lac_gia_inh_va_nha_truong.pdf",
+      "kind": "pdf",
+      "meta": {
+        "source": "hoc10",
+        "subject": "tieng-anh",
+        "category": "worksheets"
+      },
+      "textChars": 3360
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/tieng-anh/worksheets/04_Gioi_thieu_SGK_Tieng_Anh_4_ban_word.docx",
+      "kind": "docx",
+      "meta": {
+        "source": "hoc10",
+        "subject": "tieng-anh",
+        "category": "worksheets"
+      },
+      "textChars": 21983
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/tieng-anh/worksheets/04_Graphic_organizer.pdf",
+      "kind": "pdf",
+      "meta": {
+        "source": "hoc10",
+        "subject": "tieng-anh",
+        "category": "worksheets"
+      },
+      "textChars": 12309
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/tieng-anh/worksheets/10_Flash_cards.pdf",
+      "kind": "pdf",
+      "meta": {
+        "source": "hoc10",
+        "subject": "tieng-anh",
+        "category": "worksheets"
+      },
+      "textChars": 20059
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/tieng-anh/worksheets/20_Phan_phoi_chuong_trinh.pdf",
+      "kind": "pdf",
+      "meta": {
+        "source": "hoc10",
+        "subject": "tieng-anh",
+        "category": "worksheets"
+      },
+      "textChars": 4783
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/tieng-viet/worksheets/00_Gioi_thieu_bo_SGK_Canh_Dieu_lop_4.pdf",
+      "kind": "pdf",
+      "meta": {
+        "source": "hoc10",
+        "subject": "tieng-viet",
+        "category": "worksheets"
+      },
+      "textChars": 73222
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/tieng-viet/worksheets/02_TL_tap_huan_SGK_Tieng_Viet_4_ban_PDF.pdf",
+      "kind": "pdf",
+      "meta": {
+        "source": "hoc10",
+        "subject": "tieng-viet",
+        "category": "worksheets"
+      },
+      "textChars": 91441
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/tieng-viet/worksheets/04_Gioi_thieu_SGK_Tieng_Viet_4_ban_word.docx",
+      "kind": "docx",
+      "meta": {
+        "source": "hoc10",
+        "subject": "tieng-viet",
+        "category": "worksheets"
+      },
+      "textChars": 5336
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/tin-hoc/worksheets/02_TL_tap_huan_SGK_Tin_hoc_4_ban_PDF.pdf",
+      "kind": "pdf",
+      "meta": {
+        "source": "hoc10",
+        "subject": "tin-hoc",
+        "category": "worksheets"
+      },
+      "textChars": 142493
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/tin-hoc/worksheets/04_Gioi_thieu_SGK_Tin_hoc_4_ban_word.docx",
+      "kind": "docx",
+      "meta": {
+        "source": "hoc10",
+        "subject": "tin-hoc",
+        "category": "worksheets"
+      },
+      "textChars": 26312
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/toan/worksheets/02_TL_tap_huan_SGK_Toan_4_ban_PDF.pdf",
+      "kind": "pdf",
+      "meta": {
+        "source": "hoc10",
+        "subject": "toan",
+        "category": "worksheets"
+      },
+      "textChars": 52799
+    },
+    {
+      "path": "docs/research/official-sources/downloads/hoc10/lop4/toan/worksheets/04_Gioi_thieu_SGK_Toan_4_ban_word.docx",
+      "kind": "docx",
+      "meta": {
+        "source": "hoc10",
+        "subject": "toan",
+        "category": "worksheets"
+      },
+      "textChars": 3613
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+{
+  "meta": {
+    "file": "w29_i000_Chu_de_F_-_Bai_3._Tao_chuong_trinh_co_phong_nen_thay_doi.pptx",
+    "subject": "tin-hoc",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tin-hoc\\slides\\w29_i000_Chu_de_F_-_Bai_3._Tao_chuong_trinh_co_phong_nen_thay_doi.pptx",
+    "slideCount": 25
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "Tin học 4",
+        "Chủ đề F",
+        "Làm quen với lập trình trực quan",
+        "Bài 3: Tạo chương trình có phông nền thay đổi"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Vùng Sân khấu của một chương trình ở Hình 1 có khác gì so với vùng Sân khấu khi vừa kích hoạt môi trường lập trình Scratch?"
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "Vùng Sân khấu của một chương trình ở Hình 1 có phông nền khác với vùng sân khấu khi vừa kích hoạt môi trường lập trình Scratch:",
+        "Vùng sân khấu ở hình 1 là một bãi biển.",
+        "Vùng sân khấu khi vừa kích hoạt môi trường lập trình Scratch có phông nền màu trắng."
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "1. Thêm, đổi tên phông nền",
+        "Các bước để thêm phông nền Beach Malibu, sau đó đổi tên Beach Malibu thành Biển:",
+        "Để có thể thay đổi tên phông nền thì cần đổi màn hình hiển thị vùng Lập trình sang màn hình danh sách phông nền."
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "questions",
+      "paragraphs": [
+        "1. Thêm, đổi tên phông nền",
+        "Khi nháy chuột vào từng ảnh phông nền Biển, Bắc cực, em quan sát phông nền trên vùng Sân khấu thay đổi như thế nào?"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "questions",
+      "paragraphs": [
+        "1. Thêm, đổi tên phông nền",
+        "Khi nháy chuột vào từng ảnh phông nền Biển, Bắc cực, em quan sát phông nền trên vùng Sân khấu thay đổi như thế nào?",
+        "Phông nền vùng sân khấu từ màu trắng thành phông nền Biển, sau đó sang phông Bắc cực."
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Địa điểm yêu thích",
+        "Các bước tạo một chương trình có phông nền thay đổi:",
+        "Bước 1: Tìm hiểu yêu cầu."
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Địa điểm yêu thích",
+        "Các bước tạo một chương trình có phông nền thay đổi:",
+        "Bước 1: Tìm hiểu yêu cầu.",
+        "Bước 2: Tìm hiểu kịch bản."
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Địa điểm yêu thích",
+        "Các bước tạo một chương trình có phông nền thay đổi:",
+        "Bước 3: Thêm phông nền Biển, Bắc cực.",
+        "Bước 4: Lập trình cho nhân vật Mèo theo hướng dẫn (hình 5)."
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Địa điểm yêu thích",
+        "Quan sát chạy thử chương trình Địa điểm yêu thích",
+        "Yêu cầu chương trình: Khi nháy chuột vào    , nhân vật Mèo trên Sân khấu thực hiện lần lượt ba bóng nói: “Xin chào!”, “Tớ thích biển nhất!”, “Và thích cả Bắc cực nữa!”. Khi hiển thị bóng nói về địa điểm nào đó phông nền sẽ đổi sang ảnh địa điểm đó."
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Địa điểm yêu thích",
+        "Phân tích hoạt động của nhân vật và cùng đưa ra kịch bản."
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Địa điểm yêu thích",
+        "Hoạt động của nhân vật: nhân vật Mèo trên Sân khấu thực hiện lần lượt ba bóng nói: “Xin chào!”, “Tớ thích biển nhất!”, “Và thích cả Bắc cực nữa!”. Khi hiển thị bóng nói về địa điểm nào đó thì phông nền sẽ thay đổi sang ảnh địa điểm đó."
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Địa điểm yêu thích",
+        "Kịch bản: Khi nháy chuột vào    , chương trình thực hiện lần lượt các hoạt động sau:",
+        "1. Nhân vật Mèo hiển thị bóng nói “Xin chào!”.",
+        "2. Đổi phông nền thành Biển.",
+        "3. Nhân vật Mèo hiển thị bóng nói “Tớ thích biển nhất” trong 3 giây."
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "content",
+      "paragraphs": [
+        "2. Tạo chương trình Địa điểm yêu thích",
+        "Kịch bản: Khi nháy chuột vào    , chương trình thực hiện lần lượt các hoạt động sau:",
+        "4. Đổi phông nền thành Bắc cực.",
+        "5. Nhân vật Mèo hiển thị bóng nói “Và thích cả Bắc cực nữa!” trong 3 giây."
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 18,
+      "type": "questions",
+      "paragraphs": [
+        "Ở màn hình môi trường lập trình Scratch, vùng nào dùng để thêm phông nền?",
+        "Bài 1",
+        "Để đổi phông nền ở vùng Sân khấu sang phông nền có tên là Biển rồi hiện bóng nói “Tớ thích biển nhất!”, em phải chọn và ghép theo thứ tự các lệnh nào?",
+        "Bài 2"
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "content",
+      "paragraphs": [
+        "Vùng Phông nền.",
+        "Bài 1",
+        "Thứ tự các lệnh:",
+        "Bài 2"
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 21,
+      "type": "questions",
+      "paragraphs": [
+        "Thêm 2 phông nền đặt tên",
+        "là “Pool”, “Basketball” và lập",
+        "trình cho nhân vật như sau:",
+        "Em hãy tạo chương trình mà khi nháy chuột vào     nhân vật Mèo hiển thị bóng nói giới thiệu hai hoạt động thể thao với phông nền minh họa."
+      ]
+    },
+    {
+      "slideNo": 22,
+      "type": "theory",
+      "paragraphs": [
+        "Em có thể thêm nhiều ảnh phông nền vào chương trình Scratch.",
+        "Lệnh                     cho phép em lập trình thay đổi phông nền theo tên.",
+        "GHI NHỚ"
+      ]
+    },
+    {
+      "slideNo": 23,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "Ôn lại các kiến thức đã học ở Bài 3.",
+        "02",
+        "Đọc và chuẩn bị trước Bài 4: Tạo chương trình có nhiều nhân vật"
+      ]
+    },
+    {
+      "slideNo": 24,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 25,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "Tin học 4 Chủ đề F Làm quen với lập trình trực quan",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Vùng Sân khấu của một chương trình ở Hình 1 có khác gì so với vùng Sân khấu khi vừa kích hoạt môi trường lập trình Scratch?",
+        "slide": 3
+      },
+      {
+        "type": "question",
+        "text": "Khi nháy chuột vào từng ảnh phông nền Biển, Bắc cực, em quan sát phông nền trên vùng Sân khấu thay đổi như thế nào?",
+        "slide": 7
+      },
+      {
+        "type": "question",
+        "text": "Khi nháy chuột vào từng ảnh phông nền Biển, Bắc cực, em quan sát phông nền trên vùng Sân khấu thay đổi như thế nào?",
+        "slide": 8
+      },
+      {
+        "type": "question",
+        "text": "Ở màn hình môi trường lập trình Scratch, vùng nào dùng để thêm phông nền?",
+        "slide": 18
+      },
+      {
+        "type": "question",
+        "text": "Để đổi phông nền ở vùng Sân khấu sang phông nền có tên là Biển rồi hiện bóng nói “Tớ thích biển nhất!”, em phải chọn và ghép theo thứ tự các lệnh nào?",
+        "slide": 18
+      },
+      {
+        "type": "task",
+        "text": "Em hãy tạo chương trình mà khi nháy chuột vào     nhân vật Mèo hiển thị bóng nói giới thiệu hai hoạt động thể thao với phông nền minh họa.",
+        "slide": 21
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước Bài 4: Tạo chương trình có nhiều nhân vật",
+        "slide": 23
+      }
+    ],
+    "vocab": [],
+    "keyPoints": [
+      "Em có thể thêm nhiều ảnh phông nền vào chương trình Scratch.",
+      "Lệnh                     cho phép em lập trình thay đổi phông nền theo tên."
+    ]
+  }
+}

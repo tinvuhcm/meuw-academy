@@ -1,0 +1,391 @@
+{
+  "meta": {
+    "file": "w11_i002_Chu_de_2_-_Bai_11._Su_truyen_nhiet_Tiet_1.pptx",
+    "subject": "khoa-hoc",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\khoa-hoc\\slides\\w11_i002_Chu_de_2_-_Bai_11._Su_truyen_nhiet_Tiet_1.pptx",
+    "slideCount": 31
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "Khoa học 4",
+        "Bài 11. Sự truyền nhiệt (Tiết 1)",
+        "Chủ đề 2",
+        "Năng lượng"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "content",
+      "paragraphs": [
+        "Khoanh tròn vào các vật tỏa ra nhiệt trong bức tranh dưới đây."
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "questions",
+      "paragraphs": [
+        "Mức độ nóng lạnh của nước trong cốc và nước trong chậu thay đổi như thế nào?",
+        "Quan sát Hình 1 và em hãy dự đoán:"
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 6,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "NHIỆT ĐỘ"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "Nhiệt độ cho biết mức độ nóng hay lạnh của vật.",
+        "Vật nóng hơn có nhiệt độ cao hơn, vật lạnh hơn có nhiệt độ thấp hơn."
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "So sánh nhiệt độ của các cốc nước trong hình 2. Giải thích.",
+        "&lt;",
+        "&lt;"
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "Giải thích",
+        "Lạnh nhất nên có nhiệt độ thấp nhất.",
+        "Nhiệt độ bình thường vì không có gì tác động vào nó.",
+        "Nóng nhất nên có nhiệt độ cao nhất."
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "questions",
+      "paragraphs": [
+        "Em có biết?",
+        "Nhiệt độ của hơi nước đang sôi là 100°C, của nước đá đang tan là 0°C.",
+        "Nhiệt độ cơ thể người khi bình thường vào khoảng 37°C. Nhiệt độ cơ thể dưới 36°C hoặc trên 38°C là biểu hiện không bình thường, cần phải đi khám vàchữa bệnh."
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "questions",
+      "paragraphs": [
+        "Khi nào nhiệt độ cao hơn trong mỗi trường hợp sau đây?",
+        "(1) Nhiệt độ nước lúc chưa đun và khi đun sôi.",
+        "(2) Nhiệt độ người khi khoẻ mạnh và khi sốt.",
+        "(3) Nhiệt độ ngoài trời ở một nơi vào buổi sáng sớm và vào buổi trưa nắng."
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "questions",
+      "paragraphs": [
+        "Khi bị ốm, sốt có cảm giác như thế nào? Làm gì khi bị ốm, sốt?",
+        "Một số biểu hiện khi bị ốm, sốt",
+        "Mệt mỏi",
+        "Nóng, lạnh",
+        "thất thường",
+        "Đau đầu",
+        "Đau họng, ho"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "Cách xử trí khi bị ốm, sốt",
+        "Nghỉ ngơi",
+        "Cặp nhiệt độ",
+        "Chườm khăn",
+        "Uống thuốc",
+        "Khám bác sĩ"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "content",
+      "paragraphs": [
+        "02",
+        "NHIỆT KẾ"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "questions",
+      "paragraphs": [
+        "Quan sát các hình 3 - 7:",
+        "Nêu mục đích sử dụng của mỗi loại nhiệt kế trong các hình bên.",
+        "Mỗi nhiệt kế trong hình chỉ bao nhiêu độ? Số chỉ của nhiệt kế cho em biết điều gì?"
+      ]
+    },
+    {
+      "slideNo": 16,
+      "type": "content",
+      "paragraphs": [
+        "Ý nghĩa của số chỉ nhiệt kế",
+        "Số chỉ của nhiệt kế cho em biết nhiệt độ thực tế của vật được đo nhiệt độ."
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 18,
+      "type": "content",
+      "paragraphs": [
+        "1. Đo nhiệt độ không khí trong phòng",
+        "Chọn nhiệt kế đo nhiệt độ không khí (hình 6).",
+        "Đo nhiệt độ phòng. Mắt nhìn ngang với mực chất lỏng trong nhiệt kế để xem mực chất lỏng ứng với vạch nào.",
+        "Đọc và ghi lại kết quả.",
+        "Thực hiện nhóm 4HS",
+        "Sử dụng nhiệt kế"
+      ]
+    },
+    {
+      "slideNo": 19,
+      "type": "questions",
+      "paragraphs": [
+        "Lưu ý",
+        "Khi đọc, cần nhìn mức chất lỏng trong ống theo phương vuông góc với ống nhiệt kế.",
+        "Trên hình nhiệt kế chỉ giá trị bao nhiêu?",
+        "28oC",
+        "1. Đo nhiệt độ không khí trong phòng",
+        "Thực hiện nhóm 4HS",
+        "Sử dụng nhiệt kế"
+      ]
+    },
+    {
+      "slideNo": 20,
+      "type": "questions",
+      "paragraphs": [
+        "2. Đo nhiệt độ cơ thể",
+        "Thực hiện nhóm đôi",
+        "Em biết những loại nhiệt kế nào để đo nhiệt độ cơ thể? Cách sử dụng nhiệt kế đó như thế nào?",
+        "Nhiệt kế điện tử",
+        "Nhiệt kế thủy ngân",
+        "Dựa vào số chỉ của nhiệt kế để đọc kết quả.",
+        "Sử dụng nhiệt kế"
+      ]
+    },
+    {
+      "slideNo": 21,
+      "type": "content",
+      "paragraphs": [
+        "Chọn nhiệt kế điện tử.",
+        "Đo nhiệt độ cơ thể:",
+        "Bật nguồn.",
+        "Đưa đầu nhiệt kế lên gần trước trán.",
+        "Bấm nút để đo nhiệt độ.",
+        "Đọc và ghi lại kết quả.",
+        "2. Đo nhiệt độ cơ thể",
+        "Thực hiện nhóm đôi",
+        "Sử dụng nhiệt kế"
+      ]
+    },
+    {
+      "slideNo": 22,
+      "type": "content",
+      "paragraphs": [
+        "VÒNG QUAY",
+        "MAY MẮN"
+      ]
+    },
+    {
+      "slideNo": 23,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 1: Nhiệt độ cho ta biết điều gì?",
+        "D. Mức độ nóng, lạnh của vật",
+        "B. Độ nặng, nhẹ của vật",
+        "C. Độ cao, thấp của vật",
+        "A. Độ dài, ngắn của vật"
+      ]
+    },
+    {
+      "slideNo": 24,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 2: Dụng cụ đo nhiệt độ là",
+        "A. Vôn kế",
+        "B. Tốc kế",
+        "C. Nhiệt kế",
+        "D. Lực kế"
+      ]
+    },
+    {
+      "slideNo": 25,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 3: Nhiệt độ trung bình của cơ thể người khỏe mạnh là khoảng bao nhiêu độ?",
+        "A. 36oC",
+        "B. 37oC",
+        "C. 38oC",
+        "D. 39oC"
+      ]
+    },
+    {
+      "slideNo": 26,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 4: Nhiệt độ của nước đang sôi là:",
+        "A. 100oC",
+        "B. 150oC",
+        "C. 50oC",
+        "D. 25oC"
+      ]
+    },
+    {
+      "slideNo": 27,
+      "type": "questions",
+      "paragraphs": [
+        "Câu 5: Loại nhiệt kế nào sau đây sử dụng bóng đèn chứa",
+        "đầy cồn làm cảm biến nhiệt độ?",
+        "A. Nhiệt kế hồng ngoại",
+        "B. Nhiệt kế rượu",
+        "C. Nhiệt kế thủy ngân",
+        "D. Nhiệt kế điện tử"
+      ]
+    },
+    {
+      "slideNo": 28,
+      "type": "content",
+      "paragraphs": [
+        "Tổng kết",
+        "01",
+        "02",
+        "Nhiệt độ cho biết mức độ nóng hay lạnh của một vật.",
+        "Nhiệt kế dùng để đo nhiệt độ."
+      ]
+    },
+    {
+      "slideNo": 29,
+      "type": "content",
+      "paragraphs": [
+        "HƯỚNG DẪN VỀ NHÀ",
+        "01",
+        "02",
+        "Ôn lại kiến thức đã học trong bài",
+        "Tìm hiểu sự truyền nhiệt của vật để chuẩn bị cho tiết học tiếp theo"
+      ]
+    },
+    {
+      "slideNo": 30,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 31,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "Khoa học 4 Bài 11. Sự truyền nhiệt (Tiết 1) Chủ đề 2",
+    "questions": [
+      {
+        "type": "question",
+        "text": "Mức độ nóng lạnh của nước trong cốc và nước trong chậu thay đổi như thế nào?",
+        "slide": 4
+      },
+      {
+        "type": "task",
+        "text": "So sánh nhiệt độ của các cốc nước trong hình 2. Giải thích.",
+        "slide": 8
+      },
+      {
+        "type": "question",
+        "text": "Khi nào nhiệt độ cao hơn trong mỗi trường hợp sau đây?",
+        "slide": 11
+      },
+      {
+        "type": "question",
+        "text": "Khi bị ốm, sốt có cảm giác như thế nào? Làm gì khi bị ốm, sốt?",
+        "slide": 12
+      },
+      {
+        "type": "question",
+        "text": "Mỗi nhiệt kế trong hình chỉ bao nhiêu độ? Số chỉ của nhiệt kế cho em biết điều gì?",
+        "slide": 15
+      },
+      {
+        "type": "task",
+        "text": "Chọn nhiệt kế đo nhiệt độ không khí (hình 6).",
+        "slide": 18
+      },
+      {
+        "type": "task",
+        "text": "Đọc và ghi lại kết quả.",
+        "slide": 18
+      },
+      {
+        "type": "question",
+        "text": "Trên hình nhiệt kế chỉ giá trị bao nhiêu?",
+        "slide": 19
+      },
+      {
+        "type": "question",
+        "text": "Em biết những loại nhiệt kế nào để đo nhiệt độ cơ thể? Cách sử dụng nhiệt kế đó như thế nào?",
+        "slide": 20
+      },
+      {
+        "type": "task",
+        "text": "Chọn nhiệt kế điện tử.",
+        "slide": 21
+      },
+      {
+        "type": "task",
+        "text": "Đọc và ghi lại kết quả.",
+        "slide": 21
+      },
+      {
+        "type": "question",
+        "text": "Câu 1: Nhiệt độ cho ta biết điều gì?",
+        "slide": 23
+      },
+      {
+        "type": "question",
+        "text": "Câu 3: Nhiệt độ trung bình của cơ thể người khỏe mạnh là khoảng bao nhiêu độ?",
+        "slide": 25
+      },
+      {
+        "type": "question",
+        "text": "đầy cồn làm cảm biến nhiệt độ?",
+        "slide": 27
+      },
+      {
+        "type": "task",
+        "text": "Tìm hiểu sự truyền nhiệt của vật để chuẩn bị cho tiết học tiếp theo",
+        "slide": 29
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

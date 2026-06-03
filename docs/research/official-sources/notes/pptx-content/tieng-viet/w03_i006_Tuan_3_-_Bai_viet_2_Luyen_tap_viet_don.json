@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "file": "w03_i006_Tuan_3_-_Bai_viet_2_Luyen_tap_viet_don.pptx",
+    "subject": "tieng-viet",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\tieng-viet\\slides\\w03_i006_Tuan_3_-_Bai_viet_2_Luyen_tap_viet_don.pptx",
+    "slideCount": 13
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TIẾNG VIỆT 4",
+        "Tập 1",
+        "Tuần 3",
+        "Bài viết 2: Luyện tập viết đơn"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 3,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy nêu cấu tạo của đơn."
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 5,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 6,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy trình bày những bước để viết một lá đơn.",
+        "Viết đơn gửi cho ai?",
+        "Tìm ý",
+        "Sắp xếp ý",
+        "Chỉnh sửa và hoàn thiện đơn"
+      ]
+    },
+    {
+      "slideNo": 7,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "content",
+      "paragraphs": [
+        "Dựa vào nội dung đã chuẩn bị ở bài viết 1, viết một lá đơn theo 1 trong 3 đề sau:",
+        "Viết đơn xin tham gia một hoạt động học tập (hoặc lao động, thể thao, văn nghệ).",
+        "Viết đơn xin nghỉ học vì lí do sức khỏe hoặc lí do khác.",
+        "Viết đơn xin trình bày nguyện vọng của tổ hoặc lớp em."
+      ]
+    },
+    {
+      "slideNo": 9,
+      "type": "questions",
+      "paragraphs": [
+        "Em hãy đọc bài viết của mình cho cả lớp nghe"
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "content",
+      "paragraphs": [
+        "Ấn để đến trang sách"
+      ]
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "Tìm đọc thêm một số câu chuyện liên quan đến chủ điểm Chân dung của em",
+        "Chuẩn bị bài:Bài đọc 3: Cô giáo nhỏ"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "Để kết nối cộng đồng giáo viên và nhận thêm nhiều tài liệu giảng dạy,",
+        "mời quý thầy cô tham gia Group Facebook",
+        "theo đường link:",
+        "Hoc10 – Đồng hành cùng giáo viên tiểu học",
+        "Hoặc truy cập qua QR code"
+      ]
+    }
+  ],
+  "extracted": {
+    "title": "TIẾNG VIỆT 4 Tập 1 Tuần 3",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Em hãy nêu cấu tạo của đơn.",
+        "slide": 3
+      },
+      {
+        "type": "task",
+        "text": "Em hãy trình bày những bước để viết một lá đơn.",
+        "slide": 6
+      },
+      {
+        "type": "question",
+        "text": "Viết đơn gửi cho ai?",
+        "slide": 6
+      },
+      {
+        "type": "task",
+        "text": "Viết đơn xin tham gia một hoạt động học tập (hoặc lao động, thể thao, văn nghệ).",
+        "slide": 8
+      },
+      {
+        "type": "task",
+        "text": "Viết đơn xin nghỉ học vì lí do sức khỏe hoặc lí do khác.",
+        "slide": 8
+      },
+      {
+        "type": "task",
+        "text": "Viết đơn xin trình bày nguyện vọng của tổ hoặc lớp em.",
+        "slide": 8
+      },
+      {
+        "type": "task",
+        "text": "Em hãy đọc bài viết của mình cho cả lớp nghe",
+        "slide": 9
+      },
+      {
+        "type": "task",
+        "text": "Tìm đọc thêm một số câu chuyện liên quan đến chủ điểm Chân dung của em",
+        "slide": 11
+      }
+    ],
+    "vocab": [],
+    "keyPoints": []
+  }
+}

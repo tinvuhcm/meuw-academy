@@ -1,0 +1,165 @@
+{
+  "meta": {
+    "file": "w20_i002_Tuan_20_-_Bai_57_Phan_so_bang_nhau_-_Tiet_1.pptx",
+    "subject": "toan",
+    "path": "docs\\research\\official-sources\\downloads\\hoc10\\lop4\\toan\\slides\\w20_i002_Tuan_20_-_Bai_57_Phan_so_bang_nhau_-_Tiet_1.pptx",
+    "slideCount": 18
+  },
+  "slides": [
+    {
+      "slideNo": 1,
+      "type": "cover",
+      "paragraphs": [
+        "TOÁN 4",
+        "Tập 2",
+        "Tuần 20",
+        "Bài 57: Phân số bằng nhau Tiết 1"
+      ]
+    },
+    {
+      "slideNo": 2,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 3,
+      "type": "content",
+      "paragraphs": [
+        "Chia lớp thành 3 nhóm. Mỗi nhóm được phát 3 băng giấy bằng nhau và tô màu theo yêu cầu.",
+        "Nhóm 1 chia băng giấy làm 2 phần bằng nhau.",
+        "Nhóm 2 chia băng giấy làm 4 phần bằng nhau.",
+        "Nhóm 3 chia băng giấy làm 8 phần bằng nhau."
+      ]
+    },
+    {
+      "slideNo": 4,
+      "type": "content",
+      "paragraphs": [
+        "Nhóm 1 tô màu  băng giấy thứ nhất.",
+        "Nhóm 2 tô màu  băng giấy thứ hai.",
+        "Nhóm 3 tô màu  băng giấy thứ ba."
+      ]
+    },
+    {
+      "slideNo": 5,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 6,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 7,
+      "type": "theory",
+      "paragraphs": [
+        "Nhận xét: Phần đã tô màu của các băng giấy đều bằng nhau.",
+        "Ta nói các phân số   ,  và  là các phân số bằng nhau."
+      ]
+    },
+    {
+      "slideNo": 8,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 9,
+      "type": "content",
+      "paragraphs": [
+        "Các phân số  ,  và  có tử số và mẫu số khác nhau nhưng có giá trị bằng nhau. Ta gọi các phân số đó là các phân số bằng nhau.",
+        "Viết là:   =  ="
+      ]
+    },
+    {
+      "slideNo": 10,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 11,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "a) Quan sát hình vẽ, nêu các cặp phân số bằng nhau:",
+        "HOẠT ĐỘNG CẶP ĐÔI",
+        "10"
+      ]
+    },
+    {
+      "slideNo": 12,
+      "type": "content",
+      "paragraphs": [
+        "01",
+        "b) Chỉ ra phần cần tô màu để có cặp phân số bằng nhau:",
+        "HOẠT ĐỘNG CẶP ĐÔI"
+      ]
+    },
+    {
+      "slideNo": 13,
+      "type": "content",
+      "paragraphs": [
+        "Quan sát hình vẽ, nêu số thích hợp trong ô",
+        "02",
+        "12"
+      ]
+    },
+    {
+      "slideNo": 14,
+      "type": "questions",
+      "paragraphs": [
+        "Qua bài học hôm nay, em học được những kiến thức gì?"
+      ]
+    },
+    {
+      "slideNo": 15,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 16,
+      "type": "activity",
+      "paragraphs": [
+        "Ôn tập kiến thức đã học",
+        "Hoàn thành bài tập trong VBT",
+        "Đọc và chuẩn bị trước Bài 57: Phân số",
+        "bằng nhau – Tiết 2"
+      ]
+    },
+    {
+      "slideNo": 17,
+      "type": "empty",
+      "paragraphs": []
+    },
+    {
+      "slideNo": 18,
+      "type": "empty",
+      "paragraphs": []
+    }
+  ],
+  "extracted": {
+    "title": "TOÁN 4 Tập 2 Tuần 20",
+    "questions": [
+      {
+        "type": "task",
+        "text": "Viết là:   =  =",
+        "slide": 9
+      },
+      {
+        "type": "question",
+        "text": "Qua bài học hôm nay, em học được những kiến thức gì?",
+        "slide": 14
+      },
+      {
+        "type": "task",
+        "text": "Đọc và chuẩn bị trước Bài 57: Phân số",
+        "slide": 16
+      }
+    ],
+    "vocab": [],
+    "keyPoints": [
+      "Nhận xét: Phần đã tô màu của các băng giấy đều bằng nhau.",
+      "Ta nói các phân số   ,  và  là các phân số bằng nhau."
+    ]
+  }
+}
