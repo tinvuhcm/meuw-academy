@@ -189,14 +189,18 @@ function buildVocabQuestions(vocab, citation, subjectCode) {
       explanation: `"${term}" có nghĩa là: ${def}. (Nguồn: ${citation})`,
     });
 
-    // Q2: definition → term (fill-blank), only if definition is reasonable length
-    if (def.length >= 10 && def.length <= 80) {
+    // Q2: definition → term (MC, not fill-blank)
+    // Fill-blank is removed because: bé phải gõ đúng dấu tiếng Việt 100%,
+    // và bài đọc không có trong màn hình để tham khảo.
+    // Thay bằng trắc nghiệm chọn từ đúng.
+    if (validVocab.length >= 2) {
+      const termDistractors2 = pickDistractors(term, allTerms, 3, ['Từ khác', 'Không đúng', 'Không có nghĩa này']);
       questions.push({
-        type: 'fill-blank',
-        question: `Điền từ vào chỗ trống: "${def.length > 40 ? def.slice(0, 35) + '...' : def}" — đây là nghĩa của từ nào?`,
-        text: `Từ "[   ]" có nghĩa là: ${def}`,
-        blanks: [{ answer: term, type: 'text' }],
-        explanation: `Từ "${term}" có nghĩa là: ${def}. (Nguồn: ${citation})`,
+        type: 'multiple-choice',
+        question: `"${def.length > 55 ? def.slice(0, 52) + '...' : def}" — đây là nghĩa của từ nào trong bài?`,
+        options: shuffle([term, ...termDistractors2], seed + 2),
+        answer: term,
+        explanation: `"${term}" có nghĩa là: ${def}. (Nguồn: ${citation})`,
       });
     }
 
@@ -603,18 +607,12 @@ function processFile(jsonPath, subjectCode, subjectFolder) {
     return true;
   });
 
-  // Build lesson blocks from key points
-  const keyPoints = raw.extracted?.keyPoints || [];
+  // PPTX individual topics: NO lesson blocks.
+  // Reason: keyPoints extracted from slides are comprehension discussion questions
+  // (e.g. "Câu 5. Theo em, vì sao..."), NOT teachable content.
+  // Showing them as "Gâu tiên sinh gợi ý" before questions is misleading.
+  // Handwritten topics (science-encyclopedia.js etc.) have proper lesson blocks.
   const lessonBlocks = [];
-  if (keyPoints.length > 0) {
-    lessonBlocks.push({
-      type: 'micro',
-      teacherName: 'Gâu tiên sinh',
-      title: title.slice(0, 60),
-      points: keyPoints.slice(0, 5).map(p => p.length > 120 ? p.slice(0, 117) + '...' : p),
-      example: vocab.length > 0 ? `Từ quan trọng: ${vocab.slice(0, 3).map(v => `"${v.term}" — ${v.definition.slice(0, 40)}`).join('; ')}` : undefined,
-    });
-  }
 
   return {
     topicKey,
@@ -682,12 +680,7 @@ function main() {
         subject: subjectCode,
         title: `${pfx}: Tổng hợp từ vựng SGK`,
         defaultCount: 20,
-        lessonBlocks: allPoints.length >= 3 ? [{
-          type: 'micro',
-          teacherName: 'Gâu tiên sinh',
-          title: `Tổng hợp từ vựng ${pfx} KNTT`,
-          points: allPoints.slice(0, 5),
-        }] : [],
+        lessonBlocks: [],  // No lesson blocks — PPTX keyPoints are comprehension Qs, not lessons
         questionPool: allQ,
       };
     }
