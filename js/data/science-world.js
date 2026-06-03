@@ -399,6 +399,142 @@ t('symbiosis', 'Cộng sinh — Khi hai loài cần nhau',
 ];
 
 // ════════════════════════════════════════════════════════════════════════════
+// PHẦN 6: VẬT LÝ VÀ HÓA HỌC THƯỜNG NGÀY
+// ════════════════════════════════════════════════════════════════════════════
+
+const PHYSICS_CHEMISTRY = [
+
+t('light-color', 'Ánh sáng và Màu sắc — Tại sao cầu vồng có 7 màu?',
+  ['Ánh sáng trắng thực ra gồm 7 màu: đỏ, cam, vàng, lục, lam, chàm, tím.',
+   'Khi ánh sáng đi qua lăng kính hay giọt nước, mỗi màu bị bẻ cong khác nhau → tách ra.',
+   'Vật có màu nào thì phản chiếu màu đó; hấp thụ các màu còn lại.',
+   'Màu đỏ có bước sóng dài nhất; màu tím có bước sóng ngắn nhất.'],
+  'Cầu vồng hình thành khi ánh sáng mặt trời đi qua hàng triệu giọt nước sau mưa — mỗi giọt như một lăng kính nhỏ!',
+  [q('Tại sao lá cây màu xanh?', 'Diệp lục hấp thụ ánh đỏ và lam, phản chiếu ánh xanh lá', ['Vì lá chứa nước màu xanh','Diệp lục hấp thụ ánh đỏ và lam, phản chiếu ánh xanh lá','Vì trời xanh','Vì đất màu nâu bón'], 'Màu sắc ta thấy là màu BỊ PHẢN CHIẾU lại, không phải màu bị hấp thụ.'),
+   q('Cầu vồng xuất hiện khi nào?', 'Khi ánh mặt trời chiếu vào giọt nước mưa sau cơn mưa', ['Khi trời nhiều mây','Khi ánh mặt trời chiếu vào giọt nước mưa sau cơn mưa','Khi trời nắng gắt','Khi có sấm sét'], 'Để thấy cầu vồng, cần mặt trời ở phía sau lưng bạn và mưa (hoặc sương) ở phía trước.'),
+   q('Màu nào có bước sóng dài nhất?', 'Đỏ', ['Tím','Vàng','Đỏ'], 'Màu đỏ (700 nm) có bước sóng dài nhất trong quang phổ nhìn thấy được.'),
+   q('Tại sao bầu trời màu xanh?', 'Phân tử không khí tán xạ ánh xanh nhiều hơn màu đỏ', ['Vì biển phản chiếu lên','Phân tử không khí tán xạ ánh xanh nhiều hơn màu đỏ','Vì mây màu xanh','Vì ánh mặt trời màu xanh'], 'Hiện tượng Rayleigh: phân tử N₂ và O₂ tán xạ ánh sáng bước sóng ngắn (xanh) nhiều hơn bước sóng dài (đỏ) → bầu trời xanh.'),
+   q('Vật nào hấp thụ nhiệt nhất?', 'Vật màu đen', ['Vật màu trắng','Vật màu vàng','Vật màu đen'], 'Màu đen hấp thụ tất cả các bước sóng ánh sáng (và nhiệt) — vì vậy mặc đen nóng hơn mặc trắng khi nắng.')]),
+
+t('sound-waves', 'Âm thanh — Sóng mà tai bắt được',
+  ['Âm thanh là sóng dao động của không khí (hoặc chất lỏng, chất rắn).',
+   'Âm thanh không truyền được trong chân không — ngoài vũ trụ không có tiếng động!',
+   'Tần số cao → âm thanh cao (bổng). Tần số thấp → âm thanh trầm.',
+   'Âm thanh truyền trong nước nhanh gấp 4 lần trong không khí (1 480 m/s vs 340 m/s).'],
+  'Sấm sét và tia chớp xảy ra cùng lúc — nhưng ta thấy chớp trước, nghe sấm sau vì ánh sáng (300 000 km/s) nhanh hơn âm thanh (0.34 km/s)!',
+  [q('Âm thanh có thể truyền qua đâu?', 'Chất khí, chất lỏng và chất rắn — nhưng không qua chân không', ['Chỉ qua không khí','Chỉ qua nước','Chất khí, chất lỏng và chất rắn — nhưng không qua chân không'], 'Âm thanh cần môi trường vật chất để truyền — trong chân không (vũ trụ) không có âm thanh!'),
+   q('Tại sao ta thấy chớp trước khi nghe sấm?', 'Ánh sáng nhanh hơn âm thanh rất nhiều', ['Sấm xảy ra sau chớp','Ánh sáng nhanh hơn âm thanh rất nhiều','Tai chúng ta chậm hơn mắt','Sấm đi vòng quanh'], 'Ánh sáng: 300 000 km/s. Âm thanh: 0.34 km/s. Cứ 3 giây giữa chớp và sấm → sét cách bạn khoảng 1 km!'),
+   q('Âm thanh truyền nhanh hơn trong môi trường nào?', 'Trong chất rắn (kim loại) nhanh nhất', ['Trong không khí','Trong nước','Trong chất rắn (kim loại) nhanh nhất'], 'Thép: 5 100 m/s. Nước: 1 480 m/s. Không khí: 340 m/s. Vì vậy đặt tai vào đường ray tàu hỏa nghe tiếng tàu sớm hơn!'),
+   q('Con vật nào dùng sóng âm để định vị (echolocation)?', 'Dơi và cá voi', ['Chó','Dơi và cá voi','Mèo'], 'Dơi phát ra sóng siêu âm (20 000 Hz+), nghe tiếng vang phản hồi để xác định vị trí con mồi ngay cả trong bóng tối hoàn toàn.')]),
+
+t('magnetism', 'Nam châm — Lực vô hình kỳ diệu',
+  ['Nam châm có 2 cực: Bắc (N) và Nam (S). Hai cực khác nhau hút nhau; cùng cực đẩy nhau.',
+   'Trái Đất là một nam châm khổng lồ — đó là lý do la bàn hoạt động được.',
+   'Trường từ bảo vệ Trái Đất khỏi gió mặt trời (solar wind) — không có nó, sự sống sẽ khó tồn tại.',
+   'Máy MRI bệnh viện dùng nam châm siêu mạnh để chụp ảnh nội tạng mà không cần phẫu thuật.'],
+  'Chim bồ câu và cá hồi có "la bàn sinh học" trong não — có thể cảm nhận từ trường Trái Đất để tìm đường!',
+  [q('Hai cực nam châm nào thì hút nhau?', 'Cực Bắc và Cực Nam (khác cực hút nhau)', ['Cực Bắc và Cực Bắc','Cực Nam và Cực Nam','Cực Bắc và Cực Nam (khác cực hút nhau)'], 'Quy tắc từ trường: khác cực hút, cùng cực đẩy — giống như trong điện học (+ với −).'),
+   q('Tại sao la bàn luôn chỉ hướng Bắc?', 'Kim la bàn là nam châm, bị từ trường Trái Đất hút về cực Bắc từ', ['Vì Bắc là hướng Mặt Trời mọc','Kim la bàn là nam châm, bị từ trường Trái Đất hút về cực Bắc từ','Vì quy ước quốc tế','Vì Bắc là hướng cao nhất'], 'Trái Đất có nhân sắt-niken tạo ra từ trường. Cực Bắc từ gần cực Bắc địa lý — đủ để la bàn chỉ hướng đúng.'),
+   q('Cực quang (Aurora) hình thành như thế nào?', 'Gió mặt trời tương tác với từ trường Trái Đất, kích thích phân tử không khí phát sáng', ['Ánh sáng mặt trời phản chiếu từ băng tuyết','Gió mặt trời tương tác với từ trường Trái Đất, kích thích phân tử không khí phát sáng','Tia chớp trong khí quyển cực','Ánh sáng phản chiếu từ cực băng'], 'Cực quang (borealis ở Bắc, australis ở Nam) là màn trình diễn ánh sáng kỳ diệu nhất thiên nhiên, thường thấy gần các cực Trái Đất.')]),
+
+t('electricity-static', 'Điện và Tĩnh điện — Bí ẩn của tia sét',
+  ['Tĩnh điện hình thành khi electron di chuyển từ vật này sang vật khác khi cọ xát.',
+   'Sét là tia tĩnh điện khổng lồ — phóng điện giữa đám mây và mặt đất hoặc giữa hai đám mây.',
+   'Điện trong nhà là dòng electron chuyển động có định hướng qua dây dẫn.',
+   'Ben Franklin (1752) thả diều trong bão để chứng minh sét là điện — rất nguy hiểm!'],
+  'Mỗi giây trên Trái Đất có khoảng 100 tia sét đánh xuống! Sét có thể nóng tới 30 000°C — gấp 5 lần bề mặt Mặt Trời!',
+  [q('Tại sao tóc dựng lên khi chải bằng lược nhựa?', 'Cọ xát tạo tĩnh điện — các sợi tóc cùng dấu điện đẩy nhau', ['Vì lược hút tóc','Cọ xát tạo tĩnh điện — các sợi tóc cùng dấu điện đẩy nhau','Vì lược từ tính','Vì tóc khô'], 'Khi chải, electron từ tóc chuyển sang lược → tóc mang điện tích dương, cùng dấu nên đẩy nhau.'),
+   q('Cột thu lôi bảo vệ công trình như thế nào?', 'Dẫn điện sét an toàn xuống đất, bảo vệ công trình', ['Ngăn không cho sét hình thành','Dẫn điện sét an toàn xuống đất, bảo vệ công trình','Phản chiếu sét đi nơi khác','Hấp thụ điện sét vào cột'], 'Cột thu lôi (Benjamin Franklin phát minh) là cột kim loại nhọn nối dây đất — sét ưu tiên đi qua đường dẫn điện tốt nhất.'),
+   q('Vật nào dẫn điện tốt nhất?', 'Bạc, đồng, vàng (kim loại)', ['Nhựa','Cao su','Bạc, đồng, vàng (kim loại)'], 'Kim loại có nhiều electron tự do dễ di chuyển → dẫn điện tốt. Đồng phổ biến vì rẻ hơn bạc/vàng nhưng vẫn dẫn điện rất tốt.')]),
+
+t('gravity-forces', 'Trọng lực và Lực — Tại sao mọi thứ đều rơi?',
+  ['Trọng lực (gravity) là lực hút giữa hai vật có khối lượng — Trái Đất hút mọi vật về phía nó.',
+   'Newton phát hiện trọng lực khi thấy quả táo rơi (khoảng 1666).',
+   'Mặt Trăng quay quanh Trái Đất do trọng lực — không có nó Mặt Trăng sẽ bay thẳng ra ngoài vũ trụ.',
+   'Trên Mặt Trăng, trọng lực chỉ bằng 1/6 Trái Đất — con người có thể nhảy cao gấp 6 lần!'],
+  'Nếu không có không khí, lông chim và viên đạn rơi cùng tốc độ! (Galileo chứng minh tại Tháp nghiêng Pisa)',
+  [q('Tại sao mọi vật đều rơi xuống?', 'Vì Trái Đất có trọng lực hút mọi vật về phía nó', ['Vì không khí đẩy xuống','Vì Trái Đất có trọng lực hút mọi vật về phía nó','Vì vật nặng hơn không khí','Vì gió thổi'], 'Trọng lực tỷ lệ với khối lượng — Trái Đất khổng lồ nên hút tất cả mọi thứ xung quanh nó.'),
+   q('Trên Mặt Trăng, con người nặng hơn hay nhẹ hơn?', 'Nhẹ hơn — chỉ bằng 1/6 khối lượng trên Trái Đất', ['Nặng hơn vì gần không khí hơn','Nhẹ hơn — chỉ bằng 1/6 khối lượng trên Trái Đất','Bằng nhau','Không có khối lượng'], 'Khối lượng không đổi, nhưng trọng lượng (lực hút) thay đổi. Trên Mặt Trăng, người 60 kg chỉ "nặng" 10 kg!'),
+   q('Tại sao phi hành gia nổi lơ lửng trên trạm vũ trụ?', 'Họ đang rơi tự do quanh Trái Đất — gọi là trạng thái không trọng lực', ['Vì không có không khí','Họ đang rơi tự do quanh Trái Đất — gọi là trạng thái không trọng lực','Vì xa Mặt Trời','Vì trạm có máy triệt trọng lực'], 'Trạm vũ trụ quay quanh Trái Đất ở tốc độ 28 000 km/h — cả trạm và người đều "rơi" cùng tốc độ nên cảm giác không trọng lực!'),
+   q('Ai phát hiện ra lực hút trái đất?', 'Isaac Newton (khoảng 1666)', ['Albert Einstein','Galileo Galilei','Isaac Newton (khoảng 1666)'], 'Newton quan sát quả táo rơi và đặt câu hỏi: nếu Trái Đất kéo quả táo, có phải nó cũng kéo Mặt Trăng? → Phát hiện ra vạn vật hấp dẫn.')]),
+
+t('states-of-matter', 'Ba trạng thái của vật chất — Rắn, Lỏng, Khí',
+  ['Vật chất tồn tại ở 3 trạng thái chính: rắn (phân tử xếp chặt), lỏng (lỏng lẻo hơn), khí (phân tử chuyển động tự do).',
+   'Nhiệt độ quyết định trạng thái: đun nóng → rắn→lỏng→khí; làm lạnh → ngược lại.',
+   'Nước là ví dụ kỳ diệu: tồn tại cả 3 dạng trong tự nhiên — băng, nước, hơi nước.',
+   'Plasma (plasma) là "trạng thái thứ 4" — khí bị ion hóa cực nóng, tồn tại trong mặt trời và sét.'],
+  'Không khí xung quanh ta gồm 78% Nitrogen (N₂) và 21% Oxygen (O₂) — những phân tử vô hình đang nảy xung quanh ta hàng tỉ lần mỗi giây!',
+  [q('Khi đun nóng nước, nó chuyển sang trạng thái gì?', 'Khí (hơi nước)', ['Rắn','Plasma','Khí (hơi nước)'], 'Nước sôi ở 100°C (ở mực nước biển) → chuyển thành hơi nước. Trên núi cao, nước sôi dưới 100°C vì áp suất thấp hơn!'),
+   q('Băng nổi trên nước vì lý do gì?', 'Phân tử nước ở dạng đặc (băng) xếp thành cấu trúc mạng hở, nhẹ hơn nước lỏng', ['Vì băng nhẹ hơn','Phân tử nước ở dạng đặc (băng) xếp thành cấu trúc mạng hở, nhẹ hơn nước lỏng','Vì nhiệt nổi lên','Vì áp suất nước'], 'Nước là chất hiếm khi đông đặc lại NỔI — hầu hết chất khác đông cứng thì chìm. Điều này rất quan trọng: băng nổi bảo vệ sinh vật dưới nước mùa đông!'),
+   q('Trạng thái nào của vật chất có hình dạng và thể tích cố định?', 'Chất rắn', ['Chất lỏng','Chất khí','Chất rắn'], 'Chất rắn: phân tử liên kết chặt → hình dạng cố định. Chất lỏng: hình dạng theo vật chứa. Chất khí: lấp đầy toàn bộ không gian.'),
+   q('Tại sao nước bốc hơi ngay cả khi chưa sôi?', 'Các phân tử nước có đủ năng lượng để thoát ra khỏi bề mặt bất kỳ lúc nào', ['Chỉ sôi mới bốc hơi','Vì nhiệt độ môi trường cao hơn 100°C','Các phân tử nước có đủ năng lượng để thoát ra khỏi bề mặt bất kỳ lúc nào','Vì áp suất'], 'Bay hơi (evaporation) khác sôi (boiling): bay hơi xảy ra ở mọi nhiệt độ khi phân tử đủ nhanh để thoát bề mặt. Đó là lý do quần áo phơi khô!')]),
+
+t('human-brain', 'Não người — Siêu máy tính sinh học',
+  ['Não người nặng ~1.4 kg nhưng chứa ~86 tỷ tế bào thần kinh (neuron).',
+   'Mỗi neuron có thể kết nối với 10 000 neuron khác → số kết nối = hơn số ngôi sao trong dải Ngân Hà!',
+   'Não tiêu thụ ~20% năng lượng của cơ thể dù chỉ chiếm 2% khối lượng.',
+   'Trong khi ngủ, não vẫn hoạt động: củng cố ký ức, loại bỏ chất thải, tái tạo tế bào.'],
+  'Cảm giác "ngứa" trong đầu khi nghe một giai điệu quen = neuron âm nhạc kích hoạt lại ký ức — não thật sự "replay" âm nhạc!',
+  [q('Não người có bao nhiêu tế bào thần kinh?', 'Khoảng 86 tỷ neuron', ['Khoảng 1 triệu','Khoảng 86 tỷ neuron','Khoảng 1 nghìn tỷ','Khoảng 1 tỷ'], 'Con số này ấn tượng nhưng số KẾT NỐI (synapse) giữa chúng mới thực sự choáng ngợp: ước tính 100 nghìn tỷ kết nối!'),
+   q('Tại sao ngủ đủ giấc quan trọng cho việc học?', 'Khi ngủ, não củng cố ký ức và chuyển thông tin từ ký ức ngắn hạn sang dài hạn', ['Vì não không hoạt động khi ngủ nên cần nghỉ','Khi ngủ, não củng cố ký ức và chuyển thông tin từ ký ức ngắn hạn sang dài hạn','Vì mắt nghỉ ngơi','Vì cơ thể cần năng lượng'], 'Hippocampus (hải mã) trong não "phát lại" các sự kiện trong ngày lúc ngủ sâu, giúp chuyển thông tin vào ký ức dài hạn.'),
+   q('Não phải và não trái kiểm soát điều gì?', 'Não trái: ngôn ngữ, logic. Não phải: sáng tạo, âm nhạc, không gian', ['Não trái: cảm xúc, não phải: lý trí','Não trái: ngôn ngữ, logic. Não phải: sáng tạo, âm nhạc, không gian','Hai bán cầu giống hệt nhau','Não phải kiểm soát hết'], 'Não là cơ quan chéo: bán cầu trái điều khiển nửa phải cơ thể và ngược lại. 90% người thuận tay phải có trung tâm ngôn ngữ ở não TRÁI.'),
+   q('Não tiêu thụ bao nhiêu phần trăm năng lượng cơ thể?', 'Khoảng 20% dù chỉ chiếm 2% khối lượng', ['Khoảng 5%','Khoảng 50%','Khoảng 20% dù chỉ chiếm 2% khối lượng'], 'Não cần nhiều oxy và glucose liên tục — mất máu não 4 phút là có thể gây tổn thương không phục hồi được!')]),
+
+t('microbes-germs', 'Vi khuẩn và Virus — Thế giới vô hình xung quanh ta',
+  ['Vi khuẩn: sinh vật đơn bào không có nhân, sống khắp nơi — đất, nước, cơ thể người.',
+   'Virus: không phải tế bào — chỉ là vỏ protein chứa DNA/RNA, cần tế bào chủ để sinh sản.',
+   'Không phải vi khuẩn đều có hại — 90% vi khuẩn trong cơ thể ta là có lợi hoặc vô hại.',
+   'Kháng sinh giết vi khuẩn nhưng KHÔNG giết virus — cảm cúm do virus nên không dùng kháng sinh!'],
+  '1 ml nước biển chứa tới 1 triệu vi khuẩn! Và trên bàn tay chưa rửa có thể có hàng triệu vi khuẩn các loại.',
+  [q('Tại sao kháng sinh không trị được cúm?', 'Cúm do virus gây ra; kháng sinh chỉ tác dụng với vi khuẩn', ['Vì virus mạnh hơn vi khuẩn','Cúm do virus gây ra; kháng sinh chỉ tác dụng với vi khuẩn','Vì cần liều cao hơn','Vì virus ẩn trong nhân tế bào'], 'Dùng kháng sinh sai sẽ: (1) không có tác dụng, (2) tạo vi khuẩn kháng kháng sinh — một trong những vấn đề y tế nghiêm trọng nhất hiện nay.'),
+   q('Vi khuẩn và virus khác nhau thế nào?', 'Vi khuẩn là tế bào sống; virus không phải tế bào, chỉ là vật liệu di truyền bọc protein', ['Đều là tế bào nhưng kích thước khác','Vi khuẩn là tế bào sống; virus không phải tế bào, chỉ là vật liệu di truyền bọc protein','Virus lớn hơn vi khuẩn','Chỉ khác ở màu sắc'], 'Virus nhỏ hơn vi khuẩn 100 lần. Đại dịch COVID-19 do virus SARS-CoV-2 — một hạt nhỏ 0.1 micromet, nhỏ hơn 1/1000 đường kính sợi tóc!'),
+   q('Cơ chế nào giúp cơ thể nhận ra và chống lại mầm bệnh?', 'Hệ miễn dịch: bạch cầu, kháng thể nhận diện và tiêu diệt mầm bệnh', ['Tim phổi lọc máu','Gan giải độc','Hệ miễn dịch: bạch cầu, kháng thể nhận diện và tiêu diệt mầm bệnh'], 'Vaccine "dạy" hệ miễn dịch nhận diện mầm bệnh trước — khi gặp thật, cơ thể đã sẵn sàng phản ứng nhanh!'),
+   q('Penicillin (kháng sinh đầu tiên) được phát hiện như thế nào?', 'Alexander Fleming tình cờ thấy nấm mốc giết vi khuẩn trong đĩa cấy (1928)', ['Tổng hợp hóa học từ đầu','Alexander Fleming tình cờ thấy nấm mốc giết vi khuẩn trong đĩa cấy (1928)','Chiết xuất từ cây thuốc','Thí nghiệm có kế hoạch'], 'Khám phá tình cờ vĩ đại nhất lịch sử y học: Fleming quên đĩa cấy đi nghỉ, về thấy nấm mốc Penicillium đã giết sạch vi khuẩn xung quanh nó!')]),
+
+t('genetics-dna', 'DNA và Di truyền — Bản thiết kế của sự sống',
+  ['DNA (Axit deoxyribonucleic) là phân tử mang toàn bộ thông tin di truyền của sinh vật.',
+   'DNA có dạng xoắn kép — như cái thang xoắn. Mỗi "bậc thang" là một cặp nucleotide.',
+   'Nếu kéo thẳng DNA trong 1 tế bào người ra → dài khoảng 2 mét! Toàn bộ cơ thể: 150 tỷ km!',
+   'Gen là đoạn DNA mã hóa để tạo ra protein — protein xây dựng và điều khiển mọi thứ trong cơ thể.'],
+  'Con người và tinh tinh có DNA giống nhau tới 98.7%! Con người và chuối có DNA giống 60%!',
+  [q('DNA có hình dạng gì?', 'Xoắn kép (double helix) — như cái thang xoắn', ['Vòng tròn','Tam giác','Xoắn kép (double helix) — như cái thang xoắn'], 'Watson và Crick (1953) phát hiện cấu trúc xoắn kép của DNA — một trong những khám phá khoa học quan trọng nhất thế kỷ 20.'),
+   q('DNA được tìm thấy ở đâu trong tế bào?', 'Trong nhân tế bào (nucleus)', ['Trong màng tế bào','Trong nhân tế bào (nucleus)','Ngoài tế bào'], 'DNA được cuộn chặt thành nhiễm sắc thể (chromosome) bên trong nhân. Con người có 46 nhiễm sắc thể (23 cặp).'),
+   q('Tại sao con cái giống cha mẹ?', 'Di truyền gen: nhận 50% DNA từ bố, 50% từ mẹ', ['Vì sống cùng môi trường','Di truyền gen: nhận 50% DNA từ bố, 50% từ mẹ','Vì ăn cùng thức ăn','Vì học hỏi từ cha mẹ'], 'Mỗi người nhận 23 nhiễm sắc thể từ tinh trùng bố + 23 từ trứng mẹ = 46 nhiễm sắc thể → đây là lý do bạn vừa giống bố vừa giống mẹ!'),
+   q('Con người và tinh tinh có DNA giống nhau bao nhiêu phần trăm?', '98.7%', ['70%','98.7%','50%'], 'Điều này cho thấy chúng ta có tổ tiên chung với tinh tinh khoảng 6 triệu năm trước. Sự khác biệt nhỏ trong DNA tạo ra sự khác biệt lớn về thể chất và trí tuệ!')]),
+
+];
+
+// ════════════════════════════════════════════════════════════════════════════
+// PHẦN 7: VŨ TRỤ VÀ THIÊN VĂN
+// ════════════════════════════════════════════════════════════════════════════
+
+const UNIVERSE = [
+
+t('solar-system', 'Hệ Mặt Trời — Gia đình của chúng ta trong vũ trụ',
+  ['Hệ Mặt Trời gồm Mặt Trời + 8 hành tinh + vành đai tiểu hành tinh + nhiều vệ tinh và sao chổi.',
+   '8 hành tinh (gần→xa): Thủy Tinh, Kim Tinh, Trái Đất, Hỏa Tinh, Mộc Tinh, Thổ Tinh, Thiên Vương Tinh, Hải Vương Tinh.',
+   'Mặt Trời chiếm 99.86% khối lượng toàn Hệ Mặt Trời.',
+   'Ánh sáng từ Mặt Trời mất 8 phút 20 giây để đến Trái Đất.'],
+  'Nếu Mặt Trời to bằng quả bóng đá, Trái Đất chỉ to bằng hạt vừng cách 26 mét! Hải Vương Tinh sẽ cách hơn 800 mét!',
+  [q('Hành tinh nào lớn nhất trong Hệ Mặt Trời?', 'Mộc Tinh (Jupiter)', ['Thổ Tinh','Mặt Trời (không phải hành tinh)','Mộc Tinh (Jupiter)'], 'Mộc Tinh lớn hơn Trái Đất 1 321 lần! Vết đỏ lớn trên Mộc Tinh là cơn bão khổng lồ đã kéo dài hơn 350 năm.'),
+   q('Hành tinh nào có vành đai đẹp nhất?', 'Thổ Tinh (Saturn)', ['Hải Vương Tinh','Mộc Tinh','Thổ Tinh (Saturn)'], 'Vành đai Thổ Tinh gồm hàng tỷ mảnh băng và đá từ hạt cát đến nhà 3 tầng, rộng 282 000 km nhưng chỉ dày 20-200 mét!'),
+   q('Ánh sáng mặt trời mất bao lâu đến Trái Đất?', 'Khoảng 8 phút 20 giây', ['1 giây','1 giờ','Khoảng 8 phút 20 giây'], 'Ánh sáng đi 300 000 km/giây. Trái Đất cách Mặt Trời 150 triệu km → 150 triệu ÷ 300 000 = 500 giây = ~8,3 phút.'),
+   q('Tại sao Sao Diêm Vương không còn là hành tinh?', 'Năm 2006, IAU phân loại lại thành "hành tinh lùn" vì chưa dọn sạch quỹ đạo', ['Vì quá nhỏ','Năm 2006, IAU phân loại lại thành "hành tinh lùn" vì chưa dọn sạch quỹ đạo','Vì quá xa','Vì không có vệ tinh'], 'Theo định nghĩa 2006: hành tinh phải (1) quay quanh Mặt Trời, (2) đủ khối lượng để hình cầu, (3) dọn sạch quỹ đạo. Sao Diêm Vương thiếu điều kiện 3.')]),
+
+t('stars-black-holes', 'Sao và Lỗ đen — Vũ trụ vô tận',
+  ['Mặt Trời là một ngôi sao bình thường — ở giữa vòng đời, còn khoảng 5 tỷ năm nữa mới "chết".',
+   'Các ngôi sao sinh ra từ đám mây khí và bụi (tinh vân), sống hàng triệu đến hàng tỷ năm.',
+   'Lỗ đen (black hole): vật chất cực kỳ đặc, lực hút mạnh đến nỗi ánh sáng cũng không thoát được.',
+   'Vũ trụ có khoảng 2 nghìn tỷ thiên hà, mỗi thiên hà có hàng trăm tỷ ngôi sao!'],
+  'Ánh sáng từ các ngôi sao ta nhìn thấy đêm nay xuất phát từ hàng ngàn năm trước — ta đang nhìn vào quá khứ của vũ trụ!',
+  [q('Tại sao các ngôi sao nhấp nháy?', 'Ánh sáng qua các lớp khí quyển không đều của Trái Đất bị bẻ cong liên tục', ['Vì sao thực sự nhấp nháy','Ánh sáng qua các lớp khí quyển không đều của Trái Đất bị bẻ cong liên tục','Vì sao đang quay','Vì kính mắt yếu'], 'Ngoài không gian, sao không nhấp nháy! Telescope Hubble chụp ảnh sao sắc nét vì ở trên khí quyển. Trên Trái Đất, không khí chuyển động làm ánh sáng "rung".'),
+   q('Lỗ đen là gì?', 'Vùng không gian với lực hút cực mạnh, kể cả ánh sáng cũng không thoát ra được', ['Lỗ hổng trong vũ trụ','Vùng không gian với lực hút cực mạnh, kể cả ánh sáng cũng không thoát ra được','Sao tắt','Hành tinh đặc'], 'Lỗ đen hình thành khi ngôi sao khổng lồ nổ (supernova) rồi sụp vào chính nó. Ranh giới gọi là "chân trời sự kiện" (event horizon) — qua đó không gì thoát ra được.'),
+   q('Mặt Trời sẽ thế nào sau khoảng 5 tỷ năm nữa?', 'Phồng thành "sao khổng lồ đỏ" nuốt Trái Đất, rồi co lại thành "sao lùn trắng"', ['Nổ thành lỗ đen','Tắt lạnh đột ngột','Phồng thành "sao khổng lồ đỏ" nuốt Trái Đất, rồi co lại thành "sao lùn trắng"'], 'Các sao cỡ Mặt Trời không đủ khối lượng để thành lỗ đen. Cuối đời chúng trở thành sao lùn trắng — cực đặc, cỡ Trái Đất nhưng nặng bằng Mặt Trời.'),
+   q('Tại sao đêm nhìn sao ta thực ra nhìn vào quá khứ?', 'Ánh sáng từ sao mất hàng năm đến hàng triệu năm mới tới Trái Đất', ['Vì kính thiên văn chỉnh ngược thời gian','Ánh sáng từ sao mất hàng năm đến hàng triệu năm mới tới Trái Đất','Vì não người xử lý chậm','Vì sao đã di chuyển'], 'Sao Sirius (sao sáng nhất đêm) cách 8.6 năm ánh sáng — ánh sáng ta thấy xuất phát từ năm 2017! Sao Andromeda: 2.5 triệu năm ánh sáng — ta nhìn nó từ thời người tiền sử!')]),
+
+];
+
+// ════════════════════════════════════════════════════════════════════════════
 // EXPORT ALL
 // ════════════════════════════════════════════════════════════════════════════
 
@@ -409,4 +545,6 @@ export const ALL_SCIENCE_WORLD_TOPICS = [
   ...EVOLUTION,
   ...EARTH_NATURE,
   ...ANIMAL_BODIES,
+  ...PHYSICS_CHEMISTRY,
+  ...UNIVERSE,
 ];

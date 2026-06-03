@@ -204,23 +204,7 @@ function buildFactQuestionPool(topic) {
     answer: fact.ans,
     explanation: fact.explanation,
   }));
-
-  const keywordVariants = topic.facts.map((fact, index) => {
-    const answer = fact.ans;
-    const distractors = seededShuffle(
-      topic.facts.filter((_, otherIndex) => otherIndex !== index).map(other => other.ans),
-      `${topic.topicKey}|keyword|${index}`,
-    ).slice(0, 3);
-    return {
-      type: 'multiple-choice',
-      question: `Điền đáp án đúng để hoàn thành kiến thức: ${fact.statement.replace(answer, '_____')}`,
-      options: seededShuffle([answer, ...distractors], `${topic.topicKey}|keyword-options|${index}`),
-      answer,
-      explanation: fact.explanation,
-    };
-  });
-
-  return [...base, ...keywordVariants];
+  return base;
 }
 
 function buildSourceCatalog(allData) {
@@ -282,6 +266,7 @@ function buildSourceCatalog(allData) {
 }
 
 function mergeSupplemental(catalog, topic) {
+  const resolvedSourceLane = topic.sourceLane || (topic.subject === 'sci' ? (topic.knttSource ? 'sgk' : 'extended') : undefined);
   const key = moduleKey(topic.subject, topic.title);
   const existing = catalog[topic.subject].find(item => moduleKey(item.subject, item.title) === key);
   const extraPool = topic.facts ? buildFactQuestionPool(topic) : clone(topic.questionPool || []);
@@ -314,6 +299,9 @@ function mergeSupplemental(catalog, topic) {
     if (!existing.knttSource && topic.knttSource) {
       existing.knttSource = clone(topic.knttSource);
     }
+    if (!existing.sourceLane && resolvedSourceLane) {
+      existing.sourceLane = resolvedSourceLane;
+    }
     if (existing.sequenceIndex === undefined && topic.sequenceIndex !== undefined) {
       existing.sequenceIndex = topic.sequenceIndex;
     }
@@ -330,6 +318,7 @@ function mergeSupplemental(catalog, topic) {
     defaultCount: topic.defaultCount,
     generator: topic.generator,
     knttSource: topic.knttSource ? clone(topic.knttSource) : undefined,
+    sourceLane: resolvedSourceLane,
     sequenceIndex: topic.sequenceIndex,
   });
 }
@@ -389,100 +378,7 @@ function createConceptCorrectOption(subjectKey, concept) {
 }
 
 function buildKnowledgeMapConceptTopics() {
-  const topics = [];
-
-  ALL_SUBJECT_CODES.forEach(subjectKey => {
-    const subject = OFFICIAL_GRADE4_KNOWLEDGE_MAP[subjectKey];
-    if (!subject) return;
-    const strandTitles = subject.strands.map(strand => strand.title);
-    const benefit = conceptBenefit(subjectKey);
-
-    subject.strands.forEach((strand, strandIndex) => {
-      strand.concepts.forEach((concept, conceptIndex) => {
-        const wrongStrands = seededShuffle(
-          strandTitles.filter(title => title !== strand.title),
-          `${subjectKey}|${strand.key}|${concept}|wrong-strands`,
-        ).slice(0, 3);
-        const otherSubjectLabels = seededShuffle(
-          ALL_SUBJECT_CODES
-            .filter(code => code !== subjectKey)
-            .map(code => OFFICIAL_GRADE4_KNOWLEDGE_MAP[code]?.label)
-            .filter(Boolean),
-          `${subjectKey}|${concept}|other-subjects`,
-        ).slice(0, 3);
-        const neighboringConcepts = seededShuffle(
-          subject.strands
-            .flatMap(otherStrand => otherStrand.concepts)
-            .filter(otherConcept => otherConcept !== concept),
-          `${subjectKey}|${concept}|neighboring-concepts`,
-        ).slice(0, 3);
-
-        // Capitalize concept; for very short/single-word concepts include strand for context
-        const capConcept = concept.charAt(0).toUpperCase() + concept.slice(1);
-        const conceptWords = concept.split(' ').length;
-        const conceptTitle = conceptWords <= 2 && concept.length <= 12
-          ? `${strand.title}: ${capConcept}`   // e.g. "Làm sản phẩm đơn giản: Cắt"
-          : capConcept;                         // e.g. "Từ theo chủ điểm"
-
-        topics.push({
-          topicKey: `${subjectKey}:concept:${strand.key}:${normalizeText(concept).replace(/\s+/g, '-')}`,
-          subject: subjectKey,
-          title: `${subject.label}: ${conceptTitle}`,
-          defaultCount: 4,
-          lessonBlocks: [{
-            type: 'micro',
-            teacherName: 'Gâu tiên sinh',
-            title: `${capConcept} — ${strand.title}`,
-            points: [
-              `Đây là một phần của môn ${subject.label}.`,
-              `${concept} giúp bé ${benefit}.`,
-            ],
-            example: `Ví dụ gần gũi: ${createConceptCorrectOption(subjectKey, concept)}.`,
-          }],
-          questionPool: [
-            {
-              type: 'multiple-choice',
-              question: `Trong môn ${subject.label}, "${concept}" thuộc mạch kiến thức nào?`,
-              options: seededShuffle([strand.title, ...wrongStrands], `${subjectKey}|${strand.key}|${concept}|q1`),
-              answer: strand.title,
-              explanation: `"${concept}" nằm trong mạch ${strand.title} của môn ${subject.label}.`,
-            },
-            {
-              type: 'multiple-choice',
-              question: `"${concept}" thường được học trong môn nào?`,
-              options: seededShuffle([subject.label, ...otherSubjectLabels], `${subjectKey}|${strand.key}|${concept}|q2`),
-              answer: subject.label,
-              explanation: `"${concept}" là nội dung của môn ${subject.label}.`,
-            },
-            {
-              type: 'multiple-choice',
-              question: createConceptPrompt(subjectKey, concept),
-              options: seededShuffle([
-                createConceptCorrectOption(subjectKey, concept),
-                ...neighboringConcepts.map(otherConcept => `Nhầm sang nội dung "${otherConcept}"`),
-              ], `${subjectKey}|${strand.key}|${concept}|q3`),
-              answer: createConceptCorrectOption(subjectKey, concept),
-              explanation: `Khi học "${concept}", bé nên gắn với hành động đúng của nội dung này thay vì nhầm sang chủ đề khác.`,
-            },
-            {
-              type: 'multiple-choice',
-              question: `Vì sao bé nên học "${concept}"?`,
-              options: seededShuffle([
-                benefit,
-                'để làm bài nhanh mà không cần hiểu',
-                'để quên mất thói quen tốt',
-                'để chỉ học thuộc lòng tên bài',
-              ], `${subjectKey}|${strand.key}|${concept}|q4`),
-              answer: benefit,
-              explanation: `Học "${concept}" có ích vì ${benefit}.`,
-            },
-          ],
-        });
-      });
-    });
-  });
-
-  return topics;
+  return [];
 }
 
 function buildCatalog(allData) {
@@ -493,23 +389,29 @@ function buildCatalog(allData) {
   SUPPLEMENTAL_VIETNAMESE_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
   SUPPLEMENTAL_IT_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
   SUPPLEMENTAL_OTHER_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
-  buildKnowledgeMapConceptTopics().forEach(topic => mergeSupplemental(catalog, topic));
+  // Disabled for runtime: concept-only topics were generating meta, low-value
+  // questions like "X thuộc môn nào?" instead of real lesson content.
   CURATED_ENGLISH_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
 
   // KNTT lesson pool — KNTT lesson structure with source citations
   buildKnttCatalogTopics().forEach(topic => {
+    if (!topic.sourceLane) {
+      topic.sourceLane = topic.subject === 'sci' ? 'sgk' : 'sgk';
+    }
     if (topic.subject === 'math' && topic.op) {
       topic.generator = generateMathQuestions;
-    } else if (!topic.generator && topic.knttSource) {
-      topic.generator = generateKnttLessonQuestions;
     }
+    // Note: generateKnttLessonQuestions is intentionally NOT used as fallback.
+    // It produces meta study-habit questions with zero educational value.
+    // Subjects without a specific generator rely on their questionPool
+    // (filled by PPTX/supplemental) or are simply not selected.
     mergeSupplemental(catalog, topic);
   });
 
   // Science encyclopedia — inventors, space, great inventions
-  ALL_SCI_ENCYCLOPEDIA_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
+  ALL_SCI_ENCYCLOPEDIA_TOPICS.forEach(topic => mergeSupplemental(catalog, { ...topic, sourceLane: 'extended' }));
   // Science world — nature, body, animals, evolution, earth, ocean, forest
-  ALL_SCIENCE_WORLD_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
+  ALL_SCIENCE_WORLD_TOPICS.forEach(topic => mergeSupplemental(catalog, { ...topic, sourceLane: 'extended' }));
 
   // Vietnam topics — Lịch sử & Địa lí Việt Nam (handwritten, source-verified)
   ALL_VIETNAM_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
@@ -807,7 +709,7 @@ function generateMathQuestions(topic, count, seedInput) {
         question = {
           type: 'multiple-choice',
           isMath: true,
-          question: `Thư viện có ${a} truyện tranh. Cô giáo mang thêm ${b} quyển rồi cho lớp mượn ${c} quyển. Thư viện còn lại bao nhiêu quyển?`,
+          question: `Thư viện lớp có ${a} truyện tranh. Nhà trường bổ sung thêm ${b} quyển rồi lớp mượn ra ${c} quyển. Thư viện còn lại bao nhiêu quyển?`,
           options: seededShuffle([`${answer}`, `${a + b + c}`, `${a - b + c}`, `${a + c - b}`], `${seedInput}|${i}|word1`),
           answer: `${answer}`,
           explanation: `Số truyện còn lại là ${a} + ${b} - ${c} = ${answer}.`,
@@ -942,6 +844,24 @@ function chooseTopicEntry({ subject, dayNumber, moduleIndex, session, moduleId, 
 
   const recentGlobal = new Set((ledger.topicKeys || []).slice(-500));
   const order = seededShuffle(candidates, `${dayNumber}|${session}|${moduleIndex}|${moduleId}|${subject}`);
+  const scienceLaneFor = item => {
+    if (item.sourceLane) return item.sourceLane;
+    if (item.knttSource) return 'sgk';
+    return 'extended';
+  };
+  const seenScienceLaneCounts = { sgk: 0, extended: 0 };
+  if (subject === 'sci') {
+    const candidateByKey = new Map(candidates.map(item => [item.topicKey, item]));
+    daySeen.forEach(topicKey => {
+      const matched = candidateByKey.get(topicKey);
+      if (!matched) return;
+      const lane = scienceLaneFor(matched);
+      seenScienceLaneCounts[lane] = (seenScienceLaneCounts[lane] || 0) + 1;
+    });
+  }
+  const preferredScienceLane = subject === 'sci'
+    ? (seenScienceLaneCounts.extended <= seenScienceLaneCounts.sgk ? 'extended' : 'sgk')
+    : null;
   const remainingQuestions = item => {
     if (item.generator) return 999999;
     const pool = item.questionPool || [];
@@ -953,6 +873,8 @@ function chooseTopicEntry({ subject, dayNumber, moduleIndex, session, moduleId, 
   const notReview = item => reviewOk || !isReviewTopic(item);
 
   const passes = [
+    item => subject === 'sci' && scienceLaneFor(item) === preferredScienceLane && notReview(item) && remainingQuestions(item) >= minQuestions && !daySeen.has(item.topicKey) && !sessionSeen.has(item.topicKey) && !recentGlobal.has(item.topicKey),
+    item => subject === 'sci' && scienceLaneFor(item) === preferredScienceLane && notReview(item) && remainingQuestions(item) > 0 && !daySeen.has(item.topicKey) && !sessionSeen.has(item.topicKey) && !recentGlobal.has(item.topicKey),
     item => notReview(item) && remainingQuestions(item) >= minQuestions && !daySeen.has(item.topicKey) && !sessionSeen.has(item.topicKey) && !recentGlobal.has(item.topicKey),
     item => notReview(item) && remainingQuestions(item) > 0 && !daySeen.has(item.topicKey) && !sessionSeen.has(item.topicKey) && !recentGlobal.has(item.topicKey),
     item => notReview(item) && remainingQuestions(item) > 0 && !daySeen.has(item.topicKey) && !sessionSeen.has(item.topicKey),
