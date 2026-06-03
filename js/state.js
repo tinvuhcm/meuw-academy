@@ -888,12 +888,23 @@ function resetProfile() {
 function resetLearningProgress() {
   const profile = getActiveProfile();
   const today = localDateString(new Date());
+  // Reset lesson schedule & progress
   profile.currentDay = 1;
   profile.currentWeek = 1;
   profile.learningStartDate = today;
   profile.completedModules = {};
   profile.dayUnlockedOn = { 1: today };
   profile.forceUnlockedThroughDay = 1;
+  // Clear question/topic history so the scheduler serves fresh content
+  // (without this, previously-seen question signatures would be filtered out)
+  profile.knowledgeLedger = {
+    topicKeys: [],
+    questionSignatures: [],
+    explanationSignatures: [],
+    lessonSignatures: [],
+    recentSessions: [],
+  };
+  // Intentionally NOT touching: xpTotal, xpToday, streak, earnedBadges, gallery, settings, stats
   commit();
 }
 

@@ -718,10 +718,13 @@ function renderDataTab(container) {
   });
   devArea.appendChild(hardResetBtn);
 
-  // Reset to Day 1 — clears all progress and restarts from today
-  const day1ResetBtn = el('button', { class: 'btn bg-red-600 hover:bg-red-700 text-white border-none text-sm px-4 py-2 rounded-lg font-bold w-full' }, '🔄 Reset về Ngày 1 (Bắt đầu lại hoàn toàn)');
+  // Reset to Day 1 — clears lesson progress & question history, keeps XP/badges/gallery
+  const day1ResetDesc = el('p', { class: 'text-sm text-red-700 mb-2' },
+    'Xóa tiến độ bài học và lịch sử câu hỏi để hiển thị nội dung mới. Giữ nguyên XP, huy hiệu và tài sản của bé.');
+  devArea.appendChild(day1ResetDesc);
+  const day1ResetBtn = el('button', { class: 'btn bg-red-600 hover:bg-red-700 text-white border-none text-sm px-4 py-2 rounded-lg font-bold w-full' }, '🔄 Reset về Ngày 1 (giữ XP & huy hiệu)');
   day1ResetBtn.addEventListener('click', () => {
-    if (confirm('⚠️ RESET HOÀN TOÀN?\n\nToàn bộ tiến độ, bài học đã hoàn thành, XP và lịch sử sẽ bị xóa.\nBé sẽ bắt đầu lại từ Ngày 1 hôm nay.\n\nBạn có chắc không?')) {
+    if (confirm('Reset tiến độ bài học về Ngày 1?\n\n✅ Giữ nguyên: XP, huy hiệu, tranh vẽ, trang phục\n🗑️ Xóa: bài đã hoàn thành, lịch sử câu hỏi, tiến độ ngày học\n\nBé sẽ bắt đầu lại từ Ngày 1 hôm nay với nội dung bài học mới.')) {
       State.resetLearningProgress();
       alert('Đã reset về Ngày 1. App sẽ tải lại ngay.');
       window.location.reload();
