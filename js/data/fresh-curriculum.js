@@ -1156,30 +1156,26 @@ function buildQuestionsForEntry(entry, skeleton, seedInput, questionSeenDay, exp
 }
 
 function deriveModuleTitle(entry, questions) {
-  const baseTitle = entry.title;
+  const base = compactBase(entry.title);
+
+  // ── Clean title: just the topic name for most subjects ───────────────────
+  // Non-English subjects use only the topic name — no question-derived hints.
+  // Reason: math calculation fragments ("Trong số 505.265, chữ"), generic
+  // concept prompts ("Vì sao bé nên học"), and partial sentences make the
+  // session list noisy and hard to scan.
+  //
+  // English is the exception: a short vocabulary keyword (e.g. "· weekend",
+  // "· cắm trại") helps distinguish vocabulary units at a glance.
+
+  if (entry.subject !== 'eng') return base;
+
+  // English: append the vocabulary answer as a short keyword hint
   const firstQuestion = questions[0];
-  if (!firstQuestion) return baseTitle;
-
-  // Compact the base to strip verbose book labels if present
-  const base = compactBase(baseTitle);
-
-  // Short hint — no ellipsis, whole words only, max 22 chars
+  if (!firstQuestion) return base;
   const rawAnswer = firstQuestion.answer || firstQuestion.ans || (firstQuestion.blanks?.[0]?.answer ?? '');
-  const ansHint = shortHint(rawAnswer, 22);
-  const qHint   = shortHint(firstQuestion.question, 22);
-
-  // genericLead: question texts that give no info about topic (skip, use answer instead)
-  const genericLead = /^(cau nao|dien dap an|chon dau dung|so \d+ la so gi|chữ cái nào còn|tu tieng anh nao|tu ".+" co nghia)/i;
-  const qIsGeneric = genericLead.test(normalizeText(qHint));
-
-  const suffix = (() => {
-    if (entry.subject === 'math') return qHint || ansHint;
-    if (entry.subject === 'eng') return ansHint || qHint;
-    return qIsGeneric ? (ansHint || qHint) : qHint;
-  })();
-
-  if (!suffix) return base;
-  return `${base} · ${suffix}`;
+  const hint = shortHint(rawAnswer, 18);
+  // Only show hint if it has meaningful content (≥3 chars, not just a letter/number)
+  return hint && hint.length >= 3 ? `${base} · ${hint}` : base;
 }
 
 export function materializeDayCurriculum(dayNumber, dayData, allData) {
