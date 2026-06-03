@@ -15,6 +15,7 @@ import { buildKnttCatalogTopics } from './kntt-topics.js';
 import { getPptxTopicsForSubject } from './kntt-pptx-questions.js';
 import { ALL_SCI_ENCYCLOPEDIA_TOPICS } from './science-encyclopedia.js';
 import { ALL_SCIENCE_WORLD_TOPICS } from './science-world.js';
+import { ALL_VIETNAM_TOPICS } from './vietnam-topics.js';
 import {
   SUPPLEMENTAL_IT_TOPICS,
   SUPPLEMENTAL_OTHER_TOPICS,
@@ -488,6 +489,9 @@ function buildCatalog(allData) {
   ALL_SCI_ENCYCLOPEDIA_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
   // Science world — nature, body, animals, evolution, earth, ocean, forest
   ALL_SCIENCE_WORLD_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
+
+  // Vietnam topics — Lịch sử & Địa lí Việt Nam (handwritten, source-verified)
+  ALL_VIETNAM_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
 
   // PPTX question pools — fill non-math topics with real KNTT slide content
   // Aggregated mega-topic per subject (first in array) serves 20 Q/slot.

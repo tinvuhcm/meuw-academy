@@ -520,40 +520,19 @@ function processFile(jsonPath, subjectCode, subjectFolder) {
 
   const allQuestions = [];
 
-  // 1. Vocabulary questions
+  // ── ONLY vocab questions are extracted from PPTX slides ─────────────────────
+  // Rationale: slide-based comprehension/keyfact extraction is unreliable —
+  // slide headers ("TÍNH CHẤT CỦA NƯỚC"), activities ("Thảo luận nhóm"), and
+  // multi-slide context cannot be safely parsed without semantic understanding.
+  //
+  // Vocab slides (term = definition pairs) are consistently formatted and
+  // produce reliable fill-blank / MC questions.
+  //
+  // All other question generation uses the KNTT knowledge map and handwritten
+  // science/subject content (science-encyclopedia.js, science-world.js, etc.)
+
   if (vocab.length > 0) {
     allQuestions.push(...buildVocabQuestions(vocab, citation, subjectCode));
-  }
-
-  // 2. Comprehension Q+A pairs (skip vie — slide structure too noisy for reliable Q+A)
-  if (subjectCode !== 'vie') {
-    allQuestions.push(...buildComprehensionQuestions(slides, citation));
-  }
-
-  // 3. Key-fact / experiment questions (sci, histgeo, it, tech)
-  if (['sci', 'histgeo', 'it', 'tech'].includes(subjectCode)) {
-    allQuestions.push(...buildKeyFactQuestions(slides, citation, title));
-  }
-
-  // 4. Role-match questions (ethics, life)
-  if (['ethics', 'life', 'histgeo'].includes(subjectCode)) {
-    allQuestions.push(...buildRoleMatchQuestions(slides, citation, title));
-  }
-
-  // 5. Task / scenario questions
-  allQuestions.push(...buildTaskQuestions(slides, citation, subjectCode));
-
-  // 6. Extracted questions from extractor
-  const extractedQ = (raw.extracted?.questions || []).filter(q =>
-    q.text && q.text.length > 15 && q.text.endsWith('?')
-  );
-  for (const eq of extractedQ.slice(0, 6)) {
-    // Turn open questions into prompts for reflection-style MC
-    const prompt = eq.text;
-    // Only add if we don't already have too many questions
-    if (allQuestions.length >= 20) break;
-    // Build a "which is closest to what this question asks?" style
-    // (skip — these are open-ended, not directly answerable as MC)
   }
 
   // Quality filter + deduplication
