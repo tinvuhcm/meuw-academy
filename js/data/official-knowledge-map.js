@@ -1,5 +1,7 @@
-export const CORE_SUBJECT_CODES = ['math', 'vie', 'eng', 'it', 'sci'];
-export const OTHER_SUBJECT_CODES = ['histgeo', 'music', 'art', 'ethics', 'tech', 'life', 'pe'];
+// Subjects used in the app
+// Removed: ethics (đạo đức), pe (thể chất), life (HĐTN) — not in active rotation
+export const CORE_SUBJECT_CODES = ['math', 'vie', 'eng', 'sci'];   // >70% of daily modules
+export const OTHER_SUBJECT_CODES = ['it', 'histgeo', 'music', 'art', 'tech'];
 export const ALL_SUBJECT_CODES = [...CORE_SUBJECT_CODES, ...OTHER_SUBJECT_CODES];
 
 export const LONG_RANGE_STUDY_POLICY = {
@@ -21,15 +23,12 @@ export const LONG_RANGE_STUDY_POLICY = {
     math: 14,
     vie: 13,
     eng: 12,
-    sci: 12,
+    sci: 13,
     it: 11,
     histgeo: 11,
     music: 9,
     art: 9,
-    ethics: 10,
     tech: 10,
-    life: 9,
-    pe: 9,
   },
   enrichmentSlotMap: {
     am: [6],
@@ -47,7 +46,7 @@ export const YEARLY_STUDY_PHASES = [
   {
     key: 'term-1',
     label: 'Học kỳ 1 đồng hành cùng trường',
-    focus: ['math', 'vie', 'eng', 'it', 'histgeo', 'ethics'],
+    focus: ['math', 'vie', 'eng', 'sci', 'it', 'histgeo'],
     note: 'Trong năm học, ưu tiên bám mạch SGK và giữ nhịp đều vào ngày thường.',
   },
   {
@@ -189,7 +188,8 @@ export const OFFICIAL_GRADE4_KNOWLEDGE_MAP = {
 };
 
 export function getDailyEnrichmentSubjects(dayNumber) {
-  const ring = ['histgeo', 'music', 'art', 'ethics', 'tech', 'life', 'pe'];
+  // Rotates through secondary subjects (ethics/pe/life removed)
+  const ring = ['histgeo', 'music', 'art', 'tech', 'it'];
   const first = ring[(dayNumber - 1) % ring.length];
   const second = ring[(dayNumber + 2) % ring.length];
   const third = ring[(dayNumber + 4) % ring.length];

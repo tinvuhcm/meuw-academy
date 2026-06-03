@@ -13,6 +13,7 @@ import {
 } from './official-knowledge-map.js';
 import { buildKnttCatalogTopics } from './kntt-topics.js';
 import { getPptxTopicsForSubject } from './kntt-pptx-questions.js';
+import { ALL_SCI_ENCYCLOPEDIA_TOPICS } from './science-encyclopedia.js';
 import {
   SUPPLEMENTAL_IT_TOPICS,
   SUPPLEMENTAL_OTHER_TOPICS,
@@ -21,40 +22,35 @@ import {
 } from './supplemental-topics.js';
 
 // ─── Learning time targets ───────────────────────────────────────────────────
-// Increased to reach 3.5-4h daily. Math uses generator (always hits target).
-// Non-math: actual served Q = min(TARGET, topic_pool_size).
-// With aggregated PPTX topics (20-defaultCount), each slot serves ~12-20 Q.
+// Core subjects (math+vie+eng+sci) must fill >70% of each day.
+// Removed: ethics (đạo đức), pe (thể chất), life (HĐTN)
 const TARGET_QUESTION_COUNT = {
   math: 20,
   eng: 18,
   vie: 20,
-  sci: 18,
+  sci: 20,  // boosted — includes encyclopedic science content
   it: 14,
   histgeo: 14,
   music: 10,
   art: 10,
-  ethics: 12,
   tech: 12,
-  life: 10,
-  pe: 10,
   draw: 1,
 };
 
-// Caps per subject per day. Sum = 25 ≈ 24-module curriculum.
-// math:5 + vie:5 + eng:3 + sci:4 + it:2 + histgeo:2 + others(music,art,ethics,tech,life,pe):1 each = 24
+// Daily caps per subject. Loose upper limits — patterns drive actual distribution.
+// Core budget: math:8 + vie:7 + eng:5 + sci:6 = 26 possible core slots per day
+// Secondary budget: it:3 + histgeo:3 + music:2 + art:2 + tech:2 = 12
+// Pattern ensures core ≥ 70% of 24 actual slots served.
 const SUBJECT_DAILY_CAPS = {
-  math: 5,
-  eng: 3,
-  vie: 5,
-  sci: 4,
-  it: 2,
-  histgeo: 2,
-  music: 1,
-  art: 1,
-  ethics: 1,
-  tech: 1,
-  life: 1,
-  pe: 1,
+  math: 8,
+  eng: 5,
+  vie: 7,
+  sci: 6,
+  it: 3,
+  histgeo: 3,
+  music: 2,
+  art: 2,
+  tech: 2,
   draw: 1,
 };
 
@@ -219,18 +215,21 @@ function buildSourceCatalog(allData) {
       lessonBlocks: [],
       generator: generateMathQuestions,
     })),
-    eng: finalizeBucket(bySubject.eng),
-    vie: finalizeBucket(bySubject.vie),
-    sci: finalizeBucket(bySubject.sci),
-    it: finalizeBucket(bySubject.it),
+    eng:     finalizeBucket(bySubject.eng),
+    vie:     finalizeBucket(bySubject.vie),
+    sci:     finalizeBucket(bySubject.sci),
+    it:      finalizeBucket(bySubject.it),
     histgeo: finalizeBucket(bySubject.histgeo),
-    music: finalizeBucket(bySubject.music),
-    art: finalizeBucket(bySubject.art),
-    ethics: finalizeBucket(bySubject.ethics),
-    tech: finalizeBucket(bySubject.tech),
-    life: finalizeBucket(bySubject.life),
-    pe: finalizeBucket(bySubject.pe),
-    draw: finalizeBucket(bySubject.draw),
+    music:   finalizeBucket(bySubject.music),
+    art:     finalizeBucket(bySubject.art),
+    tech:    finalizeBucket(bySubject.tech),
+    draw:    finalizeBucket(bySubject.draw),
+    // Removed subjects kept as empty arrays so mergeSupplemental doesn't crash
+    // on supplemental topics that still reference them.
+    // The scheduler never picks these (not in SUBJECT_DAILY_CAPS or patterns).
+    ethics:  [],
+    life:    [],
+    pe:      [],
   };
 }
 
@@ -438,10 +437,13 @@ function buildCatalog(allData) {
     mergeSupplemental(catalog, topic);
   });
 
+  // Science encyclopedia — engaging extra-curricular science (inventors, space, nature)
+  ALL_SCI_ENCYCLOPEDIA_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
+
   // PPTX question pools — fill non-math topics with real KNTT slide content
   // Aggregated mega-topic per subject (first in array) serves 20 Q/slot.
-  // Individual lesson topics add variety for the long-range scheduler.
-  const PPTX_SUBJECTS = ['vie', 'sci', 'histgeo', 'ethics', 'art', 'tech', 'life', 'it'];
+  // ethics, pe, life excluded (no longer active subjects).
+  const PPTX_SUBJECTS = ['vie', 'sci', 'histgeo', 'art', 'tech', 'it'];
   for (const subjectCode of PPTX_SUBJECTS) {
     const topics = getPptxTopicsForSubject(subjectCode);
     for (const topic of topics) {
@@ -864,37 +866,46 @@ function chooseTopicEntry({ subject, dayNumber, moduleIndex, session, moduleId, 
 }
 
 function subjectFallbackOrder(primarySubject) {
+  // ethics, pe, life removed — fallbacks route to active subjects only
   const map = {
-    vie: ['vie', 'math', 'eng', 'sci', 'histgeo', 'ethics', 'it', 'life'],
-    it: ['it', 'eng', 'math', 'tech', 'sci', 'vie', 'life'],
-    sci: ['sci', 'math', 'eng', 'histgeo', 'tech', 'vie', 'it'],
-    eng: ['eng', 'math', 'sci', 'vie', 'it', 'music', 'life'],
-    math: ['math', 'eng', 'sci', 'vie', 'histgeo', 'it', 'tech'],
-    histgeo: ['histgeo', 'vie', 'sci', 'math', 'ethics', 'life'],
-    music: ['music', 'eng', 'vie', 'art', 'life'],
-    art: ['art', 'vie', 'music', 'life', 'tech'],
-    ethics: ['ethics', 'vie', 'life', 'histgeo', 'eng'],
-    tech: ['tech', 'it', 'math', 'art', 'sci'],
-    life: ['life', 'ethics', 'vie', 'pe', 'eng'],
-    pe: ['pe', 'life', 'sci', 'math'],
-    draw: ['art', 'music', 'life', 'math', 'eng', 'sci', 'vie', 'it'],
+    vie:     ['vie', 'math', 'eng', 'sci', 'histgeo', 'it'],
+    it:      ['it', 'eng', 'math', 'tech', 'sci', 'vie'],
+    sci:     ['sci', 'math', 'eng', 'histgeo', 'tech', 'vie', 'it'],
+    eng:     ['eng', 'math', 'sci', 'vie', 'it', 'music'],
+    math:    ['math', 'eng', 'sci', 'vie', 'histgeo', 'it', 'tech'],
+    histgeo: ['histgeo', 'vie', 'sci', 'math', 'it'],
+    music:   ['music', 'eng', 'vie', 'art', 'sci'],
+    art:     ['art', 'vie', 'music', 'sci', 'tech'],
+    tech:    ['tech', 'it', 'math', 'art', 'sci'],
+    draw:    ['art', 'music', 'math', 'eng', 'sci', 'vie', 'it'],
   };
   return map[primarySubject] || [primarySubject, ...CORE_SUBJECT_CODES];
 }
 
 function getPhaseCoreSubject(phase, session, moduleIndex) {
+  // All patterns ensure >70% core subjects (math+vie+eng+sci).
+  // ethics/pe/life removed; secondary subjects: it, histgeo, music, art, tech
   const patterns = {
+    // Summer hè: heavy core focus — sci encyclopedic content mixed in
     'summer-foundation': {
-      am: ['math', 'vie', 'eng', 'sci', 'math', 'it', 'vie', 'eng', 'math', 'sci', 'eng', 'math', 'vie', 'sci'],
-      pm: ['math', 'eng', 'vie', 'sci', 'math', 'it', 'eng', 'vie', 'math', 'sci'],
+      am: ['math', 'vie', 'eng', 'sci', 'math', 'vie', 'eng', 'sci', 'math', 'sci', 'eng', 'math', 'vie', 'sci'],
+      //   core×14 = math:4 vie:3 eng:3 sci:4 → 14/14 = 100%
+      pm: ['math', 'eng', 'vie', 'sci', 'math', 'eng', 'vie', 'sci', 'math', 'sci'],
+      //   core×10 = math:3 eng:2 vie:2 sci:3 → 10/10 = 100%
     },
+    // Term 1 (tháng 9–1): bám SGK, xen kẽ it + histgeo
     'term-1': {
-      am: ['math', 'vie', 'eng', 'math', 'it', 'vie', 'eng', 'histgeo', 'math', 'vie', 'eng', 'ethics', 'math', 'it'],
-      pm: ['math', 'eng', 'vie', 'math', 'it', 'eng', 'vie', 'histgeo', 'math', 'ethics'],
+      am: ['math', 'vie', 'eng', 'math', 'sci', 'vie', 'eng', 'histgeo', 'math', 'vie', 'eng', 'sci', 'math', 'it'],
+      //   core: math:4 vie:3 eng:3 sci:2 = 12/14 = 85.7%
+      pm: ['math', 'eng', 'vie', 'math', 'it', 'eng', 'vie', 'sci', 'math', 'sci'],
+      //   core: math:3 eng:2 vie:2 sci:2 = 9/10 = 90%
     },
+    // Term 2 (tháng 2–5): tăng sci + tech
     'term-2': {
-      am: ['math', 'vie', 'eng', 'math', 'sci', 'vie', 'eng', 'tech', 'math', 'vie', 'eng', 'histgeo', 'math', 'it'],
-      pm: ['math', 'eng', 'vie', 'math', 'sci', 'eng', 'vie', 'tech', 'math', 'histgeo'],
+      am: ['math', 'vie', 'eng', 'math', 'sci', 'vie', 'eng', 'tech', 'math', 'vie', 'sci', 'eng', 'math', 'histgeo'],
+      //   core: math:4 vie:3 eng:3 sci:2 = 12/14 = 85.7%
+      pm: ['math', 'eng', 'vie', 'math', 'sci', 'eng', 'vie', 'sci', 'math', 'it'],
+      //   core: math:3 eng:2 vie:2 sci:2 = 9/10 = 90%
     },
   };
   const sessionPattern = patterns[phase]?.[session] || patterns['summer-foundation'][session] || [];
@@ -919,7 +930,7 @@ function getSubjectUsageScore(usage, subject) {
 function prioritizeSubjectOrder(primarySubject, subjectUsage) {
   const base = [...new Set(subjectFallbackOrder(primarySubject))];
   const preferred = primarySubject === 'it'
-    ? ['math', 'vie', 'eng', 'sci', 'it', 'tech', 'life', 'draw']
+    ? ['math', 'vie', 'eng', 'sci', 'it', 'tech', 'draw']
     : base;
 
   const underCap = [];
