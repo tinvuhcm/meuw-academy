@@ -216,22 +216,19 @@ function getMathTopicContent(module) {
     example: 'Ví dụ: 4 023 - 1 587 → hàng đơn vị: 3 < 7, mượn 1 chục → 13 - 7 = 6. Tiếp tục từng hàng.',
   };
 
-  // ── Generic math fallback ──────────────────────────────────────────────────
-  const topicName = String(module.title || '').replace(/^Toán:\s*/i, '').trim() || 'Toán';
-  return {
-    title: `Khởi động: ${topicName}`,
-    points: [
-      `Hôm nay mình học về: ${topicName}. Đọc kỹ bài học ngắn của Gâu tiên sinh ở Bước 2 trước khi làm bài.`,
-      'Trước khi chọn đáp án, hãy tự hỏi: bài đang yêu cầu tính gì và dùng phép tính nào?',
-    ],
-    example: `Ví dụ: với bài ${topicName}, hãy nhớ công thức hoặc quy tắc chính, rồi áp dụng từng bước.`,
-  };
+  // No specific match → return null (caller should skip the warm-up block entirely)
+  return null;
+}
+
+// Returns null if no specific content available (caller skips warm-up block)
+function getMathTopicWarmup(module) {
+  return getMathTopicContent(module); // already returns null for unrecognized topics
 }
 
 function getFlowTitle(module) {
   if (module.subject === 'math') {
     const content = getMathTopicContent(module);
-    return content.title;
+    return content ? content.title : null;
   }
   if (module.subject === 'eng') return 'Warm-up tiếng Anh';
   if (module.subject === 'vie') {
@@ -250,7 +247,8 @@ function getFlowTitle(module) {
 
 function getFlowPoints(module) {
   if (module.subject === 'math') {
-    return getMathTopicContent(module).points;
+    const content = getMathTopicContent(module);
+    return content ? content.points : null;
   }
   if (module.subject === 'eng') {
     return [
@@ -313,14 +311,15 @@ function getFlowPoints(module) {
       'Biết tự chăm mình và biết sắp xếp giúp việc học nhẹ đầu hơn nhiều.',
     ];
   }
-  return [
-    'Con hãy xem hôm nay mình đang nhận nhiệm vụ học gì.',
-    'Hiểu nhiệm vụ trước rồi làm bài sẽ dễ hơn nhiều.',
-  ];
+  // No generic fallback — return null so buildPlayfulWarmupBlock skips warm-up
+  return null;
 }
 
 function getFlowExample(module) {
-  if (module.subject === 'math') return getMathTopicContent(module).example;
+  if (module.subject === 'math') {
+    const content = getMathTopicContent(module);
+    return content ? content.example : null;
+  }
   if (module.subject === 'eng') return 'Ví dụ: nếu bài có từ works in, con thử nghĩ ngay đến nơi làm việc phù hợp với nghề đó.';
   if (module.subject === 'vie') return 'Ví dụ: nếu câu hỏi hỏi về ý chính, con đừng chọn theo cảm giác mà hãy quay lại đúng câu trong bài.';
   if (module.subject === 'it') return 'Ví dụ: nếu bài về thư mục, con thử hình dung thư mục như một ngăn chứa nhiều tệp.';
@@ -330,19 +329,35 @@ function getFlowExample(module) {
   if (module.subject === 'ethics') return 'Ví dụ: nếu nhặt được đồ của bạn, con thử nghĩ xem cách nào vừa trung thực vừa tử tế nhất.';
   if (module.subject === 'tech') return 'Ví dụ: nếu dùng kéo, con phải nghĩ ngay đến việc cầm chắc tay và hướng lưỡi kéo ra xa người.';
   if (module.subject === 'life') return 'Ví dụ: chuẩn bị sách vở từ tối hôm trước sẽ giúp sáng hôm sau đỡ cuống hơn.';
-  return 'Ví dụ: đọc nhiệm vụ trước sẽ giúp con biết nên chú ý điều gì khi học.';
+  return null; // no generic example — skip warm-up if no specific content
 }
 
+/**
+ * Build a warm-up block only if there is specific, topic-relevant content.
+ * Returns null if the module topic is too generic to say anything useful.
+ * Caller (applyLessonFlowPattern) must check for null.
+ */
 function buildPlayfulWarmupBlock(module) {
+  const title = getFlowTitle(module);
+  const points = getFlowPoints(module);
+  const example = getFlowExample(module);
+
+  // For math: only add warm-up if getMathTopicContent returned specific content
+  if (module.subject === 'math' && !title) return null;
+
+  // For other subjects with generic points/example: also skip warm-up
+  // (only subjects that have genuinely useful points get a warm-up)
+  if (!points || !points.length) return null;
+
   const sourceLabel = module.lessonBlocks?.[0]?.sourceLabel || '';
   return {
     type: 'micro',
     flowStage: 'warmup',
     teacherName: COMMON_TEACHER,
-    title: getFlowTitle(module),
+    title: title || 'Khởi động bài học',
     sourceLabel,
-    points: getFlowPoints(module),
-    example: getFlowExample(module),
+    points,
+    example: example || '',
     cta: 'Bắt đầu nhiệm vụ',
   };
 }
@@ -351,14 +366,20 @@ function applyLessonFlowPattern(module) {
   if (!module.lessonBlocks?.length) return module;
   const first = module.lessonBlocks[0];
   if (first?.__flowWarmup) return module;
+
   const warmup = buildPlayfulWarmupBlock(module);
-  warmup.__flowWarmup = true;
   const normalizedBlocks = module.lessonBlocks.map(block => {
     const copied = cloneBlock(block);
     if (copied.flowStage) return copied;
     if (copied.type === 'reading-page') return withFlowStage(copied, 'reading');
     return withFlowStage(copied, 'theory');
   });
+
+  // Only prepend warm-up if there is specific content worth showing
+  if (!warmup) {
+    return { ...module, lessonBlocks: normalizedBlocks };
+  }
+  warmup.__flowWarmup = true;
   return {
     ...module,
     lessonBlocks: [warmup, ...normalizedBlocks],
@@ -433,32 +454,8 @@ const LESSON_LIBRARY = [
       example: 'Ví dụ: 398 + 20 = 418 vì chỉ tăng thêm 2 chục.',
     },
   },
-  {
-    match: module => module.subject === 'math',
-    block: {
-      type: 'micro',
-      teacherName: COMMON_TEACHER,
-      title: 'Toán cần quan sát mẫu trước khi tính',
-      points: [
-        'Nhìn xem đề đang hỏi cộng, trừ, so sánh hay tìm quy luật.',
-        'Làm từng bước ngắn sẽ ít nhầm hơn làm vội.',
-      ],
-      example: 'Nếu dãy số tăng đều, hãy tìm xem mỗi lần tăng thêm bao nhiêu.',
-    },
-  },
-  {
-    match: module => module.subject === 'eng',
-    block: {
-      type: 'micro',
-      teacherName: COMMON_TEACHER,
-      title: 'Nhìn mẫu câu trước khi chọn đáp án',
-      points: [
-        'Tiếng Anh dễ hơn khi mình nhớ theo cụm ngắn.',
-        'Đọc câu hỏi, tìm từ khóa, rồi so với các lựa chọn.',
-      ],
-      example: 'Ví dụ: "This is my mother" nghĩa là "Đây là mẹ của em".',
-    },
-  },
+  // ── No generic math fallback: KNTT topics use buildSourceTheoryBlock instead ──
+  // ── No generic eng fallback: FF4 topics have their own lessonBlocks ──────────
   {
     match: module => module.subject === 'vie' && /bài đọc|bai.?doc/i.test(`${module.title || ''} ${module.topicKey || ''}`),
     block: {
@@ -525,32 +522,7 @@ const LESSON_LIBRARY = [
       example: 'Ví dụ: "chăm chỉ" viết bằng ch, không phải tr.',
     },
   },
-  {
-    match: module => module.subject === 'vie',
-    block: {
-      type: 'micro',
-      teacherName: COMMON_TEACHER,
-      title: 'Tiếng Việt cần hiểu nghĩa rồi mới chọn đáp án',
-      points: [
-        'Đọc chậm câu hỏi để biết mình đang tìm nghĩa, từ loại hay dấu câu.',
-        'Nếu phân vân, hãy đặt đáp án vào câu để kiểm tra xem có hợp lý không.',
-      ],
-      example: 'Đặt đáp án vào câu thường giúp mình nhận ra đáp án nào nghe tự nhiên nhất.',
-    },
-  },
-  {
-    match: module => module.subject === 'it',
-    block: {
-      type: 'micro',
-      teacherName: COMMON_TEACHER,
-      title: 'Máy tính làm theo lệnh của con người',
-      points: [
-        'Chuột giúp chọn và bấm vào đồ vật trên màn hình.',
-        'Bàn phím giúp nhập chữ, số và lệnh.',
-      ],
-      example: 'Khi muốn mở một nút, mình đưa chuột tới nút đó rồi bấm.',
-    },
-  },
+  // ── No generic vie/it fallback: KNTT topics use buildSourceTheoryBlock ───────
   {
     match: module => module.subject === 'sci',
     block: {

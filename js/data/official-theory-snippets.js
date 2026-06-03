@@ -1,6 +1,6 @@
-const TOAN_SOURCE = 'Nguồn chính thức: Giới thiệu SGK Toán 4 (Cánh Diều), Hoc10';
-const ENGLISH_SOURCE = 'Nguồn chính: Family & Friends 4; tư liệu hỗ trợ chính thức: teacher/support assets từ Hoc10 và Tập huấn';
-const VIE_SOURCE = 'Nguồn chính thức: Tài liệu tập huấn SGK Tiếng Việt 4 (Cánh Diều), Hoc10';
+const TOAN_SOURCE = 'SGK Toán 4 (Kết nối tri thức với cuộc sống)';
+const ENGLISH_SOURCE = 'Family & Friends 4 (Oxford); tư liệu hỗ trợ: Hoc10, taphuan.nxbgd.vn';
+const VIE_SOURCE = 'SGK Tiếng Việt 4 (Kết nối tri thức với cuộc sống)';
 
 function clean(text) {
   return String(text || '').trim();
