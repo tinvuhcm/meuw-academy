@@ -48,6 +48,7 @@ const SUBJECT_DAILY_CAPS = {
   eng: 5,
   vie: 7,
   sci: 6,
+  'sci-world': 2, // 1 per session guaranteed — exploratory science every session
   it: 3,
   histgeo: 3,
   music: 2,
@@ -832,9 +833,17 @@ function generateMathQuestions(topic, count, seedInput) {
 }
 
 function chooseTopicEntry({ subject, dayNumber, moduleIndex, session, moduleId, catalog, daySeen, sessionSeen, ledger, forcedTopicKey }) {
-  const candidates = catalog[subject] || [];
+  // 'sci-world' is a virtual subject: picks only extended-lane sci topics (science-world + encyclopedia)
+  // This guarantees exploratory science content every session.
+  const effectiveSubject = subject === 'sci-world' ? 'sci' : subject;
+  const sciWorldOnly = subject === 'sci-world';
+
+  const candidates = sciWorldOnly
+    ? (catalog['sci'] || []).filter(item => item.sourceLane === 'extended')
+    : catalog[effectiveSubject] || [];
   if (!candidates.length) return null;
-  const minQuestions = TARGET_QUESTION_COUNT[subject] || 1;
+  // sci-world topics have 6-8 questions each — lower threshold so they qualify
+  const minQuestions = sciWorldOnly ? 4 : (TARGET_QUESTION_COUNT[effectiveSubject] || 1);
   const globalSeen = new Set(ledger.questionSignatures || []);
 
   if (forcedTopicKey) {
@@ -912,26 +921,26 @@ function getPhaseCoreSubject(phase, session, moduleIndex) {
   // All patterns ensure >70% core subjects (math+vie+eng+sci).
   // ethics/pe/life removed; secondary subjects: it, histgeo, music, art, tech
   const patterns = {
-    // Summer hè: heavy core focus — sci encyclopedic content mixed in
+    // Summer hè: heavy core + guaranteed sci-world every session
     'summer-foundation': {
-      am: ['math', 'vie', 'eng', 'sci', 'math', 'vie', 'eng', 'sci', 'math', 'sci', 'eng', 'math', 'vie', 'sci'],
-      //   core×14 = math:4 vie:3 eng:3 sci:4 → 14/14 = 100%
-      pm: ['math', 'eng', 'vie', 'sci', 'math', 'eng', 'vie', 'sci', 'math', 'sci'],
-      //   core×10 = math:3 eng:2 vie:2 sci:3 → 10/10 = 100%
+      am: ['math', 'vie', 'eng', 'sci-world', 'math', 'vie', 'eng', 'sci', 'math', 'sci', 'eng', 'math', 'vie', 'sci'],
+      //   sci-world: 1 guaranteed; sci:3; total core = 14/14 = 100%
+      pm: ['math', 'eng', 'vie', 'sci-world', 'math', 'eng', 'vie', 'sci', 'math', 'sci'],
+      //   sci-world: 1 guaranteed; sci:2; total core = 10/10 = 100%
     },
-    // Term 1 (tháng 9–1): bám SGK, xen kẽ it + histgeo
+    // Term 1 (tháng 9–1): bám SGK + sci-world guarantee per session
     'term-1': {
-      am: ['math', 'vie', 'eng', 'math', 'sci', 'vie', 'eng', 'histgeo', 'math', 'vie', 'eng', 'sci', 'math', 'it'],
-      //   core: math:4 vie:3 eng:3 sci:2 = 12/14 = 85.7%
-      pm: ['math', 'eng', 'vie', 'math', 'it', 'eng', 'vie', 'sci', 'math', 'sci'],
-      //   core: math:3 eng:2 vie:2 sci:2 = 9/10 = 90%
+      am: ['math', 'vie', 'eng', 'sci-world', 'math', 'sci', 'vie', 'eng', 'histgeo', 'math', 'vie', 'eng', 'sci', 'it'],
+      //   sci-world:1 guaranteed; sci:1; core: math:4 vie:3 eng:3 = 12/14 = 85.7%
+      pm: ['math', 'eng', 'vie', 'sci-world', 'math', 'it', 'eng', 'vie', 'sci', 'math'],
+      //   sci-world:1 guaranteed; sci:1; core: math:3 eng:2 vie:2 = 9/10 = 90%
     },
-    // Term 2 (tháng 2–5): tăng sci + tech
+    // Term 2 (tháng 2–5): tăng sci + sci-world guarantee per session
     'term-2': {
-      am: ['math', 'vie', 'eng', 'math', 'sci', 'vie', 'eng', 'tech', 'math', 'vie', 'sci', 'eng', 'math', 'histgeo'],
-      //   core: math:4 vie:3 eng:3 sci:2 = 12/14 = 85.7%
-      pm: ['math', 'eng', 'vie', 'math', 'sci', 'eng', 'vie', 'sci', 'math', 'it'],
-      //   core: math:3 eng:2 vie:2 sci:2 = 9/10 = 90%
+      am: ['math', 'vie', 'eng', 'sci-world', 'math', 'sci', 'vie', 'eng', 'tech', 'math', 'vie', 'sci', 'eng', 'histgeo'],
+      //   sci-world:1 guaranteed; sci:2; core: math:4 vie:3 eng:3 = 12/14 = 85.7%
+      pm: ['math', 'eng', 'vie', 'sci-world', 'math', 'sci', 'eng', 'vie', 'sci', 'it'],
+      //   sci-world:1 guaranteed; sci:2; core: math:3 eng:2 vie:2 = 9/10 = 90%
     },
   };
   const sessionPattern = patterns[phase]?.[session] || patterns['summer-foundation'][session] || [];
@@ -1132,7 +1141,7 @@ export function materializeDayCurriculum(dayNumber, dayData, allData) {
   const explanationSeenDay = new Set();
   const topicSeenDay = new Set();
   const topicSeenBySession = { am: new Set(), pm: new Set() };
-  const subjectUsage = Object.fromEntries([...ALL_SUBJECT_CODES, 'draw'].map(subject => [subject, 0]));
+  const subjectUsage = Object.fromEntries([...ALL_SUBJECT_CODES, 'draw', 'sci-world'].map(subject => [subject, 0]));
   const sessionIndexCounter = { am: 0, pm: 0 };
 
   const modules = dayData.modules.map((module, index) => {
@@ -1202,6 +1211,10 @@ export function materializeDayCurriculum(dayNumber, dayData, allData) {
     topicSeenDay.add(chosenEntry.topicKey);
     (topicSeenBySession[module.session] || topicSeenBySession.am).add(chosenEntry.topicKey);
     subjectUsage[chosenEntry.subject] = (subjectUsage[chosenEntry.subject] || 0) + 1;
+    // Track sci-world usage separately (chosenEntry.subject is 'sci' for all sci slots)
+    if (chosenEntry.sourceLane === 'extended' || chosenEntry.topicKey?.startsWith('sci:world:') || chosenEntry.topicKey?.startsWith('sci:enc:')) {
+      subjectUsage['sci-world'] = (subjectUsage['sci-world'] || 0) + 1;
+    }
 
     return {
       ...module,
