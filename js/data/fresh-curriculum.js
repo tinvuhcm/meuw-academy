@@ -94,6 +94,52 @@ function trimLabel(text, max = 48) {
   return clean.length > max ? `${clean.slice(0, max - 1)}…` : clean;
 }
 
+/**
+ * Short hint from a text — no "…" truncation.
+ * Takes whole words up to `max` chars, stops cleanly at word boundary.
+ */
+function shortHint(text, max = 22) {
+  const t = stripHtml(text || '').replace(/["""''„«»]/g, '').replace(/\s+/g, ' ').trim();
+  if (!t || t.length <= max) return t;
+  const words = t.split(' ');
+  let out = '';
+  for (const w of words) {
+    const next = out ? `${out} ${w}` : w;
+    if (next.length > max) break;
+    out = next;
+  }
+  return out || words[0].slice(0, max);
+}
+
+/**
+ * Compact base title — strip verbose book labels, keep subject: prefix.
+ * The colon prefix is important: formatModuleDisplayTitle strips everything before ":".
+ */
+function compactBase(title) {
+  return stripHtml(title || '')
+    .replace(/\(KNTT Lớp \d+\)/gi, '')
+    .replace(/TIẾNG VIỆT \d+\s*(Tập \d+)?/gi, 'TV')
+    .replace(/Khoa học \d+/gi, 'KH')
+    .replace(/Tin học \d+\s*(Chủ đề)?/gi, 'TH')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+// ─── Ôn tập (review) scheduling ──────────────────────────────────────────────
+// PROGRAM_START_DATE = 2026-06-03 = Day 1
+// HK1 end region ≈ days 210-243 (Dec 2026 – Jan 2027)
+// HK2 end region ≈ days 320-354 (Apr – May 2027)
+// Review topics must NOT appear in summer or early/mid term.
+
+function isReviewTopic(item) {
+  const t = normalizeText(item.title || item.topicKey || '');
+  return /on tap|luyen tap chung|on lai|tong hop|on cuoi|em vui hoc/.test(t);
+}
+
+function isReviewAllowedOnDay(dayNumber) {
+  return (dayNumber >= 210 && dayNumber <= 243) || dayNumber >= 318;
+}
+
 function stableHash(input) {
   let hash = 2166136261;
   const text = String(input || '');
@@ -451,6 +497,31 @@ function buildCatalog(allData) {
     const topics = getPptxTopicsForSubject(subjectCode);
     for (const topic of topics) {
       mergeSupplemental(catalog, topic);
+    }
+  }
+
+  // ── Post-process: number topics with same base display name ────────────────
+  // When multiple topics share the same normalized short name (e.g. two PPTX
+  // files from the same lesson split into Tiết 1/2), append (1), (2)... so the
+  // child sees distinct labels in the UI instead of repeating names.
+  for (const subjectTopics of Object.values(catalog)) {
+    if (!Array.isArray(subjectTopics)) continue;
+    const countByBase = {};
+    const indexByBase = {};
+    // Use full normalized title as base — only number truly duplicate names
+    for (const topic of subjectTopics) {
+      const base = normalizeText(compactBase(topic.title));
+      countByBase[base] = (countByBase[base] || 0) + 1;
+    }
+    for (const topic of subjectTopics) {
+      const base = normalizeText(compactBase(topic.title));
+      if (countByBase[base] > 1) {
+        indexByBase[base] = (indexByBase[base] || 0) + 1;
+        // Only number 2nd+ occurrences (keep first one unnumbered)
+        if (indexByBase[base] > 1 && !/\(\d+\)$/.test(topic.title)) {
+          topic.title = `${topic.title} (${indexByBase[base]})`;
+        }
+      }
     }
   }
 
@@ -852,12 +923,17 @@ function chooseTopicEntry({ subject, dayNumber, moduleIndex, session, moduleId, 
     return pool.reduce((count, question) => count + (globalSeen.has(questionSignature(question)) ? 0 : 1), 0);
   };
 
+  const reviewOk = isReviewAllowedOnDay(dayNumber);
+  // notReview: block review topics outside end-of-term windows
+  const notReview = item => reviewOk || !isReviewTopic(item);
+
   const passes = [
-    item => remainingQuestions(item) >= minQuestions && !daySeen.has(item.topicKey) && !sessionSeen.has(item.topicKey) && !recentGlobal.has(item.topicKey),
-    item => remainingQuestions(item) > 0 && !daySeen.has(item.topicKey) && !sessionSeen.has(item.topicKey) && !recentGlobal.has(item.topicKey),
-    item => remainingQuestions(item) > 0 && !daySeen.has(item.topicKey) && !sessionSeen.has(item.topicKey),
-    item => remainingQuestions(item) > 0 && !daySeen.has(item.topicKey),
-    item => remainingQuestions(item) > 0,
+    item => notReview(item) && remainingQuestions(item) >= minQuestions && !daySeen.has(item.topicKey) && !sessionSeen.has(item.topicKey) && !recentGlobal.has(item.topicKey),
+    item => notReview(item) && remainingQuestions(item) > 0 && !daySeen.has(item.topicKey) && !sessionSeen.has(item.topicKey) && !recentGlobal.has(item.topicKey),
+    item => notReview(item) && remainingQuestions(item) > 0 && !daySeen.has(item.topicKey) && !sessionSeen.has(item.topicKey),
+    item => notReview(item) && remainingQuestions(item) > 0 && !daySeen.has(item.topicKey),
+    item => notReview(item) && remainingQuestions(item) > 0,
+    item => remainingQuestions(item) > 0,  // last resort: allow review
     item => item.generator,
   ];
 
@@ -1080,29 +1156,26 @@ function deriveModuleTitle(entry, questions) {
   const firstQuestion = questions[0];
   if (!firstQuestion) return baseTitle;
 
-  const answerText = trimLabel(firstQuestion.answer || firstQuestion.ans || (firstQuestion.blanks?.[0]?.answer ?? ''), 24);
-  const questionText = trimLabel(firstQuestion.question, 34);
-  const genericLead = /^(cau nao noi dung|cau nao giai thich dung|dien dap an dung|chon dau dung|so \d+ la so gi\?|chữ cái nào còn thiếu|tu tieng anh nao dung|tu ".+" co nghia la gi\?)/i;
+  // Compact the base to strip verbose book labels if present
+  const base = compactBase(baseTitle);
 
-  if (entry.subject === 'math') {
-    return questionText ? `${baseTitle} · ${questionText}` : `${baseTitle} · ${answerText}`;
-  }
+  // Short hint — no ellipsis, whole words only, max 22 chars
+  const rawAnswer = firstQuestion.answer || firstQuestion.ans || (firstQuestion.blanks?.[0]?.answer ?? '');
+  const ansHint = shortHint(rawAnswer, 22);
+  const qHint   = shortHint(firstQuestion.question, 22);
 
-  if (entry.subject === 'eng') {
-    return answerText ? `${baseTitle} · ${answerText}` : `${baseTitle} · ${questionText}`;
-  }
+  // genericLead: question texts that give no info about topic (skip, use answer instead)
+  const genericLead = /^(cau nao|dien dap an|chon dau dung|so \d+ la so gi|chữ cái nào còn|tu tieng anh nao|tu ".+" co nghia)/i;
+  const qIsGeneric = genericLead.test(normalizeText(qHint));
 
-  if (entry.subject === 'sci') {
-    const suffix = genericLead.test(normalizeText(questionText)) ? answerText || questionText : questionText;
-    return `${baseTitle} · ${suffix}`;
-  }
+  const suffix = (() => {
+    if (entry.subject === 'math') return qHint || ansHint;
+    if (entry.subject === 'eng') return ansHint || qHint;
+    return qIsGeneric ? (ansHint || qHint) : qHint;
+  })();
 
-  if (entry.subject === 'vie' || entry.subject === 'it') {
-    const suffix = genericLead.test(normalizeText(questionText)) ? answerText || questionText : questionText;
-    return `${baseTitle} · ${suffix}`;
-  }
-
-  return baseTitle;
+  if (!suffix) return base;
+  return `${base} · ${suffix}`;
 }
 
 export function materializeDayCurriculum(dayNumber, dayData, allData) {

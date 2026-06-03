@@ -457,11 +457,61 @@ function processFile(jsonPath, subjectCode, subjectFolder) {
   const filename = path.basename(jsonPath);
   const stem     = filename.replace(/\.json$/, '');
 
-  const title = (raw.extracted?.title || stem)
-    .replace(/_/g, ' ')
-    .replace(/\.pptx/i, '')
-    .replace(/Tuan \d+ - /i, '')
-    .trim();
+  const SUBJECT_PREFIXES = {
+    vie: 'TV4', sci: 'KH4', histgeo: 'LS&ĐL', ethics: 'ĐĐ4',
+    art: 'MT4', tech: 'CN4', life: 'HĐTN', it: 'TH4', eng: 'TA4',
+  };
+  const prefix = SUBJECT_PREFIXES[subjectCode] || subjectCode.toUpperCase();
+
+  // Get best title from cover slide (all paragraphs, not just first 3)
+  // The Python extractor only joins 3 paragraphs, often missing the lesson name.
+  const coverSlide = (raw.slides || []).find(s => s.type === 'cover');
+  const coverParas = coverSlide?.paragraphs || [];
+  // Find the most useful paragraph: look for "Bài X:" patterns or longest non-subject para
+  const lessonPara = coverParas.find(p =>
+    /^(Bài|Chủ đề|Tiết|Ôn tập|Luyện tập|Khám phá|Vận dụng)/i.test(p) ||
+    (p.length > 10 && !/^(Tuần \d+|TIẾNG VIỆT|Khoa học|Tập \d+|HĐTN|TIN HỌC|MĨ THUẬT|CÔNG NGHỆ|ĐẠO ĐỨC)/i.test(p))
+  );
+
+  const rawTitle = (lessonPara || raw.extracted?.title || stem)
+    .replace(/_/g, ' ').replace(/\.pptx/i, '').trim();
+
+  // Strip verbose book/volume labels from title
+  const cleanTitle = rawTitle
+    .replace(/TIẾNG VIỆT\s*\d*\s*(Tập \d+)?/gi, '')
+    .replace(/Khoa học\s*\d*/gi, '')
+    .replace(/Tin học\s*\d*/gi, '')
+    .replace(/Lịch Sử và Địa Lí\s*\d*/gi, '')
+    .replace(/Mĩ thuật\s*\d*/gi, '')
+    .replace(/Công nghệ\s*\d*/gi, '')
+    .replace(/Đạo đức\s*\d*/gi, '')
+    .replace(/HĐTN\s*\d*/gi, '')
+    .replace(/Tập \d+/gi, '')
+    .replace(/\(Tiết \d+\)/gi, '')
+    .replace(/Tuần \d+\s*[-–]?\s*/gi, '')
+    .replace(/\s{2,}/g, ' ')
+    .trim()
+    .replace(/^[-–·\s]+/, '').trim(); // strip leading dashes
+
+  // Final title: "{PREFIX}: {clean lesson name}" — word-boundary trim to 35 chars
+  function wordTrim(s, max) {
+    if (s.length <= max) return s;
+    const words = s.split(' ');
+    let out = '';
+    for (const w of words) {
+      const next = out ? `${out} ${w}` : w;
+      if (next.length > max) break;
+      out = next;
+    }
+    return out || s.slice(0, max);
+  }
+  // If cleanTitle is empty (all words stripped), fall back to stem-based name
+  const stemFallback = stem
+    .replace(/^w\d+_i\d+_/i, '').replace(/_/g, ' ')
+    .replace(/Tuan_?\d+_?-?_?/gi, '').trim().slice(0, 35);
+  const shortClean = wordTrim(cleanTitle || stemFallback, 35)
+    .replace(/[:.]+$/, '').trim(); // strip trailing colons/dots
+  const title = shortClean ? `${prefix}: ${shortClean}` : `${prefix}: Bài học`;
 
   const topicKey  = topicKeyFromFile(subjectCode, filename);
   const citation  = shortCitation(subjectCode, title, null);
@@ -642,17 +692,17 @@ function main() {
       }
     }
     if (allQ.length >= 20) {
-      const subjectNames = { vie:'Tiếng Việt', sci:'Khoa học', histgeo:'Lịch sử & Địa lí', ethics:'Đạo đức', art:'Mĩ thuật', tech:'Công nghệ', life:'HĐTN', it:'Tin học' };
-      const sName = subjectNames[subjectCode] || subjectCode;
+      const subjectPfx = { vie:'TV4', sci:'KH4', histgeo:'LS&ĐL', ethics:'ĐĐ4', art:'MT4', tech:'CN4', life:'HĐTN', it:'TH4' };
+      const pfx = subjectPfx[subjectCode] || subjectCode.toUpperCase();
       aggregatedTopics[subjectCode] = {
         topicKey: `${subjectCode}:pptx:aggregated`,
         subject: subjectCode,
-        title: `${sName}: Ôn tổng hợp (KNTT Lớp 4)`,
+        title: `${pfx}: Tổng hợp từ vựng SGK`,
         defaultCount: 20,
         lessonBlocks: allPoints.length >= 3 ? [{
           type: 'micro',
           teacherName: 'Gâu tiên sinh',
-          title: `Ôn kiến thức ${sName} theo SGK KNTT`,
+          title: `Tổng hợp từ vựng ${pfx} KNTT`,
           points: allPoints.slice(0, 5),
         }] : [],
         questionPool: allQ,
