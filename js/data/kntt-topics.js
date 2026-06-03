@@ -18,6 +18,7 @@ import { generateVietnameseQuestions } from './vie-question-generator.js';
 import { generateItQuestions } from './it-question-generator.js';
 import { generateHistgeoQuestions } from './histgeo-question-generator.js';
 import { generateTechQuestions } from './tech-question-generator.js';
+import { generateMusicQuestions, generateEthicsQuestions, generateLifeQuestions, generatePeQuestions, generateArtQuestions } from './remaining-subjects-generator.js';
 
 const SUBJECT_LABELS = {
   math: 'Toán',
@@ -621,6 +622,11 @@ function buildKnttNonMathTopics(subject, lessons) {
     else if (subject === 'it') generator = generateItQuestions;
     else if (subject === 'histgeo') generator = generateHistgeoQuestions;
     else if (subject === 'tech') generator = generateTechQuestions;
+    else if (subject === 'music') generator = generateMusicQuestions;
+    else if (subject === 'ethics') generator = generateEthicsQuestions;
+    else if (subject === 'life') generator = generateLifeQuestions;
+    else if (subject === 'pe') generator = generatePeQuestions;
+    else if (subject === 'art') generator = generateArtQuestions;
 
     return {
       topicKey: entry.topicKey,

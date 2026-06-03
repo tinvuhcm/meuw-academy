@@ -437,34 +437,40 @@ const QUESTION_BANKS = {
   // ── Đọc hiểu (generic, dùng cho mọi bài đọc) ──────────────────────────
   'doc-hieu': [
     makeQ(
-      'Khi đọc một bài văn xuôi hoặc bài thơ, bước nào quan trọng nhất?',
-      'Đọc kĩ rồi tự hỏi: bài này nói về ai? nói về điều gì?',
-      ['Đọc thật nhanh để nhanh xong', 'Chỉ nhìn tiêu đề rồi đoán nội dung', 'Học thuộc lòng từng câu'],
-      'Đọc hiểu cần gạch dưới từ khóa, tự đặt câu hỏi và tìm bằng chứng trong bài, không đoán mò.'
+      'Cô giáo cho đọc bài "Cánh cò trắng muốt". Sau khi đọc xong, cô hỏi: "Hình ảnh con cò trong bài gợi em nghĩ đến điều gì?" Em trả lời tốt nhất là:',
+      'Liên hệ với những gì bài đọc miêu tả và suy nghĩ của chính mình về hình ảnh đó',
+      ['Đọc lại nguyên đoạn bài', 'Nói tên tác giả bài thơ', 'Đếm số lần từ "con cò" xuất hiện'],
+      'Câu hỏi "gợi em nghĩ đến điều gì?" là câu hỏi suy nghĩ sâu — cần nối hình ảnh trong bài với hiểu biết và cảm xúc của chính em.'
     ),
     makeQ(
-      'Khi gặp từ khó không hiểu trong bài đọc, con nên làm gì?',
-      'Đọc lại câu xung quanh từ đó để đoán nghĩa từ ngữ cảnh',
-      ['Bỏ qua từ đó và đọc tiếp mà không cần hiểu', 'Ngừng đọc ngay', 'Thay bằng một từ khác tuỳ ý'],
-      'Ngữ cảnh xung quanh thường giúp con hiểu nghĩa từ mới mà không cần tra từ điển ngay.'
+      'Em đọc một đoạn văn và gặp từ "trung du" không biết nghĩa. Em nên làm gì TRƯỚC TIÊN?',
+      'Đọc lại cả câu và đoạn xung quanh từ đó để đoán nghĩa từ ngữ cảnh',
+      ['Bỏ qua và đọc tiếp', 'Hỏi ngay bạn bên cạnh', 'Đặt từ điển ra tra ngay'],
+      'Ngữ cảnh xung quanh thường giúp hiểu nghĩa từ mới. Ví dụ: "Vùng trung du nằm giữa núi và đồng bằng" — từ ngữ cảnh ta biết trung du là vùng đất ở giữa.'
     ),
     makeQ(
-      'Câu hỏi "Nhân vật trong bài cảm thấy thế nào?" yêu cầu con tìm gì?',
-      'Chi tiết về cảm xúc, suy nghĩ, hành động của nhân vật trong bài',
-      ['Tên của tác giả bài văn', 'Số câu trong đoạn văn', 'Những từ khó trong bài'],
-      'Để trả lời câu hỏi về cảm xúc nhân vật, con cần tìm câu văn nói về suy nghĩ, lời nói hoặc hành động của nhân vật đó.'
+      'Bài đọc kể về bạn nhỏ giúp bà xách nước. Câu hỏi "Vì sao bạn nhỏ giúp bà?" thuộc loại câu hỏi nào?',
+      'Câu hỏi về nguyên nhân — cần tìm câu trong bài nói lý do bạn nhỏ hành động như vậy',
+      ['Câu hỏi đoán mò không cần đọc bài', 'Câu hỏi về nhân vật phụ', 'Câu hỏi về địa điểm'],
+      'Câu hỏi "vì sao/tại sao" hỏi về nguyên nhân. Cần quay lại bài tìm câu hoặc đoạn văn giải thích lý do hành động của nhân vật.'
     ),
     makeQ(
-      'Nếu câu hỏi hỏi về ý chính của đoạn văn, con nên làm gì?',
-      'Đọc toàn đoạn, rồi tóm tắt ý quan trọng nhất bằng câu ngắn',
-      ['Chép lại câu đầu tiên của đoạn', 'Chép câu cuối cùng của đoạn', 'Đếm số từ trong đoạn'],
-      'Ý chính là điều cả đoạn muốn nói, không phải chỉ là câu đầu hoặc câu cuối.'
+      'Em đang đọc bài thơ "Mẹ vắng nhà ngày bão". Cô hỏi "Ý chính của bài thơ là gì?" Em suy nghĩ thế nào?',
+      'Đọc cả bài, tìm chủ đề lặp lại nhiều nhất — đó thường là ý chính mà tác giả muốn gửi gắm',
+      ['Chép nguyên câu đầu bài thơ', 'Nói điều mình thích nhất trong bài', 'Đếm số khổ thơ'],
+      'Ý chính là thông điệp mà toàn bộ bài muốn truyền đạt. Thường là điều được nhắc đến nhiều lần hoặc được nêu rõ ở cuối bài.'
     ),
     makeQ(
-      'Biện pháp tu từ nào thường gặp nhất trong thơ cho trẻ em?',
-      'So sánh và nhân hóa',
-      ['Chơi chữ và nghịch lý', 'Lặp âm cuối và đảo từ', 'Phủ định kép'],
-      'Thơ trẻ em hay dùng so sánh ("như cánh chim trời") và nhân hóa ("chú gió, chú mây") để tạo hình ảnh sinh động.'
+      'Bài đọc viết: "Gió ơi, gió thổi đi đâu / Mang theo hương bưởi qua cầu tặng ai". Đây là biện pháp tu từ nào?',
+      'Nhân hóa — gió được hỏi thăm như người, có hành động "mang" và "tặng"',
+      ['So sánh', 'Điệp từ', 'Liệt kê'],
+      'Nhân hóa gán hoạt động/cảm xúc của người cho sự vật/hiện tượng. Ở đây gió được hỏi thăm, được tặng hương — như đang nói chuyện với người.'
+    ),
+    makeQ(
+      'Em đọc xong bài và cô hỏi "Câu nào là câu chủ đề của đoạn 2?" Em sẽ làm gì để tìm?',
+      'Đọc lại đoạn 2, tìm câu bao quát được ý của tất cả các câu còn lại trong đoạn',
+      ['Chọn câu dài nhất', 'Chọn câu có nhiều tính từ nhất', 'Chọn câu cuối cùng vì câu chủ đề luôn ở cuối'],
+      'Câu chủ đề là câu nêu ý khái quát nhất của đoạn — không nhất thiết ở đầu hay cuối. Hãy đọc từng câu và hỏi "câu này bao quát được toàn đoạn không?"'
     ),
   ],
 
