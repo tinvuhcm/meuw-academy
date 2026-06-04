@@ -176,6 +176,8 @@ const SFX = {
   },
 };
 
+let bgmAudio = null;
+
 // ============================================
 // PUBLIC API
 // ============================================
@@ -186,6 +188,17 @@ const SFX = {
 function isSoundOn() {
   try {
     return State.getSetting('soundOn') !== false;
+  } catch {
+    return true;
+  }
+}
+
+/**
+ * Check if BGM is enabled in settings
+ */
+function isBGMOn() {
+  try {
+    return State.getSetting('bgmOn') !== false;
   } catch {
     return true;
   }
@@ -204,6 +217,25 @@ function play(sfxName) {
   }
 }
 
+/**
+ * Play or pause background music based on settings
+ */
+function updateBGM() {
+  if (!bgmAudio) {
+    bgmAudio = new window.Audio('assets/audio/meuw_academy_bgm.mp3');
+    bgmAudio.loop = true;
+    bgmAudio.volume = 0.25; // Soft background volume
+  }
+
+  if (isBGMOn()) {
+    if (bgmAudio.paused) {
+      bgmAudio.play().catch(e => console.warn('[Audio] BGM play failed:', e));
+    }
+  } else {
+    bgmAudio.pause();
+  }
+}
+
 export const Audio = {
   play,
   correct:  () => play('correct'),
@@ -217,15 +249,19 @@ export const Audio = {
   xpGain:   () => play('xpGain'),
   breakReminder: () => play('breakReminder'),
   graduation:    () => play('graduation'),
+  updateBGM,
 
   // Initialize context on first user interaction
   init() {
     const events = ['click', 'touchstart', 'keydown'];
     const initOnce = () => {
       getCtx();
+      updateBGM(); // Start BGM on user interaction if enabled
       events.forEach(e => document.removeEventListener(e, initOnce));
     };
     events.forEach(e => document.addEventListener(e, initOnce, { once: true }));
+    
+    // Also listen to setting changes if possible, or we can just call updateBGM when settings change
   }
 };
 

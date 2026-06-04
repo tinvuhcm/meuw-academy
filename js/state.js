@@ -330,7 +330,14 @@ function deleteProfile(profileId, pin) {
   commit();
 }
 
-function updateProfileName(name) {
+function updateActiveProfile(data) {
+  const profile = getActiveProfile();
+  if (data.name) profile.name = data.name;
+  if (data.avatarColor) profile.avatarColor = data.avatarColor;
+  commit();
+}
+
+function updateProfileName(id, newName) {
   getActiveProfile().name = name;
   commit();
 }
@@ -967,6 +974,60 @@ function getAccuracyRate() {
 }
 
 // ============================================
+// DASHBOARD STATS
+// ============================================
+function getTodayStats() {
+  const profile = getActiveProfile();
+  const todayStr = localDateString(new Date());
+  let modulesDone = 0;
+  let xpEarned = 0;
+  let correctAnswers = 0;
+  let totalAnswers = 0;
+  let timeSpent = 0;
+
+  Object.values(profile.completedModules || {}).forEach(m => {
+    if (!m) return;
+    const dateStr = new Date(m.completedAt).toISOString().split('T')[0];
+    if (dateStr === todayStr || localDateString(new Date(m.completedAt)) === todayStr) {
+      modulesDone++;
+      xpEarned += (m.xpEarned || 0);
+      correctAnswers += (m.score || 0);
+      totalAnswers += (m.total || 0);
+      timeSpent += (m.timeSpentSeconds || 0);
+    }
+  });
+
+  return {
+    modulesDone,
+    xpEarned,
+    accuracy: totalAnswers > 0 ? Math.round((correctAnswers / totalAnswers) * 100) : 0,
+    timeSpent: Math.round(timeSpent / 60) // minutes
+  };
+}
+
+function getLifetimeStats() {
+  const profile = getActiveProfile();
+  let totalModules = 0;
+  let correctAnswers = 0;
+  let totalAnswers = 0;
+  let totalTime = 0;
+
+  Object.values(profile.completedModules || {}).forEach(m => {
+    if (!m) return;
+    totalModules++;
+    correctAnswers += (m.score || 0);
+    totalAnswers += (m.total || 0);
+    totalTime += (m.timeSpentSeconds || 0);
+  });
+
+  return {
+    totalModules,
+    accuracy: totalAnswers > 0 ? Math.round((correctAnswers / totalAnswers) * 100) : 0,
+    totalTime: Math.round(totalTime / 60) // minutes
+  };
+}
+
+// ============================================
 // EXPORT
 // ============================================
 export const State = {
@@ -978,6 +1039,7 @@ export const State = {
   updateProfileName,
   getActiveProfile,
   getProfile,
+  updateActiveProfile,
 
   // XP & Level
   addXP,
@@ -1032,6 +1094,8 @@ export const State = {
   // Stats
   recordAnswer,
   getAccuracyRate,
+  getTodayStats,
+  getLifetimeStats,
   getKnowledgeLedger,
   recordKnowledgeExposure,
 
