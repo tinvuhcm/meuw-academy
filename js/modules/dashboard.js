@@ -331,100 +331,133 @@ function createSessionCard(title, emoji, modules, sessionId, dayNumber) {
 }
 
 function createRoadmapSection(currentDay) {
-  const section = el('section', { class: 'mb-12 bg-surface p-6 rounded-3xl border-2 border-border shadow-sm' });
-  section.innerHTML = `
-    <h2 class="font-display text-2xl mb-2 text-center text-méo-purple">Bản đồ Lộ trình</h2>
-    <p class="text-sm text-text-muted mb-8 text-center">Khám phá hành trình học tập của bé</p>
-  `;
+  const section = el('section', { class: 'mb-8' });
+  section.appendChild(el('h2', { class: 'font-display text-2xl mb-2' }, 'Lộ trình học tập'));
 
-  const pathContainer = el('div', { class: 'relative flex flex-col items-center gap-6 w-full max-w-sm mx-auto' });
-  
-  // Background line
-  const line = el('div', { class: 'absolute top-4 bottom-4 w-4 bg-bg-2 rounded-full z-0 left-1/2 -translate-x-1/2' });
-  pathContainer.appendChild(line);
-
+  const strip = el('div', { class: 'roadmap-strip flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory' });
   const startDay = Math.max(1, currentDay - 2);
   const endDay = Math.min(State.getMaxLearningDays(), currentDay + 8);
 
   for (let day = startDay; day <= endDay; day++) {
     const dayData = getCurriculumDay(day);
     if (!dayData) continue;
-    pathContainer.appendChild(createDayNode(day, dayData, currentDay));
+    strip.appendChild(createRoadmapCard(day, dayData, currentDay));
   }
 
-  section.appendChild(pathContainer);
+  section.appendChild(strip);
   return section;
 }
 
-function createDayNode(dayNumber, dayData, currentDay) {
+function createRoadmapCard(dayNumber, dayData, currentDay) {
   const progress = State.getDayProgress(dayNumber);
   const isToday = dayNumber === currentDay;
   const isPast = dayNumber < currentDay;
   const isFuture = dayNumber > currentDay;
-
-  const nodeWrap = el('div', { class: 'relative z-10 w-full flex flex-col items-center' });
   
-  // The circle button
-  const btnClass = isToday 
-    ? 'w-24 h-24 bg-méo-purple border-4 border-méo-purple-lt text-white shadow-xl animate-bounce' 
-    : isPast 
-      ? (progress.isPassed ? 'w-16 h-16 bg-correct border-4 border-white text-white shadow-md' : 'w-16 h-16 bg-warning border-4 border-white text-white shadow-md')
-      : 'w-16 h-16 bg-bg-2 border-4 border-white text-text-muted shadow-sm';
-      
-  const btn = el('button', { 
-    class: `rounded-full flex-center font-display text-2xl transition-transform hover:scale-105 ${btnClass}`,
-    style: isToday ? 'transform-origin: bottom center;' : ''
+  const statusClass = isToday
+    ? 'border-méo-purple bg-méo-purple-lt text-méo-purple'
+    : isPast
+      ? (progress.isPassed ? 'border-correct bg-correct-bg text-correct-dk' : 'border-warning bg-warning-bg text-warning')
+      : 'border-border bg-bg-2 text-text-muted';
+
+  const card = el('button', {
+    class: `card min-w-[100px] md:min-w-[110px] text-center flex flex-col items-center gap-2 snap-start transition-all ${
+      isToday ? 'border-2 shadow-md -translate-y-1' : 'border hover:-translate-y-1'
+    } ${statusClass}`,
   });
-  btn.innerHTML = isPast && progress.isPassed ? '✓' : `N${dayNumber}`;
   
-  if (isToday) {
-    const label = el('div', { class: 'absolute -top-8 bg-white border-2 border-border px-3 py-1 rounded-xl text-sm font-bold shadow-md whitespace-nowrap text-méo-purple' });
-    label.innerHTML = 'Hôm nay <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-b-2 border-r-2 border-border rotate-45"></div>';
-    nodeWrap.appendChild(label);
+  // Day title
+  card.innerHTML = `<div class="font-display text-lg">Ngày ${dayNumber}</div>`;
+  
+  // Emojis of subjects
+  const subjectRow = el('div', { class: 'flex flex-wrap justify-center gap-1 my-1' });
+  const scheduledModules = getScheduledModulesForProfileDay(State.getActiveProfile(), dayNumber, dayData.modules || []).allModules;
+  const subjectLabels = [...new Set(scheduledModules.slice(0, 3).map(module => getSubjectConfig(module.subject).emoji))];
+  subjectLabels.forEach(label => {
+    subjectRow.appendChild(el('span', { class: 'text-sm' }, label));
+  });
+  if (scheduledModules.length > 3) {
+    subjectRow.appendChild(el('span', { class: 'text-[10px] opacity-70 font-bold self-center' }, `+`));
   }
+  card.appendChild(subjectRow);
 
-  // Accordion content (Hidden by default)
-  const detailPanel = el('div', { class: 'w-full bg-white border-2 border-border rounded-xl p-4 mt-4 hidden shadow-lg animate-fade-in roadmap-detail-panel' });
+  // Progress bar
+  const progressBar = el('div', { class: 'w-full h-1.5 bg-white/50 rounded-full overflow-hidden' });
+  progressBar.innerHTML = `<div class="h-full rounded-full ${isFuture ? 'bg-border' : progress.isPassed ? 'bg-correct' : 'bg-current opacity-70'}" style="width:${Math.max(10, Math.round(progress.completedModules / Math.max(progress.totalModules, 1) * 100))}%"></div>`;
+  card.appendChild(progressBar);
+
+  card.addEventListener('click', () => {
+    Audio.click();
+    showDayDetailModal(dayNumber, dayData, currentDay);
+  });
+
+  return card;
+}
+
+function showDayDetailModal(dayNumber, dayData, currentDay) {
+  const overlay = el('div', { class: 'fixed inset-0 bg-black/50 z-50 flex-center p-4 animate-fade-in' });
+  const modal = el('div', { class: 'bg-white rounded-3xl w-full max-w-sm max-h-[80vh] flex flex-col overflow-hidden shadow-xl animate-pop-in relative' });
+  
+  const header = el('div', { class: 'bg-méo-purple p-4 text-center' });
+  header.innerHTML = `<h3 class="font-display text-2xl text-white">Lộ trình Ngày ${dayNumber}</h3>`;
+  
+  const closeBtn = el('button', { class: 'absolute top-3 right-3 w-8 h-8 rounded-full bg-black/20 text-white flex-center hover:bg-black/40 transition-colors' }, '✕');
+  closeBtn.addEventListener('click', () => overlay.remove());
+  header.appendChild(closeBtn);
+  modal.appendChild(header);
+
+  const content = el('div', { class: 'p-4 overflow-y-auto' });
   const scheduledModules = getScheduledModulesForProfileDay(State.getActiveProfile(), dayNumber, dayData.modules || []).allModules;
   
   const amModules = scheduledModules.filter(m => m.session === 'am');
   const pmModules = scheduledModules.filter(m => m.session === 'pm');
 
-  let html = `<h4 class="font-display text-lg mb-3 text-center text-méo-purple">Nhiệm vụ Ngày ${dayNumber}</h4>`;
+  let html = '';
   
   if (amModules.length > 0) {
-    html += `<div class="mb-2"><span class="font-bold text-sm bg-bg-2 px-2 py-1 rounded-md">☀️ Sáng (${amModules.length} bài)</span></div>`;
+    html += `<div class="mb-2"><span class="font-bold text-sm bg-bg-2 px-3 py-1 rounded-full text-méo-purple">☀️ Sáng (${amModules.length} bài)</span></div><div class="mb-4">`;
     amModules.forEach(m => {
       const isCompleted = State.isModuleComplete(m.id);
-      html += `<div class="text-sm ml-2 flex items-center gap-2 mb-1 ${isCompleted ? 'text-correct line-through' : 'text-text'}"><span class="w-4">${isCompleted ? '✓' : '•'}</span> ${formatModuleDisplayTitle(m, false)}</div>`;
+      html += `<div class="text-sm ml-2 p-2 border-l-2 ${isCompleted ? 'border-correct text-correct line-through' : 'border-border text-text'} mb-2 bg-surface rounded-r-lg flex items-center gap-2"><span class="w-5 h-5 flex-center rounded-full text-xs ${isCompleted ? 'bg-correct text-white' : 'bg-bg-2 text-text-muted shrink-0'}">${isCompleted ? '✓' : '•'}</span> ${formatModuleDisplayTitle(m, false)}</div>`;
     });
+    html += `</div>`;
   }
   
   if (pmModules.length > 0) {
-    html += `<div class="mb-2 mt-3"><span class="font-bold text-sm bg-bg-2 px-2 py-1 rounded-md">🌙 Chiều (${pmModules.length} bài)</span></div>`;
+    html += `<div class="mb-2"><span class="font-bold text-sm bg-bg-2 px-3 py-1 rounded-full text-méo-purple">🌙 Chiều (${pmModules.length} bài)</span></div><div>`;
     pmModules.forEach(m => {
       const isCompleted = State.isModuleComplete(m.id);
-      html += `<div class="text-sm ml-2 flex items-center gap-2 mb-1 ${isCompleted ? 'text-correct line-through' : 'text-text'}"><span class="w-4">${isCompleted ? '✓' : '•'}</span> ${formatModuleDisplayTitle(m, false)}</div>`;
+      html += `<div class="text-sm ml-2 p-2 border-l-2 ${isCompleted ? 'border-correct text-correct line-through' : 'border-border text-text'} mb-2 bg-surface rounded-r-lg flex items-center gap-2"><span class="w-5 h-5 flex-center rounded-full text-xs ${isCompleted ? 'bg-correct text-white' : 'bg-bg-2 text-text-muted shrink-0'}">${isCompleted ? '✓' : '•'}</span> ${formatModuleDisplayTitle(m, false)}</div>`;
     });
+    html += `</div>`;
   }
   
-  if (isToday) {
-    html += `<button class="btn btn-primary w-full mt-4 btn-sm" onclick="window.scrollTo({top:0, behavior:'smooth'})">Học ngay lên trên ☝️</button>`;
+  if (dayNumber === currentDay) {
+    html += `<button class="btn btn-primary w-full mt-4" id="modal-learn-now">Học ngay! 🚀</button>`;
+  } else if (dayNumber < currentDay) {
+    html += `<button class="btn btn-outline text-méo-purple border-méo-purple w-full mt-4" id="modal-review">Ôn lại 🔄</button>`;
   }
 
-  detailPanel.innerHTML = html;
+  content.innerHTML = html;
+  
+  if (dayNumber === currentDay) {
+    const btn = content.querySelector('#modal-learn-now');
+    if (btn) btn.addEventListener('click', () => { overlay.remove(); window.scrollTo({top:0, behavior:'smooth'}); });
+  } else if (dayNumber < currentDay) {
+    const btn = content.querySelector('#modal-review');
+    // Note: To be fully safe, we could navigate to "day" mode if it's merged, but for now we just use "am"
+    const plan = State.getStudyPlanForDayNumber(dayNumber);
+    const sessionToStart = plan.mode === 'merged' ? 'day' : 'am';
+    if (btn) btn.addEventListener('click', () => { overlay.remove(); Router.navigate(\`/session/\${dayNumber}/\${sessionToStart}\`); });
+  }
 
-  btn.addEventListener('click', () => {
-    Audio.click();
-    const isHidden = detailPanel.classList.contains('hidden');
-    // Hide all other panels
-    document.querySelectorAll('.roadmap-detail-panel').forEach(p => p.classList.add('hidden'));
-    if (isHidden) {
-      detailPanel.classList.remove('hidden');
-    }
+  modal.appendChild(content);
+  overlay.appendChild(modal);
+  
+  // Close on outside click
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) overlay.remove();
   });
-
-  nodeWrap.appendChild(btn);
-  nodeWrap.appendChild(detailPanel);
-  return nodeWrap;
+  
+  document.body.appendChild(overlay);
 }
