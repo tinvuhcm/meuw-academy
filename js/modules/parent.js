@@ -162,7 +162,28 @@ function renderDashboardContent(container) {
 function renderStatsTab(container) {
   const profile = State.getActiveProfile();
   const stats = profile.stats || {};
-  
+
+  // Progress summary banner
+  const currentDay = State.getCurrentDay();
+  const passedDays = State.getSequentialPassedDays();
+  const maxDays = State.getMaxLearningDays();
+  const progressPct = Math.round((passedDays / Math.max(maxDays, 1)) * 100);
+  const progressBanner = el('div', { class: 'card p-5 mb-6 bg-méo-purple-lt border-2 border-méo-purple' });
+  progressBanner.innerHTML = `
+    <div class="flex-between mb-3">
+      <div>
+        <div class="font-display text-2xl text-méo-purple">Ngày thứ ${currentDay}</div>
+        <div class="text-sm font-bold text-text-muted">Đã hoàn thành ${passedDays} ngày / ${maxDays} ngày chương trình</div>
+      </div>
+      <div class="text-4xl font-display text-méo-purple">${progressPct}%</div>
+    </div>
+    <div class="w-full h-3 bg-white rounded-full overflow-hidden border border-méo-purple">
+      <div class="h-full bg-méo-purple rounded-full" style="width:${progressPct}%"></div>
+    </div>
+    <div class="text-xs text-méo-purple font-bold mt-2">Mỗi khi hoàn thành ≥80% bài trong ngày, ngày tiếp theo tự động mở.</div>
+  `;
+  container.appendChild(progressBanner);
+
   // Overview Cards
   const grid = el('div', { class: 'grid grid-cols-2 md:grid-cols-4 gap-4 mb-8' });
   
