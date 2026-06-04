@@ -983,7 +983,7 @@ function getTodayStats() {
   let xpEarned = 0;
   let correctAnswers = 0;
   let totalAnswers = 0;
-  let timeSpent = 0;
+  let timeSpentMs = 0;
 
   Object.values(profile.completedModules || {}).forEach(m => {
     if (!m) return;
@@ -993,7 +993,7 @@ function getTodayStats() {
       xpEarned += (m.xp || 0);
       correctAnswers += (m.score || 0);
       totalAnswers += (m.total || 0);
-      timeSpent += Math.floor((m.timeMs || 0) / 60000); // timeMs to minutes
+      timeSpentMs += (m.timeMs || 0);
     }
   });
 
@@ -1001,7 +1001,7 @@ function getTodayStats() {
     modulesDone,
     xpEarned,
     accuracy: totalAnswers > 0 ? Math.round((correctAnswers / totalAnswers) * 100) : 0,
-    timeSpent: Math.round(timeSpent / 60) // minutes
+    timeSpent: Math.ceil(timeSpentMs / 60000) // ms to minutes, at least 1 if > 0
   };
 }
 
