@@ -93,6 +93,19 @@ export function formatDuration(ms) {
 }
 
 /**
+ * Format minutes as "1h 23p" or "45p"
+ */
+export function formatMinutes(totalMins) {
+  if (!totalMins || totalMins <= 0) return '0p';
+  const h = Math.floor(totalMins / 60);
+  const m = totalMins % 60;
+  if (h > 0) {
+    return m > 0 ? `${h}h ${m}p` : `${h}h`;
+  }
+  return `${m}p`;
+}
+
+/**
  * Format a time as "14:35"
  */
 export function formatTime(date = new Date()) {

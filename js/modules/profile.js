@@ -3,7 +3,7 @@
  * Kid Settings Dashboard
  */
 
-import { el, animateClass } from '../utils.js';
+import { el, animateClass, formatMinutes } from '../utils.js';
 import State from '../state.js';
 import Router from '../router.js';
 import { Audio } from '../audio.js';
@@ -123,7 +123,7 @@ export function renderProfile() {
         <div class="text-sm text-text-muted">Độ chính xác</div>
       </div>
       <div class="stat-box text-center p-4 bg-bg rounded-xl">
-        <div class="text-2xl font-display text-eng-color mb-1">${todayStats.timeSpent}p</div>
+        <div class="text-2xl font-display text-eng-color mb-1">${formatMinutes(todayStats.timeSpent)}</div>
         <div class="text-sm text-text-muted">Thời gian học</div>
       </div>
     </div>
@@ -149,7 +149,7 @@ export function renderProfile() {
         <div class="text-sm text-text-muted">Độ chính xác trung bình</div>
       </div>
       <div class="stat-box text-center p-4 bg-bg rounded-xl">
-        <div class="text-2xl font-display text-eng-color mb-1">${Math.floor(lifeStats.totalTime / 60)}h</div>
+        <div class="text-2xl font-display text-eng-color mb-1">${formatMinutes(lifeStats.totalTime)}</div>
         <div class="text-sm text-text-muted">Tổng thời gian</div>
       </div>
     </div>
