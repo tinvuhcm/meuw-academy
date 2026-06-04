@@ -121,6 +121,16 @@ export function renderSession(params) {
     });
 
     listWrapper.appendChild(card);
+
+    // Rest break reminder after every 6 modules (~27 min at 4.5 min/module)
+    if ((idx + 1) % 6 === 0 && idx + 1 < modules.length) {
+      const breakCard = el('div', { class: 'flex items-center gap-3 px-4 py-3 rounded-2xl bg-surface border border-border text-sm font-bold text-text-muted' });
+      breakCard.innerHTML = `
+        <span class="text-xl">🌿</span>
+        <span>Nghỉ giải lao — uống nước, thở sâu 3 lần rồi tiếp tục nhé!</span>
+      `;
+      listWrapper.appendChild(breakCard);
+    }
   });
 
   // End screen if all completed

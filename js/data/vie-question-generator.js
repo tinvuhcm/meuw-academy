@@ -568,37 +568,37 @@ function buildReadingSkillQuestions(topic, count = 8, seedInput = '') {
       `Sau khi đọc bài "${lessonTitle}", việc nào nên làm trước để hiểu bài chắc hơn?`,
       'Tìm xem bài nói về ai, việc gì hoặc điều gì là chính',
       ['Chép nguyên câu đầu của bài', 'Đếm xem bài có bao nhiêu dòng', 'Chọn ngay đáp án dài nhất'],
-      'Muốn đọc hiểu tốt, trước hết con cần nắm được nhân vật, sự việc hoặc ý chính của bài.'
+      `Với bài "${lessonTitle}", muốn đọc hiểu tốt con cần nắm được nhân vật, sự việc hoặc ý chính của bài trước tiên.`
     ),
     makeQ(
       `Nếu gặp một từ khó trong bài "${lessonTitle}", con nên làm gì trước?`,
       'Đọc lại câu và đoạn quanh từ đó để đoán nghĩa',
       ['Bỏ qua ngay vì từ khó không quan trọng', 'Chọn nghĩa theo cảm tính', 'Chỉ nhìn riêng từ đó mà không cần ngữ cảnh'],
-      'Ngữ cảnh quanh từ thường giúp con hiểu nghĩa tốt hơn trước khi phải hỏi thêm.'
+      `Ngữ cảnh quanh từ trong bài "${lessonTitle}" thường giúp con hiểu nghĩa tốt hơn trước khi phải hỏi thêm.`
     ),
     makeQ(
       `Khi Gâu tiên sinh hỏi "Ý chính của bài ${lessonTitle} là gì?", con nên nghĩ theo hướng nào?`,
       'Tìm nội dung được nhắc đến nhiều nhất hoặc thông điệp mà cả bài muốn nói',
       ['Chỉ đọc lại tên bài là đủ', 'Chọn một chi tiết nhỏ bất kì', 'Đếm xem bài có bao nhiêu nhân vật'],
-      'Ý chính là điều bao quát nhất mà toàn bộ bài đọc đang hướng tới.'
+      `Ý chính của bài "${lessonTitle}" là điều bao quát nhất mà toàn bộ bài đang hướng tới.`
     ),
     makeQ(
       `Nếu câu hỏi hỏi "Vì sao nhân vật làm như vậy?" trong bài "${lessonTitle}", con cần tìm gì?`,
       'Tìm chi tiết hoặc câu trong bài nói về nguyên nhân',
       ['Chỉ chọn nhân vật mình thích nhất', 'Chỉ đoán theo cảm xúc của mình', 'Bỏ qua phần chi tiết trong bài'],
-      'Câu hỏi "vì sao" luôn cần con quay lại bài để tìm nguyên nhân hoặc lí do.'
+      `Trong bài "${lessonTitle}", câu hỏi "vì sao" cần con quay lại bài để tìm nguyên nhân hoặc lí do.`
     ),
     makeQ(
       `Để trả lời tốt câu hỏi về hình ảnh đẹp trong bài "${lessonTitle}", con nên làm gì?`,
       'Chọn chi tiết gợi hình rõ và nói nó làm con liên tưởng đến điều gì',
       ['Chỉ đọc thuộc lòng một câu bất kì', 'Chỉ nói tên tác giả', 'Bỏ qua cảm xúc của mình hoàn toàn'],
-      'Câu hỏi về hình ảnh đẹp thường cần vừa nhận ra chi tiết vừa biết nói cảm nhận hoặc liên tưởng của mình.'
+      `Câu hỏi về hình ảnh đẹp trong bài "${lessonTitle}" cần vừa nhận ra chi tiết vừa biết nói cảm nhận hoặc liên tưởng.`
     ),
     makeQ(
       `Sau khi đọc bài "${lessonTitle}", con nên chú ý điều gì để trả lời chắc hơn?`,
       'Chi tiết quan trọng và ý chính của bài',
       ['Chỉ nhìn tên bài rồi đoán', 'Chỉ chép lại một câu bất kì', 'Chỉ nhớ vài từ rời rạc'],
-      'Với bài đọc, điều quan trọng là hiểu nội dung, chi tiết và ý chính của văn bản.'
+      `Với bài "${lessonTitle}", điều quan trọng là hiểu nội dung, chi tiết và ý chính của văn bản.`
     ),
   ];
   const shuffled = seededShuffle(pool, `${seedInput}|${topic.topicKey}|vie-reading`);

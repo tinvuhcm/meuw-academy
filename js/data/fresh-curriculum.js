@@ -27,10 +27,10 @@ import {
 // Core subjects (math+vie+eng+sci) must fill >70% of each day.
 // Removed: ethics (đạo đức), pe (thể chất), life (HĐTN)
 const TARGET_QUESTION_COUNT = {
-  math: 20,
-  eng: 18,
+  math: 26,  // 26Q × ~10s ≈ 4.5 min
+  eng: 24,   // 24Q × ~11s ≈ 4.5 min
   vie: 20,
-  sci: 20,  // boosted — includes encyclopedic science content
+  sci: 20,
   it: 14,
   histgeo: 14,
   music: 10,
@@ -426,6 +426,28 @@ function buildCatalog(allData) {
     for (const topic of topics) {
       mergeSupplemental(catalog, topic);
     }
+  }
+
+  // ── Remove zero-yield topics that cause subject-fallback cascades ─────────────
+  // Two failure modes handled here:
+  //   1. Generator topics (vie Đọc, sci KNTT) that produce [] despite having a
+  //      generator — probed once and dropped.
+  //   2. Non-generator math/vie/sci topics from KNTT with empty questionPools —
+  //      PPTX import is disabled for most subjects, leaving these as dead weight.
+  //      chooseTopicEntry selects them (remainingQuestions=0 still passes last-
+  //      resort passes), then buildQuestionsForEntry returns [], cascading to eng.
+  for (const subject of ['math', 'vie', 'sci']) {
+    if (!Array.isArray(catalog[subject])) continue;
+    catalog[subject] = catalog[subject].filter(topic => {
+      if (topic.generator) {
+        // For KNTT generator topics, probe to confirm actual yield
+        if (!topic.knttSource) return true; // non-KNTT generator always kept
+        const probe = topic.generator(topic, 4, 'catalog-probe');
+        return Array.isArray(probe) && probe.length >= 4;
+      }
+      // Non-generator topics: keep only if pool has enough questions
+      return (topic.questionPool?.length || 0) >= 4;
+    });
   }
 
   // ── Post-process: number topics with same base display name ────────────────
@@ -943,12 +965,12 @@ function getPhaseCoreSubject(phase, session, moduleIndex) {
   // All patterns ensure >70% core subjects (math+vie+eng+sci).
   // ethics/pe/life removed; secondary subjects: it, histgeo, music, art, tech
   const patterns = {
-    // Summer hè: heavy core + guaranteed sci-world every session
+    // Summer hè: 100% core, strict m→v→e→s interleaving, sci-world guaranteed slot 3
     'summer-foundation': {
-      am: ['math', 'vie', 'eng', 'sci-world', 'math', 'vie', 'eng', 'sci', 'math', 'sci', 'eng', 'math', 'vie', 'sci'],
-      //   sci-world: 1 guaranteed; sci:3; total core = 14/14 = 100%
-      pm: ['math', 'eng', 'vie', 'sci-world', 'math', 'eng', 'vie', 'sci', 'math', 'sci'],
-      //   sci-world: 1 guaranteed; sci:2; total core = 10/10 = 100%
+      am: ['math', 'vie', 'eng', 'sci-world', 'math', 'vie', 'eng', 'sci', 'math', 'vie', 'eng', 'sci', 'math', 'vie'],
+      //   math:4, vie:4, eng:3, sci:2, sci-world:1 → total core 14/14 = 100%
+      pm: ['math', 'vie', 'eng', 'sci-world', 'math', 'vie', 'eng', 'sci', 'math', 'vie'],
+      //   math:3, vie:3, eng:2, sci:1, sci-world:1 → total core 10/10 = 100%
     },
     // Term 1 (tháng 9–1): bám SGK + sci-world guarantee per session
     'term-1': {
@@ -971,11 +993,14 @@ function getPhaseCoreSubject(phase, session, moduleIndex) {
 
 function getLongRangePlanSubject(dayNumber, session, moduleIndex, studyDate) {
   const phase = getAcademicPhase(studyDate);
-  const slotIndexes = LONG_RANGE_STUDY_POLICY.enrichmentSlotMap[session] || [];
-  const slotPosition = slotIndexes.indexOf(moduleIndex);
-  if (slotPosition !== -1) {
-    const enrichment = getDailyEnrichmentSubjects(dayNumber);
-    return enrichment[slotPosition % enrichment.length] || null;
+  // Summer phase: 100% core subjects, no enrichment slots (histgeo/it/tech excluded)
+  if (phase !== 'summer-foundation') {
+    const slotIndexes = LONG_RANGE_STUDY_POLICY.enrichmentSlotMap[session] || [];
+    const slotPosition = slotIndexes.indexOf(moduleIndex);
+    if (slotPosition !== -1) {
+      const enrichment = getDailyEnrichmentSubjects(dayNumber);
+      return enrichment[slotPosition % enrichment.length] || null;
+    }
   }
   return getPhaseCoreSubject(phase, session, moduleIndex);
 }
@@ -1091,6 +1116,28 @@ function generateEmergencyMathQuestions(seedInput, targetCount, questionSeenDay,
   return collected;
 }
 
+function generateReviewVariants(pool, needed, seedInput) {
+  // When a sci-world topic's pool runs short, generate 2-choice review variants
+  // so the lesson reaches target question count (~4.5 min). Each variant strips
+  // the distractors down to answer vs. one wrong option — easier but still
+  // reinforces recall of the same fact.
+  const variants = [];
+  for (let i = 0; i < pool.length && variants.length < needed; i++) {
+    const q = pool[i];
+    const wrong = (q.options || []).filter(o => o !== q.answer);
+    if (!q.answer || wrong.length === 0) continue;
+    const pair = seededShuffle([q.answer, wrong[0]], `${seedInput}|rv|${i}`);
+    variants.push({
+      type: 'multiple-choice',
+      question: `Ôn lại: ${q.question}`,
+      options: pair,
+      answer: q.answer,
+      explanation: `Ôn lại — ${q.explanation || `Đáp án đúng là: ${q.answer}.`}`,
+    });
+  }
+  return variants;
+}
+
 function buildQuestionsForEntry(entry, skeleton, seedInput, questionSeenDay, explanationSeenDay, ledger) {
   const targetCount = entry.defaultCount || TARGET_QUESTION_COUNT[entry.subject] || Math.max((skeleton.questions || []).length, 1);
   const globalQuestionSeen = new Set(ledger.questionSignatures || []);
@@ -1121,9 +1168,25 @@ function buildQuestionsForEntry(entry, skeleton, seedInput, questionSeenDay, exp
       const pool = entry.generator(entry, targetCount * 8, `${seedInput}|${attempt}`);
       processPool(pool);
     }
+    // Bank-limited generators (vie, sci KNTT) stop producing at bank size.
+    // Pad with review variants from what was already selected to reach target.
+    if (selected.length < targetCount && selected.length >= 4 && entry.subject !== 'math') {
+      const needed = targetCount - selected.length;
+      const reviewPool = generateReviewVariants([...selected], needed, `${seedInput}|gen`);
+      processPool(reviewPool);
+    }
   } else {
     const pool = seededShuffle(entry.questionPool || [], `${seedInput}|pool`);
     processPool(pool);
+
+    // If pool was exhausted before target, pad with 2-choice review variants.
+    // Applies to any non-generator topic (sci-world, KNTT sci, histgeo, etc.)
+    // whose pool is too small for the full question count target.
+    if (selected.length < targetCount && entry.questionPool?.length) {
+      const needed = targetCount - selected.length;
+      const reviewPool = generateReviewVariants(entry.questionPool, needed, seedInput);
+      processPool(reviewPool);
+    }
   }
 
   return selected;
