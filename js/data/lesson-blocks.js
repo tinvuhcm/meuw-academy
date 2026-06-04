@@ -433,7 +433,175 @@ const LESSON_LIBRARY = [
       example: 'Ví dụ: 398 + 20 = 418 vì chỉ tăng thêm 2 chục.',
     },
   },
-  // ── No generic math fallback: KNTT topics use buildSourceTheoryBlock instead ──
+  {
+    match: module => module.subject === 'math' && module.title.includes('Trung bình cộng'),
+    block: {
+      type: 'mini',
+      teacherName: COMMON_TEACHER,
+      title: 'Trung bình cộng = tổng ÷ số lượng phần tử',
+      points: [
+        'Cộng tất cả các số lại với nhau, rồi chia cho số lượng phần tử.',
+        'Kết quả là "con số đại diện chung" cho cả nhóm.',
+      ],
+      example: 'Ví dụ: 3 bạn cao 120 cm, 130 cm, 110 cm → trung bình = (120+130+110)÷3 = 120 cm.',
+    },
+  },
+  {
+    match: module => module.subject === 'math' && module.title.includes('Biểu thức số'),
+    block: {
+      type: 'mini',
+      teacherName: COMMON_TEACHER,
+      title: 'Thứ tự thực hiện phép tính trong biểu thức',
+      points: [
+        'Không có ngoặc: nhân và chia trước, cộng và trừ sau.',
+        'Có ngoặc ( ): tính trong ngoặc trước tiên.',
+      ],
+      example: 'Ví dụ: 3 + 4 × 2 = 3 + 8 = 11. Còn (3+4) × 2 = 7 × 2 = 14.',
+    },
+  },
+  {
+    match: module => module.subject === 'math' && module.title.includes('Số chẵn và số lẻ'),
+    block: {
+      type: 'micro',
+      teacherName: COMMON_TEACHER,
+      title: 'Số chẵn chia hết cho 2, số lẻ thì không',
+      points: [
+        'Số chẵn kết thúc bằng 0, 2, 4, 6 hoặc 8.',
+        'Số lẻ kết thúc bằng 1, 3, 5, 7 hoặc 9.',
+      ],
+      example: 'Ví dụ: 234 là số chẵn (chữ số cuối là 4). 137 là số lẻ (chữ số cuối là 7).',
+    },
+  },
+  {
+    match: module => module.subject === 'math' && module.title.includes('Bài toán có lời văn'),
+    block: {
+      type: 'mini',
+      teacherName: COMMON_TEACHER,
+      title: 'Giải bài toán lời văn: đọc → hiểu → tính',
+      points: [
+        'Đọc kỹ đề: tìm cái đã biết và câu hỏi cần trả lời.',
+        'Chọn phép tính phù hợp: cộng khi gộp lại, trừ khi lấy đi, nhân khi gộp nhiều nhóm bằng nhau.',
+      ],
+      example: 'Ví dụ: "Có 24 kẹo chia đều cho 4 bạn" → phép chia: 24÷4 = 6 kẹo mỗi bạn.',
+    },
+  },
+  {
+    match: module => module.subject === 'math' && module.title.includes('Bảng số liệu'),
+    block: {
+      type: 'micro',
+      teacherName: COMMON_TEACHER,
+      title: 'Bảng số liệu giúp đọc và so sánh thông tin nhanh',
+      points: [
+        'Cột tiêu đề cho biết ý nghĩa của từng con số.',
+        'Muốn tìm lớn nhất/nhỏ nhất, so sánh từng ô trong cùng cột hoặc hàng.',
+      ],
+      example: 'Ví dụ: Thứ Hai: 5 quyển, Thứ Ba: 3 quyển → Thứ Hai đọc nhiều hơn 5−3 = 2 quyển.',
+    },
+  },
+  {
+    match: module => module.subject === 'math' && module.title.includes('Tiền Việt Nam'),
+    block: {
+      type: 'micro',
+      teacherName: COMMON_TEACHER,
+      title: 'Tiền Việt Nam: nhận mệnh giá và đổi tiền',
+      points: [
+        'Các mệnh giá thông dụng: 500đ, 1.000đ, 2.000đ, 5.000đ, 10.000đ, 50.000đ, 100.000đ.',
+        'Cộng mệnh giá lại để biết tổng tiền. Trừ đi để tính tiền thừa.',
+      ],
+      example: 'Ví dụ: 1 tờ 10.000đ + 2 tờ 5.000đ = 20.000đ. Mua hàng 15.000đ → trả lại 5.000đ.',
+    },
+  },
+  {
+    match: module => module.subject === 'math' && module.title.includes('Đọc giờ đồng hồ'),
+    block: {
+      type: 'micro',
+      teacherName: COMMON_TEACHER,
+      title: 'Kim phút chỉ số mấy thì biết phút bao nhiêu',
+      points: [
+        'Kim dài (kim phút): chỉ số 12 = đúng giờ; chỉ số 6 = 30 phút.',
+        'Kim ngắn (kim giờ): cho biết đang ở giờ nào.',
+      ],
+      example: 'Ví dụ: kim ngắn gần số 3, kim dài chỉ số 6 → đồng hồ chỉ 3 giờ 30 phút.',
+    },
+  },
+  {
+    match: module => module.subject === 'math' && module.title.includes('Gấp lên và giảm đi'),
+    block: {
+      type: 'micro',
+      teacherName: COMMON_TEACHER,
+      title: 'Gấp lên dùng phép nhân, giảm đi dùng phép chia',
+      points: [
+        'Gấp n lần: nhân số đó với n.',
+        'Giảm đi n lần: chia số đó cho n.',
+      ],
+      example: 'Ví dụ: 12 gấp 3 lần = 12×3 = 36. 12 giảm đi 3 lần = 12÷3 = 4.',
+    },
+  },
+  {
+    match: module => module.subject === 'math' && module.title.includes('Giá trị chữ số'),
+    block: {
+      type: 'mini',
+      teacherName: COMMON_TEACHER,
+      title: 'Mỗi chữ số có giá trị khác nhau tùy vị trí',
+      points: [
+        'Vị trí từ phải sang: đơn vị, chục, trăm, nghìn, chục nghìn, trăm nghìn...',
+        'Chữ số 5 ở hàng trăm có giá trị 500; ở hàng chục có giá trị 50.',
+      ],
+      example: 'Ví dụ: trong số 4.572, chữ số 5 ở hàng trăm → giá trị là 500.',
+    },
+  },
+  {
+    match: module => module.subject === 'math' && module.title.includes('Tìm số còn thiếu'),
+    block: {
+      type: 'micro',
+      teacherName: COMMON_TEACHER,
+      title: 'Tìm số còn thiếu bằng phép tính ngược',
+      points: [
+        'Nếu □ + a = b thì □ = b − a.',
+        'Nếu a × □ = b thì □ = b ÷ a.',
+      ],
+      example: 'Ví dụ: □ + 15 = 40 → □ = 40 − 15 = 25. Kiểm tra: 25 + 15 = 40 ✓.',
+    },
+  },
+  {
+    match: module => module.subject === 'math' && module.title.includes('Làm tròn số'),
+    block: {
+      type: 'mini',
+      teacherName: COMMON_TEACHER,
+      title: 'Làm tròn số: nhìn chữ số liền sau hàng cần tròn',
+      points: [
+        'Chữ số liền sau < 5: giữ nguyên chữ số đang xét, thay phần còn lại bằng 0.',
+        'Chữ số liền sau ≥ 5: tăng chữ số đang xét lên 1, thay phần còn lại bằng 0.',
+      ],
+      example: 'Ví dụ: làm tròn 347 đến chục → nhìn chữ số hàng đơn vị là 7 ≥ 5 → 350.',
+    },
+  },
+  {
+    match: module => module.subject === 'math' && module.title.includes('So sánh số'),
+    block: {
+      type: 'micro',
+      teacherName: COMMON_TEACHER,
+      title: 'So sánh số: xét số chữ số trước, rồi từng hàng',
+      points: [
+        'Số có nhiều chữ số hơn thì lớn hơn.',
+        'Bằng số chữ số: so sánh từ hàng cao nhất (trái) sang phải.',
+      ],
+      example: 'Ví dụ: 4.531 > 4.498 vì cùng 4 chữ số, hàng trăm: 5 > 4.',
+    },
+  },
+  {
+    match: module => module.subject === 'math' && module.title.includes('Đơn vị đo'),
+    block: {
+      type: 'mini',
+      teacherName: COMMON_TEACHER,
+      title: 'Đổi đơn vị đo: nhân hoặc chia theo bảng chuyển đổi',
+      points: [
+        'Đổi từ đơn vị lớn → nhỏ: nhân. Ví dụ: 1 km = 1.000 m.',
+        'Đổi từ đơn vị nhỏ → lớn: chia. Ví dụ: 500 cm = 5 m.',
+      ],
+      example: 'Ví dụ: 2 giờ 30 phút = 2×60 + 30 = 150 phút. 3 kg 500 g = 3.500 g.',
+    },
+  },
   // ── No generic eng fallback: FF4 topics have their own lessonBlocks ──────────
   {
     match: module => module.subject === 'vie' && /bài đọc|bai.?doc/i.test(`${module.title || ''} ${module.topicKey || ''}`),

@@ -369,7 +369,7 @@ function renderReadingPageBlock(block, onNext) {
   // Header
   const header = el('div', { class: 'flex items-center gap-2 mb-1' });
   header.innerHTML = `<span class="text-2xl">📖</span><div>
-    <div class="text-[11px] uppercase tracking-[0.18em] font-black text-méo-purple">${meta.badge} • ${meta.role}</div>
+    <div class="text-[11px] uppercase tracking-[0.18em] font-black text-méo-purple">${meta.role}</div>
     <div class="font-display text-lg text-méo-purple">${block.title || 'Bài đọc'}</div>
     ${block.sourceLabel ? `<div class="text-xs text-text-muted">${block.sourceLabel}</div>` : ''}
   </div>`;
@@ -439,7 +439,7 @@ function renderReadingPageBlock(block, onNext) {
 function renderReviewTheoryBlock(block) {
   const meta = getLessonBlockMeta(block);
   const card = el('div', { class: 'border border-border rounded-2xl p-4 bg-bg-2 flex flex-col gap-3' });
-  card.appendChild(el('div', { class: 'text-[11px] uppercase tracking-[0.18em] font-black text-méo-purple' }, `${meta.badge} • ${meta.role}`));
+  card.appendChild(el('div', { class: 'text-[11px] uppercase tracking-[0.18em] font-black text-méo-purple' }, `${meta.role}`));
   card.appendChild(el('h3', { class: 'font-display text-xl text-méo-purple' }, block.title || 'Bài học ngắn'));
   if (block.sourceLabel) {
     card.appendChild(el('div', { class: 'text-xs font-bold text-text-muted' }, block.sourceLabel));
@@ -476,7 +476,7 @@ function renderReviewReadingBlock(block) {
     ? Array.from({ length: (block.endPage - block.startPage) + 1 }, (_, idx) => block.startPage + idx)
     : [];
 
-  section.appendChild(el('div', { class: 'text-[11px] uppercase tracking-[0.18em] font-black text-méo-purple' }, `${meta.badge} • ${meta.role}`));
+  section.appendChild(el('div', { class: 'text-[11px] uppercase tracking-[0.18em] font-black text-méo-purple' }, `${meta.role}`));
   section.appendChild(el('h3', { class: 'font-display text-xl text-méo-purple' }, block.title || 'Bài đọc SGK'));
   if (block.sourceLabel) {
     section.appendChild(el('div', { class: 'text-xs font-bold text-text-muted' }, block.sourceLabel));
@@ -710,7 +710,7 @@ function renderLessonBlock(block, onNext) {
     <div class="teacher-avatar" aria-hidden="true"><img src="assets/images/gau-lun-teacher-avatar.png" alt="" class="w-full h-full object-contain" /></div>
     <div>
       <div class="teacher-name">${block.teacherName || 'Gâu tiên sinh'}</div>
-      <div class="teacher-role">${meta.badge} • ${meta.role}</div>
+      <div class="teacher-role">${meta.role}</div>
     </div>
   `;
 
