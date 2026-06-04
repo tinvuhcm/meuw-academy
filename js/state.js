@@ -990,10 +990,10 @@ function getTodayStats() {
     const dateStr = new Date(m.completedAt).toISOString().split('T')[0];
     if (dateStr === todayStr || localDateString(new Date(m.completedAt)) === todayStr) {
       modulesDone++;
-      xpEarned += (m.xpEarned || 0);
+      xpEarned += (m.xp || 0);
       correctAnswers += (m.score || 0);
       totalAnswers += (m.total || 0);
-      timeSpent += (m.timeSpentSeconds || 0);
+      timeSpent += Math.floor((m.timeMs || 0) / 60000); // timeMs to minutes
     }
   });
 
@@ -1017,13 +1017,13 @@ function getLifetimeStats() {
     totalModules++;
     correctAnswers += (m.score || 0);
     totalAnswers += (m.total || 0);
-    totalTime += (m.timeSpentSeconds || 0);
+    totalTime += (m.timeMs || 0);
   });
 
   return {
     totalModules,
     accuracy: totalAnswers > 0 ? Math.round((correctAnswers / totalAnswers) * 100) : 0,
-    totalTime: Math.round(totalTime / 60) // minutes
+    totalTime: Math.round(totalTime / 60000) // ms to minutes
   };
 }
 

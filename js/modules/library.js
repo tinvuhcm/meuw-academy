@@ -55,19 +55,22 @@ export function renderLibrary() {
         class: 'book-card group relative bg-bg-2 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-border hover:-translate-y-1 block' 
       });
 
-      // Cover Placeholder
-      const cover = el('div', { class: `w-full h-40 ${isWorkbook ? 'bg-orange-100 text-orange-400' : 'bg-blue-100 text-blue-400'} flex-center flex-col p-4 text-center border-b border-border` });
+      // Cover Placeholder - Beautiful CSS Book
+      const coverColor = isWorkbook ? 'from-orange-400 to-red-400' : 'from-blue-400 to-indigo-500';
+      const coverIcon = isWorkbook ? '✏️' : '📚';
+      
+      const cover = el('div', { class: `w-full h-44 bg-gradient-to-br ${coverColor} flex flex-col justify-center items-center p-4 text-center border-b-4 ${isWorkbook ? 'border-red-600' : 'border-indigo-700'} relative shadow-inner` });
       cover.innerHTML = `
-        <span class="text-4xl mb-2">${isWorkbook ? '📝' : '📖'}</span>
-        <span class="text-xs font-bold opacity-70">${book.id.toUpperCase()}</span>
+        <div class="absolute left-0 top-0 bottom-0 w-3 bg-black/20 border-r border-white/20"></div>
+        <span class="text-5xl mb-2 drop-shadow-md transform group-hover:scale-110 transition-transform">${coverIcon}</span>
+        <span class="text-xs font-bold text-white/90 drop-shadow-sm px-2 text-center leading-tight line-clamp-2">${book.title.toUpperCase()}</span>
       `;
       card.appendChild(cover);
 
       // Info
-      const info = el('div', { class: 'p-3 text-center' });
+      const info = el('div', { class: 'p-3 text-center bg-white' });
       info.innerHTML = `
-        <div class="font-bold text-sm text-text line-clamp-2">${book.title}</div>
-        <div class="text-[10px] text-white font-bold inline-block px-2 py-0.5 rounded-full mt-2 ${isWorkbook ? 'bg-warning' : 'bg-méo-purple'}">${isWorkbook ? 'Vở bài tập' : 'Sách học'}</div>
+        <div class="text-[10px] text-white font-bold inline-block px-3 py-1 rounded-full ${isWorkbook ? 'bg-warning shadow-warning/30' : 'bg-méo-purple shadow-méo-purple/30'} shadow-md uppercase tracking-wider">${isWorkbook ? 'Vở bài tập' : 'Sách học'}</div>
       `;
       card.appendChild(info);
       
