@@ -448,7 +448,7 @@ function showDayDetailModal(dayNumber, dayData, currentDay) {
     // Note: To be fully safe, we could navigate to "day" mode if it's merged, but for now we just use "am"
     const plan = State.getStudyPlanForDayNumber(dayNumber);
     const sessionToStart = plan.mode === 'merged' ? 'day' : 'am';
-    if (btn) btn.addEventListener('click', () => { overlay.remove(); Router.navigate(\`/session/\${dayNumber}/\${sessionToStart}\`); });
+    if (btn) btn.addEventListener('click', () => { overlay.remove(); Router.navigate(`/session/${dayNumber}/${sessionToStart}`); });
   }
 
   modal.appendChild(content);
