@@ -1,6 +1,5 @@
-import { el } from '../utils.js';
+import { el, getSubjectConfig } from '../utils.js';
 import { TEXTBOOKS } from '../data/textbooks.js';
-import { getSubjectConfig } from '../data/curriculum.js';
 import Router from '../router.js';
 
 export function renderLibrary() {
