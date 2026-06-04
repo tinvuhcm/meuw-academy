@@ -621,7 +621,8 @@ function syncDailyProgress() {
   const elapsedDays = Math.max(0, diffCalendarDays(startDate, today));
   const calendarDay = clampDay(elapsedDays + 1);
   const sequentialPassedDays = getSequentialPassedDays();
-  const autoTargetDay = clampDay(Math.min(calendarDay, sequentialPassedDays + 1));
+  // Unlock next day automatically when previous day is completed — no calendar cap
+  const autoTargetDay = clampDay(sequentialPassedDays + 1);
   const manualUnlockedDay = clampDay(Number(profile.forceUnlockedThroughDay || 1));
   const targetDay = Math.max(autoTargetDay, manualUnlockedDay);
 
@@ -637,7 +638,7 @@ function syncDailyProgress() {
     changed = true;
   }
 
-  for (let day = 1; day <= Math.min(calendarDay, targetDay); day++) {
+  for (let day = 1; day <= targetDay; day++) {
     if (!profile.dayUnlockedOn[day]) {
       profile.dayUnlockedOn[day] = localDateString(addDays(startDate, day - 1));
       changed = true;

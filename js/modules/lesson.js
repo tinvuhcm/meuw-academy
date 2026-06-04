@@ -244,7 +244,8 @@ export function renderLesson(params) {
     triggerMascot('module:complete');
 
     const isAlreadyCompleted = State.isModuleComplete(moduleData.id);
-    
+    const prevDay = State.getActiveProfile().currentDay || 1;
+
     if (!isAlreadyCompleted) {
       // Mark complete only if it's the first time
       const timeSpentMs = Date.now() - startTime;
@@ -262,13 +263,17 @@ export function renderLesson(params) {
       });
     }
 
+    // Re-sync progress: detects if completing this module passed the full day
+    const newDay = State.syncDailyProgress();
+    const dayJustAdvanced = !isAlreadyCompleted && !isRandomPractice && newDay > prevDay;
+
     card.innerHTML = '';
     const compBox = el('div', { class: 'flex flex-col items-center justify-center flex-1 text-center py-10' });
-    
+
     const title = el('h2', { class: 'completion-title font-display text-4xl text-méo-purple mb-4' }, 'Hoàn thành!');
     const xpText = el('div', { class: 'text-2xl font-bold text-warning mb-8 flex items-center gap-2 justify-center' });
     xpText.innerHTML = isAlreadyCompleted ? `Ôn tập hoàn tất! 🌟` : `+${xpEarnedTotal} ⭐ <span class="text-3xl">🌟</span>`;
-    
+
     // Check if badges were earned
     const newBadges = State.checkAndAwardBadges();
     if (newBadges.length > 0) {
@@ -291,12 +296,16 @@ export function renderLesson(params) {
     const btnRow = el('div', { class: 'flex gap-4' });
     const backBtn = el('button', { class: 'btn btn-secondary' }, 'Về danh sách');
     backBtn.addEventListener('click', () => { Audio.click(); Router.back(); });
-    
-    const nextBtn = el('button', { class: 'btn btn-cta' }, 'Tiếp tục');
+
+    const nextLabel = dayJustAdvanced ? `Học ngày ${newDay} →` : 'Tiếp tục';
+    const nextBtn = el('button', { class: 'btn btn-cta' }, nextLabel);
     nextBtn.addEventListener('click', () => {
       Audio.click();
       if (isRandomPractice) {
         Router.navigate('/practice');
+      } else if (dayJustAdvanced) {
+        const nextPlan = State.getStudyPlanForDayNumber(newDay);
+        Router.navigate(`/session/${newDay}/${nextPlan.mode === 'merged' ? 'day' : 'am'}`);
       } else {
         Router.navigate(`/session/${dayId}/${moduleData.session}`);
       }
@@ -307,6 +316,15 @@ export function renderLesson(params) {
 
     compBox.appendChild(title);
     compBox.appendChild(xpText);
+    if (dayJustAdvanced) {
+      const unlockBanner = el('div', { class: 'bg-méo-purple-lt border-2 border-méo-purple rounded-2xl p-4 mb-6 w-full max-w-md' });
+      unlockBanner.innerHTML = `
+        <div class="text-3xl mb-2">🔓</div>
+        <div class="font-display text-xl text-méo-purple mb-1">Ngày ${newDay} đã mở khóa!</div>
+        <div class="text-sm font-bold text-text-muted">Con đã hoàn thành ngày hôm trước. Tiếp tục nào!</div>
+      `;
+      compBox.appendChild(unlockBanner);
+    }
     compBox.appendChild(btnRow);
 
     card.appendChild(compBox);

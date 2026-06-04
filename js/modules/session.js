@@ -125,12 +125,32 @@ export function renderSession(params) {
 
   // End screen if all completed
   if (!isFutureDay && foundFirstIncomplete === false) {
-    const doneBox = el('div', { class: 'text-center mt-8 p-6 bg-correct-bg border-2 border-correct rounded-2xl' });
+    const latestDay = State.getCurrentDay();
+    const nextDayUnlocked = latestDay > numericDayId;
+
+    const doneBox = el('div', { class: 'text-center mt-8 p-6 bg-correct-bg border-2 border-correct rounded-2xl flex flex-col items-center gap-4' });
     doneBox.innerHTML = `
-      <div class="text-4xl mb-4">🎉</div>
-      <h2 class="font-display text-2xl text-correct-dk mb-2">Hoàn thành xuất sắc!</h2>
+      <div class="text-4xl">🎉</div>
+      <h2 class="font-display text-2xl text-correct-dk">Hoàn thành xuất sắc!</h2>
       <p class="font-bold text-correct">Em đã hoàn thành tất cả nhiệm vụ buổi này.</p>
     `;
+
+    if (nextDayUnlocked) {
+      const unlockRow = el('div', { class: 'bg-white border-2 border-méo-purple rounded-2xl px-6 py-4 flex flex-col items-center gap-2 w-full max-w-xs' });
+      unlockRow.innerHTML = `
+        <div class="text-2xl">🔓</div>
+        <div class="font-display text-lg text-méo-purple">Ngày ${latestDay} đã mở!</div>
+      `;
+      const goBtn = el('button', { class: 'btn btn-primary w-full mt-1' }, `Học ngày ${latestDay} →`);
+      goBtn.addEventListener('click', () => {
+        Audio.click();
+        const plan = State.getStudyPlanForDayNumber(latestDay);
+        Router.navigate(`/session/${latestDay}/${plan.mode === 'merged' ? 'day' : 'am'}`);
+      });
+      unlockRow.appendChild(goBtn);
+      doneBox.appendChild(unlockRow);
+    }
+
     listWrapper.appendChild(doneBox);
   }
 
