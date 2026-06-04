@@ -184,49 +184,5 @@ export function renderSession(params) {
   wrapper.appendChild(header);
   wrapper.appendChild(container);
 
-  // Popup break reminder logic
-  const completedCount = modules.filter(m => State.isModuleComplete(m.id)).length;
-  if (completedCount > 0 && completedCount % 6 === 0) {
-    const breakKey = `break_shown_${dayId}_${sessionId}_${completedCount}`;
-    if (!sessionStorage.getItem(breakKey)) {
-      sessionStorage.setItem(breakKey, 'true');
-      setTimeout(() => {
-        const BREAK_MESSAGES = [
-          "Em học ngoan quá! Mình nghỉ giải lao uống ngụm nước rồi học tiếp nhé. 🌿",
-          "Mắt em mỏi chưa? Mình nhắm mắt thở sâu 3 lần cho khỏe nha! 👀",
-          "Học chăm chỉ quá! Vươn vai một cái cho đỡ mỏi lưng nào em ơi! 💪",
-          "Nghỉ tay một chút nhé, đi uống nước hoặc vươn vai rồi mình chiến tiếp! 🥛",
-          "Em làm tốt lắm! Đi dạo một vòng quanh phòng cho thư giãn nhé! 🚶‍♂️"
-        ];
-        const msg = BREAK_MESSAGES[Math.floor(Math.random() * BREAK_MESSAGES.length)];
-      
-        const overlay = el('div', { class: 'modal-overlay z-50' });
-        const modal = el('div', { class: 'modal-card text-center flex flex-col items-center gap-4 p-6' });
-        
-        const closeBtn = el('div', { class: 'modal-close' }, '✕');
-        closeBtn.addEventListener('click', () => { Audio.click(); overlay.remove(); });
-        
-        const icon = el('div', { class: 'text-6xl animate-bounce mb-2' }, '🌿');
-        const title = el('h2', { class: 'font-display text-2xl text-méo-purple' }, 'Nghỉ giải lao tí nhé!');
-        const text = el('p', { class: 'text-text font-bold' }, msg);
-        
-        const okBtn = el('button', { class: 'btn btn-primary px-8 mt-2' }, 'Đã rõ, em nghỉ chút đây!');
-        okBtn.addEventListener('click', () => {
-          Audio.click();
-          overlay.remove();
-        });
-      
-        modal.appendChild(closeBtn);
-        modal.appendChild(icon);
-        modal.appendChild(title);
-        modal.appendChild(text);
-        modal.appendChild(okBtn);
-        
-        overlay.appendChild(modal);
-        document.body.appendChild(overlay);
-      }, 600); // Short delay to let session animation finish
-    }
-  }
-
   return wrapper;
 }

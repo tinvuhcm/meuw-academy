@@ -12,7 +12,6 @@ import {
   LONG_RANGE_STUDY_POLICY,
 } from './official-knowledge-map.js';
 import { buildKnttCatalogTopics } from './kntt-topics.js';
-import { getPptxTopicsForSubject } from './kntt-pptx-questions.js';
 import { ALL_SCI_ENCYCLOPEDIA_TOPICS } from './science-encyclopedia.js';
 import { ALL_SCIENCE_WORLD_TOPICS } from './science-world.js';
 import { ALL_VIETNAM_TOPICS } from './vietnam-topics.js';
@@ -31,12 +30,11 @@ const TARGET_QUESTION_COUNT = {
   eng: 27,   // 27Q × ~10s ≈ 4.5 min
   vie: 27,   // 9 base + 9 Ôn lại + 9 Nhớ lại = 27
   sci: 27,   // 9 base + 9 Ôn lại + 9 Nhớ lại = 27
-  it: 14,
-  histgeo: 14,
-  music: 10,
-  art: 10,
-  tech: 12,
-  draw: 1,
+  it: 27,
+  histgeo: 27,
+  music: 27,
+  art: 27,
+  tech: 27,
 };
 
 // Daily caps per subject. Loose upper limits — patterns drive actual distribution.
@@ -44,17 +42,16 @@ const TARGET_QUESTION_COUNT = {
 // Secondary budget: it:3 + histgeo:3 + music:2 + art:2 + tech:2 = 12
 // Pattern ensures core ≥ 70% of 24 actual slots served.
 const SUBJECT_DAILY_CAPS = {
-  math: 8,
-  eng: 5,
-  vie: 7,
+  math: 6,
+  eng: 6,
+  vie: 6,
   sci: 6,
-  'sci-world': 2, // 1 per session guaranteed — exploratory science every session
-  it: 3,
-  histgeo: 3,
-  music: 2,
-  art: 2,
-  tech: 2,
-  draw: 1,
+  'sci-world': 2,
+  it: 1,
+  histgeo: 1,
+  music: 1,
+  art: 1,
+  tech: 1,
 };
 
 const MATH_TOPICS = [
@@ -416,17 +413,6 @@ function buildCatalog(allData) {
 
   // Vietnam topics — Lịch sử & Địa lí Việt Nam (handwritten, source-verified)
   ALL_VIETNAM_TOPICS.forEach(topic => mergeSupplemental(catalog, topic));
-
-  // PPTX slide-derived question pools are unreliable for direct runtime QA,
-  // especially for SGK reading/language content where extracted answers often
-  // become nonsensical. Keep only the science lane unchanged for now.
-  const PPTX_SUBJECTS = ['sci'];
-  for (const subjectCode of PPTX_SUBJECTS) {
-    const topics = getPptxTopicsForSubject(subjectCode);
-    for (const topic of topics) {
-      mergeSupplemental(catalog, topic);
-    }
-  }
 
   // ── Remove zero-yield topics that cause subject-fallback cascades ─────────────
   // Two failure modes handled here:
@@ -876,15 +862,16 @@ function generateMathQuestions(topic, count, seedInput) {
   return questions;
 }
 
-function chooseTopicEntry({ subject, dayNumber, moduleIndex, session, moduleId, catalog, daySeen, sessionSeen, ledger, forcedTopicKey }) {
+function chooseTopicEntry({ subject, dayNumber, moduleIndex, session, moduleId, catalog, daySeen, sessionSeen, ledger, forcedTopicKey, ignoredTopics = new Set() }) {
   // 'sci-world' is a virtual subject: picks only extended-lane sci topics (science-world + encyclopedia)
   // This guarantees exploratory science content every session.
   const effectiveSubject = subject === 'sci-world' ? 'sci' : subject;
   const sciWorldOnly = subject === 'sci-world';
 
-  const candidates = sciWorldOnly
+  let candidates = sciWorldOnly
     ? (catalog['sci'] || []).filter(item => item.sourceLane === 'extended')
     : catalog[effectiveSubject] || [];
+  candidates = candidates.filter(item => !ignoredTopics.has(item.topicKey));
   if (!candidates.length) return null;
   // sci-world topics have 6-8 questions each — lower threshold so they qualify
   const minQuestions = sciWorldOnly ? 4 : (TARGET_QUESTION_COUNT[effectiveSubject] || 1);
@@ -962,47 +949,35 @@ function subjectFallbackOrder(primarySubject) {
 }
 
 function getPhaseCoreSubject(phase, session, moduleIndex) {
-  // All patterns ensure >70% core subjects (math+vie+eng+sci).
-  // ethics/pe/life removed; secondary subjects: it, histgeo, music, art, tech
-  const patterns = {
-    // Summer hè: 100% core, strict m→v→e→s interleaving, sci-world guaranteed slot 3
-    'summer-foundation': {
-      am: ['math', 'vie', 'eng', 'sci-world', 'math', 'vie', 'eng', 'sci', 'math', 'vie', 'eng', 'sci', 'math', 'vie'],
-      //   math:4, vie:4, eng:3, sci:2, sci-world:1 → total core 14/14 = 100%
-      pm: ['math', 'vie', 'eng', 'sci-world', 'math', 'vie', 'eng', 'sci', 'math', 'vie'],
-      //   math:3, vie:3, eng:2, sci:1, sci-world:1 → total core 10/10 = 100%
-    },
-    // Term 1 (tháng 9–1): bám SGK + sci-world guarantee per session
-    'term-1': {
-      am: ['math', 'vie', 'eng', 'sci-world', 'math', 'sci', 'vie', 'eng', 'histgeo', 'math', 'vie', 'eng', 'sci', 'it'],
-      //   sci-world:1 guaranteed; sci:1; core: math:4 vie:3 eng:3 = 12/14 = 85.7%
-      pm: ['math', 'eng', 'vie', 'sci-world', 'math', 'it', 'eng', 'vie', 'sci', 'math'],
-      //   sci-world:1 guaranteed; sci:1; core: math:3 eng:2 vie:2 = 9/10 = 90%
-    },
-    // Term 2 (tháng 2–5): tăng sci + sci-world guarantee per session
-    'term-2': {
-      am: ['math', 'vie', 'eng', 'sci-world', 'math', 'sci', 'vie', 'eng', 'tech', 'math', 'vie', 'sci', 'eng', 'histgeo'],
-      //   sci-world:1 guaranteed; sci:2; core: math:4 vie:3 eng:3 = 12/14 = 85.7%
-      pm: ['math', 'eng', 'vie', 'sci-world', 'math', 'sci', 'eng', 'vie', 'sci', 'it'],
-      //   sci-world:1 guaranteed; sci:2; core: math:3 eng:2 vie:2 = 9/10 = 90%
-    },
+  // All patterns ensure >80% core subjects (math+vie+eng+sci) and strict interleaving.
+  // 14 AM + 10 PM = 24 modules total.
+  // 'enr-X' (1-4) are enrichment slots mapping to histgeo, it, tech, art, music.
+  const strictPattern = {
+    am: ['math', 'vie', 'eng', 'sci-world', 'math', 'enr-1', 'vie', 'eng', 'sci', 'math', 'enr-2', 'vie', 'eng', 'sci'],
+    pm: ['math', 'vie', 'enr-3', 'eng', 'sci', 'math', 'vie', 'enr-4', 'eng', 'sci'],
   };
-  const sessionPattern = patterns[phase]?.[session] || patterns['summer-foundation'][session] || [];
-  return sessionPattern[moduleIndex % sessionPattern.length] || null;
+  
+  return strictPattern[session]?.[moduleIndex % strictPattern[session].length] || null;
 }
 
 function getLongRangePlanSubject(dayNumber, session, moduleIndex, studyDate) {
   const phase = getAcademicPhase(studyDate);
-  // Summer phase: 100% core subjects, no enrichment slots (histgeo/it/tech excluded)
-  if (phase !== 'summer-foundation') {
-    const slotIndexes = LONG_RANGE_STUDY_POLICY.enrichmentSlotMap[session] || [];
-    const slotPosition = slotIndexes.indexOf(moduleIndex);
-    if (slotPosition !== -1) {
+  const subject = getPhaseCoreSubject(phase, session, moduleIndex);
+
+  if (subject && subject.startsWith('enr-')) {
+    const index = parseInt(subject.split('-')[1]) - 1;
+    if (phase === 'summer-foundation') {
+      // Carefully selected fallbacks to prevent any adjacent duplicates in the strict pattern
+      const summerFallbacks = ['sci', 'eng', 'math', 'sci'];
+      return summerFallbacks[index % summerFallbacks.length];
+    } else {
+      // In term time, inject the daily rotating enrichment subjects
       const enrichment = getDailyEnrichmentSubjects(dayNumber);
-      return enrichment[slotPosition % enrichment.length] || null;
+      return enrichment[index % enrichment.length] || null;
     }
   }
-  return getPhaseCoreSubject(phase, session, moduleIndex);
+
+  return subject;
 }
 
 function getSubjectUsageScore(usage, subject) {
@@ -1024,7 +999,11 @@ function prioritizeSubjectOrder(primarySubject, subjectUsage) {
     if (getSubjectUsageScore(subjectUsage, subject) < cap) {
       underCap.push(subject);
     } else {
-      atCap.push(subject);
+      // If it's a secondary subject over cap, completely drop it from fallbacks 
+      // UNLESS it's the primary subject (must guarantee at least one attempt).
+      if (CORE_SUBJECT_CODES.includes(subject) || subject === primarySubject) {
+        atCap.push(subject);
+      }
     }
   });
 
@@ -1153,10 +1132,13 @@ function buildQuestionsForEntry(entry, skeleton, seedInput, questionSeenDay, exp
       if (selected.length >= targetCount) break;
       const normalizedQuestion = questionSignature(candidate);
       if (!normalizedQuestion) continue;
-      if (globalQuestionSeen.has(normalizedQuestion) || questionSeenDay.has(normalizedQuestion) || localQuestionSeen.has(normalizedQuestion)) continue;
+      
+      // Global deduplication is disabled because all pools are now small (5-15 questions).
+      // We only deduplicate strictly within the SAME day.
+      if (questionSeenDay.has(normalizedQuestion) || localQuestionSeen.has(normalizedQuestion)) continue;
 
       const normalizedExplanation = explanationSignature(candidate);
-      if (normalizedExplanation && (globalExplanationSeen.has(normalizedExplanation) || explanationSeenDay.has(normalizedExplanation))) continue;
+      if (normalizedExplanation && explanationSeenDay.has(normalizedExplanation)) continue;
 
       const copy = ensureAnswerField(candidate);
       selected.push(copy);
@@ -1246,36 +1228,55 @@ export function materializeDayCurriculum(dayNumber, dayData, allData) {
       ? [module.subject]
       : [...new Set([plannedSubject, ...prioritizeSubjectOrder(plannedSubject || module.subject, subjectUsage)].filter(Boolean))];
     let chosenEntry = null;
+    if (index === 11) console.log('ORDER 11:', subjectOrder);
     let questions = [];
 
     for (const subject of subjectOrder) {
-      const candidate = chooseTopicEntry({
-        subject,
-        dayNumber,
-        moduleIndex: index,
-        session: module.session,
-        moduleId: module.id,
-        catalog,
-        daySeen: topicSeenDay,
-        sessionSeen: topicSeenBySession[module.session] || new Set(),
-        ledger,
-        forcedTopicKey: subject === module.subject ? forcedTopicKey : null,
-      });
-      if (!candidate) continue;
+      let candidate = null;
+      let candidateQuestions = [];
+      const ignoredTopics = new Set();
+      
+      for (let attempt = 0; attempt < 10; attempt++) {
+        candidate = chooseTopicEntry({
+          subject,
+          dayNumber,
+          moduleIndex: index,
+          session: module.session,
+          moduleId: module.id,
+          catalog,
+          daySeen: topicSeenDay,
+          sessionSeen: topicSeenBySession[module.session] || new Set(),
+          ledger,
+          forcedTopicKey: subject === module.subject ? forcedTopicKey : null,
+          ignoredTopics,
+        });
+        if (!candidate) break;
 
-      const candidateQuestions = buildQuestionsForEntry(
-        candidate,
-        module,
-        `${dayNumber}|${module.session}|${index}|${candidate.topicKey}`,
-        questionSeenDay,
-        explanationSeenDay,
-        ledger,
-      );
+        candidateQuestions = buildQuestionsForEntry(
+          candidate,
+          module,
+          `${dayNumber}|${module.session}|${index}|${candidate.topicKey}`,
+          questionSeenDay,
+          explanationSeenDay,
+          ledger,
+        );
 
-      if (candidateQuestions.length >= 4 || subject === subjectOrder[subjectOrder.length - 1]) {
+        if (candidateQuestions.length >= 4) {
+          break; // Good candidate found!
+        } else {
+          // If < 4, generator/pool exhausted. Ignore this topic and try again.
+          ignoredTopics.add(candidate.topicKey);
+          candidate = null;
+        }
+      }
+
+      if (candidate && candidateQuestions.length >= 4) {
         chosenEntry = candidate;
         questions = candidateQuestions;
-        break;
+        break; // Successfully fulfilled the module with this subject!
+      } else if (subject === subjectOrder[subjectOrder.length - 1]) {
+        chosenEntry = candidate; // Last resort subject
+        questions = candidateQuestions;
       }
     }
 

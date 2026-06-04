@@ -191,9 +191,10 @@ export function getDailyEnrichmentSubjects(dayNumber) {
   // Rotates through secondary subjects (ethics/pe/life removed)
   const ring = ['histgeo', 'music', 'art', 'tech', 'it'];
   const first = ring[(dayNumber - 1) % ring.length];
-  const second = ring[(dayNumber + 2) % ring.length];
-  const third = ring[(dayNumber + 4) % ring.length];
-  return [first, second, third];
+  const second = ring[(dayNumber + 1) % ring.length];
+  const third = ring[(dayNumber + 2) % ring.length];
+  const fourth = ring[(dayNumber + 3) % ring.length];
+  return [first, second, third, fourth];
 }
 
 export function getSubjectEstimatedMinutes(subject) {
