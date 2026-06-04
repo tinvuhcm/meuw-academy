@@ -41,7 +41,7 @@ export function renderLibrary() {
     
     // Subject Title
     const subjTitle = el('h2', { class: 'font-display text-2xl mb-4 text-text flex items-center gap-3' });
-    subjTitle.innerHTML = `<span class="w-10 h-10 rounded-full flex-center bg-bg-2 text-xl">${data.config.emoji}</span> ${data.config.name}`;
+    subjTitle.innerHTML = `<span class="w-10 h-10 rounded-full flex-center bg-bg-2 text-xl">${data.config.emoji}</span> ${data.config.label}`;
     subjSection.appendChild(subjTitle);
 
     // Books Grid

@@ -139,3 +139,12 @@
   70% { transform: scale(1.1) translateY(0); }
   100% { transform: scale(1) translateY(0); opacity: 1; }
 }
+
+@keyframes shine {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(300%); }
+}
+
+.animate-shine {
+  animation: shine 2s infinite ease-in-out;
+}

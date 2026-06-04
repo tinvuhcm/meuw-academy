@@ -473,19 +473,16 @@ export function scoreMessage(correct, total) {
 }
 
 // ============================================
-// GREETING ROTATION
-// Cycles through varied greetings so it doesn't get boring
-// ============================================
-const GREETINGS = [
-  'Chào Méo', 'Chào em', 'Chào Méo', 'Chào Minh Méo',
-  'Méo ơi!',  'Ê Méo!',  'Chào cô bé',
-];
 let _greetingIndex = -1;
 
 /**
  * Get a rotating greeting — never the same twice in a row
  */
-export function getGreeting() {
+export function getGreeting(name = 'Méo') {
+  const GREETINGS = [
+    `Chào ${name}`, `Chào em`, `Chào ${name}`, `Chào ${name} bé nhỏ`,
+    `${name} ơi!`,  `Ê ${name}!`,  `Chào bé`
+  ];
   let next;
   do { next = Math.floor(Math.random() * GREETINGS.length); }
   while (next === _greetingIndex && GREETINGS.length > 1);
@@ -496,9 +493,9 @@ export function getGreeting() {
 /**
  * Full greeting line with emoji: "Chào Méo! 🌟"
  */
-export function getGreetingLine() {
+export function getGreetingLine(name = 'Méo') {
   const emojis = ['🌟', '✨', '🐱', '🎉', '💫', '🚀'];
-  return `${getGreeting()}! ${randomPick(emojis)}`;
+  return `${getGreeting(name)}! ${randomPick(emojis)}`;
 }
 
 // ============================================

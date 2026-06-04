@@ -97,7 +97,6 @@ export function renderDashboard() {
   
   // 2. Hero Section (Mascot + Greeting)
   const hero = el('section', { class: 'dashboard-hero flex flex-col md:flex-row items-center gap-6 bg-gradient-hero rounded-3xl p-6 md:p-10 shadow-sm mb-8 relative overflow-hidden' });
-  
   const mascotArea = el('div', { class: 'hero-mascot-area w-48 h-48 md:w-64 md:h-64 relative shrink-0 z-10' });
   mascotArea.innerHTML = `
     <div class="mascot-container" data-mascot>
@@ -107,7 +106,8 @@ export function renderDashboard() {
   `;
   
   const greetingArea = el('div', { class: 'hero-greeting-area flex-1 text-center md:text-left z-10' });
-  const greetingText = el('h1', { class: 'hero-greeting font-display text-3xl md:text-4xl text-text mb-2' }, getGreetingLine());
+  const profileName = State.getActiveProfile()?.name || 'Méo';
+  const greetingText = el('h1', { class: 'hero-greeting font-display text-3xl md:text-4xl text-text mb-2' }, getGreetingLine(profileName));
   const dayText = el('p', { class: 'hero-day-info text-text-muted text-lg font-bold' }, `${formatToday()} • Ngày thứ ${currentDay} • ${currentPlan.shortLabel}`);
   
   // XP Progress

@@ -25,26 +25,31 @@ export function renderKnowledgeCards() {
   // Grid
   const grid = el('div', { class: 'grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6' });
 
-  // Demo cards
+  // Demo cards with better images
   const demoCards = [
-    { id: 'math-1', title: 'Bảng Cửu Chương 9', desc: 'Bí kíp học thuộc nhanh bằng 10 ngón tay!', type: 'Toán', emoji: '📐', color: 'bg-math-color', image: 'https://images.unsplash.com/photo-1596495577886-d920f1fb7238?w=400&q=80', rarity: 'Hiếm' },
-    { id: 'sci-1', title: 'Vòng Đời Của Bướm', desc: 'Từ quả trứng nhỏ xíu nở ra chú sâu, nhộng và hóa thành bướm xinh đẹp.', type: 'Khoa học', emoji: '🦋', color: 'bg-sci-color', image: 'https://images.unsplash.com/photo-1552084117-56a987666449?w=400&q=80', rarity: 'Cực hiếm' },
-    { id: 'geo-1', title: 'Thủ đô Hà Nội', desc: 'Hồ Gươm và Tháp Rùa huyền thoại ngàn năm văn hiến.', type: 'Lịch sử - Địa lí', emoji: '🐢', color: 'bg-wrong', image: 'https://images.unsplash.com/photo-1599708153386-62b22bb8fa8a?w=400&q=80', rarity: 'Phổ biến' },
+    { id: 'math-1', title: 'Bảng Cửu Chương 9', desc: 'Bí kíp học thuộc nhanh bằng 10 ngón tay!', type: 'Toán', emoji: '📐', color: 'bg-math-color', image: 'https://images.unsplash.com/photo-1518133835878-5a93cc3f89e5?w=400&q=80', rarity: 'Hiếm' }, // Math tools
+    { id: 'sci-1', title: 'Vòng Đời Của Bướm', desc: 'Từ quả trứng nhỏ xíu nở ra chú sâu, nhộng và hóa thành bướm xinh đẹp.', type: 'Khoa học', emoji: '🦋', color: 'bg-sci-color', image: 'https://images.unsplash.com/photo-1552084117-56a987666449?w=400&q=80', rarity: 'Cực hiếm' }, // Butterfly
+    { id: 'geo-1', title: 'Thủ đô Hà Nội', desc: 'Hồ Gươm và Tháp Rùa huyền thoại ngàn năm văn hiến.', type: 'Lịch sử - Địa lí', emoji: '🐢', color: 'bg-wrong', image: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=400&q=80', rarity: 'Phổ biến' }, // Hoan Kiem Lake, Hanoi
   ];
 
   demoCards.forEach(card => {
-    // Wrap in a button to make the whole card clickable
-    const cardEl = el('button', { class: 'text-left bg-white rounded-3xl overflow-hidden border-2 border-transparent shadow-md hover:shadow-2xl hover:-translate-y-2 hover:border-orange-300 transition-all group flex flex-col relative focus:outline-none' });
+    // Flashy blink blink card wrapper
+    const cardEl = el('button', { class: 'text-left bg-white rounded-3xl overflow-hidden border-2 border-transparent shadow-md hover:shadow-2xl hover:-translate-y-2 hover:border-yellow-400 transition-all group flex flex-col relative focus:outline-none' });
+    
+    // Add the "blink blink" sweeping shine effect
+    const shine = el('div', { class: 'absolute inset-0 z-20 pointer-events-none overflow-hidden rounded-3xl' });
+    shine.innerHTML = `<div class="absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/60 to-transparent skew-x-[-20deg] group-hover:animate-shine"></div>`;
+    cardEl.appendChild(shine);
     
     // Rarity spark
     if (card.rarity === 'Cực hiếm') {
-      const spark = el('div', { class: 'absolute top-0 right-0 w-16 h-16 overflow-hidden z-10' });
-      spark.innerHTML = `<div class="bg-gradient-to-r from-yellow-300 to-yellow-500 text-yellow-900 font-bold text-[10px] uppercase py-1 shadow-md transform rotate-45 translate-x-4 translate-y-2 text-center w-24">Siêu cấp</div>`;
+      const spark = el('div', { class: 'absolute top-0 right-0 w-16 h-16 overflow-hidden z-30' });
+      spark.innerHTML = `<div class="bg-gradient-to-r from-yellow-300 via-yellow-100 to-yellow-500 text-yellow-900 font-bold text-[10px] uppercase py-1 shadow-md transform rotate-45 translate-x-4 translate-y-2 text-center w-24 animate-pulse">Siêu cấp</div>`;
       cardEl.appendChild(spark);
     }
     
     // Image area
-    const imgWrapper = el('div', { class: 'relative h-48 w-full bg-bg-2 overflow-hidden border-b-4 border-black/5' });
+    const imgWrapper = el('div', { class: 'relative h-48 w-full bg-bg-2 overflow-hidden border-b-4 border-black/5 z-10' });
     if (card.image) {
       imgWrapper.innerHTML = `<img src="${card.image}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />`;
     } else {
@@ -52,22 +57,25 @@ export function renderKnowledgeCards() {
     }
     
     // Type badge
-    const badge = el('div', { class: `absolute top-3 left-3 ${card.color} text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md backdrop-blur-sm bg-opacity-90 border border-white/20` }, card.type);
+    const badge = el('div', { class: `absolute top-3 left-3 ${card.color} text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md backdrop-blur-sm bg-opacity-90 border border-white/20 z-10` }, card.type);
     imgWrapper.appendChild(badge);
     
     cardEl.appendChild(imgWrapper);
     
     // Info area
-    const info = el('div', { class: 'p-5 flex flex-col flex-1 bg-gradient-to-b from-white to-orange-50/30' });
+    const info = el('div', { class: 'p-5 flex flex-col flex-1 bg-gradient-to-b from-white to-yellow-50/50 z-10 relative' });
+    
+    // Add blink blink stars in background of info
     info.innerHTML = `
-      <h3 class="font-display text-xl mb-2 text-text group-hover:text-orange-600 transition-colors">${card.title}</h3>
-      <p class="text-sm text-text-muted flex-1 line-clamp-2">${card.desc}</p>
+      <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-100/50 via-transparent to-transparent"></div>
+      <h3 class="font-display text-xl mb-2 text-text group-hover:text-yellow-600 transition-colors drop-shadow-sm">${card.title}</h3>
+      <p class="text-sm text-text-muted flex-1 line-clamp-2 relative z-10">${card.desc}</p>
     `;
     
-    const viewHint = el('div', { class: 'mt-3 pt-3 border-t border-border flex items-center justify-between' });
+    const viewHint = el('div', { class: 'mt-3 pt-3 border-t border-border flex items-center justify-between relative z-10' });
     viewHint.innerHTML = `
-      <span class="text-xs font-bold text-orange-500 bg-orange-100 px-2 py-1 rounded-md">${card.rarity}</span>
-      <span class="text-xs font-bold text-méo-purple">Mở xem ›</span>
+      <span class="text-xs font-bold text-yellow-600 bg-yellow-100 px-2 py-1 rounded-md shadow-sm border border-yellow-200">${card.rarity}</span>
+      <span class="text-xs font-bold text-méo-purple animate-pulse">Mở xem ✨</span>
     `;
     info.appendChild(viewHint);
 
