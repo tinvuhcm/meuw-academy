@@ -127,12 +127,26 @@ export function renderSession(params) {
   if (!isFutureDay && foundFirstIncomplete === false) {
     const latestDay = State.getCurrentDay();
     const nextDayUnlocked = latestDay > numericDayId;
+    const dayProgress = State.getDayProgress(numericDayId);
+    const isDayFullyPassed = dayProgress.isPassed;
+
+    // Determine other session to suggest (only for split mode)
+    const otherSession = effectiveSessionId === 'am' ? 'pm' : effectiveSessionId === 'pm' ? 'am' : null;
+    const otherSessionLabel = otherSession === 'am' ? 'Buổi Sáng' : otherSession === 'pm' ? 'Buổi Chiều' : null;
+
+    const subtitle = nextDayUnlocked
+      ? `Em đã hoàn thành tất cả nhiệm vụ ngày ${numericDayId}!`
+      : isDayFullyPassed
+        ? `Em đã hoàn thành trên 80% ngày hôm nay. Tuyệt vời!`
+        : otherSession
+          ? `Em xong buổi này rồi! Còn ${otherSessionLabel} nhé.`
+          : `Em đã hoàn thành tất cả nhiệm vụ hôm nay!`;
 
     const doneBox = el('div', { class: 'text-center mt-8 p-6 bg-correct-bg border-2 border-correct rounded-2xl flex flex-col items-center gap-4' });
     doneBox.innerHTML = `
       <div class="text-4xl">🎉</div>
       <h2 class="font-display text-2xl text-correct-dk">Hoàn thành xuất sắc!</h2>
-      <p class="font-bold text-correct">Em đã hoàn thành tất cả nhiệm vụ buổi này.</p>
+      <p class="font-bold text-correct">${subtitle}</p>
     `;
 
     if (nextDayUnlocked) {
@@ -149,6 +163,14 @@ export function renderSession(params) {
       });
       unlockRow.appendChild(goBtn);
       doneBox.appendChild(unlockRow);
+    } else if (otherSession && !isDayFullyPassed) {
+      // Suggest doing the other session
+      const otherBtn = el('button', { class: 'btn btn-primary' }, `Vào ${otherSessionLabel} →`);
+      otherBtn.addEventListener('click', () => {
+        Audio.click();
+        Router.navigate(`/session/${numericDayId}/${otherSession}`);
+      });
+      doneBox.appendChild(otherBtn);
     }
 
     listWrapper.appendChild(doneBox);
