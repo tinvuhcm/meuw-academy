@@ -21,6 +21,8 @@ import { renderChallenges } from './modules/challenges.js';
 import { renderCustomizer } from './modules/mascot-customizer.js';
 import { renderPractice } from './modules/practice.js';
 import { renderColoringLibrary } from './modules/coloring.js';
+import { renderLibrary } from './modules/library.js';
+import { renderKnowledgeCards } from './modules/knowledge-cards.js';
 import { initAccountAutoSync } from './modules/account-auto-sync.js';
 
 // Toast System
@@ -191,6 +193,14 @@ Router.on('/practice', () => {
 
 Router.on('/coloring', () => {
   mount(renderColoringLibrary());
+});
+
+Router.on('/library', () => {
+  mount(renderLibrary());
+});
+
+Router.on('/knowledge-cards', () => {
+  mount(renderKnowledgeCards());
 });
 
 // Route Guards (Global)

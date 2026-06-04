@@ -229,6 +229,33 @@ export function renderDashboard() {
   extraStrip.appendChild(shopBtn);
   extraStrip.appendChild(custBtn);
   
+  // Library & Knowledge Cards Strip
+  const learningResourcesGrid = el('div', { class: 'grid gap-4 md:grid-cols-2 w-full mb-8' });
+
+  const libraryStrip = el('div', { class: 'relative overflow-hidden bg-blue-50 rounded-2xl p-4 md:p-6 border border-blue-400 shadow-sm flex items-center justify-between' });
+  libraryStrip.innerHTML = `
+    <div class="flex-1">
+      <h3 class="font-display text-2xl text-blue-500 mb-2">Thư viện SGK</h3>
+      <p class="text-text mb-4 text-sm">Đọc sách giáo khoa trực tuyến.</p>
+      <button class="btn btn-primary bg-blue-500 hover:bg-blue-600 text-white font-bold px-6 shadow-md border-0" id="db-library-btn">Vào thư viện</button>
+    </div>
+    <div class="w-24 h-24 hidden lg:block shrink-0 text-6xl flex-center">📚</div>
+  `;
+
+  const cardsStrip = el('div', { class: 'relative overflow-hidden bg-orange-50 rounded-2xl p-4 md:p-6 border border-orange-400 shadow-sm flex items-center justify-between' });
+  cardsStrip.innerHTML = `
+    <div class="flex-1">
+      <h3 class="font-display text-2xl text-orange-500 mb-2">Bộ Sưu Tập Thẻ</h3>
+      <p class="text-text mb-4 text-sm">Xem lại các Thẻ Kiến Thức đã sưu tầm.</p>
+      <button class="btn btn-primary bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 shadow-md border-0" id="db-cards-btn">Xem thẻ</button>
+    </div>
+    <div class="w-24 h-24 hidden lg:block shrink-0 text-6xl flex-center">🎴</div>
+  `;
+
+  learningResourcesGrid.appendChild(libraryStrip);
+  learningResourcesGrid.appendChild(cardsStrip);
+  container.appendChild(learningResourcesGrid);
+  
   // Practice & Coloring Strip
   const bottomGrid = el('div', { class: 'grid gap-4 md:grid-cols-2 w-full mb-8' });
 
@@ -266,6 +293,12 @@ export function renderDashboard() {
     
     const cBtn = coloringStrip.querySelector('#db-coloring-btn');
     if (cBtn) cBtn.addEventListener('click', () => Router.navigate('/coloring'));
+
+    const libBtn = libraryStrip.querySelector('#db-library-btn');
+    if (libBtn) libBtn.addEventListener('click', () => Router.navigate('/library'));
+
+    const cardsBtn = cardsStrip.querySelector('#db-cards-btn');
+    if (cardsBtn) cardsBtn.addEventListener('click', () => Router.navigate('/knowledge-cards'));
     
     // Set mascot state to relaxed
     Mascot.setState('relaxed');
