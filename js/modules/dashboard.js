@@ -134,101 +134,33 @@ export function renderDashboard() {
   hero.appendChild(greetingArea);
   container.appendChild(hero);
 
-  // 3. Daily Modules Overview (Duolingo Style Learning Path)
+  // 3. Daily Modules Overview (Nhiệm vụ hôm nay)
   const dayData = getCurriculumDay(currentDay);
   const scheduledModules = dayData
     ? getScheduledModulesForProfileDay(State.getActiveProfile(), currentDay, dayData.modules || []).allModules
     : [];
-    
-  const modulesSection = el('section', { class: 'mb-12 relative flex flex-col items-center py-8 bg-surface rounded-3xl shadow-sm border border-border' });
-  modulesSection.appendChild(el('h2', { class: 'font-display text-2xl mb-8 text-center text-text' }, `Lộ trình Ngày ${currentDay}`));
+  const modulesSection = el('section', { class: 'mb-8' });
+  modulesSection.appendChild(el('h2', { class: 'font-display text-2xl mb-4' }, 'Nhiệm vụ hôm nay'));
 
   if (!dayData || scheduledModules.length === 0) {
-    const emptyBox = el('div', { class: 'text-center text-text-muted p-8' });
-    emptyBox.innerHTML = '<h3>Chưa có dữ liệu bài học cho ngày này!</h3>';
+    const emptyBox = el('div', { class: 'text-center text-text-muted p-8 border-2 border-dashed border-border rounded-2xl' });
+    emptyBox.innerHTML = '<h3>Chưa có dữ liệu bài học cho ngày này!</h3><p class="text-sm mt-2">Vui lòng quay lại sau.</p>';
     modulesSection.appendChild(emptyBox);
   } else {
-    const pathContainer = el('div', { class: 'relative w-full max-w-sm flex flex-col items-center gap-12 pb-8' });
+    // Session cards
+    const amModules = scheduledModules.filter(m => m.session === 'am');
+    const pmModules = scheduledModules.filter(m => m.session === 'pm');
+
+    const sessionGrid = el('div', { class: 'grid gap-4 md:grid-cols-2' });
     
-    // Draw an SVG curve behind the nodes
-    const svgLayer = el('div', { class: 'absolute top-0 bottom-0 left-0 right-0 pointer-events-none flex justify-center', style: 'z-index: 0;' });
-    svgLayer.innerHTML = `
-      <svg width="100%" height="100%" preserveAspectRatio="none">
-        <path d="M 50%,0 C 70%,20% 70%,40% 50%,50% C 30%,60% 30%,80% 50%,100%" fill="none" stroke="#E5E7EB" stroke-width="12" stroke-linecap="round" />
-      </svg>
-    `;
-    // Note: A true responsive SVG path connecting exact node coordinates is complex, 
-    // we'll use a thick straight line for simplicity and reliability across screen sizes.
-    svgLayer.innerHTML = `
-      <div class="w-4 h-full bg-border rounded-full absolute left-1/2 -translate-x-1/2"></div>
-    `;
-    pathContainer.appendChild(svgLayer);
-
-    // Nodes
-    let firstIncompleteFound = false;
-
-    scheduledModules.forEach((m, idx) => {
-      const isCompleted = State.isModuleComplete(m.id);
-      const conf = getSubjectConfig(m.subject);
-      
-      const isCurrentNode = !isCompleted && !firstIncompleteFound;
-      if (isCurrentNode) firstIncompleteFound = true;
-
-      const nodeWrapper = el('div', { class: 'relative z-10 w-full flex items-center', style: `z-index: 10; justify-content: ${idx % 2 === 0 ? 'flex-start' : 'flex-end'}; padding: 0 10%;` });
-      
-      // Node Button
-      const btnSize = isCurrentNode ? 'w-24 h-24' : 'w-20 h-20';
-      const bounceClass = isCurrentNode ? 'animate-bounce' : '';
-      const borderClass = isCurrentNode ? 'border-4 border-méo-purple shadow-xl' : (isCompleted ? 'border-4 border-correct shadow-md' : 'border-4 border-border shadow-sm bg-bg-2 opacity-80');
-      const bgClass = isCompleted ? 'bg-correct' : (isCurrentNode ? 'bg-white' : 'bg-bg-2');
-      
-      const nodeBtn = el('button', { 
-        class: `${btnSize} rounded-full flex flex-col items-center justify-center transition-all ${borderClass} ${bgClass} ${bounceClass}`,
-        style: isCurrentNode ? 'transform-origin: bottom center;' : ''
-      });
-      
-      const icon = el('span', { class: 'text-3xl' }, conf.emoji);
-      nodeBtn.appendChild(icon);
-
-      // Current node label
-      if (isCurrentNode) {
-        const label = el('div', { class: 'absolute -top-10 bg-white border-2 border-border px-3 py-1 rounded-xl text-sm font-bold shadow-md whitespace-nowrap text-méo-purple' });
-        label.innerHTML = 'Học ngay! <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-b-2 border-r-2 border-border rotate-45"></div>';
-        nodeBtn.appendChild(label);
-      } else if (isCompleted) {
-        const check = el('div', { class: 'absolute -top-2 -right-2 bg-correct text-white w-8 h-8 rounded-full flex-center font-bold shadow-sm' }, '✓');
-        nodeBtn.appendChild(check);
-      }
-
-      nodeBtn.addEventListener('click', () => {
-        Audio.click();
-        Router.navigate(`/lesson/${currentDay}/${m.id}`);
-      });
-
-      // Module Title
-      const titleWrapper = el('div', { class: 'absolute w-32 text-center', style: `top: 100%; mt-2` });
-      titleWrapper.innerHTML = `<span class="text-xs font-bold ${isCompleted ? 'text-correct line-through' : 'text-text-muted'}">${formatModuleDisplayTitle(m, false)}</span>`;
-      
-      const innerWrap = el('div', { class: 'relative flex-center flex-col' });
-      innerWrap.appendChild(nodeBtn);
-      innerWrap.appendChild(titleWrapper);
-
-      nodeWrapper.appendChild(innerWrap);
-      pathContainer.appendChild(nodeWrapper);
-    });
-
-    modulesSection.appendChild(pathContainer);
-    
-    // Day Completion State
-    if (!firstIncompleteFound && scheduledModules.length > 0) {
-      const doneBox = el('div', { class: 'mt-8 text-center bg-correct-bg border-2 border-correct rounded-2xl p-6 w-full max-w-sm z-10 relative' });
-      doneBox.innerHTML = `
-        <div class="text-4xl mb-2">🎉</div>
-        <h3 class="font-display text-xl text-correct-dk mb-1">Xuất sắc!</h3>
-        <p class="text-sm font-bold text-correct">Bé đã hoàn thành ngày hôm nay.</p>
-      `;
-      modulesSection.appendChild(doneBox);
+    if (amModules.length > 0) {
+      sessionGrid.appendChild(createSessionCard('Buổi sáng', '☀️', amModules, 'am', currentDay));
     }
+    if (pmModules.length > 0) {
+      sessionGrid.appendChild(createSessionCard('Buổi chiều', '🌙', pmModules, 'pm', currentDay));
+    }
+
+    modulesSection.appendChild(sessionGrid);
   }
   container.appendChild(modulesSection);
 
@@ -399,76 +331,100 @@ function createSessionCard(title, emoji, modules, sessionId, dayNumber) {
 }
 
 function createRoadmapSection(currentDay) {
-  const section = el('section', { class: 'mb-8' });
-  section.appendChild(el('h2', { class: 'font-display text-2xl mb-2' }, 'Lộ trình học tập'));
-  section.appendChild(el('p', { class: 'text-sm text-text-muted mb-4' }, 'Timeline gọn để xem nhanh hôm nay đang ở đâu và sắp tới học gì.'));
+  const section = el('section', { class: 'mb-12 bg-surface p-6 rounded-3xl border-2 border-border shadow-sm' });
+  section.innerHTML = `
+    <h2 class="font-display text-2xl mb-2 text-center text-méo-purple">Bản đồ Lộ trình</h2>
+    <p class="text-sm text-text-muted mb-8 text-center">Khám phá hành trình học tập của bé</p>
+  `;
 
-  const strip = el('div', { class: 'roadmap-strip flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory' });
+  const pathContainer = el('div', { class: 'relative flex flex-col items-center gap-6 w-full max-w-sm mx-auto' });
+  
+  // Background line
+  const line = el('div', { class: 'absolute top-4 bottom-4 w-4 bg-bg-2 rounded-full z-0 left-1/2 -translate-x-1/2' });
+  pathContainer.appendChild(line);
+
   const startDay = Math.max(1, currentDay - 2);
   const endDay = Math.min(State.getMaxLearningDays(), currentDay + 8);
 
   for (let day = startDay; day <= endDay; day++) {
     const dayData = getCurriculumDay(day);
     if (!dayData) continue;
-    strip.appendChild(createRoadmapCard(day, dayData, currentDay));
+    pathContainer.appendChild(createDayNode(day, dayData, currentDay));
   }
 
-  section.appendChild(strip);
+  section.appendChild(pathContainer);
   return section;
 }
 
-function createRoadmapCard(dayNumber, dayData, currentDay) {
+function createDayNode(dayNumber, dayData, currentDay) {
   const progress = State.getDayProgress(dayNumber);
-  const studyDate = State.getStudyDateForDayNumber(dayNumber);
-  const plan = State.getStudyPlanForDayNumber(dayNumber);
   const isToday = dayNumber === currentDay;
   const isPast = dayNumber < currentDay;
   const isFuture = dayNumber > currentDay;
-  const statusLabel = isToday ? 'Hôm nay' : isPast ? (progress.isPassed ? 'Đã hoàn thành' : 'Cần ôn lại') : 'Sắp mở';
-  const statusClass = isToday
-    ? 'text-méo-purple bg-méo-purple-lt border-méo-purple'
-    : isPast
-      ? (progress.isPassed ? 'text-correct-dk bg-correct-bg border-correct' : 'text-warning bg-warning-bg border-warning')
-      : 'text-text-muted bg-bg-2 border-border';
 
-  const card = el('button', {
-    class: `card min-w-[130px] md:min-w-[150px] text-left flex flex-col gap-3 snap-start transition-all ${
-      isToday ? 'border-2 border-méo-purple shadow-md -translate-y-1' : 'hover:-translate-y-1'
-    }`,
+  const nodeWrap = el('div', { class: 'relative z-10 w-full flex flex-col items-center' });
+  
+  // The circle button
+  const btnClass = isToday 
+    ? 'w-24 h-24 bg-méo-purple border-4 border-méo-purple-lt text-white shadow-xl animate-bounce' 
+    : isPast 
+      ? (progress.isPassed ? 'w-16 h-16 bg-correct border-4 border-white text-white shadow-md' : 'w-16 h-16 bg-warning border-4 border-white text-white shadow-md')
+      : 'w-16 h-16 bg-bg-2 border-4 border-white text-text-muted shadow-sm';
+      
+  const btn = el('button', { 
+    class: `rounded-full flex-center font-display text-2xl transition-transform hover:scale-105 ${btnClass}`,
+    style: isToday ? 'transform-origin: bottom center;' : ''
   });
-  const titleRow = el('div', { class: 'flex-between gap-3 items-start' });
-  titleRow.innerHTML = `
-    <div>
-      <div class="font-display text-xl">Ngày ${dayNumber}</div>
-      <div class="text-xs text-text-muted">${formatDateVI(studyDate)} • ${plan.shortLabel}</div>
-    </div>
-    <span class="text-xs font-bold px-3 py-1 rounded-full border ${statusClass}">${statusLabel}</span>
-  `;
-  card.appendChild(titleRow);
-
-  const progressBar = el('div', { class: 'w-full h-2 bg-bg-2 rounded-full overflow-hidden' });
-  progressBar.innerHTML = `<div class="h-full rounded-full ${isFuture ? 'bg-border' : progress.isPassed ? 'bg-correct' : 'bg-méo-purple'}" style="width:${Math.max(8, Math.round(progress.completedModules / Math.max(progress.totalModules, 1) * 100))}%"></div>`;
-  card.appendChild(progressBar);
-
-  const summary = el('div', { class: 'text-xs text-text-muted flex flex-col gap-1' });
-  summary.appendChild(el('div', {}, `${progress.completedModules}/${progress.totalModules} bài`));
-  summary.appendChild(el('div', {}, isFuture ? 'Bấm để xem trước' : dayData.title || 'Lộ trình trong ngày'));
-  card.appendChild(summary);
-
-  const subjectRow = el('div', { class: 'flex flex-wrap gap-1' });
-  const scheduledModules = getScheduledModulesForProfileDay(State.getActiveProfile(), dayNumber, dayData.modules || []).allModules;
-  const subjectLabels = [...new Set(scheduledModules.slice(0, 4).map(module => getSubjectConfig(module.subject).emoji))];
-  subjectLabels.forEach(label => {
-    subjectRow.appendChild(el('span', { class: 'text-base' }, label));
-  });
-  if (scheduledModules.length > 4) {
-    subjectRow.appendChild(el('span', { class: 'text-xs text-text-muted font-bold' }, `+${scheduledModules.length - 4}`));
+  btn.innerHTML = isPast && progress.isPassed ? '✓' : `N${dayNumber}`;
+  
+  if (isToday) {
+    const label = el('div', { class: 'absolute -top-8 bg-white border-2 border-border px-3 py-1 rounded-xl text-sm font-bold shadow-md whitespace-nowrap text-méo-purple' });
+    label.innerHTML = 'Hôm nay <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-b-2 border-r-2 border-border rotate-45"></div>';
+    nodeWrap.appendChild(label);
   }
-  card.appendChild(subjectRow);
 
-  card.addEventListener('click', () => {
-    Router.navigate(`/session/${dayNumber}/${plan.mode === 'merged' ? 'day' : 'am'}`);
+  // Accordion content (Hidden by default)
+  const detailPanel = el('div', { class: 'w-full bg-white border-2 border-border rounded-xl p-4 mt-4 hidden shadow-lg animate-fade-in roadmap-detail-panel' });
+  const scheduledModules = getScheduledModulesForProfileDay(State.getActiveProfile(), dayNumber, dayData.modules || []).allModules;
+  
+  const amModules = scheduledModules.filter(m => m.session === 'am');
+  const pmModules = scheduledModules.filter(m => m.session === 'pm');
+
+  let html = `<h4 class="font-display text-lg mb-3 text-center text-méo-purple">Nhiệm vụ Ngày ${dayNumber}</h4>`;
+  
+  if (amModules.length > 0) {
+    html += `<div class="mb-2"><span class="font-bold text-sm bg-bg-2 px-2 py-1 rounded-md">☀️ Sáng (${amModules.length} bài)</span></div>`;
+    amModules.forEach(m => {
+      const isCompleted = State.isModuleComplete(m.id);
+      html += `<div class="text-sm ml-2 flex items-center gap-2 mb-1 ${isCompleted ? 'text-correct line-through' : 'text-text'}"><span class="w-4">${isCompleted ? '✓' : '•'}</span> ${formatModuleDisplayTitle(m, false)}</div>`;
+    });
+  }
+  
+  if (pmModules.length > 0) {
+    html += `<div class="mb-2 mt-3"><span class="font-bold text-sm bg-bg-2 px-2 py-1 rounded-md">🌙 Chiều (${pmModules.length} bài)</span></div>`;
+    pmModules.forEach(m => {
+      const isCompleted = State.isModuleComplete(m.id);
+      html += `<div class="text-sm ml-2 flex items-center gap-2 mb-1 ${isCompleted ? 'text-correct line-through' : 'text-text'}"><span class="w-4">${isCompleted ? '✓' : '•'}</span> ${formatModuleDisplayTitle(m, false)}</div>`;
+    });
+  }
+  
+  if (isToday) {
+    html += `<button class="btn btn-primary w-full mt-4 btn-sm" onclick="window.scrollTo({top:0, behavior:'smooth'})">Học ngay lên trên ☝️</button>`;
+  }
+
+  detailPanel.innerHTML = html;
+
+  btn.addEventListener('click', () => {
+    Audio.click();
+    const isHidden = detailPanel.classList.contains('hidden');
+    // Hide all other panels
+    document.querySelectorAll('.roadmap-detail-panel').forEach(p => p.classList.add('hidden'));
+    if (isHidden) {
+      detailPanel.classList.remove('hidden');
+    }
   });
 
-  return card;
+  nodeWrap.appendChild(btn);
+  nodeWrap.appendChild(detailPanel);
+  return nodeWrap;
 }
