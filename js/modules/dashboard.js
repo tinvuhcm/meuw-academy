@@ -6,6 +6,7 @@
 import { el, formatDateVI, formatToday, formatModuleDisplayTitle, getGreetingLine, getSubjectConfig } from '../utils.js';
 import State from '../state.js';
 import Router from '../router.js';
+import Audio from '../audio.js';
 import { Mascot } from '../mascot.js';
 import { getCurriculumDay } from '../data/curriculum-loader.js';
 import { getScheduledModulesForProfileDay } from '../schedule-calendar.js';
@@ -402,17 +403,16 @@ function createRoadmapCard(dayNumber, dayData, currentDay) {
   // Day title
   card.innerHTML = `<div class="font-display text-lg">Ngày ${dayNumber}</div>`;
   
-  // Emojis of subjects
-  const subjectRow = el('div', { class: 'flex flex-wrap justify-center gap-1 my-1' });
-  const scheduledModules = getScheduledModulesForProfileDay(State.getActiveProfile(), dayNumber, dayData.modules || []).allModules;
-  const subjectLabels = [...new Set(scheduledModules.slice(0, 3).map(module => getSubjectConfig(module.subject).emoji))];
-  subjectLabels.forEach(label => {
-    subjectRow.appendChild(el('span', { class: 'text-sm' }, label));
-  });
-  if (scheduledModules.length > 3) {
-    subjectRow.appendChild(el('span', { class: 'text-[10px] opacity-70 font-bold self-center' }, `+`));
-  }
-  card.appendChild(subjectRow);
+  // Custom unique icon per day (31 variations)
+  const DAY_ICONS = [
+    '🐰', '🦊', '🐼', '🦁', '🐯', '🐸', '🐙', '🐢', '🦕', '🦄', 
+    '🌟', '🌙', '🪐', '🚀', '🛸', '🌍', '🍄', '🍀', '🌻', '🌵', 
+    '🍎', '🍉', '🍓', '🍕', '🍦', '🎈', '🎁', '💎', '🔮', '🎨', '🧸'
+  ];
+  const dayIcon = DAY_ICONS[(dayNumber - 1) % DAY_ICONS.length];
+  
+  const iconRow = el('div', { class: 'text-3xl my-1 hover:scale-110 transition-transform' }, dayIcon);
+  card.appendChild(iconRow);
 
   // Progress bar
   const progressBar = el('div', { class: 'w-full h-1.5 bg-white/50 rounded-full overflow-hidden' });
