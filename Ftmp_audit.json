@@ -1,0 +1,78 @@
+{
+  "days": {
+    "from": 1,
+    "to": 30
+  },
+  "totalFindings": 44,
+  "byTag": {
+    "mc-answer-not-in-options": 0,
+    "empty-question-text": 0,
+    "mc-wrong-option-count": 0,
+    "duplicate-options": 40,
+    "fill-blank-missing-answer": 0,
+    "unicode-garbage": 0,
+    "theory-all-points-empty": 0,
+    "trivial-all-identical": 4,
+    "eng-no-latin": 0,
+    "trivial-explanation": 0
+  },
+  "examples": {
+    "mc-answer-not-in-options": [],
+    "empty-question-text": [],
+    "mc-wrong-option-count": [],
+    "duplicate-options": [
+      {
+        "tag": "duplicate-options",
+        "path": "day2/d2-pm-1/math/Toán: Bài toán có lời văn",
+        "snippet": "dup options: [\"6\"] — q=\"Có 24 cái bánh chia đều cho 6 bạn. Mỗi bạn được mấy cái bánh\""
+      },
+      {
+        "tag": "duplicate-options",
+        "path": "day2/d2-pm-7/math/Toán: Bảng số liệu và biểu đồ",
+        "snippet": "dup options: [\"6\"] — q=\"Thứ Hai: 4 quyển | Thứ Ba: 2 quyển | Thứ Tư: 6 quyển | Thứ N\""
+      },
+      {
+        "tag": "duplicate-options",
+        "path": "day2/d2-pm-7/math/Toán: Bảng số liệu và biểu đồ",
+        "snippet": "dup options: [\"5\"] — q=\"Thứ Hai: 2 quyển | Thứ Ba: 3 quyển | Thứ Tư: 5 quyển | Thứ N\""
+      },
+      {
+        "tag": "duplicate-options",
+        "path": "day3/d3-pm-3/vie/Từ & câu: Luyện tập về danh từ, động từ, tình từ",
+        "snippet": "dup options: [\"\"bé minh đi học ở trường nguyễ\", \"\"bé minh đi học ở trường nguyễ\", \"\"bé minh đi học ở trường nguyễ\"] — q=\"Câu nào dưới đây dùng danh từ riêng đúng cách viết?\""
+      },
+      {
+        "tag": "duplicate-options",
+        "path": "day3/d3-pm-5/math/Toán: Đọc giờ đồng hồ",
+        "snippet": "dup options: [\"1 giờ\"] — q=\"Nếu kim phút chỉ vào số 12 và kim giờ gần số 1, đồng hồ chỉ \""
+      }
+    ],
+    "fill-blank-missing-answer": [],
+    "unicode-garbage": [],
+    "theory-all-points-empty": [],
+    "trivial-all-identical": [
+      {
+        "tag": "trivial-all-identical",
+        "path": "day3/d3-pm-3/vie/Từ & câu: Luyện tập về danh từ, động từ, tình từ",
+        "snippet": "all options === answer=\"\"Bé Minh đi học ở trường Nguyễn Du.\"\""
+      },
+      {
+        "tag": "trivial-all-identical",
+        "path": "day10/d10-pm-9/vie/Từ & câu: Danh từ",
+        "snippet": "all options === answer=\"\"Bé Minh đi học ở trường Nguyễn Du.\"\""
+      },
+      {
+        "tag": "trivial-all-identical",
+        "path": "day12/d12-am-6/vie/Từ & câu: Luyện tập về danh từ",
+        "snippet": "all options === answer=\"\"Bé Minh đi học ở trường Nguyễn Du.\"\""
+      },
+      {
+        "tag": "trivial-all-identical",
+        "path": "day14/d14-am-13/vie/Từ & câu: Danh từ",
+        "snippet": "all options === answer=\"\"Bé Minh đi học ở trường Nguyễn Du.\"\""
+      }
+    ],
+    "eng-no-latin": [],
+    "trivial-explanation": []
+  }
+}

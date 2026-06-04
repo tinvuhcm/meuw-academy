@@ -104,6 +104,12 @@ const QUESTION_BANKS = {
       ['1 danh từ: Lan', '3 danh từ: bạn, Lan, Toán', '4 danh từ: bạn, Lan, học, Toán'],
       'Lan là tên người, Toán là tên môn học nên đều là danh từ.'
     ),
+    makeQ(
+      'Từ nào dưới đây là danh từ chỉ đơn vị?',
+      'con, chiếc, quyển',
+      ['chạy, nhảy, bơi', 'đẹp, vui, cao', 'và, hay, nhưng'],
+      'Danh từ chỉ đơn vị đứng trước danh từ khác để đếm: con mèo, chiếc bàn, quyển sách.'
+    ),
   ],
 
   // ── Động từ ─────────────────────────────────────────────────────────────
@@ -156,6 +162,12 @@ const QUESTION_BANKS = {
       ['"Nam rất thông minh và chăm chỉ."', '"Quyển sách của Nam rất đẹp."', '"Lớp Nam có 35 học sinh."'],
       '"Đọc" và "ghi chép" là hai động từ chỉ hoạt động học tập cụ thể.'
     ),
+    makeQ(
+      'Từ nào vừa có thể là động từ, vừa có thể là danh từ?',
+      'học',
+      ['chạy', 'nhảy', 'múa'],
+      '"Học" có thể là động từ (Em đang học) hoặc danh từ (Chuyện học hành). Chạy, nhảy, múa thường chỉ là động từ.'
+    ),
   ],
 
   // ── Tính từ ─────────────────────────────────────────────────────────────
@@ -202,6 +214,18 @@ const QUESTION_BANKS = {
       ['"Con sông chảy qua làng."', '"Người ta bơi thuyền trên sông."', '"Sông có nhiều cá tôm."'],
       '"Hiền hòa" và "vàng rực" là hai tính từ mô tả đặc điểm của sông và ánh nắng.'
     ),
+    makeQ(
+      'Tính từ "khổng lồ" bổ sung ý nghĩa gì cho danh từ?',
+      'Kích thước — rất to lớn',
+      ['Màu sắc — màu xanh đậm', 'Âm thanh — tiếng ồn lớn', 'Tốc độ — di chuyển nhanh'],
+      '"Khổng lồ" là tính từ chỉ kích thước cực lớn, bổ nghĩa cho danh từ đứng trước hoặc sau nó.'
+    ),
+    makeQ(
+      'Câu nào có dùng tính từ so sánh?',
+      '"Con voi to hơn con ngựa."',
+      ['"Con voi uống nước."', '"Con voi là động vật."', '"Con voi sống ở rừng.'],
+      '"To hơn" là tính từ ở dạng so sánh hơn, so sánh kích thước của hai con vật.'
+    ),
   ],
 
   // ── Câu / Hai thành phần chính (Chủ ngữ - Vị ngữ) ──────────────────────
@@ -241,6 +265,24 @@ const QUESTION_BANKS = {
       'mọc đằng đông',
       ['mặt trời', 'đằng đông', 'mọc'],
       '"Mặt trời" là chủ ngữ; "mọc đằng đông" là vị ngữ cho biết mặt trời đang làm gì và ở đâu.'
+    ),
+    makeQ(
+      'Trong câu "Những con chim đang hót trên cành cây.", chủ ngữ là gì?',
+      'Những con chim',
+      ['đang hót', 'trên cành cây', 'cành cây'],
+      '"Những con chim" trả lời câu hỏi "Ai/Cái gì đang hót?" — đây là chủ ngữ.'
+    ),
+    makeQ(
+      'Câu "Bầu trời trong xanh." có vị ngữ chỉ gì?',
+      'Đặc điểm của chủ ngữ',
+      ['Hoạt động của chủ ngữ', 'Nơi chốn xảy ra', 'Thời gian xảy ra'],
+      '"Trong xanh" mô tả tính chất của bầu trời — vị ngữ chỉ đặc điểm, không phải hành động.'
+    ),
+    makeQ(
+      'Câu nào vị ngữ là cụm danh từ?',
+      '"Bố em là kỹ sư."',
+      ['"Bố em đang làm việc."', '"Bố em về nhà rồi."', '"Bố em cười to lắm."'],
+      '"Là kỹ sư" là vị ngữ dùng cụm "là + danh từ" để nêu nghề nghiệp của chủ ngữ.'
     ),
   ],
 
@@ -282,6 +324,24 @@ const QUESTION_BANKS = {
       ['Thời gian', 'Nơi chốn', 'Nguyên nhân'],
       '"Bằng bút chì" / "dùng bút chì" chỉ công cụ/phương tiện thực hiện hành động.'
     ),
+    makeQ(
+      'Câu nào có trạng ngữ chỉ mục đích?',
+      '"Em học chăm để đạt điểm cao."',
+      ['"Em học chăm vì thích học."', '"Em học ở trường."', '"Em học từ sáng sớm."'],
+      '"Để đạt điểm cao" chỉ mục đích của việc học chăm — đây là trạng ngữ chỉ mục đích.'
+    ),
+    makeQ(
+      'Trạng ngữ "bằng xe đạp" trong câu bổ sung ý nghĩa gì?',
+      'Phương tiện đi lại',
+      ['Thời gian đi', 'Nơi đến', 'Nguyên nhân đi'],
+      '"Bằng xe đạp" chỉ phương tiện — cách thức thực hiện hành động di chuyển.'
+    ),
+    makeQ(
+      'Câu nào KHÔNG có trạng ngữ?',
+      '"Bé Hoa ngủ ngon."',
+      ['"Buổi tối, Bé Hoa ngủ ngon."', '"Bé Hoa ngủ ngon ở nhà."', '"Vì mệt, Bé Hoa ngủ ngon."'],
+      '"Bé Hoa ngủ ngon." chỉ có chủ ngữ và vị ngữ, không có thành phần bổ sung hoàn cảnh nào.'
+    ),
   ],
 
   // ── Dấu gạch ngang ───────────────────────────────────────────────────────
@@ -310,6 +370,30 @@ const QUESTION_BANKS = {
       ['Cuối câu, sau dấu chấm', 'Giữa hai từ', 'Trước tên nhân vật'],
       'Trong đoạn hội thoại, dấu gạch ngang luôn đứng ở đầu dòng mới, ngay trước lời nhân vật.'
     ),
+    makeQ(
+      'Trong đoạn liệt kê dưới đây, dấu gạch ngang dùng để làm gì?\n"Rừng cung cấp cho ta:\n— Gỗ để xây nhà.\n— Oxy để thở.\n— Thuốc chữa bệnh."',
+      'Đánh dấu từng ý trong đoạn liệt kê',
+      ['Đánh dấu lời thoại nhân vật', 'Nối hai từ ghép', 'Kết thúc đoạn văn'],
+      'Dấu gạch ngang đứng đầu mỗi dòng trong đoạn liệt kê để đánh dấu từng mục riêng biệt.'
+    ),
+    makeQ(
+      'Câu nào dùng dấu gạch ngang để giải thích thêm?',
+      '"Hà Nội — thủ đô của Việt Nam — nằm bên sông Hồng."',
+      ['"— Bạn tên gì?"', '"Hà Nội; thủ đô Việt Nam."', '"Hà Nội (thủ đô) nằm bên sông Hồng."'],
+      'Hai dấu gạch ngang bao quanh cụm "thủ đô của Việt Nam" để chú thích thêm về Hà Nội ngay trong câu.'
+    ),
+    makeQ(
+      'Dấu gạch ngang có mấy công dụng chính?',
+      '3 công dụng: lời thoại, liệt kê, giải thích thêm',
+      ['1 công dụng: chỉ đánh dấu lời thoại', '2 công dụng: lời thoại và nối từ', '4 công dụng: lời thoại, liệt kê, giải thích, kết câu'],
+      'Dấu gạch ngang có 3 công dụng chính: đánh dấu lời thoại đầu dòng, đánh dấu ý trong đoạn liệt kê, và giải thích thêm trong câu.'
+    ),
+    makeQ(
+      'Từ nào mô tả đúng dấu gạch ngang (—)?',
+      'Dài hơn dấu gạch nối (-)',
+      ['Ngắn hơn dấu gạch nối', 'Bằng dấu gạch nối', 'Giống dấu gạch chân'],
+      'Dấu gạch ngang (—) dài hơn dấu gạch nối (-). Dấu gạch nối nối từ ghép, dấu gạch ngang dùng cho lời thoại và liệt kê.'
+    ),
   ],
 
   // ── Dấu ngoặc kép ────────────────────────────────────────────────────────
@@ -331,6 +415,36 @@ const QUESTION_BANKS = {
       'Ngoặc kép trích dẫn nguyên văn; gạch ngang đánh dấu lời thoại đầu dòng',
       ['Cả hai đều dùng để liệt kê ý', 'Cả hai dùng cho tên riêng', 'Không có sự khác biệt'],
       'Ngoặc kép thường đặt quanh một đoạn trích hoặc tên; gạch ngang đứng đầu dòng trước lời hội thoại.'
+    ),
+    makeQ(
+      'Câu nào dùng dấu ngoặc kép để chỉ từ theo nghĩa đặc biệt?',
+      '"Con mèo được gọi là \"thám tử\" của nhà vì hay sục sạo mọi ngóc ngách."',
+      ['"Con mèo nhảy lên bàn."', '"Con mèo, chú chó và con thỏ đang chơi."', '"— Con mèo đói rồi.'],
+      'Dấu ngoặc kép quanh "thám tử" cho thấy từ này dùng theo nghĩa bóng/hài hước, không phải nghĩa đen.'
+    ),
+    makeQ(
+      'Tên bài thơ "Quê hương" được đặt trong dấu ngoặc kép. Điều này có ý nghĩa gì?',
+      'Xác định đây là tên tác phẩm văn học',
+      ['Chỉ từ dùng nghĩa bóng', 'Đánh dấu lời nhân vật nói', 'Tách đoạn văn'],
+      'Tên tác phẩm (sách, truyện, bài thơ, bài hát...) thường được đặt trong dấu ngoặc kép hoặc in nghiêng.'
+    ),
+    makeQ(
+      'Có mấy công dụng chính của dấu ngoặc kép?',
+      '3 công dụng: trích dẫn nguyên văn, tên tác phẩm, từ dùng nghĩa đặc biệt',
+      ['1 công dụng: chỉ trích dẫn lời nói', '2 công dụng: trích dẫn và nêu tên người', '4 công dụng: trích dẫn, tên người, tên vật, địa danh'],
+      'Dấu ngoặc kép dùng để: (1) trích dẫn nguyên văn, (2) nêu tên tác phẩm, (3) dùng từ theo nghĩa đặc biệt/hài hước.'
+    ),
+    makeQ(
+      'Đặt câu dùng dấu ngoặc kép đúng cách nhất là câu nào?',
+      '"Bác Hồ nói: \\"Non sông Việt Nam có trở nên tươi đẹp hay không là do các cháu mai sau.\\"',
+      ['"Bác Hồ nói — non sông Việt Nam có trở nên tươi đẹp..."', '"Bác Hồ nói (non sông Việt Nam có trở nên tươi đẹp...)"', '"Bác Hồ nói. Non sông Việt Nam có trở nên tươi đẹp..."'],
+      'Khi trích dẫn nguyên văn lời nói hoặc văn bản, ta đặt phần trích dẫn trong dấu ngoặc kép.'
+    ),
+    makeQ(
+      'Trường hợp nào KHÔNG cần dùng dấu ngoặc kép?',
+      'Kể lại ý chính của câu nói (không trích nguyên văn)',
+      ['Trích dẫn nguyên văn câu nói của ai đó', 'Nêu tên một bài thơ nổi tiếng', 'Dùng từ theo nghĩa hài hước'],
+      'Khi chỉ kể lại ý chính (tóm tắt), không cần ngoặc kép. Chỉ dùng ngoặc kép khi giữ nguyên từng chữ gốc.'
     ),
   ],
 
@@ -360,6 +474,30 @@ const QUESTION_BANKS = {
       ['"trắng"', '"lơ lửng"', '"bầu trời xanh"'],
       '"Cô" là từ dùng để gọi người, được dùng cho mây — đây là cách nhân hóa sự vật bằng từ xưng hô.'
     ),
+    makeQ(
+      'Câu nào dùng nhân hóa bằng cách gán cảm xúc của người cho sự vật?',
+      '"Cây bàng đứng buồn nhìn mùa đông về."',
+      ['"Cây bàng có lá rất to."', '"Mùa đông cây bàng rụng lá."', '"Cây bàng trồng ở sân trường."'],
+      '"Đứng buồn" gán cảm xúc buồn bã của người cho cây bàng — đây là cách nhân hóa bằng cảm xúc.'
+    ),
+    makeQ(
+      'Tác dụng chính của nhân hóa trong thơ văn là gì?',
+      'Làm cho thiên nhiên, đồ vật trở nên sinh động và gần gũi với con người',
+      ['Làm cho câu văn khó hiểu hơn', 'Giúp so sánh hai sự vật với nhau', 'Giúp liệt kê nhiều sự vật hơn'],
+      'Nhân hóa khiến thiên nhiên và đồ vật trở nên có "tâm hồn", cảm xúc — người đọc dễ đồng cảm và cảm thấy gần gũi hơn.'
+    ),
+    makeQ(
+      'Câu "Ông mặt trời thức dậy từ sớm để soi sáng cho mọi người." dùng nhân hóa theo cách nào?',
+      'Dùng từ xưng hô ("ông") và gán hành động của người ("thức dậy", "soi sáng cho mọi người")',
+      ['Chỉ dùng từ xưng hô "ông"', 'Chỉ gán hành động "thức dậy"', 'Không có nhân hóa, chỉ là miêu tả bình thường'],
+      'Nhân hóa kép: "ông" (xưng hô như người) + "thức dậy" (hành động của người) + "soi sáng cho mọi người" (mục đích như người có tình cảm).'
+    ),
+    makeQ(
+      'Từ nào KHÔNG phải từ nhân hóa trong câu "Chị gió hát, anh mây múa, em mưa vỗ tay."?',
+      'Không có — tất cả đều là nhân hóa',
+      ['"hát"', '"múa"', '"vỗ tay"'],
+      '"Chị gió", "anh mây", "em mưa" dùng từ xưng hô của người; "hát", "múa", "vỗ tay" là hành động của người — toàn bộ câu đều dùng nhân hóa.'
+    ),
   ],
 
   // ── Câu chủ đề / Đoạn văn ───────────────────────────────────────────────
@@ -388,6 +526,30 @@ const QUESTION_BANKS = {
       ['"Trời hôm nay đẹp. Mây trắng bay. Nắng vàng chiếu."', '"Bạn An học giỏi. Bạn Nam học giỏi. Bạn Hoa cũng học giỏi."', '"Em thích mèo. Mèo hay chơi. Mèo rất đáng yêu."'],
       'Câu đầu "Hà Nội có nhiều điểm du lịch đẹp" là câu chủ đề; hai câu sau nêu ví dụ cụ thể.'
     ),
+    makeQ(
+      'Câu chủ đề thường ở vị trí nào trong đoạn văn?',
+      'Có thể ở đầu, cuối hoặc giữa — thường ở đầu đoạn',
+      ['Luôn ở câu đầu tiên', 'Luôn ở câu cuối cùng', 'Luôn ở giữa đoạn'],
+      'Câu chủ đề linh hoạt về vị trí, nhưng thường đứng đầu đoạn để định hướng cho người đọc.'
+    ),
+    makeQ(
+      'Đoạn văn không có câu chủ đề rõ ràng thường như thế nào?',
+      'Các câu tản mạn, khó xác định được ý chính',
+      ['Ngắn hơn các đoạn khác', 'Dùng nhiều tính từ hơn', 'Có nhiều nhân vật hơn'],
+      'Khi thiếu câu chủ đề, người đọc phải tự suy luận ý chính từ tổng hợp các câu — đoạn văn trở nên khó hiểu hơn.'
+    ),
+    makeQ(
+      'Để viết một đoạn văn tốt, sau câu chủ đề cần thêm gì?',
+      'Các câu giải thích, ví dụ cụ thể hoặc lí do hỗ trợ cho ý chính',
+      ['Chỉ cần một câu kết', 'Lặp lại câu chủ đề nhiều lần', 'Chuyển sang chủ đề mới'],
+      'Câu chủ đề nêu ý chính; các câu sau phát triển ý bằng chi tiết, dẫn chứng hoặc giải thích để làm sáng tỏ.'
+    ),
+    makeQ(
+      'Câu nào KHÔNG thể làm câu chủ đề cho đoạn văn về "lợi ích của đọc sách"?',
+      '"Quyển sách này có bìa màu đỏ."',
+      ['"Đọc sách giúp ta mở rộng kiến thức."', '"Sách là người bạn tốt nhất của con người."', '"Đọc sách rèn luyện khả năng tập trung và tư duy."'],
+      '"Quyển sách này có bìa màu đỏ" chỉ mô tả đặc điểm một cuốn sách cụ thể, không bao quát được lợi ích của đọc sách.'
+    ),
   ],
 
   // ── Viết / Đoạn văn nêu ý kiến ─────────────────────────────────────────
@@ -410,6 +572,36 @@ const QUESTION_BANKS = {
       ['"Vì học nhạc giúp não phát triển."', '"Nhạc cụ thường được bán ở cửa hàng âm nhạc."', '"Có nhiều loại nhạc cụ như đàn, trống, sáo."'],
       '"Em nghĩ..." trực tiếp nêu quan điểm, đây là ý kiến. Các câu còn lại là lí do, sự thật hoặc thông tin.'
     ),
+    makeQ(
+      'Một đoạn văn nêu ý kiến tốt cần có mấy phần?',
+      '2 phần: ý kiến rõ ràng và lí do thuyết phục',
+      ['1 phần: kể chuyện hay', '3 phần: mở bài, thân bài, kết bài như bài văn dài', '4 phần: ý kiến, lí do, ví dụ, kết luận riêng biệt'],
+      'Đoạn văn ngắn nêu ý kiến cần (1) ý kiến rõ ràng và (2) ít nhất một lí do hợp lí. Thêm ví dụ cụ thể sẽ thuyết phục hơn.'
+    ),
+    makeQ(
+      'Từ nào thường dùng để bắt đầu phần lí do trong đoạn văn nêu ý kiến?',
+      '"Vì", "bởi vì", "lí do là"',
+      ['"Tuy nhiên", "mặc dù"', '"Thứ nhất", "thứ hai" (chỉ dùng trong bài văn dài)', '"Nhưng", "còn"'],
+      '"Vì", "bởi vì", "lí do là" là các từ nối dùng để đưa ra lí do hỗ trợ cho ý kiến đã nêu.'
+    ),
+    makeQ(
+      'Câu kết nào phù hợp nhất để kết thúc đoạn văn nêu ý kiến?',
+      'Câu nhắc lại ý kiến và khẳng định lại lập trường',
+      ['Câu kể một câu chuyện mới', 'Câu đặt câu hỏi không có trả lời', 'Câu liệt kê thêm sự kiện'],
+      'Câu kết của đoạn nêu ý kiến nên tóm tắt lại quan điểm, giúp người đọc nhớ rõ lập trường của người viết.'
+    ),
+    makeQ(
+      'Khi nào cần viết đoạn văn nêu ý kiến thay vì kể chuyện?',
+      'Khi muốn thuyết phục người khác tin vào quan điểm của mình',
+      ['Khi muốn tả một phong cảnh đẹp', 'Khi muốn kể lại sự kiện theo thứ tự thời gian', 'Khi muốn giải thích cách làm một việc gì đó'],
+      'Văn nêu ý kiến dùng để bày tỏ quan điểm và thuyết phục; tả cảnh, kể chuyện, hướng dẫn dùng các kiểu văn khác.'
+    ),
+    makeQ(
+      'Câu "Em thích mùa hè vì được nghỉ học và đi chơi." có ý kiến và lí do chưa?',
+      'Có đủ: ý kiến ("thích mùa hè") và lí do ("được nghỉ học và đi chơi")',
+      ['Chỉ có ý kiến, chưa có lí do', 'Chỉ có lí do, chưa có ý kiến', 'Chưa có cả hai, chỉ là câu thông tin'],
+      '"Em thích mùa hè" là ý kiến; "vì được nghỉ học và đi chơi" là lí do hỗ trợ — đoạn ngắn nhưng đủ cấu trúc.'
+    ),
   ],
 
   // ── Luyện chính tả / Từ ngữ ─────────────────────────────────────────────
@@ -431,6 +623,36 @@ const QUESTION_BANKS = {
       'xanh lá',
       ['sanh lá', 'zanh lá', 'sxanh lá'],
       '"Xanh" viết với "x". Một cách nhớ: các màu sắc như xanh, xám đều viết với "x".'
+    ),
+    makeQ(
+      'Phân biệt "d", "gi" và "r": từ nào viết đúng?',
+      'ra đi',
+      ['da đi', 'gia đi', 'rra đi'],
+      '"Ra" viết với "r". Lưu ý: "ra, rừng, rộng" viết "r"; "da, danh, dân" viết "d"; "gia, giải, giáo" viết "gi".'
+    ),
+    makeQ(
+      'Từ nào viết đúng chính tả?',
+      'kết quả',
+      ['kết qủa', 'kết quã', 'két quả'],
+      '"Kết quả" viết với dấu hỏi (ả). Lưu ý phân biệt dấu hỏi (ả) và dấu ngã (ã).'
+    ),
+    makeQ(
+      'Phân biệt "l" và "n": nhóm từ nào viết đúng?',
+      'lúa nếp, nông dân, làng quê',
+      ['núa nếp, lông dân, làng quê', 'lúa nếp, lông dân, nàng quê', 'núa nếp, nông dân, nàng quê'],
+      '"L" và "n" hay bị nhầm trong giọng nói địa phương. Tra từ điển hoặc nhớ mặt chữ khi không chắc.'
+    ),
+    makeQ(
+      'Câu nào viết đúng chính tả (phân biệt "c" và "k")?',
+      '"Khi học bài, em cần kiên nhẫn và cẩn thận."',
+      ['"Chi học bài, em cần kiên nhẫn và cẩn thận."', '"Khi học bài, em cần kien nhẫn và cẩn thận."', '"Khi học bài, em cần kiên nhẫn và cẫn thận."'],
+      '"K" đứng trước "i, ê, e"; "c" đứng trước các âm còn lại. "Kiên" và "khi" dùng "k"; "cần" và "cẩn" dùng "c".'
+    ),
+    makeQ(
+      'Từ nào dưới đây viết SAI chính tả?',
+      'giải thíc',
+      ['giải thích', 'khoa học', 'thành thật'],
+      '"Giải thíc" sai — phải viết "giải thích" (có chữ h). Đây là lỗi chính tả thường gặp khi bỏ sót phụ âm cuối.'
     ),
   ],
 
@@ -472,6 +694,18 @@ const QUESTION_BANKS = {
       ['Chọn câu dài nhất', 'Chọn câu có nhiều tính từ nhất', 'Chọn câu cuối cùng vì câu chủ đề luôn ở cuối'],
       'Câu chủ đề là câu nêu ý khái quát nhất của đoạn — không nhất thiết ở đầu hay cuối. Hãy đọc từng câu và hỏi "câu này bao quát được toàn đoạn không?"'
     ),
+    makeQ(
+      'Khi đọc bài có nhiều đoạn, con nên đọc như thế nào để hiểu nhanh nhất?',
+      'Đọc câu đầu mỗi đoạn để nắm ý chính, rồi đọc kỹ đoạn cần thiết',
+      ['Đọc từng chữ từ đầu đến cuối mà không dừng lại', 'Chỉ đọc đoạn đầu và đoạn cuối', 'Đọc từ cuối lên đầu'],
+      'Đọc lướt câu chủ đề mỗi đoạn giúp nắm cấu trúc bài nhanh, rồi đọc kỹ phần trả lời cho câu hỏi cụ thể.'
+    ),
+    makeQ(
+      'Bài đọc tả con sông quê. Câu hỏi: "Em có cảm xúc gì khi đọc đoạn cuối bài?" — đây là kiểu câu hỏi gì?',
+      'Câu hỏi cảm thụ — cần liên hệ bài đọc với cảm xúc và trải nghiệm của chính mình',
+      ['Câu hỏi tìm thông tin trong bài', 'Câu hỏi về ngữ pháp', 'Câu hỏi về tác giả'],
+      'Câu hỏi cảm thụ không có đáp án duy nhất đúng trong bài — cần liên hệ bài đọc với cảm xúc, kỷ niệm, hoặc suy nghĩ của bản thân.'
+    ),
   ],
 
   // ── Nói và nghe ─────────────────────────────────────────────────────────
@@ -493,6 +727,36 @@ const QUESTION_BANKS = {
       'Nhớ ý chính mình muốn nói và thứ tự các ý',
       ['Học thuộc lòng từng chữ', 'Chuẩn bị nhiều đồ dùng trực quan', 'Không cần chuẩn bị gì'],
       'Biết ý chính và sắp xếp ý theo thứ tự hợp lí giúp con nói mạch lạc và tự tin hơn.'
+    ),
+    makeQ(
+      'Khi bạn trình bày xong, con muốn hỏi thêm thì nên làm thế nào?',
+      'Giơ tay xin phép, đợi được mời, rồi hỏi lịch sự và rõ ràng',
+      ['Hỏi ngay lập tức khi bạn vừa dừng lại', 'Nói nhỏ hỏi bạn ngồi cạnh', 'Chờ đến cuối giờ mới hỏi'],
+      'Hỏi thêm sau bài trình bày là tốt, nhưng cần giơ tay, được mời mới hỏi — đây là phép lịch sự trong lớp học.'
+    ),
+    makeQ(
+      'Khi nói chuyện, điều gì giúp người nghe hiểu mình hơn?',
+      'Nói rõ ràng, mạch lạc, dùng ví dụ cụ thể',
+      ['Nói thật nhiều và thật nhanh', 'Dùng nhiều từ khó để trông có vẻ giỏi', 'Chỉ dùng cử chỉ, không cần lời'],
+      'Giao tiếp hiệu quả cần: ngôn từ rõ ràng, ý được sắp xếp theo thứ tự, và ví dụ cụ thể để người nghe dễ hình dung.'
+    ),
+    makeQ(
+      'Điều nào KHÔNG nên làm khi tham gia thảo luận nhóm?',
+      'Nói liên tục, không để bạn khác có cơ hội phát biểu',
+      ['Lắng nghe ý kiến của bạn', 'Đồng ý hoặc không đồng ý lịch sự', 'Đặt câu hỏi để hiểu rõ hơn'],
+      'Thảo luận nhóm cần sự bình đẳng — mỗi người nói và lắng nghe theo lượt. Độc chiếm lời nói sẽ làm nhóm mất đoàn kết.'
+    ),
+    makeQ(
+      'Khi không đồng ý với ý kiến của bạn, con nên nói thế nào?',
+      '"Mình nghĩ khác một chút, vì..." rồi nêu lí do',
+      ['Im lặng và không nói gì', '"Bạn sai rồi!" rồi nói ý kiến của mình', '"Ý kiến đó tệ lắm, không đúng đâu."'],
+      'Bất đồng ý kiến là bình thường, nhưng cần bày tỏ lịch sự: dùng "mình nghĩ...", "theo mình..." và nêu lí do cụ thể.'
+    ),
+    makeQ(
+      'Sau khi nghe bài kể chuyện, câu hỏi "Nhân vật yêu thích của em là ai? Vì sao?" yêu cầu con làm gì?',
+      'Chọn một nhân vật, nêu tên và giải thích lí do em thích nhân vật đó',
+      ['Kể lại toàn bộ câu chuyện', 'Chỉ nêu tên nhân vật', 'Kể về một nhân vật khác không có trong truyện'],
+      'Câu hỏi "vì sao" yêu cầu con đưa ra lí do cụ thể — không chỉ nêu tên mà cần giải thích đặc điểm, hành động nào của nhân vật làm em ấn tượng.'
     ),
   ],
 };
@@ -600,9 +864,27 @@ function buildReadingSkillQuestions(topic, count = 8, seedInput = '') {
       ['Chỉ nhìn tên bài rồi đoán', 'Chỉ chép lại một câu bất kì', 'Chỉ nhớ vài từ rời rạc'],
       `Với bài "${lessonTitle}", điều quan trọng là hiểu nội dung, chi tiết và ý chính của văn bản.`
     ),
+    makeQ(
+      `Bài "${lessonTitle}" có đoạn hội thoại giữa các nhân vật. Con cần chú ý điều gì khi đọc hội thoại?`,
+      'Ai đang nói, nói với ai, và nói điều gì để hiểu ý nghĩa cuộc trò chuyện',
+      ['Chỉ đếm số lượt thoại', 'Chỉ đọc lượt thoại của nhân vật đầu tiên', 'Bỏ qua hội thoại, đọc phần còn lại'],
+      `Trong đoạn hội thoại của bài "${lessonTitle}", hiểu ai nói, nói gì và tại sao là chìa khóa để nắm ý nghĩa câu chuyện.`
+    ),
+    makeQ(
+      `Câu hỏi "Theo em, nhân vật trong bài "${lessonTitle}" đã làm đúng chưa?" là loại câu hỏi gì?`,
+      'Câu hỏi đánh giá — cần đưa ra nhận xét kèm lí do từ bài đọc',
+      ['Câu hỏi tìm chi tiết trong bài', 'Câu hỏi điền vào chỗ trống', 'Câu hỏi về tác giả bài đọc'],
+      `Câu hỏi đánh giá không chỉ hỏi đúng sai — cần con suy nghĩ, đưa ra quan điểm và nêu lí do dựa trên nội dung bài "${lessonTitle}".`
+    ),
+    makeQ(
+      `Khi đọc bài "${lessonTitle}", con gặp hình ảnh so sánh như "sóng như những cánh tay". Đây là biện pháp tu từ gì?`,
+      'So sánh — dùng từ "như" để đối chiếu hai sự vật có điểm giống nhau',
+      ['Nhân hóa — gán hành động của người cho sự vật', 'Điệp từ — lặp lại một từ nhiều lần', 'Liệt kê — kể ra nhiều sự vật'],
+      `"Như" là từ so sánh điển hình. Biện pháp so sánh giúp hình ảnh trong bài "${lessonTitle}" trở nên sinh động và dễ hình dung hơn.`
+    ),
   ];
   const shuffled = seededShuffle(pool, `${seedInput}|${topic.topicKey}|vie-reading`);
-  return shuffled.slice(0, Math.max(6, Math.min(count, shuffled.length)));
+  return shuffled.slice(0, Math.max(9, Math.min(count, shuffled.length)));
 }
 
 /**

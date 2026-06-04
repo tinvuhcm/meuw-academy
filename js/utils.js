@@ -356,7 +356,11 @@ export function getSubjectConfig(subject) {
   return SUBJECT_CONFIG[subject] || SUBJECT_CONFIG['quiz'];
 }
 
-export function formatModuleDisplayTitle(moduleOrSubject, maybeTitle) {
+export function formatModuleDisplayTitle(moduleOrSubject, maybeTitle, includeSubject = true) {
+  if (typeof maybeTitle === 'boolean') {
+    includeSubject = maybeTitle;
+    maybeTitle = undefined;
+  }
   const subject = typeof moduleOrSubject === 'object' ? moduleOrSubject?.subject : moduleOrSubject;
   const rawTitle = typeof moduleOrSubject === 'object' ? moduleOrSubject?.title : maybeTitle;
   const subjectLabel = getSubjectConfig(subject).label;
@@ -390,7 +394,7 @@ export function formatModuleDisplayTitle(moduleOrSubject, maybeTitle) {
     title = title.charAt(0).toUpperCase() + title.slice(1);
   }
 
-  return `[${subjectLabel}] ${title}`;
+  return includeSubject ? `[${subjectLabel}] ${title}` : title;
 }
 
 // ============================================

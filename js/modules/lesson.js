@@ -51,7 +51,7 @@ export function renderLesson(params) {
   if (!isRandomPractice) {
     State.syncDailyProgress();
   }
-  
+
   const moduleData = isRandomPractice ? generatePracticeModule(20, moduleId) : getModuleData(dayId, moduleId);
   const container = el('div', { class: 'page-container lesson-container' });
 
@@ -60,7 +60,7 @@ export function renderLesson(params) {
     blocked.innerHTML = `
       <div class="text-5xl mb-4">🗓️</div>
       <h2 class="font-display text-3xl text-warning-dk mb-3">Ngày này chưa mở để học</h2>
-      <p class="font-bold text-text">Con có thể xem trước ở lộ trình, nhưng chỉ bắt đầu học khi tới đúng ngày và các ngày trước đã pass trên 80%.</p>
+      <p class="font-bold text-text">Bé có thể xem trước ở lộ trình, nhưng chỉ bắt đầu học khi tới đúng ngày và các ngày trước đã pass trên 80%.</p>
     `;
     const backBtn = el('button', { class: 'btn btn-outline mt-6' }, 'Quay lại lộ trình');
     backBtn.addEventListener('click', () => Router.navigate('/'));
@@ -80,7 +80,7 @@ export function renderLesson(params) {
 
   // 1. Sidebar (Mascot & Progress)
   const sidebar = el('div', { class: 'lesson-sidebar sticky top-4 flex flex-col gap-4' });
-  
+
   // Back / Leave button
   const leaveBtn = el('button', { class: 'btn btn-outline btn-pop text-sm w-full' }, '← Rời khỏi bài học');
   leaveBtn.addEventListener('click', () => {
@@ -98,7 +98,7 @@ export function renderLesson(params) {
     <div class="speech-bubble" data-speech-bubble></div>
   `;
   sidebar.appendChild(mascotArea);
-  
+
   // Progress Dots
   const lessonBlocks = Array.isArray(moduleData.lessonBlocks) ? moduleData.lessonBlocks : [];
   const flowItems = [
@@ -122,7 +122,7 @@ export function renderLesson(params) {
   const progressBox = el('div', { class: 'card mt-4' });
   progressBox.innerHTML = '<div class="text-sm font-bold text-text-muted mb-2 text-center">Tiến trình</div>';
   const dotsContainer = el('div', { class: 'flex flex-wrap justify-center gap-2' });
-  
+
   const dots = [];
   for (let i = 0; i < numSteps; i++) {
     const dot = el('div', { class: 'w-4 h-4 rounded-full bg-border transition-colors duration-300' });
@@ -148,7 +148,7 @@ export function renderLesson(params) {
 
   function loadQuestion(index) {
     card.innerHTML = ''; // clear previous
-    
+
     // Update dots
     dots.forEach((d, i) => {
       d.className = 'w-4 h-4 rounded-full transition-colors duration-300 ';
@@ -167,7 +167,7 @@ export function renderLesson(params) {
       if (item.block.type === 'reading-page') {
         triggerMascot('lesson:start', { customLines: ['Đọc bài trong sách giáo khoa trước nhé!'] });
       } else {
-        triggerMascot('lesson:start', { customLines: ['Nghe bài học ngắn trước nhé!'] });
+        triggerMascot('lesson:start', { customLines: ['Nghe 1 bài học ngắn nhé!'] });
       }
       card.appendChild(renderLessonBlock(item.block, () => {
         Audio.click();
@@ -211,7 +211,7 @@ export function renderLesson(params) {
       case 'drawing-canvas': qEl = renderDrawingCanvas(q, handleComplete); break;
       case 'color-fill': qEl = renderColorFill(q, handleComplete); break;
       case 'mini-quiz': qEl = renderMiniQuiz(q, handleComplete); break;
-      default: 
+      default:
         qEl = el('div', {}, 'Loại câu hỏi không được hỗ trợ: ' + q.type);
         const next = el('button', { class: 'btn btn-cta' }, 'Bỏ qua');
         next.addEventListener('click', () => handleComplete(true, 0));
@@ -339,13 +339,13 @@ export function renderLesson(params) {
       <p class="mb-8">Em có muốn học lại không? (Học lại không nhận thêm ⭐ đâu nhé)</p>
     `;
     const btnRow = el('div', { class: 'flex justify-center gap-4' });
-    
+
     const backBtn = el('button', { class: 'btn btn-secondary' }, 'Quay lại');
     backBtn.addEventListener('click', () => { Audio.click(); Router.back(); });
-    
+
     const againBtn = el('button', { class: 'btn btn-primary' }, 'Học lại');
     againBtn.addEventListener('click', () => { Audio.click(); loadQuestion(0); });
-    
+
     btnRow.appendChild(backBtn);
     btnRow.appendChild(againBtn);
     compBox.appendChild(btnRow);
@@ -570,7 +570,7 @@ function buildSGKViewerOverlay({ pages = [], pageNumbers = [], title = '', sourc
   const zoomLabel = el('span', { class: 'text-xs font-bold text-text-muted w-10 text-center' }, `${ZOOM_STEPS[zoomIdx]}%`);
 
   const zoomOut = el('button', { class: 'btn btn-outline text-sm py-1 px-3', title: 'Thu nhỏ' }, '−');
-  const zoomIn  = el('button', { class: 'btn btn-outline text-sm py-1 px-3', title: 'Phóng to' }, '+');
+  const zoomIn = el('button', { class: 'btn btn-outline text-sm py-1 px-3', title: 'Phóng to' }, '+');
   const zoomFit = el('button', { class: 'btn btn-outline text-xs py-1 px-2', title: 'Vừa màn hình' }, '⊡ Vừa');
 
   function applyZoom() {
@@ -580,11 +580,11 @@ function buildSGKViewerOverlay({ pages = [], pageNumbers = [], title = '', sourc
     imgEl.style.width = pct <= 100 ? '100%' : `${pct}%`;
     imgEl.style.maxWidth = pct <= 100 ? '100%' : 'none';
     zoomOut.disabled = zoomIdx === 0;
-    zoomIn.disabled  = zoomIdx === ZOOM_STEPS.length - 1;
+    zoomIn.disabled = zoomIdx === ZOOM_STEPS.length - 1;
   }
 
   zoomOut.addEventListener('click', () => { if (zoomIdx > 0) { zoomIdx--; applyZoom(); } });
-  zoomIn.addEventListener('click',  () => { if (zoomIdx < ZOOM_STEPS.length - 1) { zoomIdx++; applyZoom(); } });
+  zoomIn.addEventListener('click', () => { if (zoomIdx < ZOOM_STEPS.length - 1) { zoomIdx++; applyZoom(); } });
   zoomFit.addEventListener('click', () => { zoomIdx = ZOOM_DEFAULT; applyZoom(); });
 
   toolbar.appendChild(zoomOut);

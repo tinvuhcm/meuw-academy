@@ -27,10 +27,10 @@ import {
 // Core subjects (math+vie+eng+sci) must fill >70% of each day.
 // Removed: ethics (đạo đức), pe (thể chất), life (HĐTN)
 const TARGET_QUESTION_COUNT = {
-  math: 26,  // 26Q × ~10s ≈ 4.5 min
-  eng: 24,   // 24Q × ~11s ≈ 4.5 min
-  vie: 20,
-  sci: 20,
+  math: 27,  // 27Q × ~10s ≈ 4.5 min
+  eng: 27,   // 27Q × ~10s ≈ 4.5 min
+  vie: 27,   // 9 base + 9 Ôn lại + 9 Nhớ lại = 27
+  sci: 27,   // 9 base + 9 Ôn lại + 9 Nhớ lại = 27
   it: 14,
   histgeo: 14,
   music: 10,
@@ -1116,23 +1116,26 @@ function generateEmergencyMathQuestions(seedInput, targetCount, questionSeenDay,
   return collected;
 }
 
-function generateReviewVariants(pool, needed, seedInput) {
-  // When a sci-world topic's pool runs short, generate 2-choice review variants
-  // so the lesson reaches target question count (~4.5 min). Each variant strips
-  // the distractors down to answer vs. one wrong option — easier but still
-  // reinforces recall of the same fact.
+const REVIEW_ROUNDS = [
+  { prefix: 'Ôn lại',   wrongIdx: 0 },
+  { prefix: 'Nhớ lại',  wrongIdx: 1 },
+  { prefix: 'Kiểm tra', wrongIdx: 2 },
+];
+
+function generateReviewVariants(pool, needed, seedInput, round = 0) {
+  const { prefix, wrongIdx } = REVIEW_ROUNDS[round % REVIEW_ROUNDS.length];
   const variants = [];
   for (let i = 0; i < pool.length && variants.length < needed; i++) {
     const q = pool[i];
     const wrong = (q.options || []).filter(o => o !== q.answer);
-    if (!q.answer || wrong.length === 0) continue;
-    const pair = seededShuffle([q.answer, wrong[0]], `${seedInput}|rv|${i}`);
+    if (!q.answer || wrong.length <= wrongIdx) continue;
+    const pair = seededShuffle([q.answer, wrong[wrongIdx]], `${seedInput}|rv${round}|${i}`);
     variants.push({
       type: 'multiple-choice',
-      question: `Ôn lại: ${q.question}`,
+      question: `${prefix}: ${q.question}`,
       options: pair,
       answer: q.answer,
-      explanation: `Ôn lại — ${q.explanation || `Đáp án đúng là: ${q.answer}.`}`,
+      explanation: `${prefix} — ${q.explanation || `Đáp án đúng là: ${q.answer}.`}`,
     });
   }
   return variants;
@@ -1169,23 +1172,27 @@ function buildQuestionsForEntry(entry, skeleton, seedInput, questionSeenDay, exp
       processPool(pool);
     }
     // Bank-limited generators (vie, sci KNTT) stop producing at bank size.
-    // Pad with review variants from what was already selected to reach target.
+    // Pad with up to 3 rounds of review variants to reach target.
+    // Snapshot before review so variants always review original questions, not prior variants.
     if (selected.length < targetCount && selected.length >= 4 && entry.subject !== 'math') {
-      const needed = targetCount - selected.length;
-      const reviewPool = generateReviewVariants([...selected], needed, `${seedInput}|gen`);
-      processPool(reviewPool);
+      const baseSelected = [...selected];
+      for (let rv = 0; rv < 3 && selected.length < targetCount; rv++) {
+        const needed = targetCount - selected.length;
+        const reviewPool = generateReviewVariants(baseSelected, needed, `${seedInput}|gen`, rv);
+        processPool(reviewPool);
+      }
     }
   } else {
     const pool = seededShuffle(entry.questionPool || [], `${seedInput}|pool`);
     processPool(pool);
 
-    // If pool was exhausted before target, pad with 2-choice review variants.
-    // Applies to any non-generator topic (sci-world, KNTT sci, histgeo, etc.)
-    // whose pool is too small for the full question count target.
+    // Pool exhausted before target — pad with up to 3 rounds of review variants.
     if (selected.length < targetCount && entry.questionPool?.length) {
-      const needed = targetCount - selected.length;
-      const reviewPool = generateReviewVariants(entry.questionPool, needed, seedInput);
-      processPool(reviewPool);
+      for (let rv = 0; rv < 3 && selected.length < targetCount; rv++) {
+        const needed = targetCount - selected.length;
+        const reviewPool = generateReviewVariants(entry.questionPool, needed, `${seedInput}|rv`, rv);
+        processPool(reviewPool);
+      }
     }
   }
 

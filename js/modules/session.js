@@ -93,7 +93,7 @@ export function renderSession(params) {
     
     const info = el('div');
     info.appendChild(el('div', { class: 'text-xs font-bold uppercase tracking-wider', style: `color: ${conf.color}` }, conf.label));
-    info.appendChild(el('h3', { class: 'font-display text-lg text-text' }, formatModuleDisplayTitle(m)));
+    info.appendChild(el('h3', { class: 'font-display text-lg text-text' }, formatModuleDisplayTitle(m, false)));
     
     left.appendChild(iconBox);
     left.appendChild(info);
@@ -122,15 +122,7 @@ export function renderSession(params) {
 
     listWrapper.appendChild(card);
 
-    // Rest break reminder after every 6 modules (~27 min at 4.5 min/module)
-    if ((idx + 1) % 6 === 0 && idx + 1 < modules.length) {
-      const breakCard = el('div', { class: 'flex items-center gap-3 px-4 py-3 rounded-2xl bg-surface border border-border text-sm font-bold text-text-muted' });
-      breakCard.innerHTML = `
-        <span class="text-xl">🌿</span>
-        <span>Nghỉ giải lao — uống nước, thở sâu 3 lần rồi tiếp tục nhé!</span>
-      `;
-      listWrapper.appendChild(breakCard);
-    }
+    // Rest break reminder popup handled at the end of renderSession
   });
 
   // End screen if all completed
@@ -191,5 +183,50 @@ export function renderSession(params) {
   const wrapper = document.createDocumentFragment();
   wrapper.appendChild(header);
   wrapper.appendChild(container);
+
+  // Popup break reminder logic
+  const completedCount = modules.filter(m => State.isModuleComplete(m.id)).length;
+  if (completedCount > 0 && completedCount % 6 === 0) {
+    const breakKey = `break_shown_${dayId}_${sessionId}_${completedCount}`;
+    if (!sessionStorage.getItem(breakKey)) {
+      sessionStorage.setItem(breakKey, 'true');
+      setTimeout(() => {
+        const BREAK_MESSAGES = [
+          "Em học ngoan quá! Mình nghỉ giải lao uống ngụm nước rồi học tiếp nhé. 🌿",
+          "Mắt em mỏi chưa? Mình nhắm mắt thở sâu 3 lần cho khỏe nha! 👀",
+          "Học chăm chỉ quá! Vươn vai một cái cho đỡ mỏi lưng nào em ơi! 💪",
+          "Nghỉ tay một chút nhé, đi uống nước hoặc vươn vai rồi mình chiến tiếp! 🥛",
+          "Em làm tốt lắm! Đi dạo một vòng quanh phòng cho thư giãn nhé! 🚶‍♂️"
+        ];
+        const msg = BREAK_MESSAGES[Math.floor(Math.random() * BREAK_MESSAGES.length)];
+      
+        const overlay = el('div', { class: 'modal-overlay z-50' });
+        const modal = el('div', { class: 'modal-card text-center flex flex-col items-center gap-4 p-6' });
+        
+        const closeBtn = el('div', { class: 'modal-close' }, '✕');
+        closeBtn.addEventListener('click', () => { Audio.click(); overlay.remove(); });
+        
+        const icon = el('div', { class: 'text-6xl animate-bounce mb-2' }, '🌿');
+        const title = el('h2', { class: 'font-display text-2xl text-méo-purple' }, 'Nghỉ giải lao tí nhé!');
+        const text = el('p', { class: 'text-text font-bold' }, msg);
+        
+        const okBtn = el('button', { class: 'btn btn-primary px-8 mt-2' }, 'Đã rõ, em nghỉ chút đây!');
+        okBtn.addEventListener('click', () => {
+          Audio.click();
+          overlay.remove();
+        });
+      
+        modal.appendChild(closeBtn);
+        modal.appendChild(icon);
+        modal.appendChild(title);
+        modal.appendChild(text);
+        modal.appendChild(okBtn);
+        
+        overlay.appendChild(modal);
+        document.body.appendChild(overlay);
+      }, 600); // Short delay to let session animation finish
+    }
+  }
+
   return wrapper;
 }
