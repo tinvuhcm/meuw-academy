@@ -15,6 +15,7 @@ export const CUSTOMIZER_ITEMS_META = {
 export const MASCOT_COMBO_ASSETS = {
   'acc_crown+acc_wand': 'assets/images/mascot-combo-crown-wand.png',
   'acc_lollipop+acc_sunglasses': 'assets/images/mascot-combo-sunglasses-lollipop.png',
+  'acc_lollipop+acc_milktea+acc_sunglasses': 'assets/images/mascot-combo-3-accessories.png',
 };
 
 export const MEO_STATE_ASSETS = {

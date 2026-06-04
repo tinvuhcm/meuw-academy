@@ -32,6 +32,28 @@ export function renderDashboard() {
   streakBox.innerHTML = `<span class="fire">🔥</span><span>${State.getStreak()}</span>`;
   streakBox.addEventListener('click', () => Router.navigate('/challenges'));
   
+  // Quick Audio Toggles
+  const bgmBtn = el('button', { class: 'header-btn text-2xl bg-white border border-border shadow-sm rounded-full w-10 h-10 flex-center', title: 'Nhạc Nền' });
+  bgmBtn.innerHTML = State.getSetting('bgmOn') !== false ? '🎵' : '🔇';
+  bgmBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isBgmOn = State.getSetting('bgmOn') !== false;
+    State.setSetting('bgmOn', !isBgmOn);
+    bgmBtn.innerHTML = !isBgmOn ? '🎵' : '🔇';
+    Audio.updateBGM();
+    Audio.click();
+  });
+
+  const sfxBtn = el('button', { class: 'header-btn text-2xl bg-white border border-border shadow-sm rounded-full w-10 h-10 flex-center', title: 'Hiệu Ứng' });
+  sfxBtn.innerHTML = State.getSetting('soundOn') !== false ? '🔔' : '🔕';
+  sfxBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isSfxOn = State.getSetting('soundOn') !== false;
+    State.setSetting('soundOn', !isSfxOn);
+    sfxBtn.innerHTML = !isSfxOn ? '🔔' : '🔕';
+    Audio.click();
+  });
+  
   const settingsWrapper = el('div', { class: 'relative' });
   const settingsBtn = el('button', { class: 'header-btn text-2xl bg-white border border-border shadow-sm rounded-full w-10 h-10 flex-center', title: 'Cài đặt' }, '⚙️');
   const dropdown = el('div', { class: 'absolute right-0 top-12 bg-white border border-border rounded-xl shadow-lg w-48 hidden flex-col overflow-hidden z-50' });
@@ -61,6 +83,8 @@ export function renderDashboard() {
   settingsWrapper.appendChild(settingsBtn);
   settingsWrapper.appendChild(dropdown);
   
+  headerRight.appendChild(bgmBtn);
+  headerRight.appendChild(sfxBtn);
   headerRight.appendChild(streakBox);
   headerRight.appendChild(settingsWrapper);
   
@@ -96,7 +120,7 @@ export function renderDashboard() {
   levelHeader.innerHTML = `<span class="text-méo-purple">${levelData.emoji} Cấp ${levelData.level}: ${levelData.title}</span><span class="text-text-muted">${xpTotal} ⭐</span>`;
   
   const progressBg = el('div', { class: 'progress-bar-bg' });
-  const pct = Math.min(100, (xpTotal / levelData.next) * 100);
+  const pct = levelData.next === Infinity ? 100 : Math.min(100, (xpTotal / levelData.next) * 100);
   progressBg.innerHTML = `<div class="progress-bar-fill" style="width: ${pct}%"></div>`;
   
   levelDisplay.appendChild(levelHeader);
@@ -110,32 +134,101 @@ export function renderDashboard() {
   hero.appendChild(greetingArea);
   container.appendChild(hero);
 
-  // 3. Daily Modules Overview
+  // 3. Daily Modules Overview (Duolingo Style Learning Path)
   const dayData = getCurriculumDay(currentDay);
   const scheduledModules = dayData
     ? getScheduledModulesForProfileDay(State.getActiveProfile(), currentDay, dayData.modules || []).allModules
     : [];
-  const modulesSection = el('section', { class: 'mb-8' });
-  modulesSection.appendChild(el('h2', { class: 'font-display text-2xl mb-4' }, 'Nhiệm vụ hôm nay'));
+    
+  const modulesSection = el('section', { class: 'mb-12 relative flex flex-col items-center py-8 bg-surface rounded-3xl shadow-sm border border-border' });
+  modulesSection.appendChild(el('h2', { class: 'font-display text-2xl mb-8 text-center text-text' }, `Lộ trình Ngày ${currentDay}`));
 
-  if (!dayData) {
-    const emptyBox = el('div', { class: 'card text-center text-text-muted p-8' });
+  if (!dayData || scheduledModules.length === 0) {
+    const emptyBox = el('div', { class: 'text-center text-text-muted p-8' });
     emptyBox.innerHTML = '<h3>Chưa có dữ liệu bài học cho ngày này!</h3>';
     modulesSection.appendChild(emptyBox);
   } else {
-    const sessionGrid = el('div', { class: currentPlan.mode === 'merged' ? 'session-grid grid gap-4' : 'session-grid grid gap-4 md:grid-cols-2' });
-    if (currentPlan.mode === 'merged') {
-      const mergedCard = createSessionCard('Lịch Học Hôm Nay', '📘', scheduledModules, 'day', currentDay);
-      sessionGrid.appendChild(mergedCard);
-    } else {
-      const amModules = scheduledModules.filter(m => m.session === 'am');
-      const pmModules = scheduledModules.filter(m => m.session === 'pm');
-      const amCard = createSessionCard('Buổi Sáng', '☀️', amModules, 'am', currentDay);
-      const pmCard = createSessionCard('Buổi Chiều', '🌙', pmModules, 'pm', currentDay);
-      sessionGrid.appendChild(amCard);
-      sessionGrid.appendChild(pmCard);
+    const pathContainer = el('div', { class: 'relative w-full max-w-sm flex flex-col items-center gap-12 pb-8' });
+    
+    // Draw an SVG curve behind the nodes
+    const svgLayer = el('div', { class: 'absolute top-0 bottom-0 left-0 right-0 pointer-events-none flex justify-center', style: 'z-index: 0;' });
+    svgLayer.innerHTML = `
+      <svg width="100%" height="100%" preserveAspectRatio="none">
+        <path d="M 50%,0 C 70%,20% 70%,40% 50%,50% C 30%,60% 30%,80% 50%,100%" fill="none" stroke="#E5E7EB" stroke-width="12" stroke-linecap="round" />
+      </svg>
+    `;
+    // Note: A true responsive SVG path connecting exact node coordinates is complex, 
+    // we'll use a thick straight line for simplicity and reliability across screen sizes.
+    svgLayer.innerHTML = `
+      <div class="w-4 h-full bg-border rounded-full absolute left-1/2 -translate-x-1/2"></div>
+    `;
+    pathContainer.appendChild(svgLayer);
+
+    // Nodes
+    let firstIncompleteFound = false;
+
+    scheduledModules.forEach((m, idx) => {
+      const isCompleted = State.isModuleComplete(m.id);
+      const conf = getSubjectConfig(m.subject);
+      
+      const isCurrentNode = !isCompleted && !firstIncompleteFound;
+      if (isCurrentNode) firstIncompleteFound = true;
+
+      const nodeWrapper = el('div', { class: 'relative z-10 w-full flex items-center', style: `z-index: 10; justify-content: ${idx % 2 === 0 ? 'flex-start' : 'flex-end'}; padding: 0 10%;` });
+      
+      // Node Button
+      const btnSize = isCurrentNode ? 'w-24 h-24' : 'w-20 h-20';
+      const bounceClass = isCurrentNode ? 'animate-bounce' : '';
+      const borderClass = isCurrentNode ? 'border-4 border-méo-purple shadow-xl' : (isCompleted ? 'border-4 border-correct shadow-md' : 'border-4 border-border shadow-sm bg-bg-2 opacity-80');
+      const bgClass = isCompleted ? 'bg-correct' : (isCurrentNode ? 'bg-white' : 'bg-bg-2');
+      
+      const nodeBtn = el('button', { 
+        class: `${btnSize} rounded-full flex flex-col items-center justify-center transition-all ${borderClass} ${bgClass} ${bounceClass}`,
+        style: isCurrentNode ? 'transform-origin: bottom center;' : ''
+      });
+      
+      const icon = el('span', { class: 'text-3xl' }, conf.emoji);
+      nodeBtn.appendChild(icon);
+
+      // Current node label
+      if (isCurrentNode) {
+        const label = el('div', { class: 'absolute -top-10 bg-white border-2 border-border px-3 py-1 rounded-xl text-sm font-bold shadow-md whitespace-nowrap text-méo-purple' });
+        label.innerHTML = 'Học ngay! <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-b-2 border-r-2 border-border rotate-45"></div>';
+        nodeBtn.appendChild(label);
+      } else if (isCompleted) {
+        const check = el('div', { class: 'absolute -top-2 -right-2 bg-correct text-white w-8 h-8 rounded-full flex-center font-bold shadow-sm' }, '✓');
+        nodeBtn.appendChild(check);
+      }
+
+      nodeBtn.addEventListener('click', () => {
+        Audio.click();
+        Router.navigate(`/lesson/${currentDay}/${m.id}`);
+      });
+
+      // Module Title
+      const titleWrapper = el('div', { class: 'absolute w-32 text-center', style: `top: 100%; mt-2` });
+      titleWrapper.innerHTML = `<span class="text-xs font-bold ${isCompleted ? 'text-correct line-through' : 'text-text-muted'}">${formatModuleDisplayTitle(m, false)}</span>`;
+      
+      const innerWrap = el('div', { class: 'relative flex-center flex-col' });
+      innerWrap.appendChild(nodeBtn);
+      innerWrap.appendChild(titleWrapper);
+
+      nodeWrapper.appendChild(innerWrap);
+      pathContainer.appendChild(nodeWrapper);
+    });
+
+    modulesSection.appendChild(pathContainer);
+    
+    // Day Completion State
+    if (!firstIncompleteFound && scheduledModules.length > 0) {
+      const doneBox = el('div', { class: 'mt-8 text-center bg-correct-bg border-2 border-correct rounded-2xl p-6 w-full max-w-sm z-10 relative' });
+      doneBox.innerHTML = `
+        <div class="text-4xl mb-2">🎉</div>
+        <h3 class="font-display text-xl text-correct-dk mb-1">Xuất sắc!</h3>
+        <p class="text-sm font-bold text-correct">Bé đã hoàn thành ngày hôm nay.</p>
+      `;
+      modulesSection.appendChild(doneBox);
     }
-    modulesSection.appendChild(sessionGrid);
   }
   container.appendChild(modulesSection);
 
