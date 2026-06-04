@@ -461,6 +461,22 @@ function randInt(rng, min, max) {
   return Math.floor(rng() * (max - min + 1)) + min;
 }
 
+function dedupOpts(candidates, answer) {
+  const seen = new Set();
+  const out = [];
+  for (const v of candidates) {
+    if (!seen.has(v)) { seen.add(v); out.push(v); }
+  }
+  // pad with unique fallbacks if needed
+  let pad = 1;
+  while (out.length < 4) {
+    const f = `${parseInt(answer, 10) + pad * 7}`;
+    if (!seen.has(f)) { seen.add(f); out.push(f); }
+    pad++;
+  }
+  return out.slice(0, 4);
+}
+
 function generateMathQuestions(topic, count, seedInput) {
   const rng = createRng(seedInput);
   const questions = [];
@@ -500,7 +516,7 @@ function generateMathQuestions(topic, count, seedInput) {
         type: 'multiple-choice',
         isMath: true,
         question: `Kết quả của ${a} × ${b} là?`,
-        options: seededShuffle([`${ans}`, `${ans + a}`, `${ans - a}`, `${ans + b}`], `${seedInput}|${i}|times`),
+        options: seededShuffle(dedupOpts([`${ans}`, `${ans + a}`, `${ans - a}`, `${ans + b}`], `${ans}`), `${seedInput}|${i}|times`),
         answer: `${ans}`,
         explanation: `${a} × ${b} nghĩa là cộng ${a} thành ${b} nhóm bằng nhau, kết quả là ${ans}.`,
       };
@@ -615,7 +631,7 @@ function generateMathQuestions(topic, count, seedInput) {
           type: 'multiple-choice',
           isMath: true,
           question: `Tính giá trị biểu thức: ${a} + ${b} × ${c}`,
-          options: seededShuffle([`${ans}`, `${(a + b) * c}`, `${a * b + c}`, `${ans + b}`], `${seedInput}|${i}|expr1`),
+          options: seededShuffle(dedupOpts([`${ans}`, `${(a + b) * c}`, `${a * b + c}`, `${ans + b}`], `${ans}`), `${seedInput}|${i}|expr1`),
           answer: `${ans}`,
           explanation: `Thực hiện phép nhân trước: ${b} × ${c} = ${b * c}, rồi cộng ${a} để được ${ans}.`,
         };
@@ -625,7 +641,7 @@ function generateMathQuestions(topic, count, seedInput) {
           type: 'multiple-choice',
           isMath: true,
           question: `Tính giá trị biểu thức: (${a} + ${b}) × ${c}`,
-          options: seededShuffle([`${ans}`, `${a + b * c}`, `${a * c + b}`, `${ans - c}`], `${seedInput}|${i}|expr2`),
+          options: seededShuffle(dedupOpts([`${ans}`, `${a + b * c}`, `${a * c + b}`, `${ans - c}`], `${ans}`), `${seedInput}|${i}|expr2`),
           answer: `${ans}`,
           explanation: `Tính trong ngoặc trước: ${a} + ${b} = ${a + b}, sau đó nhân với ${c} được ${ans}.`,
         };
@@ -694,7 +710,7 @@ function generateMathQuestions(topic, count, seedInput) {
         question: `${labels.map((label, idx) => `${label}: ${values[idx]} quyển`).join(' | ')}. ${askBiggest ? 'Ngày nào đọc nhiều sách nhất?' : 'Tổng số sách đã đọc là bao nhiêu?'}`,
         options: askBiggest
           ? seededShuffle(labels, `${seedInput}|${i}|chart-day`)
-          : seededShuffle([`${values.reduce((a, b) => a + b, 0)}`, `${values[0] + values[1]}`, `${Math.max(...values)}`, `${values.reduce((a, b) => a + b, 0) + 2}`], `${seedInput}|${i}|chart-total`),
+          : seededShuffle(dedupOpts([`${values.reduce((a, b) => a + b, 0)}`, `${values[0] + values[1]}`, `${Math.max(...values)}`, `${values.reduce((a, b) => a + b, 0) + 2}`], `${values.reduce((a, b) => a + b, 0)}`), `${seedInput}|${i}|chart-total`),
         answer: askBiggest ? labels[biggestIndex] : `${values.reduce((a, b) => a + b, 0)}`,
         explanation: askBiggest
           ? `So sánh các số liệu thì ${labels[biggestIndex]} có ${values[biggestIndex]} quyển là nhiều nhất.`
@@ -705,13 +721,19 @@ function generateMathQuestions(topic, count, seedInput) {
       if (mode === 'buy') {
         const a = randInt(rng, 15, 60);
         const b = randInt(rng, 15, 60);
-        const c = randInt(rng, 10, 40);
+        const cMax = Math.min(40, a + b - 5);
+        const c = randInt(rng, 10, cMax);
         const answer = a + b - c;
+        const d1 = a + b + c;   // forgot to subtract
+        const d2 = a - b + c;   // wrong operation order
+        const d3 = a + b;       // forgot to subtract at all
+        const opts = [...new Set([`${answer}`, `${d1}`, `${d2}`, `${d3}`])];
+        while (opts.length < 4) opts.push(`${answer + opts.length * 3}`);
         question = {
           type: 'multiple-choice',
           isMath: true,
           question: `Thư viện lớp có ${a} truyện tranh. Nhà trường bổ sung thêm ${b} quyển rồi lớp mượn ra ${c} quyển. Thư viện còn lại bao nhiêu quyển?`,
-          options: seededShuffle([`${answer}`, `${a + b + c}`, `${a - b + c}`, `${a + c - b}`], `${seedInput}|${i}|word1`),
+          options: seededShuffle(opts.slice(0, 4), `${seedInput}|${i}|word1`),
           answer: `${answer}`,
           explanation: `Số truyện còn lại là ${a} + ${b} - ${c} = ${answer}.`,
         };
@@ -723,7 +745,7 @@ function generateMathQuestions(topic, count, seedInput) {
           type: 'multiple-choice',
           isMath: true,
           question: `Có ${total} cái bánh chia đều cho ${groups} bạn. Mỗi bạn được mấy cái bánh?`,
-          options: seededShuffle([`${each}`, `${groups}`, `${each + 2}`, `${total - groups}`], `${seedInput}|${i}|word2`),
+          options: seededShuffle(dedupOpts([`${each}`, `${groups}`, `${each + 2}`, `${total - groups}`], `${each}`), `${seedInput}|${i}|word2`),
           answer: `${each}`,
           explanation: `Chia đều ${total} cho ${groups} bạn: ${total} : ${groups} = ${each}.`,
         };
@@ -815,12 +837,12 @@ function generateMathQuestions(topic, count, seedInput) {
         type: 'multiple-choice',
         isMath: true,
         question: `Nếu kim phút chỉ vào số ${minute ? '6' : '12'} và kim giờ gần số ${hour}, đồng hồ chỉ mấy giờ?`,
-        options: seededShuffle([
+        options: seededShuffle(dedupOpts([
           answer,
           `${hour} giờ${minute ? '' : ' 30 phút'}`,
           `${(hour % 12) + 1} giờ${minute ? ' 30 phút' : ''}`,
-          `${Math.max(hour - 1, 1)} giờ`,
-        ], `${seedInput}|${i}|clock`),
+          `${hour <= 1 ? hour + 2 : hour - 1} giờ`,
+        ], answer), `${seedInput}|${i}|clock`),
         answer,
         explanation: `Kim phút ở số ${minute ? '6 là 30 phút' : '12 là đúng giờ'}, nên đồng hồ chỉ ${answer}.`,
       };
