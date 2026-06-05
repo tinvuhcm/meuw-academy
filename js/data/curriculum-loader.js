@@ -15,6 +15,26 @@ import { materializeDayCurriculum } from './fresh-curriculum.js';
 export const ALL_DATA = { ...M1_DATA, ...M2_DATA, ...M3_DATA };
 const BASE_DAY_COUNT = Object.keys(ALL_DATA).length;
 
+// ─── Materialized-day cache ────────────────────────────────────────────────
+// materializeDayCurriculum() is expensive and must return the SAME result for
+// the same day within a single "state epoch" (i.e. no state commits in between).
+// Without caching, the session list and the lesson page each call getCurriculumDay()
+// independently. If syncDailyProgress() commits state in between, a second call
+// can produce a different topic for the same module slot → wrong subject shown
+// after completion.
+//
+// Cache is keyed by day number, invalidated on every meuw:state-committed event.
+const _dayCache = {};
+
+if (typeof window !== 'undefined') {
+  window.addEventListener('meuw:state-committed', () => {
+    // Clear all cached day data so the next render re-materializes with fresh state.
+    for (const key of Object.keys(_dayCache)) {
+      delete _dayCache[key];
+    }
+  });
+}
+
 function clone(data) {
   return JSON.parse(JSON.stringify(data));
 }
@@ -45,20 +65,27 @@ function synthesizeDaySkeleton(day) {
 }
 
 /**
- * Get full data for a specific day
- * @param {number} day 
+ * Get full data for a specific day.
+ * Result is cached per day and invalidated on any state commit, guaranteeing
+ * that the session list and lesson page always see identical module content.
+ * @param {number} day
  */
 export function getCurriculumDay(day) {
+  if (_dayCache[day]) return _dayCache[day];
+
   const dayKey = `day${day}`;
   const dayData = ALL_DATA[dayKey] || synthesizeDaySkeleton(day);
   const materialized = materializeDayCurriculum(day, dayData, ALL_DATA);
-  return enrichLessonBlocks(dayKey, materialized);
+  const enriched = enrichLessonBlocks(dayKey, materialized);
+
+  _dayCache[day] = enriched;
+  return enriched;
 }
 
 /**
  * Get data for a specific module
- * @param {number} day 
- * @param {string} moduleId 
+ * @param {number} day
+ * @param {string} moduleId
  */
 export function getModuleData(day, moduleId) {
   const dayData = getCurriculumDay(day);
