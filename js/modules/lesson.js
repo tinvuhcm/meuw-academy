@@ -259,6 +259,7 @@ export function renderLesson(params) {
         timeMs: timeSpentMs,
         xp: xpEarnedTotal,
         curriculumTopicKey: moduleData.topicKey || null,
+        curriculumSubject: moduleData.subject || null,
         curriculumTitle: moduleData.title,
       });
     }

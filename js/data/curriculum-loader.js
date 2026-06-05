@@ -33,9 +33,13 @@ function synthesizeDaySkeleton(day) {
   const copy = clone(dayData);
   copy.title = `Ngày ${day}: Khám phá tri thức mới`;
   copy.templateDay = templateDay;
-  copy.modules = (copy.modules || []).map((module, index) => ({
+  // Replace the template-day prefix in each module's ID so per-session indices
+  // (d1-am-1, d1-pm-1, …) map correctly to the actual day (d85-am-1, d85-pm-1, …).
+  copy.modules = (copy.modules || []).map((module) => ({
     ...module,
-    id: `d${day}-${module.session}-${index + 1}`,
+    id: module.id
+      ? module.id.replace(/^d\d+/, `d${day}`)
+      : `d${day}-${module.session}-1`,
   }));
   return copy;
 }

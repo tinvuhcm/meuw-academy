@@ -49,9 +49,14 @@ function clampDay(day) {
 function getCurriculumModulesForDay(dayNumber) {
   const profile = getActiveProfile();
   const templateDay = ((dayNumber - 1) % BASE_DAY_COUNT) + 1;
-  const rawModules = (ALL_CURRICULUM_DATA[`day${templateDay}`]?.modules || []).map((module, index) => ({
+  // Replace the template-day prefix in each module's ID with the actual dayNumber.
+  // Raw data uses per-session indices (d1-am-1, d1-pm-1, …) — preserving that
+  // keeps IDs consistent with curriculum-loader.js and the completion records.
+  const rawModules = (ALL_CURRICULUM_DATA[`day${templateDay}`]?.modules || []).map((module) => ({
     ...module,
-    id: `d${dayNumber}-${module.session}-${index + 1}`,
+    id: module.id
+      ? module.id.replace(/^d\d+/, `d${dayNumber}`)
+      : `d${dayNumber}-${module.session}-1`,
   }));
   return getScheduledModulesForProfileDay(profile, dayNumber, rawModules).allModules;
 }

@@ -1224,8 +1224,28 @@ export function materializeDayCurriculum(dayNumber, dayData, allData) {
     const sessionIndex = sessionIndexCounter[module.session] || 0;
     sessionIndexCounter[module.session] = sessionIndex + 1;
     const plannedSubject = forcedTopicKey ? null : getLongRangePlanSubject(dayNumber, module.session, sessionIndex, studyDate);
+
+    // When a module was previously completed, use its stored subject (or search the
+    // catalog for the right subject). This prevents a mismatch where the template
+    // subject (e.g. 'sci') differs from the materialized subject (e.g. 'eng') and
+    // the forced topicKey can't be found in the wrong subject's catalog.
+    let forcedSubject = null;
+    if (forcedTopicKey) {
+      forcedSubject = completed?.curriculumSubject || null;
+      if (!forcedSubject) {
+        // Fall back: search all catalog subjects for the stored topicKey
+        for (const [subj, entries] of Object.entries(catalog)) {
+          if (Array.isArray(entries) && entries.some(e => e.topicKey === forcedTopicKey)) {
+            forcedSubject = subj;
+            break;
+          }
+        }
+      }
+      forcedSubject = forcedSubject || module.subject; // last resort: template subject
+    }
+
     const subjectOrder = forcedTopicKey
-      ? [module.subject]
+      ? [forcedSubject]
       : [...new Set([plannedSubject, ...prioritizeSubjectOrder(plannedSubject || module.subject, subjectUsage)].filter(Boolean))];
     let chosenEntry = null;
     if (index === 11) console.log('ORDER 11:', subjectOrder);
