@@ -19,21 +19,28 @@ export function renderDashboard() {
 
   // 1. App Header
   const header = el('header', { class: 'app-header' });
-  
-  const headerLeft = el('div', { class: 'header-left' });
-  const logo = el('div', { class: 'logo-link cursor-pointer flex items-center gap-2' });
-  logo.innerHTML = `<img src="assets/images/mascot_avatar.png" alt="Méo Logo" class="w-10 h-10 object-cover rounded-full border-2 border-méo-purple shadow-sm" /><span class="logo-text font-display font-bold text-xl text-méo-purple">Méo</span>`;
-  logo.addEventListener('click', () => Router.navigate('/'));
-  
-  headerLeft.appendChild(logo);
+  const kidName = State.getActiveProfile()?.name || 'Méo';
 
+  // Left: avatar + kid name → tap goes to kid profile
+  const headerLeft = el('div', { class: 'header-left' });
+  const kidBtn = el('button', {
+    class: 'logo-link cursor-pointer flex items-center gap-2 hover:opacity-80 transition-opacity',
+    title: `Hồ sơ của ${kidName}`,
+  });
+  kidBtn.innerHTML = `
+    <img src="assets/images/mascot_avatar.png" alt="${kidName}" class="w-10 h-10 object-cover rounded-full border-2 border-méo-purple shadow-sm" />
+    <span class="logo-text font-display font-bold text-xl text-méo-purple">${kidName}</span>
+  `;
+  kidBtn.addEventListener('click', () => { Audio.click(); Router.navigate('/profile'); });
+  headerLeft.appendChild(kidBtn);
+
+  // Right: BGM, SFX, streak, parent (gear)
   const headerRight = el('div', { class: 'header-right flex items-center gap-4' });
-  
+
   const streakBox = el('div', { class: 'streak-badge cursor-pointer', title: 'Chuỗi ngày học' });
   streakBox.innerHTML = `<span class="fire">🔥</span><span>${State.getStreak()}</span>`;
   streakBox.addEventListener('click', () => Router.navigate('/challenges'));
-  
-  // Quick Audio Toggles
+
   const bgmBtn = el('button', { class: 'header-btn text-2xl bg-white border border-border shadow-sm rounded-full w-10 h-10 flex-center', title: 'Nhạc Nền' });
   bgmBtn.innerHTML = State.getSetting('bgmOn') !== false ? '🎵' : '🔇';
   bgmBtn.addEventListener('click', (e) => {
@@ -54,41 +61,19 @@ export function renderDashboard() {
     sfxBtn.innerHTML = !isSfxOn ? '🔔' : '🔕';
     Audio.click();
   });
-  
-  const settingsWrapper = el('div', { class: 'relative' });
-  const settingsBtn = el('button', { class: 'header-btn text-2xl bg-white border border-border shadow-sm rounded-full w-10 h-10 flex-center', title: 'Cài đặt' }, '⚙️');
-  const dropdown = el('div', { class: 'absolute right-0 top-12 bg-white border border-border rounded-xl shadow-lg w-48 hidden flex-col overflow-hidden z-50' });
-  
-  const profileLink = el('button', { class: 'w-full text-left px-4 py-3 font-bold hover:bg-bg-2 border-b border-border text-méo-purple flex items-center gap-2' });
-  profileLink.innerHTML = `<span class="text-xl">🧑</span> Hồ sơ của Méo`;
-  profileLink.addEventListener('click', () => { dropdown.classList.add('hidden'); Router.navigate('/profile'); });
-  
-  const parentLink = el('button', { class: 'w-full text-left px-4 py-3 font-bold hover:bg-bg-2 text-warning flex items-center gap-2' });
-  parentLink.innerHTML = `<span class="text-xl">👨‍👩‍👦</span> Phụ huynh`;
-  parentLink.addEventListener('click', () => { dropdown.classList.add('hidden'); Router.navigate('/parent'); });
-  
-  dropdown.appendChild(profileLink);
-  dropdown.appendChild(parentLink);
-  
-  settingsBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    dropdown.classList.toggle('hidden');
-    dropdown.classList.toggle('flex');
-  });
-  
-  document.addEventListener('click', () => {
-    dropdown.classList.add('hidden');
-    dropdown.classList.remove('flex');
-  });
 
-  settingsWrapper.appendChild(settingsBtn);
-  settingsWrapper.appendChild(dropdown);
-  
+  // Gear → parent panel directly (no dropdown)
+  const parentBtn = el('button', {
+    class: 'header-btn text-2xl bg-white border border-border shadow-sm rounded-full w-10 h-10 flex-center',
+    title: 'Phụ huynh',
+  }, '⚙️');
+  parentBtn.addEventListener('click', () => { Audio.click(); Router.navigate('/parent'); });
+
   headerRight.appendChild(bgmBtn);
   headerRight.appendChild(sfxBtn);
   headerRight.appendChild(streakBox);
-  headerRight.appendChild(settingsWrapper);
-  
+  headerRight.appendChild(parentBtn);
+
   header.appendChild(headerLeft);
   header.appendChild(headerRight);
   
@@ -106,8 +91,7 @@ export function renderDashboard() {
   `;
   
   const greetingArea = el('div', { class: 'hero-greeting-area flex-1 text-center md:text-left z-10' });
-  const profileName = State.getActiveProfile()?.name || 'Méo';
-  const greetingText = el('h1', { class: 'hero-greeting font-display text-3xl md:text-4xl text-text mb-2' }, getGreetingLine(profileName));
+  const greetingText = el('h1', { class: 'hero-greeting font-display text-3xl md:text-4xl text-text mb-2' }, getGreetingLine(kidName));
   const dayText = el('p', { class: 'hero-day-info text-text-muted text-lg font-bold' }, `${formatToday()} • Ngày thứ ${currentDay} • ${currentPlan.shortLabel}`);
   
   // XP Progress
