@@ -383,15 +383,36 @@ function createRoadmapSection(currentDay) {
 }
 
 function createRoadmapCard(dayNumber, dayData, currentDay) {
-  const progress = State.getDayProgress(dayNumber);
+  // Compute progress directly from dayData.modules (already materialized with
+  // correct IDs via getCurriculumDay) so the roadmap bar always agrees with
+  // the session list. Avoids a separate getCurriculumModulesForDay() call that
+  // can diverge from the materialized IDs.
+  const allModules = dayData?.modules || [];
+  const totalModules = allModules.length;
+  let completedCount = 0;
+  let passedCount = 0;
+  allModules.forEach(m => {
+    const data = State.getModuleData(m.id);
+    if (!data) return;
+    completedCount++;
+    const score = Number(data.score ?? data.total ?? 1);
+    const total = Number(data.total ?? 1);
+    if (Number.isFinite(score) && Number.isFinite(total) && total > 0 && score / total >= 0.8) {
+      passedCount++;
+    }
+  });
+  const isPassed = totalModules > 0
+    && completedCount / totalModules >= 0.8
+    && passedCount / totalModules >= 0.8;
+
   const isToday = dayNumber === currentDay;
   const isPast = dayNumber < currentDay;
   const isFuture = dayNumber > currentDay;
-  
+
   const statusClass = isToday
     ? 'border-méo-purple bg-méo-purple-lt text-méo-purple'
     : isPast
-      ? (progress.isPassed ? 'border-correct bg-correct-bg text-correct-dk' : 'border-warning bg-warning-bg text-warning')
+      ? (isPassed ? 'border-correct bg-correct-bg text-correct-dk' : 'border-warning bg-warning-bg text-warning')
       : 'border-border bg-bg-2 text-text-muted';
 
   const card = el('button', {
@@ -414,10 +435,16 @@ function createRoadmapCard(dayNumber, dayData, currentDay) {
   const iconRow = el('div', { class: 'text-3xl my-1 hover:scale-110 transition-transform' }, dayIcon);
   card.appendChild(iconRow);
 
-  // Progress bar
+  // Progress bar + count label
+  const pct = totalModules > 0 ? Math.round(completedCount / totalModules * 100) : 0;
+  const barColor = isFuture ? 'bg-border' : isPassed ? 'bg-correct' : 'bg-current opacity-70';
+  const progressWrap = el('div', { class: 'w-full flex flex-col items-center gap-0.5' });
   const progressBar = el('div', { class: 'w-full h-1.5 bg-white/50 rounded-full overflow-hidden' });
-  progressBar.innerHTML = `<div class="h-full rounded-full ${isFuture ? 'bg-border' : progress.isPassed ? 'bg-correct' : 'bg-current opacity-70'}" style="width:${Math.max(10, Math.round(progress.completedModules / Math.max(progress.totalModules, 1) * 100))}%"></div>`;
-  card.appendChild(progressBar);
+  progressBar.innerHTML = `<div class="h-full rounded-full ${barColor}" style="width:${Math.max(pct, completedCount > 0 ? 5 : 0)}%"></div>`;
+  const countLabel = el('div', { class: 'text-[10px] font-bold opacity-70' }, `${completedCount}/${totalModules}`);
+  progressWrap.appendChild(progressBar);
+  progressWrap.appendChild(countLabel);
+  card.appendChild(progressWrap);
 
   card.addEventListener('click', () => {
     Audio.click();
