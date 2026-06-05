@@ -470,6 +470,14 @@ function markModuleComplete(moduleId, { score, total, timeMs, xp, ...extra } = {
 
   commit();
 
+  // Signal that completed-modules changed so curriculum-loader can purge its cache.
+  // This is separate from meuw:state-committed (which fires on every commit including
+  // syncDailyProgress) so the curriculum cache is only cleared when content-selection
+  // inputs actually change.
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new CustomEvent('meuw:curriculum-invalidated'));
+  }
+
   // Check streak update
   updateStreak();
 }
@@ -532,6 +540,10 @@ function recordKnowledgeExposure(moduleData, context = {}) {
   });
 
   commit();
+  // Ledger change affects topic selection → invalidate curriculum cache.
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new CustomEvent('meuw:curriculum-invalidated'));
+  }
 }
 
 function getCurrentDay() {

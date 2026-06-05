@@ -16,19 +16,24 @@ export const ALL_DATA = { ...M1_DATA, ...M2_DATA, ...M3_DATA };
 const BASE_DAY_COUNT = Object.keys(ALL_DATA).length;
 
 // ─── Materialized-day cache ────────────────────────────────────────────────
-// materializeDayCurriculum() is expensive and must return the SAME result for
-// the same day within a single "state epoch" (i.e. no state commits in between).
-// Without caching, the session list and the lesson page each call getCurriculumDay()
-// independently. If syncDailyProgress() commits state in between, a second call
-// can produce a different topic for the same module slot → wrong subject shown
-// after completion.
+// materializeDayCurriculum() must return the SAME result for the same day
+// within a single "state epoch". Without caching, the session list and the
+// lesson page each call getCurriculumDay() independently. Between those two
+// calls, syncDailyProgress() fires meuw:state-committed and can subtly change
+// the ledger/completed-modules state → session shows "Toán" but lesson loads
+// "Tiếng Việt" for the same module slot.
 //
-// Cache is keyed by day number, invalidated on every meuw:state-committed event.
+// Cache is keyed by day number. It is invalidated ONLY on
+// meuw:curriculum-invalidated, which is dispatched exclusively by
+// markModuleComplete() and recordKnowledgeExposure() in state.js — the two
+// operations that actually affect topic selection. Routine state commits
+// (syncDailyProgress, XP updates, etc.) do NOT invalidate this cache.
 const _dayCache = {};
 
 if (typeof window !== 'undefined') {
-  window.addEventListener('meuw:state-committed', () => {
-    // Clear all cached day data so the next render re-materializes with fresh state.
+  window.addEventListener('meuw:curriculum-invalidated', () => {
+    // Clear all cached day data so the next render re-materializes with fresh
+    // completedModules / knowledgeLedger state.
     for (const key of Object.keys(_dayCache)) {
       delete _dayCache[key];
     }
