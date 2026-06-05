@@ -19,7 +19,9 @@ export function renderDashboard() {
 
   // 1. App Header
   const header = el('header', { class: 'app-header' });
-  const kidName = State.getActiveProfile()?.name || 'Méo';
+  const activeProfile = State.getActiveProfile();
+  const kidName = activeProfile?.name || 'Méo';
+  const kidColor = activeProfile?.avatarColor || '#7C3AED'; // favourite colour → header accent
 
   // Left: avatar + kid name → tap goes to kid profile
   const headerLeft = el('div', { class: 'header-left' });
@@ -28,8 +30,10 @@ export function renderDashboard() {
     title: `Hồ sơ của ${kidName}`,
   });
   kidBtn.innerHTML = `
-    <img src="assets/images/mascot_avatar.png" alt="${kidName}" class="w-10 h-10 object-cover rounded-full border-2 border-méo-purple shadow-sm" />
-    <span class="logo-text font-display font-bold text-xl text-méo-purple">${kidName}</span>
+    <img src="assets/images/mascot_avatar.png" alt="${kidName}"
+      class="w-10 h-10 object-cover rounded-full border-2 shadow-sm"
+      style="border-color: ${kidColor}" />
+    <span class="logo-text font-display font-bold text-xl" style="color: ${kidColor}">${kidName}</span>
   `;
   kidBtn.addEventListener('click', () => { Audio.click(); Router.navigate('/profile'); });
   headerLeft.appendChild(kidBtn);
