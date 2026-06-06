@@ -233,12 +233,14 @@ export function renderDashboard() {
 
   const cardsStrip = el('div', { class: 'relative overflow-hidden bg-orange-50 rounded-2xl p-4 md:p-6 border border-orange-400 shadow-sm flex items-center justify-between' });
   cardsStrip.innerHTML = `
-    <div class="flex-1">
+    <div class="flex-1 pr-2">
       <h3 class="font-display text-2xl text-orange-500 mb-2">Bộ Sưu Tập Thẻ</h3>
       <p class="text-text mb-4 text-sm">Xem lại các Thẻ Kiến Thức đã sưu tầm.</p>
       <button class="btn btn-primary bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 shadow-md border-0" id="db-cards-btn">Xem thẻ</button>
     </div>
-    <div class="w-24 h-24 hidden lg:block shrink-0 text-6xl flex-center">🎴</div>
+    <div class="w-24 h-16 md:w-36 md:h-24 shrink-0 flex-center overflow-hidden rounded-xl border-2 border-orange-200 shadow-sm bg-orange-100">
+      <img src="assets/images/collection_cover.jpg" class="w-full h-full object-cover" alt="Card Collection" />
+    </div>
   `;
 
   learningResourcesGrid.appendChild(libraryStrip);
@@ -493,10 +495,8 @@ function showDayDetailModal(dayNumber, dayData, currentDay) {
     if (btn) btn.addEventListener('click', () => { overlay.remove(); window.scrollTo({top:0, behavior:'smooth'}); });
   } else if (dayNumber < currentDay) {
     const btn = content.querySelector('#modal-review');
-    // Note: To be fully safe, we could navigate to "day" mode if it's merged, but for now we just use "am"
-    const plan = State.getStudyPlanForDayNumber(dayNumber);
-    const sessionToStart = plan.mode === 'merged' ? 'day' : 'am';
-    if (btn) btn.addEventListener('click', () => { overlay.remove(); Router.navigate(`/session/${dayNumber}/${sessionToStart}`); });
+    // Luôn chuyển vào chế độ "day" để hiển thị toàn bộ bài học của cả ngày khi ôn tập
+    if (btn) btn.addEventListener('click', () => { overlay.remove(); Router.navigate(`/session/${dayNumber}/day`); });
   }
 
   modal.appendChild(content);

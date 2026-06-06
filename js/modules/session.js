@@ -30,7 +30,7 @@ export function renderSession(params) {
   backBtn.addEventListener('click', () => { Audio.click(); Router.navigate('/'); });
   header.appendChild(backBtn);
   
-  const titleText = sessionId === 'day' ? 'Lịch Học Hôm Nay 📘' : sessionId === 'am' ? 'Buổi Sáng ☀️' : 'Buổi Chiều 🌙';
+  const titleText = sessionId === 'day' ? (isFutureDay ? 'Lộ Trình Cả Ngày 📘' : numericDayId < currentDay ? 'Toàn Bộ Lộ Trình 🔄' : 'Lịch Học Hôm Nay 📘') : sessionId === 'am' ? 'Buổi Sáng ☀️' : 'Buổi Chiều 🌙';
   const headerTitle = el('h1', { class: 'font-display text-xl' }, `Ngày ${dayId} • ${titleText}`);
   header.appendChild(headerTitle);
   header.appendChild(el('div', { style: 'width: 100px' })); // spacer

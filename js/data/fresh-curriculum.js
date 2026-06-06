@@ -1209,6 +1209,7 @@ export function materializeDayCurriculum(dayNumber, dayData, allData) {
 
   const catalog = buildCatalog(allData);
   const ledger = State.getKnowledgeLedger();
+  const scheduleMap = State.getDaySchedule(dayNumber) || {};
   const profile = State.getActiveProfile();
   const studyDate = getStudyDateForDay(profile.learningStartDate || new Date().toISOString().slice(0, 10), dayNumber);
   const questionSeenDay = new Set();
@@ -1220,7 +1221,8 @@ export function materializeDayCurriculum(dayNumber, dayData, allData) {
 
   const modules = dayData.modules.map((module, index) => {
     const completed = State.getModuleData(module.id);
-    const forcedTopicKey = completed?.curriculumTopicKey || null;
+    const scheduled = scheduleMap[module.id];
+    const forcedTopicKey = completed?.curriculumTopicKey || scheduled?.topicKey || null;
     const sessionIndex = sessionIndexCounter[module.session] || 0;
     sessionIndexCounter[module.session] = sessionIndex + 1;
     const plannedSubject = forcedTopicKey ? null : getLongRangePlanSubject(dayNumber, module.session, sessionIndex, studyDate);
@@ -1231,7 +1233,7 @@ export function materializeDayCurriculum(dayNumber, dayData, allData) {
     // the forced topicKey can't be found in the wrong subject's catalog.
     let forcedSubject = null;
     if (forcedTopicKey) {
-      forcedSubject = completed?.curriculumSubject || null;
+      forcedSubject = completed?.curriculumSubject || scheduled?.subject || null;
       if (!forcedSubject) {
         // Fall back: search all catalog subjects for the stored topicKey
         for (const [subj, entries] of Object.entries(catalog)) {
@@ -1267,7 +1269,7 @@ export function materializeDayCurriculum(dayNumber, dayData, allData) {
           daySeen: topicSeenDay,
           sessionSeen: topicSeenBySession[module.session] || new Set(),
           ledger,
-          forcedTopicKey: subject === module.subject ? forcedTopicKey : null,
+          forcedTopicKey: forcedTopicKey,
           ignoredTopics,
         });
         if (!candidate) break;
@@ -1339,6 +1341,12 @@ export function materializeDayCurriculum(dayNumber, dayData, allData) {
       questions,
     };
   });
+
+  const newSchedule = {};
+  modules.forEach(m => {
+    newSchedule[m.id] = { topicKey: m.topicKey, subject: m.subject };
+  });
+  State.saveDaySchedule(dayNumber, newSchedule);
 
   return {
     ...dayData,

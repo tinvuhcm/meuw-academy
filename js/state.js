@@ -137,6 +137,7 @@ function createDefaultProfile(id, name = 'Méo', avatarColor = '#EC4899') {
     },
     earnedBadges: [],
     gallery: [],
+    daySchedules: {},
     settings: {
       parentPin: '1234',
       soundOn: true,
@@ -247,6 +248,7 @@ function migrateState(state) {
     if (!p.gallery)  p.gallery  = [];
     if (!p.earnedBadges) p.earnedBadges = [];
     if (!p.completedModules) p.completedModules = {};
+    if (!p.daySchedules) p.daySchedules = {};
     if (!p.knowledgeLedger) p.knowledgeLedger = createDefaultProfile(id).knowledgeLedger;
     if (!Array.isArray(p.knowledgeLedger.topicKeys)) p.knowledgeLedger.topicKeys = [];
     if (!Array.isArray(p.knowledgeLedger.questionSignatures)) p.knowledgeLedger.questionSignatures = [];
@@ -488,6 +490,16 @@ function isModuleComplete(moduleId) {
 
 function getModuleData(moduleId) {
   return getActiveProfile().completedModules[moduleId] || null;
+}
+
+function getDaySchedule(dayNumber) {
+  return getActiveProfile().daySchedules[dayNumber] || null;
+}
+
+function saveDaySchedule(dayNumber, scheduleMap) {
+  const profile = getActiveProfile();
+  profile.daySchedules[dayNumber] = scheduleMap;
+  commit();
 }
 
 function getKnowledgeLedger() {
@@ -1113,6 +1125,8 @@ export const State = {
   getAccuracyRate,
   getTodayStats,
   getLifetimeStats,
+  getDaySchedule,
+  saveDaySchedule,
   getKnowledgeLedger,
   recordKnowledgeExposure,
 

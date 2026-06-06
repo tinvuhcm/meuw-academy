@@ -12,6 +12,8 @@
  * - No PPTX/OCR content used here
  */
 
+import { KNTT_LESSON_POOL } from './kntt-lesson-pool.js';
+
 function stableHash(input) {
   let hash = 2166136261;
   const text = String(input || '');
@@ -825,66 +827,82 @@ function pickBank(skill, skillType) {
   return null;
 }
 
-function buildReadingSkillQuestions(topic, count = 8, seedInput = '') {
+function generateDynamicTitleQuestions(topic) {
   const lessonTitle = String(topic.knttSource?.lesson || topic.title || '').replace(/^Bài\s+\d+:\s*/i, '').trim();
-  const pool = [
-    makeQ(
-      `Sau khi đọc bài "${lessonTitle}", việc nào nên làm trước để hiểu bài chắc hơn?`,
-      'Tìm xem bài nói về ai, việc gì hoặc điều gì là chính',
-      ['Chép nguyên câu đầu của bài', 'Đếm xem bài có bao nhiêu dòng', 'Chọn ngay đáp án dài nhất'],
-      `Với bài "${lessonTitle}", muốn đọc hiểu tốt con cần nắm được nhân vật, sự việc hoặc ý chính của bài trước tiên.`
-    ),
-    makeQ(
-      `Nếu gặp một từ khó trong bài "${lessonTitle}", con nên làm gì trước?`,
-      'Đọc lại câu và đoạn quanh từ đó để đoán nghĩa',
-      ['Bỏ qua ngay vì từ khó không quan trọng', 'Chọn nghĩa theo cảm tính', 'Chỉ nhìn riêng từ đó mà không cần ngữ cảnh'],
-      `Ngữ cảnh quanh từ trong bài "${lessonTitle}" thường giúp con hiểu nghĩa tốt hơn trước khi phải hỏi thêm.`
-    ),
-    makeQ(
-      `Khi Gâu tiên sinh hỏi "Ý chính của bài ${lessonTitle} là gì?", con nên nghĩ theo hướng nào?`,
-      'Tìm nội dung được nhắc đến nhiều nhất hoặc thông điệp mà cả bài muốn nói',
-      ['Chỉ đọc lại tên bài là đủ', 'Chọn một chi tiết nhỏ bất kì', 'Đếm xem bài có bao nhiêu nhân vật'],
-      `Ý chính của bài "${lessonTitle}" là điều bao quát nhất mà toàn bộ bài đang hướng tới.`
-    ),
-    makeQ(
-      `Nếu câu hỏi hỏi "Vì sao nhân vật làm như vậy?" trong bài "${lessonTitle}", con cần tìm gì?`,
-      'Tìm chi tiết hoặc câu trong bài nói về nguyên nhân',
-      ['Chỉ chọn nhân vật mình thích nhất', 'Chỉ đoán theo cảm xúc của mình', 'Bỏ qua phần chi tiết trong bài'],
-      `Trong bài "${lessonTitle}", câu hỏi "vì sao" cần con quay lại bài để tìm nguyên nhân hoặc lí do.`
-    ),
-    makeQ(
-      `Để trả lời tốt câu hỏi về hình ảnh đẹp trong bài "${lessonTitle}", con nên làm gì?`,
-      'Chọn chi tiết gợi hình rõ và nói nó làm con liên tưởng đến điều gì',
-      ['Chỉ đọc thuộc lòng một câu bất kì', 'Chỉ nói tên tác giả', 'Bỏ qua cảm xúc của mình hoàn toàn'],
-      `Câu hỏi về hình ảnh đẹp trong bài "${lessonTitle}" cần vừa nhận ra chi tiết vừa biết nói cảm nhận hoặc liên tưởng.`
-    ),
-    makeQ(
-      `Sau khi đọc bài "${lessonTitle}", con nên chú ý điều gì để trả lời chắc hơn?`,
-      'Chi tiết quan trọng và ý chính của bài',
-      ['Chỉ nhìn tên bài rồi đoán', 'Chỉ chép lại một câu bất kì', 'Chỉ nhớ vài từ rời rạc'],
-      `Với bài "${lessonTitle}", điều quan trọng là hiểu nội dung, chi tiết và ý chính của văn bản.`
-    ),
-    makeQ(
-      `Bài "${lessonTitle}" có đoạn hội thoại giữa các nhân vật. Con cần chú ý điều gì khi đọc hội thoại?`,
-      'Ai đang nói, nói với ai, và nói điều gì để hiểu ý nghĩa cuộc trò chuyện',
-      ['Chỉ đếm số lượt thoại', 'Chỉ đọc lượt thoại của nhân vật đầu tiên', 'Bỏ qua hội thoại, đọc phần còn lại'],
-      `Trong đoạn hội thoại của bài "${lessonTitle}", hiểu ai nói, nói gì và tại sao là chìa khóa để nắm ý nghĩa câu chuyện.`
-    ),
-    makeQ(
-      `Câu hỏi "Theo em, nhân vật trong bài "${lessonTitle}" đã làm đúng chưa?" là loại câu hỏi gì?`,
-      'Câu hỏi đánh giá — cần đưa ra nhận xét kèm lí do từ bài đọc',
-      ['Câu hỏi tìm chi tiết trong bài', 'Câu hỏi điền vào chỗ trống', 'Câu hỏi về tác giả bài đọc'],
-      `Câu hỏi đánh giá không chỉ hỏi đúng sai — cần con suy nghĩ, đưa ra quan điểm và nêu lí do dựa trên nội dung bài "${lessonTitle}".`
-    ),
-    makeQ(
-      `Khi đọc bài "${lessonTitle}", con gặp hình ảnh so sánh như "sóng như những cánh tay". Đây là biện pháp tu từ gì?`,
-      'So sánh — dùng từ "như" để đối chiếu hai sự vật có điểm giống nhau',
-      ['Nhân hóa — gán hành động của người cho sự vật', 'Điệp từ — lặp lại một từ nhiều lần', 'Liệt kê — kể ra nhiều sự vật'],
-      `"Như" là từ so sánh điển hình. Biện pháp so sánh giúp hình ảnh trong bài "${lessonTitle}" trở nên sinh động và dễ hình dung hơn.`
-    ),
-  ];
-  const shuffled = seededShuffle(pool, `${seedInput}|${topic.topicKey}|vie-reading`);
-  return shuffled.slice(0, Math.max(9, Math.min(count, shuffled.length)));
+  if (!lessonTitle) return [];
+  
+  const words = lessonTitle.split(/\s+/);
+  const qList = [];
+  
+  // Count syllables
+  qList.push(makeQ(
+    `Tên bài đọc "${lessonTitle}" có bao nhiêu tiếng (âm tiết)?`,
+    `${words.length} tiếng`,
+    [`${Math.max(1, words.length - 1)} tiếng`, `${words.length + 1} tiếng`, `${words.length + 2} tiếng`],
+    `Tên bài gồm các tiếng: ${words.join(', ')}.`
+  ));
+  
+  // Capitalization rule
+  const firstWord = words[0];
+  if (firstWord) {
+    qList.push(makeQ(
+      `Trong tên bài "${lessonTitle}", chữ cái nào được viết hoa?`,
+      `Chữ ${firstWord.charAt(0)}`,
+      [`Chữ ${words[words.length-1].charAt(0) || 'cuối'}`, `Tất cả các chữ cái đầu tiên`, `Không có chữ nào viết hoa`],
+      `Theo quy tắc viết hoa tên bài, chữ cái đầu tiên của tên bài phải được viết hoa.`
+    ));
+  }
+  
+  return qList;
+}
+
+function buildReadingSkillQuestions(topic, count = 8, seedInput = '') {
+  // Mechanism: To ensure reading lessons have useful, relevant knowledge without faking texts,
+  // we pull grammar/vocabulary questions from the EXACT "Luyện từ và câu" (Grammar) 
+  // or "Chính tả" (Spelling) topics taught in the SAME lesson or unit.
+  
+  let relatedGrammarBanks = [];
+  
+  if (topic.knttSource) {
+    const viePool = KNTT_LESSON_POOL.vie || [];
+    
+    // 1. Try to find Grammar/Spelling topics in the SAME Lesson (e.g. "Bài 13: Con vẹt xanh")
+    const sameLessonTopics = viePool.filter(t => t.source?.lesson === topic.knttSource.lesson && t.skillType === 'Luyện từ và câu');
+    
+    // 2. If no grammar in the same lesson, broaden to the SAME Unit (e.g. "TRẢI NGHIỆM VÀ KHÁM PHÁ")
+    const searchTopics = sameLessonTopics.length > 0 ? sameLessonTopics : viePool.filter(t => t.source?.unit === topic.knttSource.unit && t.skillType === 'Luyện từ và câu');
+    
+    // Collect questions from those related grammar banks
+    for (const t of searchTopics) {
+      const rawSkill = String(t.source?.skill || '');
+      const sType = rawSkill.split(':')[0].trim();
+      const skillName = rawSkill.replace(/^[^:]+:\s*/, '').trim();
+      const bankQuestions = pickBank(skillName, sType);
+      if (bankQuestions) {
+        relatedGrammarBanks.push(...bankQuestions);
+      }
+    }
+  }
+  
+  // 3. Fallback if the unit has NO grammar topics at all (rare, but just in case),
+  // we fall back to core vocabulary/spelling banks to ensure "hữu ích có kiến thức".
+  if (relatedGrammarBanks.length === 0) {
+    relatedGrammarBanks = [
+      ...QUESTION_BANKS['chinh-ta'],
+      ...QUESTION_BANKS['danh-tu'],
+      ...QUESTION_BANKS['dong-tu'],
+      ...QUESTION_BANKS['tinh-tu']
+    ];
+  }
+  
+  // 4. Generate dynamic questions from the lesson title itself! (Phonetics / Capitalization)
+  const titleQuestions = generateDynamicTitleQuestions(topic);
+  
+  // Combine dynamic title questions + related grammar questions
+  const combined = [...titleQuestions, ...relatedGrammarBanks];
+  
+  const shuffled = seededShuffle(combined, `${seedInput}|${topic.topicKey}|reading-mechanism`);
+  return shuffled.slice(0, Math.max(6, Math.min(count, shuffled.length)));
 }
 
 /**
