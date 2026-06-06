@@ -238,7 +238,7 @@ export function renderDashboard() {
       <p class="text-text mb-4 text-sm">Xem lại các Thẻ Kiến Thức đã sưu tầm.</p>
       <button class="btn btn-primary bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 shadow-md border-0" id="db-cards-btn">Xem thẻ</button>
     </div>
-    <div class="w-24 h-16 md:w-36 md:h-24 shrink-0 flex-center overflow-hidden rounded-xl border-2 border-orange-200 shadow-sm bg-orange-100">
+    <div class="w-40 h-28 md:w-64 md:h-36 shrink-0 flex-center overflow-hidden rounded-xl shadow-md border-2 border-orange-200">
       <img src="assets/images/collection_cover.jpg" class="w-full h-full object-cover" alt="Card Collection" />
     </div>
   `;
