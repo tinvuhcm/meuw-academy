@@ -27,9 +27,9 @@ export function renderKnowledgeCards() {
 
   // Demo cards with better images
   const demoCards = [
-    { id: 'math-1', title: 'Bảng Cửu Chương 9', desc: 'Bí kíp học thuộc nhanh bằng 10 ngón tay!', type: 'Toán', emoji: '📐', color: 'bg-math-color', image: 'https://images.unsplash.com/photo-1518133835878-5a93cc3f89e5?w=400&q=80', rarity: 'Hiếm' }, // Math tools
-    { id: 'sci-1', title: 'Vòng Đời Của Bướm', desc: 'Từ quả trứng nhỏ xíu nở ra chú sâu, nhộng và hóa thành bướm xinh đẹp.', type: 'Khoa học', emoji: '🦋', color: 'bg-sci-color', image: 'https://images.unsplash.com/photo-1552084117-56a987666449?w=400&q=80', rarity: 'Cực hiếm' }, // Butterfly
-    { id: 'geo-1', title: 'Thủ đô Hà Nội', desc: 'Hồ Gươm và Tháp Rùa huyền thoại ngàn năm văn hiến.', type: 'Lịch sử - Địa lí', emoji: '🐢', color: 'bg-wrong', image: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=400&q=80', rarity: 'Phổ biến' }, // Hoan Kiem Lake, Hanoi
+    { id: 'math-1', title: 'Bảng Cửu Chương 9', desc: 'Bí kíp học thuộc nhanh bằng 10 ngón tay!', type: 'Toán', emoji: '📐', color: 'bg-math-color', image: 'assets/images/card_001_math.png', rarity: 'Siêu cấp' }, 
+    { id: 'sci-1', title: 'Vòng Đời Của Bướm', desc: 'Từ quả trứng nhỏ xíu nở ra chú sâu, nhộng và hóa thành bướm xinh đẹp.', type: 'Khoa học', emoji: '🦋', color: 'bg-sci-color', image: 'assets/images/card_002_sci.jpg', rarity: 'Cực hiếm' }, 
+    { id: 'geo-1', title: 'Thủ đô Hà Nội', desc: 'Hồ Gươm và Tháp Rùa huyền thoại ngàn năm văn hiến.', type: 'Lịch sử - Địa lí', emoji: '🐢', color: 'bg-wrong', image: 'assets/images/card_003_geo.jpg', rarity: 'Phổ biến' }, 
   ];
 
   demoCards.forEach(card => {
@@ -49,9 +49,9 @@ export function renderKnowledgeCards() {
     }
     
     // Image area
-    const imgWrapper = el('div', { class: 'relative h-48 w-full bg-bg-2 overflow-hidden border-b-4 border-black/5 z-10' });
+    const imgWrapper = el('div', { class: 'relative aspect-[3/4] w-full bg-bg-2 overflow-hidden border-b-4 border-black/5 z-10' });
     if (card.image) {
-      imgWrapper.innerHTML = `<img src="${card.image}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />`;
+      imgWrapper.innerHTML = `<img src="${card.image}" class="w-full h-full object-contain bg-black group-hover:scale-105 transition-transform duration-700" />`;
     } else {
       imgWrapper.innerHTML = `<div class="w-full h-full flex-center text-7xl ${card.color} text-white group-hover:scale-110 transition-transform duration-500">${card.emoji}</div>`;
     }
@@ -116,9 +116,9 @@ function openCardDetailModal(card) {
   modal.appendChild(closeBtn);
 
   // Big Image
-  const imgWrapper = el('div', { class: 'relative h-64 w-full bg-bg-2' });
+  const imgWrapper = el('div', { class: 'relative h-96 w-full bg-black' });
   if (card.image) {
-    imgWrapper.innerHTML = `<img src="${card.image}" class="w-full h-full object-cover" />`;
+    imgWrapper.innerHTML = `<img src="${card.image}" class="w-full h-full object-contain" />`;
   } else {
     imgWrapper.innerHTML = `<div class="w-full h-full flex-center text-8xl ${card.color} text-white">${card.emoji}</div>`;
   }
