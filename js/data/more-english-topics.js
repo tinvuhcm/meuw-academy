@@ -40,6 +40,28 @@ function buildEnglishUnit({ topicKey, title, introTitle, introPoints, example, w
     }
   });
 
+  // ── Drag-match questions (ráp từ / kéo thả) ──────────────────────────
+  // Batch 1: first 6 words, English → Vietnamese
+  if (words.length >= 4) {
+    const batch1 = words.slice(0, Math.min(6, words.length));
+    questionPool.push({
+      type: 'drag-match',
+      question: 'Kéo từ tiếng Anh ghép với nghĩa tiếng Việt tương ứng:',
+      pairs: batch1.map((word, i) => ({ id: `en-${i}`, left: word.en, right: word.vi })),
+      xp: 15,
+    });
+  }
+  // Batch 2: last 6 words, Vietnamese → English (reversed direction for variety)
+  if (words.length >= 7) {
+    const batch2 = words.slice(Math.max(0, words.length - 6));
+    questionPool.push({
+      type: 'drag-match',
+      question: 'Ghép nghĩa tiếng Việt với từ tiếng Anh tương ứng:',
+      pairs: batch2.map((word, i) => ({ id: `vi-${i}`, left: word.vi, right: word.en })),
+      xp: 15,
+    });
+  }
+
   const theory = getOfficialEnglishTheory(topicKey);
   return {
     topicKey,
