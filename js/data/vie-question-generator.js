@@ -827,37 +827,10 @@ function pickBank(skill, skillType) {
   return null;
 }
 
-function generateDynamicTitleQuestions(topic) {
-  const lessonTitle = String(topic.knttSource?.lesson || topic.title || '').replace(/^Bài\s+\d+:\s*/i, '').trim();
-  if (!lessonTitle) return [];
-  
-  const words = lessonTitle.split(/\s+/);
-  const qList = [];
-  
-  // Count syllables
-  qList.push(makeQ(
-    `Tên bài đọc "${lessonTitle}" có bao nhiêu tiếng (âm tiết)?`,
-    `${words.length} tiếng`,
-    [`${Math.max(1, words.length - 1)} tiếng`, `${words.length + 1} tiếng`, `${words.length + 2} tiếng`],
-    `Tên bài gồm các tiếng: ${words.join(', ')}.`
-  ));
-  
-  // Capitalization rule
-  const firstWord = words[0];
-  if (firstWord) {
-    qList.push(makeQ(
-      `Trong tên bài "${lessonTitle}", chữ cái nào được viết hoa?`,
-      `Chữ ${firstWord.charAt(0)}`,
-      [`Chữ ${words[words.length-1].charAt(0) || 'cuối'}`, `Tất cả các chữ cái đầu tiên`, `Không có chữ nào viết hoa`],
-      `Theo quy tắc viết hoa tên bài, chữ cái đầu tiên của tên bài phải được viết hoa.`
-    ));
-  }
-  
-  return qList;
-}
 
-function buildReadingSkillQuestions(topic, count = 8, seedInput = '') {
-  // Mechanism: To ensure reading lessons have useful, relevant knowledge without faking texts,
+
+function buildLanguageSkillQuestions(topic, count = 8, seedInput = '') {
+  // Mechanism: To ensure reading, writing, and speaking lessons have useful, relevant knowledge,
   // we pull grammar/vocabulary questions from the EXACT "Luyện từ và câu" (Grammar) 
   // or "Chính tả" (Spelling) topics taught in the SAME lesson or unit.
   
@@ -895,13 +868,8 @@ function buildReadingSkillQuestions(topic, count = 8, seedInput = '') {
     ];
   }
   
-  // 4. Generate dynamic questions from the lesson title itself! (Phonetics / Capitalization)
-  const titleQuestions = generateDynamicTitleQuestions(topic);
   
-  // Combine dynamic title questions + related grammar questions
-  const combined = [...titleQuestions, ...relatedGrammarBanks];
-  
-  const shuffled = seededShuffle(combined, `${seedInput}|${topic.topicKey}|reading-mechanism`);
+  const shuffled = seededShuffle(relatedGrammarBanks, `${seedInput}|${topic.topicKey}|language-mechanism`);
   return shuffled.slice(0, Math.max(6, Math.min(count, shuffled.length)));
 }
 
@@ -921,8 +889,8 @@ export function generateVietnameseQuestions(topic, count = 8, seedInput = '') {
   const skillType = rawSkill.split(':')[0].trim();
   const skill = rawSkill.replace(/^[^:]+:\s*/, '').trim();
 
-  if (skillType === 'Đọc') {
-    return buildReadingSkillQuestions(topic, count, seedInput);
+  if (skillType === 'Đọc' || skillType === 'Viết' || skillType === 'Nói và nghe') {
+    return buildLanguageSkillQuestions(topic, count, seedInput);
   }
 
   const bank = pickBank(skill, skillType);

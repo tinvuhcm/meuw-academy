@@ -175,10 +175,13 @@ function questionSignature(question) {
   const blankAnswers = Array.isArray(question?.blanks)
     ? question.blanks.map(blank => blank?.answer || '').join('|')
     : '';
+  const pairsAnswers = Array.isArray(question?.pairs)
+    ? question.pairs.map(p => `${p.left || p.word || ''}=${p.right || p.match || ''}`).join('|')
+    : '';
   return normalizeText([
     question.type || '',
     question.question || '',
-    question.answer || question.ans || blankAnswers,
+    question.answer || question.ans || blankAnswers || pairsAnswers,
   ].join('|'));
 }
 
@@ -1250,7 +1253,6 @@ export function materializeDayCurriculum(dayNumber, dayData, allData) {
       ? [forcedSubject]
       : [...new Set([plannedSubject, ...prioritizeSubjectOrder(plannedSubject || module.subject, subjectUsage)].filter(Boolean))];
     let chosenEntry = null;
-    if (index === 11) console.log('ORDER 11:', subjectOrder);
     let questions = [];
 
     for (const subject of subjectOrder) {
