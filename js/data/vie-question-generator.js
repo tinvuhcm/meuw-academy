@@ -43,10 +43,11 @@ function seededShuffle(list, seedInput) {
 }
 
 function makeQ(question, answer, others, explanation) {
+  const uniqueOthers = others.filter((opt, i, arr) => opt !== answer && arr.indexOf(opt) === i);
   return {
     type: 'multiple-choice',
     question,
-    options: [answer, ...others.slice(0, 3)],
+    options: [answer, ...uniqueOthers].slice(0, 4),
     answer,
     explanation,
   };

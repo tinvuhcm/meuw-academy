@@ -11,7 +11,8 @@
  */
 
 function makeQ(question, answer, others, explanation) {
-  const opts = [answer, ...others.slice(0, 3)];
+  const uniqueOthers = others.filter((opt, i, arr) => opt !== answer && arr.indexOf(opt) === i);
+  const opts = [answer, ...uniqueOthers].slice(0, 4);
   return { type: 'multiple-choice', question, answer, options: opts, explanation };
 }
 
