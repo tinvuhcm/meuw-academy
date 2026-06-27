@@ -3,7 +3,7 @@
  * Lesson Orchestrator Screen (handles question flow)
  */
 
-import { el, animateClass, sleep, getSubjectConfig } from '../utils.js';
+import { el, animateClass, sleep, getSubjectConfig, showConfirmDialog } from '../utils.js';
 import State from '../state.js';
 import Router from '../router.js';
 import { getModuleData } from '../data/curriculum-loader.js';
@@ -79,20 +79,26 @@ export function renderLesson(params) {
   const layout = el('div', { class: 'lesson-layout grid gap-4' });
 
   // 1. Sidebar (Mascot & Progress)
-  const sidebar = el('div', { class: 'lesson-sidebar sticky top-4 flex flex-col gap-4' });
+  const sidebar = el('div', { class: 'lesson-sidebar lesson-sidebar-desktop-sticky flex flex-col gap-4' });
 
   // Back / Leave button
   const leaveBtn = el('button', { class: 'btn btn-outline btn-pop text-sm w-full' }, '← Rời khỏi bài học');
-  leaveBtn.addEventListener('click', () => {
+  leaveBtn.addEventListener('click', async () => {
     Audio.click();
-    if (confirm('Em có chắc muốn rời khỏi bài học này? Mọi kết quả từ đầu bài sẽ bị mất.')) {
+    if (await showConfirmDialog({
+      title: 'Rời khỏi bài học?',
+      message: 'Mọi kết quả của bài học hiện tại sẽ bị mất. Em có chắc muốn quay lại không?',
+      tone: 'warning',
+      confirmText: 'Rời bài',
+      cancelText: 'Ở lại học tiếp',
+    })) {
       Router.back(); // Or Router.navigate(`/session/${dayId}/${moduleData.session}`)
     }
   });
   sidebar.appendChild(leaveBtn);
 
   // Mascot area
-  const mascotArea = el('div', { class: 'lesson-mascot-area mascot-xl relative mt-4' });
+  const mascotArea = el('div', { class: 'lesson-mascot-area mascot-xl lesson-mascot-shell' });
   mascotArea.innerHTML = `
     <div class="mascot-container" data-mascot data-mascot-character="gau"></div>
     <div class="speech-bubble" data-speech-bubble></div>

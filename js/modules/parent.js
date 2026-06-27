@@ -3,7 +3,7 @@
  * Parent Dashboard & Settings
  */
 
-import { el, animateClass, formatDateVI } from '../utils.js';
+import { el, animateClass, formatDateVI, showAlertDialog, showConfirmDialog } from '../utils.js';
 import State from '../state.js';
 import Router from '../router.js';
 import { Audio } from '../audio.js';
@@ -142,6 +142,7 @@ function renderDashboardContent(container) {
 function renderSettingsTab(wrap) {
   const profile = State.getActiveProfile();
   const settings = profile.settings || {};
+  const usingDefaultPin = State.isUsingDefaultParentPin();
 
   // 1. Break Settings
   const breakGroup = el('div', { class: 'input-group mb-6' });
@@ -189,6 +190,14 @@ function renderSettingsTab(wrap) {
   // 2. Change PIN
   const pinArea = el('div');
   pinArea.innerHTML = '<h3 class="font-bold text-lg mb-4">Thay đổi mã PIN Phụ huynh</h3>';
+  if (usingDefaultPin) {
+    const pinWarning = el(
+      'div',
+      { class: 'mb-4 rounded-xl border-2 border-warning bg-warning/10 p-4 text-sm font-bold text-warning' },
+      'PIN hiện tại vẫn là mặc định 1234. Hãy đổi PIN ngay trước khi dùng tính năng cloud hoặc chia sẻ app rộng hơn.'
+    );
+    pinArea.appendChild(pinWarning);
+  }
   
   const oldPin = el('input', { type: 'password', class: 'input-field mb-2 w-full max-w-sm', placeholder: 'PIN hiện tại', maxLength: 4 });
   const newPin = el('input', { type: 'password', class: 'input-field mb-2 w-full max-w-sm', placeholder: 'PIN mới (4 số)', maxLength: 4 });
@@ -253,6 +262,19 @@ function renderDataTab(wrap) {
     accountStatus.textContent = message;
   }
 
+  function formatSyncStamp(value) {
+    if (!value) return 'chưa có';
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return 'không rõ';
+    return formatDateVI(date);
+  }
+
+  function requireStrongPinForCloud() {
+    if (!State.isUsingDefaultParentPin()) return true;
+    setAccountStatus('Hãy đổi PIN mặc định 1234 trước khi dùng hoặc kết nối Cloud.', 'error');
+    return false;
+  }
+
   function setAccountControls(isSignedIn) {
     emailInput.disabled = isSignedIn;
     passwordInput.disabled = isSignedIn;
@@ -284,6 +306,7 @@ function renderDataTab(wrap) {
   signInBtn.addEventListener('click', async () => {
     Audio.click();
     try {
+      if (!requireStrongPinForCloud()) return;
       const syncModule = await loadAccountModule();
       if (!syncModule) return;
       setAccountStatus('Đang đăng nhập...');
@@ -297,6 +320,7 @@ function renderDataTab(wrap) {
   signUpBtn.addEventListener('click', async () => {
     Audio.click();
     try {
+      if (!requireStrongPinForCloud()) return;
       const syncModule = await loadAccountModule();
       if (!syncModule) return;
       setAccountStatus('Đang tạo tài khoản...');
@@ -313,10 +337,20 @@ function renderDataTab(wrap) {
 
   uploadBtn.addEventListener('click', async () => {
     Audio.click();
-    if (!confirm('Ghi đè dữ liệu cloud bằng máy này?')) return;
     try {
+      if (!requireStrongPinForCloud()) return;
       const syncModule = await loadAccountModule();
       if (!syncModule) return;
+      const cloud = await syncModule.fetchCloudState().catch(() => null);
+      const localStamp = formatSyncStamp(State.getLocalUpdatedAt());
+      const cloudStamp = formatSyncStamp(cloud?.updated_at);
+      if (!await showConfirmDialog({
+        title: 'Đẩy dữ liệu lên cloud?',
+        message: `Dữ liệu trên cloud sẽ bị ghi đè.\nMáy này cập nhật lần cuối: ${localStamp}\nCloud cập nhật lần cuối: ${cloudStamp}`,
+        tone: 'warning',
+        confirmText: 'Đẩy lên cloud',
+        cancelText: 'Xem lại',
+      })) return;
       setAccountStatus('Đang đẩy dữ liệu lên cloud...');
       await syncModule.saveCloudState(State.getState());
       State.markSynced();
@@ -328,18 +362,32 @@ function renderDataTab(wrap) {
 
   downloadBtn.addEventListener('click', async () => {
     Audio.click();
-    if (!confirm('Ghi đè máy này bằng dữ liệu cloud?')) return;
     try {
+      if (!requireStrongPinForCloud()) return;
       const syncModule = await loadAccountModule();
       if (!syncModule) return;
-      setAccountStatus('Đang tải dữ liệu cloud...');
       const cloud = await syncModule.fetchCloudState();
       if (!cloud?.state) throw new Error('Chưa có dữ liệu cloud.');
+      const localStamp = formatSyncStamp(State.getLocalUpdatedAt());
+      const cloudStamp = formatSyncStamp(cloud.updated_at);
+      if (!await showConfirmDialog({
+        title: 'Dùng dữ liệu cloud?',
+        message: `Dữ liệu hiện tại trên máy sẽ bị ghi đè.\nMáy này cập nhật lần cuối: ${localStamp}\nCloud cập nhật lần cuối: ${cloudStamp}`,
+        tone: 'warning',
+        confirmText: 'Dùng dữ liệu cloud',
+        cancelText: 'Giữ dữ liệu máy',
+      })) return;
+      setAccountStatus('Đang tải dữ liệu cloud...');
       const session = await syncModule.getCurrentSession();
       State.importJSON(JSON.stringify(cloud.state));
       State.setAccountSession({ userId: session.user.id, email: session.user.email });
       State.markSynced();
-      alert('Đã tải dữ liệu cloud thành công.');
+      await showAlertDialog({
+        title: 'Tải cloud thành công',
+        message: 'Dữ liệu cloud đã được nạp vào máy này. App sẽ tải lại để áp dụng trạng thái mới.',
+        tone: 'success',
+        confirmText: 'Tiếp tục',
+      });
       window.location.reload();
     } catch (e) {
       setAccountStatus(e.message, 'error');
@@ -369,6 +417,13 @@ function renderDataTab(wrap) {
   syncRow.appendChild(signOutBtn);
 
   accountArea.appendChild(accountStatus);
+  if (State.isUsingDefaultParentPin()) {
+    accountArea.appendChild(el(
+      'div',
+      { class: 'mb-4 rounded-xl border border-warning bg-warning/10 p-3 text-sm font-bold text-warning' },
+      'Cloud đang bị khóa tạm thời vì PIN phụ huynh vẫn là mặc định 1234. Hãy đổi PIN trong phần Thiết lập chung trước.'
+    ));
+  }
   accountArea.appendChild(emailInput);
   accountArea.appendChild(passwordInput);
   accountArea.appendChild(authRow);
@@ -421,12 +476,28 @@ function renderDataTab(wrap) {
       if (!file) return;
       const json = await file.text();
       JSON.parse(json);
-      if (!confirm('Ghi đè dữ liệu trên máy hiện tại?')) return;
+      if (!await showConfirmDialog({
+        title: 'Khôi phục từ tệp sao lưu?',
+        message: 'Dữ liệu hiện tại trên máy sẽ bị ghi đè bằng nội dung từ tệp này.',
+        tone: 'warning',
+        confirmText: 'Khôi phục ngay',
+        cancelText: 'Hủy',
+      })) return;
       State.importJSON(json);
-      alert('Khôi phục thành công.');
+      await showAlertDialog({
+        title: 'Khôi phục thành công',
+        message: 'Dữ liệu từ tệp sao lưu đã được áp dụng. App sẽ tải lại ngay bây giờ.',
+        tone: 'success',
+        confirmText: 'Tiếp tục',
+      });
       window.location.reload();
     } catch (e) {
-      alert(`Không thể khôi phục: ${e.message}`);
+      await showAlertDialog({
+        title: 'Không thể khôi phục',
+        message: e.message,
+        tone: 'danger',
+        confirmText: 'Đã hiểu',
+      });
     }
   });
 
@@ -447,19 +518,29 @@ function renderDataTab(wrap) {
   const unlockBtn = el('button', { class: 'btn btn-primary whitespace-nowrap' }, 'Mở khóa');
   const relockBtn = el('button', { class: 'btn btn-outline whitespace-nowrap' }, 'Trở về tự động');
 
-  unlockBtn.addEventListener('click', () => {
+  unlockBtn.addEventListener('click', async () => {
     Audio.click();
     const targetDay = Number(unlockInput.value);
     if (!Number.isFinite(targetDay) || targetDay < 1) return;
     State.unlockDay(targetDay);
-    alert(`Đã mở khóa Ngày ${targetDay}.`);
+    await showAlertDialog({
+      title: 'Đã mở khóa ngày học',
+      message: `Ngày ${targetDay} đã được mở khóa cho bé.`,
+      tone: 'success',
+      confirmText: 'Tiếp tục',
+    });
     window.location.reload();
   });
 
-  relockBtn.addEventListener('click', () => {
+  relockBtn.addEventListener('click', async () => {
     Audio.click();
     State.clearManualUnlock();
-    alert('Trở về tiến độ tự động.');
+    await showAlertDialog({
+      title: 'Đã trở về tiến độ tự động',
+      message: 'App sẽ quay lại chế độ mở ngày học theo tiến độ bình thường.',
+      tone: 'success',
+      confirmText: 'Tiếp tục',
+    });
     window.location.reload();
   });
   unlockRow.appendChild(unlockInput);
@@ -472,10 +553,21 @@ function renderDataTab(wrap) {
   const devArea = el('div', { class: 'p-4 bg-red-50 border-2 border-red-300 rounded-xl' });
   devArea.innerHTML = '<h3 class="font-bold text-lg mb-2 text-red-800">Cài đặt lại</h3>';
   const day1ResetBtn = el('button', { class: 'btn bg-red-600 hover:bg-red-700 text-white border-none w-full' }, '🔄 Reset về Ngày 1 (giữ XP & huy hiệu)');
-  day1ResetBtn.addEventListener('click', () => {
-    if (confirm('Bé sẽ bắt đầu lại từ Ngày 1. Vẫn giữ nguyên XP, huy hiệu. Tiếp tục?')) {
+  day1ResetBtn.addEventListener('click', async () => {
+    if (await showConfirmDialog({
+      title: 'Reset về Ngày 1?',
+      message: 'Bé sẽ bắt đầu lại từ Ngày 1, nhưng vẫn giữ nguyên XP và huy hiệu.',
+      tone: 'danger',
+      confirmText: 'Reset ngay',
+      cancelText: 'Hủy',
+    })) {
       State.resetLearningProgress();
-      alert('Đã reset về Ngày 1.');
+      await showAlertDialog({
+        title: 'Đã reset tiến độ',
+        message: 'Bé đã quay về Ngày 1 nhưng XP và huy hiệu vẫn được giữ lại.',
+        tone: 'success',
+        confirmText: 'Tiếp tục',
+      });
       window.location.reload();
     }
   });

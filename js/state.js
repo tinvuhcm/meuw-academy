@@ -12,6 +12,7 @@ import { M3_DATA } from './data/curriculum-m3.js';
 const STORAGE_KEY = 'meoAcademy_v2';
 const CURRENT_VERSION = 2;
 const DAILY_PASS_THRESHOLD = 0.8;
+const DEFAULT_PARENT_PIN = '1234';
 const ALL_CURRICULUM_DATA = { ...M1_DATA, ...M2_DATA, ...M3_DATA };
 const BASE_DAY_COUNT = Object.keys(ALL_CURRICULUM_DATA).length;
 
@@ -139,7 +140,7 @@ function createDefaultProfile(id, name = 'Méo', avatarColor = '#EC4899') {
     gallery: [],
     daySchedules: {},
     settings: {
-      parentPin: '1234',
+      parentPin: DEFAULT_PARENT_PIN,
       soundOn: true,
       speechEnabled: true,
       breakReminderMins: 30,
@@ -345,7 +346,7 @@ function updateActiveProfile(data) {
 }
 
 function updateProfileName(id, newName) {
-  getActiveProfile().name = name;
+  getActiveProfile().name = newName;
   commit();
 }
 
@@ -838,7 +839,10 @@ function validatePin(pin) {
     throw new Error(`Đợi ${remaining} giây`);
   }
 
-  const correctPin = getSetting('parentPin') || '1234';
+  const correctPin = getSetting('parentPin');
+  if (!/^\d{4}$/.test(String(correctPin || ''))) {
+    throw new Error('PIN phụ huynh chưa được thiết lập đúng.');
+  }
   if (pin === correctPin) {
     _state.pinAttempts = 0;
     _state.pinLockUntil = null;
@@ -860,11 +864,16 @@ function validatePin(pin) {
 function changePin(oldPin, newPin) {
   if (!validatePin(oldPin)) throw new Error('PIN cũ không đúng');
   if (!/^\d{4}$/.test(newPin)) throw new Error('PIN phải là 4 chữ số');
+  if (newPin === DEFAULT_PARENT_PIN) throw new Error('Không dùng lại PIN mặc định 1234');
   setSetting('parentPin', newPin);
 }
 
 function isPinLocked() {
   return _state.pinLockUntil && Date.now() < _state.pinLockUntil;
+}
+
+function isUsingDefaultParentPin() {
+  return getSetting('parentPin') === DEFAULT_PARENT_PIN;
 }
 
 // ============================================
@@ -1119,6 +1128,7 @@ export const State = {
   validatePin,
   changePin,
   isPinLocked,
+  isUsingDefaultParentPin,
 
   // Stats
   recordAnswer,

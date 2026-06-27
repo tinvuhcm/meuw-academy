@@ -19,6 +19,16 @@
     grid-template-columns: 240px 1fr;
   }
 
+  .lesson-layout .lesson-sidebar-desktop-sticky {
+    position: sticky;
+    top: 1rem;
+  }
+
+  .lesson-layout .lesson-mascot-shell {
+    position: relative;
+    margin-top: var(--space-4);
+  }
+
   .drawing-layout {
     grid-template-columns: 200px 1fr;
   }
@@ -239,15 +249,59 @@
     grid-template-columns: 1fr;
   }
 
-  .lesson-sidebar {
-    flex-direction: row;
-    align-items: center;
-    gap: var(--space-3);
+  .lesson-layout .lesson-sidebar,
+  .lesson-layout .lesson-sidebar-desktop-sticky {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: var(--space-3) !important;
+    position: static !important;
+    top: auto !important;
   }
 
-  .lesson-mascot-area .mascot-xl .mascot-svg {
+  .lesson-layout .lesson-mascot-area,
+  .lesson-layout .lesson-mascot-shell {
+    display: flex !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    margin-top: 0 !important;
+    position: static !important;
+    min-height: 72px;
+    width: 100%;
+  }
+
+  .lesson-layout .lesson-mascot-area .mascot-container {
     width: 56px;
     height: 65px;
+    flex-shrink: 0;
+  }
+
+  .lesson-layout .lesson-mascot-area .mascot-svg {
+    width: 56px;
+    height: 65px;
+    flex-shrink: 0;
+  }
+
+  .lesson-layout .lesson-mascot-area .speech-bubble {
+    position: static !important;
+    left: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+    max-width: none !important;
+    white-space: normal !important;
+    font-size: var(--text-sm) !important;
+    line-height: 1.4 !important;
+    flex: 1;
+  }
+
+  .lesson-layout .lesson-mascot-area .speech-bubble::before,
+  .lesson-layout .lesson-mascot-area .speech-bubble::after {
+    display: none;
+  }
+
+  .lesson-layout .lesson-sidebar > .card {
+    width: 100% !important;
+    margin-top: 0 !important;
   }
 
   .lesson-card {

@@ -3,7 +3,7 @@
  * Art Gallery Screen
  */
 
-import { el } from '../utils.js';
+import { el, showConfirmDialog } from '../utils.js';
 import State from '../state.js';
 import Router from '../router.js';
 import { Audio } from '../audio.js';
@@ -99,9 +99,15 @@ function showLightbox(item) {
   });
 
   const delBtn = el('button', { class: 'btn btn-outline text-wrong border-wrong text-sm' }, '🗑️ Xóa');
-  delBtn.addEventListener('click', () => {
+  delBtn.addEventListener('click', async () => {
     Audio.click();
-    if (confirm('Em có chắc muốn xóa tác phẩm này không?')) {
+    if (await showConfirmDialog({
+      title: 'Xóa tác phẩm này?',
+      message: 'Nếu xóa, bức tranh sẽ biến mất khỏi phòng tranh của Méo.',
+      tone: 'danger',
+      confirmText: 'Xóa tranh',
+      cancelText: 'Giữ lại',
+    })) {
       State.deleteDrawing(item.id);
       overlay.remove();
       Router.replace('/gallery');

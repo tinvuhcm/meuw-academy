@@ -1,5 +1,18 @@
-import { getCurriculumDay } from '../js/data/curriculum-loader.js';
+globalThis.localStorage = {
+  _store: new Map(),
+  getItem(key) {
+    return this._store.has(key) ? this._store.get(key) : null;
+  },
+  setItem(key, value) {
+    this._store.set(key, String(value));
+  },
+  removeItem(key) {
+    this._store.delete(key);
+  },
+};
+
 import { stripHtmlLite } from './lib/content-audit-helpers.mjs';
+const { getCurriculumDay } = await import('../js/data/curriculum-loader.js');
 
 const dayFrom = Number(process.argv[2] || 1);
 const dayTo = Number(process.argv[3] || 30);

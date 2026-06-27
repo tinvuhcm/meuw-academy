@@ -267,6 +267,109 @@ export function el(tag, attrs = {}, ...children) {
   return element;
 }
 
+function createDialogShell({ title = '', message = '', tone = 'info' } = {}) {
+  const overlay = el('div', { class: 'modal-overlay px-4' });
+  const card = el('div', { class: 'modal-card mx-4 border-2 border-border max-w-lg w-full' });
+
+  const iconMap = {
+    info: 'ℹ️',
+    warning: '⚠️',
+    success: '✅',
+    danger: '🛑',
+  };
+
+  const header = el('div', { class: 'flex items-start gap-3 mb-4 pr-8' });
+  const icon = el('div', { class: 'text-3xl leading-none shrink-0' }, iconMap[tone] || iconMap.info);
+  const titleWrap = el('div', { class: 'flex-1' });
+  titleWrap.appendChild(el('h3', { class: 'font-display text-2xl text-text mb-2' }, title));
+  titleWrap.appendChild(el('p', { class: 'text-base font-bold text-text-muted whitespace-pre-line' }, message));
+  header.appendChild(icon);
+  header.appendChild(titleWrap);
+  card.appendChild(header);
+  overlay.appendChild(card);
+
+  return { overlay, card };
+}
+
+export function showAlertDialog({
+  title = 'Thông báo',
+  message = '',
+  tone = 'info',
+  confirmText = 'Đã hiểu',
+} = {}) {
+  return new Promise(resolve => {
+    const { overlay, card } = createDialogShell({ title, message, tone });
+    const closeBtn = el('button', { class: 'modal-close z-10', type: 'button', 'aria-label': 'Đóng' }, '✕');
+    const actions = el('div', { class: 'mt-6 flex justify-end' });
+    const okBtn = el('button', { class: 'btn btn-primary min-w-[140px]', type: 'button' }, confirmText);
+
+    function cleanup() {
+      document.removeEventListener('keydown', handleKeydown);
+      overlay.remove();
+      resolve(true);
+    }
+
+    function handleKeydown(event) {
+      if (event.key === 'Escape' || event.key === 'Enter') cleanup();
+    }
+
+    closeBtn.addEventListener('click', cleanup);
+    okBtn.addEventListener('click', cleanup);
+    overlay.addEventListener('click', event => {
+      if (event.target === overlay) cleanup();
+    });
+
+    actions.appendChild(okBtn);
+    card.appendChild(closeBtn);
+    card.appendChild(actions);
+    document.body.appendChild(overlay);
+    document.addEventListener('keydown', handleKeydown);
+    okBtn.focus();
+  });
+}
+
+export function showConfirmDialog({
+  title = 'Xác nhận',
+  message = '',
+  tone = 'warning',
+  confirmText = 'Tiếp tục',
+  cancelText = 'Hủy',
+} = {}) {
+  return new Promise(resolve => {
+    const { overlay, card } = createDialogShell({ title, message, tone });
+    const closeBtn = el('button', { class: 'modal-close z-10', type: 'button', 'aria-label': 'Đóng' }, '✕');
+    const actions = el('div', { class: 'mt-6 flex flex-col-reverse sm:flex-row sm:justify-end gap-3' });
+    const cancelBtn = el('button', { class: 'btn btn-outline min-w-[140px]', type: 'button' }, cancelText);
+    const okBtn = el('button', { class: `btn ${tone === 'danger' ? 'btn-danger' : 'btn-primary'} min-w-[140px]`, type: 'button' }, confirmText);
+
+    function cleanup(value) {
+      document.removeEventListener('keydown', handleKeydown);
+      overlay.remove();
+      resolve(value);
+    }
+
+    function handleKeydown(event) {
+      if (event.key === 'Escape') cleanup(false);
+      if (event.key === 'Enter') cleanup(true);
+    }
+
+    closeBtn.addEventListener('click', () => cleanup(false));
+    cancelBtn.addEventListener('click', () => cleanup(false));
+    okBtn.addEventListener('click', () => cleanup(true));
+    overlay.addEventListener('click', event => {
+      if (event.target === overlay) cleanup(false);
+    });
+
+    actions.appendChild(cancelBtn);
+    actions.appendChild(okBtn);
+    card.appendChild(closeBtn);
+    card.appendChild(actions);
+    document.body.appendChild(overlay);
+    document.addEventListener('keydown', handleKeydown);
+    okBtn.focus();
+  });
+}
+
 /**
  * Empty a DOM node
  */

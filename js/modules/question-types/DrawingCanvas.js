@@ -1,7 +1,8 @@
-import { el, sleep, canvasToJPEG } from '../../utils.js';
+import { el, canvasToJPEG, showConfirmDialog } from '../../utils.js';
 import { triggerMascot } from '../../mascot.js';
 import { Audio } from '../../audio.js';
 import State from '../../state.js';
+import Router from '../../router.js';
 
 export function renderDrawingCanvas(q, onComplete) {
   const container = el('div', { class: 'question-wrapper drawing-wrapper w-full' });
@@ -398,8 +399,14 @@ export function renderDrawingCanvas(q, onComplete) {
     }
   });
 
-  clearBtn.addEventListener('click', () => {
-    if (confirm('Em có chắc muốn xóa toàn bộ bản vẽ?')) {
+  clearBtn.addEventListener('click', async () => {
+    if (await showConfirmDialog({
+      title: 'Xóa toàn bộ bản vẽ?',
+      message: 'Thao tác này sẽ xóa nét vẽ hiện tại trên khung tô màu.',
+      tone: 'warning',
+      confirmText: 'Xóa tranh',
+      cancelText: 'Giữ lại',
+    })) {
       Audio.click();
       ctx.fillStyle = '#FFFFFF';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -429,6 +436,7 @@ export function renderDrawingCanvas(q, onComplete) {
   submitBtn.addEventListener('click', async () => {
     Audio.click();
     submitBtn.disabled = true;
+    submitBtn.textContent = 'Đang lưu...';
     
     const imgData = canvasToJPEG(canvas, 0.8);
     State.saveDrawing({
@@ -438,9 +446,20 @@ export function renderDrawingCanvas(q, onComplete) {
 
     Audio.correct();
     triggerMascot('answer:correct', { customLines: ['Tranh em vẽ đẹp quá! Đã lưu vào bộ sưu tập nhé! 🎨'] });
-    
-    await sleep(2000);
-    onComplete(true, q.xp || 20);
+
+    window.toast?.('Đã lưu tranh vào phòng tranh.', 'success');
+
+    try {
+      onComplete(true, q.xp || 20);
+    } catch (error) {
+      console.error('[DrawingCanvas] Failed to complete after save:', error);
+      if (q.coloringBg) {
+        Router.replace('/coloring?saved=1');
+        return;
+      }
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Lưu & Hoàn thành';
+    }
   });
 
   return container;

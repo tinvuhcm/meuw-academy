@@ -1,4 +1,4 @@
-import { el, animateClass } from '../utils.js';
+import { el, animateClass, showConfirmDialog } from '../utils.js';
 import { triggerMascot } from '../mascot.js';
 import { Audio } from '../audio.js';
 import Router from '../router.js';
@@ -101,16 +101,32 @@ function openStudio(page, rootContainer) {
 
   const canvasView = renderDrawingCanvas(q, (success, xp) => {
     if (success) {
-      // Go back to library
-      Router.navigate('/coloring');
+      // Re-mount the coloring library directly into the app root so the
+      // studio exits immediately after a successful save.
+      const appRoot = rootContainer.closest('#app');
+      const freshLibrary = renderColoringLibrary();
+      if (appRoot) {
+        appRoot.innerHTML = '';
+        appRoot.appendChild(freshLibrary);
+        window.scrollTo(0, 0);
+      } else {
+        rootContainer.innerHTML = '';
+        rootContainer.appendChild(freshLibrary);
+      }
     }
   });
 
   // Inject a custom back button into the view
   const studioBackBtn = el('button', { class: 'btn btn-outline text-sm absolute top-4 left-4 z-50 bg-white/90 shadow-md' }, '🔙 Trở về thư viện');
-  studioBackBtn.addEventListener('click', () => {
+  studioBackBtn.addEventListener('click', async () => {
     Audio.click();
-    if(confirm('Chưa lưu tranh, em có chắc muốn thoát?')) {
+    if (await showConfirmDialog({
+      title: 'Rời xưởng tô màu?',
+      message: 'Nếu chưa bấm "Lưu & Hoàn thành", tranh hiện tại có thể chưa được lưu vào phòng tranh.',
+      tone: 'warning',
+      confirmText: 'Rời khỏi',
+      cancelText: 'Ở lại tô tiếp',
+    })) {
       Router.navigate('/coloring');
     }
   });

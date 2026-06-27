@@ -1,18 +1,22 @@
-# Supabase setup for Meuw Academy
+# Thiết lập Supabase cho Meuw Academy
 
-This app uses Supabase only for account login and cloud backup of the local learning state.
-The app stays offline-first: localStorage remains the runtime source while the learner studies.
+Ứng dụng này chỉ dùng Supabase cho 2 việc:
 
-## 1. Create project
+- đăng nhập tài khoản
+- sao lưu cloud cho local state
 
-1. Create a free Supabase project.
-2. Open Project Settings > API.
-3. Copy the Project URL and publishable anon key into `js/supabase-config.js`.
-4. In Authentication > Providers, keep Email enabled.
+App vẫn giữ mô hình `offline-first`: trong lúc học, `localStorage` vẫn là nguồn dữ liệu runtime chính.
 
-## 2. Create sync table
+## 1. Tạo project
 
-Run this SQL in Supabase SQL Editor:
+1. Tạo một project Supabase.
+2. Mở `Project Settings > API`.
+3. Chép `Project URL` và `publishable anon key` vào `js/supabase-config.js`.
+4. Trong `Authentication > Providers`, bật `Email`.
+
+## 2. Tạo bảng đồng bộ
+
+Chạy SQL sau trong `Supabase SQL Editor`:
 
 ```sql
 create table if not exists public.user_states (
@@ -47,22 +51,46 @@ using (auth.uid() = user_id)
 with check (auth.uid() = user_id);
 ```
 
-## 3. Conflict rule
+## 3. Quy tắc conflict
 
-When local data and cloud data differ, the app asks the parent before overwriting:
+Khi dữ liệu local và cloud khác nhau:
 
-- Use cloud data: overwrites this device.
-- Keep this device: no overwrite happens; parent can later push this device to cloud.
+- `Dùng dữ liệu cloud`: ghi đè máy hiện tại bằng cloud
+- `Giữ dữ liệu máy này`: không ghi đè gì ngay; phụ huynh có thể chủ động bấm đẩy lên cloud sau
 
-## 4. Migration flow
+Auto-sync hiện tại không tự ghi đè mù:
 
-For an existing device with the correct progress:
+- nếu cloud mới hơn và local đang sạch, app có thể hydrate local từ cloud
+- nếu local đã khác hoặc máy này mới hơn, app chỉ cảnh báo để phụ huynh tự quyết định
 
-1. Open Parent Dashboard > Data.
-2. Sign in or create the learner account.
-3. When asked, push this device's data to cloud.
+## 4. Luồng migrate
 
-For a new device:
+Với một thiết bị đang có tiến độ đúng:
 
-1. Sign in with the same email and password.
-2. Choose cloud data when the app detects a difference.
+1. Mở `Phụ huynh > Dữ liệu & Đám mây`.
+2. Đăng nhập hoặc tạo tài khoản cho bé.
+3. Dùng nút `Đẩy lên cloud` để lấy máy này làm mốc đúng ban đầu.
+
+Với một thiết bị mới:
+
+1. Đăng nhập bằng đúng email và mật khẩu đó.
+2. Dùng nút `Dùng dữ liệu cloud` nếu muốn lấy tiến độ từ cloud về máy.
+
+## 5. Checklist xác minh môi trường thật
+
+Sau khi cấu hình xong, nên tự kiểm tra tối thiểu các bước sau:
+
+1. Đăng ký hoặc đăng nhập thành công bằng email thật.
+2. Đảm bảo bảng `public.user_states` đã tồn tại.
+3. Kiểm tra đã bật `row level security` cho `public.user_states`.
+4. Xác nhận user A có thể `select`, `insert`, `update` đúng bản ghi của chính mình.
+5. Xác nhận user A không đọc được bản ghi của user B.
+6. Từ app local, thử `Đẩy lên cloud` rồi kiểm tra `updated_at` trên Supabase có thay đổi.
+7. Từ app local hoặc máy khác, thử `Dùng dữ liệu cloud` và xác nhận local state được nạp đúng.
+8. Thử trường hợp Supabase chưa cấu hình để chắc UI báo lỗi rõ, không ghi đè im lặng.
+
+## 6. Ghi chú an toàn vận hành
+
+- Không dùng PIN phụ huynh mặc định `1234` khi bật tính năng cloud.
+- Không coi cloud là nguồn sự thật tuyệt đối; app hiện vẫn là local-first.
+- Nếu cần kiểm tra policy production, ưu tiên dùng tài khoản test riêng thay vì thao tác trên dữ liệu người dùng thật.
