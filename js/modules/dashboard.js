@@ -73,6 +73,13 @@ export function renderDashboard() {
   }, '⚙️');
   parentBtn.addEventListener('click', () => { Audio.click(); Router.navigate('/parent'); });
 
+  const switchProfileBtn = el('button', {
+    class: 'header-btn text-xl bg-white border border-border shadow-sm rounded-full w-10 h-10 flex-center',
+    title: 'Đổi người học',
+  }, '👥');
+  switchProfileBtn.addEventListener('click', () => { Audio.click(); Router.navigate('/profiles'); });
+
+  headerRight.appendChild(switchProfileBtn);
   headerRight.appendChild(bgmBtn);
   headerRight.appendChild(sfxBtn);
   headerRight.appendChild(streakBox);

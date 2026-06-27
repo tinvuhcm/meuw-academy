@@ -23,6 +23,7 @@ import { renderPractice } from './modules/practice.js';
 import { renderColoringLibrary } from './modules/coloring.js';
 import { renderLibrary } from './modules/library.js';
 import { renderKnowledgeCards } from './modules/knowledge-cards.js';
+import { renderProfileSelector } from './modules/profile-selector.js';
 import { initAccountAutoSync } from './modules/account-auto-sync.js';
 
 // Toast System
@@ -163,6 +164,10 @@ Router.on('/profile', () => {
   mount(renderProfile());
 });
 
+Router.on('/profiles', () => {
+  mount(renderProfileSelector());
+});
+
 Router.on('/parent', () => {
   mount(renderParent());
 });
@@ -209,8 +214,22 @@ Router.beforeEach((path) => {
   return true;
 });
 
+// Service Worker Registration
+function registerServiceWorker() {
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').then((registration) => {
+        console.log('SW registered: ', registration.scope);
+      }).catch((registrationError) => {
+        console.log('SW registration failed: ', registrationError);
+      });
+    });
+  }
+}
+
 // Initialization
 document.addEventListener('DOMContentLoaded', () => {
+  registerServiceWorker();
   State.syncDailyProgress();
   initAccountAutoSync();
   // Init Audio on first click

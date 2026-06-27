@@ -33,14 +33,47 @@ export function renderColoringLibrary() {
   header.appendChild(backBtn);
   container.appendChild(header);
 
+  // Daily Featured Logic
+  const todayNum = new Date().getDate();
+  const index1 = (todayNum * 3) % COLORING_PAGES.length;
+  const index2 = (todayNum * 7 + 1) % COLORING_PAGES.length;
+  const featured = [COLORING_PAGES[index1], COLORING_PAGES[index2]];
+  
+  const featuredSection = el('div', { class: 'mb-8' });
+  featuredSection.innerHTML = '<h2 class="font-display text-2xl mb-4 text-pink-500">✨ Tranh mới hôm nay</h2>';
+  const featuredGrid = el('div', { class: 'grid grid-cols-2 gap-6' });
+  
+  featured.forEach(page => {
+    const card = createColoringCard(page, container);
+    card.classList.add('border-2', 'border-pink-300', 'bg-pink-50');
+    featuredGrid.appendChild(card);
+  });
+  
+  featuredSection.appendChild(featuredGrid);
+  container.appendChild(featuredSection);
+
+  const allSection = el('div', { class: 'mb-8' });
+  allSection.innerHTML = '<h2 class="font-display text-2xl mb-4">Thư viện tranh</h2>';
   const grid = el('div', { class: 'grid grid-cols-2 md:grid-cols-3 gap-6' });
 
   COLORING_PAGES.forEach(page => {
-    const card = el('div', { class: 'coloring-card card p-2 cursor-pointer transition-transform hover:scale-105' });
-    
-    const imgWrap = el('div', { class: 'w-full aspect-[1/1.414] bg-white rounded-lg overflow-hidden border-2 border-border mb-2 relative flex-center' });
-    const img = el('img', { src: page.src, class: 'w-full h-full object-contain' });
-    imgWrap.appendChild(img);
+    grid.appendChild(createColoringCard(page, container));
+  });
+
+  allSection.appendChild(grid);
+  container.appendChild(allSection);
+
+  triggerMascot('greeting', { customLines: ['Chào mừng đến với Xưởng Tô Màu!', 'Em có thể tô màu trên máy hoặc tải về in ra giấy đó nha!'] });
+
+  return container;
+}
+
+function createColoringCard(page, container) {
+  const card = el('div', { class: 'coloring-card card p-2 cursor-pointer transition-transform hover:scale-105' });
+  
+  const imgWrap = el('div', { class: 'w-full aspect-[1/1.414] bg-white rounded-lg overflow-hidden border-2 border-border mb-2 relative flex-center' });
+  const img = el('img', { src: page.src, class: 'w-full h-full object-contain' });
+  imgWrap.appendChild(img);
 
     const info = el('div', { class: 'text-center font-bold text-sm h-10 flex-center' }, page.title);
 
@@ -77,14 +110,7 @@ export function renderColoringLibrary() {
       openStudio(page, container);
     });
 
-    grid.appendChild(card);
-  });
-
-  container.appendChild(grid);
-
-  triggerMascot('greeting', { customLines: ['Chào mừng đến với Xưởng Tô Màu!', 'Em có thể tô màu trên máy hoặc tải về in ra giấy đó nha!'] });
-
-  return container;
+    return card;
 }
 
 function openStudio(page, rootContainer) {

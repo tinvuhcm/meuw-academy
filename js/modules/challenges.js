@@ -1,6 +1,7 @@
 import { el } from '../utils.js';
 import State from '../state.js';
 import Router from '../router.js';
+import { Audio } from '../audio.js';
 
 export function renderChallenges() {
   const container = el('div', { class: 'page-container p-6' });
@@ -33,17 +34,39 @@ export function renderChallenges() {
     { title: 'Vẽ 1 bức tranh', current: State.getActiveProfile().stats.drawingsCreated || 0, target: 1, reward: 30 }
   ];
   
-  dailyTasks.forEach(t => {
+  dailyTasks.forEach((t, idx) => {
     const item = el('div', { class: 'flex-between p-3 border-b border-border last:border-0' });
     const isDone = t.current >= t.target;
+    const profile = State.getActiveProfile();
+    const claimedKey = 'daily_' + State.getCurrentDay() + '_' + idx;
+    const isClaimed = profile.claimedRewards?.[claimedKey];
+
     item.innerHTML = `
       <div>
         <div class="font-bold ${isDone ? 'line-through text-text-muted' : ''}">${t.title}</div>
         <div class="text-sm text-text-muted">${Math.min(t.current, t.target)} / ${t.target}</div>
       </div>
-      <div class="font-bold text-warning">${isDone ? '✓ Đã nhận' : `+${t.reward} ⭐`}</div>
+      <div class="font-bold text-warning" id="reward-daily-${idx}"></div>
     `;
     dailyCard.appendChild(item);
+
+    const rewardDiv = item.querySelector(`#reward-daily-${idx}`);
+    if (isClaimed) {
+      rewardDiv.innerHTML = '✓ Đã nhận';
+    } else if (isDone) {
+      const btn = el('button', { class: 'btn btn-secondary text-sm' }, `Nhận ${t.reward}⭐`);
+      btn.addEventListener('click', () => {
+        Audio.click();
+        State.addXP(t.reward);
+        if (!profile.claimedRewards) profile.claimedRewards = {};
+        profile.claimedRewards[claimedKey] = true;
+        State.commit();
+        Router.navigate('/challenges'); // Refresh
+      });
+      rewardDiv.appendChild(btn);
+    } else {
+      rewardDiv.innerHTML = `+${t.reward} ⭐`;
+    }
   });
   
   // Long-term Challenges
@@ -56,10 +79,14 @@ export function renderChallenges() {
     { title: 'Hoàn thành Tháng 1', current: State.getCurrentDay(), target: 30, reward: 1000 }
   ];
   
-  longTasks.forEach(t => {
+  longTasks.forEach((t, idx) => {
     const item = el('div', { class: 'flex-between p-3 border-b border-border last:border-0' });
     const isDone = t.current >= t.target;
     const progressPct = Math.min(100, (t.current / t.target) * 100);
+    const profile = State.getActiveProfile();
+    const claimedKey = 'long_' + idx;
+    const isClaimed = profile.claimedRewards?.[claimedKey];
+
     item.innerHTML = `
       <div class="w-full mr-4">
         <div class="font-bold flex-between mb-1">
@@ -70,9 +97,27 @@ export function renderChallenges() {
           <div class="bg-correct h-2 rounded-full" style="width: ${progressPct}%"></div>
         </div>
       </div>
-      <div class="font-bold text-warning whitespace-nowrap">${isDone ? '✓' : `+${t.reward} ⭐`}</div>
+      <div class="font-bold text-warning whitespace-nowrap" id="reward-long-${idx}"></div>
     `;
     longCard.appendChild(item);
+
+    const rewardDiv = item.querySelector(`#reward-long-${idx}`);
+    if (isClaimed) {
+      rewardDiv.innerHTML = '✓';
+    } else if (isDone) {
+      const btn = el('button', { class: 'btn btn-secondary text-sm' }, `Nhận ${t.reward}⭐`);
+      btn.addEventListener('click', () => {
+        Audio.click();
+        State.addXP(t.reward);
+        if (!profile.claimedRewards) profile.claimedRewards = {};
+        profile.claimedRewards[claimedKey] = true;
+        State.commit();
+        Router.navigate('/challenges'); // Refresh
+      });
+      rewardDiv.appendChild(btn);
+    } else {
+      rewardDiv.innerHTML = `+${t.reward} ⭐`;
+    }
   });
   
   content.appendChild(dailyCard);

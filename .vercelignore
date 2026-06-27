@@ -1,0 +1,11 @@
+.agents/
+.claude/
+.codex/
+.gemini/
+.vc-installed-files
+.vc-version
+AGENTS.md
+CLAUDE.md
+docs/
+process/
+tools/

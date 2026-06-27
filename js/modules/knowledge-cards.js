@@ -1,4 +1,5 @@
 import { el } from '../utils.js';
+import State from '../state.js';
 import Router from '../router.js';
 import Audio from '../audio.js';
 
@@ -25,16 +26,21 @@ export function renderKnowledgeCards() {
   // Grid
   const grid = el('div', { class: 'grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6' });
 
-  // Demo cards with better images
-  const demoCards = [
-    { id: 'math-1', title: 'Bảng Cửu Chương 9', desc: 'Bí kíp học thuộc nhanh bằng 10 ngón tay!', type: 'Toán', emoji: '📐', color: 'bg-math-color', image: 'assets/images/card_001_math.png', rarity: 'Siêu cấp' }, 
-    { id: 'sci-1', title: 'Vòng Đời Của Bướm', desc: 'Từ quả trứng nhỏ xíu nở ra chú sâu, nhộng và hóa thành bướm xinh đẹp.', type: 'Khoa học', emoji: '🦋', color: 'bg-sci-color', image: 'assets/images/card_002_sci.jpg', rarity: 'Cực hiếm' }, 
-    { id: 'geo-1', title: 'Thủ đô Hà Nội', desc: 'Hồ Gươm và Tháp Rùa huyền thoại ngàn năm văn hiến.', type: 'Lịch sử - Địa lí', emoji: '🐢', color: 'bg-wrong', image: 'assets/images/card_003_geo.jpg', rarity: 'Phổ biến' }, 
-  ];
+  const earnedCards = State.getActiveProfile().earnedCards || [];
 
-  demoCards.forEach(card => {
-    // Flashy blink blink card wrapper
-    const cardEl = el('button', { class: 'text-left bg-white rounded-3xl overflow-hidden border-2 border-transparent shadow-md hover:shadow-2xl hover:-translate-y-2 hover:border-yellow-400 transition-all group flex flex-col relative focus:outline-none' });
+  if (earnedCards.length === 0) {
+    const emptyBox = el('div', { class: 'col-span-full text-center p-12 bg-white rounded-3xl border-2 border-dashed border-border' });
+    emptyBox.innerHTML = `
+      <div class="text-6xl mb-4 opacity-50">🎴</div>
+      <h2 class="font-display text-2xl text-text-muted mb-2">Chưa có thẻ nào</h2>
+      <p class="text-text-muted">Bé hãy học bài chăm chỉ để thu thập thẻ kiến thức nhé!</p>
+      <button class="btn btn-primary mt-6" onclick="window.location.hash='/'">Đi học ngay</button>
+    `;
+    grid.appendChild(emptyBox);
+  } else {
+    earnedCards.forEach(card => {
+      // Flashy blink blink card wrapper
+      const cardEl = el('button', { class: 'text-left bg-white rounded-3xl overflow-hidden border-2 border-transparent shadow-md hover:shadow-2xl hover:-translate-y-2 hover:border-yellow-400 transition-all group flex flex-col relative focus:outline-none' });
     
     // Add the "blink blink" sweeping shine effect
     const shine = el('div', { class: 'absolute inset-0 z-20 pointer-events-none overflow-hidden rounded-3xl' });
@@ -88,7 +94,8 @@ export function renderKnowledgeCards() {
     });
 
     grid.appendChild(cardEl);
-  });
+    });
+  }
 
   container.appendChild(grid);
   return container;

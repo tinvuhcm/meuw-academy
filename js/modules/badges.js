@@ -9,7 +9,7 @@ import Router from '../router.js';
 import { Audio } from '../audio.js';
 
 // Hardcoded full badge list for UI
-const ALL_BADGES = [
+export const ALL_BADGES = [
   // Streak
   { id: 'day1',     name: 'Ngày Đầu Tiên',     emoji: '🌟', desc: 'Hoàn thành ngày học đầu tiên' },
   { id: 'streak3',  name: 'Bộ Ba Ngày',        emoji: '🔥', desc: 'Học 3 ngày liên tiếp' },

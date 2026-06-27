@@ -1,0 +1,26 @@
+# {{feature_name}}
+
+<!-- Part of {{project_name}} -->
+
+## Scope
+
+(pending -- populated during STUDY phase)
+
+## Key Source Files
+
+## Related Context
+
+## Current Status
+
+Status: (pending)
+
+## Folder Contents
+
+```text
+process/features/{{feature_name}}/
+  active/       -- in-progress plans for this feature
+  completed/    -- archived completed plans
+  backlog/      -- deferred/future plans
+  reports/      -- feature-specific operational reports
+  references/   -- feature-specific research and reference docs
+```

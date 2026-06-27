@@ -274,6 +274,22 @@ export function renderLesson(params) {
     const newDay = State.syncDailyProgress();
     const dayJustAdvanced = !isAlreadyCompleted && !isRandomPractice && newDay > prevDay;
 
+    // Drop Card Logic
+    let newCard = null;
+    if (!isAlreadyCompleted && Math.random() < 0.3) {
+      const subjectConfig = getSubjectConfig(moduleData.subject);
+      newCard = {
+        id: `card_${Date.now()}`,
+        title: moduleData.title || 'Kiến thức mới',
+        desc: moduleData.topicKey ? `Thẻ bài bí mật từ chủ đề: ${moduleData.topicKey}!` : 'Thẻ bài từ hành trình học tập!',
+        type: subjectConfig.label,
+        emoji: subjectConfig.emoji,
+        color: moduleData.subject === 'math' ? 'bg-math-color' : (moduleData.subject === 'sci' ? 'bg-sci-color' : (moduleData.subject === 'eng' ? 'bg-eng-color' : 'bg-correct')),
+        rarity: Math.random() < 0.1 ? 'Siêu cấp' : (Math.random() < 0.3 ? 'Cực hiếm' : 'Phổ biến'),
+      };
+      State.awardCard(newCard);
+    }
+
     card.innerHTML = '';
     const compBox = el('div', { class: 'flex flex-col items-center justify-center flex-1 text-center py-10' });
 
@@ -298,6 +314,23 @@ export function renderLesson(params) {
       });
       badgeArea.appendChild(grid);
       compBox.appendChild(badgeArea);
+    }
+
+    if (newCard) {
+      Audio.play?.('sparkle') || Audio.badge();
+      const cardArea = el('div', { class: 'bg-orange-50 p-6 rounded-2xl mb-8 w-full max-w-md border-2 border-orange-200' });
+      cardArea.innerHTML = `<h3 class="font-bold text-orange-600 mb-4">Wow! Rớt Thẻ Kiến Thức! 🎴</h3>`;
+      const cardWrap = el('div', { class: 'flex flex-col items-center' });
+      cardWrap.innerHTML = `
+        <div class="w-24 h-32 rounded-xl flex-center text-4xl shadow-md mb-2 ${newCard.color} text-white relative overflow-hidden">
+          <div class="absolute top-1 left-1 text-[10px] font-bold px-1 bg-white/30 rounded">${newCard.rarity}</div>
+          ${newCard.emoji}
+        </div>
+        <div class="font-bold text-text text-center">${newCard.title}</div>
+        <div class="text-xs text-text-muted mt-1 text-center">${newCard.desc}</div>
+      `;
+      cardArea.appendChild(cardWrap);
+      compBox.appendChild(cardArea);
     }
 
     const btnRow = el('div', { class: 'flex gap-4' });

@@ -6,13 +6,28 @@
 // Import curriculum data
 // For now, we will import a dummy or Month 1 data file.
 // In real use, we might lazy load these.
-import { M1_DATA } from './curriculum-m1.js';
-import { M2_DATA } from './curriculum-m2.js';
-import { M3_DATA } from './curriculum-m3.js';
+import { M1_DATA } from './grade-4/curriculum-m1.js';
+import { M2_DATA } from './grade-4/curriculum-m2.js';
+import { M3_DATA } from './grade-4/curriculum-m3.js';
+import { M4_DATA } from './grade-4/curriculum-m4.js';
+import { M5_DATA } from './grade-4/curriculum-m5.js';
+import { M6_DATA } from './grade-4/curriculum-m6.js';
+import { M7_DATA } from './grade-4/curriculum-m7.js';
+import { M8_DATA } from './grade-4/curriculum-m8.js';
+import { M9_DATA } from './grade-4/curriculum-m9.js';
+import { M10_DATA } from './grade-4/curriculum-m10.js';
+import { M11_DATA } from './grade-4/curriculum-m11.js';
+import { M12_DATA } from './grade-4/curriculum-m12.js';
+
 import { enrichLessonBlocks } from './lesson-blocks.js';
 import { materializeDayCurriculum } from './fresh-curriculum.js';
 
-export const ALL_DATA = { ...M1_DATA, ...M2_DATA, ...M3_DATA };
+export const ALL_DATA = { 
+  ...M1_DATA, ...M2_DATA, ...M3_DATA, 
+  ...M4_DATA, ...M5_DATA, ...M6_DATA, 
+  ...M7_DATA, ...M8_DATA, ...M9_DATA, 
+  ...M10_DATA, ...M11_DATA, ...M12_DATA 
+};
 const BASE_DAY_COUNT = Object.keys(ALL_DATA).length;
 
 // ─── Materialized-day cache ────────────────────────────────────────────────

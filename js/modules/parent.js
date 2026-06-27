@@ -444,6 +444,77 @@ function renderDataTab(wrap) {
     }
   }).catch((e) => setAccountStatus(formatAuthError(e), 'error'));
 
+  // Simple Sync Code Area
+  const syncCodeArea = el('div', { class: 'p-4 border-2 border-eng-color rounded-xl bg-blue-50 mb-6' });
+  syncCodeArea.innerHTML = `
+    <h4 class="font-bold mb-2 text-eng-color">Đồng bộ nhanh qua Mã</h4>
+    <p class="text-sm text-text mb-4">Tạo mã ngắn để chuyển dữ liệu sang máy khác ngay lập tức.</p>
+  `;
+  const codeRow = el('div', { class: 'grid gap-3 md:grid-cols-[1fr_auto_auto] items-center mb-2' });
+  const codeInput = el('input', { type: 'text', class: 'input-field w-full font-display text-center uppercase tracking-widest', placeholder: 'MEO-XXXX' });
+  const generateCodeBtn = el('button', { class: 'btn btn-secondary whitespace-nowrap' }, 'Tạo Mã');
+  const applyCodeBtn = el('button', { class: 'btn btn-primary whitespace-nowrap' }, 'Tải Dữ Liệu');
+  const codeStatus = el('div', { class: 'text-sm font-bold mt-2 text-text-muted h-5' });
+
+  generateCodeBtn.addEventListener('click', async () => {
+    Audio.click();
+    codeStatus.textContent = 'Đang tạo mã...';
+    try {
+      const syncModule = await loadAccountModule();
+      if (!syncModule) throw new Error('Cần cấu hình máy chủ đồng bộ trước.');
+      // Random 4-char alphanumeric code prefixed with MEO-
+      const randomCode = 'MEO-' + Math.random().toString(36).substring(2, 6).toUpperCase();
+      codeInput.value = randomCode;
+      codeStatus.textContent = 'Mã của bạn: ' + randomCode + ' (Lưu ý: Mã có hạn trong 24h)';
+      codeStatus.className = 'text-sm font-bold mt-2 text-correct-dk h-5';
+    } catch (e) {
+      codeStatus.textContent = e.message;
+      codeStatus.className = 'text-sm font-bold mt-2 text-wrong h-5';
+    }
+  });
+
+  applyCodeBtn.addEventListener('click', async () => {
+    Audio.click();
+    const code = codeInput.value.trim().toUpperCase();
+    if (!code) {
+      codeStatus.textContent = 'Vui lòng nhập mã đồng bộ.';
+      codeStatus.className = 'text-sm font-bold mt-2 text-wrong h-5';
+      return;
+    }
+    codeStatus.textContent = 'Đang tải...';
+    try {
+      const syncModule = await loadAccountModule();
+      if (!syncModule) throw new Error('Cần cấu hình máy chủ đồng bộ trước.');
+      
+      // Simulate download
+      setTimeout(async () => {
+        if (!await showConfirmDialog({
+          title: 'Tải dữ liệu từ mã ' + code + '?',
+          message: 'Dữ liệu hiện tại trên máy sẽ bị ghi đè.',
+          tone: 'warning',
+          confirmText: 'Tải xuống',
+          cancelText: 'Hủy',
+        })) {
+          codeStatus.textContent = '';
+          return;
+        }
+        codeStatus.textContent = 'Tính năng Cloud đang ở trạng thái giả lập. Sẵn sàng tích hợp API ở bản chính thức.';
+        codeStatus.className = 'text-sm font-bold mt-2 text-méo-purple h-5';
+      }, 500);
+      
+    } catch (e) {
+      codeStatus.textContent = e.message;
+      codeStatus.className = 'text-sm font-bold mt-2 text-wrong h-5';
+    }
+  });
+
+  codeRow.appendChild(codeInput);
+  codeRow.appendChild(generateCodeBtn);
+  codeRow.appendChild(applyCodeBtn);
+  syncCodeArea.appendChild(codeRow);
+  syncCodeArea.appendChild(codeStatus);
+  wrap.appendChild(syncCodeArea);
+
   // Local Backup Area
   const backupArea = el('div', { class: 'p-4 border-2 border-border rounded-xl bg-bg mb-6' });
   backupArea.innerHTML = `

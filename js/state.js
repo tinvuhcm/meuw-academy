@@ -5,9 +5,9 @@
 
 import { localDateString, normalizeText, questionSignature, explanationSignature } from './utils.js';
 import { getProgramDayLimit, getScheduledModulesForProfileDay, getStudyDateForDay, getStudyPlanForDate } from './schedule-calendar.js';
-import { M1_DATA } from './data/curriculum-m1.js';
-import { M2_DATA } from './data/curriculum-m2.js';
-import { M3_DATA } from './data/curriculum-m3.js';
+import { M1_DATA } from './data/grade-4/curriculum-m1.js';
+import { M2_DATA } from './data/grade-4/curriculum-m2.js';
+import { M3_DATA } from './data/grade-4/curriculum-m3.js';
 
 const STORAGE_KEY = 'meoAcademy_v2';
 const CURRENT_VERSION = 2;
@@ -137,6 +137,7 @@ function createDefaultProfile(id, name = 'Méo', avatarColor = '#EC4899') {
       recentSessions: [],
     },
     earnedBadges: [],
+    earnedCards: [],
     gallery: [],
     daySchedules: {},
     settings: {
@@ -256,6 +257,7 @@ function migrateState(state) {
     if (!p.stats)    p.stats    = createDefaultProfile(id).stats;
     if (!p.gallery)  p.gallery  = [];
     if (!p.earnedBadges) p.earnedBadges = [];
+    if (!p.earnedCards) p.earnedCards = [];
     if (!p.completedModules) p.completedModules = {};
     if (!p.daySchedules) p.daySchedules = {};
     if (!p.knowledgeLedger) p.knowledgeLedger = createDefaultProfile(id).knowledgeLedger;
@@ -803,6 +805,22 @@ function checkAndAwardBadges() {
   return newBadges; // return newly awarded badges for UI to show
 }
 
+function awardCard(card) {
+  const profile = getActiveProfile();
+  if (!profile.earnedCards) profile.earnedCards = [];
+  
+  // Prevent duplicate cards with the same ID
+  if (profile.earnedCards.find(c => c.id === card.id)) return false;
+  
+  profile.earnedCards.unshift({
+    ...card,
+    earnedAt: new Date().toISOString()
+  });
+  
+  commit();
+  return true;
+}
+
 function isNightOwl() {
   const h = new Date().getHours();
   return h >= 20;
@@ -1113,10 +1131,11 @@ export const State = {
   // Speech
   recordSpeechSubmit,
 
-  // Badges
+  // Badges & Cards
   hasBadge,
   awardBadge,
   checkAndAwardBadges,
+  awardCard,
 
   // Settings
   getSetting,
