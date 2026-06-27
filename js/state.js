@@ -3,7 +3,7 @@
  * LocalStorage state management with multi-profile support
  */
 
-import { localDateString, normalizeText } from './utils.js';
+import { localDateString, normalizeText, questionSignature, explanationSignature } from './utils.js';
 import { getProgramDayLimit, getScheduledModulesForProfileDay, getStudyDateForDay, getStudyPlanForDate } from './schedule-calendar.js';
 import { M1_DATA } from './data/curriculum-m1.js';
 import { M2_DATA } from './data/curriculum-m2.js';
@@ -301,16 +301,6 @@ function commitSyncMetadata() {
   saveState(_state);
 }
 
-function buildQuestionLedgerSignature(question) {
-  const blankAnswers = Array.isArray(question?.blanks)
-    ? question.blanks.map(blank => blank?.answer || '').join('|')
-    : '';
-  return normalizeText([
-    question?.type || '',
-    question?.question || '',
-    question?.answer || question?.ans || blankAnswers,
-  ].join('|'));
-}
 
 // ============================================
 // PROFILE MANAGEMENT
@@ -551,12 +541,12 @@ function recordKnowledgeExposure(moduleData, context = {}) {
   });
 
   (moduleData.questions || []).forEach(q => {
-    const questionSignature = buildQuestionLedgerSignature(q);
-    pushUnique(ledger.questionSignatures, questionSignature, 50000);
+    const sig = questionSignature(q);
+    pushUnique(ledger.questionSignatures, sig, 50000);
 
-    const explanationSignature = normalizeText(q.explanation || '');
-    if (explanationSignature) {
-      pushUnique(ledger.explanationSignatures, explanationSignature, 50000);
+    const expSig = explanationSignature(q);
+    if (expSig) {
+      pushUnique(ledger.explanationSignatures, expSig, 50000);
     }
   });
 

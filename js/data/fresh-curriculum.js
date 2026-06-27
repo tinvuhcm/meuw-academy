@@ -1,5 +1,11 @@
 import State from '../state.js';
-import { normalizeText } from '../utils.js';
+import {
+  shuffle,
+  normalizeText,
+  stripHtml,
+  questionSignature,
+  explanationSignature
+} from '../utils.js';
 import { getAcademicPhase, getStudyDateForDay } from '../schedule-calendar.js';
 import { CURATED_ENGLISH_TOPICS } from './english-topics.js';
 import {
@@ -81,10 +87,6 @@ let CATALOG_CACHE = null;
 
 function clone(data) {
   return JSON.parse(JSON.stringify(data));
-}
-
-function stripHtml(html = '') {
-  return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
 function trimLabel(text, max = 48) {
@@ -169,24 +171,6 @@ function seededShuffle(list, seedInput) {
 
 function moduleKey(subject, title) {
   return `${subject}:${normalizeText(title)}`;
-}
-
-function questionSignature(question) {
-  const blankAnswers = Array.isArray(question?.blanks)
-    ? question.blanks.map(blank => blank?.answer || '').join('|')
-    : '';
-  const pairsAnswers = Array.isArray(question?.pairs)
-    ? question.pairs.map(p => `${p.left || p.word || ''}=${p.right || p.match || ''}`).join('|')
-    : '';
-  return normalizeText([
-    question.type || '',
-    question.question || '',
-    question.answer || question.ans || blankAnswers || pairsAnswers,
-  ].join('|'));
-}
-
-function explanationSignature(question) {
-  return normalizeText(stripHtml(question.explanation || ''));
 }
 
 function ensureAnswerField(question) {

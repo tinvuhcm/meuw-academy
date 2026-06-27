@@ -635,3 +635,29 @@ export function getImageDimensions(dataURL) {
     img.src = dataURL;
   });
 }
+
+// ============================================
+// SIGNATURE UTILITIES
+// ============================================
+
+export function stripHtml(html = '') {
+  return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+export function questionSignature(question) {
+  const blankAnswers = Array.isArray(question?.blanks)
+    ? question.blanks.map(blank => blank?.answer || '').join('|')
+    : '';
+  const pairsAnswers = Array.isArray(question?.pairs)
+    ? question.pairs.map(p => `${p.left || p.word || ''}=${p.right || p.match || ''}`).join('|')
+    : '';
+  return normalizeText([
+    question?.type || '',
+    question?.question || '',
+    question?.answer || question?.ans || blankAnswers || pairsAnswers,
+  ].join('|'));
+}
+
+export function explanationSignature(question) {
+  return normalizeText(stripHtml(question?.explanation || ''));
+}
