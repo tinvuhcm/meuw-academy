@@ -42,7 +42,8 @@ function seededShuffle(list, seed) {
 }
 
 function q(question, answer, others, explanation) {
-  return { type: 'multiple-choice', question, options: [answer, ...others.slice(0, 3)], answer, explanation };
+  const uniqueOthers = others.filter((opt, i, arr) => opt !== answer && arr.indexOf(opt) === i);
+  return { type: 'multiple-choice', question, options: [answer, ...uniqueOthers].slice(0, 4), answer, explanation };
 }
 
 // ─── Lesson-specific question banks ────────────────────────────────────────────

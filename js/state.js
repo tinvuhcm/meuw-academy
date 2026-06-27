@@ -189,7 +189,13 @@ function loadState() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return createRootState();
-    const parsed = JSON.parse(raw);
+    
+    let parsed;
+    if (raw.startsWith('{')) {
+      parsed = JSON.parse(raw);
+    } else {
+      parsed = JSON.parse(decodeURIComponent(atob(raw)));
+    }
     // Migration: add missing fields
     return migrateState(parsed);
   } catch (e) {
@@ -200,7 +206,8 @@ function loadState() {
 
 function saveState(state) {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    const encoded = btoa(encodeURIComponent(JSON.stringify(state)));
+    localStorage.setItem(STORAGE_KEY, encoded);
   } catch (e) {
     console.error('[State] Failed to save state:', e);
     // Try to free up space by truncating gallery
@@ -209,7 +216,8 @@ function saveState(state) {
       if (state.profiles[activeId]?.gallery?.length > 20) {
         state.profiles[activeId].gallery = state.profiles[activeId].gallery.slice(-20);
         try {
-          localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+          const encodedFallback = btoa(encodeURIComponent(JSON.stringify(state)));
+          localStorage.setItem(STORAGE_KEY, encodedFallback);
         } catch (_) {}
       }
     }
