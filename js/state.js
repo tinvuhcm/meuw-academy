@@ -271,11 +271,10 @@ function migrateState(state) {
       p.forceUnlockedThroughDay = Math.max(1, Number(p.currentDay || 1));
     }
     // MIGRATION: Reset data for V2 365 Days Curriculum
-    if (id === 'vuminhmeuw@gmail.com' && !p.v2_reset_assets_done) {
-      console.warn('[State] Performing V2 Reset & Asset Recovery for vuminhmeuw@gmail.com');
-      p.currentDay = 1;
-      p.completedModules = {};
-      p.forceUnlockedThroughDay = 1;
+    if (!p.v2_reset_assets_done) {
+      console.warn('[State] Performing V2 Reset & Asset Recovery');
+      p.currentDay = 22; // Trả bé về ngày 22 như trước reset
+      p.forceUnlockedThroughDay = 22;
       
       // Khôi phục tài sản theo yêu cầu
       p.xpTotal = 89920;
