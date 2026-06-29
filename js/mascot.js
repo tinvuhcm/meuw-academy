@@ -8,7 +8,6 @@ import { randomPick, createNonRepeatPicker } from './utils.js';
 import State from './state.js';
 import {
   comboKeyFromEquipped,
-  VALID_STATES,
   MEO_STATE_ASSETS,
   GAU_STATE_ASSETS,
   CUSTOMIZER_ITEMS_META,
