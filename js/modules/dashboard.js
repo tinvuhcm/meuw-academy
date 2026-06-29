@@ -4,6 +4,7 @@
  */
 
 import { el, formatDateVI, formatToday, formatModuleDisplayTitle, getGreetingLine, getSubjectConfig } from '../utils.js';
+import { getCurriculumDay, getCurriculumDaySkeleton } from '../data/curriculum-loader.js';
 import State from '../state.js';
 import Router from '../router.js';
 import Audio from '../audio.js';
@@ -366,13 +367,14 @@ function createRoadmapSection(currentDay) {
   section.appendChild(el('h2', { class: 'font-display text-2xl mb-2' }, 'Lộ trình học tập'));
 
   const strip = el('div', { class: 'roadmap-strip flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory' });
-  const startDay = Math.max(1, currentDay - 2);
-  const endDay = Math.min(State.getMaxLearningDays(), currentDay + 8);
-
-  for (let day = startDay; day <= endDay; day++) {
-    const dayData = getCurriculumDay(day);
-    if (!dayData) continue;
-    strip.appendChild(createRoadmapCard(day, dayData, currentDay));
+  // 1. Roadmap - Hiển thị 7 ngày gần nhất (bao gồm hôm nay)
+  const roadmapContainer = document.getElementById('roadmap-container');
+  roadmapContainer.innerHTML = '';
+  
+  for (let d = Math.max(1, currentDay - 6); d <= currentDay; d++) {
+    const dayData = d === currentDay ? getCurriculumDay(d) : getCurriculumDaySkeleton(d);
+    const card = createRoadmapCard(d, dayData, currentDay);
+    strip.appendChild(card);
   }
 
   section.appendChild(strip);
@@ -380,10 +382,6 @@ function createRoadmapSection(currentDay) {
 }
 
 function createRoadmapCard(dayNumber, dayData, currentDay) {
-  // Compute progress directly from dayData.modules (already materialized with
-  // correct IDs via getCurriculumDay) so the roadmap bar always agrees with
-  // the session list. Avoids a separate getCurriculumModulesForDay() call that
-  // can diverge from the materialized IDs.
   const allModules = dayData?.modules || [];
   const totalModules = allModules.length;
   let completedCount = 0;
@@ -445,13 +443,13 @@ function createRoadmapCard(dayNumber, dayData, currentDay) {
 
   card.addEventListener('click', () => {
     Audio.click();
-    showDayDetailModal(dayNumber, dayData, currentDay);
+    showDayDetailModal(dayNumber, currentDay);
   });
 
   return card;
 }
 
-function showDayDetailModal(dayNumber, dayData, currentDay) {
+function showDayDetailModal(dayNumber, currentDay) {
   const overlay = el('div', { class: 'fixed inset-0 bg-black/50 z-50 flex-center p-4 animate-fade-in' });
   const modal = el('div', { class: 'bg-white rounded-3xl w-full max-w-sm max-h-[80vh] flex flex-col overflow-hidden shadow-xl animate-pop-in relative' });
   
@@ -464,48 +462,9 @@ function showDayDetailModal(dayNumber, dayData, currentDay) {
   modal.appendChild(header);
 
   const content = el('div', { class: 'p-4 overflow-y-auto' });
-  const scheduledModules = getScheduledModulesForProfileDay(State.getActiveProfile(), dayNumber, dayData.modules || []).allModules;
   
-  const amModules = scheduledModules.filter(m => m.session === 'am');
-  const pmModules = scheduledModules.filter(m => m.session === 'pm');
-
-  let html = '';
-  
-  if (amModules.length > 0) {
-    html += `<div class="mb-2"><span class="font-bold text-sm bg-bg-2 px-3 py-1 rounded-full text-méo-purple">☀️ Sáng (${amModules.length} bài)</span></div><div class="mb-4">`;
-    amModules.forEach(m => {
-      const isCompleted = State.isModuleComplete(m.id);
-      html += `<div class="text-sm ml-2 p-2 border-l-2 ${isCompleted ? 'border-correct text-correct line-through' : 'border-border text-text'} mb-2 bg-surface rounded-r-lg flex items-center gap-2"><span class="w-5 h-5 flex-center rounded-full text-xs ${isCompleted ? 'bg-correct text-white' : 'bg-bg-2 text-text-muted shrink-0'}">${isCompleted ? '✓' : '•'}</span> ${formatModuleDisplayTitle(m, false)}</div>`;
-    });
-    html += `</div>`;
-  }
-  
-  if (pmModules.length > 0) {
-    html += `<div class="mb-2"><span class="font-bold text-sm bg-bg-2 px-3 py-1 rounded-full text-méo-purple">🌙 Chiều (${pmModules.length} bài)</span></div><div>`;
-    pmModules.forEach(m => {
-      const isCompleted = State.isModuleComplete(m.id);
-      html += `<div class="text-sm ml-2 p-2 border-l-2 ${isCompleted ? 'border-correct text-correct line-through' : 'border-border text-text'} mb-2 bg-surface rounded-r-lg flex items-center gap-2"><span class="w-5 h-5 flex-center rounded-full text-xs ${isCompleted ? 'bg-correct text-white' : 'bg-bg-2 text-text-muted shrink-0'}">${isCompleted ? '✓' : '•'}</span> ${formatModuleDisplayTitle(m, false)}</div>`;
-    });
-    html += `</div>`;
-  }
-  
-  if (dayNumber === currentDay) {
-    html += `<button class="btn btn-primary w-full mt-4" id="modal-learn-now">Học ngay! 🚀</button>`;
-  } else if (dayNumber < currentDay) {
-    html += `<button class="btn btn-outline text-méo-purple border-méo-purple w-full mt-4" id="modal-review">Ôn lại 🔄</button>`;
-  }
-
-  content.innerHTML = html;
-  
-  if (dayNumber === currentDay) {
-    const btn = content.querySelector('#modal-learn-now');
-    if (btn) btn.addEventListener('click', () => { overlay.remove(); window.scrollTo({top:0, behavior:'smooth'}); });
-  } else if (dayNumber < currentDay) {
-    const btn = content.querySelector('#modal-review');
-    // Luôn chuyển vào chế độ "day" để hiển thị toàn bộ bài học của cả ngày khi ôn tập
-    if (btn) btn.addEventListener('click', () => { overlay.remove(); Router.navigate(`/session/${dayNumber}/day`); });
-  }
-
+  // Hiển thị skeleton text tạm trong lúc chờ tải dữ liệu đầy đủ
+  content.innerHTML = `<div class="text-center p-4 opacity-50"><div class="spinner inline-block mb-2"></div><p>Đang chuẩn bị lộ trình...</p></div>`;
   modal.appendChild(content);
   overlay.appendChild(modal);
   
@@ -515,4 +474,66 @@ function showDayDetailModal(dayNumber, dayData, currentDay) {
   });
   
   document.body.appendChild(overlay);
+
+  // Defer the heavy curriculum generation so the modal animation doesn't stutter
+  setTimeout(() => {
+    const realDayData = getCurriculumDay(dayNumber);
+    const scheduledModules = getScheduledModulesForProfileDay(State.getActiveProfile(), dayNumber, realDayData.modules || []).allModules;
+    
+    const amModules = scheduledModules.filter(m => m.session === 'am');
+    const pmModules = scheduledModules.filter(m => m.session === 'pm');
+
+    let html = '';
+    
+    if (amModules.length > 0) {
+      html += `<div class="mb-2"><span class="font-bold text-sm bg-bg-2 px-3 py-1 rounded-full text-méo-purple">☀️ Sáng (${amModules.length} bài)</span></div><div class="mb-4">`;
+      amModules.forEach(m => {
+        const isCompleted = State.isModuleComplete(m.id);
+        html += `<div class="text-sm ml-2 p-2 border-l-2 ${isCompleted ? 'border-correct text-correct line-through' : 'border-border text-text'} mb-2 bg-surface rounded-r-lg flex items-center gap-2"><span class="w-5 h-5 flex-center rounded-full text-xs ${isCompleted ? 'bg-correct text-white' : 'bg-bg-2 text-text-muted shrink-0'}">${isCompleted ? '✓' : '•'}</span> ${formatModuleDisplayTitle(m, false)}</div>`;
+      });
+      html += `</div>`;
+    }
+    
+    if (pmModules.length > 0) {
+      html += `<div class="mb-2"><span class="font-bold text-sm bg-bg-2 px-3 py-1 rounded-full text-méo-purple">🌙 Chiều (${pmModules.length} bài)</span></div><div>`;
+      pmModules.forEach(m => {
+        const isCompleted = State.isModuleComplete(m.id);
+        html += `<div class="text-sm ml-2 p-2 border-l-2 ${isCompleted ? 'border-correct text-correct line-through' : 'border-border text-text'} mb-2 bg-surface rounded-r-lg flex items-center gap-2"><span class="w-5 h-5 flex-center rounded-full text-xs ${isCompleted ? 'bg-correct text-white' : 'bg-bg-2 text-text-muted shrink-0'}">${isCompleted ? '✓' : '•'}</span> ${formatModuleDisplayTitle(m, false)}</div>`;
+      });
+      html += `</div>`;
+    }
+    
+    if (dayNumber === currentDay) {
+      html += `<button class="btn btn-primary w-full mt-4" id="modal-learn-now">Học ngay! 🚀</button>`;
+    } else if (dayNumber < currentDay) {
+      html += `<button class="btn btn-outline text-méo-purple border-méo-purple w-full mt-4" id="modal-review">Ôn lại 🔄</button>`;
+    }
+
+    content.innerHTML = html;
+    
+    if (dayNumber === currentDay) {
+      const learnNowBtn = content.querySelector('#modal-learn-now');
+      if (learnNowBtn) {
+        learnNowBtn.addEventListener('click', () => {
+          Audio.click();
+          overlay.remove();
+          const firstUncompleted = scheduledModules.find(m => !State.isModuleComplete(m.id));
+          if (firstUncompleted) {
+            window.dispatchEvent(new CustomEvent('meuw:navigate', { detail: { page: 'lesson', data: { moduleId: firstUncompleted.id, day: currentDay } } }));
+          } else {
+            window.dispatchEvent(new CustomEvent('meuw:navigate', { detail: { page: 'session' } }));
+          }
+        });
+      }
+    } else if (dayNumber < currentDay) {
+      const reviewBtn = content.querySelector('#modal-review');
+      if (reviewBtn) {
+        reviewBtn.addEventListener('click', () => {
+          Audio.click();
+          overlay.remove();
+          window.dispatchEvent(new CustomEvent('meuw:navigate', { detail: { page: 'session', data: { day: dayNumber } } }));
+        });
+      }
+    }
+  }, 50);
 }

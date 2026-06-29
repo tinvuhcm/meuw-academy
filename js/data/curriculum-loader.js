@@ -71,17 +71,19 @@ function synthesizeDaySkeleton(day) {
   const { templateDay, dayData } = getTemplateDayData(day);
   if (!dayData) return null;
   const copy = clone(dayData);
-  copy.title = `Ngày ${day}: Khám phá tri thức mới`;
-  copy.templateDay = templateDay;
-  // Replace the template-day prefix in each module's ID so per-session indices
-  // (d1-am-1, d1-pm-1, …) map correctly to the actual day (d85-am-1, d85-pm-1, …).
-  copy.modules = (copy.modules || []).map((module) => ({
+  copy.title = `Ngày ${day}`;
+  copy.modules = copy.modules.map(module => ({
     ...module,
     id: module.id
       ? module.id.replace(/^(v2-)?d\d+/, `$1d${day}`)
       : `v2-d${day}-${module.session}-1`,
   }));
   return copy;
+}
+
+export function getCurriculumDaySkeleton(day) {
+  const dayKey = `day${day}`;
+  return ALL_DATA[dayKey] || synthesizeDaySkeleton(day);
 }
 
 /**
