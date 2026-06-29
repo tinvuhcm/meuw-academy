@@ -270,58 +270,6 @@ function migrateState(state) {
     if (!Number.isFinite(Number(p.forceUnlockedThroughDay))) {
       p.forceUnlockedThroughDay = Math.max(1, Number(p.currentDay || 1));
     }
-    // MIGRATION: V3 Reset data for 365 Days Curriculum & Asset Recovery
-    if (!p.v3_reset_assets_done) {
-      console.warn('[State] Performing V3 Reset & Asset Recovery');
-      p.currentDay = 22; // Trả bé về ngày 22 như trước reset
-      p.forceUnlockedThroughDay = 22;
-      
-      // Mark days 1 to 21 as complete to avoid "redo" and speed up dashboard
-      if (!p.completedModules) p.completedModules = {};
-      for (let d = 1; d <= 21; d++) {
-        for (let i = 1; i <= 14; i++) p.completedModules[`v2-d${d}-am-${i}`] = { score: 1, total: 1 };
-        for (let i = 1; i <= 10; i++) p.completedModules[`v2-d${d}-pm-${i}`] = { score: 1, total: 1 };
-      }
-      
-      // Khôi phục tài sản theo yêu cầu
-      p.xpTotal = 89920;
-      p.stats.xpTotal = 89920;
-      
-      // Các phụ kiện: trà sữa, kính râm, kẹo mút, vương miện, mũ chóp
-      p.purchasedItems = [
-        ...new Set([
-          ...(p.purchasedItems || []),
-          'acc_milktea', 'acc_sunglasses', 'acc_lollipop', 'acc_crown', 'acc_tophat'
-        ])
-      ];
-      
-      // 3 thẻ kiến thức: bảng cửu chương 9, vòng đời của bướm, Hà Nội
-      if (!p.earnedCards) p.earnedCards = [];
-      const cardsToAdd = [
-        { id: 'c_table9', title: 'Bảng Cửu Chương 9', desc: 'Bí quyết nhẩm cửu chương 9 bằng đôi bàn tay kì diệu!', rarity: 'rare', color: 'purple', earnedAt: new Date().toISOString() },
-        { id: 'c_butterfly', title: 'Vòng đời của Bướm', desc: 'Từ trứng bé xíu thành sâu béo, vào kén ngủ vùi rồi hóa thành bướm xinh.', rarity: 'epic', color: 'blue', earnedAt: new Date().toISOString() },
-        { id: 'c_hanoi', title: 'Thủ đô Hà Nội', desc: 'Trái tim của Việt Nam với 36 phố phường, Hồ Gươm và lăng Bác.', rarity: 'legendary', color: 'orange', earnedAt: new Date().toISOString() }
-      ];
-      cardsToAdd.forEach(c => {
-        if (!p.earnedCards.find(existing => existing.id === c.id)) {
-          p.earnedCards.unshift(c);
-        }
-      });
-      
-      // Đảm bảo thiết lập Break reminder: 30 mins study, 5 mins break
-      if (!p.settings) p.settings = {};
-      p.settings.breakReminderMins = 30;
-      p.settings.breakDurationMins = 5;
-
-      // Giữ nguyên earnedBadges, gallery.
-      p.knowledgeLedger = createDefaultProfile(id).knowledgeLedger;
-      p.dayUnlockedOn = {};
-      if (p.learningStartDate) {
-        for (let d = 1; d <= 22; d++) p.dayUnlockedOn[d] = p.learningStartDate;
-      }
-      p.v3_reset_assets_done = true;
-    }
-
     ensureScheduleMetadata(p);
   }
   
