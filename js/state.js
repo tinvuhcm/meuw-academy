@@ -189,7 +189,7 @@ function createRootState() {
 function loadState() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return createRootState();
+    if (!raw) return migrateState(createRootState());
     
     let parsed;
     if (raw.startsWith('{')) {
@@ -201,7 +201,7 @@ function loadState() {
     return migrateState(parsed);
   } catch (e) {
     console.warn('[State] Failed to load state, resetting:', e);
-    return createRootState();
+    return migrateState(createRootState());
   }
 }
 
