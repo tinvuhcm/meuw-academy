@@ -56,8 +56,8 @@ function getCurriculumModulesForDay(dayNumber) {
   const rawModules = (ALL_CURRICULUM_DATA[`day${templateDay}`]?.modules || []).map((module) => ({
     ...module,
     id: module.id
-      ? module.id.replace(/^d\d+/, `d${dayNumber}`)
-      : `d${dayNumber}-${module.session}-1`,
+      ? module.id.replace(/^(v2-)?d\d+/, `$1d${dayNumber}`)
+      : `v2-d${dayNumber}-${module.session}-1`,
   }));
   return getScheduledModulesForProfileDay(profile, dayNumber, rawModules).allModules;
 }
@@ -270,6 +270,23 @@ function migrateState(state) {
     if (!Number.isFinite(Number(p.forceUnlockedThroughDay))) {
       p.forceUnlockedThroughDay = Math.max(1, Number(p.currentDay || 1));
     }
+    
+    // MIGRATION: Reset data for V2 365 Days Curriculum
+    if (id === 'vuminhmeuw@gmail.com' && !p.v2_reset_done) {
+      console.warn('[State] Performing V2 Reset for vuminhmeuw@gmail.com');
+      p.currentDay = 1;
+      p.completedModules = {};
+      p.forceUnlockedThroughDay = 1;
+      // Giữ nguyên stats, earnedBadges, earnedCards, gallery, inventory. 
+      // Reset knowledgeLedger vì ID của module / chữ ký câu hỏi đã thay đổi.
+      p.knowledgeLedger = createDefaultProfile(id).knowledgeLedger;
+      p.dayUnlockedOn = {};
+      if (p.learningStartDate) {
+        p.dayUnlockedOn[1] = p.learningStartDate;
+      }
+      p.v2_reset_done = true;
+    }
+
     ensureScheduleMetadata(p);
   }
   return state;

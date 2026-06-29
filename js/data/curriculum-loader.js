@@ -78,8 +78,8 @@ function synthesizeDaySkeleton(day) {
   copy.modules = (copy.modules || []).map((module) => ({
     ...module,
     id: module.id
-      ? module.id.replace(/^d\d+/, `d${day}`)
-      : `d${day}-${module.session}-1`,
+      ? module.id.replace(/^(v2-)?d\d+/, `$1d${day}`)
+      : `v2-d${day}-${module.session}-1`,
   }));
   return copy;
 }
