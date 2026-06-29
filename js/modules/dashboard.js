@@ -9,7 +9,6 @@ import State from '../state.js';
 import Router from '../router.js';
 import Audio from '../audio.js';
 import { Mascot } from '../mascot.js';
-import { getCurriculumDay } from '../data/curriculum-loader.js';
 import { getScheduledModulesForProfileDay } from '../schedule-calendar.js';
 
 export function renderDashboard() {
@@ -367,10 +366,7 @@ function createRoadmapSection(currentDay) {
   section.appendChild(el('h2', { class: 'font-display text-2xl mb-2' }, 'Lộ trình học tập'));
 
   const strip = el('div', { class: 'roadmap-strip flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory' });
-  // 1. Roadmap - Hiển thị 7 ngày gần nhất (bao gồm hôm nay)
-  const roadmapContainer = document.getElementById('roadmap-container');
-  roadmapContainer.innerHTML = '';
-  
+
   for (let d = Math.max(1, currentDay - 6); d <= currentDay; d++) {
     const dayData = d === currentDay ? getCurriculumDay(d) : getCurriculumDaySkeleton(d);
     const card = createRoadmapCard(d, dayData, currentDay);
