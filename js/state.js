@@ -1057,13 +1057,19 @@ function getTodayStats() {
 
   Object.values(profile.completedModules || {}).forEach(m => {
     if (!m) return;
-    const dateStr = new Date(m.completedAt).toISOString().split('T')[0];
-    if (dateStr === todayStr || localDateString(new Date(m.completedAt)) === todayStr) {
-      modulesDone++;
-      xpEarned += (m.xp || 0);
-      correctAnswers += (m.score || 0);
-      totalAnswers += (m.total || 0);
-      timeSpentMs += (m.timeMs || 0);
+    if (!m.completedAt) return; // skip if no completedAt
+    
+    try {
+      const dateStr = new Date(m.completedAt).toISOString().split('T')[0];
+      if (dateStr === todayStr || localDateString(new Date(m.completedAt)) === todayStr) {
+        modulesDone++;
+        xpEarned += (m.xp || 0);
+        correctAnswers += (m.score || 0);
+        totalAnswers += (m.total || 0);
+        timeSpentMs += (m.timeMs || 0);
+      }
+    } catch (e) {
+      // ignore invalid dates
     }
   });
 
