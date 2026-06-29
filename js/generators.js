@@ -65,53 +65,74 @@ export function generateKnowledgeCardHTML(card) {
     'legendary': '👑',
   }[card.rarity] || '⭐';
 
-  const isSuperRare = card.rarity === 'Cực hiếm' || card.rarity === 'legendary';
-  const cardColor = card.color ? (card.color.startsWith('bg-') ? card.color : `bg-${card.color}-500`) : 'bg-blue-500';
+  // Map base Tailwind bg colors to rich dark gradient backgrounds for the cards
+  let bgGradient = 'from-slate-900 via-stone-800 to-neutral-900';
+  if (card.color) {
+    if (card.color.includes('purple')) bgGradient = 'from-purple-950 via-purple-800 to-fuchsia-900';
+    else if (card.color.includes('blue')) bgGradient = 'from-slate-900 via-blue-900 to-cyan-900';
+    else if (card.color.includes('green')) bgGradient = 'from-green-950 via-emerald-800 to-green-900';
+    else if (card.color.includes('yellow')) bgGradient = 'from-amber-950 via-yellow-700 to-orange-900';
+    else if (card.color.includes('pink') || card.color.includes('red')) bgGradient = 'from-rose-950 via-pink-800 to-red-900';
+  }
+
+  // Generate a bunch of CSS stars/sparkles for the background
+  let sparkles = '';
+  for(let i=0; i<15; i++) {
+    const top = Math.floor(Math.random() * 100);
+    const left = Math.floor(Math.random() * 100);
+    const size = 2 + Math.floor(Math.random() * 4);
+    const delay = Math.random() * 3;
+    sparkles += `<div class="absolute bg-white rounded-full opacity-60 animate-pulse" style="top: ${top}%; left: ${left}%; width: ${size}px; height: ${size}px; animation-delay: ${delay}s; box-shadow: 0 0 ${size*2}px #fff;"></div>`;
+  }
 
   let html = `
-    <!-- Lớp hiệu ứng lấp lánh (Shine) -->
-    <div class="absolute inset-0 z-20 pointer-events-none overflow-hidden rounded-3xl">
-      <div class="absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/60 to-transparent skew-x-[-20deg] group-hover:animate-shine"></div>
-    </div>
-  `;
-
-  // Băng rôn "Siêu cấp" cho thẻ Cực hiếm
-  if (isSuperRare) {
-    html += `
-      <div class="absolute top-0 right-0 w-16 h-16 overflow-hidden z-30">
-        <div class="bg-gradient-to-r from-yellow-300 via-yellow-100 to-yellow-500 text-yellow-900 font-bold text-[10px] uppercase py-1 shadow-md transform rotate-45 translate-x-4 translate-y-2 text-center w-24 animate-pulse">Siêu cấp</div>
-      </div>
-    `;
-  }
-
-  // Khu vực hình ảnh
-  html += `
-    <div class="relative aspect-[3/4] w-full bg-bg-2 overflow-hidden border-b-4 border-black/5 z-10 flex items-center justify-center text-7xl ${cardColor} text-white group-hover:scale-105 transition-transform duration-700">
-  `;
-  
-  if (card.image) {
-    html += `<img src="${card.image}" class="w-full h-full object-contain bg-black" />`;
-  } else {
-    html += `${card.emoji || rarityEmoji || '✨'}`;
-  }
-
-  if (card.type) {
-    html += `<div class="absolute top-3 left-3 bg-black/30 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md backdrop-blur-sm border border-white/20 z-10">${card.type}</div>`;
-  }
-
-  html += `</div>`; // End img wrapper
-
-  // Khu vực thông tin
-  html += `
-    <div class="p-5 flex flex-col flex-1 bg-gradient-to-b from-white to-yellow-50/50 z-10 relative">
-      <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-100/50 via-transparent to-transparent"></div>
-      <h3 class="font-display text-xl mb-2 text-text group-hover:text-yellow-600 transition-colors drop-shadow-sm">${card.title}</h3>
-      <p class="text-sm text-text-muted flex-1 line-clamp-2 relative z-10">${card.desc}</p>
+    <div class="relative w-full aspect-[731/1024] rounded-xl overflow-hidden shadow-2xl group cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-méo-purple/50">
       
-      <div class="mt-3 pt-3 border-t border-border flex items-center justify-between relative z-10">
-        <span class="text-xs font-bold text-yellow-700 bg-yellow-100 px-2 py-1 rounded-md shadow-sm border border-yellow-300">${rarityEmoji} ${card.rarity}</span>
-        <span class="text-xs font-bold text-méo-purple animate-pulse">Mở xem ✨</span>
+      <!-- Lớp Nền Thẻ -->
+      <div class="absolute inset-0 z-0 bg-gradient-to-br ${bgGradient}">
+        ${sparkles}
+        <div class="absolute inset-0 bg-black/20"></div>
       </div>
+
+      <!-- Nội Dung Thẻ -->
+      <!-- Padding được canh chỉnh để vừa khít bên trong khung vàng (chừa viền ngoài) -->
+      <div class="absolute inset-0 z-10 flex flex-col p-[12%] pb-[15%] pt-[14%]">
+        
+        <!-- Tiêu đề -->
+        <div class="text-center shrink-0 mt-4">
+          <h3 class="font-display text-xl md:text-2xl font-bold uppercase text-transparent bg-clip-text bg-gradient-to-b from-yellow-100 via-yellow-300 to-yellow-600 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" style="-webkit-text-stroke: 0.5px rgba(100,50,0,0.5); filter: drop-shadow(0 4px 4px rgba(0,0,0,0.6)); line-height: 1.2;">
+            ${card.title}
+          </h3>
+        </div>
+
+        <!-- Hình Ảnh / Emoji Trung Tâm -->
+        <div class="flex-1 flex items-center justify-center w-full min-h-0 relative">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.2)_0%,transparent_60%)]"></div>
+          ${card.image 
+            ? `<img src="${card.image}" class="max-w-full max-h-[80%] object-contain filter drop-shadow-[0_10px_15px_rgba(0,0,0,0.5)] z-10 hover:scale-110 transition-transform duration-500" />` 
+            : `<div class="text-7xl md:text-8xl filter drop-shadow-[0_0_20px_rgba(255,255,255,0.7)] animate-pulse-slow z-10 hover:scale-110 transition-transform duration-500">${card.emoji || rarityEmoji || '✨'}</div>`
+          }
+        </div>
+
+        <!-- Góc Hiểu Biết -->
+        <div class="w-full bg-black/60 border border-yellow-500/40 rounded-xl p-3 flex items-start gap-3 backdrop-blur-md shadow-[0_4px_15px_rgba(0,0,0,0.5)] shrink-0 z-10 mb-4">
+           <div class="text-3xl filter drop-shadow-[0_0_10px_rgba(255,215,0,0.8)] shrink-0 animate-bounce-slow">💡</div>
+           <div class="text-left flex-1 min-w-0">
+             <div class="text-yellow-400 font-bold text-[10px] md:text-xs uppercase mb-0.5 tracking-wider">Góc hiểu biết</div>
+             <div class="text-white text-xs md:text-sm leading-snug line-clamp-3">${card.desc}</div>
+           </div>
+        </div>
+
+      </div>
+
+      <!-- Khung Vàng Tráng Lệ Trùm Lên Cùng -->
+      <img src="assets/images/card_template.png" class="absolute inset-0 w-full h-full object-fill z-20 pointer-events-none drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]" />
+      
+      <!-- Hiệu ứng Shine quét qua -->
+      <div class="absolute inset-0 z-30 pointer-events-none overflow-hidden rounded-xl">
+        <div class="absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-25deg] group-hover:animate-shine"></div>
+      </div>
+
     </div>
   `;
 
