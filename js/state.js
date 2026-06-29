@@ -270,11 +270,18 @@ function migrateState(state) {
     if (!Number.isFinite(Number(p.forceUnlockedThroughDay))) {
       p.forceUnlockedThroughDay = Math.max(1, Number(p.currentDay || 1));
     }
-    // MIGRATION: Reset data for V2 365 Days Curriculum
-    if (!p.v2_reset_assets_done) {
-      console.warn('[State] Performing V2 Reset & Asset Recovery');
+    // MIGRATION: V3 Reset data for 365 Days Curriculum & Asset Recovery
+    if (!p.v3_reset_assets_done) {
+      console.warn('[State] Performing V3 Reset & Asset Recovery');
       p.currentDay = 22; // Trả bé về ngày 22 như trước reset
       p.forceUnlockedThroughDay = 22;
+      
+      // Mark days 1 to 21 as complete to avoid "redo" and speed up dashboard
+      if (!p.completedModules) p.completedModules = {};
+      for (let d = 1; d <= 21; d++) {
+        for (let i = 1; i <= 14; i++) p.completedModules[`v2-d${d}-am-${i}`] = { score: 1, total: 1 };
+        for (let i = 1; i <= 10; i++) p.completedModules[`v2-d${d}-pm-${i}`] = { score: 1, total: 1 };
+      }
       
       // Khôi phục tài sản theo yêu cầu
       p.xpTotal = 89920;
@@ -307,17 +314,22 @@ function migrateState(state) {
       p.settings.breakDurationMins = 5;
 
       // Giữ nguyên earnedBadges, gallery.
-      // Reset knowledgeLedger vì ID của module / chữ ký câu hỏi đã thay đổi.
       p.knowledgeLedger = createDefaultProfile(id).knowledgeLedger;
       p.dayUnlockedOn = {};
       if (p.learningStartDate) {
-        p.dayUnlockedOn[1] = p.learningStartDate;
+        for (let d = 1; d <= 22; d++) p.dayUnlockedOn[d] = p.learningStartDate;
       }
-      p.v2_reset_assets_done = true;
+      p.v3_reset_assets_done = true;
     }
 
     ensureScheduleMetadata(p);
   }
+  
+  // Force save immediately after migration to prevent losing it on early refresh
+  if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
+  }
+  
   return state;
 }
 
