@@ -2,7 +2,7 @@
   "activeProfile": "profile_vuminhmeuw",
   "syncMeta": {
     "deviceId": "device_manual_backup",
-    "localUpdatedAt": "2026-06-29T04:31:46.632Z",
+    "localUpdatedAt": "2026-06-29T07:04:11.239Z",
     "account": null,
     "lastSyncedAt": null
   },
@@ -18,11 +18,7 @@
       "currentWeek": 4,
       "xpTotal": 89920,
       "xpToday": 0,
-      "streak": {
-        "current": 21,
-        "best": 21,
-        "lastStudyDate": "2026-06-29"
-      },
+      "streak": 21,
       "streakShieldsRemaining": 3,
       "completedModules": {
         "v2-d1-am-1": {
@@ -2050,24 +2046,27 @@
           "title": "Bảng Cửu Chương 9",
           "desc": "Bí quyết nhẩm cửu chương 9 bằng đôi bàn tay kì diệu!",
           "rarity": "rare",
-          "color": "purple",
-          "earnedAt": "2026-06-29T04:31:46.633Z"
+          "color": "bg-purple-500",
+          "emoji": "🧮",
+          "earnedAt": "2026-06-29T07:04:11.240Z"
         },
         {
           "id": "c_butterfly",
           "title": "Vòng đời của Bướm",
           "desc": "Từ trứng bé xíu thành sâu béo, vào kén ngủ vùi rồi hóa thành bướm xinh.",
           "rarity": "epic",
-          "color": "blue",
-          "earnedAt": "2026-06-29T04:31:46.633Z"
+          "color": "bg-blue-500",
+          "emoji": "🦋",
+          "earnedAt": "2026-06-29T07:04:11.240Z"
         },
         {
           "id": "c_hanoi",
           "title": "Thủ đô Hà Nội",
           "desc": "Trái tim của Việt Nam với 36 phố phường, Hồ Gươm và lăng Bác.",
           "rarity": "legendary",
-          "color": "orange",
-          "earnedAt": "2026-06-29T04:31:46.633Z"
+          "color": "bg-orange-500",
+          "emoji": "🏛️",
+          "earnedAt": "2026-06-29T07:04:11.240Z"
         }
       ],
       "gallery": [],
@@ -2076,7 +2075,8 @@
         "questionsCorrect": 300,
         "xpTotal": 89920,
         "studyTimeMinutes": 600,
-        "daysStudied": 21
+        "daysStudied": 21,
+        "longestStreakEver": 21
       },
       "settings": {
         "audioEnabled": true,
@@ -2084,7 +2084,10 @@
         "highContrast": false,
         "breakReminderMins": 30,
         "breakDurationMins": 5,
-        "speechSpeed": 1
+        "speechSpeed": 1,
+        "parentPin": "1234",
+        "bgmOn": true,
+        "soundOn": true
       },
       "dayUnlockedOn": {
         "1": "2026-06-01",

@@ -66,7 +66,7 @@ export function generateKnowledgeCardHTML(card) {
   }[card.rarity] || '⭐';
 
   const isSuperRare = card.rarity === 'Cực hiếm' || card.rarity === 'legendary';
-  const cardColor = card.color || 'bg-blue-500';
+  const cardColor = card.color ? (card.color.startsWith('bg-') ? card.color : `bg-${card.color}-500`) : 'bg-blue-500';
 
   let html = `
     <!-- Lớp hiệu ứng lấp lánh (Shine) -->
@@ -92,7 +92,7 @@ export function generateKnowledgeCardHTML(card) {
   if (card.image) {
     html += `<img src="${card.image}" class="w-full h-full object-contain bg-black" />`;
   } else {
-    html += `${card.emoji || '✨'}`;
+    html += `${card.emoji || rarityEmoji || '✨'}`;
   }
 
   if (card.type) {

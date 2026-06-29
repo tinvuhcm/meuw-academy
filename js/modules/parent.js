@@ -53,6 +53,8 @@ export function renderParent() {
         isAuthorized = true;
         authWrapper.remove();
         renderDashboardContent(container);
+      } else {
+        throw new Error('Mã PIN không đúng!');
       }
     } catch (e) {
       Audio.wrong();

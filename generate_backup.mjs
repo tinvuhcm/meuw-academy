@@ -34,19 +34,15 @@ const backupData = {
       "currentWeek": 4,
       "xpTotal": 89920,
       "xpToday": 0,
-      "streak": {
-        "current": 21,
-        "best": 21,
-        "lastStudyDate": new Date().toISOString().split('T')[0]
-      },
+      "streak": 21,
       "streakShieldsRemaining": 3,
       "completedModules": completedModules,
       "daySchedules": {},
       "earnedBadges": [],
       "earnedCards": [
-        { "id": "c_table9", "title": "Bảng Cửu Chương 9", "desc": "Bí quyết nhẩm cửu chương 9 bằng đôi bàn tay kì diệu!", "rarity": "rare", "color": "purple", "earnedAt": new Date().toISOString() },
-        { "id": "c_butterfly", "title": "Vòng đời của Bướm", "desc": "Từ trứng bé xíu thành sâu béo, vào kén ngủ vùi rồi hóa thành bướm xinh.", "rarity": "epic", "color": "blue", "earnedAt": new Date().toISOString() },
-        { "id": "c_hanoi", "title": "Thủ đô Hà Nội", "desc": "Trái tim của Việt Nam với 36 phố phường, Hồ Gươm và lăng Bác.", "rarity": "legendary", "color": "orange", "earnedAt": new Date().toISOString() }
+        { "id": "c_table9", "title": "Bảng Cửu Chương 9", "desc": "Bí quyết nhẩm cửu chương 9 bằng đôi bàn tay kì diệu!", "rarity": "rare", "color": "bg-purple-500", "emoji": "🧮", "earnedAt": new Date().toISOString() },
+        { "id": "c_butterfly", "title": "Vòng đời của Bướm", "desc": "Từ trứng bé xíu thành sâu béo, vào kén ngủ vùi rồi hóa thành bướm xinh.", "rarity": "epic", "color": "bg-blue-500", "emoji": "🦋", "earnedAt": new Date().toISOString() },
+        { "id": "c_hanoi", "title": "Thủ đô Hà Nội", "desc": "Trái tim của Việt Nam với 36 phố phường, Hồ Gươm và lăng Bác.", "rarity": "legendary", "color": "bg-orange-500", "emoji": "🏛️", "earnedAt": new Date().toISOString() }
       ],
       "gallery": [],
       "stats": {
@@ -54,7 +50,8 @@ const backupData = {
         "questionsCorrect": 300,
         "xpTotal": 89920,
         "studyTimeMinutes": 600,
-        "daysStudied": 21
+        "daysStudied": 21,
+        "longestStreakEver": 21
       },
       "settings": {
         "audioEnabled": true,
@@ -62,7 +59,10 @@ const backupData = {
         "highContrast": false,
         "breakReminderMins": 30,
         "breakDurationMins": 5,
-        "speechSpeed": 1
+        "speechSpeed": 1,
+        "parentPin": "1234",
+        "bgmOn": true,
+        "soundOn": true
       },
       "dayUnlockedOn": dayUnlockedOn,
       "purchasedItems": [

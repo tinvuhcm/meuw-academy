@@ -85,7 +85,8 @@ function openCardDetailModal(card) {
   if (card.image) {
     imgWrapper.innerHTML = `<img src="${card.image}" class="w-full h-full object-contain" />`;
   } else {
-    imgWrapper.innerHTML = `<div class="w-full h-full flex-center text-8xl ${card.color} text-white">${card.emoji}</div>`;
+    const cardColor = card.color ? (card.color.startsWith('bg-') ? card.color : `bg-${card.color}-500`) : 'bg-blue-500';
+    imgWrapper.innerHTML = `<div class="w-full h-full flex-center text-8xl ${cardColor} text-white">${card.emoji || '✨'}</div>`;
   }
   
   // Gradient overlay for text readability

@@ -253,8 +253,18 @@ function migrateState(state) {
   // Ensure settings exist on each profile
   for (const id in state.profiles) {
     const p = state.profiles[id];
-    if (!p.settings) p.settings = createDefaultProfile(id).settings;
-    if (!p.stats)    p.stats    = createDefaultProfile(id).stats;
+    const def = createDefaultProfile(id);
+    if (!p.settings) {
+      p.settings = def.settings;
+    } else {
+      for (const k in def.settings) {
+        if (p.settings[k] === undefined) p.settings[k] = def.settings[k];
+      }
+    }
+    if (p.streak && typeof p.streak === 'object') {
+      p.streak = p.streak.current || 0;
+    }
+    if (!p.stats)    p.stats    = def.stats;
     if (!p.gallery)  p.gallery  = [];
     if (!p.earnedBadges) p.earnedBadges = [];
     if (!p.earnedCards) p.earnedCards = [];
@@ -865,7 +875,7 @@ function validatePin(pin) {
   if (!/^\d{4}$/.test(String(correctPin || ''))) {
     throw new Error('PIN phụ huynh chưa được thiết lập đúng.');
   }
-  if (pin === correctPin) {
+  if (String(pin) === String(correctPin)) {
     _state.pinAttempts = 0;
     _state.pinLockUntil = null;
     commit();
