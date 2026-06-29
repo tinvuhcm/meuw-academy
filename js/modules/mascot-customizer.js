@@ -2,6 +2,7 @@ import { el } from '../utils.js';
 import State from '../state.js';
 import Router from '../router.js';
 import { comboKeyFromEquipped, CUSTOMIZER_ITEMS_META, MASCOT_COMBO_ASSETS } from '../data/mascot-assets.js';
+import { generateAvatarHTML } from '../generators.js';
 
 export function renderCustomizer() {
   const container = el('div', { class: 'page-container p-6 flex flex-col items-center' });
@@ -17,16 +18,16 @@ export function renderCustomizer() {
   header.appendChild(el('div', { class: 'w-24' })); // spacer
   
   // Mascot Preview Area
-  const preview = el('div', { class: 'relative w-64 h-64 bg-meo-purple-lt rounded-full flex-center mb-8 shadow-inner border-4 border-meo-purple' });
-  const canvas = el('canvas', { width: 256, height: 256, class: 'w-56 h-56 object-contain' });
-  preview.appendChild(canvas);
+  const preview = el('div', { class: 'relative w-64 h-64 bg-meo-purple-lt rounded-full overflow-hidden flex-center mb-8 shadow-inner border-4 border-meo-purple' });
+  const avatarWrapper = el('div', { class: 'w-56 h-56' });
   
   const profile = State.getActiveProfile();
   if (!profile.equippedAccessories) profile.equippedAccessories = [];
   
   const itemsMeta = CUSTOMIZER_ITEMS_META;
-
-  renderMascotCanvas(canvas, profile.equippedAccessories, itemsMeta);
+  
+  avatarWrapper.innerHTML = generateAvatarHTML('meo', profile.equippedAccessories, 'idle');
+  preview.appendChild(avatarWrapper);
 
   const actionRow = el('div', { class: 'flex flex-wrap justify-center gap-3 mb-6' });
   const clearBtn = el('button', { class: 'btn btn-outline' }, 'Gỡ hết đồ đang đeo');
@@ -60,7 +61,18 @@ export function renderCustomizer() {
       equipBtn.addEventListener('click', (event) => {
         event.stopPropagation();
         if (!profile.equippedAccessories.includes(id)) {
+          const itemSlot = itemsMeta[id]?.slot;
+          // Bỏ món đồ cũ cùng slot
+          if (itemSlot) {
+            profile.equippedAccessories = profile.equippedAccessories.filter(
+              existingId => itemsMeta[existingId]?.slot !== itemSlot
+            );
+          }
           profile.equippedAccessories.push(id);
+          // Giới hạn tối đa 3 món đồ
+          if (profile.equippedAccessories.length > 3) {
+            profile.equippedAccessories.shift(); // Xóa món cũ nhất
+          }
           State.commit();
           Router.navigate('/customizer');
         }
@@ -90,34 +102,4 @@ export function renderCustomizer() {
   return container;
 }
 
-function loadImage(src) {
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    img.onload = () => resolve(img);
-    img.onerror = reject;
-    img.src = src;
-  });
-}
 
-async function renderMascotCanvas(canvas, equippedIds, itemsMeta) {
-  const ctx = canvas.getContext('2d');
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  const comboSrc = MASCOT_COMBO_ASSETS[comboKeyFromEquipped(equippedIds)];
-  const baseSrc = comboSrc || 'assets/images/mascot_avatar.png';
-  const base = await loadImage(baseSrc);
-  ctx.drawImage(base, 16, 16, 224, 224);
-
-  if (comboSrc) return;
-
-  for (const id of equippedIds) {
-    const meta = itemsMeta[id];
-    if (!meta || meta.render !== 'overlay') continue;
-    const [x, y, w, h] = meta.box;
-    const img = await loadImage(meta.src);
-    ctx.save();
-    ctx.globalAlpha = meta.opacity || 1;
-    ctx.drawImage(img, x, y, w, h);
-    ctx.restore();
-  }
-}

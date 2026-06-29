@@ -8,11 +8,13 @@ import { randomPick, createNonRepeatPicker } from './utils.js';
 import State from './state.js';
 import {
   comboKeyFromEquipped,
-  CUSTOMIZER_ITEMS_META,
-  GAU_STATE_ASSETS,
-  MASCOT_COMBO_ASSETS,
+  VALID_STATES,
   MEO_STATE_ASSETS,
+  GAU_STATE_ASSETS,
+  CUSTOMIZER_ITEMS_META,
+  MASCOT_COMBO_ASSETS,
 } from './data/mascot-assets.js';
+import { generateAvatarHTML } from './generators.js';
 
 // ============================================
 // MASCOT STATE MACHINE
@@ -125,36 +127,12 @@ class MascotController {
     clearTimeout(this._stateTimer);
     this.currentState = state;
 
-    // Apply image to all registered mascot elements
+    // Apply HTML to all registered mascot elements
     this.elements.forEach(el => {
-      el.innerHTML = ''; // Clear SVG
-      el.style.position = 'relative';
-      
-      const img = document.createElement('img');
-      img.style.width = '100%';
-      img.style.height = '100%';
-      img.style.objectFit = 'contain';
-      
       const character = el.dataset.mascotCharacter === 'gau' ? 'gau' : 'meo';
-      const stateAssets = character === 'gau' ? GAU_STATE_ASSETS : MEO_STATE_ASSETS;
       const profile = State.getActiveProfile();
-      const comboSrc = character === 'meo' ? MASCOT_COMBO_ASSETS[comboKeyFromEquipped(profile?.equippedAccessories || [])] : null;
-      let src = comboSrc || stateAssets[state] || stateAssets.idle || 'assets/images/mascot_avatar.png';
       
-      img.src = src;
-      el.appendChild(img);
-      
-      if (character === 'meo' && profile?.equippedAccessories?.length && !comboSrc) {
-        profile.equippedAccessories.forEach(id => {
-          const meta = CUSTOMIZER_ITEMS_META[id];
-          if (!meta || meta.render !== 'overlay') return;
-          const accImg = document.createElement('img');
-          accImg.src = meta.src;
-          const [x, y, w, h] = meta.box;
-          accImg.style.cssText = `position:absolute; left:${(x / 256) * 100}%; top:${(y / 256) * 100}%; width:${(w / 256) * 100}%; height:${(h / 256) * 100}%; z-index:20; opacity:${meta.opacity || 1}; object-fit:contain; transform:translate(-0%, -0%);`;
-          el.appendChild(accImg);
-        });
-      }
+      el.innerHTML = generateAvatarHTML(character, profile?.equippedAccessories || [], state);
 
       // Remove all state classes
       VALID_STATES.forEach(s => el.classList.remove(`mascot-${s}`));
