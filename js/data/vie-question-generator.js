@@ -57,6 +57,79 @@ function makeQ(question, answer, others, explanation) {
 
 const QUESTION_BANKS = {
 
+  // ── Specific Reading Lessons ─────────────────────────────────────────────
+  'vie:bai-2-doc-thi-nhac': [
+    makeQ(
+      'Trong bài "Thi nhạc", Ve sầu trình bày bản nhạc gì?',
+      'Bản nhạc "Mùa hè"',
+      ['Khúc nhạc "Bình minh"', 'Bản nhạc "Mùa thu"', 'Bản nhạc "Mùa xuân"'],
+      'Ve sầu đã trình bày bản nhạc "Mùa hè" đầy tự tin với âm thanh trong sáng, réo rắt.'
+    ),
+    makeQ(
+      'Gà trống biểu diễn khúc nhạc gì trong buổi thi?',
+      'Khúc nhạc "Bình minh"',
+      ['Bản nhạc "Mùa hè"', 'Bản nhạc "Mùa thu"', 'Bản nhạc "Mùa xuân"'],
+      'Gà trống biểu diễn khúc nhạc "Bình minh" với tiết tấu nhanh, khỏe khoắn.'
+    ),
+    makeQ(
+      'Dế mèn thể hiện bản nhạc về mùa nào?',
+      'Mùa thu',
+      ['Mùa hè', 'Mùa xuân', 'Mùa đông'],
+      'Dế mèn thể hiện bản nhạc "Mùa thu" nhẹ nhàng và trang nhã.'
+    ),
+    makeQ(
+      'Họa mi mang đến bản nhạc gì cho buổi thi?',
+      'Bản nhạc "Mùa xuân"',
+      ['Bản nhạc "Mùa hè"', 'Bản nhạc "Mùa thu"', 'Khúc nhạc "Bình minh"'],
+      'Họa mi mang đến bản nhạc "Mùa xuân" réo rắt, say đắm.'
+    ),
+    makeQ(
+      'Các học trò của thầy giáo Vàng Anh đang tham gia cuộc thi gì?',
+      'Thi tốt nghiệp âm nhạc',
+      ['Thi kể chuyện', 'Thi múa', 'Thi vẽ tranh'],
+      'Văn bản kể về buổi thi tốt nghiệp âm nhạc của các học trò thầy giáo Vàng Anh.'
+    ),
+    makeQ(
+      'Bài đọc "Thi nhạc" ca ngợi điều gì?',
+      'Sự sáng tạo và cá tính riêng của mỗi người',
+      ['Sự chăm chỉ học thuộc lòng', 'Tình bạn giữa các loài chim', 'Sự vâng lời thầy giáo'],
+      'Câu chuyện khuyến khích mỗi cá nhân hãy tự tin thể hiện phong cách, tài năng riêng của mình.'
+    ),
+  ],
+  
+  'vie:bai-3-doc-anh-em-sinh-doi': [
+    makeQ(
+      'Hai anh em sinh đôi trong câu chuyện tên là gì?',
+      'Long và Khánh',
+      ['Hùng và Dũng', 'Nam và Hải', 'Tuấn và Tú'],
+      'Câu chuyện kể về hai anh em sinh đôi là Long và Khánh.'
+    ),
+    makeQ(
+      'Vì sao Long cảm thấy khó chịu lúc đầu?',
+      'Vì Long hay bị mọi người nhận nhầm là anh Khánh',
+      ['Vì Khánh học giỏi hơn Long', 'Vì Khánh không chịu chơi với Long', 'Vì Khánh thường xuyên lấy đồ chơi của Long'],
+      'Long khó chịu vì mọi người hay nhầm lẫn hai anh em do ngoại hình giống nhau.'
+    ),
+    makeQ(
+      'Long đã làm gì để khác với anh Khánh?',
+      'Cố gắng làm mọi thứ khác anh từ cách ăn mặc, kiểu tóc đến dáng đi',
+      ['Chuyển sang học lớp khác', 'Không bao giờ nói chuyện với anh', 'Bắt anh Khánh phải thay đổi kiểu tóc'],
+      'Long cố gắng thay đổi cách ăn mặc, kiểu tóc và dáng đi để mọi người không nhận nhầm.'
+    ),
+    makeQ(
+      'Sự việc gì đã giúp Long nhận ra bạn bè không nhầm lẫn hai anh em?',
+      'Một hội thao của trường',
+      ['Một buổi thi hát', 'Một tiết học Toán', 'Một chuyến dã ngoại'],
+      'Trong một hội thao của trường, Long nhận ra bạn bè vẫn phân biệt được hai anh em qua tính cách và khả năng riêng.'
+    ),
+    makeQ(
+      'Thông điệp chính của bài đọc "Anh em sinh đôi" là gì?',
+      'Mỗi người đều là một cá thể độc lập với những đặc điểm, tính cách riêng',
+      ['Anh em sinh đôi luôn phải giống hệt nhau', 'Anh em sinh đôi không nên học cùng lớp', 'Anh em phải luôn nhường nhịn nhau'],
+      'Câu chuyện giúp hiểu rằng dù ngoại hình giống nhau, mỗi người vẫn có tính cách và giá trị riêng biệt.'
+    ),
+  ],
+
   // ── Danh từ / Danh từ chung, danh từ riêng ──────────────────────────────
   'danh-tu': [
     makeQ(
@@ -883,6 +956,13 @@ function buildLanguageSkillQuestions(topic, count = 8, seedInput = '') {
  * @returns {Array}          - Array of MCQ question objects
  */
 export function generateVietnameseQuestions(topic, count = 8, seedInput = '') {
+  // 1. If we have a specific hand-crafted question bank for this exact topic (e.g. reading lessons), use it!
+  if (topic.topicKey && QUESTION_BANKS[topic.topicKey]) {
+    const bank = QUESTION_BANKS[topic.topicKey];
+    const shuffled = seededShuffle(bank, `${seedInput}|${topic.topicKey}`);
+    return shuffled.slice(0, Math.max(1, Math.min(count, shuffled.length)));
+  }
+
   const source = topic.knttSource || {};
   const rawSkill = String(source.skill || '');
   // e.g. "Luyện từ và câu: Danh từ" → skillType="Luyện từ và câu", skill="Danh từ"
