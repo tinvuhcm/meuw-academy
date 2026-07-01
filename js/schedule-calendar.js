@@ -91,6 +91,17 @@ function interleaveModules(modules) {
 }
 
 export function getStudyPlanForDate(dateLike = new Date()) {
+  const schoolWeekday = isSchoolTermWeekday(dateLike);
+  if (schoolWeekday) {
+    return {
+      mode: 'merged',
+      sessionIds: ['day'],
+      targetMinutes: SCHOOL_WEEKDAY_TARGET_MINUTES,
+      label: 'Lịch học hôm nay',
+      shortLabel: '1 buổi',
+    };
+  }
+
   return {
     mode: 'split',
     sessionIds: ['am', 'pm'],

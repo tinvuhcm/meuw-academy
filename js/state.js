@@ -642,6 +642,23 @@ function getDayProgress(dayNumber) {
   const completionRate = totalModules ? completedModules / totalModules : 0;
   const passRate = totalModules ? passedModules / totalModules : 0;
 
+  // Also check individual sessions so a child only doing the AM or PM session 
+  // can still auto-unlock the next day if they hit the 80% threshold for that session.
+  const amModules = modules.filter(m => m.session === 'am');
+  const pmModules = modules.filter(m => m.session === 'pm');
+  
+  const amCompleted = amModules.filter(m => profile.completedModules[m.id]).length;
+  const pmCompleted = pmModules.filter(m => profile.completedModules[m.id]).length;
+  
+  const amPassedCount = amModules.filter(m => profile.completedModules[m.id] && isModulePassed(profile.completedModules[m.id])).length;
+  const pmPassedCount = pmModules.filter(m => profile.completedModules[m.id] && isModulePassed(profile.completedModules[m.id])).length;
+
+  const amPassed = amModules.length > 0 && (amCompleted / amModules.length) >= DAILY_PASS_THRESHOLD && (amPassedCount / amModules.length) >= DAILY_PASS_THRESHOLD;
+  const pmPassed = pmModules.length > 0 && (pmCompleted / pmModules.length) >= DAILY_PASS_THRESHOLD && (pmPassedCount / pmModules.length) >= DAILY_PASS_THRESHOLD;
+  
+  const overallPassed = totalModules > 0 && completionRate >= DAILY_PASS_THRESHOLD && passRate >= DAILY_PASS_THRESHOLD;
+  const isPassed = overallPassed || amPassed || pmPassed;
+
   return {
     day: dayNumber,
     totalModules,
@@ -649,7 +666,7 @@ function getDayProgress(dayNumber) {
     passedModules,
     completionRate,
     passRate,
-    isPassed: totalModules > 0 && completionRate >= DAILY_PASS_THRESHOLD && passRate >= DAILY_PASS_THRESHOLD,
+    isPassed,
   };
 }
 
